@@ -32,8 +32,16 @@ const severityConfig = {
   },
 };
 
-export default function SeverityStats({ stats }) {
+export default function SeverityStats({ stats = {} }) {
   const { language } = useLanguage();
+
+  // Ensure stats has default values
+  const safeStats = {
+    critical: stats?.critical || 0,
+    high: stats?.high || 0,
+    medium: stats?.medium || 0,
+    low: stats?.low || 0,
+  };
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -45,16 +53,16 @@ export default function SeverityStats({ stats }) {
           transition={{ delay: index * 0.1 }}
           className={`
             relative p-6 rounded-xl border-2 ${config.bg} ${config.border}
-            ${config.pulse && stats[key] > 0 ? 'pulse-critical' : ''}
+            ${config.pulse && safeStats[key] > 0 ? 'pulse-critical' : ''}
           `}
         >
           <div className={`text-5xl font-bold ${config.text} mb-2`}>
-            {stats[key] || 0}
+            {safeStats[key]}
           </div>
           <div className="text-sm font-medium text-[var(--text-secondary)]">
             {config.label[language]}
           </div>
-          {config.pulse && stats[key] > 0 && (
+          {config.pulse && safeStats[key] > 0 && (
             <div className="absolute top-3 right-3">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>

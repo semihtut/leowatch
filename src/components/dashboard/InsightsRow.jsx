@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import { AlertTriangle, Tag, Zap } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
-export default function InsightsRow({ stats, topTags }) {
+export default function InsightsRow({ stats = {}, topTags = [] }) {
   const { language } = useLanguage();
 
   const insights = [
     {
       icon: AlertTriangle,
       label: language === 'fi' ? 'CISA KEV' : 'CISA KEV',
-      value: stats.cisaKev || 0,
+      value: stats?.cisaKev || 0,
       suffix: language === 'fi' ? 'lisätty KEV:iin' : 'added to KEV',
       color: 'text-red-400',
       bg: 'bg-red-500/10',
@@ -26,7 +26,7 @@ export default function InsightsRow({ stats, topTags }) {
     {
       icon: Zap,
       label: language === 'fi' ? 'Aktiiviset hyökkäykset' : 'Active Exploits',
-      value: stats.activeExploits || 0,
+      value: stats?.activeExploits || 0,
       suffix: language === 'fi' ? 'aktiivinen' : 'active',
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
