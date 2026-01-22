@@ -40,7 +40,7 @@
         "zlib"
       ],
       "sourcesCount": 12,
-      "excerpt": "MongoDB veritabaninda HeartBleed benzeri kritik bir guvenlik acigi bulundu - MongoBleed. Bu acik, saldirganin MongoDB sunucusunun belleginden hassas verileri (sifreler, API anahtarlari, oturum tokenla..."
+      "excerpt": "A critical HeartBleed-like vulnerability has been discovered in MongoDB database - dubbed MongoBleed. This flaw allows attackers to steal sensitive data (passwords, API keys, session tokens) from Mon..."
     },
     {
       "id": "TB-2026-01-22-014",

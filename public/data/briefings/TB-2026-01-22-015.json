@@ -132,18 +132,18 @@
     }
   ],
   "simple_summary": {
-    "what_happened": "MongoDB veritabaninda HeartBleed benzeri kritik bir guvenlik acigi bulundu - MongoBleed. Bu acik, saldirganin MongoDB sunucusunun belleginden hassas verileri (sifreler, API anahtarlari, oturum tokenlari) sifre girmeden calmAsina izin veriyor. Zafiyet, MongoDB'nin zlib sikistirma ozelligindeki bir hatadan kaynaklaniyor.",
-    "who_is_affected": "Self-hosted MongoDB kullanan tum organizasyonlar risk altinda. Wiz arastirmasina gore cloud ortamlarinin %42'sinde savunmasiz MongoDB instance'i var. Censys verilerine gore internete acik 87,000+ savunmasiz MongoDB sunucusu bulunuyor. MongoDB Atlas kullanicilari otomatik olarak guncellendi ve guvenli.",
-    "what_attackers_do": "Step 1: Saldirgan internete acik MongoDB sunucusunu bulur (port 27017). Step 2: Ozel hazirlanmis OP_COMPRESSED mesajlari gonderir. Step 3: MongoDB'nin belleginden rastgele veri parcalari sizdirir. Step 4: Binlerce baglanti kurarak daha fazla veri toplar. Step 5: Sifreler, API anahtarlari ve oturum tokenlarini ele gecirir. Step 6: Bu bilgilerle sistemlere yetkisiz erisim saglar.",
+    "what_happened": "A critical HeartBleed-like vulnerability has been discovered in MongoDB database - dubbed MongoBleed. This flaw allows attackers to steal sensitive data (passwords, API keys, session tokens) from MongoDB server memory without authentication. The vulnerability stems from a bug in MongoDB's zlib compression feature.",
+    "who_is_affected": "All organizations running self-hosted MongoDB are at risk. According to Wiz research, 42% of cloud environments have vulnerable MongoDB instances. Censys data shows 87,000+ vulnerable MongoDB servers exposed to the internet. MongoDB Atlas users have been automatically patched and are safe.",
+    "what_attackers_do": "Step 1: Attacker locates internet-exposed MongoDB server (port 27017). Step 2: Sends specially crafted OP_COMPRESSED messages. Step 3: Leaks random data chunks from MongoDB server memory. Step 4: Establishes thousands of connections to harvest more data. Step 5: Extracts passwords, API keys, and session tokens. Step 6: Uses stolen credentials for unauthorized system access.",
     "what_you_should_do": [
-      "MongoDB versiyonunuzu hemen guncelleyin: 8.2.3, 8.0.17, 7.0.28, 6.0.27, 5.0.32 veya 4.4.30",
-      "Eger hemen guncelleyemiyorsaniz, zlib sikistirmayi devre disi birakin",
-      "MongoDB'yi internete acik birakmayin - firewall ile koruyun",
-      "MongoDB loglarini kontrol edin - anormal baglanti sayilarina bakin",
-      "Sizinti olmus olabilecegini varsayarak tum credential'lari rotate edin",
-      "MongoDB Atlas kullaniyorsaniz, otomatik guncellendi - aksiyon gerekmiyor"
+      "Immediately upgrade MongoDB to: 8.2.3, 8.0.17, 7.0.28, 6.0.27, 5.0.32, or 4.4.30",
+      "If immediate patching is not possible, disable zlib compression",
+      "Do not expose MongoDB to the internet - protect with firewall",
+      "Review MongoDB logs for abnormal connection patterns",
+      "Assume breach and rotate all credentials",
+      "If using MongoDB Atlas, no action needed - automatically patched"
     ],
-    "why_this_is_serious": "MongoDB dunyanin en populer NoSQL veritabanidir ve kritik uygulamalarin kalbidir. Saldirganlar authentication olmadan hassas verileri cekebilir. Zaten aktif olarak exploit ediliyor ve CISA zorunlu yama listesine ekledi. PoC exploit publIc olarak mevcut - herkes kullanabilir."
+    "why_this_is_serious": "MongoDB is the world's most popular NoSQL database, powering critical applications. Attackers can extract sensitive data without authentication. It is already being actively exploited in the wild and CISA has added it to the mandatory patch list. Public PoC exploit is available - anyone can use it."
   },
   "mitre_attack": {
     "tactics": [
@@ -151,69 +151,69 @@
         "tactic": "Initial Access",
         "technique_id": "T1190",
         "technique_name": "Exploit Public-Facing Application",
-        "description": "Saldirganlar internete acik MongoDB sunucularini hedef aliyor"
+        "description": "Attackers target internet-exposed MongoDB servers"
       },
       {
         "tactic": "Collection",
         "technique_id": "T1005",
         "technique_name": "Data from Local System",
-        "description": "Bellek sizintisi ile hassas veriler toplanıyor"
+        "description": "Sensitive data harvested through memory leak exploitation"
       },
       {
         "tactic": "Credential Access",
         "technique_id": "T1552.001",
         "technique_name": "Credentials In Files",
-        "description": "Bellekten sifreler ve API anahtarlari cekiliyor"
+        "description": "Passwords and API keys extracted from server memory"
       },
       {
         "tactic": "Exfiltration",
         "technique_id": "T1041",
         "technique_name": "Exfiltration Over C2 Channel",
-        "description": "Calınan veriler saldirgan sunucusuna gonderiliyor"
+        "description": "Stolen data exfiltrated to attacker-controlled servers"
       }
     ]
   },
   "detection_guidance": {
-    "summary": "MongoDB loglarinda anormal pre-authentication baglantilari ve client metadata eksikligi aranmali. Exploit, normal driver'lardan farkli olarak client metadata gondermez.",
+    "summary": "Monitor MongoDB logs for abnormal pre-authentication connections and missing client metadata. The exploit does not send client metadata unlike legitimate MongoDB drivers.",
     "log_sources": [
       {
         "source": "MongoDB Server Logs",
-        "description": "Connection events, authentication attempts, ve crash loglari",
+        "description": "Connection events, authentication attempts, and crash logs",
         "priority": "Critical"
       },
       {
         "source": "Network Traffic Logs",
-        "description": "Port 27017'ye gelen trafik analizi",
+        "description": "Traffic analysis on port 27017",
         "priority": "Critical"
       },
       {
         "source": "Firewall/IDS Logs",
-        "description": "MongoDB portuna yuksek hacimli baglanti denemeleri",
+        "description": "High-volume connection attempts to MongoDB port",
         "priority": "High"
       }
     ],
     "what_to_look_for": [
       {
         "indicator": "Missing client metadata (Event ID 51800)",
-        "description": "Normal MongoDB driver'lari her zaman client metadata gonderir. Exploit gondermez.",
+        "description": "Normal MongoDB drivers always send client metadata. The exploit does not.",
         "log_field": "Connections without corresponding Event ID 51800 metadata",
         "severity": "Critical"
       },
       {
         "indicator": "Extreme connection bursts",
-        "description": "Tek IP'den dakikada 50,000-100,000+ baglanti denemesi",
+        "description": "50,000-100,000+ connection attempts per minute from single IP",
         "log_field": "connections per minute from single IP > 1000",
         "severity": "Critical"
       },
       {
         "indicator": "Pre-authentication connection anomalies",
-        "description": "Authentication oncesi cok sayida baglanti acilip kapatiliyor",
+        "description": "Many connections opened and closed before authentication completes",
         "log_field": "High connection count with zero successful auth",
         "severity": "High"
       },
       {
         "indicator": "MongoDB service crashes",
-        "description": "Beklenmeyen MongoDB servis crash'leri exploit denemesini gosterebilir",
+        "description": "Unexpected MongoDB service crashes may indicate exploitation attempts",
         "log_field": "Unexpected mongod/mongos crashes",
         "severity": "High"
       }
@@ -223,38 +223,38 @@
   "immediate_actions": [
     {
       "priority": 1,
-      "action": "MongoDB Versiyonunu Kontrol Et",
-      "description": "Hangi versiyonu kullandiginizi belirleyin - savunmasiz mi?",
+      "action": "Check MongoDB Version",
+      "description": "Determine which version you are running - is it vulnerable?",
       "command": "mongod --version"
     },
     {
       "priority": 2,
-      "action": "Hemen Patch Uygula",
-      "description": "Savunmasiz versiyondaysaniz ACIL guncelleyin",
+      "action": "Apply Patch Immediately",
+      "description": "If running a vulnerable version, upgrade IMMEDIATELY",
       "command": null
     },
     {
       "priority": 3,
-      "action": "Zlib Sikistirmayi Devre Disi Birak (gecici)",
-      "description": "Eger hemen patch yapamiyorsaniz, zlib'i devre disi birakin",
+      "action": "Disable Zlib Compression (temporary mitigation)",
+      "description": "If immediate patching is not possible, disable zlib compression",
       "command": "mongod --networkMessageCompressors snappy,zstd"
     },
     {
       "priority": 4,
-      "action": "Network Erisimini Kisitla",
-      "description": "MongoDB'yi internete acik birakmayin, sadece guvenilir IP'lere izin verin",
+      "action": "Restrict Network Access",
+      "description": "Do not expose MongoDB to the internet, allow only trusted IPs",
       "command": null
     },
     {
       "priority": 5,
-      "action": "Loglari Incele",
-      "description": "Son 30 gunde anormal baglanti patternleri var mi kontrol edin",
+      "action": "Review Logs",
+      "description": "Check for abnormal connection patterns in the last 30 days",
       "command": "grep -E '(connection|51800)' /var/log/mongodb/mongod.log | tail -1000"
     },
     {
       "priority": 6,
       "action": "Credential Rotation",
-      "description": "Sizinti olmus olabilecegini varsayarak tum DB credential'larini degistirin",
+      "description": "Assume breach and rotate all database credentials",
       "command": null
     }
   ]

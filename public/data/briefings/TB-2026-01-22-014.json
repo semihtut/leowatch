@@ -139,18 +139,18 @@
     }
   ],
   "simple_summary": {
-    "what_happened": "Guvenlik arastirmacilari n8n adli populer otomasyon platformunda maksimum derecede kritik bir guvenlik acigi buldu (CVSS 10.0). n8n, Zapier benzeri bir aractir - farkli uygulamalari birbirine baglayarak is akislarini otomatiklestirir. Bulunan acik, saldirganin sifre bile girmeden sunucunun tam kontrolunu ele gecirmesine izin veriyor.",
-    "who_is_affected": "n8n kullanan tum organizasyonlar risk altinda. Ozellikle self-hosted (kendi sunucunuzda) calistiran sirketler. Censys verilerine gore dunyada 26,512 acikta n8n sunucusu var - bunlarin 7,079'u ABD'de, 4,280'i Almanya'da. Eger n8n'i internete acik sekilde calistiriyorsaniz, acil mudahale gerekiyor.",
-    "what_attackers_do": "Step 1: Saldirgan n8n'in webhook adresine ozel hazirlanmis bir HTTP istegi gonderir. Step 2: Content-Type basligini degistirerek guvenlik kontrollerini atlatir. Step 3: Sunucudaki hassas dosyalari okur (veritabani, sifre dosyalari). Step 4: Admin sifrelerini ve sifreleme anahtarlarini calar. Step 5: Sahte oturum cerezleri olusturarak admin olarak giris yapar. Step 6: Execute Command ozelligi ile sunucuda istedigi komutu calistirir - tam kontrol.",
+    "what_happened": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. n8n is a Zapier-like tool that automates workflows by connecting different applications. The discovered flaw allows attackers to gain full server control without any authentication.",
+    "who_is_affected": "All organizations using n8n are at risk, especially those running self-hosted instances. According to Censys data, there are 26,512 exposed n8n servers worldwide - 7,079 in the US and 4,280 in Germany. If you're running n8n exposed to the internet, immediate action is required.",
+    "what_attackers_do": "Step 1: Attacker sends a specially crafted HTTP request to n8n's webhook endpoint. Step 2: Bypasses security controls by manipulating Content-Type header. Step 3: Reads sensitive files on the server (database, credential files). Step 4: Steals admin passwords and encryption keys. Step 5: Creates forged session cookies to log in as admin. Step 6: Uses Execute Command feature to run arbitrary commands - full server control.",
     "what_you_should_do": [
-      "n8n versiyonunuzu hemen 1.121.0 veya ustu yapin (guncel: 1.123.10, 2.1.5, 2.2.4, 2.3.0)",
-      "n8n'i internete acik birakmayin - VPN veya internal network arkasina alin",
-      "Tum Form'larda authentication zorunlu hale getirin",
-      "Public webhook endpoint'lerini gecici olarak kapatin",
-      "Eger patch oncesi versiyonu kullandiysamz, credential'larinizi rotate edin",
-      "n8n'in bagli oldugu tum sistemlerin (API key, database credential) parolalarini degistirin"
+      "Immediately upgrade n8n to version 1.121.0 or higher (latest: 1.123.10, 2.1.5, 2.2.4, 2.3.0)",
+      "Do not expose n8n to the internet - place behind VPN or internal network",
+      "Enforce authentication on all Forms",
+      "Temporarily disable public webhook endpoints",
+      "If you were running a pre-patch version, rotate all credentials",
+      "Change passwords for all connected systems (API keys, database credentials)"
     ],
-    "why_this_is_serious": "n8n genellikle sirketlerin en kritik sistemlerine baglidir - CRM, veritabani, cloud storage, email, Slack, ve daha fazlasi. Eger saldirgan n8n'e erisirse, bagli tum sistemlere de erisir. Ayrica CVSS 10.0 en yuksek seviye - saldiri icin authentication bile gerekmiyor ve uzaktan calistirmak mumkun."
+    "why_this_is_serious": "n8n is typically connected to an organization's most critical systems - CRM, databases, cloud storage, email, Slack, and more. If an attacker compromises n8n, they gain access to all connected systems. CVSS 10.0 is the maximum severity - the attack requires no authentication and can be executed remotely."
   },
   "mitre_attack": {
     "tactics": [
@@ -158,80 +158,80 @@
         "tactic": "Initial Access",
         "technique_id": "T1190",
         "technique_name": "Exploit Public-Facing Application",
-        "description": "Saldirganlar internete acik n8n webhook endpoint'lerini hedef aliyor"
+        "description": "Attackers target internet-exposed n8n webhook endpoints"
       },
       {
         "tactic": "Execution",
         "technique_id": "T1059",
         "technique_name": "Command and Scripting Interpreter",
-        "description": "n8n Execute Command node'u kullanarak sistem komutlari calistiriliyor"
+        "description": "System commands executed using n8n Execute Command node"
       },
       {
         "tactic": "Credential Access",
         "technique_id": "T1552.001",
         "technique_name": "Credentials In Files",
-        "description": "n8n veritabani ve config dosyalarindan credential'lar okunuyor"
+        "description": "Credentials extracted from n8n database and config files"
       },
       {
         "tactic": "Defense Evasion",
         "technique_id": "T1550.001",
         "technique_name": "Application Access Token",
-        "description": "Calinan encryption key ile sahte session cookie olusturuluyor"
+        "description": "Forged session cookies created using stolen encryption key"
       },
       {
         "tactic": "Collection",
         "technique_id": "T1005",
         "technique_name": "Data from Local System",
-        "description": "Arbitrary file read ile hassas veriler toplaniyor"
+        "description": "Sensitive data collected via arbitrary file read"
       }
     ]
   },
   "detection_guidance": {
-    "summary": "n8n webhook endpoint'lerine gelen HTTP isteklerini izleyin. Ozellikle Content-Type manipulasyonu ve beklenmeyen dosya yolu icerikli isteklere dikkat edin.",
+    "summary": "Monitor HTTP requests to n8n webhook endpoints. Pay special attention to Content-Type manipulation and requests containing unexpected file paths.",
     "log_sources": [
       {
         "source": "n8n Application Logs",
-        "description": "Webhook istekleri, authentication olaylari ve workflow execution loglari",
+        "description": "Webhook requests, authentication events, and workflow execution logs",
         "priority": "Critical"
       },
       {
         "source": "Web Server / Reverse Proxy Logs",
-        "description": "nginx/Apache/Traefik loglari - ozellikle /webhook ve /form-data endpoint'leri",
+        "description": "nginx/Apache/Traefik logs - especially /webhook and /form-data endpoints",
         "priority": "Critical"
       },
       {
         "source": "Container Runtime Logs",
-        "description": "Docker veya Kubernetes loglari - beklenmeyen komut calistirmalari",
+        "description": "Docker or Kubernetes logs - unexpected command executions",
         "priority": "High"
       },
       {
         "source": "Network Traffic Logs",
-        "description": "n8n portlarina (5678) gelen external trafik",
+        "description": "External traffic to n8n ports (5678)",
         "priority": "High"
       }
     ],
     "what_to_look_for": [
       {
         "indicator": "Content-Type header manipulation",
-        "description": "multipart/form-data beklenirken application/json gonderilen istekler",
+        "description": "Requests sending application/json when multipart/form-data is expected",
         "log_field": "Content-Type: application/json on /webhook/form/* endpoints",
         "severity": "Critical"
       },
       {
         "indicator": "Path traversal attempts in request body",
-        "description": "Request body icinde /etc/passwd, database.sqlite gibi dosya yollari",
+        "description": "Request body containing file paths like /etc/passwd, database.sqlite",
         "log_field": "req.body contains '../' or absolute paths",
         "severity": "Critical"
       },
       {
         "indicator": "Unexpected Execute Command workflow creation",
-        "description": "Yeni olusturulan workflow'larda Execute Command node'u",
+        "description": "Newly created workflows containing Execute Command node",
         "log_field": "workflow.nodes contains 'n8n-nodes-base.executeCommand'",
         "severity": "Critical"
       },
       {
         "indicator": "Authentication bypass indicators",
-        "description": "Basarili admin giris sonrasi beklenmeyen IP adresinden islem",
+        "description": "Successful admin login followed by activity from unexpected IP",
         "log_field": "auth.success from unusual IP after failed attempts",
         "severity": "High"
       }
@@ -241,32 +241,32 @@
   "immediate_actions": [
     {
       "priority": 1,
-      "action": "n8n Versiyonunu Kontrol Et ve Guncelle",
-      "description": "Hangi versiyonu kullandiginizi kontrol edin. 1.121.0'dan dusukse ACIL guncelle",
+      "action": "Check and Update n8n Version",
+      "description": "Check your current version. If below 1.121.0, upgrade IMMEDIATELY",
       "command": "docker exec n8n n8n --version"
     },
     {
       "priority": 2,
-      "action": "Internet Erisimini Kes",
-      "description": "n8n'i public internet'ten erisilmez hale getirin - VPN veya firewall arkasina alin",
+      "action": "Block Internet Access",
+      "description": "Make n8n inaccessible from public internet - place behind VPN or firewall",
       "command": null
     },
     {
       "priority": 3,
-      "action": "Webhook Endpoint'lerini Incele",
-      "description": "Hangi webhook'larin public oldugunu belirleyin ve gereksizleri kapatin",
+      "action": "Review Webhook Endpoints",
+      "description": "Identify which webhooks are public and disable unnecessary ones",
       "command": null
     },
     {
       "priority": 4,
-      "action": "Son 90 Gunluk Loglari Incele",
-      "description": "Webhook loglarinda supheli Content-Type veya dosya yolu iceren istekleri arayin",
+      "action": "Review Last 90 Days of Logs",
+      "description": "Search webhook logs for suspicious Content-Type or file path requests",
       "command": "grep -r 'webhook' /var/log/n8n/ | grep -E '(etc/passwd|database|sqlite|Content-Type)'"
     },
     {
       "priority": 5,
       "action": "Credential Rotation",
-      "description": "n8n'e bagli tum servislerin API key ve credential'larini yenileyin",
+      "description": "Rotate API keys and credentials for all services connected to n8n",
       "command": null
     }
   ]
