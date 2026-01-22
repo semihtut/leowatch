@@ -1,53 +1,79 @@
 import { useState, useMemo } from 'react';
-import { Search, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useBriefings } from '../hooks/useBriefings';
-import BriefingGrid from '../components/briefing/BriefingGrid';
 import { useLanguage } from '../contexts/LanguageContext';
-
-const severityColors = {
-  Critical: 'bg-red-500/20 text-red-400 border-red-500/50 hover:bg-red-500/30',
-  High: 'bg-orange-500/20 text-orange-400 border-orange-500/50 hover:bg-orange-500/30',
-  Medium: 'bg-blue-500/20 text-blue-400 border-blue-500/50 hover:bg-blue-500/30',
-  Low: 'bg-green-500/20 text-green-400 border-green-500/50 hover:bg-green-500/30',
-};
+import DailySummary from '../components/dashboard/DailySummary';
+import SeverityStats from '../components/dashboard/SeverityStats';
+import InsightsRow from '../components/dashboard/InsightsRow';
+import FeaturedThreat from '../components/dashboard/FeaturedThreat';
+import SearchFilters from '../components/dashboard/SearchFilters';
+import BriefingGrid from '../components/briefing/BriefingGrid';
 
 export default function Dashboard() {
-  const { briefings, loading, error } = useBriefings();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedSeverity, setSelectedSeverity] = useState(null);
+  const { briefings, loading, error, indexData } = useBriefings();
   const { t, language } = useLanguage();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedSeverity, setSelectedSeverity] = useState('');
+  const [selectedVendor, setSelectedVendor] = useState('');
+
+  // Get today's date
+  const today = new Date().toISOString().split('T')[0];
 
   // Filter to show only today's briefings
-  const today = new Date().toISOString().split('T')[0];
-  const todayBriefings = briefings.filter(b => b.date === today);
+  const todayBriefings = useMemo(() => {
+    return briefings.filter(b => b.date === today);
+  }, [briefings, today]);
 
-  // Count by severity
-  const severityCounts = useMemo(() => {
-    return todayBriefings.reduce((acc, b) => {
-      acc[b.severity] = (acc[b.severity] || 0) + 1;
+  // Calculate stats from today's briefings
+  const stats = useMemo(() => {
+    if (indexData?.stats) {
+      return indexData.stats;
+    }
+    // Fallback: calculate from briefings
+    const counts = todayBriefings.reduce((acc, b) => {
+      const severity = b.severity?.toLowerCase() || 'low';
+      acc[severity] = (acc[severity] || 0) + 1;
       return acc;
-    }, {});
-  }, [todayBriefings]);
+    }, { critical: 0, high: 0, medium: 0, low: 0 });
+    return {
+      ...counts,
+      total: todayBriefings.length,
+      cisaKev: 0,
+      activeExploits: 0,
+    };
+  }, [todayBriefings, indexData]);
 
-  // Filter briefings
+  // Get top tags and vendors from index data or calculate
+  const topTags = indexData?.topTags || [];
+  const topVendors = indexData?.topVendors || [];
+
+  // Get featured briefing
+  const featuredBriefing = useMemo(() => {
+    if (indexData?.featuredBriefing) {
+      return todayBriefings.find(b => b.id === indexData.featuredBriefing);
+    }
+    // Fallback: get first critical briefing
+    return todayBriefings.find(b => b.severity === 'Critical') || todayBriefings[0];
+  }, [todayBriefings, indexData]);
+
+  // Filter briefings based on search and filters
   const filteredBriefings = useMemo(() => {
     return todayBriefings.filter(b => {
+      // Exclude featured briefing from the grid
+      if (featuredBriefing && b.id === featuredBriefing.id) return false;
+
       const matchesSeverity = !selectedSeverity || b.severity === selectedSeverity;
+      const matchesVendor = !selectedVendor ||
+        b.tags?.some(tag => tag.toLowerCase().includes(selectedVendor.toLowerCase()));
       const matchesSearch = !searchQuery ||
         b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         b.excerpt?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         b.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
         b.cves?.some(cve => cve.toLowerCase().includes(searchQuery.toLowerCase()));
-      return matchesSeverity && matchesSearch;
-    });
-  }, [todayBriefings, selectedSeverity, searchQuery]);
 
-  const todayFormatted = new Date().toLocaleDateString(language === 'fi' ? 'fi-FI' : 'en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+      return matchesSeverity && matchesVendor && matchesSearch;
+    });
+  }, [todayBriefings, featuredBriefing, selectedSeverity, selectedVendor, searchQuery]);
 
   if (loading) {
     return (
@@ -66,79 +92,60 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-[var(--text-primary)]">
-          {t('dashboard.title')}
-        </h1>
-        <p className="mt-1 text-[var(--text-secondary)]">{todayFormatted}</p>
-      </div>
+    <div className="space-y-8">
+      {/* 1. Daily Summary Header */}
+      <DailySummary date={today} />
 
-      {/* Search and Filter Bar */}
-      <div className="glass-card p-4 space-y-4">
-        {/* Search Input */}
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--text-muted)]" />
-          <input
-            type="text"
-            placeholder={t('dashboard.searchPlaceholder')}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-10 py-3 bg-[var(--bg-secondary)] border border-[var(--border-default)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/50 transition-colors"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
-        </div>
+      {/* 2. Severity Stats Row */}
+      <SeverityStats stats={stats} />
 
-        {/* Severity Filter Chips */}
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={() => setSelectedSeverity(null)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
-              !selectedSeverity
-                ? 'bg-pink-500/20 text-pink-400 border-pink-500/50'
-                : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-pink-500/30'
-            }`}
-          >
-            {t('dashboard.all')} ({todayBriefings.length})
-          </button>
-          {['Critical', 'High', 'Medium', 'Low'].map((severity) => (
-            <button
-              key={severity}
-              onClick={() => setSelectedSeverity(selectedSeverity === severity ? null : severity)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
-                selectedSeverity === severity
-                  ? severityColors[severity]
-                  : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-[var(--border-accent)]'
-              }`}
-              disabled={!severityCounts[severity]}
-              style={{ opacity: severityCounts[severity] ? 1 : 0.4 }}
-            >
-              {severity} ({severityCounts[severity] || 0})
-            </button>
-          ))}
-        </div>
-      </div>
+      {/* 3. Insights Row */}
+      <InsightsRow stats={stats} topTags={topTags} />
 
-      {/* Results */}
-      {filteredBriefings.length > 0 ? (
-        <BriefingGrid briefings={filteredBriefings} title="" />
-      ) : (
-        <div className="glass-card p-12 text-center">
-          <p className="text-[var(--text-muted)]">
-            {searchQuery || selectedSeverity
-              ? t('dashboard.noMatch')
-              : t('dashboard.noBriefings')}
-          </p>
-        </div>
+      {/* 4. Featured Threat */}
+      {featuredBriefing && (
+        <FeaturedThreat briefing={featuredBriefing} />
       )}
+
+      {/* 5. Briefings Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7 }}
+      >
+        <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+          {language === 'fi' ? 'Päivän tiedotteet' : "Today's Briefings"}
+        </h2>
+
+        {filteredBriefings.length > 0 ? (
+          <BriefingGrid briefings={filteredBriefings} title="" />
+        ) : (
+          <div className="glass-card p-12 text-center">
+            <p className="text-[var(--text-muted)]">
+              {searchQuery || selectedSeverity || selectedVendor
+                ? t('dashboard.noMatch')
+                : t('dashboard.noBriefings')}
+            </p>
+          </div>
+        )}
+      </motion.div>
+
+      {/* 6. Search & Filters (at the bottom) */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+      >
+        <SearchFilters
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          selectedSeverity={selectedSeverity}
+          setSelectedSeverity={setSelectedSeverity}
+          selectedVendor={selectedVendor}
+          setSelectedVendor={setSelectedVendor}
+          vendors={topVendors}
+        />
+      </motion.div>
     </div>
   );
 }

@@ -26,6 +26,7 @@ export function useBriefings() {
     briefings: data?.briefings || [],
     stats: data?.stats || null,
     lastUpdated: data?.lastUpdated || null,
+    indexData: data || null,
     loading,
     error,
   };

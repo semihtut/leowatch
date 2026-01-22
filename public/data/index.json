@@ -1,11 +1,19 @@
 {
   "lastUpdated": "2026-01-22T10:00:00Z",
+  "date": "2026-01-22",
   "stats": {
-    "todayCount": 13,
-    "criticalCount": 6,
-    "totalSources": 103,
-    "lastUpdateHoursAgo": 1
+    "total": 13,
+    "critical": 6,
+    "high": 6,
+    "medium": 1,
+    "low": 0,
+    "cisaKev": 2,
+    "activeExploits": 3,
+    "totalSources": 103
   },
+  "topTags": ["cloud", "kubernetes", "AWS", "Azure", "authentication"],
+  "topVendors": ["Fortinet", "Microsoft", "AWS", "Google", "HashiCorp"],
+  "featuredBriefing": "TB-2026-01-22-001",
   "briefings": [
     {
       "id": "TB-2026-01-22-001",
