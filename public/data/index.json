@@ -9,7 +9,7 @@
     "low": 0,
     "cisaKev": 0,
     "activeExploits": 1,
-    "totalSources": 6
+    "totalSources": 14
   },
   "topTags": ["n8n", "workflow", "automation", "RCE", "cloud"],
   "topVendors": ["n8n"],
@@ -20,9 +20,9 @@
       "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
       "severity": "Critical",
       "date": "2026-01-22",
-      "cves": ["CVE-2026-21858"],
+      "cves": ["CVE-2026-21858", "CVE-2026-21877"],
       "tags": ["n8n", "workflow", "automation", "RCE", "cloud", "webhook"],
-      "sourcesCount": 6,
+      "sourcesCount": 14,
       "excerpt": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. Attackers can gain full server control without authentication."
     }
   ]

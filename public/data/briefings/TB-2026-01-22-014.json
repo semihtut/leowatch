@@ -10,7 +10,8 @@
     "cisa_deadline": null
   },
   "cves": [
-    "CVE-2026-21858"
+    "CVE-2026-21858",
+    "CVE-2026-21877"
   ],
   "tags": [
     "n8n",
@@ -28,12 +29,72 @@
     "n8n Docker deployments",
     "n8n Kubernetes deployments"
   ],
-  "sources_analyzed": 6,
+  "sources_analyzed": 14,
   "sources": [
     {
-      "name": "Cyera Research Labs",
+      "name": "Cyera Research Labs (Original Discovery)",
       "url": "https://www.cyera.com/research-labs/ni8mare-unauthenticated-remote-code-execution-in-n8n-cve-2026-21858",
       "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "n8n Community - Official Security Advisory",
+      "url": "https://community.n8n.io/t/security-advisory-security-vulnerability-in-n8n-versions-1-65-1-120-4/247305",
+      "date": "2026-01-07",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - NIST",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21858",
+      "date": "2026-01-06",
+      "type": "Government"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/al26-001-vulnerabilities-affecting-n8n-cve-2026-21858-cve-2026-21877-cve-2025-68613",
+      "date": "2026-01-08",
+      "type": "Government"
+    },
+    {
+      "name": "Australian Cyber Security Centre",
+      "url": "https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/critical-unauthenticated-remote-code-execution-vulnerability-in-n8n-workflow-automation-platform",
+      "date": "2026-01-08",
+      "type": "Government"
+    },
+    {
+      "name": "Horizon3.ai - Technical Analysis",
+      "url": "https://horizon3.ai/attack-research/attack-blogs/the-ni8mare-test-n8n-rce-under-the-microscope-cve-2026-21858/",
+      "date": "2026-01-09",
+      "type": "Research"
+    },
+    {
+      "name": "Orca Security",
+      "url": "https://orca.security/resources/blog/cve-2026-21858-n8n-rce-vulnerability/",
+      "date": "2026-01-08",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf",
+      "url": "https://arcticwolf.com/resources/blog/cve-2026-21858/",
+      "date": "2026-01-08",
+      "type": "Research"
+    },
+    {
+      "name": "Censys Advisory",
+      "url": "https://censys.com/advisory/cve-2026-21858",
+      "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "Picus Security",
+      "url": "https://www.picussecurity.com/resource/blog/ni8mare-n8n-cve-2026-21858-remote-code-execution-vulnerability-explained",
+      "date": "2026-01-10",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime",
+      "url": "https://socprime.com/blog/cve-2026-21858-vulnerability/",
+      "date": "2026-01-09",
       "type": "Research"
     },
     {
@@ -43,15 +104,15 @@
       "type": "News"
     },
     {
-      "name": "Orca Security",
-      "url": "https://orca.security/resources/blog/cve-2026-21858-n8n-rce-vulnerability/",
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/08/n8n_rce_bug/",
       "date": "2026-01-08",
-      "type": "Research"
+      "type": "News"
     },
     {
-      "name": "The Hacker News - Second Vulnerability",
-      "url": "https://thehackernews.com/2026/01/new-n8n-vulnerability-99-cvss-lets.html",
-      "date": "2026-01-15",
+      "name": "CSO Online",
+      "url": "https://www.csoonline.com/article/4113980/critical-rce-flaw-allows-full-takeover-of-n8n-ai-workflow-platform.html",
+      "date": "2026-01-08",
       "type": "News"
     }
   ],
