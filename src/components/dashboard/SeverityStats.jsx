@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const severityConfig = {
@@ -48,8 +47,10 @@ export default function SeverityStats({ stats = {}, selectedSeverity, onSeverity
   };
 
   const handleClick = (key) => {
+    console.log('Clicked:', key); // Debug
     const severity = severityMap[key];
     const isCurrentlySelected = selectedSeverity === severity;
+    console.log('Calling onSeverityClick with:', isCurrentlySelected ? '' : severity); // Debug
     if (onSeverityClick) {
       onSeverityClick(isCurrentlySelected ? '' : severity);
     }
@@ -57,29 +58,21 @@ export default function SeverityStats({ stats = {}, selectedSeverity, onSeverity
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {Object.entries(severityConfig).map(([key, config], index) => {
+      {Object.entries(severityConfig).map(([key, config]) => {
         const isSelected = selectedSeverity === severityMap[key];
         const isAllSelected = !selectedSeverity;
 
         return (
-          <motion.div
+          <button
             key={key}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+            type="button"
             onClick={() => handleClick(key)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                handleClick(key);
-              }
-            }}
             className={`
-              relative p-6 rounded-xl border-2 ${config.bg} ${config.border}
+              relative p-6 rounded-xl border-2 text-left
+              ${config.bg} ${config.border}
               ${isSelected ? 'ring-2 ring-offset-2 ring-offset-[var(--bg-primary)] ring-pink-500 scale-105' : ''}
               ${!isSelected && !isAllSelected ? 'opacity-50' : ''}
-              cursor-pointer hover:scale-105 active:scale-95 transition-all select-none
+              cursor-pointer hover:scale-105 active:scale-95 transition-all
             `}
           >
             <div className={`text-5xl font-bold ${config.text} mb-2`}>
@@ -88,7 +81,7 @@ export default function SeverityStats({ stats = {}, selectedSeverity, onSeverity
             <div className="text-sm font-medium text-[var(--text-secondary)]">
               {config.label[language]}
             </div>
-          </motion.div>
+          </button>
         );
       })}
     </div>
