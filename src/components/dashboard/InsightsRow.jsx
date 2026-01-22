@@ -1,6 +1,32 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, Tag, Zap } from 'lucide-react';
+import { AlertTriangle, Tag, Zap, Info } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+
+function Tooltip({ children, text }) {
+  const [show, setShow] = useState(false);
+
+  return (
+    <div className="relative inline-block">
+      <div
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+        onClick={() => setShow(!show)}
+        className="cursor-help"
+      >
+        {children}
+      </div>
+      {show && (
+        <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-[var(--text-primary)] bg-[var(--bg-card)] border border-[var(--border-default)] rounded-lg shadow-lg w-64 text-left">
+          {text}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1">
+            <div className="border-4 border-transparent border-t-[var(--border-default)]"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function InsightsRow({ stats = {}, topTags = [] }) {
   const { language } = useLanguage();
@@ -13,6 +39,9 @@ export default function InsightsRow({ stats = {}, topTags = [] }) {
       suffix: language === 'fi' ? 'lisätty KEV:iin' : 'added to KEV',
       color: 'text-red-400',
       bg: 'bg-red-500/10',
+      tooltip: language === 'fi'
+        ? 'CISA KEV (Known Exploited Vulnerabilities) on Yhdysvaltain kyberturvallisuusviraston ylläpitämä lista aktiivisesti hyväksikäytetyistä haavoittuvuuksista. Nämä tulee korjata välittömästi.'
+        : 'CISA KEV (Known Exploited Vulnerabilities) is a catalog maintained by the US Cybersecurity Agency of vulnerabilities that are actively being exploited in the wild. These require immediate patching.',
     },
     {
       icon: Tag,
@@ -30,6 +59,9 @@ export default function InsightsRow({ stats = {}, topTags = [] }) {
       suffix: language === 'fi' ? 'aktiivinen' : 'active',
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
+      tooltip: language === 'fi'
+        ? 'Aktiiviset hyökkäykset tarkoittaa haavoittuvuuksia, joita hyökkääjät käyttävät juuri nyt aktiivisesti. Näiden korjaaminen on erittäin kiireellistä.'
+        : 'Active Exploits are vulnerabilities that attackers are currently using in real attacks. Patching these is extremely urgent as exploitation is ongoing.',
     },
   ];
 
@@ -46,9 +78,14 @@ export default function InsightsRow({ stats = {}, topTags = [] }) {
           <div className={`p-3 rounded-lg ${insight.bg}`}>
             <insight.icon className={`w-6 h-6 ${insight.color}`} />
           </div>
-          <div>
-            <div className="text-xs text-[var(--text-muted)] uppercase tracking-wide mb-1">
+          <div className="flex-1">
+            <div className="flex items-center gap-1.5 text-xs text-[var(--text-muted)] uppercase tracking-wide mb-1">
               {insight.label}
+              {insight.tooltip && (
+                <Tooltip text={insight.tooltip}>
+                  <Info className="w-3.5 h-3.5 text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors" />
+                </Tooltip>
+              )}
             </div>
             {insight.isText ? (
               <div className={`text-sm font-medium ${insight.color}`}>
