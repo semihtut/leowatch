@@ -6,15 +6,12 @@ import DailySummary from '../components/dashboard/DailySummary';
 import SeverityStats from '../components/dashboard/SeverityStats';
 import InsightsRow from '../components/dashboard/InsightsRow';
 import FeaturedThreat from '../components/dashboard/FeaturedThreat';
-import SearchFilters from '../components/dashboard/SearchFilters';
 import BriefingGrid from '../components/briefing/BriefingGrid';
 
 export default function Dashboard() {
   const { briefings, loading, error, indexData } = useBriefings();
   const { t, language } = useLanguage();
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedSeverity, setSelectedSeverity] = useState('');
-  const [selectedVendor, setSelectedVendor] = useState('');
 
   // Get today's date
   const today = new Date().toISOString().split('T')[0];
@@ -26,26 +23,36 @@ export default function Dashboard() {
 
   // Calculate stats from today's briefings
   const stats = useMemo(() => {
+    // Debug logging
+    console.log('indexData:', indexData);
+    console.log('indexData.stats:', indexData?.stats);
+
     if (indexData?.stats) {
       return indexData.stats;
     }
-    // Fallback: calculate from briefings
-    const counts = todayBriefings.reduce((acc, b) => {
+    // Fallback: calculate from all briefings (not just today)
+    const allBriefings = indexData?.briefings || briefings || [];
+    const counts = allBriefings.reduce((acc, b) => {
       const severity = b.severity?.toLowerCase() || 'low';
       acc[severity] = (acc[severity] || 0) + 1;
       return acc;
     }, { critical: 0, high: 0, medium: 0, low: 0 });
+
+    // Count CISA KEV and active exploits from briefings
+    const cisaKev = allBriefings.filter(b =>
+      b.tags?.some(tag => tag.toLowerCase().includes('kev') || tag.toLowerCase().includes('cisa'))
+    ).length;
+
     return {
       ...counts,
-      total: todayBriefings.length,
-      cisaKev: 0,
-      activeExploits: 0,
+      total: allBriefings.length,
+      cisaKev: cisaKev || 0,
+      activeExploits: counts.critical || 0,
     };
-  }, [todayBriefings, indexData]);
+  }, [briefings, indexData]);
 
-  // Get top tags and vendors from index data or calculate
+  // Get top tags from index data or calculate
   const topTags = indexData?.topTags || [];
-  const topVendors = indexData?.topVendors || [];
 
   // Get featured briefing
   const featuredBriefing = useMemo(() => {
@@ -56,24 +63,17 @@ export default function Dashboard() {
     return todayBriefings.find(b => b.severity === 'Critical') || todayBriefings[0];
   }, [todayBriefings, indexData]);
 
-  // Filter briefings based on search and filters
+  // Filter briefings based on selected severity
   const filteredBriefings = useMemo(() => {
     return todayBriefings.filter(b => {
       // Exclude featured briefing from the grid
       if (featuredBriefing && b.id === featuredBriefing.id) return false;
 
       const matchesSeverity = !selectedSeverity || b.severity === selectedSeverity;
-      const matchesVendor = !selectedVendor ||
-        b.tags?.some(tag => tag.toLowerCase().includes(selectedVendor.toLowerCase()));
-      const matchesSearch = !searchQuery ||
-        b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        b.excerpt?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        b.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        b.cves?.some(cve => cve.toLowerCase().includes(searchQuery.toLowerCase()));
 
-      return matchesSeverity && matchesVendor && matchesSearch;
+      return matchesSeverity;
     });
-  }, [todayBriefings, featuredBriefing, selectedSeverity, selectedVendor, searchQuery]);
+  }, [todayBriefings, featuredBriefing, selectedSeverity]);
 
   if (loading) {
     return (
@@ -96,8 +96,12 @@ export default function Dashboard() {
       {/* 1. Daily Summary Header */}
       <DailySummary date={today} />
 
-      {/* 2. Severity Stats Row */}
-      <SeverityStats stats={stats} />
+      {/* 2. Severity Stats Row - Clickable */}
+      <SeverityStats
+        stats={stats}
+        selectedSeverity={selectedSeverity}
+        onSeverityClick={setSelectedSeverity}
+      />
 
       {/* 3. Insights Row */}
       <InsightsRow stats={stats} topTags={topTags} />
@@ -113,38 +117,33 @@ export default function Dashboard() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
       >
-        <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
-          {language === 'fi' ? 'Päivän tiedotteet' : "Today's Briefings"}
-        </h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+            {selectedSeverity
+              ? `${selectedSeverity} ${language === 'fi' ? 'Tiedotteet' : 'Briefings'}`
+              : (language === 'fi' ? 'Päivän tiedotteet' : "Today's Briefings")}
+          </h2>
+          {selectedSeverity && (
+            <button
+              onClick={() => setSelectedSeverity('')}
+              className="text-sm text-pink-400 hover:text-pink-300 transition-colors"
+            >
+              {language === 'fi' ? 'Näytä kaikki' : 'Show all'}
+            </button>
+          )}
+        </div>
 
         {filteredBriefings.length > 0 ? (
           <BriefingGrid briefings={filteredBriefings} title="" />
         ) : (
           <div className="glass-card p-12 text-center">
             <p className="text-[var(--text-muted)]">
-              {searchQuery || selectedSeverity || selectedVendor
+              {selectedSeverity
                 ? t('dashboard.noMatch')
                 : t('dashboard.noBriefings')}
             </p>
           </div>
         )}
-      </motion.div>
-
-      {/* 6. Search & Filters (at the bottom) */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-      >
-        <SearchFilters
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          selectedSeverity={selectedSeverity}
-          setSelectedSeverity={setSelectedSeverity}
-          selectedVendor={selectedVendor}
-          setSelectedVendor={setSelectedVendor}
-          vendors={topVendors}
-        />
       </motion.div>
     </div>
   );

@@ -8,11 +8,15 @@ export function useBriefings() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/data/index.json');
+        // Add cache-busting timestamp to avoid stale data
+        const response = await fetch(`/data/index.json?t=${Date.now()}`);
         if (!response.ok) throw new Error('Failed to fetch briefings');
         const json = await response.json();
+        console.log('Fetched index.json:', json);
+        console.log('Stats from index.json:', json?.stats);
         setData(json);
       } catch (err) {
+        console.error('Error fetching index.json:', err);
         setError(err.message);
       } finally {
         setLoading(false);
