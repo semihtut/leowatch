@@ -198,10 +198,10 @@ export default function ThreatPulse() {
 
       <div className="grid lg:grid-cols-3 gap-4">
         {/* Calendar */}
-        <div className="lg:col-span-2 glass-card p-3">
+        <div className="lg:col-span-2 glass-card p-4">
           {/* Calendar Header */}
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-base font-semibold text-[var(--text-primary)]">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-lg font-semibold text-[var(--text-primary)]">
               {MONTHS[currentDate.getMonth()]} {currentDate.getFullYear()}
             </h2>
             <div className="flex items-center gap-1">
@@ -227,9 +227,9 @@ export default function ThreatPulse() {
           </div>
 
           {/* Day Headers */}
-          <div className="grid grid-cols-7 mb-0.5">
+          <div className="grid grid-cols-7 mb-1">
             {DAYS.map((day) => (
-              <div key={day} className="text-center text-[10px] font-medium text-[var(--text-muted)] py-0.5">
+              <div key={day} className="text-center text-xs font-medium text-[var(--text-muted)] py-1">
                 {day}
               </div>
             ))}
@@ -245,9 +245,8 @@ export default function ThreatPulse() {
                 <button
                   key={index}
                   onClick={() => setSelectedDate(day.date)}
-                  style={{ height: '24px' }}
                   className={`
-                    relative rounded transition-all text-[11px]
+                    relative rounded transition-all text-sm py-2
                     ${day.isCurrentMonth ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)]'}
                     ${isToday(day.date) ? 'ring-1 ring-pink-500' : ''}
                     ${isSelected(day.date) ? 'bg-pink-500/20' : 'hover:bg-[var(--bg-card-hover)]'}
@@ -256,8 +255,8 @@ export default function ThreatPulse() {
                 >
                   <span className="block">{day.date.getDate()}</span>
                   {count > 0 && (
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-                      <span className={`block w-1 h-1 rounded-full ${dotColor}`} />
+                    <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
+                      <span className={`block w-1.5 h-1.5 rounded-full ${dotColor}`} />
                     </div>
                   )}
                 </button>
@@ -266,17 +265,17 @@ export default function ThreatPulse() {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center gap-3 mt-2 pt-2 border-t border-[var(--border-default)]">
-            <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+          <div className="flex items-center gap-4 mt-3 pt-3 border-t border-[var(--border-default)]">
+            <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]">
+              <span className="w-2 h-2 rounded-full bg-red-500"></span>
               <span>{t('threatPulse.critical')}</span>
             </div>
-            <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
-              <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+            <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]">
+              <span className="w-2 h-2 rounded-full bg-orange-500"></span>
               <span>{t('threatPulse.high')}</span>
             </div>
-            <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+            <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]">
+              <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
               <span>{t('threatPulse.medLow')}</span>
             </div>
           </div>
