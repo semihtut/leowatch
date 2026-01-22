@@ -8,7 +8,7 @@ const navigation = [
   { name: 'Threat Pulse', href: '/pulse', icon: Activity },
   { name: 'Favorites', href: '/favorites', icon: Heart },
   { name: 'Archive', href: '/archive', icon: Archive },
-  { name: 'Support Project', href: 'https://ko-fi.com/threatbrief', icon: Coffee, external: true },
+  { name: 'Support Project', href: 'https://ko-fi.com/leopark', icon: Coffee, external: true },
 ];
 
 export default function Sidebar({ onClose }) {

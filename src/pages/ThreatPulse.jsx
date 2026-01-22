@@ -157,28 +157,18 @@ export default function ThreatPulse() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-[var(--text-primary)] flex items-center gap-3">
-          <Activity className="w-8 h-8 text-pink-500" />
-          Threat Pulse
-        </h1>
-        <p className="mt-2 text-[var(--text-secondary)]">
-          Track the heartbeat of cyber threats
-        </p>
-      </div>
-
-      {/* Severity Filter */}
-      <div className="glass-card p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <Filter className="w-4 h-4 text-[var(--text-muted)]" />
-          <span className="text-sm text-[var(--text-muted)]">Filter by severity</span>
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <div className="flex items-center gap-2">
+          <Activity className="w-6 h-6 text-pink-500" />
+          <h1 className="text-2xl font-bold text-[var(--text-primary)]">Threat Pulse</h1>
         </div>
-        <div className="flex flex-wrap gap-2">
+        {/* Severity Filter - inline */}
+        <div className="flex flex-wrap gap-1.5">
           <button
             onClick={() => setSelectedSeverity(null)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
               !selectedSeverity
                 ? 'bg-pink-500/20 text-pink-400 border-pink-500/50'
                 : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-pink-500/30'
@@ -190,7 +180,7 @@ export default function ThreatPulse() {
             <button
               key={severity}
               onClick={() => setSelectedSeverity(selectedSeverity === severity ? null : severity)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
                 selectedSeverity === severity
                   ? severityColors[severity]
                   : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-[var(--border-accent)]'
@@ -204,47 +194,47 @@ export default function ThreatPulse() {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-3 gap-4">
         {/* Calendar */}
-        <div className="lg:col-span-2 glass-card p-6">
+        <div className="lg:col-span-2 glass-card p-3">
           {/* Calendar Header */}
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-[var(--text-primary)]">
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="text-base font-semibold text-[var(--text-primary)]">
               {MONTHS[currentDate.getMonth()]} {currentDate.getFullYear()}
             </h2>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <button
                 onClick={goToToday}
-                className="px-3 py-1.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded-lg transition-colors"
+                className="px-2 py-1 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded transition-colors"
               >
                 Today
               </button>
               <button
                 onClick={() => navigateMonth(-1)}
-                className="p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded-lg transition-colors"
+                className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded transition-colors"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={() => navigateMonth(1)}
-                className="p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded-lg transition-colors"
+                className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded transition-colors"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
           {/* Day Headers */}
-          <div className="grid grid-cols-7 gap-1 mb-2">
+          <div className="grid grid-cols-7 mb-0.5">
             {DAYS.map((day) => (
-              <div key={day} className="text-center text-sm font-medium text-[var(--text-muted)] py-2">
+              <div key={day} className="text-center text-[10px] font-medium text-[var(--text-muted)] py-0.5">
                 {day}
               </div>
             ))}
           </div>
 
           {/* Calendar Grid */}
-          <div className="grid grid-cols-7 gap-1">
+          <div className="grid grid-cols-7">
             {calendarDays.map((day, index) => {
               const count = getBriefingCount(day.date);
               const dotColor = getDotColor(day.date);
@@ -253,21 +243,19 @@ export default function ThreatPulse() {
                 <button
                   key={index}
                   onClick={() => setSelectedDate(day.date)}
+                  style={{ height: '24px' }}
                   className={`
-                    relative aspect-square p-1 rounded-lg transition-all text-sm
+                    relative rounded transition-all text-[11px]
                     ${day.isCurrentMonth ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)]'}
-                    ${isToday(day.date) ? 'ring-2 ring-pink-500' : ''}
+                    ${isToday(day.date) ? 'ring-1 ring-pink-500' : ''}
                     ${isSelected(day.date) ? 'bg-pink-500/20' : 'hover:bg-[var(--bg-card-hover)]'}
                     ${count > 0 ? 'font-medium' : ''}
                   `}
                 >
                   <span className="block">{day.date.getDate()}</span>
                   {count > 0 && (
-                    <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-0.5 items-center">
-                      <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`} />
-                      {count > 1 && (
-                        <span className="text-[10px] text-[var(--text-secondary)]">+{count - 1}</span>
-                      )}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+                      <span className={`block w-1 h-1 rounded-full ${dotColor}`} />
                     </div>
                   )}
                 </button>
@@ -276,26 +264,26 @@ export default function ThreatPulse() {
           </div>
 
           {/* Legend */}
-          <div className="flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-[var(--border-default)]">
-            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-              <span className="w-2 h-2 rounded-full bg-red-500"></span>
+          <div className="flex items-center gap-3 mt-2 pt-2 border-t border-[var(--border-default)]">
+            <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
               <span>Critical</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-              <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+            <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
               <span>High</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-              <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
-              <span>Medium/Low</span>
+            <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+              <span>Med/Low</span>
             </div>
           </div>
         </div>
 
         {/* Selected Day Briefings */}
-        <div className="glass-card p-6">
-          <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
-            <FileText className="w-5 h-5 text-pink-500" />
+        <div className="glass-card p-3">
+          <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+            <FileText className="w-4 h-4 text-pink-500" />
             {selectedDate ? (
               <span>
                 {selectedDate.toLocaleDateString('en-US', {
@@ -310,38 +298,38 @@ export default function ThreatPulse() {
           </h3>
 
           {!selectedDate ? (
-            <p className="text-[var(--text-muted)] text-sm">
-              Click on a date to view briefings published that day.
+            <p className="text-[var(--text-muted)] text-xs">
+              Click on a date to view briefings.
             </p>
           ) : selectedBriefings.length === 0 ? (
-            <div className="text-center py-8">
-              <Calendar className="w-12 h-12 mx-auto text-[var(--text-muted)] mb-3" />
-              <p className="text-[var(--text-muted)] text-sm">
+            <div className="text-center py-4">
+              <Calendar className="w-8 h-8 mx-auto text-[var(--text-muted)] mb-2" />
+              <p className="text-[var(--text-muted)] text-xs">
                 {selectedSeverity
-                  ? `No ${selectedSeverity.toLowerCase()} briefings on this date.`
+                  ? `No ${selectedSeverity.toLowerCase()} briefings.`
                   : 'No briefings on this date.'
                 }
               </p>
             </div>
           ) : (
-            <div className="space-y-3 max-h-[500px] overflow-y-auto">
+            <div className="space-y-2 max-h-[400px] overflow-y-auto">
               {selectedBriefings.map((briefing) => (
                 <Link
                   key={briefing.id}
                   to={`/briefing/${briefing.id}`}
-                  className="block p-4 bg-[var(--bg-secondary)] rounded-lg border border-[var(--border-default)] hover:border-pink-500/50 transition-colors group"
+                  className="block p-3 bg-[var(--bg-secondary)] rounded-lg border border-[var(--border-default)] hover:border-pink-500/50 transition-colors group"
                 >
-                  <div className="flex items-start justify-between gap-2 mb-2">
+                  <div className="flex items-start justify-between gap-2 mb-1">
                     <SeverityBadge level={briefing.severity} size="sm" />
                     {briefing.severity === 'Critical' && (
-                      <AlertTriangle className="w-4 h-4 text-red-500" />
+                      <AlertTriangle className="w-3 h-3 text-red-500" />
                     )}
                   </div>
-                  <h4 className="font-medium text-[var(--text-primary)] group-hover:text-pink-400 transition-colors line-clamp-2">
+                  <h4 className="text-sm font-medium text-[var(--text-primary)] group-hover:text-pink-400 transition-colors line-clamp-2">
                     {briefing.title}
                   </h4>
                   {briefing.cves && briefing.cves.length > 0 && (
-                    <p className="text-cyan-400 text-xs font-mono mt-2">
+                    <p className="text-cyan-400 text-[10px] font-mono mt-1">
                       {briefing.cves.slice(0, 2).join(', ')}
                       {briefing.cves.length > 2 && ` +${briefing.cves.length - 2}`}
                     </p>

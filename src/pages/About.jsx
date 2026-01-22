@@ -156,7 +156,7 @@ export default function About() {
           to help cover hosting costs and keep the project running.
         </p>
         <motion.a
-          href="https://ko-fi.com/threatbrief"
+          href="https://ko-fi.com/leopark"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-cyan-500 text-white font-semibold hover:opacity-90 transition-opacity"
