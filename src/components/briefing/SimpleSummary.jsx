@@ -1,9 +1,9 @@
 import { HelpCircle, Users, Crosshair, CheckCircle, AlertTriangle } from 'lucide-react';
+import AttackFlow from './AttackFlow';
 
 const sections = [
   { key: 'what_happened', title: 'What Happened?', icon: HelpCircle, color: 'text-blue-400', bg: 'bg-blue-500/20' },
   { key: 'who_is_affected', title: 'Who Is Affected?', icon: Users, color: 'text-orange-400', bg: 'bg-orange-500/20' },
-  { key: 'what_attackers_do', title: 'What Attackers Do', icon: Crosshair, color: 'text-red-400', bg: 'bg-red-500/20' },
   { key: 'why_this_is_serious', title: 'Why This Is Serious', icon: AlertTriangle, color: 'text-yellow-400', bg: 'bg-yellow-500/20' },
 ];
 
@@ -31,6 +31,20 @@ export default function SimpleSummary({ summary }) {
             </div>
           </div>
         ))}
+
+        {/* What Attackers Do - Visual Attack Flow */}
+        {summary.what_attackers_do && (
+          <div className="glass-card p-5 border-red-500/20">
+            <div className="flex items-start gap-4">
+              <div className="p-2 rounded-lg bg-red-500/20 text-red-400">
+                <Crosshair className="w-5 h-5" />
+              </div>
+              <div className="flex-1">
+                <AttackFlow attackText={summary.what_attackers_do} />
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* What You Should Do - Special Styling */}
         {summary.what_you_should_do && (
