@@ -198,45 +198,45 @@ export default function ThreatPulse() {
 
       <div className="grid lg:grid-cols-3 gap-4">
         {/* Calendar */}
-        <div className="lg:col-span-2 glass-card p-4">
+        <div className="lg:col-span-2 glass-card p-6">
           {/* Calendar Header */}
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="text-lg font-semibold text-[var(--text-primary)]">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)]">
               {MONTHS[currentDate.getMonth()]} {currentDate.getFullYear()}
             </h2>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2">
               <button
                 onClick={goToToday}
-                className="px-2 py-1 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded transition-colors"
+                className="px-3 py-1.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded-lg transition-colors"
               >
                 {t('threatPulse.today')}
               </button>
               <button
                 onClick={() => navigateMonth(-1)}
-                className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded transition-colors"
+                className="p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded-lg transition-colors"
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={() => navigateMonth(1)}
-                className="p-1.5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded transition-colors"
+                className="p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded-lg transition-colors"
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-5 h-5" />
               </button>
             </div>
           </div>
 
           {/* Day Headers */}
-          <div className="grid grid-cols-7 mb-1">
+          <div className="grid grid-cols-7 mb-2">
             {DAYS.map((day) => (
-              <div key={day} className="text-center text-xs font-medium text-[var(--text-muted)] py-1">
+              <div key={day} className="text-center text-sm font-medium text-[var(--text-muted)] py-2">
                 {day}
               </div>
             ))}
           </div>
 
           {/* Calendar Grid */}
-          <div className="grid grid-cols-7">
+          <div className="grid grid-cols-7 gap-1">
             {calendarDays.map((day, index) => {
               const count = getBriefingCount(day.date);
               const dotColor = getDotColor(day.date);
@@ -246,17 +246,17 @@ export default function ThreatPulse() {
                   key={index}
                   onClick={() => setSelectedDate(day.date)}
                   className={`
-                    relative rounded transition-all text-sm py-2
+                    relative rounded-lg transition-all text-base py-3
                     ${day.isCurrentMonth ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)]'}
-                    ${isToday(day.date) ? 'ring-1 ring-pink-500' : ''}
+                    ${isToday(day.date) ? 'ring-2 ring-pink-500' : ''}
                     ${isSelected(day.date) ? 'bg-pink-500/20' : 'hover:bg-[var(--bg-card-hover)]'}
-                    ${count > 0 ? 'font-medium' : ''}
+                    ${count > 0 ? 'font-semibold' : ''}
                   `}
                 >
                   <span className="block">{day.date.getDate()}</span>
                   {count > 0 && (
-                    <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
-                      <span className={`block w-1.5 h-1.5 rounded-full ${dotColor}`} />
+                    <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2">
+                      <span className={`block w-2 h-2 rounded-full ${dotColor}`} />
                     </div>
                   )}
                 </button>
@@ -265,17 +265,17 @@ export default function ThreatPulse() {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center gap-4 mt-3 pt-3 border-t border-[var(--border-default)]">
-            <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]">
-              <span className="w-2 h-2 rounded-full bg-red-500"></span>
+          <div className="flex items-center gap-6 mt-4 pt-4 border-t border-[var(--border-default)]">
+            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+              <span className="w-3 h-3 rounded-full bg-red-500"></span>
               <span>{t('threatPulse.critical')}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]">
-              <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+              <span className="w-3 h-3 rounded-full bg-orange-500"></span>
               <span>{t('threatPulse.high')}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]">
-              <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+              <span className="w-3 h-3 rounded-full bg-cyan-500"></span>
               <span>{t('threatPulse.medLow')}</span>
             </div>
           </div>
