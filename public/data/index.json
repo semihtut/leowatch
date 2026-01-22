@@ -1,31 +1,54 @@
 {
-  "lastUpdated": "2026-01-22T19:15:00.000Z",
+  "lastUpdated": "2026-01-22T20:30:00.000Z",
   "date": "2026-01-22",
   "stats": {
-    "total": 4,
-    "critical": 2,
+    "total": 5,
+    "critical": 3,
     "high": 2,
     "medium": 0,
     "low": 0,
     "cisaKev": 2,
-    "activeExploits": 3,
-    "totalSources": 48
+    "activeExploits": 4,
+    "totalSources": 62
   },
   "topTags": [
     "cloud",
     "RCE",
-    "ransomware",
     "kubernetes",
+    "ransomware",
     "azure"
   ],
   "topVendors": [
+    "Kubernetes",
     "React",
     "Microsoft",
     "MongoDB",
     "n8n"
   ],
-  "featuredBriefing": "TB-2026-01-22-016",
+  "featuredBriefing": "TB-2026-01-22-018",
   "briefings": [
+    {
+      "id": "TB-2026-01-22-018",
+      "title": "IngressNightmare: Critical Kubernetes RCE Chain Exposing 43% of Cloud Environments (CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-01-22",
+      "cves": [
+        "CVE-2025-1974",
+        "CVE-2025-1097",
+        "CVE-2025-1098",
+        "CVE-2025-24514"
+      ],
+      "tags": [
+        "kubernetes",
+        "ingress-nginx",
+        "RCE",
+        "cloud",
+        "container",
+        "cluster-takeover"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A series of critical vulnerabilities dubbed IngressNightmare were discovered in the Ingress NGINX Controller for Kubernetes. The most severe, CVE-2025-1974 (CVSS 9.8), allows unauthenticated remote..."
+    },
     {
       "id": "TB-2026-01-22-017",
       "title": "Storm-0501: Cloud-Native Ransomware Targeting Hybrid Azure Environments",

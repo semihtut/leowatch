@@ -1,0 +1,298 @@
+{
+  "briefing_id": "TB-2026-01-22-018",
+  "title": "IngressNightmare: Critical Kubernetes RCE Chain Exposing 43% of Cloud Environments (CVSS 9.8)",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2025-1974",
+    "CVE-2025-1097",
+    "CVE-2025-1098",
+    "CVE-2025-24514"
+  ],
+  "tags": [
+    "kubernetes",
+    "ingress-nginx",
+    "RCE",
+    "cloud",
+    "container",
+    "admission-controller",
+    "cluster-takeover"
+  ],
+  "affected_products": [
+    "Ingress NGINX Controller < 1.11.5",
+    "Ingress NGINX Controller 1.12.0",
+    "Kubernetes clusters using ingress-nginx",
+    "Self-managed Kubernetes deployments",
+    "Any cloud provider with custom ingress-nginx installations"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Wiz Research (Original Discovery)",
+      "url": "https://www.wiz.io/blog/ingress-nginx-kubernetes-vulnerabilities",
+      "date": "2025-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "Kubernetes Official Blog",
+      "url": "https://kubernetes.io/blog/2025/03/24/ingress-nginx-cve-2025-1974/",
+      "date": "2025-03-24",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - NIST",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1974",
+      "date": "2025-03-24",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable",
+      "url": "https://www.tenable.com/blog/cve-2025-1974-frequently-asked-questions-about-ingressnightmare-kubernetes",
+      "date": "2025-03-25",
+      "type": "Research"
+    },
+    {
+      "name": "Datadog Security Labs",
+      "url": "https://securitylabs.datadoghq.com/articles/ingress-nightmare-vulnerabilities-overview-and-remediation/",
+      "date": "2025-03-26",
+      "type": "Research"
+    },
+    {
+      "name": "Fortinet FortiGuard Labs",
+      "url": "https://www.fortinet.com/blog/threat-research/ingressnightmare-understanding-cve-2025-1974-in-kubernetes-ingress-nginx",
+      "date": "2025-03-27",
+      "type": "Research"
+    },
+    {
+      "name": "Sysdig",
+      "url": "https://www.sysdig.com/blog/detecting-and-mitigating-ingressnightmare-cve-2025-1974",
+      "date": "2025-03-25",
+      "type": "Research"
+    },
+    {
+      "name": "Aqua Security",
+      "url": "https://www.aquasec.com/blog/ingress-nginx-vulnerabilities-what-you-need-to-know/",
+      "date": "2025-03-26",
+      "type": "Research"
+    },
+    {
+      "name": "Palo Alto Unit42",
+      "url": "https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-17-IngressNightmare-Scans-and-Testing.md",
+      "date": "2025-04-17",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf",
+      "url": "https://arcticwolf.com/resources/blog/cve-2025-1974/",
+      "date": "2025-03-25",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime",
+      "url": "https://socprime.com/blog/cve-2025-1974-aka-ingress-nightmare/",
+      "date": "2025-03-26",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2025/03/critical-ingress-nginx-controller.html",
+      "date": "2025-03-25",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading",
+      "url": "https://www.darkreading.com/application-security/critical-ingressnightmare-vulns-kubernetes-environments",
+      "date": "2025-03-25",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online",
+      "url": "https://www.csoonline.com/article/3854089/critical-rce-flaws-put-kubernetes-clusters-at-risk-of-takeover.html",
+      "date": "2025-03-26",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-12-31",
+      "event": "Wiz Research reports CVE-2025-1974 and CVE-2025-24514 to Kubernetes security team"
+    },
+    {
+      "date": "2025-02-20",
+      "event": "Kubernetes removes NGINX configuration validation from admission controller"
+    },
+    {
+      "date": "2025-03-10",
+      "event": "Kubernetes sends embargo notifications regarding the five vulnerabilities"
+    },
+    {
+      "date": "2025-03-24",
+      "event": "Public disclosure and patched versions (1.12.1, 1.11.5) released"
+    },
+    {
+      "date": "2025-04-17",
+      "event": "Unit42 reports active scanning and exploitation attempts in the wild"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A series of critical vulnerabilities dubbed IngressNightmare were discovered in the Ingress NGINX Controller for Kubernetes. The most severe, CVE-2025-1974 (CVSS 9.8), allows unauthenticated remote code execution through the admission webhook. When chained with other annotation injection flaws, attackers can achieve complete cluster takeover without any authentication.",
+    "who_is_affected": "Over 40% of Kubernetes administrators use ingress-nginx, making this one of the most impactful Kubernetes vulnerabilities to date. Research identified over 6,500 clusters including Fortune 500 companies with publicly exposed vulnerable admission controllers. Any organization running Ingress NGINX Controller versions below 1.11.5 or version 1.12.0 is at risk.",
+    "what_attackers_do": "Step 1: Attacker identifies a vulnerable Ingress NGINX Controller with exposed admission webhook. Step 2: Sends a malicious Ingress object containing crafted NGINX configuration directives. Step 3: The admission controller processes and validates the configuration using the NGINX binary. Step 4: Injected directives execute arbitrary code during the validation phase. Step 5: Attacker gains access to the controller's service account which by default can read all secrets cluster-wide. Step 6: Exfiltrates secrets (API keys, credentials, certificates) leading to complete cluster compromise.",
+    "what_you_should_do": [
+      "Immediately upgrade to Ingress NGINX Controller version 1.12.1 or 1.11.5",
+      "Lock down network access to the admission webhook - only allow Kubernetes API Server",
+      "If unable to upgrade, disable the ValidatingWebhookConfiguration named ingress-nginx-admission",
+      "Reduce the controller's service account privileges to minimum required",
+      "Review cluster logs for suspicious admission webhook requests",
+      "Rotate all secrets if you were running vulnerable versions exposed to untrusted networks"
+    ],
+    "why_this_is_serious": "Ingress NGINX Controller is a core Kubernetes component with over 18,000 GitHub stars, serving as the gateway between external traffic and internal services. The default installation grants the controller access to ALL secrets across ALL namespaces. Successful exploitation gives attackers the keys to the entire kingdom - credentials, API keys, certificates, and the ability to deploy malicious workloads. Active exploitation attempts have been observed in the wild."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers target exposed Ingress NGINX admission webhook endpoints"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Arbitrary code execution through malicious NGINX configuration directives"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1053.007",
+        "technique_name": "Container Orchestration Job",
+        "description": "Deploying malicious workloads using stolen credentials"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.007",
+        "technique_name": "Container API",
+        "description": "Accessing Kubernetes secrets using the controller's service account"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1550.001",
+        "technique_name": "Application Access Token",
+        "description": "Using stolen service account tokens to access other cluster resources"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1530",
+        "technique_name": "Data from Cloud Storage",
+        "description": "Exfiltrating secrets and sensitive data from Kubernetes cluster"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for suspicious HTTP requests to the ingress-nginx admission webhook endpoint. Look for unusual Ingress objects with malicious annotation patterns and unexpected process spawning from the controller pod.",
+    "log_sources": [
+      {
+        "source": "Kubernetes Audit Logs",
+        "description": "Ingress object creation/modification events and admission webhook calls",
+        "priority": "Critical"
+      },
+      {
+        "source": "Ingress NGINX Controller Logs",
+        "description": "Configuration validation events and error messages",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Logs",
+        "description": "HTTP traffic to admission webhook endpoint (typically port 8443)",
+        "priority": "High"
+      },
+      {
+        "source": "Container Runtime Logs",
+        "description": "Process execution events from ingress-nginx pods",
+        "priority": "High"
+      },
+      {
+        "source": "Kubernetes API Server Logs",
+        "description": "Secret access patterns from ingress controller service account",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Malicious annotation patterns in Ingress objects",
+        "description": "Ingress objects with suspicious nginx.ingress.kubernetes.io annotations containing code injection",
+        "log_field": "spec.metadata.annotations containing shell commands or lua_code",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual admission webhook requests",
+        "description": "Admission webhook requests from non-API-server sources",
+        "log_field": "Source IP not matching kube-apiserver",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected secret access",
+        "description": "Ingress controller service account accessing secrets in unusual namespaces",
+        "log_field": "user.username=system:serviceaccount:ingress-nginx:* accessing secrets",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Process spawning from controller",
+        "description": "Unexpected child processes (sh, bash, curl, wget) from nginx-ingress-controller",
+        "log_field": "Process creation events from ingress-nginx container",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Scanning activity",
+        "description": "Repeated requests to /healthz or webhook endpoints from external IPs",
+        "log_field": "High volume requests to admission webhook from single IP",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Check Ingress NGINX Controller Version",
+      "description": "Identify the current version of your ingress-nginx deployment",
+      "command": "kubectl get deployment -n ingress-nginx ingress-nginx-controller -o jsonpath='{.spec.template.spec.containers[0].image}'"
+    },
+    {
+      "priority": 2,
+      "action": "Upgrade to Patched Version",
+      "description": "Upgrade to version 1.12.1 or 1.11.5 immediately",
+      "command": "helm upgrade ingress-nginx ingress-nginx/ingress-nginx --version 4.12.1 -n ingress-nginx"
+    },
+    {
+      "priority": 3,
+      "action": "Restrict Webhook Access (Temporary Mitigation)",
+      "description": "If unable to upgrade, disable the admission webhook",
+      "command": "kubectl delete validatingwebhookconfiguration ingress-nginx-admission"
+    },
+    {
+      "priority": 4,
+      "action": "Check for Exposed Admission Controller",
+      "description": "Verify the admission webhook is not exposed externally",
+      "command": "kubectl get svc -n ingress-nginx ingress-nginx-controller-admission -o yaml"
+    },
+    {
+      "priority": 5,
+      "action": "Review Recent Ingress Objects",
+      "description": "Check for suspicious Ingress objects created recently",
+      "command": "kubectl get ingress --all-namespaces -o json | jq '.items[] | select(.metadata.annotations | keys[] | contains(\"nginx\"))'"
+    },
+    {
+      "priority": 6,
+      "action": "Audit Secret Access",
+      "description": "Review Kubernetes audit logs for unusual secret access by ingress controller",
+      "command": null
+    }
+  ]
+}
