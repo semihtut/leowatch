@@ -133,7 +133,7 @@
   ],
   "simple_summary": {
     "what_happened": "A critical HeartBleed-like vulnerability has been discovered in MongoDB database - dubbed MongoBleed. This flaw allows attackers to steal sensitive data (passwords, API keys, session tokens) from MongoDB server memory without authentication. The vulnerability stems from a bug in MongoDB's zlib compression feature.",
-    "who_is_affected": "All organizations running self-hosted MongoDB are at risk. According to Wiz research, 42% of cloud environments have vulnerable MongoDB instances. Censys data shows 87,000+ vulnerable MongoDB servers exposed to the internet. MongoDB Atlas users have been automatically patched and are safe.",
+    "who_is_affected": "All organizations running self-hosted MongoDB are at risk. Approximately 42% of cloud environments have vulnerable MongoDB instances, and there are 87,000+ vulnerable MongoDB servers exposed to the internet. MongoDB Atlas users have been automatically patched and are safe.",
     "what_attackers_do": "Step 1: Attacker locates internet-exposed MongoDB server (port 27017). Step 2: Sends specially crafted OP_COMPRESSED messages. Step 3: Leaks random data chunks from MongoDB server memory. Step 4: Establishes thousands of connections to harvest more data. Step 5: Extracts passwords, API keys, and session tokens. Step 6: Uses stolen credentials for unauthorized system access.",
     "what_you_should_do": [
       "Immediately upgrade MongoDB to: 8.2.3, 8.0.17, 7.0.28, 6.0.27, 5.0.32, or 4.4.30",

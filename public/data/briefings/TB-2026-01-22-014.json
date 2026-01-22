@@ -140,7 +140,7 @@
   ],
   "simple_summary": {
     "what_happened": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. n8n is a Zapier-like tool that automates workflows by connecting different applications. The discovered flaw allows attackers to gain full server control without any authentication.",
-    "who_is_affected": "All organizations using n8n are at risk, especially those running self-hosted instances. According to Censys data, there are 26,512 exposed n8n servers worldwide - 7,079 in the US and 4,280 in Germany. If you're running n8n exposed to the internet, immediate action is required.",
+    "who_is_affected": "All organizations using n8n are at risk, especially those running self-hosted instances. There are 26,512 exposed n8n servers worldwide - 7,079 in the US and 4,280 in Germany. If you're running n8n exposed to the internet, immediate action is required.",
     "what_attackers_do": "Step 1: Attacker sends a specially crafted HTTP request to n8n's webhook endpoint. Step 2: Bypasses security controls by manipulating Content-Type header. Step 3: Reads sensitive files on the server (database, credential files). Step 4: Steals admin passwords and encryption keys. Step 5: Creates forged session cookies to log in as admin. Step 6: Uses Execute Command feature to run arbitrary commands - full server control.",
     "what_you_should_do": [
       "Immediately upgrade n8n to version 1.121.0 or higher (latest: 1.123.10, 2.1.5, 2.2.4, 2.3.0)",
