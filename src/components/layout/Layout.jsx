@@ -45,7 +45,7 @@ export default function Layout() {
             >
               <Menu className="w-6 h-6" />
             </button>
-            <span className="text-lg font-semibold text-[var(--text-primary)]">ThreatBrief</span>
+            <span className="text-lg font-semibold text-[var(--text-primary)]">Intelleo</span>
           </div>
         </header>
 

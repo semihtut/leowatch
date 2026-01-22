@@ -12,7 +12,7 @@ export default function Footer() {
           <span>for the security community</span>
         </div>
         <div className="flex items-center gap-4">
-          <span>&copy; {currentYear} ThreatBrief</span>
+          <span>&copy; {currentYear} Intelleo</span>
           <span className="hidden md:inline">|</span>
           <span className="text-[var(--text-secondary)]">100% Free & Open</span>
         </div>

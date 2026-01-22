@@ -6,6 +6,10 @@ import BriefingGrid from '../components/briefing/BriefingGrid';
 export default function Dashboard() {
   const { briefings, stats, loading, error } = useBriefings();
 
+  // Filter to show only today's briefings
+  const today = new Date().toISOString().split('T')[0];
+  const todayBriefings = briefings.filter(b => b.date === today);
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -26,7 +30,7 @@ export default function Dashboard() {
     <div className="space-y-8">
       <WelcomeHeader />
       <StatsRow stats={stats} />
-      <BriefingGrid briefings={briefings} title="Recent Briefings" />
+      <BriefingGrid briefings={todayBriefings} title="Today's Briefings" />
     </div>
   );
 }

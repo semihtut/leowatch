@@ -24,7 +24,7 @@ export default function Sidebar({ onClose }) {
               <Shield className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-[var(--text-primary)]">ThreatBrief</h1>
+              <h1 className="text-lg font-bold text-[var(--text-primary)]">Intelleo</h1>
               <p className="text-xs text-[var(--text-muted)]">Security Intelligence</p>
             </div>
           </NavLink>

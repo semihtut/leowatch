@@ -39,7 +39,7 @@ export default function About() {
           <Shield className="w-12 h-12 text-pink-500" />
         </div>
         <h1 className="text-4xl font-bold text-[var(--text-primary)] mb-4">
-          About ThreatBrief
+          About Intelleo
         </h1>
         <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
           Making cybersecurity intelligence accessible to everyone, completely free.
@@ -94,7 +94,7 @@ export default function About() {
       >
         <Card className="p-6">
           <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
-            How ThreatBrief Works
+            How Intelleo Works
           </h2>
           <div className="space-y-4 text-[var(--text-secondary)]">
             <p>
@@ -128,7 +128,7 @@ export default function About() {
             <div>
               <h3 className="font-semibold text-[var(--text-primary)] mb-2">Disclaimer</h3>
               <p className="text-sm text-[var(--text-secondary)]">
-                ThreatBrief is provided for informational purposes only. This is not professional
+                Intelleo is provided for informational purposes only. This is not professional
                 security advice. Always consult with qualified security professionals for your
                 specific environment. We are not responsible for actions taken based on our
                 content.
@@ -152,7 +152,7 @@ export default function About() {
           Support This Project
         </h2>
         <p className="text-[var(--text-secondary)] mb-6 max-w-lg mx-auto">
-          ThreatBrief will always be free. If you find it valuable, consider buying us a coffee
+          Intelleo will always be free. If you find it valuable, consider buying us a coffee
           to help cover hosting costs and keep the project running.
         </p>
         <motion.a
