@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   ArrowLeft, Calendar, AlertTriangle, Shield, ExternalLink, Heart,
-  FileText, Search, Code, BookOpen
+  FileText, Search, Code, BookOpen, Globe
 } from 'lucide-react';
 import { useBriefing } from '../hooks/useBriefings';
 import { useFavorites } from '../hooks/useFavorites';
@@ -16,11 +16,30 @@ import Timeline from '../components/briefing/Timeline';
 import SourceList from '../components/briefing/SourceList';
 
 const tabs = [
-  { id: 'overview', label: 'Overview', icon: FileText },
-  { id: 'detection', label: 'Detection & Response', icon: Search },
-  { id: 'technical', label: 'Technical', icon: Code },
-  { id: 'sources', label: 'Sources', icon: BookOpen },
+  { id: 'overview', label: 'Overview', icon: FileText, color: 'pink' },
+  { id: 'detection', label: 'Detection & Response', icon: Search, color: 'orange' },
+  { id: 'technical', label: 'Technical', icon: Code, color: 'cyan' },
+  { id: 'sources', label: 'Sources', icon: BookOpen, color: 'green' },
 ];
+
+const tabColors = {
+  pink: {
+    active: 'bg-pink-500/20 text-pink-400 border-pink-500',
+    inactive: 'hover:bg-pink-500/10 hover:text-pink-400',
+  },
+  orange: {
+    active: 'bg-orange-500/20 text-orange-400 border-orange-500',
+    inactive: 'hover:bg-orange-500/10 hover:text-orange-400',
+  },
+  cyan: {
+    active: 'bg-cyan-500/20 text-cyan-400 border-cyan-500',
+    inactive: 'hover:bg-cyan-500/10 hover:text-cyan-400',
+  },
+  green: {
+    active: 'bg-green-500/20 text-green-400 border-green-500',
+    inactive: 'hover:bg-green-500/10 hover:text-green-400',
+  },
+};
 
 export default function BriefingPage() {
   const { id } = useParams();
@@ -145,20 +164,22 @@ export default function BriefingPage() {
       </div>
 
       {/* Tab Navigation */}
-      <div className="glass-card p-1.5">
-        <div className="flex flex-wrap gap-1">
+      <div className="glass-card p-2 border border-[var(--border-default)]">
+        <div className="flex flex-wrap gap-2">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
+            const colors = tabColors[tab.color];
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm transition-all
+                  flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-sm transition-all
+                  border-2 border-transparent
                   ${isActive
-                    ? 'bg-pink-500/20 text-pink-400'
-                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)]'
+                    ? `${colors.active} border-current`
+                    : `text-[var(--text-secondary)] ${colors.inactive}`
                   }
                 `}
               >
@@ -175,22 +196,48 @@ export default function BriefingPage() {
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            {/* Affected Products */}
-            {briefing.affected_products && (
-              <div className="glass-card p-5">
-                <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3">
-                  Affected Products
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {briefing.affected_products.map((product) => (
-                    <span
-                      key={product}
-                      className="px-3 py-1 text-sm bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-lg"
-                    >
-                      {product}
-                    </span>
-                  ))}
-                </div>
+            {/* Affected Products & Domains */}
+            {(briefing.affected_products || briefing.affected_domains) && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Affected Products */}
+                {briefing.affected_products && (
+                  <div className="glass-card p-5">
+                    <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3 flex items-center gap-2">
+                      <Shield className="w-4 h-4" />
+                      Affected Products
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {briefing.affected_products.map((product) => (
+                        <span
+                          key={product}
+                          className="px-3 py-1.5 text-sm bg-orange-500/10 text-orange-400 border border-orange-500/20 rounded-lg"
+                        >
+                          {product}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Affected Domains */}
+                {briefing.affected_domains && briefing.affected_domains.length > 0 && (
+                  <div className="glass-card p-5">
+                    <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3 flex items-center gap-2">
+                      <Globe className="w-4 h-4" />
+                      Affected Domains
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {briefing.affected_domains.map((domain) => (
+                        <span
+                          key={domain}
+                          className="px-3 py-1.5 text-sm bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-lg font-mono"
+                        >
+                          {domain}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
