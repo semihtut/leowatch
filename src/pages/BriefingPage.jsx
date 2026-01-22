@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   ArrowLeft, Calendar, AlertTriangle, Shield, ExternalLink, Heart,
-  FileText, Search, Code, BookOpen
+  FileText, Search, Code, BookOpen, Download
 } from 'lucide-react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import { useBriefing } from '../hooks/useBriefings';
 import { useFavorites } from '../hooks/useFavorites';
 import SeverityBadge from '../components/briefing/SeverityBadge';
@@ -14,6 +15,7 @@ import DetectionGuidance from '../components/briefing/DetectionGuidance';
 import ImmediateActions from '../components/briefing/ImmediateActions';
 import Timeline from '../components/briefing/Timeline';
 import SourceList from '../components/briefing/SourceList';
+import BriefingPDF from '../components/briefing/BriefingPDF';
 
 const tabs = [
   { id: 'overview', label: 'Overview', icon: FileText, color: 'pink' },
@@ -78,7 +80,7 @@ export default function BriefingPage() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
-      {/* Top bar with back button and favorite */}
+      {/* Top bar with back button, favorite and export */}
       <div className="flex items-center justify-between">
         <Link
           to="/"
@@ -87,19 +89,37 @@ export default function BriefingPage() {
           <ArrowLeft className="w-4 h-4" />
           Back to Dashboard
         </Link>
-        <button
-          onClick={() => toggleFavorite(id)}
-          className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-            favorited
-              ? 'bg-pink-500/20 text-pink-400'
-              : 'bg-[var(--bg-card)] text-[var(--text-secondary)] hover:text-pink-400 hover:bg-[var(--bg-card-hover)]'
-          }`}
-        >
-          <Heart className={`w-5 h-5 ${favorited ? 'fill-pink-500' : ''}`} />
-          <span className="text-sm font-medium">
-            {favorited ? 'Saved' : 'Save'}
-          </span>
-        </button>
+        <div className="flex items-center gap-2">
+          {/* PDF Export */}
+          <PDFDownloadLink
+            document={<BriefingPDF briefing={briefing} />}
+            fileName={`${briefing.briefing_id}.pdf`}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all bg-[var(--bg-card)] text-[var(--text-secondary)] hover:text-cyan-400 hover:bg-[var(--bg-card-hover)]"
+          >
+            {({ loading }) => (
+              <>
+                <Download className={`w-5 h-5 ${loading ? 'animate-pulse' : ''}`} />
+                <span className="text-sm font-medium hidden sm:inline">
+                  {loading ? 'Generating...' : 'Export PDF'}
+                </span>
+              </>
+            )}
+          </PDFDownloadLink>
+          {/* Favorite */}
+          <button
+            onClick={() => toggleFavorite(id)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+              favorited
+                ? 'bg-pink-500/20 text-pink-400'
+                : 'bg-[var(--bg-card)] text-[var(--text-secondary)] hover:text-pink-400 hover:bg-[var(--bg-card-hover)]'
+            }`}
+          >
+            <Heart className={`w-5 h-5 ${favorited ? 'fill-pink-500' : ''}`} />
+            <span className="text-sm font-medium hidden sm:inline">
+              {favorited ? 'Saved' : 'Save'}
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Severity Banner */}
