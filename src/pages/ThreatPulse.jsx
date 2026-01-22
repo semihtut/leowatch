@@ -126,20 +126,22 @@ export default function ThreatPulse() {
     return briefingsByDate[date.toDateString()]?.length || 0;
   };
 
-  const hasCritical = (date) => {
+  // Get severity breakdown for a specific date
+  const getSeverityBreakdown = (date) => {
     const dayBriefings = briefingsByDate[date.toDateString()] || [];
-    return dayBriefings.some((b) => b.severity === 'Critical');
-  };
-
-  const hasHigh = (date) => {
-    const dayBriefings = briefingsByDate[date.toDateString()] || [];
-    return dayBriefings.some((b) => b.severity === 'High');
-  };
-
-  const getDotColor = (date) => {
-    if (hasCritical(date)) return 'bg-red-500';
-    if (hasHigh(date)) return 'bg-orange-500';
-    return 'bg-cyan-500';
+    const breakdown = {
+      critical: 0,
+      high: 0,
+      medium: 0,
+      low: 0,
+    };
+    dayBriefings.forEach((b) => {
+      const severity = b.severity?.toLowerCase() || 'low';
+      if (breakdown[severity] !== undefined) {
+        breakdown[severity]++;
+      }
+    });
+    return breakdown;
   };
 
   if (loading) {
@@ -239,7 +241,7 @@ export default function ThreatPulse() {
           <div className="grid grid-cols-7 gap-2">
             {calendarDays.map((day, index) => {
               const count = getBriefingCount(day.date);
-              const dotColor = getDotColor(day.date);
+              const breakdown = getSeverityBreakdown(day.date);
 
               return (
                 <button
@@ -255,9 +257,25 @@ export default function ThreatPulse() {
                 >
                   <span className="block text-2xl">{day.date.getDate()}</span>
                   {count > 0 && (
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1">
-                      <span className={`block w-3 h-3 rounded-full ${dotColor}`} />
-                      <span className="text-xs text-[var(--text-secondary)]">{count}</span>
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-1 flex-wrap">
+                      {breakdown.critical > 0 && (
+                        <span className="flex items-center gap-0.5">
+                          <span className="block w-2 h-2 rounded-full bg-red-500" />
+                          <span className="text-[10px] text-red-400 font-medium">{breakdown.critical}</span>
+                        </span>
+                      )}
+                      {breakdown.high > 0 && (
+                        <span className="flex items-center gap-0.5">
+                          <span className="block w-2 h-2 rounded-full bg-orange-500" />
+                          <span className="text-[10px] text-orange-400 font-medium">{breakdown.high}</span>
+                        </span>
+                      )}
+                      {(breakdown.medium > 0 || breakdown.low > 0) && (
+                        <span className="flex items-center gap-0.5">
+                          <span className="block w-2 h-2 rounded-full bg-cyan-500" />
+                          <span className="text-[10px] text-cyan-400 font-medium">{breakdown.medium + breakdown.low}</span>
+                        </span>
+                      )}
                     </div>
                   )}
                 </button>
@@ -266,18 +284,21 @@ export default function ThreatPulse() {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center justify-center gap-8 mt-6 pt-6 border-t border-[var(--border-default)]">
-            <div className="flex items-center gap-2 text-base text-[var(--text-secondary)]">
-              <span className="w-4 h-4 rounded-full bg-red-500"></span>
-              <span>{t('threatPulse.critical')}</span>
+          <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-[var(--border-default)]">
+            <div className="flex items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+              <span className="w-3 h-3 rounded-full bg-red-500"></span>
+              <span className="text-red-400 font-medium">n</span>
+              <span>= {t('threatPulse.critical')}</span>
             </div>
-            <div className="flex items-center gap-2 text-base text-[var(--text-secondary)]">
-              <span className="w-4 h-4 rounded-full bg-orange-500"></span>
-              <span>{t('threatPulse.high')}</span>
+            <div className="flex items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+              <span className="w-3 h-3 rounded-full bg-orange-500"></span>
+              <span className="text-orange-400 font-medium">n</span>
+              <span>= {t('threatPulse.high')}</span>
             </div>
-            <div className="flex items-center gap-2 text-base text-[var(--text-secondary)]">
-              <span className="w-4 h-4 rounded-full bg-cyan-500"></span>
-              <span>{t('threatPulse.medLow')}</span>
+            <div className="flex items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+              <span className="w-3 h-3 rounded-full bg-cyan-500"></span>
+              <span className="text-cyan-400 font-medium">n</span>
+              <span>= {t('threatPulse.medLow')}</span>
             </div>
           </div>
         </div>
