@@ -1,0 +1,212 @@
+{
+  "briefing_id": "TB-2026-01-22-014",
+  "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-21858"
+  ],
+  "tags": [
+    "n8n",
+    "workflow",
+    "automation",
+    "RCE",
+    "cloud",
+    "webhook",
+    "authentication-bypass",
+    "container"
+  ],
+  "affected_products": [
+    "n8n Self-Hosted (versions < 1.121.0)",
+    "n8n Cloud",
+    "n8n Docker deployments",
+    "n8n Kubernetes deployments"
+  ],
+  "sources_analyzed": 6,
+  "sources": [
+    {
+      "name": "Cyera Research Labs",
+      "url": "https://www.cyera.com/research-labs/ni8mare-unauthenticated-remote-code-execution-in-n8n-cve-2026-21858",
+      "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/critical-n8n-vulnerability-cvss-100.html",
+      "date": "2026-01-07",
+      "type": "News"
+    },
+    {
+      "name": "Orca Security",
+      "url": "https://orca.security/resources/blog/cve-2026-21858-n8n-rce-vulnerability/",
+      "date": "2026-01-08",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Second Vulnerability",
+      "url": "https://thehackernews.com/2026/01/new-n8n-vulnerability-99-cvss-lets.html",
+      "date": "2026-01-15",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-09",
+      "event": "Cyera Research Labs discovers vulnerability and reports to n8n"
+    },
+    {
+      "date": "2025-11-18",
+      "event": "n8n releases patch in version 1.121.0"
+    },
+    {
+      "date": "2026-01-06",
+      "event": "CVE-2026-21858 officially assigned"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "Public disclosure and technical details published"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "Second related vulnerability (CVE-2026-21877) disclosed with CVSS 10.0"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Guvenlik arastirmacilari n8n adli populer otomasyon platformunda maksimum derecede kritik bir guvenlik acigi buldu (CVSS 10.0). n8n, Zapier benzeri bir aractir - farkli uygulamalari birbirine baglayarak is akislarini otomatiklestirir. Bulunan acik, saldirganin sifre bile girmeden sunucunun tam kontrolunu ele gecirmesine izin veriyor.",
+    "who_is_affected": "n8n kullanan tum organizasyonlar risk altinda. Ozellikle self-hosted (kendi sunucunuzda) calistiran sirketler. Censys verilerine gore dunyada 26,512 acikta n8n sunucusu var - bunlarin 7,079'u ABD'de, 4,280'i Almanya'da. Eger n8n'i internete acik sekilde calistiriyorsaniz, acil mudahale gerekiyor.",
+    "what_attackers_do": "Step 1: Saldirgan n8n'in webhook adresine ozel hazirlanmis bir HTTP istegi gonderir. Step 2: Content-Type basligini degistirerek guvenlik kontrollerini atlatir. Step 3: Sunucudaki hassas dosyalari okur (veritabani, sifre dosyalari). Step 4: Admin sifrelerini ve sifreleme anahtarlarini calar. Step 5: Sahte oturum cerezleri olusturarak admin olarak giris yapar. Step 6: Execute Command ozelligi ile sunucuda istedigi komutu calistirir - tam kontrol.",
+    "what_you_should_do": [
+      "n8n versiyonunuzu hemen 1.121.0 veya ustu yapin (guncel: 1.123.10, 2.1.5, 2.2.4, 2.3.0)",
+      "n8n'i internete acik birakmayin - VPN veya internal network arkasina alin",
+      "Tum Form'larda authentication zorunlu hale getirin",
+      "Public webhook endpoint'lerini gecici olarak kapatin",
+      "Eger patch oncesi versiyonu kullandiysamz, credential'larinizi rotate edin",
+      "n8n'in bagli oldugu tum sistemlerin (API key, database credential) parolalarini degistirin"
+    ],
+    "why_this_is_serious": "n8n genellikle sirketlerin en kritik sistemlerine baglidir - CRM, veritabani, cloud storage, email, Slack, ve daha fazlasi. Eger saldirgan n8n'e erisirse, bagli tum sistemlere de erisir. Ayrica CVSS 10.0 en yuksek seviye - saldiri icin authentication bile gerekmiyor ve uzaktan calistirmak mumkun."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Saldirganlar internete acik n8n webhook endpoint'lerini hedef aliyor"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "n8n Execute Command node'u kullanarak sistem komutlari calistiriliyor"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Credentials In Files",
+        "description": "n8n veritabani ve config dosyalarindan credential'lar okunuyor"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1550.001",
+        "technique_name": "Application Access Token",
+        "description": "Calinan encryption key ile sahte session cookie olusturuluyor"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Arbitrary file read ile hassas veriler toplaniyor"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "n8n webhook endpoint'lerine gelen HTTP isteklerini izleyin. Ozellikle Content-Type manipulasyonu ve beklenmeyen dosya yolu icerikli isteklere dikkat edin.",
+    "log_sources": [
+      {
+        "source": "n8n Application Logs",
+        "description": "Webhook istekleri, authentication olaylari ve workflow execution loglari",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Server / Reverse Proxy Logs",
+        "description": "nginx/Apache/Traefik loglari - ozellikle /webhook ve /form-data endpoint'leri",
+        "priority": "Critical"
+      },
+      {
+        "source": "Container Runtime Logs",
+        "description": "Docker veya Kubernetes loglari - beklenmeyen komut calistirmalari",
+        "priority": "High"
+      },
+      {
+        "source": "Network Traffic Logs",
+        "description": "n8n portlarina (5678) gelen external trafik",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Content-Type header manipulation",
+        "description": "multipart/form-data beklenirken application/json gonderilen istekler",
+        "log_field": "Content-Type: application/json on /webhook/form/* endpoints",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Path traversal attempts in request body",
+        "description": "Request body icinde /etc/passwd, database.sqlite gibi dosya yollari",
+        "log_field": "req.body contains '../' or absolute paths",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected Execute Command workflow creation",
+        "description": "Yeni olusturulan workflow'larda Execute Command node'u",
+        "log_field": "workflow.nodes contains 'n8n-nodes-base.executeCommand'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Authentication bypass indicators",
+        "description": "Basarili admin giris sonrasi beklenmeyen IP adresinden islem",
+        "log_field": "auth.success from unusual IP after failed attempts",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "n8n Versiyonunu Kontrol Et ve Guncelle",
+      "description": "Hangi versiyonu kullandiginizi kontrol edin. 1.121.0'dan dusukse ACIL guncelle",
+      "command": "docker exec n8n n8n --version"
+    },
+    {
+      "priority": 2,
+      "action": "Internet Erisimini Kes",
+      "description": "n8n'i public internet'ten erisilmez hale getirin - VPN veya firewall arkasina alin",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Webhook Endpoint'lerini Incele",
+      "description": "Hangi webhook'larin public oldugunu belirleyin ve gereksizleri kapatin",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Son 90 Gunluk Loglari Incele",
+      "description": "Webhook loglarinda supheli Content-Type veya dosya yolu iceren istekleri arayin",
+      "command": "grep -r 'webhook' /var/log/n8n/ | grep -E '(etc/passwd|database|sqlite|Content-Type)'"
+    },
+    {
+      "priority": 5,
+      "action": "Credential Rotation",
+      "description": "n8n'e bagli tum servislerin API key ve credential'larini yenileyin",
+      "command": null
+    }
+  ]
+}
