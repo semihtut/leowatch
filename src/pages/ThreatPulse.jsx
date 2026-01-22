@@ -248,32 +248,32 @@ export default function ThreatPulse() {
                   key={index}
                   onClick={() => setSelectedDate(day.date)}
                   className={`
-                    relative rounded-xl transition-all text-xl py-6 min-h-[80px]
+                    relative rounded-xl transition-all py-4 md:py-6 min-h-[60px] md:min-h-[80px]
                     ${day.isCurrentMonth ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)]'}
-                    ${isToday(day.date) ? 'ring-2 ring-pink-500 ring-offset-2 ring-offset-[var(--bg-primary)]' : ''}
+                    ${isToday(day.date) ? 'ring-2 ring-pink-500 ring-offset-1 md:ring-offset-2 ring-offset-[var(--bg-primary)]' : ''}
                     ${isSelected(day.date) ? 'bg-pink-500/20 scale-105' : 'hover:bg-[var(--bg-card-hover)]'}
                     ${count > 0 ? 'font-bold' : 'font-medium'}
                   `}
                 >
-                  <span className="block text-2xl">{day.date.getDate()}</span>
+                  <span className="block text-lg md:text-2xl">{day.date.getDate()}</span>
                   {count > 0 && (
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-1 flex-wrap">
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-1">
                       {breakdown.critical > 0 && (
                         <span className="flex items-center gap-0.5">
-                          <span className="block w-2 h-2 rounded-full bg-red-500" />
-                          <span className="text-[10px] text-red-400 font-medium">{breakdown.critical}</span>
+                          <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-red-500" />
+                          <span className="hidden md:inline text-[10px] text-red-400 font-medium">{breakdown.critical}</span>
                         </span>
                       )}
                       {breakdown.high > 0 && (
                         <span className="flex items-center gap-0.5">
-                          <span className="block w-2 h-2 rounded-full bg-orange-500" />
-                          <span className="text-[10px] text-orange-400 font-medium">{breakdown.high}</span>
+                          <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-orange-500" />
+                          <span className="hidden md:inline text-[10px] text-orange-400 font-medium">{breakdown.high}</span>
                         </span>
                       )}
                       {(breakdown.medium > 0 || breakdown.low > 0) && (
                         <span className="flex items-center gap-0.5">
-                          <span className="block w-2 h-2 rounded-full bg-cyan-500" />
-                          <span className="text-[10px] text-cyan-400 font-medium">{breakdown.medium + breakdown.low}</span>
+                          <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-cyan-500" />
+                          <span className="hidden md:inline text-[10px] text-cyan-400 font-medium">{breakdown.medium + breakdown.low}</span>
                         </span>
                       )}
                     </div>
@@ -284,21 +284,18 @@ export default function ThreatPulse() {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-[var(--border-default)]">
-            <div className="flex items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-6 pt-6 border-t border-[var(--border-default)]">
+            <div className="flex items-center gap-1.5 text-xs md:text-sm text-[var(--text-secondary)]">
               <span className="w-3 h-3 rounded-full bg-red-500"></span>
-              <span className="text-red-400 font-medium">n</span>
-              <span>= {t('threatPulse.critical')}</span>
+              <span>{t('threatPulse.critical')}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+            <div className="flex items-center gap-1.5 text-xs md:text-sm text-[var(--text-secondary)]">
               <span className="w-3 h-3 rounded-full bg-orange-500"></span>
-              <span className="text-orange-400 font-medium">n</span>
-              <span>= {t('threatPulse.high')}</span>
+              <span>{t('threatPulse.high')}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-[var(--text-secondary)]">
+            <div className="flex items-center gap-1.5 text-xs md:text-sm text-[var(--text-secondary)]">
               <span className="w-3 h-3 rounded-full bg-cyan-500"></span>
-              <span className="text-cyan-400 font-medium">n</span>
-              <span>= {t('threatPulse.medLow')}</span>
+              <span>{t('threatPulse.medLow')}</span>
             </div>
           </div>
         </div>
