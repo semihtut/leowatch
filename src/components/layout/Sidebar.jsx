@@ -1,18 +1,21 @@
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Archive, Info, Coffee, Shield, Activity, Heart, X } from 'lucide-react';
 import ThemeToggle from '../ui/ThemeToggle';
+import LanguageToggle from '../ui/LanguageToggle';
 import { useFavorites } from '../../hooks/useFavorites';
-
-const navigation = [
-  { name: 'Dashboard', href: '/', icon: LayoutDashboard },
-  { name: 'Threat Pulse', href: '/pulse', icon: Activity },
-  { name: 'Favorites', href: '/favorites', icon: Heart },
-  { name: 'Archive', href: '/archive', icon: Archive },
-  { name: 'Buy me a coffee', href: 'https://ko-fi.com/leopark', icon: Coffee, external: true },
-];
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function Sidebar({ onClose }) {
   const { favoritesCount } = useFavorites();
+  const { t } = useLanguage();
+
+  const navigation = [
+    { name: t('nav.dashboard'), href: '/', icon: LayoutDashboard },
+    { name: t('nav.threatPulse'), href: '/pulse', icon: Activity },
+    { name: t('nav.favorites'), href: '/favorites', icon: Heart },
+    { name: t('nav.archive'), href: '/archive', icon: Archive },
+    { name: t('nav.buyMeCoffee'), href: 'https://ko-fi.com/leopark', icon: Coffee, external: true },
+  ];
 
   return (
     <div className="flex flex-col h-full">
@@ -25,7 +28,7 @@ export default function Sidebar({ onClose }) {
             </div>
             <div>
               <h1 className="text-lg font-bold text-[var(--text-primary)]">Intelleo</h1>
-              <p className="text-xs text-[var(--text-muted)]">Security Intelligence</p>
+              <p className="text-xs text-[var(--text-muted)]">{t('sidebar.securityIntelligence')}</p>
             </div>
           </NavLink>
           {onClose && (
@@ -70,7 +73,7 @@ export default function Sidebar({ onClose }) {
                     <>
                       <item.icon className={`w-5 h-5 ${isActive ? 'text-pink-500' : ''}`} />
                       <span className="font-medium flex-1">{item.name}</span>
-                      {item.name === 'Favorites' && favoritesCount > 0 && (
+                      {item.href === '/favorites' && favoritesCount > 0 && (
                         <span className="px-2 py-0.5 text-xs font-medium bg-pink-500/20 text-pink-400 rounded-full">
                           {favoritesCount}
                         </span>
@@ -88,8 +91,14 @@ export default function Sidebar({ onClose }) {
       <div className="p-4 border-t border-[var(--glass-border)] space-y-3">
         {/* Theme Toggle */}
         <div className="flex items-center justify-between px-2">
-          <span className="text-sm text-[var(--text-muted)]">Theme</span>
+          <span className="text-sm text-[var(--text-muted)]">{t('sidebar.theme')}</span>
           <ThemeToggle />
+        </div>
+
+        {/* Language Toggle */}
+        <div className="flex items-center justify-between px-2">
+          <span className="text-sm text-[var(--text-muted)]">{t('sidebar.language')}</span>
+          <LanguageToggle />
         </div>
 
         {/* About Link */}
@@ -105,7 +114,7 @@ export default function Sidebar({ onClose }) {
           }
         >
           <Info className="w-4 h-4" />
-          <span className="text-sm font-medium">About</span>
+          <span className="text-sm font-medium">{t('nav.about')}</span>
         </NavLink>
       </div>
     </div>
