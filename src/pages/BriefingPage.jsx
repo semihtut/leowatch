@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, AlertTriangle, Shield, ExternalLink, Heart } from 'lucide-react';
+import {
+  ArrowLeft, Calendar, AlertTriangle, Shield, ExternalLink, Heart,
+  FileText, Search, Code, BookOpen
+} from 'lucide-react';
 import { useBriefing } from '../hooks/useBriefings';
 import { useFavorites } from '../hooks/useFavorites';
 import SeverityBadge from '../components/briefing/SeverityBadge';
@@ -11,11 +15,19 @@ import ImmediateActions from '../components/briefing/ImmediateActions';
 import Timeline from '../components/briefing/Timeline';
 import SourceList from '../components/briefing/SourceList';
 
+const tabs = [
+  { id: 'overview', label: 'Overview', icon: FileText },
+  { id: 'detection', label: 'Detection & Response', icon: Search },
+  { id: 'technical', label: 'Technical', icon: Code },
+  { id: 'sources', label: 'Sources', icon: BookOpen },
+];
+
 export default function BriefingPage() {
   const { id } = useParams();
   const { briefing, loading, error } = useBriefing(id);
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorited = isFavorite(id);
+  const [activeTab, setActiveTab] = useState('overview');
 
   if (loading) {
     return (
@@ -46,7 +58,7 @@ export default function BriefingPage() {
   const severityLevel = briefing.severity?.level?.toLowerCase() || 'low';
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-5xl mx-auto space-y-6">
       {/* Top bar with back button and favorite */}
       <div className="flex items-center justify-between">
         <Link
@@ -132,64 +144,124 @@ export default function BriefingPage() {
         )}
       </div>
 
-      {/* Affected Products */}
-      {briefing.affected_products && (
-        <div className="glass-card p-5">
-          <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3">
-            Affected Products
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {briefing.affected_products.map((product) => (
-              <span
-                key={product}
-                className="px-3 py-1 text-sm bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-lg"
+      {/* Tab Navigation */}
+      <div className="glass-card p-1.5">
+        <div className="flex flex-wrap gap-1">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`
+                  flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm transition-all
+                  ${isActive
+                    ? 'bg-pink-500/20 text-pink-400'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)]'
+                  }
+                `}
               >
-                {product}
-              </span>
-            ))}
-          </div>
+                <Icon className="w-4 h-4" />
+                <span className="hidden sm:inline">{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
-      )}
+      </div>
 
-      {/* Simple Summary */}
-      <SimpleSummary summary={briefing.simple_summary} />
+      {/* Tab Content */}
+      <div className="min-h-[400px]">
+        {/* Overview Tab */}
+        {activeTab === 'overview' && (
+          <div className="space-y-6">
+            {/* Affected Products */}
+            {briefing.affected_products && (
+              <div className="glass-card p-5">
+                <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3">
+                  Affected Products
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {briefing.affected_products.map((product) => (
+                    <span
+                      key={product}
+                      className="px-3 py-1 text-sm bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-lg"
+                    >
+                      {product}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
 
-      {/* Timeline */}
-      <Timeline events={briefing.timeline} />
+            {/* Simple Summary */}
+            <SimpleSummary summary={briefing.simple_summary} />
+          </div>
+        )}
 
-      {/* MITRE ATT&CK */}
-      <MitreMapping mitre={briefing.mitre_attack} />
+        {/* Detection & Response Tab */}
+        {activeTab === 'detection' && (
+          <div className="space-y-6">
+            {/* Two Column Layout for Detection */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Detection Guidance */}
+              <div className="lg:col-span-2">
+                <DetectionGuidance guidance={briefing.detection_guidance} />
+              </div>
+            </div>
 
-      {/* Detection Guidance */}
-      <DetectionGuidance guidance={briefing.detection_guidance} />
+            {/* Immediate Actions */}
+            <ImmediateActions actions={briefing.immediate_actions} />
 
-      {/* Immediate Actions */}
-      <ImmediateActions actions={briefing.immediate_actions} />
+            {/* CISA Deadline */}
+            {briefing.severity?.cisa_deadline && (
+              <div className="glass-card p-5 border-red-500/30">
+                <div className="flex items-center gap-3">
+                  <AlertTriangle className="w-5 h-5 text-red-400" />
+                  <div>
+                    <p className="font-medium text-[var(--text-primary)]">CISA Remediation Deadline</p>
+                    <p className="text-sm text-[var(--text-secondary)]">
+                      Federal agencies must address this vulnerability by{' '}
+                      <span className="text-red-400 font-medium">
+                        {new Date(briefing.severity.cisa_deadline).toLocaleDateString('en-US', {
+                          month: 'long',
+                          day: 'numeric',
+                          year: 'numeric',
+                        })}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
-      {/* Sources */}
-      <SourceList sources={briefing.sources} total={briefing.sources_analyzed} />
+        {/* Technical Tab */}
+        {activeTab === 'technical' && (
+          <div className="space-y-6">
+            {/* Two Column Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* MITRE ATT&CK */}
+              <div className="lg:col-span-1">
+                <MitreMapping mitre={briefing.mitre_attack} />
+              </div>
 
-      {/* CISA Deadline */}
-      {briefing.severity?.cisa_deadline && (
-        <div className="glass-card p-5 border-red-500/30">
-          <div className="flex items-center gap-3">
-            <AlertTriangle className="w-5 h-5 text-red-400" />
-            <div>
-              <p className="font-medium text-[var(--text-primary)]">CISA Remediation Deadline</p>
-              <p className="text-sm text-[var(--text-secondary)]">
-                Federal agencies must address this vulnerability by{' '}
-                <span className="text-red-400 font-medium">
-                  {new Date(briefing.severity.cisa_deadline).toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
-                </span>
-              </p>
+              {/* Timeline */}
+              <div className="lg:col-span-1">
+                <Timeline events={briefing.timeline} />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+
+        {/* Sources Tab */}
+        {activeTab === 'sources' && (
+          <div className="space-y-6">
+            <SourceList sources={briefing.sources} total={briefing.sources_analyzed} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
