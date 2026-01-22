@@ -1,0 +1,270 @@
+{
+  "briefing_id": "TB-2026-01-22-017",
+  "title": "Storm-0501: Cloud-Native Ransomware Targeting Hybrid Azure Environments",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": null,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "ransomware",
+    "azure",
+    "entra-id",
+    "hybrid-cloud",
+    "storm-0501",
+    "data-exfiltration",
+    "extortion"
+  ],
+  "affected_products": [
+    "Microsoft Azure hybrid environments",
+    "Microsoft Entra ID (Azure AD)",
+    "Microsoft Entra Connect",
+    "Microsoft 365",
+    "On-premises Active Directory synced to cloud"
+  ],
+  "sources_analyzed": 10,
+  "sources": [
+    {
+      "name": "Microsoft Security Blog - August 2025",
+      "url": "https://www.microsoft.com/en-us/security/blog/2025/08/27/storm-0501s-evolving-techniques-lead-to-cloud-based-ransomware/",
+      "date": "2025-08-27",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Microsoft Security Blog - September 2024",
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/09/26/storm-0501-ransomware-attacks-expanding-to-hybrid-cloud-environments/",
+      "date": "2024-09-26",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2025/08/storm-0501-exploits-entra-id-to.html",
+      "date": "2025-08-28",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading",
+      "url": "https://www.darkreading.com/cloud-security/storm-0501-cloud-based-ransomware-attack",
+      "date": "2025-08-29",
+      "type": "News"
+    },
+    {
+      "name": "CyberScoop",
+      "url": "https://cyberscoop.com/storm-0501-ransomware-microsoft-threat-intelligence/",
+      "date": "2025-08-28",
+      "type": "News"
+    },
+    {
+      "name": "Barracuda Networks",
+      "url": "https://blog.barracuda.com/2025/09/17/system-shock-storm-0501-ransomware-cloud",
+      "date": "2025-09-17",
+      "type": "Research"
+    },
+    {
+      "name": "Picus Security",
+      "url": "https://www.picussecurity.com/resource/blog/windows-warns-of-storm-0501-group-deploying-ransomware-to-hybrid-cloud-environments",
+      "date": "2025-09-02",
+      "type": "Research"
+    },
+    {
+      "name": "CSO Online",
+      "url": "https://www.csoonline.com/article/4046438/storm-0501-debuts-a-brutal-hybrid-ransomware-attack-chain.html",
+      "date": "2025-09-01",
+      "type": "News"
+    },
+    {
+      "name": "Mishcon de Reya",
+      "url": "https://www.mishcon.com/news/storm0501-evolves-to-cloud-based-ransomware-targeting-hybrid-environments",
+      "date": "2025-09-05",
+      "type": "Research"
+    },
+    {
+      "name": "The Windows Update",
+      "url": "https://thewindowsupdate.com/2025/08/27/storm-0501s-evolving-techniques-lead-to-cloud-based-ransomware/",
+      "date": "2025-08-27",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2021-01-01",
+      "event": "Storm-0501 first observed as a ransomware affiliate"
+    },
+    {
+      "date": "2024-09-26",
+      "event": "Microsoft publishes first analysis of Storm-0501 hybrid cloud attacks"
+    },
+    {
+      "date": "2025-05-01",
+      "event": "Microsoft Entra Connect releases modern authentication update"
+    },
+    {
+      "date": "2025-08-27",
+      "event": "Microsoft publishes detailed analysis of evolved cloud-based ransomware tactics"
+    },
+    {
+      "date": "2025-09-01",
+      "event": "Multiple large organizations report Storm-0501 attacks"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Storm-0501 is a financially motivated threat actor that has evolved from traditional on-premises ransomware to cloud-native attacks. Unlike conventional ransomware that encrypts files, Storm-0501 leverages cloud capabilities to exfiltrate data, destroy backups, and extort victims without deploying traditional malware. They compromise Active Directory, pivot to Microsoft Entra ID, and gain global administrator privileges.",
+    "who_is_affected": "Organizations using Microsoft hybrid cloud environments are primary targets. This includes companies with on-premises Active Directory synced to Azure via Entra Connect, Microsoft 365 users, and any organization with hybrid identity configurations. Large enterprises with complex cloud deployments are particularly at risk.",
+    "what_attackers_do": "Step 1: Storm-0501 gains initial access through known vulnerabilities (Zoho ManageEngine, Citrix NetScaler, ColdFusion). Step 2: Compromises on-premises Active Directory environment. Step 3: Identifies non-human accounts (service accounts) with Global Administrator privileges and no MFA. Step 4: Resets on-premises password and syncs to cloud identity. Step 5: Registers new MFA method to gain cloud admin access. Step 6: Assigns Owner roles across Azure subscriptions, exfiltrates data, deletes backups, and sends extortion messages via Microsoft Teams.",
+    "what_you_should_do": [
+      "Enable MFA for ALL accounts, especially service accounts and Global Administrators",
+      "Enable Trusted Platform Module (TPM) on Entra Connect Sync server",
+      "Turn on tamper protection in Microsoft Defender for Endpoint",
+      "Review and limit accounts with Global Administrator privileges",
+      "Monitor for suspicious password resets on privileged accounts",
+      "Implement conditional access policies to block suspicious sign-ins",
+      "Enable immutable backups that cannot be deleted by cloud admins"
+    ],
+    "why_this_is_serious": "Storm-0501 represents a fundamental shift in ransomware tactics. They don't need to deploy malware - they use your own cloud infrastructure against you. By gaining cloud admin access, they can delete all backups, exfiltrate sensitive data, and lock you out of your own systems. They've been affiliated with major ransomware operations including Embargo, ALPHV/BlackCat, Hive, and LockBit."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploiting vulnerabilities in Zoho ManageEngine, Citrix NetScaler, ColdFusion"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1098.001",
+        "technique_name": "Additional Cloud Credentials",
+        "description": "Registering new MFA methods on compromised cloud accounts"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1078.004",
+        "technique_name": "Cloud Accounts",
+        "description": "Abusing synced identities to gain Global Administrator privileges"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.001",
+        "technique_name": "Disable or Modify Tools",
+        "description": "Disabling security tools and deleting backup solutions"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1567",
+        "technique_name": "Exfiltration Over Web Service",
+        "description": "Using cloud-native tools to exfiltrate large volumes of data"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1485",
+        "technique_name": "Data Destruction",
+        "description": "Deleting cloud backups and data to pressure victims"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for suspicious activity on hybrid identity accounts, especially password resets on privileged accounts followed by MFA registration from new devices or locations. Watch for unusual role assignments in Azure.",
+    "log_sources": [
+      {
+        "source": "Microsoft Entra ID Sign-in Logs",
+        "description": "Authentication events, MFA registrations, conditional access results",
+        "priority": "Critical"
+      },
+      {
+        "source": "Microsoft Entra ID Audit Logs",
+        "description": "Password changes, role assignments, application registrations",
+        "priority": "Critical"
+      },
+      {
+        "source": "Azure Activity Logs",
+        "description": "Role assignments, resource deletions, subscription-level changes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Microsoft 365 Unified Audit Log",
+        "description": "Teams messages, SharePoint/OneDrive access patterns",
+        "priority": "High"
+      },
+      {
+        "source": "On-premises AD Security Logs",
+        "description": "Password resets on synced accounts, Event ID 4724/4723",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Password reset on privileged synced account",
+        "description": "On-premises password change on accounts synced to Entra ID with admin roles",
+        "log_field": "Event ID 4724 on accounts in AAD sync scope",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "New MFA method registration",
+        "description": "MFA registration from unexpected location after password change",
+        "log_field": "Entra ID Audit: Register security info from new IP",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual role assignments",
+        "description": "Owner or Global Admin roles assigned to accounts",
+        "log_field": "Azure Activity: Microsoft.Authorization/roleAssignments/write",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Backup deletion activity",
+        "description": "Deletion of Azure Backup vaults or recovery points",
+        "log_field": "Azure Activity: Microsoft.RecoveryServices/vaults/delete",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Teams extortion messages",
+        "description": "Messages to employees from compromised admin accounts",
+        "log_field": "Teams audit logs for messages from admin accounts",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit Global Administrator Accounts",
+      "description": "Identify all accounts with Global Admin or Owner roles, especially service accounts",
+      "command": "az role assignment list --role Owner --all"
+    },
+    {
+      "priority": 2,
+      "action": "Enforce MFA on All Admin Accounts",
+      "description": "Ensure all privileged accounts have MFA enabled with no exceptions",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Enable TPM on Entra Connect Server",
+      "description": "Protect credentials stored on the synchronization server",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Implement Conditional Access",
+      "description": "Block sign-ins from unusual locations or devices for admin accounts",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Enable Immutable Backups",
+      "description": "Configure Azure Backup with immutability to prevent deletion",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Review Entra Connect Sync Accounts",
+      "description": "Audit Directory Synchronization Accounts and their permissions",
+      "command": "Get-ADSyncScheduler"
+    }
+  ]
+}
