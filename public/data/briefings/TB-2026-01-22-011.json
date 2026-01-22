@@ -1,0 +1,139 @@
+{
+  "briefing_id": "TB-2026-01-22-011",
+  "title": "GCP BigQuery SQL Injection via External Table Definitions",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 7.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": ["CVE-2026-31010"],
+  "tags": ["GCP", "BigQuery", "SQL-injection", "data-warehouse", "cloud", "analytics"],
+  "affected_products": ["Google BigQuery", "BigQuery External Tables", "BigQuery Data Transfer"],
+  "sources_analyzed": 5,
+  "sources": [
+    {
+      "name": "Google Cloud Security Bulletin",
+      "url": "https://cloud.google.com/support/bulletins",
+      "date": "2026-01-21",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Praetorian Security",
+      "url": "https://www.praetorian.com/blog",
+      "date": "2026-01-22",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-11",
+      "event": "SQL injection vulnerability discovered in BigQuery external tables"
+    },
+    {
+      "date": "2026-01-16",
+      "event": "Google Cloud confirms vulnerability and begins patching"
+    },
+    {
+      "date": "2026-01-21",
+      "event": "Patch deployed to all BigQuery regions"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Security bulletin published"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A SQL injection vulnerability was found in Google BigQuery's external table feature. When creating external tables from Cloud Storage or other sources, maliciously crafted file names or URIs can inject SQL commands that execute with the service account's permissions.",
+    "who_is_affected": "Organizations using BigQuery external tables, especially those that allow user-controlled file paths or URIs. Data engineering teams that automate external table creation from untrusted sources are most at risk.",
+    "what_attackers_do": "Step 1: Attacker identifies BigQuery workflows that create external tables. Step 2: They craft malicious file names containing SQL injection payloads. Step 3: When the external table is queried, injected SQL executes. Step 4: Attacker can read data from other tables, modify data, or access external sources. Step 5: Data exfiltration or manipulation occurs.",
+    "what_you_should_do": [
+      "Update BigQuery workflows to sanitize all user inputs",
+      "Avoid creating external tables from untrusted sources",
+      "Use parameterized queries and BigQuery's built-in escaping",
+      "Review BigQuery audit logs for suspicious query patterns",
+      "Implement VPC Service Controls for BigQuery"
+    ],
+    "why_this_is_serious": "BigQuery often contains an organization's most valuable data - analytics, customer information, financial records. SQL injection bypasses all access controls, giving attackers direct database access. In multi-tenant environments, this could expose other customers' data."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "SQL injection through external table creation interfaces"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1213",
+        "technique_name": "Data from Information Repositories",
+        "description": "Attackers extract data from BigQuery datasets"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor BigQuery audit logs for unusual query patterns, external table creations from unexpected sources, and queries accessing sensitive datasets.",
+    "log_sources": [
+      {
+        "source": "BigQuery Audit Logs",
+        "description": "All BigQuery operations including queries and table creations",
+        "priority": "Critical"
+      },
+      {
+        "source": "Cloud Audit Logs",
+        "description": "Admin activity for BigQuery resources",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "External tables from unusual URIs",
+        "description": "External table definitions pointing to unexpected Cloud Storage paths",
+        "log_field": "protoPayload.serviceData.tableCreation.table.externalDataConfiguration",
+        "severity": "High"
+      },
+      {
+        "indicator": "Query syntax anomalies",
+        "description": "Queries containing unusual SQL patterns or escape sequences",
+        "log_field": "protoPayload.serviceData.jobCompletedEvent.job.jobConfiguration.query",
+        "severity": "Medium"
+      },
+      {
+        "indicator": "Cross-dataset access",
+        "description": "Queries accessing datasets outside normal patterns",
+        "log_field": "resource.labels.dataset_id unexpected",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit External Tables",
+      "description": "List all external tables and their source URIs",
+      "command": "bq ls --format=prettyjson PROJECT_ID:DATASET_ID | jq '.[] | select(.type==\"EXTERNAL\")'"
+    },
+    {
+      "priority": 2,
+      "action": "Review Table Creation Workflows",
+      "description": "Identify automation that creates external tables from user input",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Enable Audit Logging",
+      "description": "Ensure BigQuery data access logs are enabled",
+      "command": "gcloud logging sinks create bigquery-audit bigquery.googleapis.com/projects/PROJECT_ID/datasets/audit_logs"
+    },
+    {
+      "priority": 4,
+      "action": "Implement VPC Service Controls",
+      "description": "Restrict BigQuery access to your VPC perimeter",
+      "command": null
+    }
+  ]
+}

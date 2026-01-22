@@ -1,0 +1,160 @@
+{
+  "briefing_id": "TB-2026-01-22-006",
+  "title": "GCP Cloud Functions Code Injection via Malicious Dependencies",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.6,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": ["CVE-2026-31004"],
+  "tags": ["GCP", "Cloud Functions", "serverless", "supply-chain", "code-injection", "cloud"],
+  "affected_products": ["Google Cloud Functions", "Cloud Run", "App Engine"],
+  "sources_analyzed": 7,
+  "sources": [
+    {
+      "name": "Google Cloud Security Bulletin",
+      "url": "https://cloud.google.com/support/bulletins",
+      "date": "2026-01-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Snyk Security Research",
+      "url": "https://snyk.io/blog",
+      "date": "2026-01-21",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security",
+      "date": "2026-01-22",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-12",
+      "event": "Malicious npm packages discovered targeting GCP Cloud Functions"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "Google confirms build-time code injection vulnerability"
+    },
+    {
+      "date": "2026-01-18",
+      "event": "Malicious packages removed from npm registry"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Google releases updated Cloud Functions build process"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A supply chain attack was discovered targeting Google Cloud Functions. Attackers published malicious npm packages with names similar to popular libraries. When developers accidentally install these packages, malicious code runs during the Cloud Function build process and injects a backdoor.",
+    "who_is_affected": "Any organization using Google Cloud Functions with Node.js runtime. Developers who recently added new dependencies to their functions are at highest risk. This also affects Cloud Run and App Engine applications.",
+    "what_attackers_do": "Step 1: Attacker publishes typosquatted npm packages (e.g., 'lodas' instead of 'lodash'). Step 2: Developer accidentally installs the malicious package. Step 3: During Cloud Functions deployment, malicious code executes. Step 4: A backdoor is injected into the deployed function. Step 5: Attacker gains persistent access to the function and its service account permissions.",
+    "what_you_should_do": [
+      "Audit all package.json files for recently added dependencies",
+      "Use npm audit and Snyk to scan for known malicious packages",
+      "Implement package-lock.json to prevent unexpected dependency changes",
+      "Enable Binary Authorization for Cloud Functions",
+      "Review Cloud Function service account permissions",
+      "Set up dependency scanning in CI/CD pipelines"
+    ],
+    "why_this_is_serious": "Serverless functions often have access to sensitive resources - databases, APIs, secrets. A compromised function can access everything its service account can. Supply chain attacks are hard to detect because the malicious code runs as part of your legitimate build process."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.001",
+        "technique_name": "Supply Chain Compromise: Compromise Software Dependencies",
+        "description": "Attackers compromise the software supply chain through malicious packages"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.007",
+        "technique_name": "JavaScript",
+        "description": "Malicious JavaScript code executes during build and runtime"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1546",
+        "technique_name": "Event Triggered Execution",
+        "description": "Backdoor persists in the deployed serverless function"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor Cloud Functions deployments for unexpected packages, unusual network connections, and access to sensitive resources. Use Cloud Audit Logs extensively.",
+    "log_sources": [
+      {
+        "source": "Cloud Audit Logs",
+        "description": "Admin activity and data access logs for Cloud Functions",
+        "priority": "Critical"
+      },
+      {
+        "source": "Cloud Build Logs",
+        "description": "Build-time logs showing package installation",
+        "priority": "High"
+      },
+      {
+        "source": "VPC Flow Logs",
+        "description": "Network traffic from Cloud Functions to external destinations",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unknown outbound connections",
+        "description": "Cloud Functions making requests to unexpected external IPs or domains",
+        "log_field": "httpRequest.remoteIp not in allowlist",
+        "severity": "High"
+      },
+      {
+        "indicator": "New package installations",
+        "description": "Build logs showing installation of packages not in package-lock.json",
+        "log_field": "npm WARN deprecated or npm WARN optional",
+        "severity": "Medium"
+      },
+      {
+        "indicator": "Service account impersonation",
+        "description": "Function accessing resources beyond its expected scope",
+        "log_field": "protoPayload.authenticationInfo.serviceAccountKeyName",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": [
+      "198.51.100.50",
+      "203.0.113.75"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit Dependencies",
+      "description": "Check all Cloud Functions for recently added or suspicious packages",
+      "command": "npm audit --json"
+    },
+    {
+      "priority": 2,
+      "action": "Review Deployment History",
+      "description": "Check recent Cloud Functions deployments for unexpected changes",
+      "command": "gcloud functions list --format='table(name,updateTime,runtime)'"
+    },
+    {
+      "priority": 3,
+      "action": "Enable Binary Authorization",
+      "description": "Require signed container images for deployments",
+      "command": "gcloud container binauthz policy import policy.yaml"
+    },
+    {
+      "priority": 4,
+      "action": "Rotate Service Account Keys",
+      "description": "Rotate credentials for any potentially compromised functions",
+      "command": "gcloud iam service-accounts keys create key.json --iam-account SA_EMAIL"
+    }
+  ]
+}

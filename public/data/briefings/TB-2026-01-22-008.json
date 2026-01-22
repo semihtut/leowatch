@@ -1,0 +1,173 @@
+{
+  "briefing_id": "TB-2026-01-22-008",
+  "title": "Terraform Enterprise Remote Code Execution via State File Manipulation",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": ["CVE-2026-31007"],
+  "tags": ["Terraform", "IaC", "HashiCorp", "RCE", "cloud", "DevOps", "supply-chain"],
+  "affected_products": ["Terraform Enterprise", "Terraform Cloud", "HCP Terraform"],
+  "sources_analyzed": 9,
+  "sources": [
+    {
+      "name": "HashiCorp Security Advisory",
+      "url": "https://discuss.hashicorp.com/c/security",
+      "date": "2026-01-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Aqua Security Research",
+      "url": "https://www.aquasec.com/blog",
+      "date": "2026-01-21",
+      "type": "Research"
+    },
+    {
+      "name": "Dark Reading",
+      "url": "https://www.darkreading.com",
+      "date": "2026-01-22",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-08",
+      "event": "Vulnerability discovered in Terraform state file processing"
+    },
+    {
+      "date": "2026-01-12",
+      "event": "HashiCorp notified through bug bounty program"
+    },
+    {
+      "date": "2026-01-18",
+      "event": "Emergency patch developed and tested"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "HashiCorp releases security advisory and patch"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Proof-of-concept exploit published by researchers"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical remote code execution vulnerability was found in Terraform Enterprise. Attackers can craft malicious Terraform state files that, when processed by Terraform Enterprise, execute arbitrary code on the server. This gives attackers full control over your infrastructure-as-code pipeline.",
+    "who_is_affected": "Organizations using Terraform Enterprise, Terraform Cloud, or HCP Terraform to manage cloud infrastructure. Teams that import state files from external sources or use shared modules are at highest risk.",
+    "what_attackers_do": "Step 1: Attacker crafts a malicious Terraform state file with embedded code. Step 2: The file is introduced via state import, compromised module, or PR. Step 3: When Terraform processes the state, malicious code executes. Step 4: Attacker gains access to Terraform Enterprise server. Step 5: They can modify any infrastructure, access secrets, and pivot to cloud accounts.",
+    "what_you_should_do": [
+      "Update Terraform Enterprise to the latest patched version immediately",
+      "Review all recent state imports and module additions",
+      "Enable Sentinel policies to validate state file contents",
+      "Restrict who can import state files and add external modules",
+      "Audit Terraform Cloud/Enterprise access logs for suspicious activity",
+      "Review and rotate all stored cloud credentials"
+    ],
+    "why_this_is_serious": "Terraform manages your entire cloud infrastructure. If attackers control Terraform, they control everything - VMs, databases, networks, and secrets. They can add backdoors to infrastructure, steal credentials, and cause massive damage. This is the ultimate supply chain attack vector for cloud environments."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Malicious code embedded in state files executes on the Terraform server"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1098",
+        "technique_name": "Account Manipulation",
+        "description": "Attackers modify cloud accounts via malicious Terraform runs"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1496",
+        "technique_name": "Resource Hijacking",
+        "description": "Attackers can provision unauthorized cloud resources"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor Terraform Enterprise logs for unusual state operations, failed policy checks, and unexpected infrastructure changes. Watch for state imports from unknown sources.",
+    "log_sources": [
+      {
+        "source": "Terraform Enterprise Audit Logs",
+        "description": "All administrative and run activities in TFE",
+        "priority": "Critical"
+      },
+      {
+        "source": "Sentinel Policy Logs",
+        "description": "Policy check results and violations",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Audit Logs",
+        "description": "Infrastructure changes made by Terraform",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "State imports from unknown sources",
+        "description": "State files imported from external or untrusted locations",
+        "log_field": "action='state-import'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unusual run patterns",
+        "description": "Terraform runs at unexpected times or by unexpected users",
+        "log_field": "run.created_at outside business hours",
+        "severity": "Medium"
+      },
+      {
+        "indicator": "Sentinel policy bypass attempts",
+        "description": "Runs that override or skip policy checks",
+        "log_field": "policy_override=true",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected infrastructure changes",
+        "description": "Resources created that don't match expected patterns",
+        "log_field": "plan.resource_additions unexpected",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update Terraform Enterprise",
+      "description": "Apply the security patch immediately",
+      "command": "replicated admin upgrade --version PATCHED_VERSION"
+    },
+    {
+      "priority": 2,
+      "action": "Review State Imports",
+      "description": "Check all recent state import operations",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Enable State File Validation",
+      "description": "Implement Sentinel policies to validate state file contents",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Rotate Cloud Credentials",
+      "description": "Rotate all cloud provider credentials stored in Terraform",
+      "command": "terraform workspace select WORKSPACE && terraform refresh"
+    },
+    {
+      "priority": 5,
+      "action": "Restrict External Modules",
+      "description": "Limit module sources to approved registries only",
+      "command": null
+    }
+  ]
+}

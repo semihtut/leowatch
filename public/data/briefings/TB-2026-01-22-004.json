@@ -1,0 +1,156 @@
+{
+  "briefing_id": "TB-2026-01-22-004",
+  "title": "AWS S3 Bucket Policy Bypass via Confused Deputy Attack",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.1,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": ["CVE-2026-31001"],
+  "tags": ["AWS", "S3", "cloud", "IAM", "data-breach", "confused-deputy"],
+  "affected_products": ["AWS S3", "AWS IAM", "Third-party S3 integrations"],
+  "sources_analyzed": 8,
+  "sources": [
+    {
+      "name": "AWS Security Bulletin",
+      "url": "https://aws.amazon.com/security/security-bulletins",
+      "date": "2026-01-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Wiz Research",
+      "url": "https://www.wiz.io/blog/cloud-security-research",
+      "date": "2026-01-21",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/search/label/Cloud%20security",
+      "date": "2026-01-22",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-15",
+      "event": "Security researchers discover confused deputy vulnerability in S3 bucket policies"
+    },
+    {
+      "date": "2026-01-18",
+      "event": "AWS notified through responsible disclosure"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "AWS releases security bulletin and mitigation guidance"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Public disclosure and proof-of-concept released"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical vulnerability was discovered in how AWS S3 bucket policies handle cross-account access. Attackers can exploit the 'confused deputy' problem to access S3 buckets they shouldn't have access to. This happens when bucket policies don't properly validate the source of requests.",
+    "who_is_affected": "Any AWS customer using S3 bucket policies with cross-account access, especially those using third-party services that access their S3 buckets. Organizations with broadly permissive bucket policies are most at risk.",
+    "what_attackers_do": "Step 1: Attacker identifies S3 buckets with permissive cross-account policies. Step 2: They use a compromised or malicious AWS account to assume a trusted role. Step 3: The attacker's requests appear to come from a trusted source. Step 4: They gain unauthorized read/write access to sensitive data. Step 5: Data exfiltration or manipulation occurs undetected.",
+    "what_you_should_do": [
+      "Review all S3 bucket policies for overly permissive cross-account access",
+      "Add aws:SourceAccount and aws:SourceArn conditions to all bucket policies",
+      "Enable S3 Access Logging and CloudTrail data events",
+      "Use AWS IAM Access Analyzer to identify public or cross-account access",
+      "Implement SCPs to restrict S3 access patterns organization-wide"
+    ],
+    "why_this_is_serious": "S3 buckets often contain the most sensitive data in an organization - customer data, backups, application secrets, and intellectual property. A confused deputy attack bypasses normal authentication, making it nearly invisible to detection. Your data could be stolen without any alerts firing."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1078.004",
+        "technique_name": "Cloud Accounts",
+        "description": "Attackers leverage compromised or malicious cloud accounts to initiate the attack"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1530",
+        "technique_name": "Data from Cloud Storage",
+        "description": "Attackers access and collect data stored in S3 buckets"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1567",
+        "technique_name": "Exfiltration Over Web Service",
+        "description": "Data is exfiltrated through legitimate AWS API calls"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor CloudTrail logs for unusual S3 access patterns, especially from unfamiliar AWS accounts or roles. Pay attention to cross-account access requests.",
+    "log_sources": [
+      {
+        "source": "AWS CloudTrail",
+        "description": "Enable data events for S3 to capture object-level API activity",
+        "priority": "Critical"
+      },
+      {
+        "source": "S3 Server Access Logs",
+        "description": "Detailed logs of all requests made to S3 buckets",
+        "priority": "High"
+      },
+      {
+        "source": "AWS GuardDuty",
+        "description": "Threat detection for unusual S3 access patterns",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Cross-account GetObject/PutObject requests",
+        "description": "S3 API calls from AWS accounts not in your organization",
+        "log_field": "userIdentity.accountId != your_account_id",
+        "severity": "High"
+      },
+      {
+        "indicator": "Bulk data access patterns",
+        "description": "Large number of GetObject calls in short time periods",
+        "log_field": "eventName='GetObject', high frequency",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Access from unusual regions",
+        "description": "S3 access from AWS regions you don't operate in",
+        "log_field": "awsRegion not in [expected_regions]",
+        "severity": "Medium"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit S3 Bucket Policies",
+      "description": "Review all bucket policies for overly permissive Principal statements",
+      "command": "aws s3api get-bucket-policy --bucket BUCKET_NAME"
+    },
+    {
+      "priority": 2,
+      "action": "Add Source Conditions",
+      "description": "Update bucket policies to include aws:SourceAccount conditions",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Run IAM Access Analyzer",
+      "description": "Use Access Analyzer to find publicly accessible or cross-account resources",
+      "command": "aws accessanalyzer list-findings --analyzer-arn ANALYZER_ARN"
+    },
+    {
+      "priority": 4,
+      "action": "Enable CloudTrail Data Events",
+      "description": "Ensure S3 data events are being logged for forensic analysis",
+      "command": "aws cloudtrail put-event-selectors --trail-name TRAIL_NAME --event-selectors '[{\"ReadWriteType\":\"All\",\"DataResources\":[{\"Type\":\"AWS::S3::Object\",\"Values\":[\"arn:aws:s3\"]}]}]'"
+    }
+  ]
+}

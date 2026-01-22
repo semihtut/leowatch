@@ -1,0 +1,151 @@
+{
+  "briefing_id": "TB-2026-01-22-010",
+  "title": "Azure Blob Storage Encryption Key Exposure via Misconfigured Access Policies",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.5,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": ["CVE-2026-31009"],
+  "tags": ["Azure", "Blob Storage", "encryption", "misconfiguration", "cloud", "data-breach"],
+  "affected_products": ["Azure Blob Storage", "Azure Key Vault", "Azure Storage Accounts"],
+  "sources_analyzed": 7,
+  "sources": [
+    {
+      "name": "Microsoft Security Response Center",
+      "url": "https://msrc.microsoft.com/update-guide",
+      "date": "2026-01-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Orca Security",
+      "url": "https://orca.security/resources/blog",
+      "date": "2026-01-21",
+      "type": "Research"
+    },
+    {
+      "name": "CSO Online",
+      "url": "https://www.csoonline.com",
+      "date": "2026-01-22",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-10",
+      "event": "Researchers discover encryption key exposure pattern in Azure"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "Microsoft confirms issue with Key Vault access policies"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Microsoft releases guidance and Azure Policy updates"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Public disclosure and scanning activity detected"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A vulnerability pattern was discovered where Azure Blob Storage encryption keys can be exposed through misconfigured Key Vault access policies. When customer-managed keys (CMK) are used with overly permissive Key Vault settings, attackers can access the encryption keys and decrypt stored data.",
+    "who_is_affected": "Organizations using Azure Blob Storage with customer-managed keys (CMK) stored in Azure Key Vault. Environments with overly permissive Key Vault access policies or missing network restrictions are vulnerable.",
+    "what_attackers_do": "Step 1: Attacker gains initial access to Azure environment (phishing, credential theft). Step 2: They enumerate Key Vault instances and access policies. Step 3: Overly permissive policies allow key access. Step 4: Attacker retrieves encryption keys. Step 5: All data in associated storage accounts can be decrypted.",
+    "what_you_should_do": [
+      "Audit all Key Vault access policies for least privilege",
+      "Enable Key Vault firewall and private endpoints",
+      "Review diagnostic logs for unauthorized key access attempts",
+      "Implement RBAC instead of vault access policies where possible",
+      "Enable soft-delete and purge protection on Key Vaults",
+      "Use Azure Policy to enforce Key Vault security baselines"
+    ],
+    "why_this_is_serious": "Encryption is your last line of defense for data at rest. If attackers get your encryption keys, all that encrypted data becomes readable. Azure Blob Storage often contains backups, application data, and sensitive documents. Key exposure effectively nullifies your encryption investment."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.005",
+        "technique_name": "Cloud Instance Metadata API",
+        "description": "Attackers access Key Vault through compromised Azure identities"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1530",
+        "technique_name": "Data from Cloud Storage",
+        "description": "Attackers decrypt and access data in Blob Storage"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor Key Vault access logs for unusual key operations, especially from unexpected principals or locations. Alert on policy changes and key exports.",
+    "log_sources": [
+      {
+        "source": "Key Vault Diagnostic Logs",
+        "description": "All key operations and access attempts",
+        "priority": "Critical"
+      },
+      {
+        "source": "Azure Activity Log",
+        "description": "Management plane operations on Key Vault",
+        "priority": "High"
+      },
+      {
+        "source": "Microsoft Defender for Cloud",
+        "description": "Security alerts for Key Vault",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Key Get/List operations",
+        "description": "Unexpected principals accessing encryption keys",
+        "log_field": "operationName='SecretGet' OR operationName='KeyGet'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Access policy changes",
+        "description": "Modifications to Key Vault access policies",
+        "log_field": "operationName='VaultAccessPolicyChanged'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Network rule changes",
+        "description": "Firewall rules modified to allow broader access",
+        "log_field": "operationName='NetworkRuleSetChanged'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit Key Vault Policies",
+      "description": "Review all access policies for least privilege",
+      "command": "az keyvault show --name VAULT_NAME --query 'properties.accessPolicies'"
+    },
+    {
+      "priority": 2,
+      "action": "Enable Network Restrictions",
+      "description": "Configure Key Vault firewall and private endpoints",
+      "command": "az keyvault update --name VAULT_NAME --default-action Deny"
+    },
+    {
+      "priority": 3,
+      "action": "Enable Diagnostic Logging",
+      "description": "Ensure all Key Vault operations are logged",
+      "command": "az monitor diagnostic-settings create --resource VAULT_ID --name 'KeyVaultLogs' --logs '[{\"category\":\"AuditEvent\",\"enabled\":true}]'"
+    },
+    {
+      "priority": 4,
+      "action": "Review Key Access History",
+      "description": "Check diagnostic logs for unauthorized key access",
+      "command": null
+    }
+  ]
+}

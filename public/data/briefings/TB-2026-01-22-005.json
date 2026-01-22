@@ -1,0 +1,157 @@
+{
+  "briefing_id": "TB-2026-01-22-005",
+  "title": "Azure Kubernetes Service Container Escape via Privileged Pod",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.4,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-15"
+  },
+  "cves": ["CVE-2026-31002", "CVE-2026-31003"],
+  "tags": ["Azure", "AKS", "Kubernetes", "container-escape", "cloud", "privilege-escalation"],
+  "affected_products": ["Azure Kubernetes Service", "AKS Node Pools", "Azure Container Instances"],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "Microsoft Security Response Center",
+      "url": "https://msrc.microsoft.com/update-guide",
+      "date": "2026-01-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Palo Alto Unit 42",
+      "url": "https://unit42.paloaltonetworks.com",
+      "date": "2026-01-21",
+      "type": "Research"
+    },
+    {
+      "name": "CISA KEV",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-22",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-10",
+      "event": "Container escape vulnerability discovered in AKS node configuration"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "Microsoft confirms vulnerability and begins developing patch"
+    },
+    {
+      "date": "2026-01-19",
+      "event": "Microsoft releases security update for AKS"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "CISA adds to Known Exploited Vulnerabilities catalog after active exploitation detected"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical container escape vulnerability was found in Azure Kubernetes Service. If an attacker can run code inside a container, they can break out and take control of the underlying node. From there, they can access other containers and potentially the entire cluster.",
+    "who_is_affected": "Organizations running workloads on Azure Kubernetes Service, especially those allowing untrusted container images or multi-tenant Kubernetes clusters. AKS clusters without Pod Security Standards are most vulnerable.",
+    "what_attackers_do": "Step 1: Attacker gains access to a container (via app vulnerability or malicious image). Step 2: They exploit a kernel vulnerability to escape the container. Step 3: They gain root access on the AKS node. Step 4: They access secrets, service account tokens, and other containers. Step 5: They can pivot to other nodes and take over the cluster.",
+    "what_you_should_do": [
+      "Update AKS clusters to the latest patched version immediately",
+      "Enable Azure Policy for Kubernetes to enforce pod security standards",
+      "Disable privileged containers unless absolutely necessary",
+      "Implement network policies to limit pod-to-pod communication",
+      "Review all running pods for elevated privileges",
+      "Enable Microsoft Defender for Containers"
+    ],
+    "why_this_is_serious": "Container escapes are among the most dangerous cloud vulnerabilities. Once an attacker escapes a container, they have direct access to the host and potentially all other workloads. In shared Kubernetes clusters, this means one compromised application can lead to a complete infrastructure breach."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1611",
+        "technique_name": "Escape to Host",
+        "description": "Attackers escape container isolation to access the underlying host"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1550.001",
+        "technique_name": "Application Access Token",
+        "description": "Attackers steal service account tokens to move between pods"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.007",
+        "technique_name": "Container API",
+        "description": "Attackers access Kubernetes API to extract secrets"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for suspicious container activity, privilege escalation attempts, and unusual process execution on AKS nodes. Enable Azure Defender alerts.",
+    "log_sources": [
+      {
+        "source": "Azure Monitor Container Insights",
+        "description": "Container-level logs and metrics for AKS clusters",
+        "priority": "Critical"
+      },
+      {
+        "source": "Microsoft Defender for Containers",
+        "description": "Runtime threat detection for container workloads",
+        "priority": "Critical"
+      },
+      {
+        "source": "Kubernetes Audit Logs",
+        "description": "API server audit logs for cluster activity",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Privileged container creation",
+        "description": "Pods created with privileged: true or hostPID/hostNetwork enabled",
+        "log_field": "securityContext.privileged=true",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Node filesystem access",
+        "description": "Containers mounting host paths like /etc, /var, or /proc",
+        "log_field": "volumeMounts.hostPath=/",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Suspicious process execution",
+        "description": "Unexpected processes running in containers (nsenter, chroot)",
+        "log_field": "process_name in ['nsenter', 'chroot', 'mount']",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update AKS Cluster",
+      "description": "Upgrade to the latest AKS version with security patches",
+      "command": "az aks upgrade --resource-group RG_NAME --name CLUSTER_NAME --kubernetes-version 1.29.2"
+    },
+    {
+      "priority": 2,
+      "action": "Enable Pod Security Standards",
+      "description": "Apply restricted pod security standards to namespaces",
+      "command": "kubectl label namespace NAMESPACE pod-security.kubernetes.io/enforce=restricted"
+    },
+    {
+      "priority": 3,
+      "action": "Audit Privileged Pods",
+      "description": "Find all pods running with elevated privileges",
+      "command": "kubectl get pods --all-namespaces -o json | jq '.items[] | select(.spec.containers[].securityContext.privileged==true) | .metadata.name'"
+    },
+    {
+      "priority": 4,
+      "action": "Enable Defender for Containers",
+      "description": "Turn on runtime protection for AKS workloads",
+      "command": "az security pricing create --name Containers --tier Standard"
+    }
+  ]
+}

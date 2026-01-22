@@ -1,0 +1,231 @@
+{
+  "lastUpdated": "2026-01-22T10:00:00Z",
+  "stats": {
+    "todayCount": 13,
+    "criticalCount": 6,
+    "totalSources": 103,
+    "lastUpdateHoursAgo": 1
+  },
+  "briefings": [
+    {
+      "id": "TB-2026-01-22-001",
+      "title": "FortiGate Authentication Bypass - Patch Ineffective",
+      "severity": "Critical",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-59718", "CVE-2026-59719"],
+      "tags": ["firewall", "authentication", "fortinet", "SAML", "SSO"],
+      "sourcesCount": 12,
+      "excerpt": "Critical auth bypass in FortiGate firewalls. Even patched systems remain vulnerable. Attackers can log in as admin without a password using SAML tricks."
+    },
+    {
+      "id": "TB-2026-01-22-002",
+      "title": "Azure Active Directory Token Validation Flaw",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-21892"],
+      "tags": ["azure", "identity", "cloud", "SSO", "microsoft"],
+      "sourcesCount": 8,
+      "excerpt": "Security researchers discovered a flaw in Azure AD token validation that could allow attackers to forge authentication tokens and access protected resources."
+    },
+    {
+      "id": "TB-2026-01-22-003",
+      "title": "Kubernetes API Server Privilege Escalation",
+      "severity": "Medium",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-18445"],
+      "tags": ["kubernetes", "container", "cloud", "RBAC", "privilege-escalation"],
+      "sourcesCount": 10,
+      "excerpt": "A privilege escalation vulnerability in Kubernetes API server allows users with limited permissions to gain cluster-admin access through RBAC misconfiguration exploitation."
+    },
+    {
+      "id": "TB-2026-01-22-004",
+      "title": "AWS S3 Bucket Policy Bypass via Confused Deputy Attack",
+      "severity": "Critical",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31001"],
+      "tags": ["AWS", "S3", "cloud", "IAM", "data-breach", "confused-deputy"],
+      "sourcesCount": 8,
+      "excerpt": "A critical vulnerability in AWS S3 bucket policies allows attackers to exploit the confused deputy problem to access buckets through cross-account access manipulation."
+    },
+    {
+      "id": "TB-2026-01-22-005",
+      "title": "Azure Kubernetes Service Container Escape via Privileged Pod",
+      "severity": "Critical",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31002", "CVE-2026-31003"],
+      "tags": ["Azure", "AKS", "Kubernetes", "container-escape", "cloud", "privilege-escalation"],
+      "sourcesCount": 11,
+      "excerpt": "Critical container escape vulnerability in Azure Kubernetes Service allows attackers to break out of containers and take control of underlying nodes."
+    },
+    {
+      "id": "TB-2026-01-22-006",
+      "title": "GCP Cloud Functions Code Injection via Malicious Dependencies",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31004"],
+      "tags": ["GCP", "Cloud Functions", "serverless", "supply-chain", "code-injection", "cloud"],
+      "sourcesCount": 7,
+      "excerpt": "Supply chain attack targeting Google Cloud Functions through typosquatted npm packages that inject backdoors during the build process."
+    },
+    {
+      "id": "TB-2026-01-22-007",
+      "title": "Multi-Cloud IAM Token Theft Campaign Targeting Enterprise Environments",
+      "severity": "Critical",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31005", "CVE-2026-31006"],
+      "tags": ["multi-cloud", "IAM", "token-theft", "AWS", "Azure", "GCP", "APT"],
+      "sourcesCount": 15,
+      "excerpt": "Sophisticated APT campaign stealing cloud access tokens from enterprises, targeting AWS, Azure, and GCP environments simultaneously."
+    },
+    {
+      "id": "TB-2026-01-22-008",
+      "title": "Terraform Enterprise Remote Code Execution via State File Manipulation",
+      "severity": "Critical",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31007"],
+      "tags": ["Terraform", "IaC", "HashiCorp", "RCE", "cloud", "DevOps", "supply-chain"],
+      "sourcesCount": 9,
+      "excerpt": "Critical RCE vulnerability in Terraform Enterprise allows attackers to execute code by crafting malicious state files, compromising entire IaC pipelines."
+    },
+    {
+      "id": "TB-2026-01-22-009",
+      "title": "AWS Lambda Function URL Authentication Bypass",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31008"],
+      "tags": ["AWS", "Lambda", "serverless", "authentication", "cloud", "API"],
+      "sourcesCount": 6,
+      "excerpt": "Authentication bypass in AWS Lambda Function URLs allows unauthorized access to Lambda functions that use IAM authentication."
+    },
+    {
+      "id": "TB-2026-01-22-010",
+      "title": "Azure Blob Storage Encryption Key Exposure via Misconfigured Access Policies",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31009"],
+      "tags": ["Azure", "Blob Storage", "encryption", "misconfiguration", "cloud", "data-breach"],
+      "sourcesCount": 7,
+      "excerpt": "Encryption keys for Azure Blob Storage can be exposed through misconfigured Key Vault access policies, allowing data decryption."
+    },
+    {
+      "id": "TB-2026-01-22-011",
+      "title": "GCP BigQuery SQL Injection via External Table Definitions",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31010"],
+      "tags": ["GCP", "BigQuery", "SQL-injection", "data-warehouse", "cloud", "analytics"],
+      "sourcesCount": 5,
+      "excerpt": "SQL injection vulnerability in BigQuery external tables allows attackers to execute unauthorized queries through malicious file names."
+    },
+    {
+      "id": "TB-2026-01-22-012",
+      "title": "Kubernetes Secrets Manager Privilege Escalation via RBAC Misconfiguration",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31011"],
+      "tags": ["Kubernetes", "secrets", "RBAC", "cloud", "container", "privilege-escalation"],
+      "sourcesCount": 8,
+      "excerpt": "RBAC misconfiguration in Kubernetes allows users with limited permissions to escalate and read all secrets in a namespace or cluster."
+    },
+    {
+      "id": "TB-2026-01-22-013",
+      "title": "GitHub Actions Workflow Injection via Malicious Pull Requests",
+      "severity": "Critical",
+      "date": "2026-01-22",
+      "cves": ["CVE-2026-31012"],
+      "tags": ["GitHub", "CI-CD", "supply-chain", "cloud", "DevOps", "code-injection"],
+      "sourcesCount": 10,
+      "excerpt": "Critical workflow injection vulnerability allows attackers to execute arbitrary code in CI/CD pipelines through malicious pull requests."
+    },
+    {
+      "id": "TB-2026-01-21-001",
+      "title": "Cisco IOS XE Web UI Command Injection",
+      "severity": "Critical",
+      "date": "2026-01-21",
+      "cves": ["CVE-2026-20198", "CVE-2026-20199"],
+      "tags": ["cisco", "networking", "command-injection", "web-ui"],
+      "sourcesCount": 15,
+      "excerpt": "Active exploitation of Cisco IOS XE web management interface. Attackers creating admin accounts on exposed devices. Disable web UI immediately."
+    },
+    {
+      "id": "TB-2026-01-21-002",
+      "title": "VMware vCenter Server Remote Code Execution",
+      "severity": "High",
+      "date": "2026-01-21",
+      "cves": ["CVE-2026-22972"],
+      "tags": ["vmware", "virtualization", "RCE", "vCenter"],
+      "sourcesCount": 9,
+      "excerpt": "Critical RCE vulnerability in VMware vCenter Server allows unauthenticated attackers to execute arbitrary code on affected systems."
+    },
+    {
+      "id": "TB-2026-01-20-001",
+      "title": "Windows LDAP Remote Code Execution",
+      "severity": "Critical",
+      "date": "2026-01-20",
+      "cves": ["CVE-2026-21543"],
+      "tags": ["windows", "LDAP", "active-directory", "microsoft", "RCE"],
+      "sourcesCount": 11,
+      "excerpt": "Critical vulnerability in Windows LDAP service allows remote attackers to execute code on domain controllers. Patch immediately."
+    },
+    {
+      "id": "TB-2026-01-20-002",
+      "title": "Apache Struts Path Traversal Vulnerability",
+      "severity": "High",
+      "date": "2026-01-20",
+      "cves": ["CVE-2026-45678"],
+      "tags": ["apache", "struts", "java", "web-application", "path-traversal"],
+      "sourcesCount": 7,
+      "excerpt": "Path traversal vulnerability in Apache Struts allows attackers to read sensitive files from affected servers."
+    },
+    {
+      "id": "TB-2026-01-19-001",
+      "title": "Palo Alto Networks PAN-OS Authentication Bypass",
+      "severity": "High",
+      "date": "2026-01-19",
+      "cves": ["CVE-2026-3400"],
+      "tags": ["palo-alto", "firewall", "authentication", "PAN-OS"],
+      "sourcesCount": 10,
+      "excerpt": "Authentication bypass in PAN-OS management interface allows attackers to access firewall configuration without valid credentials."
+    },
+    {
+      "id": "TB-2026-01-18-001",
+      "title": "GitLab CE/EE Arbitrary File Read",
+      "severity": "Medium",
+      "date": "2026-01-18",
+      "cves": ["CVE-2026-7888"],
+      "tags": ["gitlab", "devops", "file-read", "CI-CD"],
+      "sourcesCount": 6,
+      "excerpt": "Vulnerability in GitLab allows authenticated users to read arbitrary files on the server through specially crafted API requests."
+    },
+    {
+      "id": "TB-2026-01-17-001",
+      "title": "Jenkins Script Console Remote Code Execution",
+      "severity": "Critical",
+      "date": "2026-01-17",
+      "cves": ["CVE-2026-55123"],
+      "tags": ["jenkins", "CI-CD", "devops", "RCE"],
+      "sourcesCount": 8,
+      "excerpt": "Unauthenticated access to Jenkins Script Console allows complete server compromise. Check access controls on all Jenkins instances."
+    },
+    {
+      "id": "TB-2026-01-15-001",
+      "title": "Linux Kernel Netfilter Privilege Escalation",
+      "severity": "High",
+      "date": "2026-01-15",
+      "cves": ["CVE-2026-1337"],
+      "tags": ["linux", "kernel", "netfilter", "privilege-escalation"],
+      "sourcesCount": 9,
+      "excerpt": "Local privilege escalation vulnerability in Linux kernel netfilter subsystem allows unprivileged users to gain root access."
+    },
+    {
+      "id": "TB-2026-01-14-001",
+      "title": "SonicWall SMA 100 Series SQL Injection",
+      "severity": "Critical",
+      "date": "2026-01-14",
+      "cves": ["CVE-2026-20010"],
+      "tags": ["sonicwall", "VPN", "SQL-injection", "remote-access"],
+      "sourcesCount": 11,
+      "excerpt": "Critical SQL injection vulnerability in SonicWall SMA 100 Series allows unauthenticated attackers to access sensitive data and potentially gain admin access."
+    }
+  ]
+}

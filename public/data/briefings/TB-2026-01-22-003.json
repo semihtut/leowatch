@@ -1,0 +1,156 @@
+{
+  "briefing_id": "TB-2026-01-22-003",
+  "title": "Kubernetes API Server Privilege Escalation",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Medium",
+    "cvss": 6.5,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": ["CVE-2026-18445"],
+  "tags": ["kubernetes", "container", "cloud", "RBAC", "privilege-escalation", "devops"],
+  "affected_products": ["Kubernetes 1.27.x - 1.29.x", "Amazon EKS", "Google GKE", "Azure AKS", "Self-managed Kubernetes"],
+  "sources_analyzed": 10,
+  "sources": [
+    {
+      "name": "Kubernetes Security Advisory",
+      "url": "https://kubernetes.io/docs/reference/issues-security/official-cve-feed/",
+      "date": "2026-01-17",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Aqua Security",
+      "url": "https://www.aquasec.com/blog/kubernetes-rbac-escalation",
+      "date": "2026-01-19",
+      "type": "Research"
+    },
+    {
+      "name": "Sysdig",
+      "url": "https://sysdig.com/blog/kubernetes-privilege-escalation",
+      "date": "2026-01-20",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-05",
+      "event": "Vulnerability discovered by Aqua Security during penetration test"
+    },
+    {
+      "date": "2026-01-08",
+      "event": "Issue reported to Kubernetes Security Response Committee"
+    },
+    {
+      "date": "2026-01-17",
+      "event": "Kubernetes releases patch versions 1.27.12, 1.28.8, 1.29.3"
+    },
+    {
+      "date": "2026-01-19",
+      "event": "Managed Kubernetes providers begin rolling out updates"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A security bug was found in Kubernetes, the popular system for running containers. The bug is in how Kubernetes checks user permissions (called RBAC). An attacker with limited access to your Kubernetes cluster could trick the system into giving them full admin control.",
+    "who_is_affected": "Any organization running Kubernetes versions 1.27 through 1.29. This includes managed services like Amazon EKS, Google GKE, and Azure AKS. The bug affects clusters where users have 'create' permission for certain resources.",
+    "what_attackers_do": "Step 1: They get limited access to your Kubernetes cluster (maybe as a developer). Step 2: They create a special resource that confuses the permission system. Step 3: The system incorrectly grants them higher permissions. Step 4: They now have cluster-admin access and can control everything.",
+    "what_you_should_do": [
+      "Update Kubernetes to the latest patched version",
+      "Review RBAC roles - remove unnecessary 'create' permissions",
+      "Enable Kubernetes audit logging to detect abuse",
+      "Use admission controllers to block suspicious resource creation",
+      "Implement network policies to limit pod-to-pod communication"
+    ],
+    "why_this_is_serious": "Kubernetes often runs your most important applications. If attackers get admin access, they can steal secrets (passwords, API keys), deploy crypto miners, or use your infrastructure to attack others. Container escapes could also let them access the underlying servers."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1078.001",
+        "technique_name": "Valid Accounts: Default Accounts",
+        "description": "Attackers abuse legitimate cluster accounts to escalate privileges"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1053.007",
+        "technique_name": "Scheduled Task/Job: Container Orchestration Job",
+        "description": "Attackers may create persistent workloads to maintain access"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1613",
+        "technique_name": "Container and Resource Discovery",
+        "description": "Attackers enumerate cluster resources to find valuable targets"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor Kubernetes audit logs for unusual RBAC changes, role bindings to cluster-admin, and resource creation in kube-system namespace.",
+    "log_sources": [
+      {
+        "source": "Kubernetes Audit Logs",
+        "description": "API server audit logs showing all cluster operations",
+        "priority": "Critical"
+      },
+      {
+        "source": "Falco/Runtime Security",
+        "description": "Container runtime monitoring for suspicious behavior",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Logs",
+        "description": "EKS/GKE/AKS control plane logs",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "ClusterRoleBinding creation by non-admin users",
+        "description": "Users creating bindings to cluster-admin or other privileged roles",
+        "log_field": "verb=create, resource=clusterrolebindings, user!=system:*",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Resource creation in kube-system namespace",
+        "description": "Non-system accounts creating resources in protected namespaces",
+        "log_field": "namespace=kube-system, verb=create, user!=system:*",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unusual service account token requests",
+        "description": "Requests to create or get tokens for privileged service accounts",
+        "log_field": "resource=serviceaccounts/token, verb=create",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update Kubernetes",
+      "description": "Upgrade to Kubernetes 1.27.12+, 1.28.8+, or 1.29.3+",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Audit RBAC Permissions",
+      "description": "Review all ClusterRoles and Roles for excessive permissions",
+      "command": "kubectl get clusterrolebindings -o wide\nkubectl get rolebindings -A -o wide"
+    },
+    {
+      "priority": 3,
+      "action": "Enable Audit Logging",
+      "description": "Ensure Kubernetes audit logging is enabled and logs are being collected",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Review Recent RBAC Changes",
+      "description": "Check audit logs for any suspicious role or binding changes in the past 30 days",
+      "command": null
+    }
+  ]
+}

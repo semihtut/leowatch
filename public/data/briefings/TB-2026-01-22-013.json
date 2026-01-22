@@ -1,0 +1,179 @@
+{
+  "briefing_id": "TB-2026-01-22-013",
+  "title": "GitHub Actions Workflow Injection via Malicious Pull Requests",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": ["CVE-2026-31012"],
+  "tags": ["GitHub", "CI-CD", "supply-chain", "cloud", "DevOps", "code-injection"],
+  "affected_products": ["GitHub Actions", "GitHub Enterprise", "Self-hosted runners"],
+  "sources_analyzed": 10,
+  "sources": [
+    {
+      "name": "GitHub Security Advisory",
+      "url": "https://github.com/security/advisories",
+      "date": "2026-01-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Cycode Research",
+      "url": "https://cycode.com/blog",
+      "date": "2026-01-21",
+      "type": "Research"
+    },
+    {
+      "name": "Security Week",
+      "url": "https://www.securityweek.com",
+      "date": "2026-01-22",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-06",
+      "event": "Workflow injection technique discovered affecting pull_request_target"
+    },
+    {
+      "date": "2026-01-12",
+      "event": "GitHub confirms issue and begins mitigation"
+    },
+    {
+      "date": "2026-01-17",
+      "event": "Active exploitation detected in open source projects"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "GitHub releases enhanced workflow controls"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Widespread scanning for vulnerable workflows observed"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical vulnerability in GitHub Actions allows attackers to execute arbitrary code in CI/CD pipelines through malicious pull requests. Workflows using 'pull_request_target' trigger with unsafe checkout patterns can be exploited to steal secrets and compromise build processes.",
+    "who_is_affected": "All organizations using GitHub Actions, especially open source projects that accept external contributions. Repositories with workflows using pull_request_target trigger and checking out PR code are vulnerable.",
+    "what_attackers_do": "Step 1: Attacker forks a target repository. Step 2: They create a malicious pull request modifying workflow files. Step 3: Vulnerable pull_request_target workflows execute attacker code. Step 4: Secrets, tokens, and signing keys are exfiltrated. Step 5: Attacker can push malicious code to the main branch or compromise releases.",
+    "what_you_should_do": [
+      "Audit all workflows using pull_request_target trigger",
+      "Never checkout untrusted PR code in privileged workflows",
+      "Use pull_request trigger instead where possible",
+      "Implement required reviews for workflow changes",
+      "Restrict secrets to specific branches and environments",
+      "Enable GitHub Advanced Security for secret scanning"
+    ],
+    "why_this_is_serious": "CI/CD pipelines have the keys to the kingdom - deployment credentials, signing keys, and repository write access. A compromised pipeline can inject backdoors into your software, affecting all downstream users. This is one of the most impactful supply chain attack vectors."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.002",
+        "technique_name": "Supply Chain Compromise: Compromise Software Supply Chain",
+        "description": "Attackers compromise CI/CD pipeline through malicious contributions"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Malicious code executes in GitHub Actions runners"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.004",
+        "technique_name": "Private Keys",
+        "description": "Attackers steal signing keys and deployment credentials"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1098",
+        "technique_name": "Account Manipulation",
+        "description": "Attackers modify repository settings or add collaborators"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor GitHub audit logs for workflow modifications, secret access, and unusual repository activities. Watch for pull requests modifying workflow files.",
+    "log_sources": [
+      {
+        "source": "GitHub Audit Log",
+        "description": "Repository and organization activity logs",
+        "priority": "Critical"
+      },
+      {
+        "source": "GitHub Actions Logs",
+        "description": "Workflow run logs and artifact access",
+        "priority": "High"
+      },
+      {
+        "source": "GitHub Security Events",
+        "description": "Secret scanning and code scanning alerts",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Workflow file modifications in PRs",
+        "description": "Pull requests that modify .github/workflows/ files",
+        "log_field": "pull_request.files contains '.github/workflows/'",
+        "severity": "High"
+      },
+      {
+        "indicator": "pull_request_target with checkout",
+        "description": "Workflows that checkout PR head in pull_request_target context",
+        "log_field": "workflow contains 'pull_request_target' AND 'checkout'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Secret access from forked PRs",
+        "description": "Secrets accessed during workflows triggered by external forks",
+        "log_field": "workflow_run.head_repository.fork=true AND secrets.accessed",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual repository token usage",
+        "description": "GITHUB_TOKEN used for unexpected operations",
+        "log_field": "token_usage outside normal patterns",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit Vulnerable Workflows",
+      "description": "Find all workflows using pull_request_target with checkout",
+      "command": "grep -r 'pull_request_target' .github/workflows/ && grep -r 'checkout' .github/workflows/"
+    },
+    {
+      "priority": 2,
+      "action": "Implement Workflow Restrictions",
+      "description": "Require approvals for workflow runs from first-time contributors",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Review Repository Permissions",
+      "description": "Check for overly permissive GITHUB_TOKEN scopes",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Enable Branch Protection",
+      "description": "Require PR reviews and status checks for protected branches",
+      "command": "gh api repos/OWNER/REPO/branches/main/protection -X PUT -f required_pull_request_reviews='{}'"
+    },
+    {
+      "priority": 5,
+      "action": "Rotate Compromised Secrets",
+      "description": "If exploitation suspected, rotate all repository and organization secrets",
+      "command": "gh secret list --json name"
+    }
+  ]
+}
