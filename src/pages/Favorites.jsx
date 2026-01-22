@@ -3,10 +3,12 @@ import { Heart, Trash2 } from 'lucide-react';
 import { useBriefings } from '../hooks/useBriefings';
 import { useFavorites } from '../hooks/useFavorites';
 import BriefingCard from '../components/briefing/BriefingCard';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Favorites() {
   const { briefings, loading, error } = useBriefings();
   const { favorites, clearFavorites, favoritesCount } = useFavorites();
+  const { t } = useLanguage();
 
   const favoriteBriefings = useMemo(() => {
     return briefings.filter((briefing) => favorites.includes(briefing.id));
@@ -35,25 +37,25 @@ export default function Favorites() {
         <div>
           <h1 className="text-3xl font-bold text-[var(--text-primary)] flex items-center gap-3">
             <Heart className="w-8 h-8 text-pink-500 fill-pink-500" />
-            Favorites
+            {t('favorites.title')}
           </h1>
           <p className="mt-2 text-[var(--text-secondary)]">
             {favoritesCount > 0
-              ? `You have ${favoritesCount} saved briefing${favoritesCount > 1 ? 's' : ''}`
-              : 'Save important briefings for quick access'}
+              ? (favoritesCount > 1 ? t('favorites.savedCountPlural') : t('favorites.savedCount')).replace('{count}', favoritesCount)
+              : t('favorites.saveHint')}
           </p>
         </div>
         {favoritesCount > 0 && (
           <button
             onClick={() => {
-              if (window.confirm('Are you sure you want to clear all favorites?')) {
+              if (window.confirm(t('favorites.clearConfirm'))) {
                 clearFavorites();
               }
             }}
             className="flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg transition-colors"
           >
             <Trash2 className="w-4 h-4" />
-            Clear All
+            {t('favorites.clearAll')}
           </button>
         )}
       </div>
@@ -68,9 +70,9 @@ export default function Favorites() {
       ) : (
         <div className="text-center py-16 glass-card">
           <Heart className="w-16 h-16 mx-auto text-[var(--text-muted)] mb-4" />
-          <h3 className="text-lg font-medium text-[var(--text-primary)] mb-2">No favorites yet</h3>
+          <h3 className="text-lg font-medium text-[var(--text-primary)] mb-2">{t('favorites.noFavorites')}</h3>
           <p className="text-[var(--text-muted)] max-w-md mx-auto">
-            Click the heart icon on any briefing to save it here for quick access later.
+            {t('favorites.addHint')}
           </p>
         </div>
       )}

@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Search, X } from 'lucide-react';
 import { useBriefings } from '../hooks/useBriefings';
 import BriefingGrid from '../components/briefing/BriefingGrid';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const severityColors = {
   Critical: 'bg-red-500/20 text-red-400 border-red-500/50 hover:bg-red-500/30',
@@ -14,6 +15,7 @@ export default function Dashboard() {
   const { briefings, loading, error } = useBriefings();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSeverity, setSelectedSeverity] = useState(null);
+  const { t, language } = useLanguage();
 
   // Filter to show only today's briefings
   const today = new Date().toISOString().split('T')[0];
@@ -40,7 +42,7 @@ export default function Dashboard() {
     });
   }, [todayBriefings, selectedSeverity, searchQuery]);
 
-  const todayFormatted = new Date().toLocaleDateString('en-US', {
+  const todayFormatted = new Date().toLocaleDateString(language === 'fi' ? 'fi-FI' : 'en-US', {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
@@ -68,7 +70,7 @@ export default function Dashboard() {
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-[var(--text-primary)]">
-          Today's Briefings
+          {t('dashboard.title')}
         </h1>
         <p className="mt-1 text-[var(--text-secondary)]">{todayFormatted}</p>
       </div>
@@ -80,7 +82,7 @@ export default function Dashboard() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--text-muted)]" />
           <input
             type="text"
-            placeholder="Search by title, CVE, or tag..."
+            placeholder={t('dashboard.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-10 py-3 bg-[var(--bg-secondary)] border border-[var(--border-default)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-pink-500/50 focus:ring-1 focus:ring-pink-500/50 transition-colors"
@@ -105,7 +107,7 @@ export default function Dashboard() {
                 : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-pink-500/30'
             }`}
           >
-            All ({todayBriefings.length})
+            {t('dashboard.all')} ({todayBriefings.length})
           </button>
           {['Critical', 'High', 'Medium', 'Low'].map((severity) => (
             <button
@@ -132,8 +134,8 @@ export default function Dashboard() {
         <div className="glass-card p-12 text-center">
           <p className="text-[var(--text-muted)]">
             {searchQuery || selectedSeverity
-              ? 'No briefings match your filters'
-              : 'No briefings for today yet'}
+              ? t('dashboard.noMatch')
+              : t('dashboard.noBriefings')}
           </p>
         </div>
       )}

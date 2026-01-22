@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Activity, FileText, AlertTriangle, Calendar, Filter } from 'lucide-react';
 import { useBriefings } from '../hooks/useBriefings';
 import SeverityBadge from '../components/briefing/SeverityBadge';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTHS = [
@@ -22,6 +23,7 @@ export default function ThreatPulse() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedSeverity, setSelectedSeverity] = useState(null);
+  const { t, language } = useLanguage();
 
   // Filter briefings by severity first
   const filteredBriefings = useMemo(() => {
@@ -162,7 +164,7 @@ export default function ThreatPulse() {
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-2">
           <Activity className="w-6 h-6 text-pink-500" />
-          <h1 className="text-2xl font-bold text-[var(--text-primary)]">Threat Pulse</h1>
+          <h1 className="text-2xl font-bold text-[var(--text-primary)]">{t('threatPulse.title')}</h1>
         </div>
         {/* Severity Filter - inline */}
         <div className="flex flex-wrap gap-1.5">
@@ -174,7 +176,7 @@ export default function ThreatPulse() {
                 : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-pink-500/30'
             }`}
           >
-            All ({briefings.length})
+            {t('common.all')} ({briefings.length})
           </button>
           {['Critical', 'High', 'Medium', 'Low'].map((severity) => (
             <button
@@ -188,7 +190,7 @@ export default function ThreatPulse() {
               disabled={!severityCounts[severity]}
               style={{ opacity: severityCounts[severity] ? 1 : 0.4 }}
             >
-              {severity} ({severityCounts[severity] || 0})
+              {t(`threatPulse.${severity.toLowerCase()}`)} ({severityCounts[severity] || 0})
             </button>
           ))}
         </div>
@@ -207,7 +209,7 @@ export default function ThreatPulse() {
                 onClick={goToToday}
                 className="px-2 py-1 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-card-hover)] rounded transition-colors"
               >
-                Today
+                {t('threatPulse.today')}
               </button>
               <button
                 onClick={() => navigateMonth(-1)}
@@ -267,15 +269,15 @@ export default function ThreatPulse() {
           <div className="flex items-center gap-3 mt-2 pt-2 border-t border-[var(--border-default)]">
             <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-              <span>Critical</span>
+              <span>{t('threatPulse.critical')}</span>
             </div>
             <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
               <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-              <span>High</span>
+              <span>{t('threatPulse.high')}</span>
             </div>
             <div className="flex items-center gap-1 text-[10px] text-[var(--text-secondary)]">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-              <span>Med/Low</span>
+              <span>{t('threatPulse.medLow')}</span>
             </div>
           </div>
         </div>
@@ -286,28 +288,28 @@ export default function ThreatPulse() {
             <FileText className="w-4 h-4 text-pink-500" />
             {selectedDate ? (
               <span>
-                {selectedDate.toLocaleDateString('en-US', {
+                {selectedDate.toLocaleDateString(language === 'fi' ? 'fi-FI' : 'en-US', {
                   month: 'short',
                   day: 'numeric',
                   year: 'numeric',
                 })}
               </span>
             ) : (
-              <span>Select a date</span>
+              <span>{t('threatPulse.selectDate')}</span>
             )}
           </h3>
 
           {!selectedDate ? (
             <p className="text-[var(--text-muted)] text-xs">
-              Click on a date to view briefings.
+              {t('threatPulse.clickToView')}
             </p>
           ) : selectedBriefings.length === 0 ? (
             <div className="text-center py-4">
               <Calendar className="w-8 h-8 mx-auto text-[var(--text-muted)] mb-2" />
               <p className="text-[var(--text-muted)] text-xs">
                 {selectedSeverity
-                  ? `No ${selectedSeverity.toLowerCase()} briefings.`
-                  : 'No briefings on this date.'
+                  ? t('threatPulse.noSeverityBriefings').replace('{severity}', t(`threatPulse.${selectedSeverity.toLowerCase()}`).toLowerCase())
+                  : t('threatPulse.noBriefings')
                 }
               </p>
             </div>
