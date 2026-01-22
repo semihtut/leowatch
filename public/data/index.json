@@ -1,27 +1,64 @@
 {
-  "lastUpdated": "2026-01-22T17:15:00.000Z",
+  "lastUpdated": "2026-01-22T17:27:59.395Z",
   "date": "2026-01-22",
   "stats": {
-    "total": 1,
+    "total": 2,
     "critical": 1,
-    "high": 0,
+    "high": 1,
     "medium": 0,
     "low": 0,
-    "cisaKev": 0,
+    "cisaKev": 1,
     "activeExploits": 1,
-    "totalSources": 14
+    "totalSources": 26
   },
-  "topTags": ["n8n", "workflow", "automation", "RCE", "cloud"],
-  "topVendors": ["n8n"],
+  "topTags": [
+    "n8n",
+    "workflow",
+    "automation",
+    "RCE",
+    "cloud"
+  ],
+  "topVendors": [
+    "n8n"
+  ],
   "featuredBriefing": "TB-2026-01-22-014",
   "briefings": [
+    {
+      "id": "TB-2026-01-22-015",
+      "title": "MongoBleed: MongoDB Memory Leak Under Active Exploitation (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": [
+        "CVE-2025-14847"
+      ],
+      "tags": [
+        "mongodb",
+        "database",
+        "memory-leak",
+        "cloud",
+        "data-breach",
+        "zlib"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "MongoDB veritabaninda HeartBleed benzeri kritik bir guvenlik acigi bulundu - MongoBleed. Bu acik, saldirganin MongoDB sunucusunun belleginden hassas verileri (sifreler, API anahtarlari, oturum tokenla..."
+    },
     {
       "id": "TB-2026-01-22-014",
       "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
       "severity": "Critical",
       "date": "2026-01-22",
-      "cves": ["CVE-2026-21858", "CVE-2026-21877"],
-      "tags": ["n8n", "workflow", "automation", "RCE", "cloud", "webhook"],
+      "cves": [
+        "CVE-2026-21858",
+        "CVE-2026-21877"
+      ],
+      "tags": [
+        "n8n",
+        "workflow",
+        "automation",
+        "RCE",
+        "cloud",
+        "webhook"
+      ],
       "sourcesCount": 14,
       "excerpt": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. Attackers can gain full server control without authentication."
     }

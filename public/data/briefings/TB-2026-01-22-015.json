@@ -1,0 +1,261 @@
+{
+  "briefing_id": "TB-2026-01-22-015",
+  "title": "MongoBleed: MongoDB Memory Leak Under Active Exploitation (CISA KEV)",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.7,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-01-19"
+  },
+  "cves": [
+    "CVE-2025-14847"
+  ],
+  "tags": [
+    "mongodb",
+    "database",
+    "memory-leak",
+    "cloud",
+    "data-breach",
+    "zlib",
+    "CISA-KEV"
+  ],
+  "affected_products": [
+    "MongoDB Server 8.2.0 - 8.2.2",
+    "MongoDB Server 8.0.0 - 8.0.16",
+    "MongoDB Server 7.0.0 - 7.0.27",
+    "MongoDB Server 6.0.0 - 6.0.26",
+    "MongoDB Server 5.0.0 - 5.0.31",
+    "MongoDB Server 4.4.0 - 4.4.29",
+    "MongoDB Server 4.2, 4.0, 3.6 (all versions)"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "MongoDB Official Security Advisory",
+      "url": "https://www.mongodb.com/company/blog/news/mongodb-server-security-update-december-2025",
+      "date": "2025-12-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - NIST",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14847",
+      "date": "2025-12-19",
+      "type": "Government"
+    },
+    {
+      "name": "Wiz Research",
+      "url": "https://www.wiz.io/blog/mongobleed-cve-2025-14847-exploited-in-the-wild-mongodb",
+      "date": "2025-12-30",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable",
+      "url": "https://www.tenable.com/blog/cve-2025-14847-mongobleed-mongodb-memory-leak-vulnerability-exploited-in-the-wild",
+      "date": "2025-12-29",
+      "type": "Research"
+    },
+    {
+      "name": "Akamai Security Research",
+      "url": "https://www.akamai.com/blog/security-research/cve-2025-14847-all-you-need-to-know-about-mongobleed",
+      "date": "2025-12-30",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf",
+      "url": "https://arcticwolf.com/resources/blog/cve-2025-14847/",
+      "date": "2025-12-30",
+      "type": "Research"
+    },
+    {
+      "name": "Varonis",
+      "url": "https://www.varonis.com/blog/mongobleed-cve-2025-14847-memory-leak-vulnerability",
+      "date": "2025-12-31",
+      "type": "Research"
+    },
+    {
+      "name": "Qualys ThreatPROTECT",
+      "url": "https://threatprotect.qualys.com/2025/12/30/mongodb-memory-disclosure-vulnerability-under-active-exploitation-cve-2025-14847-mongobleed/",
+      "date": "2025-12-30",
+      "type": "Research"
+    },
+    {
+      "name": "Aikido Security",
+      "url": "https://www.aikido.dev/blog/mongobleed-mongodb-zlib-vulnerability-cve-2025-14847",
+      "date": "2025-12-28",
+      "type": "Research"
+    },
+    {
+      "name": "Eric Capuano - Hunting Guide",
+      "url": "https://blog.ecapuano.com/p/hunting-mongobleed-cve-2025-14847",
+      "date": "2026-01-02",
+      "type": "Research"
+    },
+    {
+      "name": "Bitsight",
+      "url": "https://www.bitsight.com/blog/critical-vulnerability-alert-cve-2025-14847-mongodb-mongobleed",
+      "date": "2025-12-30",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2025/12/mongodb-vulnerability-cve-2025-14847.html",
+      "date": "2025-12-29",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-12",
+      "event": "MongoDB Security Engineering team identifies the vulnerability"
+    },
+    {
+      "date": "2025-12-19",
+      "event": "MongoDB releases security advisory and patches"
+    },
+    {
+      "date": "2025-12-25",
+      "event": "Public proof-of-concept exploit published on GitHub"
+    },
+    {
+      "date": "2025-12-26",
+      "event": "Active exploitation begins in the wild"
+    },
+    {
+      "date": "2025-12-29",
+      "event": "CISA adds CVE-2025-14847 to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2026-01-19",
+      "event": "CISA deadline for federal agencies to patch"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "MongoDB veritabaninda HeartBleed benzeri kritik bir guvenlik acigi bulundu - MongoBleed. Bu acik, saldirganin MongoDB sunucusunun belleginden hassas verileri (sifreler, API anahtarlari, oturum tokenlari) sifre girmeden calmAsina izin veriyor. Zafiyet, MongoDB'nin zlib sikistirma ozelligindeki bir hatadan kaynaklaniyor.",
+    "who_is_affected": "Self-hosted MongoDB kullanan tum organizasyonlar risk altinda. Wiz arastirmasina gore cloud ortamlarinin %42'sinde savunmasiz MongoDB instance'i var. Censys verilerine gore internete acik 87,000+ savunmasiz MongoDB sunucusu bulunuyor. MongoDB Atlas kullanicilari otomatik olarak guncellendi ve guvenli.",
+    "what_attackers_do": "Step 1: Saldirgan internete acik MongoDB sunucusunu bulur (port 27017). Step 2: Ozel hazirlanmis OP_COMPRESSED mesajlari gonderir. Step 3: MongoDB'nin belleginden rastgele veri parcalari sizdirir. Step 4: Binlerce baglanti kurarak daha fazla veri toplar. Step 5: Sifreler, API anahtarlari ve oturum tokenlarini ele gecirir. Step 6: Bu bilgilerle sistemlere yetkisiz erisim saglar.",
+    "what_you_should_do": [
+      "MongoDB versiyonunuzu hemen guncelleyin: 8.2.3, 8.0.17, 7.0.28, 6.0.27, 5.0.32 veya 4.4.30",
+      "Eger hemen guncelleyemiyorsaniz, zlib sikistirmayi devre disi birakin",
+      "MongoDB'yi internete acik birakmayin - firewall ile koruyun",
+      "MongoDB loglarini kontrol edin - anormal baglanti sayilarina bakin",
+      "Sizinti olmus olabilecegini varsayarak tum credential'lari rotate edin",
+      "MongoDB Atlas kullaniyorsaniz, otomatik guncellendi - aksiyon gerekmiyor"
+    ],
+    "why_this_is_serious": "MongoDB dunyanin en populer NoSQL veritabanidir ve kritik uygulamalarin kalbidir. Saldirganlar authentication olmadan hassas verileri cekebilir. Zaten aktif olarak exploit ediliyor ve CISA zorunlu yama listesine ekledi. PoC exploit publIc olarak mevcut - herkes kullanabilir."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Saldirganlar internete acik MongoDB sunucularini hedef aliyor"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Bellek sizintisi ile hassas veriler toplanıyor"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Credentials In Files",
+        "description": "Bellekten sifreler ve API anahtarlari cekiliyor"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Calınan veriler saldirgan sunucusuna gonderiliyor"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "MongoDB loglarinda anormal pre-authentication baglantilari ve client metadata eksikligi aranmali. Exploit, normal driver'lardan farkli olarak client metadata gondermez.",
+    "log_sources": [
+      {
+        "source": "MongoDB Server Logs",
+        "description": "Connection events, authentication attempts, ve crash loglari",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Logs",
+        "description": "Port 27017'ye gelen trafik analizi",
+        "priority": "Critical"
+      },
+      {
+        "source": "Firewall/IDS Logs",
+        "description": "MongoDB portuna yuksek hacimli baglanti denemeleri",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Missing client metadata (Event ID 51800)",
+        "description": "Normal MongoDB driver'lari her zaman client metadata gonderir. Exploit gondermez.",
+        "log_field": "Connections without corresponding Event ID 51800 metadata",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Extreme connection bursts",
+        "description": "Tek IP'den dakikada 50,000-100,000+ baglanti denemesi",
+        "log_field": "connections per minute from single IP > 1000",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Pre-authentication connection anomalies",
+        "description": "Authentication oncesi cok sayida baglanti acilip kapatiliyor",
+        "log_field": "High connection count with zero successful auth",
+        "severity": "High"
+      },
+      {
+        "indicator": "MongoDB service crashes",
+        "description": "Beklenmeyen MongoDB servis crash'leri exploit denemesini gosterebilir",
+        "log_field": "Unexpected mongod/mongos crashes",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "MongoDB Versiyonunu Kontrol Et",
+      "description": "Hangi versiyonu kullandiginizi belirleyin - savunmasiz mi?",
+      "command": "mongod --version"
+    },
+    {
+      "priority": 2,
+      "action": "Hemen Patch Uygula",
+      "description": "Savunmasiz versiyondaysaniz ACIL guncelleyin",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Zlib Sikistirmayi Devre Disi Birak (gecici)",
+      "description": "Eger hemen patch yapamiyorsaniz, zlib'i devre disi birakin",
+      "command": "mongod --networkMessageCompressors snappy,zstd"
+    },
+    {
+      "priority": 4,
+      "action": "Network Erisimini Kisitla",
+      "description": "MongoDB'yi internete acik birakmayin, sadece guvenilir IP'lere izin verin",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Loglari Incele",
+      "description": "Son 30 gunde anormal baglanti patternleri var mi kontrol edin",
+      "command": "grep -E '(connection|51800)' /var/log/mongodb/mongod.log | tail -1000"
+    },
+    {
+      "priority": 6,
+      "action": "Credential Rotation",
+      "description": "Sizinti olmus olabilecegini varsayarak tum DB credential'larini degistirin",
+      "command": null
+    }
+  ]
+}
