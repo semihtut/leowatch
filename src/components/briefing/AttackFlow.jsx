@@ -74,18 +74,23 @@ const getStepColors = (index, total) => {
 const parseSteps = (text) => {
   if (!text) return [];
 
-  // Try to match "Step X:" pattern
-  const stepPattern = /Step\s*(\d+)\s*:\s*([^.]+(?:\.[^S]|[^.])*)/gi;
-  const matches = [...text.matchAll(stepPattern)];
+  // Split by "Step X:" pattern
+  const parts = text.split(/Step\s*\d+\s*:/i);
 
-  if (matches.length > 0) {
-    return matches.map((match) => ({
-      number: parseInt(match[1]),
-      text: match[2].trim()
+  // Filter empty parts and create steps
+  const steps = parts
+    .map(part => part.trim())
+    .filter(part => part.length > 0)
+    .map((part, index) => ({
+      number: index + 1,
+      text: part.replace(/\.$/, '').trim()
     }));
+
+  if (steps.length > 1) {
+    return steps;
   }
 
-  // Fallback: split by sentences if no "Step X:" pattern
+  // Fallback: split by sentences if no "Step X:" pattern found
   const sentences = text.split(/\.\s+/).filter(s => s.trim().length > 0);
   return sentences.map((sentence, index) => ({
     number: index + 1,
