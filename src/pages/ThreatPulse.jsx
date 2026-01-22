@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Activity, FileText, AlertTriangle, Calendar } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Activity, FileText, AlertTriangle, Calendar, Filter } from 'lucide-react';
 import { useBriefings } from '../hooks/useBriefings';
 import SeverityBadge from '../components/briefing/SeverityBadge';
 
@@ -10,15 +10,37 @@ const MONTHS = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
+const severityColors = {
+  Critical: 'bg-red-500/20 text-red-400 border-red-500/50',
+  High: 'bg-orange-500/20 text-orange-400 border-orange-500/50',
+  Medium: 'bg-blue-500/20 text-blue-400 border-blue-500/50',
+  Low: 'bg-green-500/20 text-green-400 border-green-500/50',
+};
+
 export default function ThreatPulse() {
   const { briefings, loading, error } = useBriefings();
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedSeverity, setSelectedSeverity] = useState(null);
 
-  // Get briefings grouped by date
+  // Filter briefings by severity first
+  const filteredBriefings = useMemo(() => {
+    if (!selectedSeverity) return briefings;
+    return briefings.filter(b => b.severity === selectedSeverity);
+  }, [briefings, selectedSeverity]);
+
+  // Count by severity (total)
+  const severityCounts = useMemo(() => {
+    return briefings.reduce((acc, b) => {
+      acc[b.severity] = (acc[b.severity] || 0) + 1;
+      return acc;
+    }, {});
+  }, [briefings]);
+
+  // Get briefings grouped by date (filtered)
   const briefingsByDate = useMemo(() => {
     const grouped = {};
-    briefings.forEach((briefing) => {
+    filteredBriefings.forEach((briefing) => {
       const date = new Date(briefing.date).toDateString();
       if (!grouped[date]) {
         grouped[date] = [];
@@ -26,7 +48,7 @@ export default function ThreatPulse() {
       grouped[date].push(briefing);
     });
     return grouped;
-  }, [briefings]);
+  }, [filteredBriefings]);
 
   // Get calendar days for current month
   const calendarDays = useMemo(() => {
@@ -104,7 +126,18 @@ export default function ThreatPulse() {
 
   const hasCritical = (date) => {
     const dayBriefings = briefingsByDate[date.toDateString()] || [];
-    return dayBriefings.some((b) => b.severity?.toLowerCase() === 'critical' || b.severity === 'Critical');
+    return dayBriefings.some((b) => b.severity === 'Critical');
+  };
+
+  const hasHigh = (date) => {
+    const dayBriefings = briefingsByDate[date.toDateString()] || [];
+    return dayBriefings.some((b) => b.severity === 'High');
+  };
+
+  const getDotColor = (date) => {
+    if (hasCritical(date)) return 'bg-red-500';
+    if (hasHigh(date)) return 'bg-orange-500';
+    return 'bg-cyan-500';
   };
 
   if (loading) {
@@ -134,6 +167,41 @@ export default function ThreatPulse() {
         <p className="mt-2 text-[var(--text-secondary)]">
           Track the heartbeat of cyber threats
         </p>
+      </div>
+
+      {/* Severity Filter */}
+      <div className="glass-card p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <Filter className="w-4 h-4 text-[var(--text-muted)]" />
+          <span className="text-sm text-[var(--text-muted)]">Filter by severity</span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <button
+            onClick={() => setSelectedSeverity(null)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
+              !selectedSeverity
+                ? 'bg-pink-500/20 text-pink-400 border-pink-500/50'
+                : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-pink-500/30'
+            }`}
+          >
+            All ({briefings.length})
+          </button>
+          {['Critical', 'High', 'Medium', 'Low'].map((severity) => (
+            <button
+              key={severity}
+              onClick={() => setSelectedSeverity(selectedSeverity === severity ? null : severity)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
+                selectedSeverity === severity
+                  ? severityColors[severity]
+                  : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border-default)] hover:border-[var(--border-accent)]'
+              }`}
+              disabled={!severityCounts[severity]}
+              style={{ opacity: severityCounts[severity] ? 1 : 0.4 }}
+            >
+              {severity} ({severityCounts[severity] || 0})
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="grid lg:grid-cols-3 gap-6">
@@ -179,7 +247,7 @@ export default function ThreatPulse() {
           <div className="grid grid-cols-7 gap-1">
             {calendarDays.map((day, index) => {
               const count = getBriefingCount(day.date);
-              const critical = hasCritical(day.date);
+              const dotColor = getDotColor(day.date);
 
               return (
                 <button
@@ -195,12 +263,8 @@ export default function ThreatPulse() {
                 >
                   <span className="block">{day.date.getDate()}</span>
                   {count > 0 && (
-                    <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-0.5">
-                      <span
-                        className={`w-1.5 h-1.5 rounded-full ${
-                          critical ? 'bg-red-500' : 'bg-cyan-500'
-                        }`}
-                      />
+                    <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-0.5 items-center">
+                      <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`} />
                       {count > 1 && (
                         <span className="text-[10px] text-[var(--text-secondary)]">+{count - 1}</span>
                       )}
@@ -212,14 +276,18 @@ export default function ThreatPulse() {
           </div>
 
           {/* Legend */}
-          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-[var(--border-default)]">
-            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-              <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
-              <span>Has briefings</span>
-            </div>
+          <div className="flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-[var(--border-default)]">
             <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
               <span className="w-2 h-2 rounded-full bg-red-500"></span>
-              <span>Has critical</span>
+              <span>Critical</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+              <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+              <span>High</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+              <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+              <span>Medium/Low</span>
             </div>
           </div>
         </div>
@@ -248,10 +316,15 @@ export default function ThreatPulse() {
           ) : selectedBriefings.length === 0 ? (
             <div className="text-center py-8">
               <Calendar className="w-12 h-12 mx-auto text-[var(--text-muted)] mb-3" />
-              <p className="text-[var(--text-muted)] text-sm">No briefings on this date.</p>
+              <p className="text-[var(--text-muted)] text-sm">
+                {selectedSeverity
+                  ? `No ${selectedSeverity.toLowerCase()} briefings on this date.`
+                  : 'No briefings on this date.'
+                }
+              </p>
             </div>
           ) : (
-            <div className="space-y-3">
+            <div className="space-y-3 max-h-[500px] overflow-y-auto">
               {selectedBriefings.map((briefing) => (
                 <Link
                   key={briefing.id}
@@ -260,7 +333,7 @@ export default function ThreatPulse() {
                 >
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <SeverityBadge level={briefing.severity} size="sm" />
-                    {briefing.severity?.toLowerCase() === 'critical' && (
+                    {briefing.severity === 'Critical' && (
                       <AlertTriangle className="w-4 h-4 text-red-500" />
                     )}
                   </div>
