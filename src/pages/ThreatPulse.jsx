@@ -144,6 +144,42 @@ export default function ThreatPulse() {
     return breakdown;
   };
 
+  // Get background color based on severity ratio
+  const getDayBackgroundStyle = (date) => {
+    const breakdown = getSeverityBreakdown(date);
+    const total = breakdown.critical + breakdown.high + breakdown.medium + breakdown.low;
+
+    if (total === 0) return {};
+
+    // Calculate ratios
+    const criticalRatio = breakdown.critical / total;
+    const highRatio = breakdown.high / total;
+    const medLowRatio = (breakdown.medium + breakdown.low) / total;
+
+    // Determine dominant color based on weighted severity
+    // Critical has highest weight, then high, then med/low
+    const criticalWeight = criticalRatio * 3;
+    const highWeight = highRatio * 2;
+    const medLowWeight = medLowRatio * 1;
+
+    // Calculate base opacity (more threats = more visible, max 0.3)
+    const baseOpacity = Math.min(0.1 + (total * 0.03), 0.35);
+
+    let bgColor;
+    if (criticalWeight >= highWeight && criticalWeight >= medLowWeight) {
+      // Red for critical dominant
+      bgColor = `rgba(239, 68, 68, ${baseOpacity})`; // red-500
+    } else if (highWeight >= medLowWeight) {
+      // Orange for high dominant
+      bgColor = `rgba(249, 115, 22, ${baseOpacity})`; // orange-500
+    } else {
+      // Cyan for medium/low dominant
+      bgColor = `rgba(6, 182, 212, ${baseOpacity})`; // cyan-500
+    }
+
+    return { backgroundColor: bgColor };
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -243,15 +279,18 @@ export default function ThreatPulse() {
               const count = getBriefingCount(day.date);
               const breakdown = getSeverityBreakdown(day.date);
 
+              const bgStyle = day.isCurrentMonth ? getDayBackgroundStyle(day.date) : {};
+
               return (
                 <button
                   key={index}
                   onClick={() => setSelectedDate(day.date)}
+                  style={isSelected(day.date) ? {} : bgStyle}
                   className={`
                     relative rounded-xl transition-all py-4 md:py-6 min-h-[60px] md:min-h-[80px]
                     ${day.isCurrentMonth ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)]'}
                     ${isToday(day.date) ? 'ring-2 ring-pink-500 ring-offset-1 md:ring-offset-2 ring-offset-[var(--bg-primary)]' : ''}
-                    ${isSelected(day.date) ? 'bg-pink-500/20 scale-105' : 'hover:bg-[var(--bg-card-hover)]'}
+                    ${isSelected(day.date) ? 'bg-pink-500/20 scale-105' : 'hover:brightness-110'}
                     ${count > 0 ? 'font-bold' : 'font-medium'}
                   `}
                 >
