@@ -298,22 +298,13 @@ export default function ThreatPulse() {
                   {count > 0 && (
                     <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-1">
                       {breakdown.critical > 0 && (
-                        <span className="flex items-center gap-0.5">
-                          <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-red-500" />
-                          <span className="hidden md:inline text-[10px] text-red-400 font-medium">{breakdown.critical}</span>
-                        </span>
+                        <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-red-500" />
                       )}
                       {breakdown.high > 0 && (
-                        <span className="flex items-center gap-0.5">
-                          <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-orange-500" />
-                          <span className="hidden md:inline text-[10px] text-orange-400 font-medium">{breakdown.high}</span>
-                        </span>
+                        <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-orange-500" />
                       )}
                       {(breakdown.medium > 0 || breakdown.low > 0) && (
-                        <span className="flex items-center gap-0.5">
-                          <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-cyan-500" />
-                          <span className="hidden md:inline text-[10px] text-cyan-400 font-medium">{breakdown.medium + breakdown.low}</span>
-                        </span>
+                        <span className="block w-2.5 h-2.5 md:w-2 md:h-2 rounded-full bg-cyan-500" />
                       )}
                     </div>
                   )}
