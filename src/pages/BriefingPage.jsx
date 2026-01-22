@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   ArrowLeft, Calendar, AlertTriangle, Shield, ExternalLink, Heart,
-  FileText, Search, Code, BookOpen, Globe
+  FileText, Search, Code, BookOpen
 } from 'lucide-react';
 import { useBriefing } from '../hooks/useBriefings';
 import { useFavorites } from '../hooks/useFavorites';
@@ -196,48 +196,22 @@ export default function BriefingPage() {
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            {/* Affected Products & Domains */}
-            {(briefing.affected_products || briefing.affected_domains) && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Affected Products */}
-                {briefing.affected_products && (
-                  <div className="glass-card p-5">
-                    <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3 flex items-center gap-2">
-                      <Shield className="w-4 h-4" />
-                      Affected Products
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {briefing.affected_products.map((product) => (
-                        <span
-                          key={product}
-                          className="px-3 py-1.5 text-sm bg-orange-500/10 text-orange-400 border border-orange-500/20 rounded-lg"
-                        >
-                          {product}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Affected Domains */}
-                {briefing.affected_domains && briefing.affected_domains.length > 0 && (
-                  <div className="glass-card p-5">
-                    <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3 flex items-center gap-2">
-                      <Globe className="w-4 h-4" />
-                      Affected Domains
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {briefing.affected_domains.map((domain) => (
-                        <span
-                          key={domain}
-                          className="px-3 py-1.5 text-sm bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-lg font-mono"
-                        >
-                          {domain}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
+            {/* Affected Products */}
+            {briefing.affected_products && (
+              <div className="glass-card p-5">
+                <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wide mb-3">
+                  Affected Products
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {briefing.affected_products.map((product) => (
+                    <span
+                      key={product}
+                      className="px-3 py-1 text-sm bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-lg"
+                    >
+                      {product}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
 
