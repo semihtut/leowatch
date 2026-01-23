@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-23T09:00:00.000Z",
+  "lastUpdated": "2026-01-23T09:30:00.000Z",
   "date": "2026-01-23",
   "stats": {
     "total": 6,
@@ -25,13 +25,32 @@
     "Microsoft",
     "MongoDB"
   ],
-  "featuredBriefing": "TB-2026-01-23-001",
+  "featuredBriefing": "TB-2026-01-22-015",
   "briefings": [
+    {
+      "id": "TB-2026-01-22-015",
+      "title": "MongoBleed: MongoDB Memory Leak Under Active Exploitation (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-19",
+      "cves": [
+        "CVE-2025-14847"
+      ],
+      "tags": [
+        "mongodb",
+        "database",
+        "memory-leak",
+        "cloud",
+        "data-breach",
+        "zlib"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical HeartBleed-like vulnerability has been discovered in MongoDB database - dubbed MongoBleed. This flaw allows attackers to steal sensitive data (passwords, API keys, session tokens) from Mon..."
+    },
     {
       "id": "TB-2026-01-23-001",
       "title": "CodeBreach: AWS Console Supply Chain Attack via CodeBuild Misconfiguration",
       "severity": "Critical",
-      "date": "2026-01-23",
+      "date": "2026-01-15",
       "cves": [],
       "tags": [
         "AWS",
@@ -45,10 +64,49 @@
       "excerpt": "Wiz Research discovered a critical supply chain vulnerability dubbed CodeBreach in AWS CodeBuild that could have allowed attackers to take over core AWS GitHub repositories, including the AWS JavaSc..."
     },
     {
+      "id": "TB-2026-01-22-014",
+      "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
+      "severity": "Critical",
+      "date": "2026-01-15",
+      "cves": [
+        "CVE-2026-21858",
+        "CVE-2026-21877"
+      ],
+      "tags": [
+        "n8n",
+        "workflow",
+        "automation",
+        "RCE",
+        "cloud",
+        "webhook"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. Attackers can gain full server control without authentication."
+    },
+    {
+      "id": "TB-2026-01-22-016",
+      "title": "React2Shell: Critical RCE in React Server Components (CVSS 10.0, CISA KEV)",
+      "severity": "Critical",
+      "date": "2025-12-15",
+      "cves": [
+        "CVE-2025-55182"
+      ],
+      "tags": [
+        "react",
+        "next.js",
+        "rce",
+        "cloud",
+        "kubernetes",
+        "state-sponsored"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical remote code execution vulnerability (CVSS 10.0) was discovered in React Server Components, dubbed React2Shell. The flaw allows attackers to execute arbitrary code on servers through a si..."
+    },
+    {
       "id": "TB-2026-01-22-018",
       "title": "IngressNightmare: Critical Kubernetes RCE Chain Exposing 43% of Cloud Environments (CVSS 9.8)",
       "severity": "Critical",
-      "date": "2026-01-22",
+      "date": "2025-04-17",
       "cves": [
         "CVE-2025-1974",
         "CVE-2025-1097",
@@ -70,7 +128,7 @@
       "id": "TB-2026-01-22-017",
       "title": "Storm-0501: Cloud-Native Ransomware Targeting Hybrid Azure Environments",
       "severity": "High",
-      "date": "2026-01-22",
+      "date": "2024-09-01",
       "cves": [],
       "tags": [
         "ransomware",
@@ -82,64 +140,6 @@
       ],
       "sourcesCount": 10,
       "excerpt": "Storm-0501 is a financially motivated threat actor that has evolved from traditional on-premises ransomware to cloud-native attacks. Unlike conventional ransomware that encrypts files, Storm-0501 le..."
-    },
-    {
-      "id": "TB-2026-01-22-016",
-      "title": "React2Shell: Critical RCE in React Server Components (CVSS 10.0, CISA KEV)",
-      "severity": "Critical",
-      "date": "2026-01-22",
-      "cves": [
-        "CVE-2025-55182"
-      ],
-      "tags": [
-        "react",
-        "next.js",
-        "rce",
-        "cloud",
-        "kubernetes",
-        "state-sponsored"
-      ],
-      "sourcesCount": 12,
-      "excerpt": "A critical remote code execution vulnerability (CVSS 10.0) was discovered in React Server Components, dubbed React2Shell. The flaw allows attackers to execute arbitrary code on servers through a si..."
-    },
-    {
-      "id": "TB-2026-01-22-015",
-      "title": "MongoBleed: MongoDB Memory Leak Under Active Exploitation (CISA KEV)",
-      "severity": "High",
-      "date": "2026-01-22",
-      "cves": [
-        "CVE-2025-14847"
-      ],
-      "tags": [
-        "mongodb",
-        "database",
-        "memory-leak",
-        "cloud",
-        "data-breach",
-        "zlib"
-      ],
-      "sourcesCount": 12,
-      "excerpt": "A critical HeartBleed-like vulnerability has been discovered in MongoDB database - dubbed MongoBleed. This flaw allows attackers to steal sensitive data (passwords, API keys, session tokens) from Mon..."
-    },
-    {
-      "id": "TB-2026-01-22-014",
-      "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
-      "severity": "Critical",
-      "date": "2026-01-22",
-      "cves": [
-        "CVE-2026-21858",
-        "CVE-2026-21877"
-      ],
-      "tags": [
-        "n8n",
-        "workflow",
-        "automation",
-        "RCE",
-        "cloud",
-        "webhook"
-      ],
-      "sourcesCount": 14,
-      "excerpt": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. Attackers can gain full server control without authentication."
     }
   ]
 }
