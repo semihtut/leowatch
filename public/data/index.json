@@ -1,32 +1,51 @@
 {
-  "lastUpdated": "2026-01-23T10:00:00.000Z",
+  "lastUpdated": "2026-01-23T14:00:00.000Z",
   "date": "2026-01-23",
   "stats": {
-    "total": 7,
-    "critical": 5,
+    "total": 8,
+    "critical": 6,
     "high": 2,
     "medium": 0,
     "low": 0,
     "cisaKev": 2,
-    "activeExploits": 4,
-    "totalSources": 85
+    "activeExploits": 5,
+    "totalSources": 96
   },
   "topTags": [
     "cloud",
+    "kubernetes",
     "RCE",
     "AI",
-    "AWS",
-    "supply-chain"
+    "secret-management"
   ],
   "topVendors": [
-    "AWS",
-    "Chainlit",
     "Kubernetes",
-    "React",
+    "AWS",
+    "External Secrets",
+    "Chainlit",
     "MongoDB"
   ],
-  "featuredBriefing": "TB-2026-01-23-002",
+  "featuredBriefing": "TB-2026-01-23-003",
   "briefings": [
+    {
+      "id": "TB-2026-01-23-003",
+      "title": "SecretBreak: Critical Cross-Namespace Secret Access in External Secrets Operator (CVSS 9.3)",
+      "severity": "Critical",
+      "date": "2026-01-20",
+      "cves": [
+        "CVE-2026-22822"
+      ],
+      "tags": [
+        "kubernetes",
+        "external-secrets",
+        "secret-management",
+        "cross-namespace",
+        "privilege-escalation",
+        "RBAC-bypass"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A critical vulnerability (CVE-2026-22822, CVSS 9.3) was discovered in the External Secrets Operator that allows attackers to bypass Kubernetes namespace isolation and access secrets from ANY namespace..."
+    },
     {
       "id": "TB-2026-01-23-002",
       "title": "ChainLeak: Critical AI Framework Vulnerabilities Enable Cloud Account Takeover",
