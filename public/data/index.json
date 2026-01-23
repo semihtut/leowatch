@@ -1,32 +1,52 @@
 {
-  "lastUpdated": "2026-01-23T09:30:00.000Z",
+  "lastUpdated": "2026-01-23T10:00:00.000Z",
   "date": "2026-01-23",
   "stats": {
-    "total": 6,
-    "critical": 4,
+    "total": 7,
+    "critical": 5,
     "high": 2,
     "medium": 0,
     "low": 0,
     "cisaKev": 2,
     "activeExploits": 4,
-    "totalSources": 74
+    "totalSources": 85
   },
   "topTags": [
     "cloud",
     "RCE",
-    "supply-chain",
-    "kubernetes",
-    "AWS"
+    "AI",
+    "AWS",
+    "supply-chain"
   ],
   "topVendors": [
     "AWS",
+    "Chainlit",
     "Kubernetes",
     "React",
-    "Microsoft",
     "MongoDB"
   ],
-  "featuredBriefing": "TB-2026-01-22-015",
+  "featuredBriefing": "TB-2026-01-23-002",
   "briefings": [
+    {
+      "id": "TB-2026-01-23-002",
+      "title": "ChainLeak: Critical AI Framework Vulnerabilities Enable Cloud Account Takeover",
+      "severity": "Critical",
+      "date": "2026-01-20",
+      "cves": [
+        "CVE-2026-22218",
+        "CVE-2026-22219"
+      ],
+      "tags": [
+        "AI",
+        "Chainlit",
+        "cloud",
+        "AWS",
+        "SSRF",
+        "credential-theft"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Security researchers at Zafran Labs discovered two critical vulnerabilities in Chainlit, a popular open-source Python framework used to build AI chatbots and applications. The flaws allow attackers..."
+    },
     {
       "id": "TB-2026-01-22-015",
       "title": "MongoBleed: MongoDB Memory Leak Under Active Exploitation (CISA KEV)",
