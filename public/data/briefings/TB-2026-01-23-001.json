@@ -1,0 +1,283 @@
+{
+  "briefing_id": "TB-2026-01-23-001",
+  "title": "CodeBreach: AWS Console Supply Chain Attack via CodeBuild Misconfiguration",
+  "generated_date": "2026-01-23",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": null,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "AWS",
+    "supply-chain",
+    "CodeBuild",
+    "GitHub",
+    "CI/CD",
+    "cloud",
+    "misconfiguration",
+    "JavaScript-SDK"
+  ],
+  "affected_products": [
+    "AWS CodeBuild CI/CD pipelines",
+    "AWS JavaScript SDK (aws-sdk-js)",
+    "AWS Console",
+    "Applications using AWS JavaScript SDK (~66% of cloud environments)",
+    "Organizations using CodeBuild with GitHub webhooks"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Wiz Research (Original Discovery)",
+      "url": "https://www.wiz.io/blog/wiz-research-codebreach-vulnerability-aws-codebuild",
+      "date": "2026-01-15",
+      "type": "Research"
+    },
+    {
+      "name": "AWS Security Advisory",
+      "url": "https://aws.amazon.com/security/",
+      "date": "2026-01-15",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/aws-codebuild-misconfiguration-exposed.html",
+      "date": "2026-01-15",
+      "type": "News"
+    },
+    {
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/15/codebuild_flaw_aws",
+      "date": "2026-01-15",
+      "type": "News"
+    },
+    {
+      "name": "Infosecurity Magazine",
+      "url": "https://www.infosecurity-magazine.com/news/codebuild-flaw-aws-console-risk/",
+      "date": "2026-01-15",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity Dive",
+      "url": "https://www.cybersecuritydive.com/news/critical-flaw-in-aws-console-risked-compromise-of-build-environment/809745/",
+      "date": "2026-01-16",
+      "type": "News"
+    },
+    {
+      "name": "SC Media",
+      "url": "https://www.scworld.com/brief/aws-codebuild-vulnerability-allowed-github-repo-takeover-wiz-researchers-reveal",
+      "date": "2026-01-16",
+      "type": "News"
+    },
+    {
+      "name": "TechRadar",
+      "url": "https://www.techradar.com/pro/security/critical-aws-supply-chain-vulnerability-could-have-let-hackers-take-over-key-github-repositories",
+      "date": "2026-01-16",
+      "type": "News"
+    },
+    {
+      "name": "InfoWorld",
+      "url": "https://www.infoworld.com/article/4117662/possible-software-supply-chain-attack-through-aws-codebuild-service-blunted.html",
+      "date": "2026-01-16",
+      "type": "News"
+    },
+    {
+      "name": "CyberSecurity News",
+      "url": "https://cybersecuritynews.com/aws-console-supply-chain-attack/",
+      "date": "2026-01-15",
+      "type": "News"
+    },
+    {
+      "name": "Seceon",
+      "url": "https://seceon.com/ci-cd-under-attack-what-the-aws-codebuild-codebreach-flaw-reveals-about-modern-supply-chain-risk/",
+      "date": "2026-01-17",
+      "type": "Research"
+    },
+    {
+      "name": "Techzine",
+      "url": "https://www.techzine.eu/news/infrastructure/137983/codebreach-enables-takeover-of-aws-github-repositories/",
+      "date": "2026-01-16",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-07-01",
+      "event": "Similar CodeBuild issue exploited in Amazon Q VS Code extension supply chain attack"
+    },
+    {
+      "date": "2025-08-25",
+      "event": "Wiz Research discloses CodeBreach vulnerability to AWS"
+    },
+    {
+      "date": "2025-08-27",
+      "event": "AWS anchors vulnerable actor ID filters and revokes compromised tokens within 48 hours"
+    },
+    {
+      "date": "2025-09-01",
+      "event": "AWS implements additional hardening to prevent credential access via memory dumping"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "Public disclosure by Wiz Research"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Wiz Research discovered a critical supply chain vulnerability dubbed CodeBreach in AWS CodeBuild that could have allowed attackers to take over core AWS GitHub repositories, including the AWS JavaScript SDK. The flaw stemmed from just two missing characters (^ and $) in a regex filter that was supposed to restrict which GitHub users could trigger builds. This tiny oversight created a massive attack surface affecting the entire AWS ecosystem.",
+    "who_is_affected": "The AWS JavaScript SDK is installed in approximately 66% of cloud environments worldwide. The AWS Console itself uses and bundles recent versions of this SDK. Any compromise of the JavaScript SDK would have had immediate impact on every AWS account globally. Organizations using AWS CodeBuild with GitHub webhooks for their CI/CD pipelines are also at risk of similar misconfigurations.",
+    "what_attackers_do": "Step 1: Attacker identifies that CodeBuild uses an unanchored ACTOR_ID regex filter to restrict build triggers. Step 2: Attacker exploits GitHub's sequential user ID assignment - new 9-digit IDs can contain trusted 6-digit maintainer IDs as substrings. Step 3: Attacker creates GitHub accounts until one matches (eclipses) a trusted maintainer's ID pattern. Step 4: Attacker triggers a privileged build via pull request that bypasses the faulty filter. Step 5: During build execution, attacker dumps memory to extract stored GitHub credentials. Step 6: With admin-level repository access, attacker can inject malicious code into the SDK before weekly releases.",
+    "what_you_should_do": [
+      "Enable the new Pull Request Comment Approval build gate in CodeBuild to require manual approval",
+      "Audit all CodeBuild webhook filters - ensure regex patterns are properly anchored with ^ and $",
+      "Use CodeBuild-hosted runners instead of self-hosted runners for sensitive workflows",
+      "Create unique, fine-grained Personal Access Tokens (PATs) with minimal permissions per project",
+      "Use unprivileged GitHub accounts for CI/CD integrations - avoid using personal accounts",
+      "Review and rotate any credentials that may be accessible during build processes",
+      "Implement secrets management solutions that don't expose credentials in memory"
+    ],
+    "why_this_is_serious": "This vulnerability demonstrates how a two-character typo in a regex filter could have compromised the entire AWS ecosystem. The JavaScript SDK is a foundational component - backdooring it would give attackers access to credentials, API calls, and sensitive data across millions of applications. A similar issue was already exploited in July 2025 against the Amazon Q VS Code extension, proving this attack vector is actively used by threat actors. While AWS confirmed no exploitation occurred, the potential impact was catastrophic."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.002",
+        "technique_name": "Supply Chain Compromise: Compromise Software Supply Chain",
+        "description": "Targeting CI/CD pipelines to inject malicious code into widely-used software packages"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "Executing commands within the CodeBuild environment to extract credentials"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1098",
+        "technique_name": "Account Manipulation",
+        "description": "Using stolen credentials to maintain access to GitHub repositories"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.004",
+        "technique_name": "Unsecured Credentials: Private Keys",
+        "description": "Extracting GitHub tokens and credentials from build process memory"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036",
+        "technique_name": "Masquerading",
+        "description": "Creating GitHub accounts that appear to be legitimate maintainers via ID eclipse"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1195",
+        "technique_name": "Supply Chain Compromise",
+        "description": "Injecting backdoors into SDK releases distributed to millions of applications"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for unusual GitHub user activity triggering builds, unexpected memory access during builds, and unauthorized repository changes. Focus on detecting bypass attempts against webhook filters and credential access patterns.",
+    "log_sources": [
+      {
+        "source": "AWS CodeBuild Logs",
+        "description": "Build trigger events, webhook invocations, and build execution logs",
+        "priority": "Critical"
+      },
+      {
+        "source": "GitHub Audit Logs",
+        "description": "Repository access, pull request activity, and commit events",
+        "priority": "Critical"
+      },
+      {
+        "source": "AWS CloudTrail",
+        "description": "CodeBuild API calls and configuration changes",
+        "priority": "High"
+      },
+      {
+        "source": "GitHub Webhook Logs",
+        "description": "Webhook delivery events and payload inspection",
+        "priority": "High"
+      },
+      {
+        "source": "Container/Build Runtime Logs",
+        "description": "Process execution and memory access within build containers",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unfamiliar GitHub users triggering builds",
+        "description": "Build triggers from GitHub user IDs not in the approved maintainer list",
+        "log_field": "ACTOR_ACCOUNT_ID in webhook payload not matching exact approved IDs",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Memory dump commands in builds",
+        "description": "Commands attempting to read process memory or environment variables",
+        "log_field": "Build commands containing /proc/*/environ, memory dump tools, or credential extraction",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected repository write access",
+        "description": "Push events or PR approvals from automation accounts outside normal patterns",
+        "log_field": "GitHub audit log showing repository.push or pull_request.merge from CI accounts",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Rapid GitHub account creation",
+        "description": "Multiple new GitHub accounts created in short timeframes attempting to trigger builds",
+        "log_field": "Multiple failed and successful build triggers from newly created accounts",
+        "severity": "High"
+      },
+      {
+        "indicator": "Regex filter modifications",
+        "description": "Changes to CodeBuild webhook filter configurations",
+        "log_field": "CloudTrail UpdateProject events modifying filterGroups",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit CodeBuild Webhook Filters",
+      "description": "Check all webhook filters for proper regex anchoring",
+      "command": "aws codebuild batch-get-projects --names $(aws codebuild list-projects --query 'projects' --output text) --query 'projects[*].{name:name,webhook:webhook}'"
+    },
+    {
+      "priority": 2,
+      "action": "Enable Pull Request Comment Approval",
+      "description": "Require manual approval before untrusted PRs can trigger builds",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Review GitHub Token Permissions",
+      "description": "Ensure all GitHub PATs use fine-grained permissions with minimal scope",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit Build History",
+      "description": "Review recent builds for any triggered by unexpected user IDs",
+      "command": "aws codebuild list-builds-for-project --project-name YOUR_PROJECT --query 'ids' | xargs -I {} aws codebuild batch-get-builds --ids {}"
+    },
+    {
+      "priority": 5,
+      "action": "Rotate Credentials",
+      "description": "Rotate any GitHub tokens or credentials used in build processes",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Implement Secrets Manager",
+      "description": "Move credentials to AWS Secrets Manager instead of storing in environment variables",
+      "command": null
+    }
+  ]
+}

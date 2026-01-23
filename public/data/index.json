@@ -1,32 +1,49 @@
 {
-  "lastUpdated": "2026-01-22T20:30:00.000Z",
-  "date": "2026-01-22",
+  "lastUpdated": "2026-01-23T09:00:00.000Z",
+  "date": "2026-01-23",
   "stats": {
-    "total": 5,
-    "critical": 3,
+    "total": 6,
+    "critical": 4,
     "high": 2,
     "medium": 0,
     "low": 0,
     "cisaKev": 2,
     "activeExploits": 4,
-    "totalSources": 62
+    "totalSources": 74
   },
   "topTags": [
     "cloud",
     "RCE",
+    "supply-chain",
     "kubernetes",
-    "ransomware",
-    "azure"
+    "AWS"
   ],
   "topVendors": [
+    "AWS",
     "Kubernetes",
     "React",
     "Microsoft",
-    "MongoDB",
-    "n8n"
+    "MongoDB"
   ],
-  "featuredBriefing": "TB-2026-01-22-018",
+  "featuredBriefing": "TB-2026-01-23-001",
   "briefings": [
+    {
+      "id": "TB-2026-01-23-001",
+      "title": "CodeBreach: AWS Console Supply Chain Attack via CodeBuild Misconfiguration",
+      "severity": "Critical",
+      "date": "2026-01-23",
+      "cves": [],
+      "tags": [
+        "AWS",
+        "supply-chain",
+        "CodeBuild",
+        "GitHub",
+        "CI/CD",
+        "cloud"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Wiz Research discovered a critical supply chain vulnerability dubbed CodeBreach in AWS CodeBuild that could have allowed attackers to take over core AWS GitHub repositories, including the AWS JavaSc..."
+    },
     {
       "id": "TB-2026-01-22-018",
       "title": "IngressNightmare: Critical Kubernetes RCE Chain Exposing 43% of Cloud Environments (CVSS 9.8)",
