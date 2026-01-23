@@ -12,14 +12,26 @@ export default function Dashboard() {
   const { briefings, loading, error, indexData } = useBriefings();
   const { t, language } = useLanguage();
   const [selectedSeverity, setSelectedSeverity] = useState('');
+  const [activeTab, setActiveTab] = useState('all'); // 'all' | 'today'
 
   // Get today's date
   const today = new Date().toISOString().split('T')[0];
 
-  // Filter to show only today's briefings
-  const todayBriefings = useMemo(() => {
-    return briefings.filter(b => b.date === today);
-  }, [briefings, today]);
+  // Extract published date from briefing ID (TB-2026-01-23-002 -> 2026-01-23)
+  const getPublishedDate = (id) => {
+    const match = id?.match(/TB-(\d{4}-\d{2}-\d{2})/);
+    return match ? match[1] : null;
+  };
+
+  // Sort all briefings by event date (newest first)
+  const sortedBriefings = useMemo(() => {
+    return [...briefings].sort((a, b) => new Date(b.date) - new Date(a.date));
+  }, [briefings]);
+
+  // Filter briefings added today (by published date from ID)
+  const todayAddedBriefings = useMemo(() => {
+    return sortedBriefings.filter(b => getPublishedDate(b.id) === today);
+  }, [sortedBriefings, today]);
 
   // Calculate stats from today's briefings
   const stats = useMemo(() => {
@@ -57,15 +69,17 @@ export default function Dashboard() {
   // Get featured briefing
   const featuredBriefing = useMemo(() => {
     if (indexData?.featuredBriefing) {
-      return todayBriefings.find(b => b.id === indexData.featuredBriefing);
+      return sortedBriefings.find(b => b.id === indexData.featuredBriefing);
     }
     // Fallback: get first critical briefing
-    return todayBriefings.find(b => b.severity === 'Critical') || todayBriefings[0];
-  }, [todayBriefings, indexData]);
+    return sortedBriefings.find(b => b.severity === 'Critical') || sortedBriefings[0];
+  }, [sortedBriefings, indexData]);
 
-  // Filter briefings based on selected severity
+  // Filter briefings based on active tab and selected severity
   const filteredBriefings = useMemo(() => {
-    return todayBriefings.filter(b => {
+    const baseBriefings = activeTab === 'today' ? todayAddedBriefings : sortedBriefings;
+
+    return baseBriefings.filter(b => {
       // Exclude featured briefing from the grid
       if (featuredBriefing && b.id === featuredBriefing.id) return false;
 
@@ -73,7 +87,7 @@ export default function Dashboard() {
 
       return matchesSeverity;
     });
-  }, [todayBriefings, featuredBriefing, selectedSeverity]);
+  }, [sortedBriefings, todayAddedBriefings, activeTab, featuredBriefing, selectedSeverity]);
 
   if (loading) {
     return (
@@ -117,20 +131,54 @@ export default function Dashboard() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
       >
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-bold text-[var(--text-primary)]">
-            {selectedSeverity
-              ? `${selectedSeverity} ${language === 'fi' ? 'Tiedotteet' : 'Briefings'}`
-              : (language === 'fi' ? 'Päivän tiedotteet' : "Today's Briefings")}
-          </h2>
+        {/* Tab Navigation */}
+        <div className="flex items-center gap-4 mb-6">
+          <div className="flex bg-[var(--glass-bg)] rounded-lg p-1 border border-[var(--glass-border)]">
+            <button
+              onClick={() => { setActiveTab('all'); setSelectedSeverity(''); }}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                activeTab === 'all'
+                  ? 'bg-pink-500/20 text-pink-400 border border-pink-500/30'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
+              }`}
+            >
+              {language === 'fi' ? 'Kaikki' : 'All Briefings'}
+            </button>
+            <button
+              onClick={() => { setActiveTab('today'); setSelectedSeverity(''); }}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${
+                activeTab === 'today'
+                  ? 'bg-pink-500/20 text-pink-400 border border-pink-500/30'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
+              }`}
+            >
+              {language === 'fi' ? 'Tänään lisätyt' : 'Added Today'}
+              {todayAddedBriefings.length > 0 && (
+                <span className="bg-pink-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+                  {todayAddedBriefings.length}
+                </span>
+              )}
+            </button>
+          </div>
+
           {selectedSeverity && (
             <button
               onClick={() => setSelectedSeverity('')}
               className="text-sm text-pink-400 hover:text-pink-300 transition-colors"
             >
-              {language === 'fi' ? 'Näytä kaikki' : 'Show all'}
+              Clear filter: {selectedSeverity}
             </button>
           )}
+        </div>
+
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+            {selectedSeverity
+              ? `${selectedSeverity} Briefings`
+              : activeTab === 'today'
+                ? (language === 'fi' ? 'Tänään lisätyt' : "Added Today")
+                : (language === 'fi' ? 'Kaikki tiedotteet' : "All Briefings")}
+          </h2>
         </div>
 
         {filteredBriefings.length > 0 ? (
@@ -140,7 +188,9 @@ export default function Dashboard() {
             <p className="text-[var(--text-muted)]">
               {selectedSeverity
                 ? t('dashboard.noMatch')
-                : t('dashboard.noBriefings')}
+                : activeTab === 'today'
+                  ? (language === 'fi' ? 'Ei tänään lisättyjä tiedotteita' : 'No briefings added today')
+                  : t('dashboard.noBriefings')}
             </p>
           </div>
         )}
