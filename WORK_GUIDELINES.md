@@ -8,11 +8,13 @@ Bu dosya, Threat Brief uygulaması için çalışma prensiplerini içerir.
 ## 1. Temel Kurallar
 
 ### Zaman Odağı
-- **SADECE 2026** yılındaki güvenlik olaylarına odaklan
+- **Bulunduğumuz tarihten 3 hafta geriye** bak
+- Örnek: Bugün 24 Ocak 2026 ise → 3 Ocak 2026'dan itibaren ara
+- Örnek: Bugün 15 Şubat 2026 ise → 25 Ocak 2026'dan itibaren ara
+- "Ocak 2026" veya "January 2026" gibi sabit ay kullanma!
+- Araştırma sorgusu: "cloud vulnerability critical [current month] 2026"
 - Önemli olan **OLAYIN TARİHİ**, CVE numarası değil!
-- CVE-2025-XXXXX olabilir, ama olay 2026'da gerçekleşmişse OK ✓
-- Örnek: ESXi Escape → CVE-2025-22224 ama disclosure Ocak 2026
-- Araştırma yaparken "2026" yılını kullan
+- CVE-2025-XXXXX olabilir, ama olay son 3 haftada gerçekleşmişse OK ✓
 
 ### Dil
 - Tüm briefing içerikleri **İNGİLİZCE** olmalı
