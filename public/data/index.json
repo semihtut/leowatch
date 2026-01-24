@@ -1,32 +1,53 @@
 {
-  "lastUpdated": "2026-01-23T14:00:00.000Z",
-  "date": "2026-01-23",
+  "lastUpdated": "2026-01-24T09:00:00.000Z",
+  "date": "2026-01-24",
   "stats": {
-    "total": 8,
-    "critical": 6,
+    "total": 9,
+    "critical": 7,
     "high": 2,
     "medium": 0,
     "low": 0,
-    "cisaKev": 2,
-    "activeExploits": 5,
-    "totalSources": 96
+    "cisaKev": 3,
+    "activeExploits": 6,
+    "totalSources": 108
   },
   "topTags": [
     "cloud",
+    "VMware",
     "kubernetes",
-    "RCE",
-    "AI",
-    "secret-management"
+    "hypervisor",
+    "zero-day"
   ],
   "topVendors": [
+    "VMware",
     "Kubernetes",
     "AWS",
-    "External Secrets",
     "Chainlit",
     "MongoDB"
   ],
-  "featuredBriefing": "TB-2026-01-23-003",
+  "featuredBriefing": "TB-2026-01-24-001",
   "briefings": [
+    {
+      "id": "TB-2026-01-24-001",
+      "title": "ESXi Escape: Chinese APT Exploits VMware Zero-Days for Hypervisor Takeover (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-09",
+      "cves": [
+        "CVE-2025-22224",
+        "CVE-2025-22225",
+        "CVE-2025-22226"
+      ],
+      "tags": [
+        "VMware",
+        "ESXi",
+        "hypervisor",
+        "VM-escape",
+        "zero-day",
+        "China"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Three critical zero-day vulnerabilities in VMware ESXi allow attackers to escape from a virtual machine and take complete control of the underlying hypervisor. Chinese-linked threat actors developed..."
+    },
     {
       "id": "TB-2026-01-23-003",
       "title": "SecretBreak: Critical Cross-Namespace Secret Access in External Secrets Operator (CVSS 9.3)",
