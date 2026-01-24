@@ -9,7 +9,9 @@ Bu dosya, Threat Brief uygulaması için çalışma prensiplerini içerir.
 
 ### Zaman Odağı
 - **SADECE 2026** yılındaki güvenlik olaylarına odaklan
-- 2025 veya öncesi CVE'leri EKLEME
+- Önemli olan **OLAYIN TARİHİ**, CVE numarası değil!
+- CVE-2025-XXXXX olabilir, ama olay 2026'da gerçekleşmişse OK ✓
+- Örnek: ESXi Escape → CVE-2025-22224 ama disclosure Ocak 2026
 - Araştırma yaparken "2026" yılını kullan
 
 ### Dil
