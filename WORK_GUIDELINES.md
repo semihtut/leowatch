@@ -81,11 +81,48 @@ Her briefing şunları içermeli:
 
 1. Bu dosyayı oku
 2. Mevcut briefing'leri kontrol et
-3. 2026 yılındaki yeni cloud/security haberlerini araştır
-4. Uygun bir vulnerability/threat bul
-5. Briefing oluştur
-6. Index dosyalarını güncelle (olay tarihine göre sırala)
-7. Commit ve push yap
+3. Son 3 haftadaki yeni cloud/security haberlerini araştır
+4. Uygun vulnerability/threat bul
+5. **Birden fazla önemli olay varsa → Paralel agent'lar çalıştır**
+6. Briefing oluştur
+7. Index dosyalarını güncelle (olay tarihine göre sırala)
+8. Commit ve push yap
+
+## 5.1 Paralel Agent Kullanımı
+
+**Birden fazla önemli olay bulunduğunda:**
+
+```
+1 olay → Direkt işle
+2+ olay → Paralel agent'lar çalıştır
+```
+
+**Agent Özellikleri:**
+- Threat Hunting (TH) uzmanı
+- Incident Response (IR) uzmanı
+- Her agent bir briefing üzerinde çalışır
+- Tüm agent'lar aynı anda çalışarak zaman kazandırır
+
+**Örnek Kullanım:**
+```
+Bulunan olaylar:
+1. VMware ESXi zero-day
+2. Kubernetes secret leak
+3. AI framework SSRF
+
+→ 3 paralel agent çalıştır
+→ Her biri ayrı briefing hazırlar
+→ Sonuçları topla ve index'e ekle
+```
+
+**Agent Prompt Şablonu:**
+```
+Sen bir Threat Hunting ve Incident Response uzmanısın.
+[VULNERABILITY_NAME] hakkında briefing hazırla.
+WORK_GUIDELINES.md kurallarına uy.
+Minimum 10 kaynak bul.
+JSON formatında briefing oluştur.
+```
 
 ---
 
