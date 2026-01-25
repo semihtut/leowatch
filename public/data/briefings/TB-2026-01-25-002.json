@@ -1,0 +1,95 @@
+{
+  "briefing_id": "TB-2026-01-25-002",
+  "title": "ShinyHunters SSO Vishing Campaign Targeting Cloud Identity Providers",
+  "generated_date": "2026-01-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.2,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": ["cloud", "identity", "okta", "microsoft-entra", "google-workspace", "sso", "vishing", "social-engineering", "saas"],
+  "affected_products": [
+    "Okta Identity Cloud",
+    "Microsoft Entra ID (Azure AD)",
+    "Google Workspace",
+    "All connected SaaS applications"
+  ],
+  "sources_analyzed": 3,
+  "sources": [
+    {
+      "name": "BleepingComputer - ShinyHunters Claims",
+      "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-claim-to-be-behind-sso-account-data-theft-attacks/",
+      "date": "2026-01-23",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Okta Vishing Warning",
+      "url": "https://www.bleepingcomputer.com/news/security/okta-sso-accounts-targeted-in-vishing-based-data-theft-attacks/",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Okta Security Advisory",
+      "url": "https://www.okta.com/blog/",
+      "date": "2026-01-22",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {"date": "2026-01-15", "event": "Initial reports of targeted vishing calls impersonating IT support"},
+    {"date": "2026-01-20", "event": "Okta detects pattern of SSO credential theft via voice phishing"},
+    {"date": "2026-01-22", "event": "Okta issues security advisory about custom vishing kits"},
+    {"date": "2026-01-23", "event": "ShinyHunters claims responsibility for campaign on dark web"},
+    {"date": "2026-01-24", "event": "Multiple organizations report SaaS data breaches linked to SSO compromise"}
+  ],
+  "simple_summary": {
+    "what_happened": "The ShinyHunters extortion gang has launched a sophisticated voice phishing (vishing) campaign targeting employees at organizations using cloud identity providers. Attackers call victims pretending to be IT support, using custom phishing kits designed for voice-based social engineering. They capture SSO credentials and real-time MFA codes to breach corporate SaaS platforms and steal data for extortion.",
+    "who_is_affected": "Any organization using Okta, Microsoft Entra ID (Azure AD), or Google Workspace for single sign-on. The attacks specifically target employees with access to sensitive SaaS applications containing valuable corporate data.",
+    "what_attackers_do": "Step 1: Attackers research target organizations and identify employees with privileged SaaS access. Step 2: They call victims pretending to be IT helpdesk, often spoofing internal phone numbers. Step 3: They create urgency by claiming account security issues requiring immediate verification. Step 4: They trick victims into providing SSO credentials and real-time MFA codes over the phone. Step 5: They immediately use stolen credentials to access cloud platforms and exfiltrate sensitive data for extortion.",
+    "what_you_should_do": [
+      "Send immediate security awareness alert about vishing attacks to all employees",
+      "Implement phishing-resistant MFA (FIDO2/WebAuthn hardware security keys) for privileged users",
+      "Establish and communicate clear policy that IT will never ask for passwords or MFA codes over phone",
+      "Enable number-matching or additional context in MFA push notifications",
+      "Review SSO logs for unusual login patterns or geographic anomalies",
+      "Implement impossible travel detection in identity provider",
+      "Consider callback verification for sensitive account changes"
+    ],
+    "why_this_is_serious": "Cloud SSO is the keys to the kingdom. A single compromised SSO account can provide access to dozens of connected SaaS applications containing sensitive corporate data, customer information, source code, financial records, and HR data. ShinyHunters has a proven track record of large-scale data breaches and successful extortion campaigns."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {"tactic": "Initial Access", "technique_id": "T1566.004", "technique_name": "Phishing: Spearphishing Voice", "description": "Voice calls impersonating IT support to socially engineer credentials"},
+      {"tactic": "Credential Access", "technique_id": "T1111", "technique_name": "Multi-Factor Authentication Interception", "description": "Real-time MFA codes captured during phone call"},
+      {"tactic": "Initial Access", "technique_id": "T1078.004", "technique_name": "Valid Accounts: Cloud Accounts", "description": "Stolen SSO credentials provide legitimate cloud access"},
+      {"tactic": "Collection", "technique_id": "T1530", "technique_name": "Data from Cloud Storage Object", "description": "Data exfiltration from connected SaaS platforms"},
+      {"tactic": "Exfiltration", "technique_id": "T1567.002", "technique_name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage", "description": "Data stolen through legitimate cloud services"}
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for anomalous SSO authentication patterns including unusual login times, geographic impossibilities, new device registrations, and bulk access to multiple SaaS applications. Correlate with helpdesk ticket systems to identify social engineering attempts.",
+    "log_sources": [
+      {"source": "Okta System Log", "description": "Authentication events and MFA challenges", "priority": "Critical"},
+      {"source": "Microsoft Entra Sign-in Logs", "description": "Azure AD authentication and conditional access", "priority": "Critical"},
+      {"source": "Google Workspace Admin Logs", "description": "Login events and security alerts", "priority": "Critical"},
+      {"source": "SaaS Application Audit Logs", "description": "Access logs from connected apps", "priority": "High"}
+    ],
+    "what_to_look_for": [
+      {"indicator": "Impossible travel", "log_field": "geo.distance > 500km AND time.delta < 1h", "severity": "Critical"},
+      {"indicator": "New device + sensitive app access", "log_field": "device.registered=false FOLLOWED BY app.name IN sensitive_apps", "severity": "Critical"},
+      {"indicator": "Bulk application access", "log_field": "event='app.access' COUNT > 10 WITHIN 30m", "severity": "High"},
+      {"indicator": "MFA fatigue pattern", "log_field": "event='mfa.challenge' COUNT > 3 WITHIN 5m", "severity": "High"},
+      {"indicator": "Bulk data download", "log_field": "event='data.export' size > threshold", "severity": "Critical"}
+    ]
+  },
+  "immediate_actions": [
+    {"priority": 1, "action": "Send vishing awareness alert", "description": "Notify all employees about ongoing campaign immediately", "command": null},
+    {"priority": 2, "action": "Deploy phishing-resistant MFA", "description": "Roll out FIDO2/WebAuthn hardware keys for privileged users", "command": null},
+    {"priority": 3, "action": "Enable MFA number matching", "description": "Require number matching for push notifications in Okta/Entra", "command": null},
+    {"priority": 4, "action": "Review recent SSO logins", "description": "Audit last 7 days for anomalies - new devices, locations", "command": null},
+    {"priority": 5, "action": "Enable impossible travel alerts", "description": "Configure identity provider alerting for geographic anomalies", "command": null}
+  ]
+}

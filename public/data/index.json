@@ -1,50 +1,101 @@
 {
-  "lastUpdated": "2026-01-24T09:00:00.000Z",
-  "date": "2026-01-24",
+  "lastUpdated": "2026-01-25T14:57:00.000Z",
+  "date": "2026-01-25",
   "stats": {
-    "total": 9,
-    "critical": 7,
-    "high": 2,
+    "total": 15,
+    "critical": 9,
+    "high": 6,
     "medium": 0,
     "low": 0,
-    "cisaKev": 3,
-    "activeExploits": 6,
-    "totalSources": 108
+    "cisaKev": 7,
+    "activeExploits": 10,
+    "totalSources": 132
   },
   "topTags": [
     "cloud",
-    "VMware",
+    "fortinet",
+    "identity",
+    "vmware",
     "kubernetes",
-    "hypervisor",
-    "zero-day"
+    "sso"
   ],
   "topVendors": [
+    "Fortinet",
     "VMware",
-    "Kubernetes",
-    "AWS",
-    "Chainlit",
-    "MongoDB"
+    "Okta",
+    "Microsoft",
+    "Versa",
+    "Zimbra"
   ],
-  "featuredBriefing": "TB-2026-01-24-001",
+  "featuredBriefing": "TB-2026-01-25-001",
   "briefings": [
+    {
+      "id": "TB-2026-01-25-001",
+      "title": "FortiCloud SSO Authentication Bypass - Incomplete Patch Under Active Exploitation",
+      "severity": "Critical",
+      "date": "2026-01-23",
+      "cves": ["CVE-2025-59718"],
+      "tags": ["cloud", "fortinet", "firewall", "sso", "authentication-bypass"],
+      "sourcesCount": 4,
+      "excerpt": "A critical authentication bypass in Fortinet firewalls allows attackers to access the FortiCloud management panel without credentials. The December patch did not fully fix the issue, and fully patched firewalls are still being compromised..."
+    },
+    {
+      "id": "TB-2026-01-25-002",
+      "title": "ShinyHunters SSO Vishing Campaign Targeting Cloud Identity Providers",
+      "severity": "High",
+      "date": "2026-01-23",
+      "cves": [],
+      "tags": ["cloud", "identity", "okta", "microsoft-entra", "sso", "vishing"],
+      "sourcesCount": 3,
+      "excerpt": "The ShinyHunters extortion gang is conducting voice phishing attacks targeting employees at organizations using Okta, Microsoft Entra ID, and Google Workspace. Attackers capture SSO credentials and MFA codes to breach SaaS platforms..."
+    },
+    {
+      "id": "TB-2026-01-25-003",
+      "title": "VMware vCenter Server Remote Code Execution - Active Exploitation (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-23",
+      "cves": ["CVE-2024-37079"],
+      "tags": ["cloud", "vmware", "vcenter", "virtualization", "rce"],
+      "sourcesCount": 2,
+      "excerpt": "A critical RCE vulnerability in VMware vCenter Server allows attackers with network access to execute arbitrary code without authentication via the DCERPC protocol. CISA has confirmed active exploitation..."
+    },
+    {
+      "id": "TB-2026-01-25-004",
+      "title": "Versa Concerto SD-WAN Authentication Bypass - Active Exploitation (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2025-34026"],
+      "tags": ["cloud", "sd-wan", "network", "authentication-bypass"],
+      "sourcesCount": 2,
+      "excerpt": "Versa Concerto SD-WAN orchestration platform has an authentication bypass in Traefik reverse proxy configuration, allowing attackers to access admin endpoints and retrieve heap dumps containing credentials..."
+    },
+    {
+      "id": "TB-2026-01-25-005",
+      "title": "Zimbra Collaboration Suite PHP Remote File Inclusion - Active Exploitation (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": ["CVE-2025-68645"],
+      "tags": ["cloud", "email", "collaboration", "zimbra", "rfi"],
+      "sourcesCount": 2,
+      "excerpt": "Zimbra Collaboration Suite has a PHP remote file inclusion vulnerability in /h/rest endpoint allowing attackers to include arbitrary files and achieve code execution on mail servers..."
+    },
+    {
+      "id": "TB-2026-01-25-006",
+      "title": "Chainlit AI Framework Vulnerabilities Enable Cloud Environment Breach",
+      "severity": "High",
+      "date": "2026-01-21",
+      "cves": [],
+      "tags": ["cloud", "ai", "llm", "kubernetes", "credential-theft"],
+      "sourcesCount": 1,
+      "excerpt": "Two high-severity vulnerabilities in Chainlit AI framework allow attackers to read arbitrary files and steal cloud credentials from AI application deployments in AWS, GCP, Azure, and Kubernetes..."
+    },
     {
       "id": "TB-2026-01-24-001",
       "title": "ESXi Escape: Chinese APT Exploits VMware Zero-Days for Hypervisor Takeover (CISA KEV)",
       "severity": "Critical",
       "date": "2026-01-09",
-      "cves": [
-        "CVE-2025-22224",
-        "CVE-2025-22225",
-        "CVE-2025-22226"
-      ],
-      "tags": [
-        "VMware",
-        "ESXi",
-        "hypervisor",
-        "VM-escape",
-        "zero-day",
-        "China"
-      ],
+      "cves": ["CVE-2025-22224", "CVE-2025-22225", "CVE-2025-22226"],
+      "tags": ["VMware", "ESXi", "hypervisor", "VM-escape", "zero-day", "China"],
       "sourcesCount": 12,
       "excerpt": "Three critical zero-day vulnerabilities in VMware ESXi allow attackers to escape from a virtual machine and take complete control of the underlying hypervisor. Chinese-linked threat actors developed..."
     },
@@ -53,17 +104,8 @@
       "title": "SecretBreak: Critical Cross-Namespace Secret Access in External Secrets Operator (CVSS 9.3)",
       "severity": "Critical",
       "date": "2026-01-20",
-      "cves": [
-        "CVE-2026-22822"
-      ],
-      "tags": [
-        "kubernetes",
-        "external-secrets",
-        "secret-management",
-        "cross-namespace",
-        "privilege-escalation",
-        "RBAC-bypass"
-      ],
+      "cves": ["CVE-2026-22822"],
+      "tags": ["kubernetes", "external-secrets", "secret-management", "cross-namespace"],
       "sourcesCount": 11,
       "excerpt": "A critical vulnerability (CVE-2026-22822, CVSS 9.3) was discovered in the External Secrets Operator that allows attackers to bypass Kubernetes namespace isolation and access secrets from ANY namespace..."
     },
@@ -72,18 +114,8 @@
       "title": "ChainLeak: Critical AI Framework Vulnerabilities Enable Cloud Account Takeover",
       "severity": "Critical",
       "date": "2026-01-20",
-      "cves": [
-        "CVE-2026-22218",
-        "CVE-2026-22219"
-      ],
-      "tags": [
-        "AI",
-        "Chainlit",
-        "cloud",
-        "AWS",
-        "SSRF",
-        "credential-theft"
-      ],
+      "cves": ["CVE-2026-22218", "CVE-2026-22219"],
+      "tags": ["AI", "Chainlit", "cloud", "AWS", "SSRF", "credential-theft"],
       "sourcesCount": 11,
       "excerpt": "Security researchers at Zafran Labs discovered two critical vulnerabilities in Chainlit, a popular open-source Python framework used to build AI chatbots and applications. The flaws allow attackers..."
     },
@@ -92,17 +124,8 @@
       "title": "MongoBleed: MongoDB Memory Leak Under Active Exploitation (CISA KEV)",
       "severity": "High",
       "date": "2026-01-19",
-      "cves": [
-        "CVE-2025-14847"
-      ],
-      "tags": [
-        "mongodb",
-        "database",
-        "memory-leak",
-        "cloud",
-        "data-breach",
-        "zlib"
-      ],
+      "cves": ["CVE-2025-14847"],
+      "tags": ["mongodb", "database", "memory-leak", "cloud", "data-breach"],
       "sourcesCount": 12,
       "excerpt": "A critical HeartBleed-like vulnerability has been discovered in MongoDB database - dubbed MongoBleed. This flaw allows attackers to steal sensitive data (passwords, API keys, session tokens) from Mon..."
     },
@@ -112,34 +135,17 @@
       "severity": "Critical",
       "date": "2026-01-15",
       "cves": [],
-      "tags": [
-        "AWS",
-        "supply-chain",
-        "CodeBuild",
-        "GitHub",
-        "CI/CD",
-        "cloud"
-      ],
+      "tags": ["AWS", "supply-chain", "CodeBuild", "GitHub", "CI/CD", "cloud"],
       "sourcesCount": 12,
-      "excerpt": "Wiz Research discovered a critical supply chain vulnerability dubbed CodeBreach in AWS CodeBuild that could have allowed attackers to take over core AWS GitHub repositories, including the AWS JavaSc..."
+      "excerpt": "Wiz Research discovered a critical supply chain vulnerability dubbed CodeBreach in AWS CodeBuild that could have allowed attackers to take over core AWS GitHub repositories..."
     },
     {
       "id": "TB-2026-01-22-014",
       "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
       "severity": "Critical",
       "date": "2026-01-15",
-      "cves": [
-        "CVE-2026-21858",
-        "CVE-2026-21877"
-      ],
-      "tags": [
-        "n8n",
-        "workflow",
-        "automation",
-        "RCE",
-        "cloud",
-        "webhook"
-      ],
+      "cves": ["CVE-2026-21858", "CVE-2026-21877"],
+      "tags": ["n8n", "workflow", "automation", "RCE", "cloud"],
       "sourcesCount": 14,
       "excerpt": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. Attackers can gain full server control without authentication."
     },
@@ -148,41 +154,20 @@
       "title": "React2Shell: Critical RCE in React Server Components (CVSS 10.0, CISA KEV)",
       "severity": "Critical",
       "date": "2025-12-15",
-      "cves": [
-        "CVE-2025-55182"
-      ],
-      "tags": [
-        "react",
-        "next.js",
-        "rce",
-        "cloud",
-        "kubernetes",
-        "state-sponsored"
-      ],
+      "cves": ["CVE-2025-55182"],
+      "tags": ["react", "next.js", "rce", "cloud", "kubernetes"],
       "sourcesCount": 12,
-      "excerpt": "A critical remote code execution vulnerability (CVSS 10.0) was discovered in React Server Components, dubbed React2Shell. The flaw allows attackers to execute arbitrary code on servers through a si..."
+      "excerpt": "A critical remote code execution vulnerability (CVSS 10.0) was discovered in React Server Components, dubbed React2Shell..."
     },
     {
       "id": "TB-2026-01-22-018",
       "title": "IngressNightmare: Critical Kubernetes RCE Chain Exposing 43% of Cloud Environments (CVSS 9.8)",
       "severity": "Critical",
       "date": "2025-04-17",
-      "cves": [
-        "CVE-2025-1974",
-        "CVE-2025-1097",
-        "CVE-2025-1098",
-        "CVE-2025-24514"
-      ],
-      "tags": [
-        "kubernetes",
-        "ingress-nginx",
-        "RCE",
-        "cloud",
-        "container",
-        "cluster-takeover"
-      ],
+      "cves": ["CVE-2025-1974", "CVE-2025-1097", "CVE-2025-1098", "CVE-2025-24514"],
+      "tags": ["kubernetes", "ingress-nginx", "RCE", "cloud", "container"],
       "sourcesCount": 14,
-      "excerpt": "A series of critical vulnerabilities dubbed IngressNightmare were discovered in the Ingress NGINX Controller for Kubernetes. The most severe, CVE-2025-1974 (CVSS 9.8), allows unauthenticated remote..."
+      "excerpt": "A series of critical vulnerabilities dubbed IngressNightmare were discovered in the Ingress NGINX Controller for Kubernetes..."
     },
     {
       "id": "TB-2026-01-22-017",
@@ -190,16 +175,9 @@
       "severity": "High",
       "date": "2024-09-01",
       "cves": [],
-      "tags": [
-        "ransomware",
-        "azure",
-        "entra-id",
-        "hybrid-cloud",
-        "storm-0501",
-        "extortion"
-      ],
+      "tags": ["ransomware", "azure", "entra-id", "hybrid-cloud", "storm-0501"],
       "sourcesCount": 10,
-      "excerpt": "Storm-0501 is a financially motivated threat actor that has evolved from traditional on-premises ransomware to cloud-native attacks. Unlike conventional ransomware that encrypts files, Storm-0501 le..."
+      "excerpt": "Storm-0501 is a financially motivated threat actor that has evolved from traditional on-premises ransomware to cloud-native attacks..."
     }
   ]
 }
