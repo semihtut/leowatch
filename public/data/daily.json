@@ -1,1 +1,411 @@
-{"test": true}
+{
+  "daily_briefing": {
+    "date": "2026-01-25",
+    "generated_at": "2026-01-25T14:18:00+02:00",
+    "analyst": "Intelleo Security",
+    "classification": "TLP:CLEAR",
+    "executive_summary": "Today's cloud security landscape is dominated by an ongoing FortiCloud SSO bypass vulnerability that remains incompletely patched, active SSO credential theft campaigns by ShinyHunters targeting major identity providers, and newly confirmed exploitation of enterprise software affecting SD-WAN and collaboration platforms. Organizations should prioritize identity security controls and patch management for network infrastructure."
+  },
+  "threat_level": "HIGH",
+  "threats": [
+    {
+      "briefing_id": "TB-2026-01-25-001",
+      "title": "FortiCloud SSO Authentication Bypass - Incomplete Patch",
+      "generated_date": "2026-01-25",
+      "status": "ACTIVE",
+      "severity": {
+        "level": "Critical",
+        "cvss": 9.8,
+        "cisa_kev": true,
+        "cisa_deadline": "2025-12-23"
+      },
+      "cves": ["CVE-2025-59718"],
+      "tags": ["cloud", "fortinet", "firewall", "sso", "authentication-bypass", "saml"],
+      "affected_products": [
+        "FortiOS 7.6.x, 7.4.x, 7.2.x, 7.0.x",
+        "FortiProxy 7.6.x, 7.4.x",
+        "FortiSwitchManager 7.2.x",
+        "FortiWeb 8.0.x, 7.6.x"
+      ],
+      "sources_analyzed": 4,
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/fortinet-confirms-critical-forticloud-auth-bypass-not-fully-patched/",
+          "date": "2026-01-23",
+          "type": "News"
+        },
+        {
+          "name": "BleepingComputer - Config Theft",
+          "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-fortinet-fortigate-devices-steal-firewall-configs/",
+          "date": "2026-01-22",
+          "type": "News"
+        },
+        {
+          "name": "CISA KEV Catalog",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "date": "2025-12-16",
+          "type": "Government"
+        },
+        {
+          "name": "Fortinet PSIRT",
+          "url": "https://www.fortiguard.com/psirt",
+          "date": "2025-12-09",
+          "type": "Vendor Advisory"
+        }
+      ],
+      "timeline": [
+        {"date": "2025-12-09", "event": "Fortinet releases initial advisory and patch"},
+        {"date": "2025-12-16", "event": "CISA adds to KEV catalog"},
+        {"date": "2026-01-22", "event": "Arctic Wolf detects active exploitation campaign"},
+        {"date": "2026-01-23", "event": "Fortinet confirms patch is incomplete"}
+      ],
+      "simple_summary": {
+        "what_happened": "A critical authentication bypass in Fortinet firewalls allows attackers to access the FortiCloud management panel without credentials using crafted SAML messages. The December patch did not fully fix the issue, and fully patched firewalls are still being compromised.",
+        "who_is_affected": "Any organization using FortiOS, FortiProxy, FortiWeb, or FortiSwitchManager with FortiCloud SSO enabled for management.",
+        "what_attackers_do": "Step 1: Scan for internet-exposed Fortinet management interfaces. Step 2: Send crafted SAML messages to bypass SSO authentication. Step 3: Gain admin access without valid credentials. Step 4: Create rogue administrator accounts. Step 5: Download firewall configurations containing VPN credentials and network topology.",
+        "what_you_should_do": [
+          "Disable FortiCloud SSO immediately and use local authentication",
+          "Audit all admin accounts and remove any unauthorized ones",
+          "Review login logs for the past 30 days",
+          "Restrict management interface to trusted IPs only",
+          "Monitor for Fortinet's complete patch release"
+        ],
+        "why_this_is_serious": "Firewall compromise provides attackers with VPN credentials, internal network maps, and the ability to modify security rules - enabling ransomware deployment and data theft."
+      },
+      "mitre_attack": {
+        "tactics": [
+          {"tactic": "Initial Access", "technique_id": "T1078.004", "technique_name": "Valid Accounts: Cloud Accounts", "description": "SAML bypass for unauthorized cloud management access"},
+          {"tactic": "Persistence", "technique_id": "T1136.003", "technique_name": "Create Account: Cloud Account", "description": "Rogue admin account creation"},
+          {"tactic": "Collection", "technique_id": "T1530", "technique_name": "Data from Cloud Storage Object", "description": "Firewall config exfiltration"}
+        ]
+      },
+      "detection_guidance": {
+        "summary": "Monitor FortiCloud SSO logins, admin account changes, and config exports. Watch for logins from unexpected locations.",
+        "log_sources": [
+          {"source": "FortiGate Event Logs", "priority": "Critical"},
+          {"source": "FortiCloud Audit Logs", "priority": "Critical"}
+        ],
+        "what_to_look_for": [
+          {"indicator": "New admin account creation", "log_field": "action='user-create' AND user_type='admin'", "severity": "Critical"},
+          {"indicator": "Config backup/export", "log_field": "action='config-backup'", "severity": "Critical"},
+          {"indicator": "SSO login from unusual location", "log_field": "event='sso-login' AND geo NOT IN allowed", "severity": "High"}
+        ]
+      },
+      "immediate_actions": [
+        {"priority": 1, "action": "Disable FortiCloud SSO", "command": "config system global\nset admin-sso disable\nend"},
+        {"priority": 2, "action": "Audit admin accounts", "command": "get system admin"},
+        {"priority": 3, "action": "Restrict management access", "command": "config system interface\nedit mgmt\nset trusted-ip1 <subnet>\nend"}
+      ]
+    },
+    {
+      "briefing_id": "TB-2026-01-25-002",
+      "title": "ShinyHunters SSO Vishing Campaign - Cloud Identity Theft",
+      "generated_date": "2026-01-25",
+      "status": "ACTIVE",
+      "severity": {
+        "level": "High",
+        "cvss": 8.2,
+        "cisa_kev": false,
+        "cisa_deadline": null
+      },
+      "cves": [],
+      "tags": ["cloud", "identity", "okta", "microsoft-entra", "google-workspace", "sso", "vishing", "saas"],
+      "affected_products": [
+        "Okta Identity Cloud",
+        "Microsoft Entra ID (Azure AD)",
+        "Google Workspace",
+        "Connected SaaS applications"
+      ],
+      "sources_analyzed": 3,
+      "sources": [
+        {
+          "name": "BleepingComputer - ShinyHunters",
+          "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-claim-to-be-behind-sso-account-data-theft-attacks/",
+          "date": "2026-01-23",
+          "type": "News"
+        },
+        {
+          "name": "BleepingComputer - Okta Warning",
+          "url": "https://www.bleepingcomputer.com/news/security/okta-sso-accounts-targeted-in-vishing-based-data-theft-attacks/",
+          "date": "2026-01-22",
+          "type": "News"
+        },
+        {
+          "name": "Okta Security Blog",
+          "url": "https://www.okta.com/blog/",
+          "date": "2026-01-22",
+          "type": "Vendor Advisory"
+        }
+      ],
+      "timeline": [
+        {"date": "2026-01-15", "event": "Initial vishing calls reported"},
+        {"date": "2026-01-22", "event": "Okta issues security advisory"},
+        {"date": "2026-01-23", "event": "ShinyHunters claims responsibility"}
+      ],
+      "simple_summary": {
+        "what_happened": "The ShinyHunters gang is conducting voice phishing attacks targeting employees at organizations using cloud identity providers. They call pretending to be IT support and trick users into revealing SSO credentials and MFA codes, then breach connected SaaS platforms to steal data for extortion.",
+        "who_is_affected": "Organizations using Okta, Microsoft Entra ID, or Google Workspace for SSO, especially those with access to sensitive SaaS applications.",
+        "what_attackers_do": "Step 1: Research targets and identify employees with privileged access. Step 2: Call victims impersonating IT helpdesk with spoofed numbers. Step 3: Create urgency about account issues requiring verification. Step 4: Capture SSO credentials and real-time MFA codes. Step 5: Access SaaS platforms and exfiltrate data.",
+        "what_you_should_do": [
+          "Send vishing awareness alert to all employees immediately",
+          "Deploy phishing-resistant MFA (FIDO2 hardware keys)",
+          "Enable MFA number matching in Okta/Entra",
+          "Establish policy that IT never asks for passwords over phone",
+          "Enable impossible travel detection"
+        ],
+        "why_this_is_serious": "SSO compromise provides access to all connected SaaS apps - HR systems, source code, customer data, financials. ShinyHunters has a track record of massive data breaches."
+      },
+      "mitre_attack": {
+        "tactics": [
+          {"tactic": "Initial Access", "technique_id": "T1566.004", "technique_name": "Phishing: Spearphishing Voice", "description": "Voice calls impersonating IT support"},
+          {"tactic": "Credential Access", "technique_id": "T1111", "technique_name": "Multi-Factor Authentication Interception", "description": "Real-time MFA code capture"},
+          {"tactic": "Collection", "technique_id": "T1530", "technique_name": "Data from Cloud Storage Object", "description": "SaaS data exfiltration"}
+        ]
+      },
+      "detection_guidance": {
+        "summary": "Monitor for impossible travel, new device logins, and bulk application access patterns.",
+        "log_sources": [
+          {"source": "Okta System Log", "priority": "Critical"},
+          {"source": "Microsoft Entra Sign-in Logs", "priority": "Critical"},
+          {"source": "SaaS Application Audit Logs", "priority": "High"}
+        ],
+        "what_to_look_for": [
+          {"indicator": "Impossible travel", "log_field": "geo.distance > 500km AND time.delta < 1h", "severity": "Critical"},
+          {"indicator": "New device + sensitive app", "log_field": "device.registered=false AND app IN sensitive_apps", "severity": "Critical"},
+          {"indicator": "Bulk data download", "log_field": "action='data.export' size > threshold", "severity": "High"}
+        ]
+      },
+      "immediate_actions": [
+        {"priority": 1, "action": "Send vishing awareness alert", "command": null},
+        {"priority": 2, "action": "Enable phishing-resistant MFA", "command": null},
+        {"priority": 3, "action": "Enable MFA number matching", "command": null}
+      ]
+    },
+    {
+      "briefing_id": "TB-2026-01-25-003",
+      "title": "VMware vCenter Server RCE - Cloud Infrastructure",
+      "generated_date": "2026-01-25",
+      "status": "ACTIVE",
+      "severity": {
+        "level": "Critical",
+        "cvss": 9.8,
+        "cisa_kev": true,
+        "cisa_deadline": "2026-02-13"
+      },
+      "cves": ["CVE-2024-37079"],
+      "tags": ["cloud", "vmware", "vcenter", "virtualization", "rce", "hybrid-cloud"],
+      "affected_products": [
+        "VMware vCenter Server 8.0 (before U3)",
+        "VMware vCenter Server 7.0 (before U3r)",
+        "VMware Cloud Foundation 5.x, 4.x"
+      ],
+      "sources_analyzed": 2,
+      "sources": [
+        {
+          "name": "CISA KEV Catalog",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "date": "2026-01-23",
+          "type": "Government"
+        },
+        {
+          "name": "VMware Security Advisory",
+          "url": "https://www.vmware.com/security/advisories/VMSA-2024-0012.html",
+          "date": "2024-06-17",
+          "type": "Vendor Advisory"
+        }
+      ],
+      "timeline": [
+        {"date": "2024-06-17", "event": "VMware releases patch"},
+        {"date": "2026-01-23", "event": "CISA adds to KEV - active exploitation confirmed"},
+        {"date": "2026-02-13", "event": "CISA remediation deadline"}
+      ],
+      "simple_summary": {
+        "what_happened": "A critical remote code execution vulnerability in VMware vCenter Server allows attackers with network access to execute arbitrary code without authentication via the DCERPC protocol. CISA has confirmed active exploitation.",
+        "who_is_affected": "Organizations running VMware vCenter for managing virtual infrastructure, including hybrid cloud deployments on VMware Cloud on AWS, Azure VMware Solution, or Google Cloud VMware Engine.",
+        "what_attackers_do": "Step 1: Scan for exposed vCenter management interfaces. Step 2: Send malformed DCERPC packets. Step 3: Trigger out-of-bounds write for code execution. Step 4: Gain vCenter admin control. Step 5: Access all VMs, deploy ransomware, or pivot to connected cloud.",
+        "what_you_should_do": [
+          "Patch vCenter to 8.0 U3 or 7.0 U3r immediately",
+          "Restrict vCenter management to internal networks only",
+          "Audit vCenter access logs for suspicious activity",
+          "Verify backup integrity"
+        ],
+        "why_this_is_serious": "vCenter controls entire virtual infrastructure. Compromise enables access to all VMs, encryption of entire environments for ransomware, and lateral movement to connected clouds."
+      },
+      "mitre_attack": {
+        "tactics": [
+          {"tactic": "Initial Access", "technique_id": "T1190", "technique_name": "Exploit Public-Facing Application", "description": "DCERPC vulnerability exploitation"},
+          {"tactic": "Impact", "technique_id": "T1486", "technique_name": "Data Encrypted for Impact", "description": "Ransomware across virtual infrastructure"}
+        ]
+      },
+      "immediate_actions": [
+        {"priority": 1, "action": "Patch vCenter Server", "command": null},
+        {"priority": 2, "action": "Restrict network access to vCenter", "command": null},
+        {"priority": 3, "action": "Review vCenter audit logs", "command": null}
+      ]
+    },
+    {
+      "briefing_id": "TB-2026-01-25-004",
+      "title": "Versa Concerto SD-WAN Authentication Bypass",
+      "generated_date": "2026-01-25",
+      "status": "ACTIVE",
+      "severity": {
+        "level": "High",
+        "cvss": 8.6,
+        "cisa_kev": true,
+        "cisa_deadline": "2026-02-12"
+      },
+      "cves": ["CVE-2025-34026"],
+      "tags": ["cloud", "sd-wan", "network", "authentication-bypass", "traefik"],
+      "affected_products": ["Versa Concerto SD-WAN Orchestration Platform"],
+      "sources_analyzed": 2,
+      "sources": [
+        {
+          "name": "CISA KEV Catalog",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "date": "2026-01-22",
+          "type": "Government"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/cisa-confirms-active-exploitation-of-four-enterprise-software-bugs/",
+          "date": "2026-01-23",
+          "type": "News"
+        }
+      ],
+      "simple_summary": {
+        "what_happened": "Versa Concerto SD-WAN orchestration platform has an authentication bypass in its Traefik reverse proxy configuration, allowing attackers to access administrative endpoints and retrieve sensitive data including heap dumps and trace logs.",
+        "who_is_affected": "Organizations using Versa Concerto for SD-WAN management and orchestration across distributed networks.",
+        "what_attackers_do": "Step 1: Identify Versa Concerto deployments. Step 2: Exploit Traefik misconfiguration. Step 3: Access admin endpoints without authentication. Step 4: Retrieve heap dumps containing credentials. Step 5: Pivot to SD-WAN infrastructure.",
+        "what_you_should_do": [
+          "Apply Versa security patches immediately",
+          "Restrict access to Concerto management interface",
+          "Rotate credentials that may have been exposed",
+          "Review access logs for unauthorized activity"
+        ],
+        "why_this_is_serious": "SD-WAN orchestration platforms control network connectivity across distributed sites. Compromise enables network manipulation, traffic interception, and lateral movement."
+      },
+      "immediate_actions": [
+        {"priority": 1, "action": "Patch Versa Concerto", "command": null},
+        {"priority": 2, "action": "Restrict management access", "command": null}
+      ]
+    },
+    {
+      "briefing_id": "TB-2026-01-25-005",
+      "title": "Zimbra Collaboration Suite PHP Remote File Inclusion",
+      "generated_date": "2026-01-25",
+      "status": "ACTIVE",
+      "severity": {
+        "level": "High",
+        "cvss": 8.1,
+        "cisa_kev": true,
+        "cisa_deadline": "2026-02-12"
+      },
+      "cves": ["CVE-2025-68645"],
+      "tags": ["cloud", "email", "collaboration", "zimbra", "rfi", "php"],
+      "affected_products": ["Synacor Zimbra Collaboration Suite (ZCS)"],
+      "sources_analyzed": 2,
+      "sources": [
+        {
+          "name": "CISA KEV Catalog",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "date": "2026-01-22",
+          "type": "Government"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/cisa-confirms-active-exploitation-of-four-enterprise-software-bugs/",
+          "date": "2026-01-23",
+          "type": "News"
+        }
+      ],
+      "simple_summary": {
+        "what_happened": "Zimbra Collaboration Suite has a PHP remote file inclusion vulnerability in the /h/rest endpoint that allows attackers to include arbitrary files from the WebRoot directory, potentially leading to code execution.",
+        "who_is_affected": "Organizations using Zimbra for email and collaboration, including on-premises and cloud-hosted deployments.",
+        "what_attackers_do": "Step 1: Craft malicious requests to /h/rest endpoint. Step 2: Manipulate internal request dispatching. Step 3: Include arbitrary PHP files. Step 4: Achieve code execution on mail server. Step 5: Access emails and pivot internally.",
+        "what_you_should_do": [
+          "Patch Zimbra to latest version immediately",
+          "Implement WAF rules to block /h/rest exploitation",
+          "Review mail server logs for suspicious requests",
+          "Audit user accounts for unauthorized access"
+        ],
+        "why_this_is_serious": "Email servers contain sensitive communications and are often trusted by other systems. Compromise enables email theft, phishing from legitimate accounts, and internal network access."
+      },
+      "immediate_actions": [
+        {"priority": 1, "action": "Patch Zimbra immediately", "command": null},
+        {"priority": 2, "action": "Add WAF rules for /h/rest", "command": null}
+      ]
+    },
+    {
+      "briefing_id": "TB-2026-01-25-006",
+      "title": "Chainlit AI Framework Cloud Environment Breach",
+      "generated_date": "2026-01-25",
+      "status": "ACTIVE",
+      "severity": {
+        "level": "High",
+        "cvss": 8.6,
+        "cisa_kev": false,
+        "cisa_deadline": null
+      },
+      "cves": [],
+      "tags": ["cloud", "ai", "llm", "kubernetes", "container", "arbitrary-file-read"],
+      "affected_products": ["Chainlit AI Framework (unpatched versions)"],
+      "sources_analyzed": 1,
+      "sources": [
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/chainlit-ai-framework-bugs-let-hackers-breach-cloud-environments/",
+          "date": "2026-01-21",
+          "type": "News"
+        }
+      ],
+      "simple_summary": {
+        "what_happened": "Two high-severity vulnerabilities in Chainlit, a popular framework for building AI chatbots and LLM applications, allow attackers to read arbitrary files and leak sensitive information from cloud-deployed AI applications.",
+        "who_is_affected": "Organizations using Chainlit for conversational AI applications deployed in cloud environments (AWS, GCP, Azure, Kubernetes).",
+        "what_attackers_do": "Step 1: Identify Chainlit applications exposed to internet. Step 2: Exploit arbitrary file read vulnerability. Step 3: Access cloud credentials from environment or metadata service. Step 4: Extract API keys and database credentials. Step 5: Pivot to breach broader cloud environment.",
+        "what_you_should_do": [
+          "Update Chainlit to patched version immediately",
+          "Audit AI application exposure to public internet",
+          "Rotate credentials accessible to AI workloads",
+          "Implement IMDSv2 for AWS deployments",
+          "Apply least privilege IAM to AI workloads"
+        ],
+        "why_this_is_serious": "AI applications often have elevated privileges to access databases and APIs. Credential theft from AI workloads can lead to full cloud environment compromise."
+      },
+      "immediate_actions": [
+        {"priority": 1, "action": "Update Chainlit", "command": "pip install --upgrade chainlit"},
+        {"priority": 2, "action": "Rotate exposed credentials", "command": null},
+        {"priority": 3, "action": "Enforce IMDSv2", "command": "aws ec2 modify-instance-metadata-options --instance-id <id> --http-tokens required"}
+      ]
+    }
+  ],
+  "cisa_kev_updates": {
+    "newly_added_this_week": [
+      {"cve": "CVE-2024-37079", "product": "VMware vCenter Server", "type": "RCE", "deadline": "2026-02-13"},
+      {"cve": "CVE-2025-34026", "product": "Versa Concerto SD-WAN", "type": "Auth Bypass", "deadline": "2026-02-12"},
+      {"cve": "CVE-2025-68645", "product": "Zimbra Collaboration Suite", "type": "RFI", "deadline": "2026-02-12"},
+      {"cve": "CVE-2025-31125", "product": "Vite", "type": "Improper Access Control", "deadline": "2026-02-12"},
+      {"cve": "CVE-2025-54313", "product": "Prettier eslint-config", "type": "Malicious Code", "deadline": "2026-02-12"},
+      {"cve": "CVE-2026-20045", "product": "Cisco Unified CM", "type": "Code Injection", "deadline": "2026-02-11"}
+    ]
+  },
+  "action_summary": {
+    "immediate": [
+      "Disable FortiCloud SSO - use local authentication",
+      "Send vishing awareness alert to all employees",
+      "Patch VMware vCenter to 8.0 U3 / 7.0 U3r"
+    ],
+    "this_week": [
+      "Patch Versa Concerto SD-WAN",
+      "Patch Zimbra Collaboration Suite",
+      "Update Chainlit AI framework",
+      "Deploy phishing-resistant MFA (FIDO2)",
+      "Audit admin accounts on all network devices"
+    ],
+    "ongoing": [
+      "Monitor CISA KEV for new additions",
+      "Review SSO logs for impossible travel",
+      "Implement network segmentation for management interfaces"
+    ]
+  }
+}
