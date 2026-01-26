@@ -1,7 +1,7 @@
 {
-  "briefing_id": "TB-2026-01-25-007",
+  "briefing_id": "TB-2026-01-26-001",
   "title": "SAP Critical Vulnerabilities: S/4HANA SQL Injection and Wily RCE Threaten Enterprise Financial Systems",
-  "generated_date": "2026-01-25",
+  "generated_date": "2026-01-26",
   "status": "ACTIVE",
   "severity": {
     "level": "Critical",
