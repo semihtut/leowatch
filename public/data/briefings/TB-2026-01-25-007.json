@@ -1,0 +1,296 @@
+{
+  "briefing_id": "TB-2026-01-25-007",
+  "title": "SAP Critical Vulnerabilities: S/4HANA SQL Injection and Wily RCE Threaten Enterprise Financial Systems",
+  "generated_date": "2026-01-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.9,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-0501",
+    "CVE-2026-0500",
+    "CVE-2026-0502"
+  ],
+  "tags": [
+    "SAP",
+    "S/4HANA",
+    "cloud",
+    "SQL-injection",
+    "RCE",
+    "ERP",
+    "financial-systems",
+    "enterprise"
+  ],
+  "affected_products": [
+    "SAP S/4HANA Private Cloud and On-Premise (S4CORE 102-109)",
+    "SAP S/4HANA Financials - General Ledger module",
+    "SAP Wily Introscope Enterprise Manager",
+    "SAP NetWeaver Application Server ABAP",
+    "SAP Enterprise Resource Planning systems"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "SAP Official Security Advisory",
+      "url": "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/january-2026.html",
+      "date": "2026-01-14",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Onapsis Research Labs",
+      "url": "https://onapsis.com/blog/patch-day-january-2026/",
+      "date": "2026-01-14",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-0501",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0501",
+      "date": "2026-01-14",
+      "type": "Government"
+    },
+    {
+      "name": "SecurityWeek",
+      "url": "https://www.securityweek.com/saps-january-2026-security-updates-patch-critical-vulnerabilities/",
+      "date": "2026-01-14",
+      "type": "News"
+    },
+    {
+      "name": "GBHackers",
+      "url": "https://gbhackers.com/sap-january-2026-security-patch-day/",
+      "date": "2026-01-14",
+      "type": "News"
+    },
+    {
+      "name": "CyberPress",
+      "url": "https://cyberpress.org/sap-injection-and-rce-vulnerabilities/",
+      "date": "2026-01-14",
+      "type": "News"
+    },
+    {
+      "name": "Security Online",
+      "url": "https://securityonline.info/critical-sap-alert-s-4hana-sql-injection-wily-rce-threaten-financial-data/",
+      "date": "2026-01-15",
+      "type": "News"
+    },
+    {
+      "name": "Red Rays",
+      "url": "https://redrays.io/blog/sap-security-patch-day-january-2026/",
+      "date": "2026-01-14",
+      "type": "Research"
+    },
+    {
+      "name": "Inprosec",
+      "url": "https://www.inprosec.com/en/sap-security-notes-january-2026/",
+      "date": "2026-01-15",
+      "type": "Research"
+    },
+    {
+      "name": "Pathlock",
+      "url": "https://pathlock.com/blog/security-alerts/sap-security-patch-tuesday-january-2026/",
+      "date": "2026-01-14",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityBridge",
+      "url": "https://securitybridge.com/blog/sap-security-patch-day-january-2026/",
+      "date": "2026-01-14",
+      "type": "Research"
+    },
+    {
+      "name": "CVE Feed - CVE-2026-0501",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-0501",
+      "date": "2026-01-14",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-01",
+      "event": "Onapsis Research Labs discovers SQL injection and RCE vulnerabilities in SAP systems"
+    },
+    {
+      "date": "2026-01-14",
+      "event": "SAP Security Patch Day releases 19 security notes including 6 HotNews (critical) notes"
+    },
+    {
+      "date": "2026-01-14",
+      "event": "CVE-2026-0501 (CVSS 9.9) and CVE-2026-0500 (CVSS 9.6) publicly disclosed"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "Security researchers publish detailed technical analyses and exploitation details"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "SAP released critical security patches on January 14, 2026, addressing three maximum-severity vulnerabilities in enterprise financial and monitoring systems. CVE-2026-0501 is a SQL injection in S/4HANA General Ledger allowing complete database compromise. CVE-2026-0500 enables unauthenticated remote code execution in Wily Introscope monitoring systems. CVE-2026-0502 permits code injection leading to OS command execution. These vulnerabilities directly threaten financial data integrity across global enterprises.",
+    "who_is_affected": "Organizations running SAP S/4HANA Private Cloud and On-Premise for financial management are at highest risk. This includes Fortune 500 companies, government agencies, and enterprises managing critical financial operations. SAP S/4HANA is used by 77% of the world's transaction revenue. Affected versions include S4CORE 102 through 109. Organizations using SAP Wily Introscope for application performance monitoring are also exposed to RCE attacks.",
+    "what_attackers_do": "For CVE-2026-0501: Step 1: Attacker gains authenticated access to SAP system (insider threat or compromised credentials). Step 2: Exploits RFC-enabled function module in General Ledger. Step 3: Injects malicious SQL through ABAP Database Connectivity (ADBC) framework. Step 4: Executes arbitrary SQL commands to read, modify, or delete financial data. Step 5: Compromises confidentiality, integrity, and availability of entire financial database. For CVE-2026-0500: Step 1: Attacker crafts malicious JNLP (Java Network Launch Protocol) file. Step 2: Hosts file on accessible URL. Step 3: Social engineers victim to click URL. Step 4: Victim's Wily Introscope server executes attacker's commands. Step 5: Gains system-level access without authentication.",
+    "what_you_should_do": [
+      "Immediately apply SAP Security Notes #3687749 (CVE-2026-0501) and #3668679 (CVE-2026-0500)",
+      "Prioritize patching S/4HANA General Ledger module (affects financial data integrity)",
+      "Review and restrict access to RFC-enabled function modules",
+      "Implement additional authentication for critical financial operations",
+      "Monitor ABAP Database Connectivity (ADBC) usage for SQL injection patterns",
+      "Disable JNLP protocol handling in Wily Introscope if not required",
+      "Review user access logs for suspicious SQL queries in General Ledger module",
+      "Consider SAP's recommended workarounds if immediate patching is not possible"
+    ],
+    "why_this_is_serious": "SAP systems are the backbone of financial operations for most Fortune 500 companies and handle trillions of dollars in transactions. A successful SQL injection attack on S/4HANA General Ledger could manipulate financial records, leading to fraudulent transactions, regulatory violations, and massive financial losses. The CVSS 9.9 score reflects total system compromise potential. Onapsis Research Labs discovered these vulnerabilities, indicating sophisticated attack research targeting enterprise resource planning. With SAP powering 77% of global transaction revenue, exploitation would have catastrophic economic impact."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1078",
+        "technique_name": "Valid Accounts",
+        "description": "Using legitimate SAP credentials to access vulnerable systems"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "Exploiting JNLP file handling to execute code on victim systems"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Deploying web shells after achieving code execution via CVE-2026-0502"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1078.003",
+        "technique_name": "Valid Accounts: Local Accounts",
+        "description": "Escalating from authenticated user to system-level access via RCE"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027.009",
+        "technique_name": "Obfuscated Files or Information: Embedded Payloads",
+        "description": "Embedding malicious payloads in JNLP files to evade detection"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1003.004",
+        "technique_name": "OS Credential Dumping: LSA Secrets",
+        "description": "Extracting credentials from compromised SAP systems"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Exfiltrating financial data through SQL injection"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1565.001",
+        "technique_name": "Data Manipulation: Stored Data Manipulation",
+        "description": "Modifying financial records in General Ledger database"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor SAP security audit logs for suspicious RFC calls to financial modules, unusual SQL execution patterns via ADBC framework, and JNLP file access attempts. Focus on detecting unauthorized General Ledger access and unexpected system-level commands from Wily Introscope.",
+    "log_sources": [
+      {
+        "source": "SAP Security Audit Log (SAL)",
+        "description": "RFC calls, database operations, and user authentication events",
+        "priority": "Critical"
+      },
+      {
+        "source": "SAP Database Audit Trail",
+        "description": "SQL command execution, especially via ADBC framework",
+        "priority": "Critical"
+      },
+      {
+        "source": "SAP System Log (SM21)",
+        "description": "System errors, authentication failures, and privilege escalations",
+        "priority": "High"
+      },
+      {
+        "source": "Wily Introscope Application Logs",
+        "description": "JNLP file requests and command execution events",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Logs",
+        "description": "Unusual connections to SAP RFC ports (3300, 3301) and Introscope ports",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Suspicious SQL via ADBC",
+        "description": "SQL commands executed through ABAP Database Connectivity in General Ledger module",
+        "log_field": "SAP transaction FB03, FB50 with ADBC calls containing SELECT, UPDATE, DELETE, DROP",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "RFC function module abuse",
+        "description": "Unusual RFC calls to financial function modules from unexpected users/systems",
+        "log_field": "RFC calls to Z_* or custom function modules in FI-GL component",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "JNLP file download attempts",
+        "description": "HTTP requests for .jnlp files from Wily Introscope Enterprise Manager",
+        "log_field": "GET requests to /*.jnlp from external or unknown IP addresses",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual General Ledger access",
+        "description": "Access to financial tables outside business hours or by non-financial users",
+        "log_field": "Table access to BSEG, BKPF, SKA1 during unusual times",
+        "severity": "High"
+      },
+      {
+        "indicator": "Privilege escalation attempts",
+        "description": "Authorization changes or role assignments in SAP_BASIS",
+        "log_field": "Transaction SU01, SU10 execution by unauthorized users",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply SAP Security Note #3687749",
+      "description": "Patch CVE-2026-0501 SQL Injection in S/4HANA General Ledger immediately",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Apply SAP Security Note #3668679",
+      "description": "Patch CVE-2026-0500 RCE in Wily Introscope Enterprise Manager",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Review RFC Function Module Access",
+      "description": "Audit and restrict access to RFC-enabled function modules in FI-GL",
+      "command": "Transaction SE37 - Review function modules with RFC attribute enabled"
+    },
+    {
+      "priority": 4,
+      "action": "Enable SAP Security Audit Logging",
+      "description": "Ensure comprehensive audit logging for database operations",
+      "command": "Transaction RSAU_CONFIG - Enable filters for SQL, RFC, and authentication events"
+    },
+    {
+      "priority": 5,
+      "action": "Check for Indicators of Compromise",
+      "description": "Review SAP logs for suspicious SQL queries and RFC calls",
+      "command": "Transaction SM20 - Search for failed authorizations and unusual database access"
+    },
+    {
+      "priority": 6,
+      "action": "Disable JNLP if Not Required",
+      "description": "Disable Java Network Launch Protocol in Wily Introscope configuration",
+      "command": null
+    }
+  ]
+}
