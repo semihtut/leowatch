@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-01-26T09:00:00.000Z",
-  "date": "2026-01-26",
+  "lastUpdated": "2026-01-27T09:00:00.000Z",
+  "date": "2026-01-27",
   "stats": {
-    "total": 16,
-    "critical": 10,
+    "total": 17,
+    "critical": 11,
     "high": 6,
     "medium": 0,
     "low": 0,
-    "cisaKev": 7,
-    "activeExploits": 10,
-    "totalSources": 144
+    "cisaKev": 8,
+    "activeExploits": 11,
+    "totalSources": 158
   },
   "topTags": [
     "cloud",
@@ -23,12 +23,22 @@
     "Fortinet",
     "SAP",
     "VMware",
-    "Okta",
+    "Cisco",
     "Microsoft",
-    "Versa"
+    "Okta"
   ],
-  "featuredBriefing": "TB-2026-01-25-001",
+  "featuredBriefing": "TB-2026-01-27-001",
   "briefings": [
+    {
+      "id": "TB-2026-01-27-001",
+      "title": "Cisco Unified Communications Critical Zero-Day Under Active Exploitation (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-21",
+      "cves": ["CVE-2026-20045"],
+      "tags": ["Cisco", "unified-communications", "zero-day", "RCE", "cloud", "enterprise", "voip", "webex"],
+      "sourcesCount": 14,
+      "excerpt": "A critical zero-day vulnerability in Cisco Unified Communications products is being actively exploited, allowing attackers to execute arbitrary code and gain root access..."
+    },
     {
       "id": "TB-2026-01-25-001",
       "title": "FortiCloud SSO Authentication Bypass - Incomplete Patch Under Active Exploitation",

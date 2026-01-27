@@ -1,0 +1,293 @@
+{
+  "briefing_id": "TB-2026-01-27-001",
+  "title": "Cisco Unified Communications Critical Zero-Day Under Active Exploitation (CISA KEV)",
+  "generated_date": "2026-01-27",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-11"
+  },
+  "cves": [
+    "CVE-2026-20045"
+  ],
+  "tags": [
+    "Cisco",
+    "unified-communications",
+    "zero-day",
+    "RCE",
+    "cloud",
+    "enterprise",
+    "voip",
+    "webex"
+  ],
+  "affected_products": [
+    "Cisco Unified Communications Manager (Unified CM)",
+    "Cisco Unified CM Session Management Edition (SME)",
+    "Cisco Unified CM IM & Presence Service",
+    "Cisco Unity Connection",
+    "Cisco Webex Calling Dedicated Instance",
+    "Unified CM versions 12.5, 14.x, and 15.x prior to patches"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Cisco Security Advisory",
+      "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-voice-rce-mORhqY4b",
+      "date": "2026-01-21",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-21",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/cisco-fixes-actively-exploited-zero-day.html",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/cisco-fixes-unified-communications-rce-zero-day-exploited-in-attacks/",
+      "date": "2026-01-21",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading",
+      "url": "https://www.darkreading.com/endpoint-security/exploited-zero-day-flaw-cisco-uc-affect-millions",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/22/another_week_another_emergency_patch/",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/01/21/cisco-enterprise-communications-cve-2026-20045/",
+      "date": "2026-01-21",
+      "type": "News"
+    },
+    {
+      "name": "SOCRadar",
+      "url": "https://socradar.io/blog/cve-2026-20045-cisco-unified-communications-0-day/",
+      "date": "2026-01-22",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime",
+      "url": "https://socprime.com/blog/cve-2026-20045-vulnerability/",
+      "date": "2026-01-22",
+      "type": "Research"
+    },
+    {
+      "name": "Center for Internet Security (CIS)",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-cisco-unified-communications-products-could-allow-for-remote-code-execution_2026-006",
+      "date": "2026-01-21",
+      "type": "Government"
+    },
+    {
+      "name": "Belgium CCB Safeonweb",
+      "url": "https://ccb.belgium.be/advisories/warning-critical-cisco-unified-communications-remote-code-execution-vulnerability-patch",
+      "date": "2026-01-22",
+      "type": "Government"
+    },
+    {
+      "name": "Security Affairs",
+      "url": "https://securityaffairs.com/187177/security/cisco-fixed-actively-exploited-unified-communications-zero-day.html",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "WebProNews",
+      "url": "https://www.webpronews.com/ciscos-zero-day-rce-nightmare-uc-flaw-sparks-urgent-patching-frenzy/",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Loginsoft Weekly Report",
+      "url": "https://www.loginsoft.com/reports/weekly/from-zero-day-exploitation-to-plugin-takeovers-a-week-of-high-impact-cyber-threats",
+      "date": "2026-01-25",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-21",
+      "event": "Cisco releases emergency patch for CVE-2026-20045, confirms active exploitation"
+    },
+    {
+      "date": "2026-01-21",
+      "event": "CISA adds CVE-2026-20045 to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "SOC Prime reports proof-of-concept exploit code circulating on underground forums"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Multiple security advisories issued by CIS, Belgium CCB, and other national CERTs"
+    },
+    {
+      "date": "2026-01-25",
+      "event": "Continued active scanning and exploitation attempts observed globally"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical zero-day vulnerability (CVE-2026-20045) in Cisco Unified Communications products is being actively exploited in the wild. The flaw allows unauthenticated remote attackers to execute arbitrary code on affected systems and escalate to root privileges. Cisco confirmed exploitation before patches were available, and proof-of-concept exploit code is now circulating on underground forums.",
+    "who_is_affected": "Organizations using Cisco Unified Communications Manager (Unified CM), IM & Presence Service, Unity Connection, or Webex Calling Dedicated Instance are at risk. This includes enterprises relying on Cisco for VoIP, video conferencing, and unified communications. Millions of organizations worldwide use these products, with unpatched versions 12.5 and 14.x facing the highest risk.",
+    "what_attackers_do": "Step 1: Identify internet-exposed Cisco UC web management interfaces. Step 2: Send specially crafted HTTP requests exploiting improper input validation. Step 3: Gain user-level access to the underlying operating system. Step 4: Escalate privileges to root for complete system control. Step 5: Establish persistence and potentially pivot to other internal systems. Step 6: Access sensitive communications data, voicemails, call records, or use the compromised system for further attacks.",
+    "what_you_should_do": [
+      "Immediately apply Cisco patches - upgrade to Unified CM 14SU3, 15SU5, or later fixed versions",
+      "Isolate UC management interfaces behind firewalls if patching is delayed",
+      "Monitor logs for suspicious HTTP requests to web management interfaces",
+      "Check for unauthorized access or configuration changes on UC servers",
+      "Review network segmentation to limit exposure of communication infrastructure",
+      "Enable enhanced logging and forward to SIEM for analysis",
+      "Block external access to UC management ports if not required"
+    ],
+    "why_this_is_serious": "Cisco Unified Communications products are deployed in millions of enterprises globally, including critical infrastructure, healthcare, financial services, and government agencies. Successful exploitation grants attackers root access to communication systems, enabling interception of calls, access to voicemails, and lateral movement into corporate networks. With POC exploits circulating and active exploitation confirmed, unpatched organizations are at immediate risk. CISA has mandated federal agencies patch by February 11, 2026."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploiting the vulnerable web management interface exposed to the network"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Executing arbitrary commands on the underlying operating system"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "Escalating from user-level to root access on the UC server"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1136",
+        "technique_name": "Create Account",
+        "description": "Creating backdoor accounts for persistent access to communication systems"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1123",
+        "technique_name": "Audio Capture",
+        "description": "Accessing voicemails, call recordings, and communication metadata"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "Using compromised UC infrastructure to pivot to other internal systems"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for unusual HTTP requests to Cisco UC web management interfaces, unexpected privilege escalations, and unauthorized configuration changes. Focus on detecting exploitation attempts through web application logs and system-level process monitoring.",
+    "log_sources": [
+      {
+        "source": "Cisco UC Application Logs",
+        "description": "Web management interface access logs and authentication events",
+        "priority": "Critical"
+      },
+      {
+        "source": "System Logs",
+        "description": "Operating system logs showing process creation and privilege escalation",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Logs",
+        "description": "HTTP/HTTPS traffic to UC management ports (typically 443, 8443)",
+        "priority": "High"
+      },
+      {
+        "source": "SIEM/IDS Alerts",
+        "description": "Correlation of multiple suspicious events targeting UC infrastructure",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Malformed HTTP requests",
+        "description": "Unusual or malformed HTTP requests to web management interface",
+        "log_field": "HTTP request patterns with unexpected input in parameters",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected process execution",
+        "description": "New processes spawned by web server or UC application processes",
+        "log_field": "Process creation events with unusual parent-child relationships",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Privilege escalation events",
+        "description": "User-level processes gaining root privileges unexpectedly",
+        "log_field": "Sudo/su events or setuid executions from web context",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Configuration changes",
+        "description": "Unauthorized modifications to UC system configurations",
+        "log_field": "Configuration audit logs showing unexpected changes",
+        "severity": "High"
+      },
+      {
+        "indicator": "External connections from UC servers",
+        "description": "Outbound connections to unknown external IPs from UC infrastructure",
+        "log_field": "Network flow data showing unusual egress traffic",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Identify Affected Systems",
+      "description": "Inventory all Cisco Unified Communications products and their versions",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Apply Cisco Patches",
+      "description": "Upgrade to fixed versions: Unified CM 14SU3, 15SU5, or apply available patch files",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Restrict Management Access",
+      "description": "Block external access to UC web management interfaces immediately",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Enable Enhanced Logging",
+      "description": "Ensure comprehensive logging is enabled on all UC systems",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Monitor for IOCs",
+      "description": "Deploy detection rules for CVE-2026-20045 exploitation attempts",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Review Recent Access",
+      "description": "Audit web management interface access logs for the past 30 days for suspicious activity",
+      "command": null
+    }
+  ]
+}
