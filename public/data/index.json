@@ -1,34 +1,54 @@
 {
-  "lastUpdated": "2026-01-27T09:00:00.000Z",
-  "date": "2026-01-27",
+  "lastUpdated": "2026-01-28T09:00:00.000Z",
+  "date": "2026-01-28",
   "stats": {
-    "total": 17,
-    "critical": 11,
-    "high": 6,
+    "total": 19,
+    "critical": 12,
+    "high": 7,
     "medium": 0,
     "low": 0,
-    "cisaKev": 8,
-    "activeExploits": 11,
-    "totalSources": 158
+    "cisaKev": 10,
+    "activeExploits": 13,
+    "totalSources": 182
   },
   "topTags": [
     "cloud",
     "fortinet",
+    "Microsoft",
     "SAP",
-    "identity",
     "vmware",
     "kubernetes"
   ],
   "topVendors": [
+    "Microsoft",
     "Fortinet",
-    "SAP",
+    "HPE",
     "VMware",
     "Cisco",
-    "Microsoft",
-    "Okta"
+    "SAP"
   ],
-  "featuredBriefing": "TB-2026-01-27-001",
+  "featuredBriefing": "TB-2026-01-28-001",
   "briefings": [
+    {
+      "id": "TB-2026-01-28-001",
+      "title": "Microsoft Office Zero-Day: Emergency Patch for Actively Exploited OLE/COM Bypass (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-27",
+      "cves": ["CVE-2026-21509"],
+      "tags": ["Microsoft", "Office", "zero-day", "OLE", "COM", "security-bypass", "enterprise", "cloud"],
+      "sourcesCount": 12,
+      "excerpt": "Microsoft released an emergency out-of-band patch for actively exploited zero-day allowing attackers to bypass OLE security mitigations..."
+    },
+    {
+      "id": "TB-2026-01-28-002",
+      "title": "HPE OneView CVSS 10.0 RCE: RondoDox Botnet Launches 40,000+ Attack Campaign (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-07",
+      "cves": ["CVE-2025-37164"],
+      "tags": ["HPE", "OneView", "infrastructure-management", "RCE", "botnet", "RondoDox", "enterprise", "cloud"],
+      "sourcesCount": 12,
+      "excerpt": "RondoDox botnet launched over 40,000 automated attacks exploiting maximum severity HPE OneView vulnerability..."
+    },
     {
       "id": "TB-2026-01-27-001",
       "title": "Cisco Unified Communications Critical Zero-Day Under Active Exploitation (CISA KEV)",
