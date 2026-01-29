@@ -1,0 +1,277 @@
+{
+  "briefing_id": "TB-2026-01-29-002",
+  "title": "SmarterMail Auth Bypass to RCE Chain: 6,000+ Servers Exposed to Automated Hijacking (CISA KEV)",
+  "generated_date": "2026-01-29",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10.0,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-16"
+  },
+  "cves": [
+    "CVE-2026-23760",
+    "CVE-2025-52691"
+  ],
+  "tags": [
+    "SmarterMail",
+    "email",
+    "authentication-bypass",
+    "file-upload",
+    "RCE",
+    "cloud",
+    "enterprise"
+  ],
+  "affected_products": [
+    "SmarterTools SmarterMail versions prior to Build 9511",
+    "SmarterMail Build 9406 and earlier (CVE-2025-52691)",
+    "SmarterMail Build 9510 and earlier (CVE-2026-23760)"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "WatchTowr Labs",
+      "url": "https://labs.watchtowr.com/attackers-with-decompilers-strike-again-smartertools-smartermail-wt-2026-0001-auth-bypass/",
+      "date": "2026-01-17",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/smartermail-auth-bypass-flaw-now-exploited-to-hijack-admin-accounts/",
+      "date": "2026-01-27",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/over-6-000-smartermail-servers-exposed-to-automated-hijacking-attacks/",
+      "date": "2026-01-20",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/smartermail-auth-bypass-exploited-in.html",
+      "date": "2026-01-27",
+      "type": "News"
+    },
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-26",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2026-23760",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-23760",
+      "date": "2026-01-15",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2025-52691",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-52691",
+      "date": "2025-10-09",
+      "type": "Government"
+    },
+    {
+      "name": "GitHub PoC",
+      "url": "https://github.com/MaxMnMl/smartermail-CVE-2026-23760-poc",
+      "date": "2026-01-17",
+      "type": "Research"
+    },
+    {
+      "name": "OffSeq Threat Radar",
+      "url": "https://radar.offseq.com/threat/smartermail-auth-bypass-exploited-in-the-wild-two--107b4488",
+      "date": "2026-01-17",
+      "type": "Research"
+    },
+    {
+      "name": "Feedly CVE Intelligence",
+      "url": "https://feedly.com/cve/CVE-2026-23760",
+      "date": "2026-01-27",
+      "type": "Research"
+    },
+    {
+      "name": "Cyber Press",
+      "url": "https://cyberpress.org/critical-smartermail-vulnerability/",
+      "date": "2026-01-27",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-10-09",
+      "event": "SmarterTools releases Build 9413 patching CVE-2025-52691 (pre-auth file upload)"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "SmarterTools releases Build 9511 patching CVE-2026-23760 (auth bypass)"
+    },
+    {
+      "date": "2026-01-17",
+      "event": "WatchTowr Labs publishes technical analysis; PoC appears on GitHub within 48 hours"
+    },
+    {
+      "date": "2026-01-17",
+      "event": "Active exploitation begins - attackers reverse-engineer patch within 2 days"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Over 6,000 internet-exposed SmarterMail servers identified as vulnerable"
+    },
+    {
+      "date": "2026-01-26",
+      "event": "CISA adds CVE-2026-23760 and CVE-2025-52691 to Known Exploited Vulnerabilities catalog"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Two critical vulnerabilities in SmarterTools SmarterMail email server create a devastating attack chain. CVE-2026-23760 (CVSS 9.3) allows unauthenticated attackers to reset the system administrator password through a flawed password reset API. CVE-2025-52691 (CVSS 10.0) enables pre-authentication arbitrary file upload leading to remote code execution. Attackers reverse-engineered the January 15 patch within just 2 days and began mass exploitation. Over 6,000 internet-exposed SmarterMail servers remain vulnerable.",
+    "who_is_affected": "Organizations using SmarterTools SmarterMail for email hosting and collaboration. SmarterMail is popular among SMBs, web hosting providers, and enterprises seeking self-hosted email solutions. Any organization running SmarterMail versions prior to Build 9511 with internet-exposed management interfaces is at critical risk. The 6,000+ exposed servers represent a significant attack surface.",
+    "what_attackers_do": "Step 1: Identify internet-exposed SmarterMail servers through scanning. Step 2: Send unauthenticated HTTP POST to /api/v1/auth/force-reset-password with IsSysAdmin=true. Step 3: Reset system administrator password without knowing current credentials. Step 4: Login as system administrator with the new password. Step 5: Navigate to Settings and abuse the legitimate 'Volume Mount Command' feature to execute OS commands. Step 6: Achieve SYSTEM-level remote code execution on the underlying Windows server. Alternatively, exploit CVE-2025-52691 to directly upload webshells for RCE without the auth bypass chain.",
+    "what_you_should_do": [
+      "Immediately upgrade to SmarterMail Build 9511 or later",
+      "Block external access to SmarterMail management interfaces",
+      "Implement WAF rules to block requests to /api/v1/auth/force-reset-password",
+      "Audit administrator accounts for unauthorized password changes",
+      "Check for webshells or unauthorized files in web directories",
+      "Enable multi-factor authentication for all administrator accounts",
+      "Review Volume Mount Command settings for malicious entries",
+      "Monitor for unusual process execution on SmarterMail servers"
+    ],
+    "why_this_is_serious": "Email servers are high-value targets containing sensitive communications, credentials, and business data. The vulnerability chain enables complete server takeover with SYSTEM privileges from a single unauthenticated HTTP request. Attackers weaponized this within 48 hours of patch release, demonstrating sophisticated reverse engineering capabilities. With 6,000+ exposed servers and public PoC code available, mass exploitation is ongoing. Compromised email servers can be used for business email compromise (BEC), data theft, spam campaigns, and as pivot points into internal networks."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploiting the password reset API without authentication"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1556",
+        "technique_name": "Modify Authentication Process",
+        "description": "Resetting administrator password through vulnerable API"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.001",
+        "technique_name": "Command and Scripting Interpreter: PowerShell",
+        "description": "Executing commands via Volume Mount Command feature"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Uploading webshells through arbitrary file upload vulnerability"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "Gaining SYSTEM privileges through RCE vulnerabilities"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1114.002",
+        "technique_name": "Email Collection: Remote Email Collection",
+        "description": "Accessing stored emails on compromised mail server"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for unauthorized requests to the password reset API endpoint, unusual administrator logins, webshell indicators, and suspicious process execution from the SmarterMail application context.",
+    "log_sources": [
+      {
+        "source": "SmarterMail Application Logs",
+        "description": "API access logs, authentication events, admin actions",
+        "priority": "Critical"
+      },
+      {
+        "source": "IIS/Web Server Logs",
+        "description": "HTTP requests to vulnerable API endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Security Event Log",
+        "description": "Process creation and privilege escalation events",
+        "priority": "High"
+      },
+      {
+        "source": "Web Application Firewall",
+        "description": "Blocked requests to sensitive endpoints",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Password reset API abuse",
+        "description": "POST requests to /api/v1/auth/force-reset-password without valid session",
+        "log_field": "URI=/api/v1/auth/force-reset-password, Method=POST",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "File upload endpoint abuse",
+        "description": "POST requests to /api/upload with suspicious file extensions",
+        "log_field": "URI=/api/upload with .aspx, .ashx, .asmx extensions",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Webshell indicators",
+        "description": "New .aspx files appearing in web directories",
+        "log_field": "File creation in SmarterMail web directories",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Volume Mount Command modification",
+        "description": "Changes to Volume Mount Command settings in SmarterMail",
+        "log_field": "Admin settings change logs",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Suspicious process execution",
+        "description": "cmd.exe, powershell.exe spawned by SmarterMail processes",
+        "log_field": "ParentImage=*SmarterMail*, Image=*cmd.exe OR *powershell.exe*",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade SmarterMail",
+      "description": "Immediately upgrade to Build 9511 or later",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Block API Endpoint",
+      "description": "Configure WAF/reverse proxy to block /api/v1/auth/force-reset-password",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Restrict Management Access",
+      "description": "Block external access to SmarterMail administrative interfaces",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Check for Webshells",
+      "description": "Scan web directories for unauthorized .aspx, .ashx files",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Audit Admin Accounts",
+      "description": "Review administrator accounts and recent password changes",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Review Volume Mount Command",
+      "description": "Check Settings for malicious commands in Volume Mount Command field",
+      "command": null
+    }
+  ]
+}

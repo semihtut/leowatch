@@ -1,0 +1,286 @@
+{
+  "briefing_id": "TB-2026-01-29-001",
+  "title": "Fortinet FortiCloud SSO Zero-Day: Cross-Account Device Hijacking Under Active Exploitation (CISA KEV)",
+  "generated_date": "2026-01-29",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.4,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-18"
+  },
+  "cves": [
+    "CVE-2026-24858"
+  ],
+  "tags": [
+    "Fortinet",
+    "FortiOS",
+    "FortiCloud",
+    "SSO",
+    "zero-day",
+    "authentication-bypass",
+    "firewall",
+    "cloud"
+  ],
+  "affected_products": [
+    "FortiOS (all versions with FortiCloud SSO enabled)",
+    "FortiManager (with FortiCloud SSO enabled)",
+    "FortiAnalyzer (with FortiCloud SSO enabled)",
+    "FortiProxy (with FortiCloud SSO enabled)",
+    "FortiWeb (under investigation)",
+    "FortiSwitchManager (under investigation)"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "CISA Alert",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/01/28/fortinet-releases-guidance-address-ongoing-exploitation-authentication-bypass-vulnerability-cve-2026",
+      "date": "2026-01-28",
+      "type": "Government"
+    },
+    {
+      "name": "Fortinet PSIRT Blog",
+      "url": "https://www.fortinet.com/blog/psirt-blogs/analysis-of-sso-abuse-on-fortios",
+      "date": "2026-01-27",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "FortiGuard Advisory",
+      "url": "https://www.fortiguard.com/psirt/FG-IR-26-060",
+      "date": "2026-01-27",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/fortinet-blocks-exploited-forticloud-sso-zero-day-until-patch-is-ready/",
+      "date": "2026-01-28",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/fortinet-patches-cve-2026-24858-after.html",
+      "date": "2026-01-28",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/01/28/fortinet-forticloud-sso-zero-day-vulnerability-cve-2026-24858/",
+      "date": "2026-01-28",
+      "type": "News"
+    },
+    {
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/28/fortinet_forticloud_vuln/",
+      "date": "2026-01-28",
+      "type": "News"
+    },
+    {
+      "name": "SOC Prime",
+      "url": "https://socprime.com/blog/cve-2026-24858-vulnerability/",
+      "date": "2026-01-28",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf",
+      "url": "https://arcticwolf.com/resources/blog/console-chaos-targets-fortinet-fortigate-firewalls/",
+      "date": "2026-01-22",
+      "type": "Research"
+    },
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-27",
+      "type": "Government"
+    },
+    {
+      "name": "Security Affairs",
+      "url": "https://securityaffairs.com/187230/hacking/fortinet-forticloud-sso-zero-day-cve-2026-24858.html",
+      "date": "2026-01-28",
+      "type": "News"
+    },
+    {
+      "name": "Feedly CVE Intelligence",
+      "url": "https://feedly.com/cve/CVE-2026-24858",
+      "date": "2026-01-28",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-20",
+      "event": "Multiple Fortinet clients report unauthorized access to FortiGate firewalls despite running latest patches"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Fortinet locks out two malicious FortiCloud accounts used in attacks"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Arctic Wolf confirms automated attack campaign with config exfiltration within seconds"
+    },
+    {
+      "date": "2026-01-26",
+      "event": "Fortinet globally disables FortiCloud SSO to stop ongoing exploitation"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "FortiCloud SSO re-enabled with version enforcement; CISA adds to KEV catalog"
+    },
+    {
+      "date": "2026-01-28",
+      "event": "CISA releases guidance; FortiOS 7.4.11 patch available"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical zero-day vulnerability (CVE-2026-24858) in Fortinet's FortiCloud Single Sign-On allows attackers with any FortiCloud account to access devices registered to OTHER organizations' FortiCloud accounts. This is a separate vulnerability from the previously patched CVE-2025-59718. Attackers exploited this flaw starting January 20, 2026, using two malicious FortiCloud accounts to compromise devices across multiple organizations. Fortinet was forced to globally disable FortiCloud SSO on January 26 to stop the bleeding.",
+    "who_is_affected": "Organizations using FortiCloud SSO authentication on FortiOS, FortiManager, FortiAnalyzer, or FortiProxy devices. This affects enterprises worldwide that use Fortinet's cloud-managed authentication for their network security infrastructure. FortiManager Cloud, FortiAnalyzer Cloud, and FortiGate Cloud services are NOT affected. Organizations using custom IdP (including FortiAuthenticator) are also not impacted.",
+    "what_attackers_do": "Step 1: Create or compromise a FortiCloud account with at least one registered device. Step 2: Exploit CVE-2026-24858 to authenticate to devices registered under OTHER FortiCloud accounts. Step 3: Download victim organization's firewall configuration files (contains sensitive network topology, rules, credentials). Step 4: Create new local administrator accounts on the compromised devices. Step 5: Create VPN-enabled user accounts for persistent remote access. Step 6: Arctic Wolf observed this entire attack chain completing within seconds, indicating fully automated exploitation.",
+    "what_you_should_do": [
+      "Immediately disable FortiCloud SSO: System > Settings > Switch 'Allow administrative login using FortiCloud SSO' to Off",
+      "Upgrade to FortiOS 7.4.11 or wait for upcoming patches for other product versions",
+      "Audit all local administrator accounts - delete any unrecognized accounts",
+      "Review VPN user accounts for unauthorized additions",
+      "Check device configurations for unauthorized changes",
+      "Rotate all credentials that may have been in exported configurations",
+      "Enable multi-factor authentication for all administrative access",
+      "Monitor for connections from unknown IP addresses to management interfaces"
+    ],
+    "why_this_is_serious": "This vulnerability allows cross-tenant attacks through Fortinet's cloud authentication service. Any attacker with a FortiCloud account could potentially access any other organization's Fortinet devices that have FortiCloud SSO enabled. The attacks were automated and completed config exfiltration and admin account creation within seconds. Fortinet firewalls protect critical network perimeters - compromised configurations expose network topology, security rules, and potentially credentials. This is the SECOND critical Fortinet auth bypass in January 2026, raising serious questions about the security of cloud-managed network infrastructure."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1078.004",
+        "technique_name": "Valid Accounts: Cloud Accounts",
+        "description": "Abusing FortiCloud SSO to gain unauthorized access to other tenants' devices"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1136.001",
+        "technique_name": "Create Account: Local Account",
+        "description": "Creating rogue administrator accounts on compromised FortiGate devices"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "Exfiltrating firewall configurations containing sensitive credentials"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Downloading complete device configuration files"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.001",
+        "technique_name": "Impair Defenses: Disable or Modify Tools",
+        "description": "Modifying firewall rules to allow attacker traffic"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1133",
+        "technique_name": "External Remote Services",
+        "description": "Creating VPN-enabled accounts for persistent remote access"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for unauthorized administrator account creation, suspicious FortiCloud SSO logins, configuration exports, and VPN account additions. Review audit logs for access from unexpected FortiCloud accounts.",
+    "log_sources": [
+      {
+        "source": "FortiGate Event Logs",
+        "description": "Administrative login events, account creation, configuration changes",
+        "priority": "Critical"
+      },
+      {
+        "source": "FortiCloud Audit Logs",
+        "description": "SSO authentication events and device access logs",
+        "priority": "Critical"
+      },
+      {
+        "source": "FortiAnalyzer",
+        "description": "Centralized logging of all FortiGate events",
+        "priority": "High"
+      },
+      {
+        "source": "SIEM/SOAR",
+        "description": "Correlated alerts for admin account creation and config changes",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unexpected admin account creation",
+        "description": "New local administrator accounts created without authorization",
+        "log_field": "logid=0100032001 or action=user-add with admin privilege",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Configuration download/export",
+        "description": "Firewall configuration exported or backed up unexpectedly",
+        "log_field": "logid=0100032006 or action=backup-config",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "VPN user creation",
+        "description": "New SSL-VPN or IPsec VPN users added without authorization",
+        "log_field": "action=ssl-vpn-user-add or vpn-user-add",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "FortiCloud SSO from unexpected accounts",
+        "description": "SSO logins from FortiCloud accounts not belonging to organization",
+        "log_field": "logid=0100032101 with unexpected FortiCloud user",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Rapid automated activity",
+        "description": "Multiple admin actions (login, config export, account creation) within seconds",
+        "log_field": "Time correlation of multiple admin events",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Disable FortiCloud SSO",
+      "description": "System > Settings > Switch 'Allow administrative login using FortiCloud SSO' to Off",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Audit Administrator Accounts",
+      "description": "Review all local admin accounts and delete any unrecognized entries",
+      "command": "get system admin"
+    },
+    {
+      "priority": 3,
+      "action": "Audit VPN Users",
+      "description": "Review SSL-VPN and IPsec VPN users for unauthorized additions",
+      "command": "get vpn ssl settings"
+    },
+    {
+      "priority": 4,
+      "action": "Apply FortiOS 7.4.11 Patch",
+      "description": "Upgrade to patched version when maintenance window permits",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Review Configuration Changes",
+      "description": "Compare current config against known-good backup for unauthorized changes",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Rotate Credentials",
+      "description": "Change all credentials that may have been exposed in exported configs",
+      "command": null
+    }
+  ]
+}

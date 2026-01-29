@@ -1,34 +1,54 @@
 {
-  "lastUpdated": "2026-01-28T09:00:00.000Z",
-  "date": "2026-01-28",
+  "lastUpdated": "2026-01-29T09:00:00.000Z",
+  "date": "2026-01-29",
   "stats": {
-    "total": 19,
-    "critical": 12,
+    "total": 21,
+    "critical": 14,
     "high": 7,
     "medium": 0,
     "low": 0,
-    "cisaKev": 10,
-    "activeExploits": 13,
-    "totalSources": 182
+    "cisaKev": 12,
+    "activeExploits": 15,
+    "totalSources": 205
   },
   "topTags": [
     "cloud",
     "fortinet",
     "Microsoft",
-    "SAP",
+    "email",
     "vmware",
     "kubernetes"
   ],
   "topVendors": [
-    "Microsoft",
     "Fortinet",
+    "Microsoft",
+    "SmarterTools",
     "HPE",
     "VMware",
-    "Cisco",
-    "SAP"
+    "Cisco"
   ],
-  "featuredBriefing": "TB-2026-01-28-001",
+  "featuredBriefing": "TB-2026-01-29-001",
   "briefings": [
+    {
+      "id": "TB-2026-01-29-001",
+      "title": "Fortinet FortiCloud SSO Zero-Day: Cross-Account Device Hijacking Under Active Exploitation (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-28",
+      "cves": ["CVE-2026-24858"],
+      "tags": ["Fortinet", "FortiOS", "FortiCloud", "SSO", "zero-day", "authentication-bypass", "firewall", "cloud"],
+      "sourcesCount": 12,
+      "excerpt": "A critical zero-day in FortiCloud SSO allows attackers with any FortiCloud account to access devices registered to other organizations..."
+    },
+    {
+      "id": "TB-2026-01-29-002",
+      "title": "SmarterMail Auth Bypass to RCE Chain: 6,000+ Servers Exposed to Automated Hijacking (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-26",
+      "cves": ["CVE-2026-23760", "CVE-2025-52691"],
+      "tags": ["SmarterMail", "email", "authentication-bypass", "file-upload", "RCE", "cloud", "enterprise"],
+      "sourcesCount": 11,
+      "excerpt": "Two critical vulnerabilities in SmarterMail create a devastating attack chain enabling SYSTEM-level RCE from unauthenticated requests..."
+    },
     {
       "id": "TB-2026-01-28-001",
       "title": "Microsoft Office Zero-Day: Emergency Patch for Actively Exploited OLE/COM Bypass (CISA KEV)",
