@@ -6,7 +6,7 @@ Claude Pro'ya bu prompt'u ver:
 
 **PROMPT:**
 
-Guncel cloud security haberlerini arastir ve asagidaki JSON formatinda bir threat briefing olustur. Gercek kaynaklari kullan ve URL'leri dogru ver.
+Guncel (2026 yilinda gerceklesen) cloud security haberlerini arastir ve asagidaki JSON formatinda bir threat briefing olustur. Gercek kaynaklari kullan ve URL'leri dogru ver.
 
 ```json
 {
