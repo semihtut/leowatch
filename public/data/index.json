@@ -1,34 +1,54 @@
 {
-  "lastUpdated": "2026-01-29T09:00:00.000Z",
-  "date": "2026-01-29",
+  "lastUpdated": "2026-01-30T09:00:00.000Z",
+  "date": "2026-01-30",
   "stats": {
-    "total": 21,
-    "critical": 14,
-    "high": 7,
+    "total": 23,
+    "critical": 15,
+    "high": 8,
     "medium": 0,
     "low": 0,
     "cisaKev": 12,
     "activeExploits": 15,
-    "totalSources": 205
+    "totalSources": 227
   },
   "topTags": [
     "cloud",
+    "phishing",
     "fortinet",
     "Microsoft",
-    "email",
     "vmware",
     "kubernetes"
   ],
   "topVendors": [
     "Fortinet",
     "Microsoft",
-    "SmarterTools",
+    "Trend Micro",
     "HPE",
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-01-29-001",
+  "featuredBriefing": "TB-2026-01-30-001",
   "briefings": [
+    {
+      "id": "TB-2026-01-30-001",
+      "title": "Google Cloud Application Integration Multi-Cloud Phishing Campaign - OAuth Consent Attacks Targeting 3,200+ Businesses",
+      "severity": "High",
+      "date": "2026-01-21",
+      "cves": [],
+      "tags": ["phishing", "Google Cloud", "OAuth", "Azure AD", "Microsoft 365", "cloud", "credential-theft"],
+      "sourcesCount": 11,
+      "excerpt": "Cybercriminals abuse Google Cloud Application Integration to send phishing emails from legitimate Google domains, targeting Microsoft 365 credentials and Azure AD OAuth consent..."
+    },
+    {
+      "id": "TB-2026-01-30-002",
+      "title": "Trend Micro Apex Central Critical Unauthenticated RCE (CVE-2025-69258) - PoC Exploit Released",
+      "severity": "Critical",
+      "date": "2026-01-07",
+      "cves": ["CVE-2025-69258", "CVE-2025-69259", "CVE-2025-69260"],
+      "tags": ["Trend Micro", "Apex Central", "DLL-hijack", "RCE", "endpoint-security", "enterprise"],
+      "sourcesCount": 11,
+      "excerpt": "Critical unauthenticated RCE in Trend Micro Apex Central allows SYSTEM-level code execution via DLL hijacking. PoC exploit released by Tenable Research..."
+    },
     {
       "id": "TB-2026-01-29-001",
       "title": "Fortinet FortiCloud SSO Zero-Day: Cross-Account Device Hijacking Under Active Exploitation (CISA KEV)",
