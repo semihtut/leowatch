@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-01T16:07:08.895Z",
-  "date": "2026-02-01",
+  "lastUpdated": "2026-02-06T16:59:58.928Z",
+  "date": "2026-02-06",
   "stats": {
-    "total": 25,
-    "critical": 17,
+    "total": 28,
+    "critical": 20,
     "high": 8,
     "medium": 0,
     "low": 0,
-    "cisaKev": 13,
+    "cisaKev": 14,
     "activeExploits": 15,
-    "totalSources": 239
+    "totalSources": 284
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,73 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-01-002",
+  "featuredBriefing": "TB-2026-02-06-003",
   "briefings": [
+    {
+      "id": "TB-2026-02-06-003",
+      "title": "vLLM Critical RCE via Video Processing Heap Overflow Threatens Millions of AI Servers (CVE-2026-22778)",
+      "severity": "Critical",
+      "date": "2026-02-06",
+      "cves": [
+        "CVE-2026-22778",
+        "CVE-2025-32444",
+        "CVE-2025-47277",
+        "CVE-2025-62164"
+      ],
+      "tags": [
+        "ai-ml",
+        "vllm",
+        "rce",
+        "heap-overflow",
+        "video-processing",
+        "supply-chain"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical remote code execution vulnerability was discovered in vLLM, the most widely-deployed open-source large language model inference engine with over 3 million monthly PyPI downloads. The flaw (..."
+    },
+    {
+      "id": "TB-2026-02-06-002",
+      "title": "SolarWinds Web Help Desk Critical Java Deserialization RCE Chain Under Active Exploitation (CVE-2025-40551)",
+      "severity": "Critical",
+      "date": "2026-02-06",
+      "cves": [
+        "CVE-2025-40551",
+        "CVE-2025-40552",
+        "CVE-2025-40553",
+        "CVE-2025-40554",
+        "CVE-2025-40536",
+        "CVE-2025-40537"
+      ],
+      "tags": [
+        "solarwinds",
+        "deserialization",
+        "rce",
+        "cisa-kev",
+        "active-exploitation",
+        "java"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Six critical and high-severity vulnerabilities were discovered in SolarWinds Web Help Desk (WHD), an IT service management platform used by approximately 300,000 organizations worldwide including gove..."
+    },
+    {
+      "id": "TB-2026-02-06-001",
+      "title": "Notepad++ Supply Chain Compromise via WinGUp Updater Hijack by Lotus Blossom APT (CVE-2025-15556)",
+      "severity": "Critical",
+      "date": "2026-02-06",
+      "cves": [
+        "CVE-2025-15556"
+      ],
+      "tags": [
+        "supply-chain",
+        "apt",
+        "china",
+        "dll-sideloading",
+        "backdoor",
+        "software-update"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "Chinese state-sponsored hackers from the Lotus Blossom APT group compromised the hosting infrastructure behind Notepad++, one of the world's most popular text editors with millions of users. By hijack..."
+    },
     {
       "id": "TB-2026-02-01-002",
       "title": "WordPress Modular DS Plugin CVSS 10.0 Unauthenticated Admin Takeover: 40,000+ Sites Under Active Attack with Public PoC",
