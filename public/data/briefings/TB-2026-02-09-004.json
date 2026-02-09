@@ -1,0 +1,351 @@
+{
+  "briefing_id": "TB-2026-02-09-004",
+  "title": "APT28 Operation Neusploit: Russian GRU Weaponizes Microsoft Office Zero-Day Within 24 Hours Against NATO-Aligned Nations (CVE-2026-21509)",
+  "generated_date": "2026-02-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 7.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-16"
+  },
+  "cves": [
+    "CVE-2026-21509"
+  ],
+  "tags": [
+    "apt28",
+    "fancy-bear",
+    "russia",
+    "gru",
+    "espionage",
+    "microsoft-office",
+    "zero-day",
+    "cisa-kev",
+    "nation-state",
+    "rtf-exploit",
+    "minidoor",
+    "pixynetloader",
+    "operation-neusploit"
+  ],
+  "affected_products": [
+    "Microsoft Office 2016 (32-bit and 64-bit) prior to 16.0.5539.1001",
+    "Microsoft Office 2019 (32-bit and 64-bit) prior to 16.0.10417.20095",
+    "Microsoft Office LTSC 2021, LTSC 2024",
+    "Microsoft 365 Apps for Enterprise"
+  ],
+  "sources_analyzed": 16,
+  "sources": [
+    {
+      "name": "Zscaler ThreatLabz - APT28 Leverages CVE-2026-21509: Operation Neusploit",
+      "url": "https://www.zscaler.com/blogs/security-research/apt28-leverages-cve-2026-21509-operation-neusploit",
+      "date": "2026-02-02",
+      "type": "Research"
+    },
+    {
+      "name": "Picus Security - CVE-2026-21509: APT28 Exploits Microsoft Office Zero-Day",
+      "url": "https://www.picussecurity.com/resource/blog/cve-2026-21509-apt28-exploits-microsoft-office-zero-day-vulnerability",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "Cisco Talos - Microsoft OOB Update January 2026",
+      "url": "https://blog.talosintelligence.com/microsoft-oob-update-january-2026/",
+      "date": "2026-01-27",
+      "type": "Research"
+    },
+    {
+      "name": "Decalage - How to Detect CVE-2026-21509 Exploits in RTF Documents",
+      "url": "https://decalage.info/hugo/CVE-2026-21509/",
+      "date": "2026-02-05",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime - CVE-2026-21509 Actively Exploited Detection",
+      "url": "https://socprime.com/blog/latest-threats/cve-2026-21509-vulnerability/",
+      "date": "2026-01-28",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-21509",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21509",
+      "date": "2026-01-26",
+      "type": "Government"
+    },
+    {
+      "name": "Microsoft MSRC - CVE-2026-21509 Security Update Guide",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21509",
+      "date": "2026-01-26",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CISA - Adds Five Known Exploited Vulnerabilities to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/01/26/cisa-adds-five-known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-26",
+      "type": "Government"
+    },
+    {
+      "name": "CIS Advisory 2026-007 - Microsoft Office Security Feature Bypass",
+      "url": "https://www.cisecurity.org/advisory/a-vulnerability-in-microsoft-office-could-allow-for-security-feature-bypass_2026-007",
+      "date": "2026-01-27",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - APT28 Uses Microsoft Office CVE-2026-21509",
+      "url": "https://thehackernews.com/2026/02/apt28-uses-microsoft-office-cve-2026.html",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Microsoft Patches Actively Exploited Office Zero-Day",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-actively-exploited-office-zero-day-vulnerability/",
+      "date": "2026-01-26",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Russian Hackers Exploiting CVE-2026-21509",
+      "url": "https://www.helpnetsecurity.com/2026/02/03/russian-hackers-are-exploiting-recently-patched-microsoft-office-vulnerability-cve-2026-21509/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Russia's APT28 Rapidly Weaponizes Office Vulnerability",
+      "url": "https://www.securityweek.com/russias-apt28-rapidly-weaponizes-newly-patched-office-vulnerability/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "Industrial Cyber - Trellix Details APT28 Targets European Maritime Transport",
+      "url": "https://industrialcyber.co/transport/trellix-details-russian-state-linked-apt28-targets-european-maritime-transport-agencies-with-new-office-exploit/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - APT28 Exploits Microsoft Office Flaw in Operation Neusploit",
+      "url": "https://securityaffairs.com/187581/apt/apt28-exploits-microsoft-office-flaw-in-operation-neusploit.html",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "Microsoft Support - KB5002713 Office 2016 Security Update",
+      "url": "https://support.microsoft.com/en-us/topic/description-of-the-security-update-for-office-2016-january-26-2026-kb5002713-32ec881d-a3b5-470c-b9a5-513cc46bc77e",
+      "date": "2026-01-26",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-26",
+      "event": "Microsoft releases emergency out-of-band security patch for CVE-2026-21509; CISA immediately adds it to the Known Exploited Vulnerabilities catalog with a February 16 remediation deadline"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "Lure document metadata creation dates observed; Cisco Talos publishes Snort detection rules (65823-65830); CIS/MS-ISAC publishes Advisory 2026-007"
+    },
+    {
+      "date": "2026-01-28",
+      "event": "APT28 launches Operation Neusploit: a concentrated 72-hour spear-phishing campaign targeting defense ministries, transportation operators, and diplomatic entities across 9 Eastern European nations"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "72-hour campaign window closes; at least 29 distinct spear-phishing emails identified targeting Ukraine, Slovakia, Romania, Poland, Slovenia, Turkey, Greece, and UAE"
+    },
+    {
+      "date": "2026-02-02",
+      "event": "Zscaler ThreatLabz publishes comprehensive Operation Neusploit report detailing MiniDoor and PixyNetLoader malware families, attack chains, and IOCs"
+    },
+    {
+      "date": "2026-02-04",
+      "event": "Trellix publishes additional campaign details showing APT28 targeting European maritime and transport agencies; Decalage publishes YARA-based detection guidance for RTF exploits"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Russia's APT28 (Fancy Bear / GRU Unit 26165) weaponized a Microsoft Office zero-day vulnerability within approximately 24 hours of its public disclosure and launched a concentrated espionage campaign called Operation Neusploit against NATO-aligned nations. Between January 28-30, 2026, the group sent at least 29 spear-phishing emails containing malicious RTF documents to defense ministries, transportation operators, and diplomatic entities across Ukraine, Slovakia, Romania, Poland, Slovenia, Turkey, Greece, and UAE. The malicious documents exploit CVE-2026-21509, a security feature bypass that allows code execution without macros simply by opening the file. The campaign deploys two previously unknown malware families: MiniDoor (an email-stealing backdoor) and PixyNetLoader (a sophisticated multi-stage dropper using steganography and COM hijacking).",
+    "who_is_affected": "All organizations running unpatched Microsoft Office 2016, 2019, LTSC 2021, LTSC 2024, or Microsoft 365 Apps for Enterprise are vulnerable. The Operation Neusploit campaign specifically targeted: defense ministries (~40% of targets), transportation and logistics operators (~35%), diplomatic entities (~25%), and central executive authorities. Target countries include Ukraine (60+ email addresses), Slovakia, Romania, Poland, Slovenia, Turkey, Greece, and UAE. European maritime, aviation, and transport agencies were also targeted per Trellix analysis. However, any organization receiving email-borne RTF documents is at risk since the vulnerability requires only opening the file.",
+    "what_attackers_do": "Step 1: APT28 sends spear-phishing emails with geopolitically-charged lures (transnational weapons smuggling, military training programs, meteorological bulletins) containing malicious RTF attachments crafted in English and localized languages including Romanian, Slovak, and Ukrainian. Step 2: When the victim opens the RTF document, Microsoft Office instantiates the Shell.Explorer.1 COM object (CLSID {EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B}) which loads the legacy Internet Explorer engine, bypassing OLE mitigations without requiring macros or additional user interaction. Step 3: The embedded browser calls Navigate() to fetch a remote .lNk file from attacker infrastructure (freefoodaid[.]com), with the server performing geographic and User-Agent filtering to only deliver payloads to targets in the correct regions. Step 4: For the MiniDoor variant, a dropper DLL is downloaded that deploys a C++ backdoor with a malicious Outlook VBA project, which steals emails from Inbox/Drafts/Junk folders and forwards them to attacker-controlled addresses (ahmeclaw2002@outlook.com, ahmeclaw@proton.me), while lowering Outlook macro security via registry modifications. Step 5: For the PixyNetLoader variant, a multi-stage dropper uses COM object hijacking for explorer.exe persistence, drops a steganographic shellcode carrier (SplashScreen.png) and shellcode loader (EhStoreShell.dll), and ultimately loads a Covenant Grunt .NET C2 implant or BEARDSHELL backdoor that communicates via the filen.io cloud storage API for covert C2.",
+    "what_you_should_do": [
+      "Verify Microsoft Office is patched: Office 2016 requires KB5002713 (version 16.0.5539.1001+), Office 2019 requires version 16.0.10417.20095+; Office 2021+ and M365 Apps update automatically but require an application restart",
+      "Block known C2 domains and exfiltration addresses at the email gateway and firewall: freefoodaid[.]com, wellnesscaremed[.]com, ahmeclaw2002@outlook.com, ahmeclaw@proton.me",
+      "Deploy YARA detection rules to scan email attachments for Shell.Explorer.1 CLSID (hex: C32AB2EAC130CF11A7EB0000C05BAE0B) in RTF documents; use oletools rtfobj to analyze suspicious attachments",
+      "Monitor for MiniDoor registry modifications: HKCU\\Software\\Microsoft\\Office\\16.0\\Outlook\\Security\\Level set to 1, and LoadMacroProviderOnBoot set to 1",
+      "Hunt for scheduled tasks named 'OneDriveHealth' and COM hijacking via CLSID {D9144DCD-E998-4ECA-AB6A-DCD83CCBA16D} which indicate PixyNetLoader persistence",
+      "Scan for known malware hashes: MiniDoor (SHA256: a944a09783023a2c6c62d3601cbd5392a03d808a6a51728e07a3270861c2a8ee), PixyNetLoader (SHA256: 0bb0d54033767f081cae775e3cf9ede7ae6bea75f35fbfb748ccba9325e28e5e), EhStoreShell.dll (SHA256: a876f648991711e44a8dcf888a271880c6c930e5138f284cd6ca6128eca56ba1)"
+    ],
+    "why_this_is_serious": "APT28's ability to weaponize a zero-day vulnerability within 24 hours of disclosure demonstrates exceptional offensive capability and likely prior knowledge of the vulnerability. The Operation Neusploit campaign targets defense and transportation infrastructure across NATO-aligned nations during a period of heightened geopolitical tension, consistent with Russian strategic intelligence collection priorities. The MiniDoor email stealer provides APT28 with access to sensitive diplomatic and military communications, while PixyNetLoader's use of steganography, COM hijacking, and legitimate cloud services (filen.io) for C2 makes detection extremely difficult. Turkey is among the target countries, making this directly relevant to organizations in the region."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.001",
+        "technique_name": "Phishing: Spearphishing Attachment",
+        "description": "APT28 delivers malicious RTF documents via targeted spear-phishing emails with geopolitically-charged lures in English, Romanian, Slovak, and Ukrainian"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "CVE-2026-21509 exploits an OLE mitigations bypass via the Shell.Explorer.1 COM object, executing code when the victim opens the RTF document without requiring macros"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1546.015",
+        "technique_name": "Event Triggered Execution: Component Object Model Hijacking",
+        "description": "PixyNetLoader establishes persistence by hijacking COM object CLSID {D9144DCD-E998-4ECA-AB6A-DCD83CCBA16D} for automatic execution when explorer.exe loads"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1053.005",
+        "technique_name": "Scheduled Task/Job: Scheduled Task",
+        "description": "PixyNetLoader creates a scheduled task named 'OneDriveHealth' that kills and restarts explorer.exe to trigger the COM hijack persistence mechanism"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1137.006",
+        "technique_name": "Office Application Startup: Add-ins",
+        "description": "MiniDoor deploys a malicious Outlook VBA project and sets LoadMacroProviderOnBoot=1 to ensure the email-stealing macro loads automatically with Outlook"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1480.002",
+        "technique_name": "Execution Guardrails: Environmental Keying",
+        "description": "The C2 server performs geographic and User-Agent filtering, only serving malicious payloads to requests from targeted regions, preventing analysis from non-target locations"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027.003",
+        "technique_name": "Obfuscated Files or Information: Steganography",
+        "description": "PixyNetLoader embeds shellcode in a PNG image (SplashScreen.png) using LSB steganography, with EhStoreShell.dll extracting and executing the hidden payload"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1497.003",
+        "technique_name": "Virtualization/Sandbox Evasion: Time Based Evasion",
+        "description": "EhStoreShell.dll performs Sleep() API timing checks with a 2.9+ second threshold to detect sandbox environments and only executes in legitimate explorer.exe context"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1114",
+        "technique_name": "Email Collection",
+        "description": "MiniDoor steals emails from Outlook Inbox, RssFeeds, Junk, and Drafts folders and forwards them to attacker-controlled email addresses for intelligence collection"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1102.002",
+        "technique_name": "Web Service: Bidirectional Communication",
+        "description": "BEARDSHELL and Covenant Grunt implants use the filen.io cloud storage API as a C2 channel, blending malicious traffic with legitimate cloud service usage"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying the Shell.Explorer.1 OLE object in RTF email attachments, monitoring for MiniDoor's characteristic Outlook registry modifications, and hunting for PixyNetLoader's COM hijacking and scheduled task persistence. Cisco Talos has published Snort rules (65823-65830) and ClamAV signature (Rtf.Exploit.CVE_2026_21509-10059214-0) for automated detection.",
+    "log_sources": [
+      {
+        "source": "Email Gateway / Attachment Scanning",
+        "description": "Scan all inbound RTF attachments for the Shell.Explorer.1 CLSID (hex: C32AB2EAC130CF11A7EB0000C05BAE0B). Use oletools rtfobj to extract and analyze OLE objects from RTF documents. Deploy YARA rules matching the RTF header + OLE object keyword + Shell.Explorer.1 CLSID pattern.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Registry Monitoring (Sysmon EventID 13)",
+        "description": "Alert on modifications to Outlook security registry keys: HKCU\\Software\\Microsoft\\Office\\16.0\\Outlook\\Security\\Level, HKCU\\Software\\Microsoft\\Office\\16.0\\Outlook\\LoadMacroProviderOnBoot. These indicate MiniDoor deployment lowering macro security and enabling persistent email theft.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Scheduled Tasks / COM Object Registry",
+        "description": "Hunt for scheduled tasks named 'OneDriveHealth' that execute taskkill /f /IM explorer.exe followed by start explorer. Monitor COM object hijacking via CLSID {D9144DCD-E998-4ECA-AB6A-DCD83CCBA16D} in registry HKCU\\Software\\Classes\\CLSID\\.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network / DNS Logs",
+        "description": "Block and alert on connections to freefoodaid[.]com and wellnesscaremed[.]com. Monitor for anomalous traffic to filen.io API endpoints from systems that don't normally use Filen cloud storage. Detect Outlook sending emails to ahmeclaw2002@outlook.com or ahmeclaw@proton.me.",
+        "priority": "High"
+      },
+      {
+        "source": "EDR / Sysmon Process Monitoring",
+        "description": "Alert on Microsoft Office processes (WINWORD.EXE) spawning or loading the legacy Internet Explorer engine (ieframe.dll, mshtml.dll). Monitor for EhStoreShell.dll being loaded by explorer.exe from unusual paths. Detect mutex creation for adjgfenkbe, asagdugughi41, or dvyubgbqfusdv32.",
+        "priority": "High"
+      },
+      {
+        "source": "IDS/IPS (Snort/Suricata)",
+        "description": "Deploy Cisco Talos Snort2 rules 65823-65830 and Snort3 rules 301384-301387 for network-level detection of CVE-2026-21509 exploit traffic. Deploy ClamAV signature Rtf.Exploit.CVE_2026_21509-10059214-0 for email gateway scanning.",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Shell.Explorer.1 OLE object in RTF email attachments",
+        "description": "The exploit embeds the Shell.Explorer.1 COM object (CLSID {EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B}) inside RTF documents. Legitimate documents rarely contain this object. The hex-encoded CLSID in RTF is C32AB2EAC130CF11A7EB0000C05BAE0B.",
+        "log_field": "Email gateway: RTF attachment contains hex string 'C32AB2EAC130CF11A7EB0000C05BAE0B'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outlook security registry modifications by non-administrator",
+        "description": "MiniDoor modifies HKCU\\Software\\Microsoft\\Office\\16.0\\Outlook\\Security\\Level to 1 and sets LoadMacroProviderOnBoot to 1 to enable persistent email theft",
+        "log_field": "Sysmon EventID=13: TargetObject contains 'Outlook\\Security\\Level' OR 'LoadMacroProviderOnBoot' AND EventType=SetValue",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Scheduled task named OneDriveHealth killing explorer.exe",
+        "description": "PixyNetLoader creates this scheduled task to trigger COM hijack persistence by restarting explorer.exe",
+        "log_field": "Windows Event 4698: TaskName='OneDriveHealth' AND Action contains 'taskkill /f /IM explorer.exe'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound email to known APT28 exfiltration addresses",
+        "description": "MiniDoor forwards stolen emails to ahmeclaw2002@outlook.com and ahmeclaw@proton.me",
+        "log_field": "Email log: outbound message to 'ahmeclaw2002@outlook.com' OR 'ahmeclaw@proton.me'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "DNS queries or connections to freefoodaid[.]com or wellnesscaremed[.]com",
+        "description": "APT28 C2 and payload delivery domains used in Operation Neusploit",
+        "log_field": "DNS log: query matches 'freefoodaid.com' OR 'wellnesscaremed.com'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "EhStoreShell.dll loading in explorer.exe from non-system directory",
+        "description": "PixyNetLoader's shellcode loader DLL masquerades as the legitimate EhStorShell.dll but loads from user profile directories",
+        "log_field": "Sysmon EventID=7: Image='explorer.exe' AND ImageLoaded contains 'EhStoreShell.dll' AND ImageLoaded NOT contains 'System32'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Verify Microsoft Office is patched against CVE-2026-21509",
+      "description": "Office 2016 requires security update KB5002713 (version 16.0.5539.1001+). Office 2019 requires version 16.0.10417.20095+. Office LTSC 2021/2024 and Microsoft 365 Apps receive the update automatically but require an application restart to apply. The CISA remediation deadline is February 16, 2026.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Block APT28 C2 infrastructure and exfiltration addresses",
+      "description": "Block the following at email gateway, DNS, and firewall: domains freefoodaid[.]com and wellnesscaremed[.]com; email addresses ahmeclaw2002@outlook[.]com and ahmeclaw@proton[.]me. Monitor for anomalous filen.io API traffic from systems that don't normally use Filen cloud storage.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Deploy YARA and IDS rules to detect RTF exploit documents",
+      "description": "Implement YARA rules checking for RTF documents containing the Shell.Explorer.1 CLSID hex string (C32AB2EAC130CF11A7EB0000C05BAE0B). Deploy Cisco Talos Snort rules 65823-65830 and ClamAV signature Rtf.Exploit.CVE_2026_21509-10059214-0 at email gateways and network inspection points.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Hunt for MiniDoor and PixyNetLoader indicators on all endpoints",
+      "description": "Search for: scheduled tasks named 'OneDriveHealth', COM hijacking via CLSID {D9144DCD-E998-4ECA-AB6A-DCD83CCBA16D}, Outlook registry modifications (Security\\Level=1, LoadMacroProviderOnBoot=1), mutexes (adjgfenkbe, asagdugughi41, dvyubgbqfusdv32), and known malware file hashes.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Scan for known malware file hashes across the environment",
+      "description": "Search for SHA-256 hashes: MiniDoor (a944a09783023a2c6c62d3601cbd5392a03d808a6a51728e07a3270861c2a8ee), PixyNetLoader (0bb0d54033767f081cae775e3cf9ede7ae6bea75f35fbfb748ccba9325e28e5e), EhStoreShell.dll (a876f648991711e44a8dcf888a271880c6c930e5138f284cd6ca6128eca56ba1), and lure documents (MD5: 95e59536455a089ced64f5af2539a449, 2f7b4dca1c79e525aef8da537294a6c4).",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Apply COM object restriction as defense-in-depth",
+      "description": "Under COM Compatibility registry keys, create DWORD value 'Compatibility Flags' set to hexadecimal 0x400 for the Shell.Explorer.1 CLSID to block the vulnerable COM object from being instantiated by Office applications, providing additional protection even after patching.",
+      "command": null
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "briefing_id": "TB-2026-02-09-001",
+  "title": "SmarterMail Unauthenticated RCE via ConnectToHub API Exploited in Ransomware Attacks (CVE-2026-24423)",
+  "generated_date": "2026-02-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-26"
+  },
+  "cves": [
+    "CVE-2026-24423",
+    "CVE-2026-23760",
+    "CVE-2026-25067"
+  ],
+  "tags": [
+    "smartermail",
+    "email-server",
+    "rce",
+    "ransomware",
+    "cisa-kev",
+    "active-exploitation",
+    "unauthenticated",
+    "missing-authentication",
+    "watchtower"
+  ],
+  "affected_products": [
+    "SmarterTools SmarterMail versions prior to Build 9511",
+    "SmarterMail ConnectToHub API endpoint",
+    "SmarterMail force-reset-password API endpoint"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "NVD - CVE-2026-24423",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24423",
+      "date": "2026-01-23",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog Alert",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/02/05/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "date": "2026-02-05",
+      "type": "Government"
+    },
+    {
+      "name": "VulnCheck Advisory - SmarterMail Unauthenticated RCE via ConnectToHub API",
+      "url": "https://www.vulncheck.com/advisories/smartertools-smartermail-unauthenticated-rce-via-connecttohub-api",
+      "date": "2026-01-23",
+      "type": "Research"
+    },
+    {
+      "name": "VulnCheck Blog - Street Smarts: SmarterMail ConnectToHub RCE",
+      "url": "https://www.vulncheck.com/blog/smartermail-connecttohub-rce-cve-2026-24423",
+      "date": "2026-01-24",
+      "type": "Research"
+    },
+    {
+      "name": "watchTowr Labs - WT-2026-0001: SmarterTools SmarterMail Authentication Bypass",
+      "url": "https://labs.watchtowr.com/attackers-with-decompilers-strike-again-smartertools-smartermail-wt-2026-0001-auth-bypass/",
+      "date": "2026-01-22",
+      "type": "Research"
+    },
+    {
+      "name": "SmarterTools SmarterMail Release Notes",
+      "url": "https://www.smartertools.com/smartermail/release-notes/current",
+      "date": "2026-01-15",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "BleepingComputer - CISA Warns of SmarterMail RCE Flaw Used in Ransomware Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-smartermail-rce-flaw-used-in-ransomware-attacks/",
+      "date": "2026-02-06",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - SmarterMail Fixes Critical Vulnerability",
+      "url": "https://thehackernews.com/2026/01/smartermail-fixes-critical.html",
+      "date": "2026-01-24",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Ransomware Actors Exploit SmarterMail CVE-2026-24423",
+      "url": "https://www.helpnetsecurity.com/2026/02/06/ransomware-smartermail-cve-2026-24423/",
+      "date": "2026-02-06",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - CISA Adds SmarterMail and React Native CLI to KEV",
+      "url": "https://securityaffairs.com/187675/security/u-s-cisa-adds-smartertools-smartermail-and-react-native-community-cli-flaws-to-its-known-exploited-vulnerabilities-catalog.html",
+      "date": "2026-02-06",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Critical SmarterMail Vulnerability Exploited in Ransomware Attacks",
+      "url": "https://www.securityweek.com/critical-smartermail-vulnerability-exploited-in-ransomware-attacks/",
+      "date": "2026-02-06",
+      "type": "News"
+    },
+    {
+      "name": "Eventus Security Advisory - Critical SmarterMail Vulnerabilities",
+      "url": "https://advisory.eventussecurity.com/advisory/critical-smartermail-vulnerabilities-enable-remote-code-execution/",
+      "date": "2026-02-01",
+      "type": "Research"
+    },
+    {
+      "name": "GitHub PoC Exploit - aavamin/CVE-2026-24423",
+      "url": "https://github.com/aavamin/CVE-2026-24423",
+      "date": "2026-01-29",
+      "type": "Research"
+    },
+    {
+      "name": "Security Affairs - SmarterTools Patches Critical SmarterMail Flaw",
+      "url": "https://securityaffairs.com/187496/security/smartertools-patches-critical-smartermail-flaw-allowing-code-execution.html",
+      "date": "2026-01-24",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-08",
+      "event": "watchTowr researchers Piotr Bazydlo and Sina Kheirkhah discover the vulnerability and report it to SmarterTools"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "SmarterTools releases Build 9511 with security fixes for CVE-2026-24423 and CVE-2026-23760"
+    },
+    {
+      "date": "2026-01-17",
+      "event": "In-the-wild exploitation confirmed on SmarterMail community forum, only 2 days after patch release"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "watchTowr Labs publishes full disclosure and technical writeup (WT-2026-0001); SmarterTools releases Build 9518 with additional fixes for CVE-2026-25067"
+    },
+    {
+      "date": "2026-01-23",
+      "event": "CVE-2026-24423 published in NVD; VulnCheck publishes independent advisory and blog with technical analysis"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "Public proof-of-concept exploit published on GitHub (aavamin/CVE-2026-24423)"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "SmarterTools releases Build 9526 with additional security hardening"
+    },
+    {
+      "date": "2026-02-05",
+      "event": "CISA adds CVE-2026-24423 to Known Exploited Vulnerabilities catalog, confirming active ransomware exploitation; sets federal remediation deadline of February 26, 2026"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical unauthenticated remote code execution vulnerability was discovered in SmarterTools SmarterMail, an email server platform used by approximately 15 million users across 120 countries. The flaw (CVE-2026-24423) exists in the ConnectToHub API endpoint, which was marked as AllowAnonymous, meaning any attacker on the internet can trigger it without any credentials. Ransomware groups began exploiting the vulnerability within 2 days of the patch release, and CISA confirmed active ransomware exploitation when adding it to the KEV catalog on February 5, 2026. A public proof-of-concept exploit is available on GitHub. Over 6,000 SmarterMail servers remain internet-facing and potentially vulnerable.",
+    "who_is_affected": "All organizations running SmarterTools SmarterMail versions prior to Build 9511 are vulnerable. SmarterMail serves approximately 15 million users across 120 countries, with primary exposure among managed service providers (MSPs), small-to-medium businesses, and hosting providers. Over 6,000 internet-facing SmarterMail instances have been identified by Shadowserver as potentially vulnerable. Organizations in IT infrastructure, financial services, healthcare, and government sectors using SmarterMail for email hosting are at highest risk.",
+    "what_attackers_do": "Step 1: The attacker identifies an internet-facing SmarterMail instance and checks the version via the unauthenticated /api/v1/licensing/about endpoint; any version below Build 9511 is vulnerable. Step 2: The attacker launches a malicious Python HTTP server that simulates a SmarterMail Hub, configured to respond with a JSON payload containing arbitrary OS commands in the CommandMount parameter. Step 3: The attacker sends an unauthenticated POST request to /api/v1/settings/sysadmin/connect-to-hub with the hubAddress pointing to the attacker's server, exploiting the fact that this critical endpoint has no authentication check (AllowAnonymous=true). Step 4: SmarterMail processes the request and makes an HTTP callback to the attacker's server at /web/api/node-management/setup-initial-connection, receiving the malicious JSON response. Step 5: The SmarterMail application deserializes the response via JsonConvert.DeserializeObject() without sanitization, passes the CommandMount value through MountConfiguration.Mount(), which calls CommandLine.RunCommand() using Process.StartInfo with shell execution (cmd.exe /c on Windows, /bin/bash -c on Linux), achieving full remote code execution with the privileges of the SmarterMail service account.",
+    "what_you_should_do": [
+      "Immediately update SmarterMail to Build 9526 or later (minimum Build 9511); verify the update by checking /api/v1/licensing/about shows version >= 100.0.9511",
+      "If immediate patching is not possible, block external access to the /api/v1/settings/sysadmin/connect-to-hub endpoint via WAF or firewall rules",
+      "Implement IP-based access controls restricting SmarterMail admin API endpoints to trusted management networks only",
+      "Review web server access logs for any historical requests to the /connect-to-hub endpoint, which should never receive requests from external IPs",
+      "Check for signs of compromise: unexpected child processes from the SmarterMail service (cmd.exe, powershell.exe, /bin/bash), unauthorized admin password changes, unusual outbound connections, new file creation in the SmarterMail directory",
+      "Implement egress filtering on SmarterMail servers to prevent lateral movement and data exfiltration; verify backup integrity and test restoration procedures"
+    ],
+    "why_this_is_serious": "This vulnerability allows completely unauthenticated remote code execution on email servers that handle sensitive organizational communications. The attack is trivial to execute: a single HTTP POST request triggers the server to call back to attacker infrastructure and execute arbitrary commands. CISA's confirmation of ransomware exploitation means organizations face not only data breach risk but also operational disruption from encryption attacks. The combination of a public PoC exploit, 6,000+ exposed servers, and active ransomware campaigns creates an extremely high-risk situation. SmarterMail's position as an email server means compromised instances give attackers access to all organizational email communications, credentials, and the ability to send phishing emails from trusted domains."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the internet-facing SmarterMail ConnectToHub API endpoint, which requires no authentication due to the AllowAnonymous attribute, to achieve initial access"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.003",
+        "technique_name": "Command and Scripting Interpreter: Windows Command Shell",
+        "description": "On Windows systems, commands are executed via cmd.exe /c through the CommandLine.RunCommand() function after malicious ConnectToHub response deserialization"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "On Linux/Docker deployments, commands are executed via /bin/bash -c, potentially with sudo for privilege escalation"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1078",
+        "technique_name": "Valid Accounts",
+        "description": "Attackers can chain CVE-2026-23760 (force-reset-password endpoint) to reset the admin password and establish persistent access via legitimate credentials"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1071.001",
+        "technique_name": "Application Layer Protocol: Web Protocols",
+        "description": "The exploit uses HTTP callbacks from the SmarterMail server to attacker-controlled infrastructure, with the server itself initiating the connection to the malicious Hub"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1486",
+        "technique_name": "Data Encrypted for Impact",
+        "description": "CISA confirmed active ransomware exploitation; attackers deploy encryption payloads after gaining RCE on SmarterMail servers"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1048",
+        "technique_name": "Exfiltration Over Alternative Protocol",
+        "description": "Ransomware operators perform simultaneous data exfiltration for double extortion schemes before deploying encryption"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on HTTP requests to the ConnectToHub API endpoint, which should never receive requests from external IP addresses. Monitor for unexpected outbound HTTP connections from SmarterMail servers to attacker infrastructure, anomalous child process spawning from the SmarterMail service, and admin password reset attempts via the force-reset-password endpoint.",
+    "log_sources": [
+      {
+        "source": "Web Server Access Logs / WAF",
+        "description": "Monitor HTTP POST requests to /api/v1/settings/sysadmin/connect-to-hub from any source. Patched servers (Build 9511+) return HTTP 400; unpatched servers return successful responses. Any request to this endpoint from an external IP indicates exploitation attempt.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Monitoring / IDS",
+        "description": "Detect unexpected outbound HTTP connections initiated by the SmarterMail server to external IPs, particularly to the callback path /web/api/node-management/setup-initial-connection. This server-side request forgery pattern is the exploitation indicator.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Process Monitoring (Sysmon / EDR)",
+        "description": "Alert on child processes spawned by the SmarterMail service process (typically running as SYSTEM on Windows or as the smartermail user on Linux): cmd.exe, powershell.exe, certutil.exe (Windows) or /bin/bash, curl, wget (Linux)",
+        "priority": "Critical"
+      },
+      {
+        "source": "SmarterMail Administrative Logs",
+        "description": "Review logs for failed or successful password reset attempts via the force-reset-password endpoint (indicates CVE-2026-23760 chaining), unusual outbound SMB authentication attempts (CVE-2026-25067 NTLM relay), and ConnectToHub API activity",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Monitor for unauthorized file creation in SmarterMail directories, web shells, persistence mechanisms, and unexpected scheduled tasks or services on the mail server",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST requests to /api/v1/settings/sysadmin/connect-to-hub from external IPs",
+        "description": "This endpoint should only be accessed internally for legitimate clustering operations. Any external access indicates exploitation attempt.",
+        "log_field": "Access log: POST /api/v1/settings/sysadmin/connect-to-hub AND source_ip NOT IN internal_ranges",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound HTTP callback from SmarterMail to untrusted destinations",
+        "description": "The exploit causes SmarterMail to make an HTTP request to the attacker's server at /web/api/node-management/setup-initial-connection. This outbound connection from the mail server is the exploitation trigger.",
+        "log_field": "Network log: source=SmarterMail_server AND dest_path contains '/web/api/node-management/setup-initial-connection'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes from SmarterMail service",
+        "description": "cmd.exe, powershell.exe, or /bin/bash processes spawned by the SmarterMail service indicate successful command execution post-exploitation",
+        "log_field": "Sysmon EventID=1: ParentImage contains 'SmarterMail' AND (Image contains 'cmd.exe' OR 'powershell.exe' OR '/bin/bash')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Version query to /api/v1/licensing/about from external scanners",
+        "description": "Attackers enumerate SmarterMail versions via this unauthenticated endpoint before attempting exploitation",
+        "log_field": "Access log: GET /api/v1/licensing/about AND source_ip is external",
+        "severity": "High"
+      },
+      {
+        "indicator": "Admin password reset via force-reset-password endpoint",
+        "description": "CVE-2026-23760 allows anonymous admin password reset; unexpected reset events indicate chained exploitation",
+        "log_field": "SmarterMail admin log: password reset event NOT initiated by authorized administrator",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update SmarterMail to Build 9526 or later immediately",
+      "description": "Download and install the latest SmarterMail build from SmarterTools. Build 9526 (January 30, 2026) includes all security fixes. Verify the update was applied by checking /api/v1/licensing/about shows version >= 100.0.9511. This patches CVE-2026-24423 (ConnectToHub RCE), CVE-2026-23760 (admin password reset), and CVE-2026-25067 (NTLM relay).",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Block external access to SmarterMail admin API endpoints",
+      "description": "If immediate patching is not possible, configure firewall or WAF rules to block all external access to /api/v1/settings/sysadmin/* endpoints. Additionally restrict the /api/v1/licensing/about endpoint to prevent version enumeration by attackers scanning for vulnerable instances.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Implement egress filtering on SmarterMail servers",
+      "description": "The exploit requires the SmarterMail server to make an outbound HTTP connection to attacker infrastructure. Block or restrict all outbound HTTP/HTTPS connections from the SmarterMail server to untrusted destinations to prevent the callback mechanism from functioning.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit SmarterMail server logs for compromise indicators",
+      "description": "Review web server access logs for any POST requests to /connect-to-hub, check for admin password changes not initiated by authorized staff, look for unexpected outbound connections from the mail server, and scan for unusual child processes (cmd.exe, powershell.exe, /bin/bash) spawned by the SmarterMail service.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "If compromise is suspected, initiate full incident response",
+      "description": "Treat the SmarterMail server as fully compromised. Isolate the server from the network, preserve forensic evidence, reset all admin and user credentials, check for ransomware indicators and data exfiltration. Review all email communications that passed through the compromised server for potential data exposure. Verify backup integrity before restoration.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Deploy IDS/IPS rules for exploitation pattern detection",
+      "description": "Implement Suricata or Snort rules to detect POST requests to the ConnectToHub endpoint from external sources, outbound HTTP connections from SmarterMail to the /web/api/node-management/setup-initial-connection path, and Java/JSON deserialization patterns in HTTP traffic to mail servers.",
+      "command": null
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "briefing_id": "TB-2026-02-09-003",
+  "title": "n8n Workflow Automation Sandbox Escape: Third Critical RCE in Three Months Threatens Enterprise AI Systems (CVE-2026-25049)",
+  "generated_date": "2026-02-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.4,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-25049",
+    "CVE-2026-25056",
+    "CVE-2026-21858",
+    "CVE-2026-1470",
+    "CVE-2026-25115"
+  ],
+  "tags": [
+    "n8n",
+    "workflow-automation",
+    "sandbox-escape",
+    "rce",
+    "javascript",
+    "ai-infrastructure",
+    "credential-theft",
+    "webhook",
+    "unauthenticated"
+  ],
+  "affected_products": [
+    "n8n workflow automation platform versions prior to 1.123.17 (stable)",
+    "n8n workflow automation platform versions prior to 2.5.2 (beta)",
+    "n8n Cloud multi-tenant environments"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "Pillar Security Research - n8n Sandbox Escape Critical Vulnerabilities",
+      "url": "https://www.pillar.security/blog/n8n-sandbox-escape-critical-vulnerabilities-in-n8n-exposes-hundreds-of-thousands-of-enterprise-ai-systems-to-complete-takeover",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "Fatih Celik - n8n RCEs: A Tale of 4 Acts",
+      "url": "https://fatihhcelik.github.io/posts/n8n-RCEs-A-Tale-of-4-Acts/",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "Endor Labs - CVE-2026-25049 n8n RCE Analysis",
+      "url": "https://www.endorlabs.com/learn/cve-2026-25049-n8n-rce",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "SecureLayer7 Blog - CVE-2026-25049 Sandbox Escape",
+      "url": "https://blog.securelayer7.net/cve-2026-25049/",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "JFrog Security Research - Achieving RCE on n8n via Sandbox Escape",
+      "url": "https://research.jfrog.com/post/achieving-remote-code-execution-on-n8n-via-sandbox-escape/",
+      "date": "2026-01-27",
+      "type": "Research"
+    },
+    {
+      "name": "Penligent.ai - CVE-2026-25049 Forensics and Enterprise Hardening",
+      "url": "https://www.penligent.ai/hackinglabs/cve-2026-25049-anatomy-of-an-n8n-sandbox-escape-forensics-and-enterprise-hardening",
+      "date": "2026-02-06",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-25049",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25049",
+      "date": "2026-02-04",
+      "type": "Government"
+    },
+    {
+      "name": "GitHub Security Advisory GHSA-6cqr-8cfr-67f8",
+      "url": "https://github.com/advisories/GHSA-6cqr-8cfr-67f8",
+      "date": "2026-02-04",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Australian Cyber Security Centre - Critical n8n RCE Advisory",
+      "url": "https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/critical-unauthenticated-remote-code-execution-vulnerability-in-n8n-workflow-automation-platform",
+      "date": "2026-01-15",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer - Critical n8n Flaws Disclosed Along with Public Exploits",
+      "url": "https://www.bleepingcomputer.com/news/security/critical-n8n-flaws-disclosed-along-with-public-exploits/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - Critical n8n Flaw CVE-2026-25049",
+      "url": "https://thehackernews.com/2026/02/critical-n8n-flaw-cve-2026-25049.html",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "The Register - n8n Security Woes Roll On",
+      "url": "https://www.theregister.com/2026/02/05/n8n_security_woes_roll_on",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Critical n8n Sandbox Escape Could Lead to Server Compromise",
+      "url": "https://www.securityweek.com/critical-n8n-sandbox-escape-could-lead-to-server-compromise/",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "The Cyber Express - Critical n8n Vulnerability CVE-2026-25049 RCE",
+      "url": "https://thecyberexpress.com/critical-n8n-vulnerability-cve-2026-25049-rce/",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "Censys Advisory - CVE-2026-21858 n8n Exposure",
+      "url": "https://censys.com/advisory/cve-2026-21858",
+      "date": "2026-01-07",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-20",
+      "event": "CVE-2025-68613 (CVSS 9.9) disclosed by Fatih Celik: original n8n expression sandbox escape via this context leakage in IIFEs"
+    },
+    {
+      "date": "2025-12-23",
+      "event": "n8n deploys incomplete patch (PR #23560) for CVE-2025-68613, adding FunctionThisSanitizer and expanding the property blocklist"
+    },
+    {
+      "date": "2025-12-24",
+      "event": "Pillar Security researcher Eilon Cohen discovers Object.defineProperty() bypass of the December 23 patch within 24 hours of its release"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "CVE-2026-21858 (CVSS 10.0, Ni8mare) disclosed by Cyera Research Labs: fully unauthenticated RCE via Content-Type confusion in Form Webhook node; Censys identifies 103,476 exposed n8n instances"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "JFrog publishes research on CVE-2026-1470 (CVSS 9.9) and CVE-2026-0863 (CVSS 8.5): additional sandbox escape techniques using with statement and Python 3.10+ AttributeError.obj"
+    },
+    {
+      "date": "2026-02-04",
+      "event": "CVE-2026-25049 and 11 additional vulnerabilities publicly disclosed; n8n releases v1.123.17 and v2.5.2 with comprehensive fixes; multiple PoCs published by Endor Labs and SecureLayer7"
+    },
+    {
+      "date": "2026-02-05",
+      "event": "The Register reports on n8n's rolling security woes; multiple news outlets cover the disclosure highlighting the pattern of repeated critical vulnerabilities"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical sandbox escape vulnerability was discovered in n8n, a popular open-source workflow automation platform used by enterprises to connect AI services, databases, and business applications. CVE-2026-25049 bypasses the fix for a prior vulnerability (CVE-2025-68613) by exploiting a fundamental mismatch between TypeScript compile-time type checking and JavaScript runtime behavior. Attackers can craft workflow expressions using JavaScript destructuring syntax with template literals to escape the sandbox and execute arbitrary system commands on the n8n server. When combined with n8n's unauthenticated webhook feature, this becomes a fully unauthenticated remote code execution vulnerability. This is the third critical sandbox escape in n8n in just three months, alongside CVE-2026-21858 (CVSS 10.0) and CVE-2026-1470 (CVSS 9.9), revealing fundamental architectural weaknesses. Over 26,000 n8n instances are exposed to the internet.",
+    "who_is_affected": "All organizations running n8n versions prior to 1.123.17 (stable) or 2.5.2 (beta) are vulnerable. Censys identified 26,512 exposed n8n hosts as of January 2026, with major concentrations in the US (7,079), Germany (4,280), France (2,655), Brazil (1,347), and Singapore (1,129). Both self-hosted and n8n Cloud multi-tenant environments were affected. Organizations using n8n for AI workflow automation are particularly at risk, as compromise exposes all stored API keys (OpenAI, Anthropic, AWS, GCP, Azure), OAuth tokens, database credentials, and workflow configurations.",
+    "what_attackers_do": "Step 1: The attacker identifies an internet-facing n8n instance and creates a workflow with a publicly accessible webhook that requires no authentication. Step 2: The attacker inserts a single line of JavaScript using template literal destructuring syntax (e.g., const {[`constr${\"uct\"}or`]: Fn} = Object) into a workflow expression, which bypasses the AST-based sandbox validation because the TemplateLiteral node type is not checked by the PrototypeSanitizer. Step 3: The destructuring payload accesses the Function constructor, enabling arbitrary code generation and execution outside the sandbox. Step 4: The attacker deploys the workflow with the webhook trigger; now anyone on the internet can send an HTTP request to the webhook URL to execute system-level commands on the n8n server without any authentication. Step 5: With command execution, the attacker accesses the N8N_ENCRYPTION_KEY environment variable and SQLite credential database, extracting all stored API keys, OAuth tokens, and service credentials. The attacker can then pivot to connected cloud accounts (AWS, GCP, Azure), poison AI workflows, or establish persistent C2 via disguised Cron nodes.",
+    "what_you_should_do": [
+      "Immediately upgrade n8n to version 1.123.17 (stable) or 2.5.2 (beta) which includes comprehensive sandbox fixes",
+      "Rotate the N8N_ENCRYPTION_KEY and ALL stored credentials and API keys (OpenAI, Anthropic, AWS, GCP, Azure, database passwords, OAuth tokens) as they may have been exposed",
+      "Disable or restrict public webhooks until patching is confirmed; restrict workflow creation and editing to fully trusted users only",
+      "Audit all active workflows for suspicious expressions containing: constructor.constructor, prepareStackTrace, defineProperty, getBuiltinModule, child_process, spawn_sync, or __proto__",
+      "Deploy n8n in hardened containers with: non-root user (UID 1000), read-only filesystem, dropped capabilities, seccomp profiles blocking execve, and default-deny egress firewall rules",
+      "Block access to cloud metadata service (169.254.169.254) from n8n containers to prevent cloud credential theft via SSRF"
+    ],
+    "why_this_is_serious": "The pattern of three critical sandbox escapes in three months reveals a fundamental architectural flaw: AST-based static analysis cannot adequately secure JavaScript's dynamic evaluation paths. Each fix addresses specific syntax patterns while leaving semantic equivalents exploitable. n8n has become a central hub for enterprise AI and automation workflows, storing sensitive API keys for services like OpenAI, Anthropic, AWS, and Azure. A compromised n8n instance gives attackers access to these credentials, enabling lateral movement to cloud infrastructure, AI model poisoning, data exfiltration, and supply chain attacks via manipulated workflow outputs. With 26,000+ exposed instances and public PoCs available, this represents an immediate and widespread threat to enterprise AI infrastructure."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit public-facing n8n webhook endpoints to trigger workflows containing sandbox escape payloads; no authentication required when webhooks are configured without auth"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.007",
+        "technique_name": "Command and Scripting Interpreter: JavaScript",
+        "description": "Sandbox escape leverages JavaScript destructuring syntax and template literals to access the Function constructor and execute arbitrary code outside the n8n expression sandbox"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1548",
+        "technique_name": "Abuse Elevation Control Mechanism",
+        "description": "Sandbox escape elevates from restricted expression context to full system-level command execution via process.getBuiltinModule('child_process').execSync()"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1053.005",
+        "technique_name": "Scheduled Task/Job: Cron",
+        "description": "Attackers can establish persistent C2 using n8n's Cron node to schedule recurring execution of malicious workflows disguised as legitimate automation"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027",
+        "technique_name": "Obfuscated Files or Information",
+        "description": "Exploitation payloads use template literals, String.fromCharCode() encoding, and split property names to evade blocklist-based security checks"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1555",
+        "technique_name": "Credentials from Password Stores",
+        "description": "Post-exploitation access to the n8n SQLite credential database and N8N_ENCRYPTION_KEY enables decryption of all stored API keys, OAuth tokens, and service credentials"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials in Files",
+        "description": "Environment variables including N8N_ENCRYPTION_KEY and cloud provider credentials stored in .env files or container environment"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1570",
+        "technique_name": "Lateral Tool Transfer",
+        "description": "Stolen cloud credentials (AWS, GCP, Azure) enable pivoting from the compromised n8n instance to connected cloud infrastructure and services"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Workflow data, credentials, and AI model outputs can be exfiltrated through the n8n webhook response channel or external HTTP nodes"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on auditing workflow expressions for sandbox escape patterns, monitoring for anomalous process spawning from n8n containers, and detecting unauthorized webhook triggers. The JavaScript expression sandbox bypass leaves distinctive patterns in workflow definitions that can be identified through database queries or workflow JSON inspection.",
+    "log_sources": [
+      {
+        "source": "n8n Workflow Database (SQLite/PostgreSQL)",
+        "description": "Query the workflow_entity table for active workflows containing suspicious expression patterns: constructor.constructor, prepareStackTrace, defineProperty, getBuiltinModule, child_process, spawn_sync, __proto__, or String.fromCharCode sequences. Alert on any matches in active workflows.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Container Runtime / Process Monitoring",
+        "description": "Alert on the n8n Node.js process spawning child processes: sh, bash, curl, wget, whoami, id, or any unexpected binary execution. Monitor for connections to cloud metadata service (169.254.169.254). Detect unusual file system writes outside expected n8n directories.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Monitoring / Web Access Logs",
+        "description": "Monitor webhook trigger patterns: high-frequency requests to specific webhook URLs, requests from unusual geographic locations or TOR exit nodes, and webhook triggers that result in anomalous network egress from the n8n container.",
+        "priority": "High"
+      },
+      {
+        "source": "n8n Execution Logs",
+        "description": "Review workflow execution logs for ReferenceError: process is not defined errors followed by successful execution (indicates sandbox escape probe/retry), unusual expression evaluation times, and execution of workflows that were recently modified.",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Audit Logs",
+        "description": "Monitor for unusual API activity from n8n service account credentials in AWS CloudTrail, GCP Cloud Audit Logs, or Azure Activity Logs that could indicate stolen credential abuse.",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Template literal property access in workflow expressions",
+        "description": "Expressions using backtick syntax for property access (e.g., Error[`prepareStackTrace`]) bypass the PrototypeSanitizer which only checks StringLiteral and Literal node types",
+        "log_field": "Workflow JSON: nodes[].parameters contains backtick-quoted property access patterns",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Destructuring assignment accessing constructor or prototype",
+        "description": "JavaScript destructuring with computed template literal keys bypasses AST-based security checks: const {[`constr${\"uct\"}or`]: Fn} = Object",
+        "log_field": "Workflow JSON: expression contains destructuring pattern with template literal computed keys",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes from n8n container",
+        "description": "n8n Node.js process spawning shell interpreters or system utilities indicates successful sandbox escape and command execution",
+        "log_field": "Container log: parent_process=node AND child_process IN ['sh', 'bash', 'curl', 'wget', 'whoami', 'id']",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Connections to cloud metadata endpoint from n8n",
+        "description": "Requests to 169.254.169.254 from n8n containers indicate cloud credential theft attempt via SSRF",
+        "log_field": "Network log: source=n8n_container AND dest_ip=169.254.169.254",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Object.defineProperty or getBuiltinModule in expressions",
+        "description": "Reflection API calls and module access patterns in workflow expressions indicate sandbox escape payload rather than legitimate automation",
+        "log_field": "Workflow JSON: expression contains 'defineProperty' OR 'getBuiltinModule' OR 'spawn_sync'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unauthenticated webhook with expression-heavy workflow",
+        "description": "Webhooks configured without authentication that trigger workflows containing complex JavaScript expressions may be backdoor entry points",
+        "log_field": "n8n config: webhook authentication=none AND linked workflow contains Function or Code nodes",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade n8n to version 1.123.17 (stable) or 2.5.2 (beta) immediately",
+      "description": "These versions include comprehensive sandbox fixes addressing CVE-2026-25049 and 11 additional vulnerabilities including CVE-2026-25056 (Merge node file write), CVE-2026-25115 (Python sandbox escape), and CVE-2026-1470 (with statement bypass). Both self-hosted and n8n Cloud deployments should verify they are running the latest version.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Rotate N8N_ENCRYPTION_KEY and ALL stored credentials immediately",
+      "description": "Assume all stored secrets may have been exposed. Rotate the N8N_ENCRYPTION_KEY environment variable, then rotate all API keys (OpenAI, Anthropic, AWS, GCP, Azure), database passwords, OAuth tokens, and service credentials stored in n8n's credential database. Revoke and reissue all OAuth grants.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Audit all active workflows for sandbox escape indicators",
+      "description": "Query the n8n database for active workflows containing suspicious patterns: constructor, __proto__, prepareStackTrace, defineProperty, getBuiltinModule, child_process, spawn_sync, String.fromCharCode, or template literal property access. Disable any suspicious workflows immediately.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Restrict public webhooks and workflow editing permissions",
+      "description": "Disable all public-facing webhooks without authentication. Restrict workflow creation and editing permissions to fully trusted administrators only. Review and disable any webhooks that were recently created or modified.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Harden n8n container runtime environment",
+      "description": "Run n8n as non-root user (UID 1000), enable read-only filesystem with tmpfs for /tmp, drop all Linux capabilities, apply seccomp profiles blocking execve syscall, implement default-deny egress firewall rules whitelisting only required domains, and block access to 169.254.169.254 metadata service.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Implement network segmentation and monitoring",
+      "description": "Isolate n8n instances in dedicated network segments. Block egress to non-essential services. Monitor all outbound connections from n8n infrastructure for anomalous destinations. Deploy detection rules for suspicious workflow expression patterns and unexpected process spawning.",
+      "command": null
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-06T16:59:58.928Z",
-  "date": "2026-02-06",
+  "lastUpdated": "2026-02-09T05:31:16.694Z",
+  "date": "2026-02-09",
   "stats": {
-    "total": 28,
-    "critical": 20,
-    "high": 8,
+    "total": 32,
+    "critical": 23,
+    "high": 9,
     "medium": 0,
     "low": 0,
-    "cisaKev": 14,
+    "cisaKev": 17,
     "activeExploits": 15,
-    "totalSources": 284
+    "totalSources": 344
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,90 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-06-003",
+  "featuredBriefing": "TB-2026-02-09-003",
   "briefings": [
+    {
+      "id": "TB-2026-02-09-004",
+      "title": "APT28 Operation Neusploit: Russian GRU Weaponizes Microsoft Office Zero-Day Within 24 Hours Against NATO-Aligned Nations (CVE-2026-21509)",
+      "severity": "High",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2026-21509"
+      ],
+      "tags": [
+        "apt28",
+        "fancy-bear",
+        "russia",
+        "gru",
+        "espionage",
+        "microsoft-office"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "Russia's APT28 (Fancy Bear / GRU Unit 26165) weaponized a Microsoft Office zero-day vulnerability within approximately 24 hours of its public disclosure and launched a concentrated espionage campaign ..."
+    },
+    {
+      "id": "TB-2026-02-09-003",
+      "title": "n8n Workflow Automation Sandbox Escape: Third Critical RCE in Three Months Threatens Enterprise AI Systems (CVE-2026-25049)",
+      "severity": "Critical",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2026-25049",
+        "CVE-2026-25056",
+        "CVE-2026-21858",
+        "CVE-2026-1470",
+        "CVE-2026-25115"
+      ],
+      "tags": [
+        "n8n",
+        "workflow-automation",
+        "sandbox-escape",
+        "rce",
+        "javascript",
+        "ai-infrastructure"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical sandbox escape vulnerability was discovered in n8n, a popular open-source workflow automation platform used by enterprises to connect AI services, databases, and business applications. CVE-..."
+    },
+    {
+      "id": "TB-2026-02-09-002",
+      "title": "React Native CLI Metro4Shell: Developer Tool Command Injection Under Active Exploitation (CVE-2025-11953)",
+      "severity": "Critical",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2025-11953"
+      ],
+      "tags": [
+        "react-native",
+        "metro",
+        "developer-tools",
+        "command-injection",
+        "cisa-kev",
+        "active-exploitation"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical OS command injection vulnerability was discovered in the React Native CLI's Metro Development Server, a tool used by millions of mobile app developers worldwide. The flaw allows attackers o..."
+    },
+    {
+      "id": "TB-2026-02-09-001",
+      "title": "SmarterMail Unauthenticated RCE via ConnectToHub API Exploited in Ransomware Attacks (CVE-2026-24423)",
+      "severity": "Critical",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2026-24423",
+        "CVE-2026-23760",
+        "CVE-2026-25067"
+      ],
+      "tags": [
+        "smartermail",
+        "email-server",
+        "rce",
+        "ransomware",
+        "cisa-kev",
+        "active-exploitation"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A critical unauthenticated remote code execution vulnerability was discovered in SmarterTools SmarterMail, an email server platform used by approximately 15 million users across 120 countries. The fla..."
+    },
     {
       "id": "TB-2026-02-06-003",
       "title": "vLLM Critical RCE via Video Processing Heap Overflow Threatens Millions of AI Servers (CVE-2026-22778)",
