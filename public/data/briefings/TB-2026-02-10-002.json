@@ -1,0 +1,336 @@
+{
+  "briefing_id": "TB-2026-02-10-002",
+  "title": "Sangoma FreePBX EncystPHP Webshell Campaign: INJ3CTOR3 Threat Actor Deploys Multi-Stage VoIP Infrastructure Backdoor via CISA KEV Vulnerabilities (CVE-2025-64328)",
+  "generated_date": "2026-02-10",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.6,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-24"
+  },
+  "cves": [
+    "CVE-2025-64328",
+    "CVE-2019-19006"
+  ],
+  "tags": [
+    "freepbx",
+    "voip",
+    "webshell",
+    "cisa-kev",
+    "active-exploitation",
+    "persistence"
+  ],
+  "affected_products": [
+    "Sangoma FreePBX Endpoint Manager 17.0.2.36 through 17.0.3",
+    "Sangoma FreePBX (all versions with CVE-2019-19006 unpatched)",
+    "Elastix PBX systems"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "FortiGuard Labs - Unveiling the Weaponized Web Shell EncystPHP",
+      "url": "https://www.fortinet.com/blog/threat-research/unveiling-the-weaponized-web-shell-encystphp",
+      "date": "2026-01-30",
+      "type": "Research"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/02/03/cisa-adds-four-known-exploited-vulnerabilities-catalog",
+      "date": "2026-02-03",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - CISA Adds Actively Exploited Vulnerabilities",
+      "url": "https://thehackernews.com/2026/02/cisa-adds-actively-exploited-solarwinds.html",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "SecurityAffairs - CISA KEV Additions",
+      "url": "https://securityaffairs.com/187592/security/u-s-cisa-adds-solarwinds-web-help-desk-sangoma-freepbx-and-gitlab-flaws-to-its-known-exploited-vulnerabilities-catalog.html",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "CyberSecurity News - FreePBX Exploitation",
+      "url": "https://cybersecuritynews.com/freepbx-vulnerability-exploited/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "SOC Prime - EncystPHP Web Shell Analysis",
+      "url": "https://socprime.com/active-threats/weaponized-web-shell-analysis/",
+      "date": "2026-02-05",
+      "type": "Research"
+    },
+    {
+      "name": "Check Point Research - INJ3CTOR3 Operation",
+      "url": "https://research.checkpoint.com/2020/inj3ctor3-operation-leveraging-asterisk-servers-for-monetization/",
+      "date": "2020-11-05",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2025-64328",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64328",
+      "date": "2025-12-15",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable - CVE-2025-64328",
+      "url": "https://www.tenable.com/cve/CVE-2025-64328",
+      "date": "2025-12-15",
+      "type": "Research"
+    },
+    {
+      "name": "GitHub PoC - CVE-2025-64328 FreePBX Command Injection",
+      "url": "https://github.com/mcorybillington/CVE-2025-64328_FreePBX-framework-Command-Injection",
+      "date": "2025-12-10",
+      "type": "Research"
+    },
+    {
+      "name": "CyberThrone - CISA KEV Catalog Update",
+      "url": "https://thecyberthrone.in/2026/02/04/cisas-adds-4-vulnerabilitis-to-kev-catalog/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "RST Cloud TI Report Digest",
+      "url": "https://medium.com/@rst_cloud/rst-ti-report-digest-02-feb-2026-39cd048eecb4",
+      "date": "2026-02-02",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2020-11-05",
+      "event": "Check Point Research discloses INJ3CTOR3 operation exploiting CVE-2019-19006 to compromise VoIP servers for premium-rate fraud"
+    },
+    {
+      "date": "2022-01-15",
+      "event": "INJ3CTOR3 threat actor shifts focus to Elastix PBX systems via CVE-2021-45461"
+    },
+    {
+      "date": "2025-12-01",
+      "event": "INJ3CTOR3 begins weaponizing CVE-2025-64328 in FreePBX Endpoint Manager to deploy EncystPHP webshell"
+    },
+    {
+      "date": "2025-12-15",
+      "event": "CVE-2025-64328 published in NVD; FreePBX Endpoint Manager version 17.0.3 released with fix"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "FortiGuard Labs publishes detailed technical analysis of EncystPHP webshell campaign"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "CISA adds CVE-2025-64328 and CVE-2019-19006 to Known Exploited Vulnerabilities catalog with February 24 deadline"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A sophisticated threat actor group known as INJ3CTOR3, active since 2020, launched a new campaign in December 2025 targeting FreePBX VoIP phone systems used by businesses worldwide. The attackers exploit a command injection vulnerability in the FreePBX Endpoint Manager to deploy a stealthy webshell called EncystPHP that provides persistent backdoor access. CISA added the exploited vulnerabilities to their Known Exploited Vulnerabilities catalog on February 3, 2026, confirming active exploitation in the wild and setting a February 24 remediation deadline for federal agencies.",
+    "who_is_affected": "Organizations running Sangoma FreePBX with Endpoint Manager versions 17.0.2.36 through 17.0.3, as well as legacy FreePBX installations still vulnerable to CVE-2019-19006 (authentication bypass). Elastix PBX users are also at risk. This affects businesses of all sizes that use FreePBX for their phone systems, including call centers, managed service providers, healthcare facilities, and small-to-medium enterprises.",
+    "what_attackers_do": "Step 1: Attacker gains initial access by exploiting CVE-2019-19006 (authentication bypass, CVSS 9.8) to obtain admin access to FreePBX without credentials, or uses stolen admin credentials. Step 2: With admin access, attacker exploits CVE-2025-64328 command injection in the Endpoint Manager testconnection function to inject OS commands via the SSH host parameter using backtick injection. Step 3: Injected command downloads a multi-stage dropper from attacker infrastructure (45.234.176.202) and deploys the EncystPHP webshell disguised as legitimate FreePBX files (ajax.php, config.php) across 12+ file paths for redundancy. Step 4: EncystPHP harvests database credentials from /etc/freepbx.conf, creates a root-level user named 'newfpbx' with UID 0, injects SSH authorized keys, and resets system account passwords to maintain persistent access. Step 5: Attacker establishes crontab-based persistence that re-downloads droppers every minute, forges file timestamps to evade detection, eliminates competing malware, and uses the compromised PBX for premium-rate toll fraud or as a pivot point into the victim's internal network.",
+    "what_you_should_do": [
+      "Immediately upgrade FreePBX Endpoint Manager to version 17.0.3 or later to fix CVE-2025-64328",
+      "Apply all available patches to address CVE-2019-19006 authentication bypass",
+      "Search for the user account 'newfpbx' with UID 0 — its presence confirms compromise",
+      "Inspect SSH authorized_keys files for root and www-data accounts for unauthorized public keys",
+      "Check crontab entries for references to /var/lib/asterisk/bin/ or suspicious download commands",
+      "Scan web directories for unauthorized ajax.php and config.php files in FreePBX module directories",
+      "Block known attacker IPs: 45.234.176.202 and 187.108.1.130, and domain crm.razatelefonia.pro"
+    ],
+    "why_this_is_serious": "FreePBX powers a significant portion of business VoIP infrastructure worldwide. This campaign deploys a sophisticated multi-stage backdoor with at least four persistence mechanisms, making it extremely difficult to fully eradicate. The EncystPHP webshell provides root-level access, enables premium-rate toll fraud that can cost victims thousands of dollars per day, and could serve as a pivot point for deeper network intrusion. CISA's inclusion of both CVEs in the KEV catalog confirms this is an active, ongoing campaign requiring immediate attention."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit CVE-2025-64328 command injection in FreePBX Endpoint Manager's testconnection function to gain initial code execution on the server"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "Bash command injection and shell script execution used throughout the attack chain for dropper deployment and payload execution"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1053.003",
+        "technique_name": "Scheduled Task/Job: Cron",
+        "description": "Multiple crontab entries established to re-download droppers every minute, ensuring the webshell is reinstalled even if removed"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "EncystPHP webshell deployed to 12+ file paths masquerading as legitimate FreePBX PHP files (ajax.php, config.php)"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1136.001",
+        "technique_name": "Create Account: Local Account",
+        "description": "Creates root-level user 'newfpbx' with UID 0, providing full system administrator privileges"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1003",
+        "technique_name": "OS Credential Dumping",
+        "description": "Harvests database credentials from /etc/freepbx.conf and resets multiple system account passwords to attacker-controlled values"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1070.004",
+        "technique_name": "Indicator Removal: File Deletion",
+        "description": "Purges logs and removes artifacts after deployment; outputs fake removal commands without executing them to create illusion of cleanup"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036.005",
+        "technique_name": "Masquerading: Match Legitimate Name or Location",
+        "description": "Webshell files use legitimate FreePBX filenames and directories, with forged timestamps matching authentic system files"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1222.002",
+        "technique_name": "File and Directory Permissions Modification: Linux and Mac File and Directory Permissions Modification",
+        "description": "Sets permissions to 000 on legitimate ajax.php and model.php files, rendering them inaccessible while replacing them with malicious versions"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021.004",
+        "technique_name": "Remote Services: SSH",
+        "description": "Injects attacker SSH public key into authorized_keys files and ensures SSH port 22 remains accessible for persistent remote access"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1105",
+        "technique_name": "Ingress Tool Transfer",
+        "description": "Repeatedly downloads dropper stages from attacker-controlled IP 45.234.176.202 via HTTP"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1496",
+        "technique_name": "Resource Hijacking",
+        "description": "Hijacks PBX resources to generate calls to International Premium Rate Numbers (IPRN) for monetization through toll fraud"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Focus detection efforts on identifying EncystPHP webshell artifacts, unauthorized system account creation, suspicious crontab modifications, and connections to known attacker infrastructure. The webshell employs extensive evasion techniques including timestamp forgery and filename masquerading, making file integrity monitoring essential.",
+    "log_sources": [
+      {
+        "source": "Linux System Logs (auth.log, syslog)",
+        "description": "Monitor for creation of user 'newfpbx', SSH key modifications, password changes for system accounts, and unauthorized root-level account creation",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Server Access Logs (Apache/Nginx)",
+        "description": "Inspect for HTTP requests to EncystPHP webshell paths including /rest_phones/ajax.php, /digium_phones/ajax.php, /admin/assets/js/config.php, and similar deployment locations",
+        "priority": "Critical"
+      },
+      {
+        "source": "Crontab Monitoring",
+        "description": "Detect unauthorized crontab entries, especially those referencing /var/lib/asterisk/bin/, /var/spool/asterisk/tmp/, or downloading files from external IPs",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic / Firewall Logs",
+        "description": "Alert on outbound connections to known C2 IPs (45.234.176.202, 187.108.1.130) and domain crm.razatelefonia.pro",
+        "priority": "Critical"
+      },
+      {
+        "source": "File Integrity Monitoring (FIM)",
+        "description": "Monitor /var/www/html/ subdirectories for unauthorized PHP file creation, modification, or permission changes, especially in FreePBX module directories",
+        "priority": "High"
+      },
+      {
+        "source": "Asterisk CDR / Call Logs",
+        "description": "Look for unusual outbound call patterns to premium-rate international numbers that could indicate toll fraud",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "User account 'newfpbx' with UID 0",
+        "description": "The EncystPHP webshell creates a root-level user named 'newfpbx' with UID 0 for persistent privileged access. Presence of this account confirms compromise.",
+        "log_field": "useradd newfpbx OR /etc/passwd contains 'newfpbx:x:0:'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unauthorized SSH keys in root or www-data accounts",
+        "description": "Attacker injects SSH public keys into authorized_keys files for root and www-data users to maintain remote access",
+        "log_field": "/root/.ssh/authorized_keys OR /var/www/.ssh/authorized_keys modified",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Suspicious crontab entries referencing asterisk paths",
+        "description": "Persistence mechanism creates crontab entries downloading files to /var/lib/asterisk/bin/ every minute",
+        "log_field": "crontab -l contains '/var/lib/asterisk/bin/zen2' OR 'devnull'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Connections to attacker infrastructure",
+        "description": "EncystPHP dropper downloads payloads from known attacker IPs and domains",
+        "log_field": "dst_ip IN (45.234.176.202, 187.108.1.130) OR dns_query='crm.razatelefonia.pro'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unauthorized PHP files in FreePBX directories",
+        "description": "Webshell deployed to 12+ paths including rest_phones/ajax.php, digium_phones/ajax.php, phones/ajax.php, fpbxphones/ajax.php, freepbxphones/ajax.php, admin/assets/js/config.php",
+        "log_field": "file.path matches '/var/www/html/*/ajax.php' OR '/var/www/html/admin/assets/*/config.php'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "File permission changes on legitimate FreePBX files",
+        "description": "Dropper sets permissions to 000 on legitimate ajax.php and model.php files before replacing them with malicious versions",
+        "log_field": "chmod 000 AND path contains '/var/www/html/'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "45.234.176.202",
+      "187.108.1.130"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Check for compromise indicators immediately",
+      "description": "Search for user account 'newfpbx' in /etc/passwd, check SSH authorized_keys for unauthorized entries, and inspect crontab for suspicious entries. If any are found, treat the system as fully compromised.",
+      "command": "grep 'newfpbx' /etc/passwd; cat /root/.ssh/authorized_keys; crontab -l | grep -E 'zen2|devnull|asterisk/bin'"
+    },
+    {
+      "priority": 2,
+      "action": "Upgrade FreePBX Endpoint Manager to version 17.0.3+",
+      "description": "Apply the patch that fixes CVE-2025-64328 command injection in the testconnection function. Also ensure CVE-2019-19006 authentication bypass patches are applied.",
+      "command": "fwconsole ma upgrade endpoint"
+    },
+    {
+      "priority": 3,
+      "action": "Block attacker infrastructure at network perimeter",
+      "description": "Add firewall rules to block all traffic to/from known attacker IPs (45.234.176.202, 187.108.1.130) and domain crm.razatelefonia.pro.",
+      "command": "iptables -A OUTPUT -d 45.234.176.202 -j DROP; iptables -A OUTPUT -d 187.108.1.130 -j DROP"
+    },
+    {
+      "priority": 4,
+      "action": "Scan for EncystPHP webshell files",
+      "description": "Search for unauthorized PHP files across all FreePBX web directories. Look for files matching known EncystPHP SHA256 hashes and suspicious ajax.php or config.php files in module directories.",
+      "command": "find /var/www/html/ -name 'ajax.php' -o -name 'config.php' | xargs sha256sum | grep -E '71d94479|7e3a47e3|fc514c45|285fac34|29d74963'"
+    },
+    {
+      "priority": 5,
+      "action": "Audit Asterisk call detail records for toll fraud",
+      "description": "Review CDR logs for unusual outbound calls, especially to international premium-rate numbers. INJ3CTOR3 monetizes compromised systems through IPRN toll fraud which can cost thousands of dollars per day.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "If compromised, perform full incident response",
+      "description": "Isolate the system immediately. Reset all credentials including database passwords, admin accounts, and SSH keys. Remove all unauthorized crontab entries, user accounts, and webshell files. Consider rebuilding from a known-clean backup as the multi-stage persistence makes complete manual cleanup extremely difficult.",
+      "command": null
+    }
+  ]
+}

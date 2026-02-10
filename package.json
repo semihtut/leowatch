@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "add-briefing": "node scripts/add-briefing.cjs",
-    "add-briefing:paste": "node scripts/add-briefing.cjs --paste"
+    "add-briefing:paste": "node scripts/add-briefing.cjs --paste",
+    "add-briefing:auto": "node scripts/add-briefing.cjs --no-git --overwrite"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.3.2",

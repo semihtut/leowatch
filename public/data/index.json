@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-09T05:31:16.694Z",
-  "date": "2026-02-09",
+  "lastUpdated": "2026-02-10T06:02:22.488Z",
+  "date": "2026-02-10",
   "stats": {
-    "total": 32,
-    "critical": 23,
-    "high": 9,
+    "total": 34,
+    "critical": 24,
+    "high": 10,
     "medium": 0,
     "low": 0,
-    "cisaKev": 17,
+    "cisaKev": 18,
     "activeExploits": 15,
-    "totalSources": 344
+    "totalSources": 368
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,47 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-09-003",
+  "featuredBriefing": "TB-2026-02-10-001",
   "briefings": [
+    {
+      "id": "TB-2026-02-10-002",
+      "title": "Sangoma FreePBX EncystPHP Webshell Campaign: INJ3CTOR3 Threat Actor Deploys Multi-Stage VoIP Infrastructure Backdoor via CISA KEV Vulnerabilities (CVE-2025-64328)",
+      "severity": "High",
+      "date": "2026-02-10",
+      "cves": [
+        "CVE-2025-64328",
+        "CVE-2019-19006"
+      ],
+      "tags": [
+        "freepbx",
+        "voip",
+        "webshell",
+        "cisa-kev",
+        "active-exploitation",
+        "persistence"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A sophisticated threat actor group known as INJ3CTOR3, active since 2020, launched a new campaign in December 2025 targeting FreePBX VoIP phone systems used by businesses worldwide. The attackers expl..."
+    },
+    {
+      "id": "TB-2026-02-10-001",
+      "title": "BeyondTrust Remote Support Pre-Auth RCE: AI-Discovered CVSS 9.9 Command Injection Exposes 11,000 Enterprise Instances (CVE-2026-1731)",
+      "severity": "Critical",
+      "date": "2026-02-10",
+      "cves": [
+        "CVE-2026-1731"
+      ],
+      "tags": [
+        "beyondtrust",
+        "remote-support",
+        "privileged-access",
+        "pre-auth-rce",
+        "command-injection",
+        "enterprise"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A near-maximum severity vulnerability was discovered in BeyondTrust Remote Support and Privileged Remote Access, enterprise tools used by over 20,000 organizations including 75% of Fortune 100 compani..."
+    },
     {
       "id": "TB-2026-02-09-004",
       "title": "APT28 Operation Neusploit: Russian GRU Weaponizes Microsoft Office Zero-Day Within 24 Hours Against NATO-Aligned Nations (CVE-2026-21509)",

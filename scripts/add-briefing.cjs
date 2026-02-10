@@ -7,8 +7,13 @@
  *   node scripts/add-briefing.js <json-file>
  *   node scripts/add-briefing.js --paste
  *
+ * Flags:
+ *   --no-git       Skip git commit/push prompt
+ *   --overwrite    Auto-overwrite existing briefings without prompting
+ *
  * Examples:
  *   node scripts/add-briefing.js ~/Downloads/new-briefing.json
+ *   node scripts/add-briefing.js ~/Downloads/briefing.json --no-git --overwrite
  *   node scripts/add-briefing.js --paste  (then paste JSON and press Ctrl+D)
  */
 
@@ -304,26 +309,37 @@ async function main() {
 
   let jsonContent;
   const args = process.argv.slice(2);
+  const flags = args.filter(a => a.startsWith('--'));
+  const positional = args.filter(a => !a.startsWith('--') && a !== '-p');
+  const noGit = flags.includes('--no-git');
+  const autoOverwrite = flags.includes('--overwrite');
 
   if (args.length === 0) {
     console.log('Usage:');
     console.log('  node scripts/add-briefing.js <json-file>');
     console.log('  node scripts/add-briefing.js --paste');
+    console.log('\nFlags:');
+    console.log('  --no-git       Skip git commit/push prompt');
+    console.log('  --overwrite    Auto-overwrite existing briefings');
     console.log('\nExamples:');
     console.log('  node scripts/add-briefing.js ~/Downloads/briefing.json');
+    console.log('  node scripts/add-briefing.js ~/Downloads/briefing.json --no-git --overwrite');
     console.log('  node scripts/add-briefing.js --paste');
     process.exit(1);
   }
 
-  if (args[0] === '--paste' || args[0] === '-p') {
+  if (args.includes('--paste') || args.includes('-p')) {
     jsonContent = await readFromStdin();
-  } else {
-    const filePath = args[0];
+  } else if (positional.length > 0) {
+    const filePath = positional[0];
     if (!fs.existsSync(filePath)) {
       log(`File not found: ${filePath}`, 'error');
       process.exit(1);
     }
     jsonContent = fs.readFileSync(filePath, 'utf-8');
+  } else {
+    log('No input file specified', 'error');
+    process.exit(1);
   }
 
   // Parse JSON
@@ -358,19 +374,23 @@ async function main() {
 
   if (fs.existsSync(filePath)) {
     log(`Briefing ${briefing.briefing_id} already exists!`, 'warning');
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
+    if (!autoOverwrite) {
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+      });
 
-    const answer = await new Promise((resolve) => {
-      rl.question('Overwrite? (y/n): ', resolve);
-    });
-    rl.close();
+      const answer = await new Promise((resolve) => {
+        rl.question('Overwrite? (y/n): ', resolve);
+      });
+      rl.close();
 
-    if (answer.toLowerCase() !== 'y' && answer.toLowerCase() !== 'yes') {
-      log('Aborted', 'info');
-      process.exit(0);
+      if (answer.toLowerCase() !== 'y' && answer.toLowerCase() !== 'yes') {
+        log('Aborted', 'info');
+        process.exit(0);
+      }
+    } else {
+      log('Auto-overwriting (--overwrite flag)', 'info');
     }
   }
 
@@ -398,8 +418,12 @@ async function main() {
   console.log(`   CVEs:     ${briefing.cves.join(', ')}`);
   console.log(`   Sources:  ${briefing.sources_analyzed}`);
 
-  // Git commit/push
-  await gitCommitAndPush(briefing.briefing_id, briefing.title);
+  // Git commit/push (skip if --no-git flag)
+  if (!noGit) {
+    await gitCommitAndPush(briefing.briefing_id, briefing.title);
+  } else {
+    log('Git skipped (--no-git flag)', 'info');
+  }
 
   console.log(colors.green('\n✨ Done!\n'));
 }
