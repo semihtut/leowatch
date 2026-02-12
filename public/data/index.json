@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-10T06:02:22.488Z",
-  "date": "2026-02-10",
+  "lastUpdated": "2026-02-12T06:01:49.420Z",
+  "date": "2026-02-12",
   "stats": {
-    "total": 34,
-    "critical": 24,
+    "total": 38,
+    "critical": 28,
     "high": 10,
     "medium": 0,
     "low": 0,
-    "cisaKev": 18,
+    "cisaKev": 21,
     "activeExploits": 15,
-    "totalSources": 368
+    "totalSources": 423
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,89 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-10-001",
+  "featuredBriefing": "TB-2026-02-12-004",
   "briefings": [
+    {
+      "id": "TB-2026-02-12-004",
+      "title": "Fortinet FortiClientEMS Unauthenticated SQL Injection to RCE: Public PoC Targets Enterprise Endpoint Management with xp_cmdshell Exploitation Chain (CVE-2026-21643)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2026-21643"
+      ],
+      "tags": [
+        "fortinet",
+        "forticlient-ems",
+        "sql-injection",
+        "rce",
+        "endpoint-management",
+        "enterprise"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical SQL injection vulnerability was discovered in Fortinet FortiClientEMS, the enterprise platform used to centrally manage FortiClient endpoint security agents across organizations. The flaw a..."
+    },
+    {
+      "id": "TB-2026-02-12-003",
+      "title": "GNU InetUtils telnetd 11-Year Authentication Bypass: Trivial Root Shell via USER Environment Variable Under Mass Exploitation by rwxrwx Group (CVE-2026-24061, CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2026-24061"
+      ],
+      "tags": [
+        "telnet",
+        "authentication-bypass",
+        "gnu-inetutils",
+        "cisa-kev",
+        "active-exploitation",
+        "linux"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "An 11-year-old vulnerability was discovered in the GNU InetUtils telnetd service, which is the standard Telnet server on many Linux and Unix systems. The flaw is incredibly simple: an attacker can sen..."
+    },
+    {
+      "id": "TB-2026-02-12-002",
+      "title": "WatchGuard Firebox IKEv2 VPN Zero-Day: Unauthenticated Out-of-Bounds Write Enables Root RCE on 125,000+ Firewalls (CVE-2025-14733, CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2025-14733"
+      ],
+      "tags": [
+        "watchguard",
+        "firewall",
+        "vpn",
+        "ikev2",
+        "zero-day",
+        "cisa-kev"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A critical zero-day vulnerability was found in WatchGuard Firebox firewalls that allows attackers to take complete control of the device remotely without any login credentials. The flaw is in the IKEv..."
+    },
+    {
+      "id": "TB-2026-02-12-001",
+      "title": "Microsoft February 2026 Patch Tuesday: Six Actively Exploited Zero-Days Across Windows Shell, MSHTML, Office, DWM, and Remote Desktop Services (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2026-21510",
+        "CVE-2026-21513",
+        "CVE-2026-21514",
+        "CVE-2026-21519",
+        "CVE-2026-21525",
+        "CVE-2026-21533"
+      ],
+      "tags": [
+        "Microsoft",
+        "zero-day",
+        "patch-tuesday",
+        "cisa-kev",
+        "active-exploitation",
+        "windows"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Microsoft released its February 2026 security update fixing 58 vulnerabilities, including 6 zero-day flaws that hackers were already actively exploiting before the patch was available. Three of these ..."
+    },
     {
       "id": "TB-2026-02-10-002",
       "title": "Sangoma FreePBX EncystPHP Webshell Campaign: INJ3CTOR3 Threat Actor Deploys Multi-Stage VoIP Infrastructure Backdoor via CISA KEV Vulnerabilities (CVE-2025-64328)",

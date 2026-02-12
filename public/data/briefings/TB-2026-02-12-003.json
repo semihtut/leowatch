@@ -1,0 +1,302 @@
+{
+  "briefing_id": "TB-2026-02-12-003",
+  "title": "GNU InetUtils telnetd 11-Year Authentication Bypass: Trivial Root Shell via USER Environment Variable Under Mass Exploitation by rwxrwx Group (CVE-2026-24061, CISA KEV)",
+  "generated_date": "2026-02-12",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-16"
+  },
+  "cves": [
+    "CVE-2026-24061"
+  ],
+  "tags": [
+    "telnet",
+    "authentication-bypass",
+    "gnu-inetutils",
+    "cisa-kev",
+    "active-exploitation",
+    "linux",
+    "legacy-protocol"
+  ],
+  "affected_products": [
+    "GNU InetUtils 1.9.3 through 2.7",
+    "Debian (all versions shipping inetutils-telnetd)",
+    "Ubuntu (all versions shipping inetutils-telnetd)",
+    "Kali Linux",
+    "SUSE Linux",
+    "Alpine Linux",
+    "Trisquel GNU/Linux",
+    "Network Attached Storage (NAS) appliances with telnetd",
+    "Embedded Linux systems with telnetd enabled",
+    "OT/Industrial control systems running telnetd"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "OffSec - CVE-2026-24061 GNU InetUtils telnetd Authentication Bypass",
+      "url": "https://www.offsec.com/blog/cve-2026-24061/",
+      "date": "2026-01-20",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-24061",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24061",
+      "date": "2026-01-21",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - Critical GNU InetUtils telnetd Flaw Lets Attackers Bypass Login and Gain Root Access",
+      "url": "https://thehackernews.com/2026/01/critical-gnu-inetutils-telnetd-flaw.html",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Horizon3.ai - CVE-2026-24061 Attack Research",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-24061/",
+      "date": "2026-01-22",
+      "type": "Research"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog - CVE-2026-24061",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-26",
+      "type": "Government"
+    },
+    {
+      "name": "SafeBreach Labs - Root Cause Analysis and PoC Exploit for CVE-2026-24061",
+      "url": "https://www.safebreach.com/blog/safebreach-labs-root-cause-analysis-and-poc-exploit-for-cve-2026-24061/",
+      "date": "2026-01-23",
+      "type": "Research"
+    },
+    {
+      "name": "GreyNoise Labs - The Day the Telnet Died",
+      "url": "https://www.labs.greynoise.io/grimoire/2026-02-10-telnet-falls-silent/",
+      "date": "2026-02-10",
+      "type": "Research"
+    },
+    {
+      "name": "TXOne Networks - Root via Telnet: Active Exploitation of CVE-2026-24061",
+      "url": "https://www.txone.com/blog/cve-2026-24061-gnu-inetutils-telnet-exploitation/",
+      "date": "2026-01-24",
+      "type": "Research"
+    },
+    {
+      "name": "Orca Security - CVE-2026-24061 GNU InetUtils telnetd Bypass",
+      "url": "https://orca.security/resources/blog/cve-2026-24061-gnu-inetutils-telnetd-bypass/",
+      "date": "2026-01-23",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime - CVE-2026-24061 Detection: Decade-Old Vulnerability Enables Remote Root Access",
+      "url": "https://socprime.com/blog/cve-2026-24061-vulnerability/",
+      "date": "2026-01-24",
+      "type": "Research"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security - AL26-002 Vulnerability Advisory",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/al26-002-vulnerability-affecting-gnu-inetutils-telnetd-cve-2026-24061",
+      "date": "2026-01-21",
+      "type": "Government"
+    },
+    {
+      "name": "Ubuntu Security - CVE-2026-24061",
+      "url": "https://ubuntu.com/security/CVE-2026-24061",
+      "date": "2026-01-21",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "SUSE Security - CVE-2026-24061",
+      "url": "https://www.suse.com/security/cve/CVE-2026-24061.html",
+      "date": "2026-01-22",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Tenable - CVE-2026-24061",
+      "url": "https://www.tenable.com/cve/CVE-2026-24061",
+      "date": "2026-01-22",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2015-03-19",
+      "event": "Vulnerable code introduced in GNU InetUtils via commit fd702c02 adding %U placeholder in login command template"
+    },
+    {
+      "date": "2015-05-12",
+      "event": "GNU InetUtils 1.9.3 released containing the vulnerable code; flaw remains undetected for 11 years"
+    },
+    {
+      "date": "2026-01-19",
+      "event": "Vulnerability discovered by Kyu Neushwaistein (Carlos Cortes Alvarez) and reported"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Public disclosure via OSS-Security mailing list; GNU patches released"
+    },
+    {
+      "date": "2026-01-21",
+      "event": "CVE-2026-24061 officially published; Ubuntu and Canadian Cyber Centre issue advisories"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Initial exploitation attempts observed (Phase 1: Probing) from 18-21 unique source IPs"
+    },
+    {
+      "date": "2026-01-26",
+      "event": "CISA adds CVE-2026-24061 to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2026-01-31",
+      "event": "Exploitation peak: approximately 2,600 sessions per day from rwxrwx threat group across 52 IPs in 16 countries"
+    },
+    {
+      "date": "2026-02-10",
+      "event": "GreyNoise reports 59% sustained reduction in global Telnet traffic indicating widespread takedown or blocking"
+    },
+    {
+      "date": "2026-02-16",
+      "event": "CISA federal patch deadline for FCEB agencies"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "An 11-year-old vulnerability was discovered in the GNU InetUtils telnetd service, which is the standard Telnet server on many Linux and Unix systems. The flaw is incredibly simple: an attacker can send a specially crafted login request that tells the server to skip password authentication entirely and grant immediate root access. The vulnerable code was introduced in 2015 and went undetected until January 2026. Within days of disclosure, a coordinated threat group began mass exploitation.",
+    "who_is_affected": "Any Linux or Unix system running GNU InetUtils telnetd versions 1.9.3 through 2.7, including Debian, Ubuntu, Kali Linux, SUSE, and Alpine Linux. Network attached storage devices, embedded Linux systems, OT/industrial control systems, and legacy servers with Telnet enabled are especially at risk. Over 800,000 internet-exposed Telnet services were estimated to be vulnerable at disclosure.",
+    "what_attackers_do": "Step 1: Attackers scan the internet for systems with Telnet port 23 open and identify those running GNU InetUtils telnetd. Step 2: They establish a Telnet connection and during the protocol option negotiation phase, send a NEW-ENVIRON option with the USER variable set to '-f root' (the -f flag tells the login program to skip authentication). Step 3: The telnetd server blindly passes this value to the /usr/bin/login command, which interprets -f as the 'fast login' flag and root as the username. Step 4: The login program obeys the -f flag and grants immediate root shell access without asking for any password. Step 5: With root access, attackers install backdoors, inject SSH keys for persistent access, harvest credentials, and pivot to other systems on the network.",
+    "what_you_should_do": [
+      "Immediately disable telnetd on all systems where it is not absolutely required: run 'systemctl disable inetd' or remove the inetutils-telnetd package entirely",
+      "Update GNU InetUtils to version 2.7-2 or later on systems where telnetd must remain active",
+      "Block TCP port 23 (Telnet) at all network perimeters and segment internal networks to prevent lateral Telnet access",
+      "Search authentication logs for root logins via telnetd without password authentication: grep 'session opened for user root by telnetd' /var/log/auth.log",
+      "Replace Telnet with SSH (OpenSSH) for all remote administration needs across the organization"
+    ],
+    "why_this_is_serious": "This vulnerability is arguably the simplest critical exploit in recent memory: a single command grants instant root access with zero authentication. The exploit requires no special tools, no advanced knowledge, and no user interaction. With 800,000+ exposed Telnet services and a coordinated threat group running automated exploitation across 52 IPs in 16 countries, the scale of potential compromise is massive. The 11-year dormancy of this bug in widely-used open-source software raises serious questions about legacy code security in critical infrastructure."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit internet-exposed telnetd services by sending crafted NEW-ENVIRON option with USER=-f root during Telnet protocol negotiation"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1133",
+        "technique_name": "External Remote Services",
+        "description": "Telnet service on port 23 provides remote access that is exploited for unauthenticated root access via authentication bypass"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1548",
+        "technique_name": "Abuse Elevation Control Mechanism",
+        "description": "The -f flag in the USER variable tricks the login program into bypassing authentication and granting root privileges directly"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1098.004",
+        "technique_name": "Account Manipulation: SSH Authorized Keys",
+        "description": "After gaining root access, attackers inject SSH public keys into authorized_keys files for persistent passwordless access"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1136.001",
+        "technique_name": "Create Account: Local Account",
+        "description": "Attackers create new backdoor user accounts with root privileges to maintain access even if the original vulnerability is patched"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "Compromised systems serve as pivot points to access other internal network systems via SSH, Telnet, or stolen credentials"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying Telnet connections that result in root access without password authentication, monitoring for the specific NEW-ENVIRON USER=-f attack pattern in network traffic, and searching authentication logs for telnetd-originated root sessions.",
+    "log_sources": [
+      {
+        "source": "Linux Authentication Logs (/var/log/auth.log)",
+        "description": "Primary detection source: look for root session openings via telnetd without corresponding password authentication events",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network IDS/IPS",
+        "description": "Detect Telnet protocol NEW-ENVIRON option containing USER variable with dash-prefixed values (-f, -l, -h) in network traffic",
+        "priority": "Critical"
+      },
+      {
+        "source": "Firewall/NetFlow Logs",
+        "description": "Monitor for TCP port 23 connections from external sources, especially from known exploitation source IP ranges",
+        "priority": "High"
+      },
+      {
+        "source": "Process Monitoring (auditd)",
+        "description": "Monitor for /usr/bin/login process execution with -f flag as argument, which should never occur in normal Telnet authentication",
+        "priority": "Critical"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Root login via telnetd without password",
+        "description": "Authentication log entries showing root session opened by telnetd without a preceding password authentication event indicates successful exploitation",
+        "log_field": "grep 'session opened for user root by telnetd' /var/log/auth.log",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "NEW-ENVIRON USER variable with dash prefix in Telnet traffic",
+        "description": "Network traffic containing Telnet NEW-ENVIRON option with USER value starting with '-' character (e.g., -f root) is a definitive exploitation attempt",
+        "log_field": "Telnet payload: FF FA 18 00 55 53 45 52 00 2D 66 (WILL ENVIRON + USER=-f)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Login process executed with -f flag",
+        "description": "The /usr/bin/login program being called with -f flag from a telnetd parent process indicates the authentication bypass is being triggered",
+        "log_field": "process='/usr/bin/login' AND args CONTAINS '-f' AND parent='telnetd'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Telnet connections from exploitation source IPs",
+        "description": "Connections on port 23 from IPs in the rwxrwx exploitation infrastructure spanning 16 countries (Hong Kong, USA, Japan, Netherlands, China, Germany, Singapore)",
+        "log_field": "dst_port=23 AND src_ip IN rwxrwx_ip_list",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Disable telnetd on all systems immediately",
+      "description": "Telnet is an insecure legacy protocol that should not be running in any modern environment. Disable it via: systemctl disable inetd && systemctl stop inetd, or remove the package entirely with: apt remove inetutils-telnetd",
+      "command": "systemctl disable inetd && systemctl stop inetd"
+    },
+    {
+      "priority": 2,
+      "action": "Block TCP port 23 at all network perimeters",
+      "description": "Add firewall rules to block inbound Telnet traffic (TCP port 23) at all internet-facing firewalls and segment internal networks to prevent lateral Telnet access between VLANs.",
+      "command": "iptables -A INPUT -p tcp --dport 23 -j DROP"
+    },
+    {
+      "priority": 3,
+      "action": "Update GNU InetUtils to version 2.7-2 or later",
+      "description": "On systems where telnetd absolutely must remain active (embedded systems, OT environments), update to the patched version that rejects USER values beginning with dash characters.",
+      "command": "apt update && apt install --only-upgrade inetutils-telnetd"
+    },
+    {
+      "priority": 4,
+      "action": "Search for evidence of prior compromise",
+      "description": "Review authentication logs for any root logins via telnetd without password authentication. Check for unauthorized SSH keys in /root/.ssh/authorized_keys and unexpected user accounts created on systems running telnetd.",
+      "command": "grep 'session opened for user root.*telnetd' /var/log/auth.log && cat /root/.ssh/authorized_keys"
+    },
+    {
+      "priority": 5,
+      "action": "Replace Telnet with SSH across all systems",
+      "description": "Migrate all remote administration from Telnet to SSH (OpenSSH). For legacy systems or OT environments that require Telnet-like functionality, deploy Telnet-to-SSH gateways with proper authentication.",
+      "command": "apt install openssh-server && systemctl enable ssh && systemctl start ssh"
+    }
+  ]
+}
