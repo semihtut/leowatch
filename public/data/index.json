@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-12T06:01:49.420Z",
-  "date": "2026-02-12",
+  "lastUpdated": "2026-02-17T15:13:55.328Z",
+  "date": "2026-02-17",
   "stats": {
-    "total": 38,
-    "critical": 28,
-    "high": 10,
+    "total": 41,
+    "critical": 29,
+    "high": 12,
     "medium": 0,
     "low": 0,
-    "cisaKev": 21,
+    "cisaKev": 22,
     "activeExploits": 15,
-    "totalSources": 423
+    "totalSources": 458
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,65 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-12-004",
+  "featuredBriefing": "TB-2026-02-17-001",
   "briefings": [
+    {
+      "id": "TB-2026-02-17-003",
+      "title": "BQTLock and GREENBLOOD: Emerging Ransomware Families Combine Stealth Process Injection, Rapid ChaCha8 Encryption, and TOR-Based Extortion for Maximum Business Disruption",
+      "severity": "High",
+      "date": "2026-02-17",
+      "cves": [],
+      "tags": [
+        "ransomware",
+        "bqtlock",
+        "greenblood",
+        "remcos",
+        "uac-bypass",
+        "chacha8"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Two new ransomware families have emerged in February 2026, each designed to cause maximum damage in minimum time. BQTLock is a stealth-focused ransomware that hides inside Windows system processes to ..."
+    },
+    {
+      "id": "TB-2026-02-17-002",
+      "title": "Google Chrome First Zero-Day of 2026: CSS Use-After-Free Vulnerability Under Active Exploitation Enables In-Sandbox Code Execution (CVE-2026-2441)",
+      "severity": "High",
+      "date": "2026-02-17",
+      "cves": [
+        "CVE-2026-2441"
+      ],
+      "tags": [
+        "google-chrome",
+        "zero-day",
+        "use-after-free",
+        "css",
+        "browser",
+        "rce"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical zero-day vulnerability was discovered in Google Chrome's CSS rendering engine. The flaw is a use-after-free bug, where Chrome accidentally uses memory that has already been freed, allowing ..."
+    },
+    {
+      "id": "TB-2026-02-17-001",
+      "title": "Apple dyld Zero-Day Memory Corruption: Extremely Sophisticated Targeted Attacks Exploit CVE-2026-20700 Across All Apple Platforms (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-17",
+      "cves": [
+        "CVE-2026-20700",
+        "CVE-2025-14174",
+        "CVE-2025-43529"
+      ],
+      "tags": [
+        "apple",
+        "zero-day",
+        "dyld",
+        "ios",
+        "macos",
+        "memory-corruption"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical zero-day vulnerability was discovered in Apple's dyld component, which is the Dynamic Link Editor responsible for loading software libraries on every Apple device. The flaw allows attackers..."
+    },
     {
       "id": "TB-2026-02-12-004",
       "title": "Fortinet FortiClientEMS Unauthenticated SQL Injection to RCE: Public PoC Targets Enterprise Endpoint Management with xp_cmdshell Exploitation Chain (CVE-2026-21643)",
