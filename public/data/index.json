@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-17T15:13:55.328Z",
-  "date": "2026-02-17",
+  "lastUpdated": "2026-02-18T14:59:53.456Z",
+  "date": "2026-02-18",
   "stats": {
-    "total": 41,
-    "critical": 29,
-    "high": 12,
+    "total": 44,
+    "critical": 31,
+    "high": 13,
     "medium": 0,
     "low": 0,
     "cisaKev": 22,
     "activeExploits": 15,
-    "totalSources": 458
+    "totalSources": 493
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,65 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-17-001",
+  "featuredBriefing": "TB-2026-02-18-002",
   "briefings": [
+    {
+      "id": "TB-2026-02-18-003",
+      "title": "Keenadu Android Firmware Backdoor: Supply Chain Compromise Embeds Multi-Stage Loader in Tablet Firmware via Signed OTA Updates, Enabling Full Remote Device Control Across 13,000+ Devices Worldwide",
+      "severity": "High",
+      "date": "2026-02-18",
+      "cves": [],
+      "tags": [
+        "android",
+        "firmware-backdoor",
+        "supply-chain",
+        "mobile",
+        "keenadu",
+        "botnet"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Kaspersky security researchers discovered a sophisticated Android malware called Keenadu that was embedded directly into the firmware of tablets made by multiple manufacturers, including Alldocube. Th..."
+    },
+    {
+      "id": "TB-2026-02-18-002",
+      "title": "Critical VSCode Extension Supply Chain Vulnerabilities Expose 128 Million Developer Installations to File Theft, Remote Code Execution, and Credential Exfiltration (CVE-2025-65717, CVE-2025-65715, CVE-2025-65716)",
+      "severity": "Critical",
+      "date": "2026-02-18",
+      "cves": [
+        "CVE-2025-65717",
+        "CVE-2025-65715",
+        "CVE-2025-65716"
+      ],
+      "tags": [
+        "vscode",
+        "supply-chain",
+        "developer-tools",
+        "ide",
+        "rce",
+        "file-exfiltration"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Security researchers at OX Security discovered critical vulnerabilities in four of the most popular Visual Studio Code extensions, which together have been downloaded over 128 million times. These ext..."
+    },
+    {
+      "id": "TB-2026-02-18-001",
+      "title": "Dell RecoverPoint for Virtual Machines CVSS 10.0 Zero-Day: China-Nexus UNC6201 Exploits Hardcoded Tomcat Credentials Since Mid-2024 to Deploy BRICKSTORM and GRIMBOLT Backdoors (CVE-2026-22769)",
+      "severity": "Critical",
+      "date": "2026-02-18",
+      "cves": [
+        "CVE-2026-22769"
+      ],
+      "tags": [
+        "dell",
+        "recoverpoint",
+        "zero-day",
+        "china-apt",
+        "hardcoded-credentials",
+        "vmware"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "A maximum-severity vulnerability was discovered in Dell RecoverPoint for Virtual Machines, the enterprise disaster recovery platform used to protect and replicate virtual machine workloads. The flaw i..."
+    },
     {
       "id": "TB-2026-02-17-003",
       "title": "BQTLock and GREENBLOOD: Emerging Ransomware Families Combine Stealth Process Injection, Rapid ChaCha8 Encryption, and TOR-Based Extortion for Maximum Business Disruption",

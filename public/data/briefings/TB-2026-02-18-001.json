@@ -1,0 +1,275 @@
+{
+  "briefing_id": "TB-2026-02-18-001",
+  "title": "Dell RecoverPoint for Virtual Machines CVSS 10.0 Zero-Day: China-Nexus UNC6201 Exploits Hardcoded Tomcat Credentials Since Mid-2024 to Deploy BRICKSTORM and GRIMBOLT Backdoors (CVE-2026-22769)",
+  "generated_date": "2026-02-18",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-22769"
+  ],
+  "tags": [
+    "dell",
+    "recoverpoint",
+    "zero-day",
+    "china-apt",
+    "hardcoded-credentials",
+    "vmware"
+  ],
+  "affected_products": [
+    "Dell RecoverPoint for Virtual Machines (all versions prior to 6.0.3.1 HF1)",
+    "Dell RecoverPoint for VMs 5.3 SP2",
+    "Dell RecoverPoint for VMs 5.3 SP3",
+    "Dell RecoverPoint for VMs 5.3 SP4",
+    "Dell RecoverPoint for VMs 6.0 SP3",
+    "VMware ESXi (lateral movement target)"
+  ],
+  "sources_analyzed": 13,
+  "sources": [
+    {
+      "name": "Google Cloud Blog / Mandiant - UNC6201 Exploiting Dell RecoverPoint Zero-Day",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/unc6201-exploiting-dell-recoverpoint-zero-day",
+      "date": "2026-02-18",
+      "type": "Research"
+    },
+    {
+      "name": "Dell Security Advisory DSA-2026-079",
+      "url": "https://www.dell.com/support/kbdoc/en-us/000426773/dsa-2026-079",
+      "date": "2026-02-17",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2026-22769",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22769",
+      "date": "2026-02-18",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - Dell RecoverPoint for VMs Zero-Day CVE-2026-22769 Exploited Since Mid-2024",
+      "url": "https://thehackernews.com/2026/02/dell-recoverpoint-for-vms-zero-day-cve.html",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Chinese hackers exploiting Dell zero-day flaw since mid-2024",
+      "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-exploiting-dell-zero-day-flaw-since-mid-2024/",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Dell 0-day exploited by suspected Chinese snoops since 2024",
+      "url": "https://www.theregister.com/2026/02/18/dell_0day_brickstorm_campaign/",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Dell RecoverPoint Zero-Day Exploited by Chinese Cyberespionage Group",
+      "url": "https://www.securityweek.com/dell-recoverpoint-zero-day-exploited-by-chinese-cyberespionage-group/",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - China-linked APT weaponized Dell RecoverPoint zero-day since 2024",
+      "url": "https://securityaffairs.com/188176/apt/china-linked-apt-weaponized-dell-recoverpoint-zero-day-since-2024.html",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "SOC Prime - CVE-2026-22769: Critical Dell RecoverPoint Zero-Day Exploited in the Wild",
+      "url": "https://socprime.com/blog/cve-2026-22769-vulnerability/",
+      "date": "2026-02-18",
+      "type": "Research"
+    },
+    {
+      "name": "Threat Landscape - CVE-2026-22769 Dell RecoverPoint Zero-Day Analyst Advisory",
+      "url": "https://threatlandscape.io/blog/analyst-advisory-critical-zero-day-cve-2026-22769-dell-recoverpoint",
+      "date": "2026-02-18",
+      "type": "Research"
+    },
+    {
+      "name": "Cybersecurity Dive - Hackers exploit zero-day flaw in Dell RecoverPoint for VMs",
+      "url": "https://www.cybersecuritydive.com/news/zero-day-dell-recoverpoint-virtual-machines-exploited/812392/",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity News - Dell 0-Day Vulnerability Exploited by Chinese Hackers",
+      "url": "https://cybersecuritynews.com/dell-0-day-vulnerability/",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "The Cyber Express - CVE-2026-22769 Exploited In Attacks On Dell RecoverPoint",
+      "url": "https://thecyberexpress.com/cve-2026-22769-dell-recoverpoint/",
+      "date": "2026-02-18",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-06-01",
+      "event": "UNC6201 begins exploiting CVE-2026-22769 in the wild using hardcoded Tomcat credentials"
+    },
+    {
+      "date": "2024-06-15",
+      "event": "SLAYSTYLE web shell deployed via Tomcat Manager WAR upload on compromised RecoverPoint appliances"
+    },
+    {
+      "date": "2024-07-01",
+      "event": "BRICKSTORM C# backdoor deployed on victim environments for persistent remote access"
+    },
+    {
+      "date": "2025-09-01",
+      "event": "UNC6201 replaces BRICKSTORM with GRIMBOLT, a new AOT-compiled C# backdoor with UPX packing"
+    },
+    {
+      "date": "2026-02-17",
+      "event": "Dell publishes security advisory DSA-2026-079 with patch 6.0.3.1 HF1"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "Google Mandiant publishes full threat intelligence report on UNC6201 campaign"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A maximum-severity vulnerability was discovered in Dell RecoverPoint for Virtual Machines, the enterprise disaster recovery platform used to protect and replicate virtual machine workloads. The flaw involves hardcoded admin credentials for the Apache Tomcat Manager embedded in the product, which allowed attackers to log in without any special knowledge and execute commands as root. A Chinese state-sponsored hacking group called UNC6201 has been secretly exploiting this flaw since mid-2024, deploying multiple backdoors on victim systems and using a novel 'Ghost NIC' technique to move through VMware environments undetected.",
+    "who_is_affected": "Any organization running Dell RecoverPoint for Virtual Machines versions prior to 6.0.3.1 HF1, including versions 5.3 SP2, 5.3 SP3, 5.3 SP4, and 6.0 SP3. This particularly impacts enterprises using VMware-based virtualization environments for disaster recovery. The known targeting has focused on North American organizations.",
+    "what_attackers_do": "Step 1: Attackers discover internet-exposed Dell RecoverPoint appliances and authenticate to the Apache Tomcat Manager using hardcoded admin credentials stored in tomcat-users.xml. Step 2: They upload a malicious WAR file via the /manager/text/deploy endpoint, which deploys the SLAYSTYLE web shell and grants root-level command execution. Step 3: They deploy the BRICKSTORM or GRIMBOLT backdoor for persistent remote access, modifying system startup scripts like convert_hosts.sh to survive reboots. Step 4: Using a technique called Ghost NICs, they create temporary virtual network interfaces on VMware ESXi hosts to pivot into internal networks and SaaS environments, then delete these interfaces to erase forensic evidence. Step 5: They use iptables-based Single Packet Authorization to covertly redirect traffic through port 443 to port 10443, establishing a hidden command-and-control channel for long-term espionage.",
+    "what_you_should_do": [
+      "Immediately upgrade Dell RecoverPoint for VMs to version 6.0.3.1 HF1 or apply the vendor remediation script for 6.x installations",
+      "Audit Tomcat Manager webapps directory for unauthorized WAR files and check convert_hosts.sh for modifications",
+      "Place RecoverPoint appliances in restricted management VLANs with strict firewall rules blocking internet access",
+      "Use VMware tools to scan all ESXi hosts for unexpected virtual network interfaces (Ghost NICs)",
+      "Monitor for Single Packet Authorization patterns and unusual traffic on ports 443 and 10443"
+    ],
+    "why_this_is_serious": "This is a CVSS 10.0 maximum-severity vulnerability that has been actively exploited by a Chinese state-sponsored group for nearly two years without detection. The hardcoded credentials make exploitation trivial - no exploit development or sophisticated techniques are needed. Dell RecoverPoint manages disaster recovery for critical virtual machine workloads, meaning a compromised appliance gives attackers access to an organization's most important systems and their backup infrastructure. The Ghost NIC technique demonstrates an advanced capability to move laterally through VMware environments while evading forensic investigation."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "UNC6201 exploits the Tomcat Manager interface on internet-exposed RecoverPoint appliances using hardcoded credentials to deploy malicious WAR files"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1078",
+        "technique_name": "Valid Accounts",
+        "description": "Attackers authenticate using hardcoded admin credentials stored in tomcat-users.xml that ship with the product"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547.001",
+        "technique_name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+        "description": "Modifies convert_hosts.sh startup script to ensure backdoor execution on system boot"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027.002",
+        "technique_name": "Obfuscated Files or Information: Software Packing",
+        "description": "GRIMBOLT backdoor uses Native AOT compilation and UPX packing to hinder analysis and evade detection"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1090",
+        "technique_name": "Proxy",
+        "description": "Ghost NIC technique creates temporary virtual network interfaces on ESXi hosts for stealthy pivoting into internal networks, then deletes them to cover tracks"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1205",
+        "technique_name": "Traffic Signaling",
+        "description": "Single Packet Authorization (SPA) triggers on port 443 redirect traffic to port 10443 for covert C2 communication"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Focus on detecting unauthorized Tomcat Manager access, suspicious WAR file deployments, startup script modifications, and unusual VMware virtual NIC creation/deletion patterns. Monitor for SPA-style traffic redirection on RecoverPoint appliances.",
+    "log_sources": [
+      {
+        "source": "Tomcat Manager Access Logs",
+        "description": "Monitor authentication attempts and WAR file deployments via /manager/text/deploy endpoint on RecoverPoint appliances",
+        "priority": "Critical"
+      },
+      {
+        "source": "VMware ESXi Host Logs",
+        "description": "Monitor for creation and deletion of virtual network interfaces (Ghost NICs) that do not correspond to legitimate operations",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow Data",
+        "description": "Detect SPA patterns and traffic redirection from port 443 to port 10443 on RecoverPoint appliances",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Monitor modifications to /usr/local/ipcenter/scripts/convert_hosts.sh and Tomcat webapps directory",
+        "priority": "Critical"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unauthorized WAR files in Tomcat webapps directory",
+        "description": "SLAYSTYLE web shell deployed as a WAR file via Tomcat Manager text deployment endpoint",
+        "log_field": "path='/home/kos/tomcat9/webapps/*.war'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Modifications to convert_hosts.sh startup script",
+        "description": "UNC6201 modifies this script for backdoor persistence across reboots",
+        "log_field": "path='/usr/local/ipcenter/scripts/convert_hosts.sh'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Ephemeral virtual NIC creation on ESXi hosts",
+        "description": "Ghost NICs created temporarily for lateral movement then deleted to evade forensics",
+        "log_field": "event_type='VirtualNIC.Create' OR event_type='VirtualNIC.Delete'",
+        "severity": "High"
+      },
+      {
+        "indicator": "iptables rules redirecting port 443 to port 10443",
+        "description": "SPA-based traffic signaling for covert C2 channel establishment",
+        "log_field": "iptables -t nat -L | grep 10443",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch Dell RecoverPoint for Virtual Machines immediately",
+      "description": "Upgrade to version 6.0.3.1 HF1. For 5.3 SP4 P1 customers, migrate to 6.0 SP3 first, then upgrade to 6.0.3.1 HF1. Apply the Dell-provided remediation script for 6.x installations.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Audit Tomcat Manager for unauthorized deployments",
+      "description": "Check the Tomcat webapps directory for any unauthorized WAR files or web shells. Verify tomcat-users.xml credentials have been changed from defaults. Look for SLAYSTYLE web shell artifacts.",
+      "command": "ls -la /home/kos/tomcat9/webapps/ && cat /home/kos/tomcat9/tomcat-users.xml"
+    },
+    {
+      "priority": 3,
+      "action": "Verify startup script integrity",
+      "description": "Check convert_hosts.sh and other startup scripts for unauthorized modifications that may indicate BRICKSTORM or GRIMBOLT persistence.",
+      "command": "md5sum /usr/local/ipcenter/scripts/convert_hosts.sh"
+    },
+    {
+      "priority": 4,
+      "action": "Network isolate RecoverPoint appliances",
+      "description": "Place all RecoverPoint appliances in restricted management VLANs. Block all internet-facing access. Implement strict firewall rules limiting access to only authorized management stations.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Scan VMware environment for Ghost NICs",
+      "description": "Use VMware tools to enumerate all virtual network interfaces across ESXi hosts. Investigate any unexpected or recently created/deleted NICs that could indicate lateral movement.",
+      "command": null
+    }
+  ]
+}

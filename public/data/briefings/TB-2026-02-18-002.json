@@ -1,0 +1,259 @@
+{
+  "briefing_id": "TB-2026-02-18-002",
+  "title": "Critical VSCode Extension Supply Chain Vulnerabilities Expose 128 Million Developer Installations to File Theft, Remote Code Execution, and Credential Exfiltration (CVE-2025-65717, CVE-2025-65715, CVE-2025-65716)",
+  "generated_date": "2026-02-18",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.1,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2025-65717",
+    "CVE-2025-65715",
+    "CVE-2025-65716"
+  ],
+  "tags": [
+    "vscode",
+    "supply-chain",
+    "developer-tools",
+    "ide",
+    "rce",
+    "file-exfiltration"
+  ],
+  "affected_products": [
+    "Visual Studio Code Live Server extension (72 million downloads, unpatched)",
+    "Visual Studio Code Code Runner extension (37 million downloads, unpatched)",
+    "Visual Studio Code Markdown Preview Enhanced extension (8.5 million downloads, unpatched)",
+    "Visual Studio Code Microsoft Live Preview extension (11 million downloads, patched in v0.4.16)"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "OX Security - Four Vulnerabilities Expose a Massive Security Blind Spot in IDE Extensions",
+      "url": "https://www.ox.security/blog/four-vulnerabilities-expose-a-massive-security-blind-spot-in-ide-extensions",
+      "date": "2026-02-16",
+      "type": "Research"
+    },
+    {
+      "name": "OX Security - CVE-2025-65717: Live Server VS Code Extension Vulnerability",
+      "url": "https://www.ox.security/blog/cve-2025-65717-live-server-vscode-vulnerability",
+      "date": "2026-02-16",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2025-65717",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-65717",
+      "date": "2026-02-16",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2025-65715",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-65715",
+      "date": "2026-02-16",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2025-65716",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-65716",
+      "date": "2026-02-16",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer - Flaws in popular VSCode extensions expose developers to attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/flaws-in-popular-vscode-extensions-expose-developers-to-attacks/",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - Critical Flaws Found in Four VS Code Extensions with Over 125 Million Installs",
+      "url": "https://thehackernews.com/2026/02/critical-flaws-found-in-four-vs-code.html",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online - Flaws in four popular VS Code extensions left 128 million installs open to attack",
+      "url": "https://www.csoonline.com/article/4133800/flaws-in-four-popular-vs-code-extensions-left-128-million-installs-open-to-attack.html",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "InfoWorld - Flaws in four popular VS Code extensions left 128 million installs open to attack",
+      "url": "https://www.infoworld.com/article/4133804/flaws-in-four-popular-vs-code-extensions-left-128-million-installs-open-to-attack-2.html",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "IT Pro - Millions of developers could be impacted by flaws in Visual Studio Code extensions",
+      "url": "https://www.itpro.com/security/millions-of-developers-could-be-impacted-by-flaws-in-visual-studio-code-extensions-heres-what-you-need-to-know-and-how-to-protect-yourself",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "Wiz Blog - Supply Chain Risk in VSCode Extension Marketplaces",
+      "url": "https://www.wiz.io/blog/supply-chain-risk-in-vscode-extension-marketplaces",
+      "date": "2026-02-17",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-06-01",
+      "event": "OX Security researchers discover vulnerabilities in four popular VSCode extensions and begin vendor notification"
+    },
+    {
+      "date": "2025-08-07",
+      "event": "Microsoft contacted about Live Preview XSS vulnerability; initially rates it as low severity"
+    },
+    {
+      "date": "2025-09-11",
+      "event": "Microsoft silently patches Live Preview in version 0.4.16 without notifying OX Security researchers"
+    },
+    {
+      "date": "2026-02-16",
+      "event": "Three CVEs (CVE-2025-65717, CVE-2025-65715, CVE-2025-65716) formally assigned and published after maintainers fail to respond"
+    },
+    {
+      "date": "2026-02-17",
+      "event": "OX Security publishes full research disclosure; major security media begins coverage"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers at OX Security discovered critical vulnerabilities in four of the most popular Visual Studio Code extensions, which together have been downloaded over 128 million times. These extensions - Live Server, Code Runner, Markdown Preview Enhanced, and Microsoft Live Preview - are everyday tools used by developers worldwide. The flaws allow attackers to steal files from a developer's computer, execute malicious code remotely, and exfiltrate sensitive credentials like API keys and database passwords. Despite OX Security trying to report these issues since June 2025, three of the four extension maintainers never responded, leaving the vulnerabilities unpatched for millions of users.",
+    "who_is_affected": "Any developer or organization using Visual Studio Code with the affected extensions: Live Server (72 million downloads), Code Runner (37 million downloads), Markdown Preview Enhanced (8.5 million downloads), or Microsoft Live Preview (11 million downloads, patched). This impacts software development teams across all industries, as these are among the most widely installed VSCode extensions globally. Developer workstations typically contain API keys, cloud credentials, SSH keys, and access to production systems, making them high-value targets.",
+    "what_attackers_do": "Step 1: For Live Server (CVE-2025-65717), the attacker sends a malicious link to a developer. While the developer has Live Server running in the background, the attacker's webpage uses JavaScript to crawl the localhost:5500 development server and exfiltrate local files to an attacker-controlled domain. Step 2: For Code Runner (CVE-2025-65715), the attacker tricks a developer into modifying their settings.json configuration file through phishing or a compromised extension, injecting a crafted entry that triggers arbitrary code execution including reverse shells. Step 3: For Markdown Preview Enhanced (CVE-2025-65716), the attacker sends a crafted Markdown file that, when opened and previewed, executes embedded JavaScript to enumerate local network ports and exfiltrate credentials to an external server. Step 4: The attacker harvests API keys, cloud credentials (AWS, Azure, GCP), database connection strings, and SSH keys from the compromised developer workstation. Step 5: Using the stolen credentials, the attacker performs lateral movement into the organization's cloud infrastructure, CI/CD pipelines, and production systems.",
+    "what_you_should_do": [
+      "Immediately disable or uninstall Live Server, Code Runner, and Markdown Preview Enhanced extensions until patches are released",
+      "Update Microsoft Live Preview to version 0.4.16 or later which contains the security fix",
+      "Audit developer workstations for signs of credential theft; rotate API keys, cloud credentials, and SSH keys as a precaution",
+      "Implement local firewall rules on developer machines to restrict inbound and outbound connections from localhost development servers",
+      "Establish an organizational policy requiring security review of VSCode extensions before installation"
+    ],
+    "why_this_is_serious": "Developer workstations are the weakest link in an organization's supply chain security. They routinely hold API keys, cloud credentials, database connection strings, and SSH keys, with successful exfiltration potentially giving attackers access to an organization's entire infrastructure. With 128 million combined downloads, these extensions represent one of the largest attack surfaces in the developer tool ecosystem. Three of the four vulnerabilities remain unpatched because maintainers have not responded to responsible disclosure attempts since June 2025. A single compromised developer machine can lead to full organizational breach through stolen production credentials."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.002",
+        "technique_name": "Phishing: Spearphishing Link",
+        "description": "Attacker sends malicious links to developers; when visited while Live Server is running, JavaScript on the page crawls the localhost development server to steal files"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1204.001",
+        "technique_name": "User Execution: Malicious Link",
+        "description": "Developer clicks a malicious link or opens a crafted Markdown file, triggering JavaScript execution in the extension's context"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Code Runner vulnerability allows arbitrary command execution through manipulated settings.json configuration, including reverse shell deployment"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Attackers collect local files, configuration files, and credentials from the developer's workstation via the localhost server exposure"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "API keys, cloud credentials, SSH keys, and database connection strings are exfiltrated from developer workstations"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Stolen files and credentials are transmitted to attacker-controlled domains via the malicious JavaScript running in the extension context"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor developer workstations for unusual network connections from localhost development servers, unexpected modifications to VSCode settings.json files, and credential access patterns that may indicate exfiltration through vulnerable extensions.",
+    "log_sources": [
+      {
+        "source": "Endpoint Network Monitoring",
+        "description": "Monitor outbound connections from developer machines, especially from Node.js processes serving on localhost ports (5500 for Live Server)",
+        "priority": "Critical"
+      },
+      {
+        "source": "VSCode Extension Inventory",
+        "description": "Audit installed extensions across all developer workstations; flag installations of affected extensions and their versions",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Monitor changes to VSCode settings.json and workspace configuration files that may indicate Code Runner exploitation",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Credential Access Logs",
+        "description": "Monitor for unusual API key or credential usage patterns that may indicate stolen developer credentials being used from unexpected locations",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unexpected outbound connections from localhost:5500",
+        "description": "Live Server's local HTTP server being accessed by external web pages, with data being sent to external domains",
+        "log_field": "src_port=5500 AND dst_ip NOT IN (127.0.0.1, ::1)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Modifications to VSCode settings.json with code execution entries",
+        "description": "Code Runner exploitation requires injecting crafted entries into the global configuration file",
+        "log_field": "path='*/.vscode/settings.json' OR path='*/Code/User/settings.json'",
+        "severity": "High"
+      },
+      {
+        "indicator": "JavaScript execution in Markdown preview context",
+        "description": "Markdown Preview Enhanced executing embedded JavaScript during file preview, potentially performing port enumeration",
+        "log_field": "process_name='electron' AND network_connection='localhost' AND parent='markdown-preview'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Bulk file access from VSCode extension processes",
+        "description": "Extension processes reading large numbers of files or accessing credential files (.env, .aws/credentials, SSH keys)",
+        "log_field": "process_name='node' AND file_path LIKE '%.env%' OR file_path LIKE '%credentials%'",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Disable or uninstall vulnerable VSCode extensions",
+      "description": "Immediately disable Live Server, Code Runner, and Markdown Preview Enhanced extensions on all developer workstations. These three extensions remain unpatched. Update Microsoft Live Preview to version 0.4.16 or later.",
+      "command": "code --uninstall-extension ritwickdey.LiveServer && code --uninstall-extension formulahendry.code-runner && code --uninstall-extension shd101wyy.markdown-preview-enhanced"
+    },
+    {
+      "priority": 2,
+      "action": "Rotate developer credentials",
+      "description": "As a precaution, rotate all API keys, cloud credentials (AWS, Azure, GCP), SSH keys, and database connection strings that may have been accessible on developer workstations.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Implement local firewall rules on developer machines",
+      "description": "Restrict inbound and outbound connections from localhost development servers. Block external access to port 5500 and other common development server ports.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit VSCode extension inventory across the organization",
+      "description": "Inventory all installed VSCode extensions on developer machines. Establish a policy requiring security review before extension installation. Consider using an extension allowlist.",
+      "command": "code --list-extensions --show-versions"
+    },
+    {
+      "priority": 5,
+      "action": "Monitor for credential abuse",
+      "description": "Enable enhanced monitoring on cloud provider consoles and CI/CD pipelines for unusual API key usage, unexpected geographic access patterns, or bulk resource enumeration from developer credentials.",
+      "command": null
+    }
+  ]
+}
