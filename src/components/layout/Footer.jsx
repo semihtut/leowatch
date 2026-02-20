@@ -1,4 +1,4 @@
-import { Heart } from 'lucide-react';
+import { Heart, Rss } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,6 +12,17 @@ export default function Footer() {
           <span>for the security community</span>
         </div>
         <div className="flex items-center gap-4">
+          <a
+            href="/feed.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-orange-400 hover:text-orange-300 transition-colors"
+            title="RSS Feed"
+          >
+            <Rss className="w-4 h-4" />
+            <span>RSS</span>
+          </a>
+          <span className="hidden md:inline">|</span>
           <span>&copy; {currentYear} Intelleo</span>
           <span className="hidden md:inline">|</span>
           <span className="text-[var(--text-secondary)]">100% Free & Open</span>

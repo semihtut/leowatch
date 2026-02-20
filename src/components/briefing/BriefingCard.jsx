@@ -3,16 +3,15 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Heart } from 'lucide-react';
 import SeverityBadge from './SeverityBadge';
 import { useFavorites } from '../../hooks/useFavorites';
+import { getRelativeTime, getFullDate } from '../../utils/relativeTime';
 
 export default function BriefingCard({ briefing, index = 0, showFavorite = true }) {
   const { id, title, severity, date, tags = [], sourcesCount, excerpt, cves = [] } = briefing;
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorited = isFavorite(id);
 
-  const formattedDate = new Date(date).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-  });
+  const relativeTime = getRelativeTime(date);
+  const fullDate = getFullDate(date);
 
   const handleFavoriteClick = (e) => {
     e.preventDefault();
@@ -46,7 +45,7 @@ export default function BriefingCard({ briefing, index = 0, showFavorite = true 
           {/* Header */}
           <div className="flex justify-between items-start mb-3 pr-10">
             <SeverityBadge level={severity} />
-            <span className="text-[var(--text-muted)] text-sm">{formattedDate}</span>
+            <span className="text-[var(--text-muted)] text-sm" title={fullDate}>{relativeTime}</span>
           </div>
 
           {/* Title */}

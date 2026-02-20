@@ -10,15 +10,18 @@
     "preview": "vite preview",
     "add-briefing": "node scripts/add-briefing.cjs",
     "add-briefing:paste": "node scripts/add-briefing.cjs --paste",
-    "add-briefing:auto": "node scripts/add-briefing.cjs --no-git --overwrite"
+    "add-briefing:auto": "node scripts/add-briefing.cjs --no-git --overwrite",
+    "generate-rss": "node scripts/generate-rss.cjs"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.3.2",
     "framer-motion": "^12.28.1",
+    "fuse.js": "^7.1.0",
     "lucide-react": "^0.562.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.12.0"
+    "react-router-dom": "^7.12.0",
+    "recharts": "^3.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

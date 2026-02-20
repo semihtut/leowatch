@@ -6,13 +6,21 @@ import DailySummary from '../components/dashboard/DailySummary';
 import SeverityStats from '../components/dashboard/SeverityStats';
 import InsightsRow from '../components/dashboard/InsightsRow';
 import FeaturedThreat from '../components/dashboard/FeaturedThreat';
+import TrendChart from '../components/dashboard/TrendChart';
 import BriefingGrid from '../components/briefing/BriefingGrid';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export default function Dashboard() {
   const { briefings, loading, error, indexData } = useBriefings();
   const { t, language } = useLanguage();
-  const [selectedSeverity, setSelectedSeverity] = useState('');
+  const [selectedSeverities, setSelectedSeverities] = useState([]);
   const [activeTab, setActiveTab] = useState('all'); // 'all' | 'today'
+
+  useDocumentMeta({
+    title: 'Dashboard',
+    description: 'Daily cybersecurity threat intelligence dashboard with severity stats, trends, and featured threats.',
+    path: '/',
+  });
 
   // Get today's date
   const today = new Date().toISOString().split('T')[0];
@@ -83,11 +91,11 @@ export default function Dashboard() {
       // Exclude featured briefing from the grid
       if (featuredBriefing && b.id === featuredBriefing.id) return false;
 
-      const matchesSeverity = !selectedSeverity || b.severity === selectedSeverity;
+      const matchesSeverity = selectedSeverities.length === 0 || selectedSeverities.includes(b.severity);
 
       return matchesSeverity;
     });
-  }, [sortedBriefings, todayAddedBriefings, activeTab, featuredBriefing, selectedSeverity]);
+  }, [sortedBriefings, todayAddedBriefings, activeTab, featuredBriefing, selectedSeverities]);
 
   if (loading) {
     return (
@@ -113,14 +121,23 @@ export default function Dashboard() {
       {/* 2. Severity Stats Row - Clickable */}
       <SeverityStats
         stats={stats}
-        selectedSeverity={selectedSeverity}
-        onSeverityClick={setSelectedSeverity}
+        selectedSeverities={selectedSeverities}
+        onSeverityClick={(severity) => {
+          setSelectedSeverities(prev =>
+            prev.includes(severity)
+              ? prev.filter(s => s !== severity)
+              : [...prev, severity]
+          );
+        }}
       />
 
       {/* 3. Insights Row */}
       <InsightsRow stats={stats} topTags={topTags} />
 
-      {/* 4. Featured Threat */}
+      {/* 4. Threat Trend Chart */}
+      <TrendChart briefings={sortedBriefings} />
+
+      {/* 5. Featured Threat */}
       {featuredBriefing && (
         <FeaturedThreat briefing={featuredBriefing} />
       )}
@@ -135,7 +152,7 @@ export default function Dashboard() {
         <div className="flex items-center gap-4 mb-6">
           <div className="flex bg-[var(--glass-bg)] rounded-lg p-1 border border-[var(--glass-border)]">
             <button
-              onClick={() => { setActiveTab('all'); setSelectedSeverity(''); }}
+              onClick={() => { setActiveTab('all'); setSelectedSeverities([]); }}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                 activeTab === 'all'
                   ? 'bg-pink-500/20 text-pink-400 border border-pink-500/30'
@@ -145,7 +162,7 @@ export default function Dashboard() {
               {language === 'fi' ? 'Kaikki' : 'All Briefings'}
             </button>
             <button
-              onClick={() => { setActiveTab('today'); setSelectedSeverity(''); }}
+              onClick={() => { setActiveTab('today'); setSelectedSeverities([]); }}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${
                 activeTab === 'today'
                   ? 'bg-pink-500/20 text-pink-400 border border-pink-500/30'
@@ -161,20 +178,20 @@ export default function Dashboard() {
             </button>
           </div>
 
-          {selectedSeverity && (
+          {selectedSeverities.length > 0 && (
             <button
-              onClick={() => setSelectedSeverity('')}
+              onClick={() => setSelectedSeverities([])}
               className="text-sm text-pink-400 hover:text-pink-300 transition-colors"
             >
-              Clear filter: {selectedSeverity}
+              Clear filters: {selectedSeverities.join(', ')}
             </button>
           )}
         </div>
 
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-bold text-[var(--text-primary)]">
-            {selectedSeverity
-              ? `${selectedSeverity} Briefings`
+            {selectedSeverities.length > 0
+              ? `${selectedSeverities.join(' & ')} Briefings`
               : activeTab === 'today'
                 ? (language === 'fi' ? 'Tänään lisätyt' : "Added Today")
                 : (language === 'fi' ? 'Kaikki tiedotteet' : "All Briefings")}
@@ -186,7 +203,7 @@ export default function Dashboard() {
         ) : (
           <div className="glass-card p-12 text-center">
             <p className="text-[var(--text-muted)]">
-              {selectedSeverity
+              {selectedSeverities.length > 0
                 ? t('dashboard.noMatch')
                 : activeTab === 'today'
                   ? (language === 'fi' ? 'Ei tänään lisättyjä tiedotteita' : 'No briefings added today')

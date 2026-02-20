@@ -9,7 +9,7 @@ export default function Layout() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] transition-colors duration-300">
       {/* Sidebar - Desktop (fixed) */}
-      <div className="hidden lg:block fixed inset-y-0 left-0 w-64 z-50">
+      <div className="hidden lg:block fixed inset-y-0 left-0 w-64 z-50 no-print">
         <div className="h-full glass-sidebar">
           <Sidebar />
         </div>
@@ -37,7 +37,7 @@ export default function Layout() {
       {/* Main Content - offset by sidebar width on desktop */}
       <div className="lg:pl-64">
         {/* Mobile Header */}
-        <header className="lg:hidden sticky top-0 z-30 glass-card rounded-none border-x-0 border-t-0">
+        <header className="lg:hidden sticky top-0 z-30 glass-card rounded-none border-x-0 border-t-0 no-print">
           <div className="px-4 py-3 flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(true)}

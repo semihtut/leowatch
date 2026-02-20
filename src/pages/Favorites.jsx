@@ -4,11 +4,18 @@ import { useBriefings } from '../hooks/useBriefings';
 import { useFavorites } from '../hooks/useFavorites';
 import BriefingCard from '../components/briefing/BriefingCard';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 export default function Favorites() {
   const { briefings, loading, error } = useBriefings();
   const { favorites, clearFavorites, favoritesCount } = useFavorites();
   const { t } = useLanguage();
+
+  useDocumentMeta({
+    title: 'Favorites',
+    description: 'Your saved threat intelligence briefings for quick access.',
+    path: '/favorites',
+  });
 
   const favoriteBriefings = useMemo(() => {
     return briefings.filter((briefing) => favorites.includes(briefing.id));

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, Tag, Zap, Info } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import useCountUp from '../../hooks/useCountUp';
 
 function Tooltip({ children, text }) {
   const [show, setShow] = useState(false);
@@ -26,6 +27,11 @@ function Tooltip({ children, text }) {
       )}
     </div>
   );
+}
+
+function AnimatedNumber({ value, className }) {
+  const animated = useCountUp(value);
+  return <span className={className}>{animated}</span>;
 }
 
 export default function InsightsRow({ stats = {}, topTags = [] }) {
@@ -73,7 +79,7 @@ export default function InsightsRow({ stats = {}, topTags = [] }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 + index * 0.1 }}
-          className={`glass-card p-4 flex items-center gap-4 ${insight.bg}`}
+          className={`glass-card p-4 flex items-center gap-4 ${insight.bg} hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20 transition-all duration-200`}
         >
           <div className={`p-3 rounded-lg ${insight.bg}`}>
             <insight.icon className={`w-6 h-6 ${insight.color}`} />
@@ -93,9 +99,7 @@ export default function InsightsRow({ stats = {}, topTags = [] }) {
               </div>
             ) : (
               <div className="flex items-baseline gap-2">
-                <span className={`text-2xl font-bold ${insight.color}`}>
-                  {insight.value}
-                </span>
+                <AnimatedNumber value={insight.value} className={`text-2xl font-bold ${insight.color}`} />
                 <span className="text-sm text-[var(--text-secondary)]">
                   {insight.suffix}
                 </span>

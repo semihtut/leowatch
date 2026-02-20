@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Activity, FileText, AlertTriangle, Calendar,
 import { useBriefings } from '../hooks/useBriefings';
 import SeverityBadge from '../components/briefing/SeverityBadge';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTHS = [
@@ -24,6 +25,12 @@ export default function ThreatPulse() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedSeverity, setSelectedSeverity] = useState(null);
   const { t, language } = useLanguage();
+
+  useDocumentMeta({
+    title: 'Threat Pulse',
+    description: 'Calendar view of cybersecurity threat briefings. Track daily threat activity and severity trends.',
+    path: '/pulse',
+  });
 
   // Filter briefings by severity first
   const filteredBriefings = useMemo(() => {

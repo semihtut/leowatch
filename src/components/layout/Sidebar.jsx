@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Archive, Info, Coffee, Shield, Activity, Heart, X } from 'lucide-react';
+import { LayoutDashboard, Archive, Info, Coffee, Shield, Activity, Heart, Rss, X } from 'lucide-react';
 import ThemeToggle from '../ui/ThemeToggle';
 import LanguageToggle from '../ui/LanguageToggle';
 import { useFavorites } from '../../hooks/useFavorites';
@@ -15,6 +15,7 @@ export default function Sidebar({ onClose }) {
     { name: t('nav.favorites'), href: '/favorites', icon: Heart },
     { name: t('nav.archive'), href: '/archive', icon: Archive },
     { name: t('nav.buyMeCoffee'), href: 'https://ko-fi.com/leopark', icon: Coffee, external: true },
+    { name: 'RSS Feed', href: '/feed.xml', icon: Rss, external: true },
   ];
 
   return (

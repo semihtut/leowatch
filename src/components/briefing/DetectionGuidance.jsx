@@ -1,8 +1,11 @@
 import { Search, Database, Eye, AlertCircle } from 'lucide-react';
 import SeverityBadge from './SeverityBadge';
+import CopyButton from '../ui/CopyButton';
 
 export default function DetectionGuidance({ guidance }) {
   if (!guidance) return null;
+
+  const allIpsText = guidance.known_malicious_ips?.join('\n') || '';
 
   return (
     <div className="space-y-6">
@@ -14,7 +17,10 @@ export default function DetectionGuidance({ guidance }) {
       {/* Summary */}
       {guidance.summary && (
         <div className="glass-card p-4 border-blue-500/20">
-          <p className="text-[var(--text-secondary)]">{guidance.summary}</p>
+          <div className="flex items-start justify-between gap-2">
+            <p className="text-[var(--text-secondary)] flex-1">{guidance.summary}</p>
+            <CopyButton text={guidance.summary} className="shrink-0 mt-0.5" />
+          </div>
         </div>
       )}
 
@@ -64,9 +70,14 @@ export default function DetectionGuidance({ guidance }) {
                   </div>
                   <p className="text-sm text-[var(--text-secondary)]">{item.description}</p>
                   {item.log_field && (
-                    <code className="block text-xs bg-[var(--bg-secondary)] text-cyan-400 p-2 rounded font-mono overflow-x-auto">
-                      {item.log_field}
-                    </code>
+                    <div className="relative group">
+                      <code className="block text-xs bg-[var(--bg-secondary)] text-cyan-400 p-2 pr-16 rounded font-mono overflow-x-auto">
+                        {item.log_field}
+                      </code>
+                      <div className="absolute top-1.5 right-1.5">
+                        <CopyButton text={item.log_field} />
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
@@ -78,19 +89,22 @@ export default function DetectionGuidance({ guidance }) {
       {/* Known Malicious IPs */}
       {guidance.known_malicious_ips && guidance.known_malicious_ips.length > 0 && (
         <div>
-          <h3 className="text-lg font-medium text-[var(--text-primary)] mb-3 flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 text-red-500" />
-            Known Malicious IPs
-          </h3>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-lg font-medium text-[var(--text-primary)] flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 text-red-500" />
+              Known Malicious IPs
+            </h3>
+            <CopyButton text={allIpsText} label="Copy All" />
+          </div>
           <div className="glass-card p-4">
             <div className="flex flex-wrap gap-2">
               {guidance.known_malicious_ips.map((ip) => (
-                <code
-                  key={ip}
-                  className="px-2 py-1 text-sm bg-red-500/10 text-red-400 rounded font-mono"
-                >
-                  {ip}
-                </code>
+                <div key={ip} className="group inline-flex items-center gap-1">
+                  <code className="px-2 py-1 text-sm bg-red-500/10 text-red-400 rounded font-mono">
+                    {ip}
+                  </code>
+                  <CopyButton text={ip} className="opacity-0 group-hover:opacity-100" />
+                </div>
               ))}
             </div>
           </div>

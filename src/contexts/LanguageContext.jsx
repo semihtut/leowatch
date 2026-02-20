@@ -38,12 +38,15 @@ const translations = {
     archive: {
       title: 'Briefing Archive',
       subtitle: 'Browse all security briefings',
-      searchPlaceholder: 'Search by title, tag, or CVE...',
+      searchPlaceholder: 'Fuzzy search across titles, tags, CVEs, summaries...',
       allSeverities: 'All Severities',
       showing: 'Showing',
       of: 'of',
       briefings: 'briefings',
       noMatch: 'No briefings match your filters.',
+      tags: 'Tags',
+      clearAll: 'Clear All',
+      activeFilters: 'Active Filters',
     },
     favorites: {
       title: 'Favorites',
@@ -96,12 +99,15 @@ const translations = {
     archive: {
       title: 'Tiedotearkisto',
       subtitle: 'Selaa kaikkia tietoturvatiedotteita',
-      searchPlaceholder: 'Hae otsikon, tagin tai CVE:n mukaan...',
+      searchPlaceholder: 'Sumea haku otsikoista, tageista, CVE:istä, tiivistelmistä...',
       allSeverities: 'Kaikki vakavuudet',
       showing: 'Näytetään',
       of: '/',
       briefings: 'tiedotetta',
       noMatch: 'Ei hakua vastaavia tiedotteita.',
+      tags: 'Tagit',
+      clearAll: 'Tyhjennä kaikki',
+      activeFilters: 'Aktiiviset suodattimet',
     },
     favorites: {
       title: 'Suosikit',

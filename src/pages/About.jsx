@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Shield, Coffee, Check, AlertTriangle, Users, Zap, Heart } from 'lucide-react';
 import Card from '../components/ui/Card';
 import GradientBorder from '../components/ui/GradientBorder';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 const features = [
   {
@@ -27,6 +28,12 @@ const features = [
 ];
 
 export default function About() {
+  useDocumentMeta({
+    title: 'About',
+    description: 'Intelleo provides free, daily cybersecurity threat intelligence briefings in simple English for the security community.',
+    path: '/about',
+  });
+
   return (
     <div className="max-w-3xl mx-auto space-y-12">
       {/* Hero */}

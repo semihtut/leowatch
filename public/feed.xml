@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intelleo - Security Intelligence</title>
+    <link>https://intelleo.net</link>
+    <description>Daily cybersecurity threat intelligence briefings in simple English. Free, accessible, and actionable security insights.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Feb 2026 15:35:08 GMT</lastBuildDate>
+    <atom:link href="https://intelleo.net/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://intelleo.net/shield.svg</url>
+      <title>Intelleo - Security Intelligence</title>
+      <link>https://intelleo.net</link>
+    </image>
+    <item>
+      <title>Keenadu Android Firmware Backdoor: Supply Chain Compromise Embeds Multi-Stage Loader in Tablet Firmware via Signed OTA Updates, Enabling Full Remote Device Control Across 13,000+ Devices Worldwide</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-18-003</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-18-003</guid>
+      <description>Kaspersky security researchers discovered a sophisticated Android malware called Keenadu that was embedded directly into the firmware of tablets made by multiple manufacturers, including Alldocube. Th...</description>
+      <pubDate>Wed, 18 Feb 2026 12:00:00 GMT</pubDate>
+      <category>android</category>
+      <category>firmware-backdoor</category>
+      <category>supply-chain</category>
+      <category>mobile</category>
+      <category>keenadu</category>
+      <category>botnet</category>
+      <category>severity:High</category>
+    </item>
+    <item>
+      <title>Critical VSCode Extension Supply Chain Vulnerabilities Expose 128 Million Developer Installations to File Theft, Remote Code Execution, and Credential Exfiltration (CVE-2025-65717, CVE-2025-65715, CVE-2025-65716)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-18-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-18-002</guid>
+      <description>Security researchers at OX Security discovered critical vulnerabilities in four of the most popular Visual Studio Code extensions, which together have been downloaded over 128 million times. These ext...</description>
+      <pubDate>Wed, 18 Feb 2026 12:00:00 GMT</pubDate>
+      <category>vscode</category>
+      <category>supply-chain</category>
+      <category>developer-tools</category>
+      <category>ide</category>
+      <category>rce</category>
+      <category>file-exfiltration</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Dell RecoverPoint for Virtual Machines CVSS 10.0 Zero-Day: China-Nexus UNC6201 Exploits Hardcoded Tomcat Credentials Since Mid-2024 to Deploy BRICKSTORM and GRIMBOLT Backdoors (CVE-2026-22769)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-18-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-18-001</guid>
+      <description>A maximum-severity vulnerability was discovered in Dell RecoverPoint for Virtual Machines, the enterprise disaster recovery platform used to protect and replicate virtual machine workloads. The flaw i...</description>
+      <pubDate>Wed, 18 Feb 2026 12:00:00 GMT</pubDate>
+      <category>dell</category>
+      <category>recoverpoint</category>
+      <category>zero-day</category>
+      <category>china-apt</category>
+      <category>hardcoded-credentials</category>
+      <category>vmware</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>BQTLock and GREENBLOOD: Emerging Ransomware Families Combine Stealth Process Injection, Rapid ChaCha8 Encryption, and TOR-Based Extortion for Maximum Business Disruption</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-17-003</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-17-003</guid>
+      <description>Two new ransomware families have emerged in February 2026, each designed to cause maximum damage in minimum time. BQTLock is a stealth-focused ransomware that hides inside Windows system processes to ...</description>
+      <pubDate>Tue, 17 Feb 2026 12:00:00 GMT</pubDate>
+      <category>ransomware</category>
+      <category>bqtlock</category>
+      <category>greenblood</category>
+      <category>remcos</category>
+      <category>uac-bypass</category>
+      <category>chacha8</category>
+      <category>severity:High</category>
+    </item>
+    <item>
+      <title>Google Chrome First Zero-Day of 2026: CSS Use-After-Free Vulnerability Under Active Exploitation Enables In-Sandbox Code Execution (CVE-2026-2441)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-17-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-17-002</guid>
+      <description>A critical zero-day vulnerability was discovered in Google Chrome&apos;s CSS rendering engine. The flaw is a use-after-free bug, where Chrome accidentally uses memory that has already been freed, allowing ...</description>
+      <pubDate>Tue, 17 Feb 2026 12:00:00 GMT</pubDate>
+      <category>google-chrome</category>
+      <category>zero-day</category>
+      <category>use-after-free</category>
+      <category>css</category>
+      <category>browser</category>
+      <category>rce</category>
+      <category>severity:High</category>
+    </item>
+    <item>
+      <title>Apple dyld Zero-Day Memory Corruption: Extremely Sophisticated Targeted Attacks Exploit CVE-2026-20700 Across All Apple Platforms (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-17-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-17-001</guid>
+      <description>A critical zero-day vulnerability was discovered in Apple&apos;s dyld component, which is the Dynamic Link Editor responsible for loading software libraries on every Apple device. The flaw allows attackers...</description>
+      <pubDate>Tue, 17 Feb 2026 12:00:00 GMT</pubDate>
+      <category>apple</category>
+      <category>zero-day</category>
+      <category>dyld</category>
+      <category>ios</category>
+      <category>macos</category>
+      <category>memory-corruption</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Fortinet FortiClientEMS Unauthenticated SQL Injection to RCE: Public PoC Targets Enterprise Endpoint Management with xp_cmdshell Exploitation Chain (CVE-2026-21643)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-12-004</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-12-004</guid>
+      <description>A critical SQL injection vulnerability was discovered in Fortinet FortiClientEMS, the enterprise platform used to centrally manage FortiClient endpoint security agents across organizations. The flaw a...</description>
+      <pubDate>Thu, 12 Feb 2026 12:00:00 GMT</pubDate>
+      <category>fortinet</category>
+      <category>forticlient-ems</category>
+      <category>sql-injection</category>
+      <category>rce</category>
+      <category>endpoint-management</category>
+      <category>enterprise</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>GNU InetUtils telnetd 11-Year Authentication Bypass: Trivial Root Shell via USER Environment Variable Under Mass Exploitation by rwxrwx Group (CVE-2026-24061, CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-12-003</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-12-003</guid>
+      <description>An 11-year-old vulnerability was discovered in the GNU InetUtils telnetd service, which is the standard Telnet server on many Linux and Unix systems. The flaw is incredibly simple: an attacker can sen...</description>
+      <pubDate>Thu, 12 Feb 2026 12:00:00 GMT</pubDate>
+      <category>telnet</category>
+      <category>authentication-bypass</category>
+      <category>gnu-inetutils</category>
+      <category>cisa-kev</category>
+      <category>active-exploitation</category>
+      <category>linux</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>WatchGuard Firebox IKEv2 VPN Zero-Day: Unauthenticated Out-of-Bounds Write Enables Root RCE on 125,000+ Firewalls (CVE-2025-14733, CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-12-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-12-002</guid>
+      <description>A critical zero-day vulnerability was found in WatchGuard Firebox firewalls that allows attackers to take complete control of the device remotely without any login credentials. The flaw is in the IKEv...</description>
+      <pubDate>Thu, 12 Feb 2026 12:00:00 GMT</pubDate>
+      <category>watchguard</category>
+      <category>firewall</category>
+      <category>vpn</category>
+      <category>ikev2</category>
+      <category>zero-day</category>
+      <category>cisa-kev</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Microsoft February 2026 Patch Tuesday: Six Actively Exploited Zero-Days Across Windows Shell, MSHTML, Office, DWM, and Remote Desktop Services (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-12-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-12-001</guid>
+      <description>Microsoft released its February 2026 security update fixing 58 vulnerabilities, including 6 zero-day flaws that hackers were already actively exploiting before the patch was available. Three of these ...</description>
+      <pubDate>Thu, 12 Feb 2026 12:00:00 GMT</pubDate>
+      <category>Microsoft</category>
+      <category>zero-day</category>
+      <category>patch-tuesday</category>
+      <category>cisa-kev</category>
+      <category>active-exploitation</category>
+      <category>windows</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Sangoma FreePBX EncystPHP Webshell Campaign: INJ3CTOR3 Threat Actor Deploys Multi-Stage VoIP Infrastructure Backdoor via CISA KEV Vulnerabilities (CVE-2025-64328)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-10-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-10-002</guid>
+      <description>A sophisticated threat actor group known as INJ3CTOR3, active since 2020, launched a new campaign in December 2025 targeting FreePBX VoIP phone systems used by businesses worldwide. The attackers expl...</description>
+      <pubDate>Tue, 10 Feb 2026 12:00:00 GMT</pubDate>
+      <category>freepbx</category>
+      <category>voip</category>
+      <category>webshell</category>
+      <category>cisa-kev</category>
+      <category>active-exploitation</category>
+      <category>persistence</category>
+      <category>severity:High</category>
+    </item>
+    <item>
+      <title>BeyondTrust Remote Support Pre-Auth RCE: AI-Discovered CVSS 9.9 Command Injection Exposes 11,000 Enterprise Instances (CVE-2026-1731)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-10-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-10-001</guid>
+      <description>A near-maximum severity vulnerability was discovered in BeyondTrust Remote Support and Privileged Remote Access, enterprise tools used by over 20,000 organizations including 75% of Fortune 100 compani...</description>
+      <pubDate>Tue, 10 Feb 2026 12:00:00 GMT</pubDate>
+      <category>beyondtrust</category>
+      <category>remote-support</category>
+      <category>privileged-access</category>
+      <category>pre-auth-rce</category>
+      <category>command-injection</category>
+      <category>enterprise</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>APT28 Operation Neusploit: Russian GRU Weaponizes Microsoft Office Zero-Day Within 24 Hours Against NATO-Aligned Nations (CVE-2026-21509)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-09-004</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-09-004</guid>
+      <description>Russia&apos;s APT28 (Fancy Bear / GRU Unit 26165) weaponized a Microsoft Office zero-day vulnerability within approximately 24 hours of its public disclosure and launched a concentrated espionage campaign ...</description>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 GMT</pubDate>
+      <category>apt28</category>
+      <category>fancy-bear</category>
+      <category>russia</category>
+      <category>gru</category>
+      <category>espionage</category>
+      <category>microsoft-office</category>
+      <category>severity:High</category>
+    </item>
+    <item>
+      <title>n8n Workflow Automation Sandbox Escape: Third Critical RCE in Three Months Threatens Enterprise AI Systems (CVE-2026-25049)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-09-003</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-09-003</guid>
+      <description>A critical sandbox escape vulnerability was discovered in n8n, a popular open-source workflow automation platform used by enterprises to connect AI services, databases, and business applications. CVE-...</description>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 GMT</pubDate>
+      <category>n8n</category>
+      <category>workflow-automation</category>
+      <category>sandbox-escape</category>
+      <category>rce</category>
+      <category>javascript</category>
+      <category>ai-infrastructure</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>React Native CLI Metro4Shell: Developer Tool Command Injection Under Active Exploitation (CVE-2025-11953)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-09-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-09-002</guid>
+      <description>A critical OS command injection vulnerability was discovered in the React Native CLI&apos;s Metro Development Server, a tool used by millions of mobile app developers worldwide. The flaw allows attackers o...</description>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 GMT</pubDate>
+      <category>react-native</category>
+      <category>metro</category>
+      <category>developer-tools</category>
+      <category>command-injection</category>
+      <category>cisa-kev</category>
+      <category>active-exploitation</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>SmarterMail Unauthenticated RCE via ConnectToHub API Exploited in Ransomware Attacks (CVE-2026-24423)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-09-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-09-001</guid>
+      <description>A critical unauthenticated remote code execution vulnerability was discovered in SmarterTools SmarterMail, an email server platform used by approximately 15 million users across 120 countries. The fla...</description>
+      <pubDate>Mon, 09 Feb 2026 12:00:00 GMT</pubDate>
+      <category>smartermail</category>
+      <category>email-server</category>
+      <category>rce</category>
+      <category>ransomware</category>
+      <category>cisa-kev</category>
+      <category>active-exploitation</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>vLLM Critical RCE via Video Processing Heap Overflow Threatens Millions of AI Servers (CVE-2026-22778)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-06-003</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-06-003</guid>
+      <description>A critical remote code execution vulnerability was discovered in vLLM, the most widely-deployed open-source large language model inference engine with over 3 million monthly PyPI downloads. The flaw (...</description>
+      <pubDate>Fri, 06 Feb 2026 12:00:00 GMT</pubDate>
+      <category>ai-ml</category>
+      <category>vllm</category>
+      <category>rce</category>
+      <category>heap-overflow</category>
+      <category>video-processing</category>
+      <category>supply-chain</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>SolarWinds Web Help Desk Critical Java Deserialization RCE Chain Under Active Exploitation (CVE-2025-40551)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-06-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-06-002</guid>
+      <description>Six critical and high-severity vulnerabilities were discovered in SolarWinds Web Help Desk (WHD), an IT service management platform used by approximately 300,000 organizations worldwide including gove...</description>
+      <pubDate>Fri, 06 Feb 2026 12:00:00 GMT</pubDate>
+      <category>solarwinds</category>
+      <category>deserialization</category>
+      <category>rce</category>
+      <category>cisa-kev</category>
+      <category>active-exploitation</category>
+      <category>java</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Notepad++ Supply Chain Compromise via WinGUp Updater Hijack by Lotus Blossom APT (CVE-2025-15556)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-06-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-06-001</guid>
+      <description>Chinese state-sponsored hackers from the Lotus Blossom APT group compromised the hosting infrastructure behind Notepad++, one of the world&apos;s most popular text editors with millions of users. By hijack...</description>
+      <pubDate>Fri, 06 Feb 2026 12:00:00 GMT</pubDate>
+      <category>supply-chain</category>
+      <category>apt</category>
+      <category>china</category>
+      <category>dll-sideloading</category>
+      <category>backdoor</category>
+      <category>software-update</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>WordPress Modular DS Plugin CVSS 10.0 Unauthenticated Admin Takeover: 40,000+ Sites Under Active Attack with Public PoC</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-01-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-01-002</guid>
+      <description>A maximum-severity vulnerability was discovered in the Modular DS WordPress plugin, which is installed on over 40,000 websites. The plugin is designed to let site owners and hosting providers remotely...</description>
+      <pubDate>Sun, 01 Feb 2026 12:00:00 GMT</pubDate>
+      <category>WordPress</category>
+      <category>plugin</category>
+      <category>privilege-escalation</category>
+      <category>authentication-bypass</category>
+      <category>CMS</category>
+      <category>web</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Ivanti EPMM Critical Zero-Day RCE Chain: Unauthenticated Command Injection with Public PoC and Active Webshell Deployment (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-01-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-01-001</guid>
+      <description>Two critical zero-day vulnerabilities were discovered in Ivanti Endpoint Manager Mobile (EPMM), the enterprise platform used to manage corporate mobile devices. Attackers found they could inject malic...</description>
+      <pubDate>Sun, 01 Feb 2026 12:00:00 GMT</pubDate>
+      <category>Ivanti</category>
+      <category>EPMM</category>
+      <category>zero-day</category>
+      <category>RCE</category>
+      <category>command-injection</category>
+      <category>mobile-device-management</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Google Cloud Application Integration Multi-Cloud Phishing Campaign - OAuth Consent Attacks Targeting 3,200+ Businesses</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-30-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-30-001</guid>
+      <description>Cybercriminals abuse Google Cloud Application Integration to send phishing emails from legitimate Google domains, targeting Microsoft 365 credentials and Azure AD OAuth consent...</description>
+      <pubDate>Wed, 21 Jan 2026 12:00:00 GMT</pubDate>
+      <category>phishing</category>
+      <category>Google Cloud</category>
+      <category>OAuth</category>
+      <category>Azure AD</category>
+      <category>Microsoft 365</category>
+      <category>cloud</category>
+      <category>credential-theft</category>
+      <category>severity:High</category>
+    </item>
+    <item>
+      <title>Trend Micro Apex Central Critical Unauthenticated RCE (CVE-2025-69258) - PoC Exploit Released</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-30-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-30-002</guid>
+      <description>Critical unauthenticated RCE in Trend Micro Apex Central allows SYSTEM-level code execution via DLL hijacking. PoC exploit released by Tenable Research...</description>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 GMT</pubDate>
+      <category>Trend Micro</category>
+      <category>Apex Central</category>
+      <category>DLL-hijack</category>
+      <category>RCE</category>
+      <category>endpoint-security</category>
+      <category>enterprise</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Fortinet FortiCloud SSO Zero-Day: Cross-Account Device Hijacking Under Active Exploitation (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-29-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-29-001</guid>
+      <description>A critical zero-day in FortiCloud SSO allows attackers with any FortiCloud account to access devices registered to other organizations...</description>
+      <pubDate>Wed, 28 Jan 2026 12:00:00 GMT</pubDate>
+      <category>Fortinet</category>
+      <category>FortiOS</category>
+      <category>FortiCloud</category>
+      <category>SSO</category>
+      <category>zero-day</category>
+      <category>authentication-bypass</category>
+      <category>firewall</category>
+      <category>cloud</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>SmarterMail Auth Bypass to RCE Chain: 6,000+ Servers Exposed to Automated Hijacking (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-29-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-29-002</guid>
+      <description>Two critical vulnerabilities in SmarterMail create a devastating attack chain enabling SYSTEM-level RCE from unauthenticated requests...</description>
+      <pubDate>Mon, 26 Jan 2026 12:00:00 GMT</pubDate>
+      <category>SmarterMail</category>
+      <category>email</category>
+      <category>authentication-bypass</category>
+      <category>file-upload</category>
+      <category>RCE</category>
+      <category>cloud</category>
+      <category>enterprise</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Microsoft Office Zero-Day: Emergency Patch for Actively Exploited OLE/COM Bypass (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-28-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-28-001</guid>
+      <description>Microsoft released an emergency out-of-band patch for actively exploited zero-day allowing attackers to bypass OLE security mitigations...</description>
+      <pubDate>Tue, 27 Jan 2026 12:00:00 GMT</pubDate>
+      <category>Microsoft</category>
+      <category>Office</category>
+      <category>zero-day</category>
+      <category>OLE</category>
+      <category>COM</category>
+      <category>security-bypass</category>
+      <category>enterprise</category>
+      <category>cloud</category>
+      <category>severity:High</category>
+    </item>
+    <item>
+      <title>HPE OneView CVSS 10.0 RCE: RondoDox Botnet Launches 40,000+ Attack Campaign (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-28-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-28-002</guid>
+      <description>RondoDox botnet launched over 40,000 automated attacks exploiting maximum severity HPE OneView vulnerability...</description>
+      <pubDate>Wed, 07 Jan 2026 12:00:00 GMT</pubDate>
+      <category>HPE</category>
+      <category>OneView</category>
+      <category>infrastructure-management</category>
+      <category>RCE</category>
+      <category>botnet</category>
+      <category>RondoDox</category>
+      <category>enterprise</category>
+      <category>cloud</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Cisco Unified Communications Critical Zero-Day Under Active Exploitation (CISA KEV)</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-27-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-27-001</guid>
+      <description>A critical zero-day vulnerability in Cisco Unified Communications products is being actively exploited, allowing attackers to execute arbitrary code and gain root access...</description>
+      <pubDate>Wed, 21 Jan 2026 12:00:00 GMT</pubDate>
+      <category>Cisco</category>
+      <category>unified-communications</category>
+      <category>zero-day</category>
+      <category>RCE</category>
+      <category>cloud</category>
+      <category>enterprise</category>
+      <category>voip</category>
+      <category>webex</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>FortiCloud SSO Authentication Bypass - Incomplete Patch Under Active Exploitation</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-25-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-25-001</guid>
+      <description>A critical authentication bypass in Fortinet firewalls allows attackers to access the FortiCloud management panel without credentials...</description>
+      <pubDate>Fri, 23 Jan 2026 12:00:00 GMT</pubDate>
+      <category>cloud</category>
+      <category>fortinet</category>
+      <category>firewall</category>
+      <category>sso</category>
+      <category>authentication-bypass</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>ShinyHunters SSO Vishing Campaign Targeting Cloud Identity Providers</title>
+      <link>https://intelleo.net/briefing/TB-2026-01-25-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-25-002</guid>
+      <description>The ShinyHunters extortion gang is conducting voice phishing attacks targeting employees at organizations using Okta, Microsoft Entra ID, and Google Workspace...</description>
+      <pubDate>Fri, 23 Jan 2026 12:00:00 GMT</pubDate>
+      <category>cloud</category>
+      <category>identity</category>
+      <category>okta</category>
+      <category>microsoft-entra</category>
+      <category>sso</category>
+      <category>vishing</category>
+      <category>severity:High</category>
+    </item>
+  </channel>
+</rss>

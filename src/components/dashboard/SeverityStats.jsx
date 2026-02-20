@@ -1,4 +1,5 @@
 import { useLanguage } from '../../contexts/LanguageContext';
+import useCountUp from '../../hooks/useCountUp';
 
 const severityConfig = {
   critical: {
@@ -35,7 +36,7 @@ const severityMap = {
   low: 'Low',
 };
 
-export default function SeverityStats({ stats = {}, selectedSeverity, onSeverityClick }) {
+export default function SeverityStats({ stats = {}, selectedSeverities = [], onSeverityClick }) {
   const { language } = useLanguage();
 
   // Ensure stats has default values
@@ -47,20 +48,24 @@ export default function SeverityStats({ stats = {}, selectedSeverity, onSeverity
   };
 
   const handleClick = (key) => {
-    console.log('Clicked:', key); // Debug
     const severity = severityMap[key];
-    const isCurrentlySelected = selectedSeverity === severity;
-    console.log('Calling onSeverityClick with:', isCurrentlySelected ? '' : severity); // Debug
     if (onSeverityClick) {
-      onSeverityClick(isCurrentlySelected ? '' : severity);
+      onSeverityClick(severity);
     }
   };
+
+  const criticalCount = useCountUp(safeStats.critical);
+  const highCount = useCountUp(safeStats.high);
+  const mediumCount = useCountUp(safeStats.medium);
+  const lowCount = useCountUp(safeStats.low);
+
+  const animatedValues = { critical: criticalCount, high: highCount, medium: mediumCount, low: lowCount };
+  const hasSelection = selectedSeverities.length > 0;
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {Object.entries(severityConfig).map(([key, config]) => {
-        const isSelected = selectedSeverity === severityMap[key];
-        const isAllSelected = !selectedSeverity;
+        const isSelected = selectedSeverities.includes(severityMap[key]);
 
         return (
           <button
@@ -71,12 +76,12 @@ export default function SeverityStats({ stats = {}, selectedSeverity, onSeverity
               relative p-6 rounded-xl border-2 text-left
               ${config.bg} ${config.border}
               ${isSelected ? 'ring-2 ring-offset-2 ring-offset-[var(--bg-primary)] ring-pink-500 scale-105' : ''}
-              ${!isSelected && !isAllSelected ? 'opacity-50' : ''}
-              cursor-pointer hover:scale-105 active:scale-95 transition-all
+              ${!isSelected && hasSelection ? 'opacity-40' : ''}
+              cursor-pointer hover:scale-[1.03] hover:shadow-lg hover:shadow-black/20 active:scale-95 transition-all duration-200
             `}
           >
             <div className={`text-5xl font-bold ${config.text} mb-2`}>
-              {safeStats[key]}
+              {animatedValues[key]}
             </div>
             <div className="text-sm font-medium text-[var(--text-secondary)]">
               {config.label[language]}

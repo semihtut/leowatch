@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   ArrowLeft, Calendar, AlertTriangle, Shield, ExternalLink, Heart,
-  FileText, Search, Code, BookOpen, Download
+  FileText, Search, Code, BookOpen, Download, Printer
 } from 'lucide-react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { useBriefing } from '../hooks/useBriefings';
@@ -16,6 +16,8 @@ import ImmediateActions from '../components/briefing/ImmediateActions';
 import Timeline from '../components/briefing/Timeline';
 import SourceList from '../components/briefing/SourceList';
 import BriefingPDF from '../components/briefing/BriefingPDF';
+import RelatedBriefings from '../components/briefing/RelatedBriefings';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 
 const tabs = [
   { id: 'overview', label: 'Overview', icon: FileText, color: 'pink' },
@@ -50,6 +52,16 @@ export default function BriefingPage() {
   const favorited = isFavorite(id);
   const [activeTab, setActiveTab] = useState('overview');
 
+  // Dynamic SEO meta tags
+  useDocumentMeta({
+    title: briefing ? `${briefing.title}` : 'Loading...',
+    description: briefing
+      ? `${briefing.severity?.level} severity. ${briefing.simple_summary?.what_happened?.slice(0, 150) || ''}`
+      : undefined,
+    path: `/briefing/${id}`,
+    type: 'article',
+  });
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -81,7 +93,7 @@ export default function BriefingPage() {
   return (
     <div className="max-w-5xl mx-auto space-y-6">
       {/* Top bar with back button, favorite and export */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between no-print">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
@@ -89,7 +101,15 @@ export default function BriefingPage() {
           <ArrowLeft className="w-4 h-4" />
           Back to Dashboard
         </Link>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 no-print">
+          {/* Print */}
+          <button
+            onClick={() => window.print()}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all bg-[var(--bg-card)] text-[var(--text-secondary)] hover:text-green-400 hover:bg-[var(--bg-card-hover)]"
+          >
+            <Printer className="w-5 h-5" />
+            <span className="text-sm font-medium hidden sm:inline">Print</span>
+          </button>
           {/* PDF Export */}
           <PDFDownloadLink
             document={<BriefingPDF briefing={briefing} />}
@@ -184,7 +204,7 @@ export default function BriefingPage() {
       </div>
 
       {/* Tab Navigation */}
-      <div className="glass-card p-2 border border-[var(--border-default)]">
+      <div className="glass-card p-2 border border-[var(--border-default)] no-print">
         <div className="flex flex-wrap gap-2">
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -303,6 +323,9 @@ export default function BriefingPage() {
           </div>
         )}
       </div>
+
+      {/* Related Briefings */}
+      <RelatedBriefings briefing={briefing} mitreAttack={briefing.mitre_attack} />
     </div>
   );
 }
