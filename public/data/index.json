@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-18T14:59:53.456Z",
-  "date": "2026-02-18",
+  "lastUpdated": "2026-02-20T17:50:04.850Z",
+  "date": "2026-02-20",
   "stats": {
-    "total": 44,
-    "critical": 31,
-    "high": 13,
+    "total": 48,
+    "critical": 34,
+    "high": 14,
     "medium": 0,
     "low": 0,
     "cisaKev": 22,
     "activeExploits": 15,
-    "totalSources": 493
+    "totalSources": 554
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,80 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-18-002",
+  "featuredBriefing": "TB-2026-02-20-004",
   "briefings": [
+    {
+      "id": "TB-2026-02-20-004",
+      "title": "Shadow Campaigns: State-Backed APT Group TGR-STA-1030 Conducts Massive Global Cyber Espionage Operation Targeting 155 Countries, Breaching 70+ Government and Critical Infrastructure Organizations Using ShadowGuard eBPF Rootkit and Diaoyu Loader",
+      "severity": "Critical",
+      "date": "2026-02-20",
+      "cves": [],
+      "tags": [
+        "apt",
+        "espionage",
+        "china-nexus",
+        "critical-infrastructure",
+        "government",
+        "rootkit"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Palo Alto Networks Unit 42 research team uncovered one of the largest state-sponsored cyber espionage operations ever documented, dubbed Shadow Campaigns. The operation is conducted by a threat group ..."
+    },
+    {
+      "id": "TB-2026-02-20-003",
+      "title": "OpenSSL CMS AuthEnvelopedData Critical Stack Buffer Overflow (CVE-2025-15467) Enables Pre-Authentication Remote Code Execution Across All OpenSSL 3.x Deployments, Discovered by AI-Assisted Research Team AISLE",
+      "severity": "Critical",
+      "date": "2026-02-20",
+      "cves": [
+        "CVE-2025-15467"
+      ],
+      "tags": [
+        "openssl",
+        "rce",
+        "buffer-overflow",
+        "cryptography",
+        "supply-chain",
+        "ai-discovery"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "A critical stack buffer overflow vulnerability was discovered in OpenSSL, the most widely used cryptographic library that secures most of the internet's encrypted communications. The flaw exists in th..."
+    },
+    {
+      "id": "TB-2026-02-20-002",
+      "title": "Grandstream GXP1600 Series VoIP Phones Critical Unauthenticated Stack Buffer Overflow (CVE-2026-2329) Enables Remote Code Execution as Root, Silent Eavesdropping via SIP Proxy Hijacking, and Full Network Compromise",
+      "severity": "Critical",
+      "date": "2026-02-20",
+      "cves": [
+        "CVE-2026-2329"
+      ],
+      "tags": [
+        "voip",
+        "rce",
+        "eavesdropping",
+        "iot",
+        "grandstream",
+        "buffer-overflow"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Rapid7 security researcher Stephen Fewer discovered a critical vulnerability in the Grandstream GXP1600 series of VoIP (Voice over IP) desk phones, which are widely used by small and medium businesses..."
+    },
+    {
+      "id": "TB-2026-02-20-001",
+      "title": "PromptSpy: First Android Malware to Weaponize Google Gemini AI at Runtime for Automated Persistence, Enabling VNC Remote Access, PIN Capture, and AI-Driven UI Navigation on Infected Devices",
+      "severity": "High",
+      "date": "2026-02-20",
+      "cves": [],
+      "tags": [
+        "android",
+        "malware",
+        "generative-ai",
+        "gemini",
+        "mobile",
+        "banking-trojan"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "ESET security researchers discovered a groundbreaking Android malware called PromptSpy that represents a dangerous first: it uses Google's Gemini generative AI assistant at runtime to automate malicio..."
+    },
     {
       "id": "TB-2026-02-18-003",
       "title": "Keenadu Android Firmware Backdoor: Supply Chain Compromise Embeds Multi-Stage Loader in Tablet Firmware via Signed OTA Updates, Enabling Full Remote Device Control Across 13,000+ Devices Worldwide",

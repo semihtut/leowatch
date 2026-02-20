@@ -1,0 +1,300 @@
+{
+  "briefing_id": "TB-2026-02-20-001",
+  "title": "PromptSpy: First Android Malware to Weaponize Google Gemini AI at Runtime for Automated Persistence, Enabling VNC Remote Access, PIN Capture, and AI-Driven UI Navigation on Infected Devices",
+  "generated_date": "2026-02-20",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.1,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "android",
+    "malware",
+    "generative-ai",
+    "gemini",
+    "mobile",
+    "banking-trojan",
+    "remote-access"
+  ],
+  "affected_products": [
+    "Android devices (all versions supporting Google Gemini)",
+    "Google Gemini AI assistant (abused as automation tool)",
+    "JPMorgan Chase customers in Argentina (targeted via fake MorganArg app)",
+    "Android devices with sideloaded APKs from mgardownload[.]com"
+  ],
+  "sources_analyzed": 16,
+  "sources": [
+    {
+      "name": "ESET Research - PromptSpy ushers in the era of Android threats using GenAI",
+      "url": "https://www.welivesecurity.com/en/eset-research/promptspy-ushers-in-era-android-threats-using-genai/",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "ESET Press Release - ESET Research discovers PromptSpy",
+      "url": "https://www.globenewswire.com/news-release/2026/02/19/3241357/0/en/ESET-Research-discovers-PromptSpy-the-first-Android-threat-to-use-generative-AI.html",
+      "date": "2026-02-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "BleepingComputer - PromptSpy is the first known Android malware to use generative AI at runtime",
+      "url": "https://www.bleepingcomputer.com/news/security/promptspy-is-the-first-known-android-malware-to-use-generative-ai-at-runtime/",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - PromptSpy Android Malware Abuses Gemini AI to Automate Recent-Apps Persistence",
+      "url": "https://thehackernews.com/2026/02/promptspy-android-malware-abuses-google.html",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - PromptSpy Android Malware Abuses Gemini AI at Runtime for Persistence",
+      "url": "https://www.securityweek.com/promptspy-android-malware-abuses-gemini-ai-at-runtime-for-persistence/",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - PromptSpy: First Android malware to use generative AI in its execution flow",
+      "url": "https://www.helpnetsecurity.com/2026/02/19/promptspy-android-malware-generative-ai/",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Android malware taps Gemini to navigate infected devices",
+      "url": "https://www.theregister.com/2026/02/19/genai_malware_android/",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity News - PromptSpy First Known Android AI Malware Uses Google Gemini",
+      "url": "https://cybersecuritynews.com/promptspy-android-ai-malware/",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "CyberInsider - PromptSpy Android malware abuses Google Gemini AI for persistence",
+      "url": "https://cyberinsider.com/promptspy-android-malware-abuses-google-gemini-ai-for-persistence/",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - PromptSpy abuses Gemini AI to gain persistent access on Android",
+      "url": "https://securityaffairs.com/188261/ai/promptspy-abuses-gemini-ai-to-gain-persistent-access-on-android.html",
+      "date": "2026-02-20",
+      "type": "News"
+    },
+    {
+      "name": "Infosecurity Magazine - Android Malware Hijacks Google Gemini to Stay Hidden",
+      "url": "https://www.infosecurity-magazine.com/news/android-malware-hijacks-google/",
+      "date": "2026-02-20",
+      "type": "News"
+    },
+    {
+      "name": "Computer Weekly - PromptSpy Android malware may exploit Gemini AI",
+      "url": "https://www.computerweekly.com/news/366639201/PromptSpy-Android-malware-may-exploit-Gemini-AI",
+      "date": "2026-02-20",
+      "type": "News"
+    },
+    {
+      "name": "GBHackers - PromptSpy First Android AI Malware Leverages Google Gemini",
+      "url": "https://gbhackers.com/android-ai-malware/",
+      "date": "2026-02-20",
+      "type": "News"
+    },
+    {
+      "name": "Android Headlines - Meet PromptSpy: The First Android Malware That Weaponizes Generative AI",
+      "url": "https://www.androidheadlines.com/2026/02/meet-promptspy-the-first-android-malware-that-weaponizes-generative-ai.html",
+      "date": "2026-02-20",
+      "type": "News"
+    },
+    {
+      "name": "SecurityBrief UK - Android PromptSpy malware harnesses Gemini for stealth",
+      "url": "https://securitybrief.co.uk/story/android-promptspy-malware-harnesses-gemini-for-stealth",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "Yahoo Finance - ESET Research discovers PromptSpy",
+      "url": "https://finance.yahoo.com/news/eset-research-discovers-promptspy-first-164300373.html",
+      "date": "2026-02-19",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-15",
+      "event": "PromptSpy malware first observed in the wild targeting Argentine users via fake MorganArg banking app"
+    },
+    {
+      "date": "2026-02-01",
+      "event": "ESET researchers identify novel use of Google Gemini API within the malware's runtime execution flow"
+    },
+    {
+      "date": "2026-02-10",
+      "event": "ESET completes analysis confirming PromptSpy as the first Android malware to weaponize generative AI at runtime"
+    },
+    {
+      "date": "2026-02-19",
+      "event": "ESET publishes full technical analysis on WeLiveSecurity, disclosing PromptSpy capabilities and IOCs"
+    },
+    {
+      "date": "2026-02-19",
+      "event": "Google acknowledges the abuse of Gemini API and begins reviewing detection mechanisms"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "ESET security researchers discovered a groundbreaking Android malware called PromptSpy that represents a dangerous first: it uses Google's Gemini generative AI assistant at runtime to automate malicious tasks on infected phones. The malware disguises itself as a fake JPMorgan Chase banking app called MorganArg, targeting users in Argentina. Once installed, PromptSpy uses VNC (remote desktop) capabilities to take full control of the device, captures lockscreen PINs, records the screen, and most notably, leverages Google Gemini's AI to intelligently navigate the phone's user interface to maintain persistence and evade removal. This is the first documented case of malware using a commercial generative AI service as part of its core attack chain.",
+    "who_is_affected": "Android users in Argentina who may have downloaded the fake MorganArg banking application are the primary targets. However, the technique of weaponizing generative AI at runtime represents a threat to all Android users globally, as the approach can be adapted to target any region or banking institution. Organizations that allow employees to use personal Android devices for work (BYOD) face additional risk of corporate credential theft. Google Gemini users are indirectly affected as the AI service is being abused without their knowledge.",
+    "what_attackers_do": "Step 1: The attackers distribute a fake JPMorgan Chase banking app called MorganArg through the malicious domain mgardownload[.]com, tricking Argentine users into sideloading the APK outside of Google Play Store. Step 2: Once installed, the malware requests Accessibility Service permissions, which grants it the ability to observe and interact with all apps and UI elements on the device. Step 3: PromptSpy activates its VNC module to establish a remote desktop connection back to the attacker's command-and-control server at 54.67.2[.]84, giving the attacker real-time visual access to the victim's screen. Step 4: The malware captures the device lockscreen PIN by overlaying a fake unlock screen, and continuously records the user's screen activity including banking sessions and private messages. Step 5: In a novel technique, PromptSpy sends prompts to the Google Gemini AI assistant asking it to navigate the device's recent apps menu, settings, and notification panels to keep the malware running in the foreground and prevent the user or the operating system from killing the malicious process, achieving AI-powered persistence.",
+    "what_you_should_do": [
+      "Never sideload Android APKs from unknown sources; only install apps from the official Google Play Store and verify the developer identity",
+      "Check your installed apps for any application named MorganArg or claiming to be a JPMorgan Chase app not published by JPMorgan Chase & Co.",
+      "Review Accessibility Service permissions on your Android device (Settings > Accessibility) and revoke access for any unfamiliar or suspicious applications",
+      "Block the known malicious domains mgardownload[.]com and m-mgarg[.]com and C2 IP 54.67.2[.]84 on your network security devices",
+      "Enable Google Play Protect and ensure it is actively scanning your device for harmful applications"
+    ],
+    "why_this_is_serious": "PromptSpy represents a paradigm shift in mobile malware by demonstrating that attackers can weaponize commercial generative AI services to make their malware smarter and more resilient. Traditional malware uses hardcoded logic that defenders can predict and block, but by leveraging Gemini AI for dynamic UI navigation, PromptSpy can adapt its behavior in real-time based on the device's current state. This makes it significantly harder to detect and remove. The technique is highly replicable and will almost certainly be adopted by other threat actors, potentially spawning a new generation of AI-enhanced malware. Combined with its banking trojan capabilities including VNC remote access and PIN capture, PromptSpy poses an immediate financial threat to victims and a strategic threat to the entire mobile security ecosystem."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1444",
+        "technique_name": "Masquerade as Legitimate Application",
+        "description": "PromptSpy disguises itself as MorganArg, a fake JPMorgan Chase banking app, to trick users into installing the malicious APK from a third-party download site"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1624",
+        "technique_name": "Event Triggered Execution",
+        "description": "Uses Google Gemini AI to dynamically navigate the Android UI, keeping the malware in the foreground and preventing the OS from killing the process - a novel AI-driven persistence mechanism"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1626",
+        "technique_name": "Abuse Elevation Control Mechanism",
+        "description": "Requests and abuses Android Accessibility Services to gain elevated control over all UI elements and applications on the device"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1417",
+        "technique_name": "Input Capture",
+        "description": "Captures the device lockscreen PIN through a fake overlay screen and records on-screen keyboard input during banking sessions"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1513",
+        "technique_name": "Screen Capture",
+        "description": "Continuously records the device screen via VNC module, capturing banking credentials, messages, and all visual content displayed to the user"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1571",
+        "technique_name": "Non-Standard Port",
+        "description": "Establishes VNC remote desktop connection to C2 server at 54.67.2[.]84 for real-time device control and data exfiltration"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1630",
+        "technique_name": "Indicator Removal on Host",
+        "description": "Leverages Gemini AI to interact with system settings and notification panels to dismiss security warnings and hide evidence of the malware's presence"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying the fake MorganArg application, monitoring for suspicious Accessibility Service usage, detecting VNC remote access connections to known C2 infrastructure, and identifying unusual Google Gemini API calls originating from non-user-initiated contexts.",
+    "log_sources": [
+      {
+        "source": "Mobile Device Management (MDM)",
+        "description": "Monitor for installation of apps named MorganArg or apps with package names associated with the PromptSpy campaign; check for apps requesting Accessibility Service permissions",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Analysis",
+        "description": "Monitor for VNC connections to C2 IP 54.67.2[.]84 and DNS queries to mgardownload[.]com and m-mgarg[.]com domains",
+        "priority": "Critical"
+      },
+      {
+        "source": "Android Accessibility Service Logs",
+        "description": "Audit which applications have Accessibility Service permissions enabled; newly granted permissions to unknown apps are high-priority indicators",
+        "priority": "High"
+      },
+      {
+        "source": "Google Workspace / Gemini Audit Logs",
+        "description": "Monitor for unusual Gemini API usage patterns that may indicate automated prompting from malware rather than legitimate user interaction",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Fake MorganArg banking application installed",
+        "description": "The presence of an app named MorganArg or claiming to be a JPMorgan Chase app that was not installed from Google Play Store",
+        "log_field": "app_name='MorganArg' OR package_source!='com.android.vending'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "VNC connections to known C2 infrastructure",
+        "description": "Outbound VNC traffic from Android devices to the PromptSpy command-and-control server",
+        "log_field": "dst_ip='54.67.2.84' OR dst_port IN (5900, 5901)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "DNS queries to malicious distribution domains",
+        "description": "DNS resolution attempts for PromptSpy distribution and C2 domains",
+        "log_field": "dns_query IN ('mgardownload.com', 'm-mgarg.com')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Suspicious Accessibility Service activation",
+        "description": "A sideloaded application requesting or being granted Accessibility Service permissions, particularly one mimicking a banking app",
+        "log_field": "event='accessibility_service_enabled' AND source!='play_store'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Automated Gemini AI interactions",
+        "description": "Rapid or programmatic Gemini API calls that do not match normal user interaction patterns, potentially indicating malware-driven AI automation",
+        "log_field": "gemini_api_calls > threshold AND user_interaction=false",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "54.67.2.84"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Block known PromptSpy infrastructure",
+      "description": "Immediately block the C2 IP address 54.67.2[.]84 and domains mgardownload[.]com and m-mgarg[.]com on your firewalls, DNS sinkholes, and web proxies to prevent malware communication and new infections.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Scan for MorganArg app on managed devices",
+      "description": "Use your MDM solution to scan all managed Android devices for the presence of any application named MorganArg or matching known PromptSpy package names and SHA-1 hashes.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Audit Accessibility Service permissions",
+      "description": "Review all Android devices for applications with Accessibility Service permissions enabled. Any unfamiliar or recently added application with this permission should be investigated immediately.",
+      "command": "adb shell settings get secure enabled_accessibility_services"
+    },
+    {
+      "priority": 4,
+      "action": "Enforce sideloading restrictions",
+      "description": "Ensure that Android device policies prevent installation of APKs from unknown sources. Configure MDM to block sideloading and restrict app installation to Google Play Store only.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Brief security awareness teams on AI-powered malware",
+      "description": "Notify your security operations team about this new class of AI-enhanced malware. Update threat models to account for the possibility that malware can use commercial AI services to dynamically adapt its behavior on infected devices.",
+      "command": null
+    }
+  ]
+}

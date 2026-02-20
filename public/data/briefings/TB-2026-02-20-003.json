@@ -1,0 +1,285 @@
+{
+  "briefing_id": "TB-2026-02-20-003",
+  "title": "OpenSSL CMS AuthEnvelopedData Critical Stack Buffer Overflow (CVE-2025-15467) Enables Pre-Authentication Remote Code Execution Across All OpenSSL 3.x Deployments, Discovered by AI-Assisted Research Team AISLE",
+  "generated_date": "2026-02-20",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2025-15467"
+  ],
+  "tags": [
+    "openssl",
+    "rce",
+    "buffer-overflow",
+    "cryptography",
+    "supply-chain",
+    "ai-discovery",
+    "critical-infrastructure"
+  ],
+  "affected_products": [
+    "OpenSSL 3.0.x (prior to 3.0.19)",
+    "OpenSSL 3.3.x (prior to 3.3.6)",
+    "OpenSSL 3.4.x (prior to 3.4.4)",
+    "OpenSSL 3.5.x (prior to 3.5.5)",
+    "OpenSSL 3.6.x (prior to 3.6.1)",
+    "All applications and services using OpenSSL 3.x for CMS/PKCS#7 operations with AEAD ciphers",
+    "Linux distributions, web servers, VPN appliances, and embedded devices using affected OpenSSL versions"
+  ],
+  "sources_analyzed": 16,
+  "sources": [
+    {
+      "name": "OpenSSL Security Advisory [27th January 2026]",
+      "url": "https://openssl-library.org/news/secadv/20260127.txt",
+      "date": "2026-01-27",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "OpenSSL Vulnerabilities Page",
+      "url": "https://openssl-library.org/news/vulnerabilities/",
+      "date": "2026-01-27",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Red Hat CVE-2025-15467",
+      "url": "https://access.redhat.com/security/cve/cve-2025-15467",
+      "date": "2026-01-27",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2025-15467",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15467",
+      "date": "2026-01-27",
+      "type": "Government"
+    },
+    {
+      "name": "JFrog Security Research - Potentially Critical RCE Vulnerability in OpenSSL CVE-2025-15467",
+      "url": "https://research.jfrog.com/post/potential-rce-vulnerabilityin-openssl-cve-2025-15467/",
+      "date": "2026-01-28",
+      "type": "Research"
+    },
+    {
+      "name": "AISLE - Discovered 12 out of 12 OpenSSL Vulnerabilities",
+      "url": "https://aisle.com/blog/aisle-discovered-12-out-of-12-openssl-vulnerabilities",
+      "date": "2026-01-26",
+      "type": "Research"
+    },
+    {
+      "name": "AISLE - OpenSSL Stack Overflow CVE-2025-15467 Deep Dive",
+      "url": "https://aisle.com/blog/openssl-stack-overflow-cve-2025-15467-deep-dive",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "Orca Security - CVE-2025-15467 Critical OpenSSL Flaw Enables Pre-Auth RCE",
+      "url": "https://orca.security/resources/blog/cve-2025-15467-openssl-pre-auth-rce/",
+      "date": "2026-01-29",
+      "type": "Research"
+    },
+    {
+      "name": "CyCognito - Emerging Threat CVE-2025-15467 OpenSSL CMS AuthEnvelopedData Stack Buffer Overflow",
+      "url": "https://www.cycognito.com/blog/emerging-threat-cve-2025-15467-openssl-cms-authenvelopeddata-stack-based-buffer-overflow/",
+      "date": "2026-01-31",
+      "type": "Research"
+    },
+    {
+      "name": "Datadog Security Labs - OpenSSL January 2026 Security Update",
+      "url": "https://securitylabs.datadoghq.com/articles/openssl-january-2026-security-update-cms-and-pkcs12-buffer-overflows/",
+      "date": "2026-01-27",
+      "type": "Research"
+    },
+    {
+      "name": "Wiz - CVE-2025-15467 Impact, Exploitability, and Mitigation Steps",
+      "url": "https://www.wiz.io/vulnerability-database/cve/cve-2025-15467",
+      "date": "2026-01-27",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime - CVE-2025-15467 OpenSSL Vulnerability DoS and RCE",
+      "url": "https://socprime.com/blog/cve-2025-15467-vulnerability/",
+      "date": "2026-01-29",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityWeek - High-Severity Remote Code Execution Vulnerability Patched in OpenSSL",
+      "url": "https://www.securityweek.com/high-severity-remote-code-execution-vulnerability-patched-in-openssl/",
+      "date": "2026-01-28",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - OpenSSL issued security updates to fix 12 flaws including RCE",
+      "url": "https://securityaffairs.com/187445/security/openssl-issued-security-updates-to-fix-12-flaws-including-remote-code-execution.html",
+      "date": "2026-01-29",
+      "type": "News"
+    },
+    {
+      "name": "Security Boulevard / Bruce Schneier - AI Found Twelve New Vulnerabilities in OpenSSL",
+      "url": "https://securityboulevard.com/2026/02/ai-found-twelve-new-vulnerabilities-in-openssl/",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "Tom's Hardware - AI-assisted cybersecurity team discovers 12 OpenSSL vulnerabilities",
+      "url": "https://www.tomshardware.com/tech-industry/cyber-security/ai-assisted-cybersecurity-team-discovers-12-openssl-vulnerabilities-claims-humans-are-the-limiting-factor-some-vulnerabilities-have-been-around-for-decades",
+      "date": "2026-01-28",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-14",
+      "event": "AISLE AI-assisted research team (Stanislav Fort) discovers CVE-2025-15467 and reports it to OpenSSL project"
+    },
+    {
+      "date": "2026-01-26",
+      "event": "AISLE publishes blog announcing they discovered all 12 vulnerabilities in the upcoming OpenSSL security advisory"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "OpenSSL publishes security advisory and releases patched versions 3.6.1, 3.5.5, 3.4.4, 3.3.6, and 3.0.19"
+    },
+    {
+      "date": "2026-01-28",
+      "event": "JFrog Security Research confirms code execution is achievable, though practical exploitation requires bypassing modern mitigations (Stack Canaries, ASLR, DEP)"
+    },
+    {
+      "date": "2026-02-04",
+      "event": "AISLE publishes detailed technical deep dive into CVE-2025-15467 exploitation mechanics"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical stack buffer overflow vulnerability was discovered in OpenSSL, the most widely used cryptographic library that secures most of the internet's encrypted communications. The flaw exists in the CMS (Cryptographic Message Syntax) AuthEnvelopedData processing code when handling AEAD (Authenticated Encryption with Associated Data) ciphers. An attacker can trigger the overflow by sending a specially crafted encrypted message to any application that uses OpenSSL to process CMS/PKCS#7 content, potentially achieving remote code execution without needing any credentials. What makes this discovery particularly notable is that all 12 vulnerabilities in the January 2026 OpenSSL advisory were found by AISLE, an AI-assisted security research team, marking a significant milestone in AI-driven vulnerability discovery. JFrog researchers confirmed that code execution is achievable through this vulnerability.",
+    "who_is_affected": "Any system or application using OpenSSL versions 3.0 through 3.6 (prior to the patched releases) that processes CMS or PKCS#7 encrypted content is potentially vulnerable. This includes web servers (Apache, Nginx), email servers handling S/MIME encrypted messages, VPN appliances, certificate authorities, and any application using OpenSSL's CMS API. Major Linux distributions (Red Hat, Ubuntu, Debian, SUSE) that ship OpenSSL 3.x are affected. Critically, OpenSSL 1.1.1 and 1.0.2 are NOT affected. Cloud infrastructure, container environments, and IoT devices running OpenSSL 3.x for TLS/SSL operations may also be at risk depending on their CMS usage.",
+    "what_attackers_do": "Step 1: The attacker identifies a target system that processes CMS (Cryptographic Message Syntax) content using OpenSSL 3.x, such as an email server handling S/MIME encrypted messages, a web application processing PKCS#7 signatures, or any service accepting encrypted CMS data. Step 2: The attacker crafts a malicious CMS AuthEnvelopedData message with a specially constructed AEAD cipher configuration that triggers a stack buffer overflow during the decryption process, overwriting critical memory on the stack. Step 3: The overflow occurs before any authentication or credential checks, meaning the attacker needs no valid credentials, certificates, or prior access to exploit the vulnerability. Step 4: Through careful control of the overflowed buffer, the attacker can redirect program execution to their own shellcode, though they must bypass modern memory protection mechanisms like Stack Canaries, ASLR, and DEP to achieve reliable code execution. Step 5: If successful, the attacker gains code execution with the privileges of the application processing the CMS content, potentially root/system level on servers, enabling full system compromise, data theft, or lateral movement.",
+    "what_you_should_do": [
+      "Immediately update OpenSSL to patched versions: 3.6.1, 3.5.5, 3.4.4, 3.3.6, or 3.0.19 on all systems",
+      "Apply operating system vendor patches from Red Hat, Ubuntu, Debian, SUSE, and other distributions that include the OpenSSL fix",
+      "Inventory all systems and applications using OpenSSL 3.x; prioritize patching internet-facing services that process CMS/PKCS#7 content",
+      "If immediate patching is not possible, consider disabling AEAD cipher support in CMS operations as a temporary mitigation",
+      "Verify that modern exploit mitigations (ASLR, Stack Canaries, DEP/NX) are enabled on all systems running OpenSSL to increase the difficulty of exploitation"
+    ],
+    "why_this_is_serious": "OpenSSL is the cryptographic foundation of the internet, used by millions of servers, applications, and devices worldwide. A pre-authentication RCE vulnerability in OpenSSL has the potential for catastrophic impact comparable to Heartbleed (CVE-2014-0160), which affected an estimated 17% of the internet's servers. While practical exploitation requires bypassing modern memory protections, JFrog has confirmed that code execution is achievable, and sophisticated attackers routinely overcome these mitigations. The fact that an AI-assisted research team discovered all 12 vulnerabilities in this advisory highlights that AI is accelerating vulnerability discovery, and it is only a matter of time before similar AI techniques are used offensively. Organizations that delay patching are exposed to a high-impact vulnerability with a massive attack surface."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploits the OpenSSL CMS buffer overflow in internet-facing services (email servers, web applications, VPN gateways) that process CMS/PKCS#7 content"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "Triggers code execution through the stack buffer overflow when the target application processes the malicious CMS AuthEnvelopedData message"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "If the OpenSSL-using application runs as root or a privileged service account, the exploit yields elevated privileges on the target system"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1211",
+        "technique_name": "Exploitation for Defense Evasion",
+        "description": "The vulnerability is in the cryptographic processing layer, making exploitation difficult to detect with standard application-layer security tools"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1499",
+        "technique_name": "Endpoint Denial of Service",
+        "description": "Even without achieving code execution, the buffer overflow reliably crashes the application, enabling denial of service against any OpenSSL 3.x service processing CMS content"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection is challenging because the vulnerability is in the cryptographic processing layer, making payload inspection difficult. Focus on detecting exploitation outcomes (crashes, unexpected process behavior) and ensuring vulnerability management identifies all unpatched OpenSSL instances.",
+    "log_sources": [
+      {
+        "source": "System/Application Crash Logs",
+        "description": "Monitor for unexpected crashes or segmentation faults in applications using OpenSSL, particularly email servers (Postfix, Sendmail, Exim) and web servers processing CMS content",
+        "priority": "Critical"
+      },
+      {
+        "source": "Vulnerability Scanner",
+        "description": "Run vulnerability scans to identify all systems with OpenSSL 3.0-3.6 prior to patched versions; prioritize internet-facing services",
+        "priority": "Critical"
+      },
+      {
+        "source": "Package Management Logs",
+        "description": "Track OpenSSL package versions across all systems using configuration management tools to verify patch deployment",
+        "priority": "High"
+      },
+      {
+        "source": "Network IDS/IPS",
+        "description": "Deploy signatures to detect malformed CMS/PKCS#7 content in email (S/MIME) and web traffic that may indicate exploitation attempts",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "OpenSSL application crashes with stack buffer overflow",
+        "description": "Segmentation faults or stack smashing detected errors in applications using OpenSSL CMS functions indicate possible exploitation attempts",
+        "log_field": "signal='SIGSEGV' OR signal='SIGABRT' AND process IN ('httpd', 'nginx', 'postfix', 'sendmail')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unpatched OpenSSL 3.x installations",
+        "description": "Systems running OpenSSL versions 3.0.0-3.0.18, 3.3.0-3.3.5, 3.4.0-3.4.3, 3.5.0-3.5.4, or 3.6.0 are vulnerable",
+        "log_field": "openssl_version < '3.0.19' OR openssl_version IN ('3.3.0'-'3.3.5', '3.4.0'-'3.4.3', '3.5.0'-'3.5.4', '3.6.0')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Malformed S/MIME messages targeting email servers",
+        "description": "Email messages with unusual CMS AuthEnvelopedData structures designed to trigger the buffer overflow during processing",
+        "log_field": "content_type='application/pkcs7-mime' AND parse_error=true",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unexpected outbound connections after OpenSSL crashes",
+        "description": "If exploitation succeeds, the compromised process may initiate reverse shell connections or download second-stage payloads",
+        "log_field": "process_crash=true AND subsequent_outbound_connection=true AND dst_port IN (4444, 8443, 9001)",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch OpenSSL to the latest version immediately",
+      "description": "Update OpenSSL to version 3.6.1, 3.5.5, 3.4.4, 3.3.6, or 3.0.19 depending on your branch. Apply vendor OS patches from Red Hat, Ubuntu, Debian, etc. This is the most critical action.",
+      "command": "openssl version && sudo apt update && sudo apt upgrade openssl"
+    },
+    {
+      "priority": 2,
+      "action": "Inventory all OpenSSL 3.x deployments",
+      "description": "Identify every system, container, and appliance running OpenSSL 3.x. Check servers, load balancers, VPN appliances, mail servers, and container base images. Note: OpenSSL 1.1.1 and 1.0.2 are NOT affected.",
+      "command": "openssl version -a | head -1"
+    },
+    {
+      "priority": 3,
+      "action": "Verify exploit mitigations are enabled",
+      "description": "Ensure that ASLR, Stack Canaries, and DEP/NX are enabled on all systems. These mitigations make exploitation significantly harder even on unpatched systems.",
+      "command": "cat /proc/sys/kernel/randomize_va_space"
+    },
+    {
+      "priority": 4,
+      "action": "Monitor for application crashes on critical services",
+      "description": "Set up alerting for unexpected crashes or restarts of services that use OpenSSL for CMS/PKCS#7 processing, particularly email servers handling S/MIME content.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Update container base images",
+      "description": "Rebuild and redeploy container images that bundle OpenSSL 3.x. Many container base images include vulnerable versions. Scan your container registry for affected images.",
+      "command": "docker run --rm <image> openssl version"
+    }
+  ]
+}

@@ -5,13 +5,69 @@
     <link>https://intelleo.net</link>
     <description>Daily cybersecurity threat intelligence briefings in simple English. Free, accessible, and actionable security insights.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Feb 2026 15:35:08 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 17:50:13 GMT</lastBuildDate>
     <atom:link href="https://intelleo.net/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://intelleo.net/shield.svg</url>
       <title>Intelleo - Security Intelligence</title>
       <link>https://intelleo.net</link>
     </image>
+    <item>
+      <title>Shadow Campaigns: State-Backed APT Group TGR-STA-1030 Conducts Massive Global Cyber Espionage Operation Targeting 155 Countries, Breaching 70+ Government and Critical Infrastructure Organizations Using ShadowGuard eBPF Rootkit and Diaoyu Loader</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-20-004</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-20-004</guid>
+      <description>Palo Alto Networks Unit 42 research team uncovered one of the largest state-sponsored cyber espionage operations ever documented, dubbed Shadow Campaigns. The operation is conducted by a threat group ...</description>
+      <pubDate>Fri, 20 Feb 2026 12:00:00 GMT</pubDate>
+      <category>apt</category>
+      <category>espionage</category>
+      <category>china-nexus</category>
+      <category>critical-infrastructure</category>
+      <category>government</category>
+      <category>rootkit</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>OpenSSL CMS AuthEnvelopedData Critical Stack Buffer Overflow (CVE-2025-15467) Enables Pre-Authentication Remote Code Execution Across All OpenSSL 3.x Deployments, Discovered by AI-Assisted Research Team AISLE</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-20-003</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-20-003</guid>
+      <description>A critical stack buffer overflow vulnerability was discovered in OpenSSL, the most widely used cryptographic library that secures most of the internet&apos;s encrypted communications. The flaw exists in th...</description>
+      <pubDate>Fri, 20 Feb 2026 12:00:00 GMT</pubDate>
+      <category>openssl</category>
+      <category>rce</category>
+      <category>buffer-overflow</category>
+      <category>cryptography</category>
+      <category>supply-chain</category>
+      <category>ai-discovery</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>Grandstream GXP1600 Series VoIP Phones Critical Unauthenticated Stack Buffer Overflow (CVE-2026-2329) Enables Remote Code Execution as Root, Silent Eavesdropping via SIP Proxy Hijacking, and Full Network Compromise</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-20-002</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-20-002</guid>
+      <description>Rapid7 security researcher Stephen Fewer discovered a critical vulnerability in the Grandstream GXP1600 series of VoIP (Voice over IP) desk phones, which are widely used by small and medium businesses...</description>
+      <pubDate>Fri, 20 Feb 2026 12:00:00 GMT</pubDate>
+      <category>voip</category>
+      <category>rce</category>
+      <category>eavesdropping</category>
+      <category>iot</category>
+      <category>grandstream</category>
+      <category>buffer-overflow</category>
+      <category>severity:Critical</category>
+    </item>
+    <item>
+      <title>PromptSpy: First Android Malware to Weaponize Google Gemini AI at Runtime for Automated Persistence, Enabling VNC Remote Access, PIN Capture, and AI-Driven UI Navigation on Infected Devices</title>
+      <link>https://intelleo.net/briefing/TB-2026-02-20-001</link>
+      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-02-20-001</guid>
+      <description>ESET security researchers discovered a groundbreaking Android malware called PromptSpy that represents a dangerous first: it uses Google&apos;s Gemini generative AI assistant at runtime to automate malicio...</description>
+      <pubDate>Fri, 20 Feb 2026 12:00:00 GMT</pubDate>
+      <category>android</category>
+      <category>malware</category>
+      <category>generative-ai</category>
+      <category>gemini</category>
+      <category>mobile</category>
+      <category>banking-trojan</category>
+      <category>severity:High</category>
+    </item>
     <item>
       <title>Keenadu Android Firmware Backdoor: Supply Chain Compromise Embeds Multi-Stage Loader in Tablet Firmware via Signed OTA Updates, Enabling Full Remote Device Control Across 13,000+ Devices Worldwide</title>
       <link>https://intelleo.net/briefing/TB-2026-02-18-003</link>
@@ -380,65 +436,6 @@
       <category>security-bypass</category>
       <category>enterprise</category>
       <category>cloud</category>
-      <category>severity:High</category>
-    </item>
-    <item>
-      <title>HPE OneView CVSS 10.0 RCE: RondoDox Botnet Launches 40,000+ Attack Campaign (CISA KEV)</title>
-      <link>https://intelleo.net/briefing/TB-2026-01-28-002</link>
-      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-28-002</guid>
-      <description>RondoDox botnet launched over 40,000 automated attacks exploiting maximum severity HPE OneView vulnerability...</description>
-      <pubDate>Wed, 07 Jan 2026 12:00:00 GMT</pubDate>
-      <category>HPE</category>
-      <category>OneView</category>
-      <category>infrastructure-management</category>
-      <category>RCE</category>
-      <category>botnet</category>
-      <category>RondoDox</category>
-      <category>enterprise</category>
-      <category>cloud</category>
-      <category>severity:Critical</category>
-    </item>
-    <item>
-      <title>Cisco Unified Communications Critical Zero-Day Under Active Exploitation (CISA KEV)</title>
-      <link>https://intelleo.net/briefing/TB-2026-01-27-001</link>
-      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-27-001</guid>
-      <description>A critical zero-day vulnerability in Cisco Unified Communications products is being actively exploited, allowing attackers to execute arbitrary code and gain root access...</description>
-      <pubDate>Wed, 21 Jan 2026 12:00:00 GMT</pubDate>
-      <category>Cisco</category>
-      <category>unified-communications</category>
-      <category>zero-day</category>
-      <category>RCE</category>
-      <category>cloud</category>
-      <category>enterprise</category>
-      <category>voip</category>
-      <category>webex</category>
-      <category>severity:Critical</category>
-    </item>
-    <item>
-      <title>FortiCloud SSO Authentication Bypass - Incomplete Patch Under Active Exploitation</title>
-      <link>https://intelleo.net/briefing/TB-2026-01-25-001</link>
-      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-25-001</guid>
-      <description>A critical authentication bypass in Fortinet firewalls allows attackers to access the FortiCloud management panel without credentials...</description>
-      <pubDate>Fri, 23 Jan 2026 12:00:00 GMT</pubDate>
-      <category>cloud</category>
-      <category>fortinet</category>
-      <category>firewall</category>
-      <category>sso</category>
-      <category>authentication-bypass</category>
-      <category>severity:Critical</category>
-    </item>
-    <item>
-      <title>ShinyHunters SSO Vishing Campaign Targeting Cloud Identity Providers</title>
-      <link>https://intelleo.net/briefing/TB-2026-01-25-002</link>
-      <guid isPermaLink="true">https://intelleo.net/briefing/TB-2026-01-25-002</guid>
-      <description>The ShinyHunters extortion gang is conducting voice phishing attacks targeting employees at organizations using Okta, Microsoft Entra ID, and Google Workspace...</description>
-      <pubDate>Fri, 23 Jan 2026 12:00:00 GMT</pubDate>
-      <category>cloud</category>
-      <category>identity</category>
-      <category>okta</category>
-      <category>microsoft-entra</category>
-      <category>sso</category>
-      <category>vishing</category>
       <category>severity:High</category>
     </item>
   </channel>
