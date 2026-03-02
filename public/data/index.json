@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-20T17:50:04.850Z",
-  "date": "2026-02-20",
+  "lastUpdated": "2026-03-02T15:21:18.480Z",
+  "date": "2026-03-02",
   "stats": {
-    "total": 48,
-    "critical": 34,
+    "total": 51,
+    "critical": 37,
     "high": 14,
     "medium": 0,
     "low": 0,
-    "cisaKev": 22,
+    "cisaKev": 24,
     "activeExploits": 15,
-    "totalSources": 554
+    "totalSources": 597
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,67 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-02-20-004",
+  "featuredBriefing": "TB-2026-03-02-003",
   "briefings": [
+    {
+      "id": "TB-2026-03-02-003",
+      "title": "Juniper Networks PTX Series Router Critical Unauthenticated Root RCE via On-Box Anomaly Detection Framework Misconfiguration Enables Complete Network Infrastructure Takeover (CVE-2026-21902, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-02",
+      "cves": [
+        "CVE-2026-21902"
+      ],
+      "tags": [
+        "juniper",
+        "ptx-router",
+        "rce",
+        "network-infrastructure",
+        "anomaly-detection",
+        "unauthenticated"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "A critical vulnerability was discovered in Juniper Networks PTX Series routers, which are high-performance core and edge network devices used by Internet Service Providers, telecommunications companie..."
+    },
+    {
+      "id": "TB-2026-03-02-002",
+      "title": "Roundcube Webmail Critical Deserialization RCE and SVG XSS Under Active Nation-State Exploitation: CamoFei APT Deploys Godzilla Webshells Against 84,000+ Unpatched Servers (CVE-2025-49113, CVE-2025-68461, CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-03-02",
+      "cves": [
+        "CVE-2025-49113",
+        "CVE-2025-68461"
+      ],
+      "tags": [
+        "roundcube",
+        "webmail",
+        "deserialization",
+        "rce",
+        "xss",
+        "cisa-kev"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Two critical vulnerabilities were discovered in Roundcube Webmail, one of the most widely deployed open-source email platforms with over 2.4 million internet-facing instances worldwide. The first flaw..."
+    },
+    {
+      "id": "TB-2026-03-02-001",
+      "title": "Cisco Catalyst SD-WAN Controller CVSS 10.0 Authentication Bypass Zero-Day: Threat Actor UAT-8616 Exploits CVE-2026-20127 Since 2023 for Global Network Infrastructure Takeover, Triggering CISA Emergency Directive ED 26-03 and Five Eyes Joint Advisory",
+      "severity": "Critical",
+      "date": "2026-03-02",
+      "cves": [
+        "CVE-2026-20127",
+        "CVE-2022-20775"
+      ],
+      "tags": [
+        "cisco",
+        "sd-wan",
+        "zero-day",
+        "authentication-bypass",
+        "cisa-kev",
+        "nation-state"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A maximum-severity vulnerability was discovered in Cisco SD-WAN, the networking platform used by thousands of enterprises and government agencies to manage their wide-area networks. A sophisticated th..."
+    },
     {
       "id": "TB-2026-02-20-004",
       "title": "Shadow Campaigns: State-Backed APT Group TGR-STA-1030 Conducts Massive Global Cyber Espionage Operation Targeting 155 Countries, Breaching 70+ Government and Critical Infrastructure Organizations Using ShadowGuard eBPF Rootkit and Diaoyu Loader",
