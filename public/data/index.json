@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-02T15:21:18.480Z",
-  "date": "2026-03-02",
+  "lastUpdated": "2026-03-03T08:11:55.108Z",
+  "date": "2026-03-03",
   "stats": {
-    "total": 51,
-    "critical": 37,
-    "high": 14,
+    "total": 53,
+    "critical": 38,
+    "high": 15,
     "medium": 0,
     "low": 0,
-    "cisaKev": 24,
+    "cisaKev": 25,
     "activeExploits": 15,
-    "totalSources": 597
+    "totalSources": 621
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,47 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-02-003",
+  "featuredBriefing": "TB-2026-03-03-001",
   "briefings": [
+    {
+      "id": "TB-2026-03-03-002",
+      "title": "PostgreSQL pgcrypto Extension Heap Buffer Overflow Enables Authenticated RCE as OS User Across All Major PostgreSQL Versions (CVE-2026-2005, CVSS 8.8) — Emergency Out-of-Cycle Patch Released February 26",
+      "severity": "High",
+      "date": "2026-03-03",
+      "cves": [
+        "CVE-2026-2005"
+      ],
+      "tags": [
+        "postgresql",
+        "database",
+        "rce",
+        "heap-overflow",
+        "pgcrypto",
+        "authenticated"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "A critical memory corruption flaw was found in PostgreSQL's pgcrypto extension — a widely-used module that handles encryption and decryption operations in databases. The vulnerability is in how pgcryp..."
+    },
+    {
+      "id": "TB-2026-03-03-001",
+      "title": "Google Android March 2026 Security Bulletin: Actively Exploited Qualcomm Display Driver Zero-Day (CVE-2026-21385) Plus Critical No-Interaction RCE Among 129 Vulnerabilities Patched — Largest Android Update Since April 2018",
+      "severity": "Critical",
+      "date": "2026-03-03",
+      "cves": [
+        "CVE-2026-21385",
+        "CVE-2026-0006"
+      ],
+      "tags": [
+        "android",
+        "qualcomm",
+        "zero-day",
+        "cisa-kev",
+        "mobile",
+        "privilege-escalation"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Google released its largest Android security update since April 2018, patching 129 security vulnerabilities including one that attackers are already actively exploiting in the wild. The exploited vuln..."
+    },
     {
       "id": "TB-2026-03-02-003",
       "title": "Juniper Networks PTX Series Router Critical Unauthenticated Root RCE via On-Box Anomaly Detection Framework Misconfiguration Enables Complete Network Infrastructure Takeover (CVE-2026-21902, CVSS 9.8)",
