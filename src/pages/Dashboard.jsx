@@ -19,7 +19,7 @@ export default function Dashboard() {
   useDocumentMeta({
     title: 'Dashboard',
     description: 'Daily cybersecurity threat intelligence dashboard with severity stats, trends, and featured threats.',
-    path: '/',
+    path: '/dashboard',
   });
 
   // Get today's date

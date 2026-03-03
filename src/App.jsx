@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/layout/Layout';
+import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import BriefingPage from './pages/BriefingPage';
 import ThreatPulse from './pages/ThreatPulse';
@@ -13,8 +14,9 @@ export default function App() {
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Dashboard />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route element={<Layout />}>
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="pulse" element={<ThreatPulse />} />
             <Route path="favorites" element={<Favorites />} />
             <Route path="briefing/:id" element={<BriefingPage />} />

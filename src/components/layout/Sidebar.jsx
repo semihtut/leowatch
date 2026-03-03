@@ -10,7 +10,7 @@ export default function Sidebar({ onClose }) {
   const { t } = useLanguage();
 
   const navigation = [
-    { name: t('nav.dashboard'), href: '/', icon: LayoutDashboard },
+    { name: t('nav.dashboard'), href: '/dashboard', icon: LayoutDashboard },
     { name: t('nav.threatPulse'), href: '/pulse', icon: Activity },
     { name: t('nav.favorites'), href: '/favorites', icon: Heart },
     { name: t('nav.archive'), href: '/archive', icon: Archive },
@@ -23,7 +23,7 @@ export default function Sidebar({ onClose }) {
       {/* Logo */}
       <div className="p-6 border-b border-[var(--glass-border)]">
         <div className="flex items-center justify-between">
-          <NavLink to="/" className="flex items-center gap-3">
+          <NavLink to="/dashboard" className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-gradient-to-br from-pink-500 to-cyan-500 glow-pink">
               <Shield className="w-6 h-6 text-white" />
             </div>
