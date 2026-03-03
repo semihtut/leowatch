@@ -9,10 +9,13 @@
         <string>/bin/bash</string>
         <string>/Users/leopark/Desktop/ThreatIntel/threat-brief/scripts/auto-push.sh</string>
     </array>
-    <key>StartInterval</key>
-    <integer>1800</integer>
-    <key>RunAtLoad</key>
-    <true/>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>8</integer>
+        <key>Minute</key>
+        <integer>45</integer>
+    </dict>
     <key>StandardOutPath</key>
     <string>/tmp/threatintel-autopush.out</string>
     <key>StandardErrorPath</key>
