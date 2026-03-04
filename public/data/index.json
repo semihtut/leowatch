@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-03T08:11:55.108Z",
-  "date": "2026-03-03",
+  "lastUpdated": "2026-03-04T06:09:30.159Z",
+  "date": "2026-03-04",
   "stats": {
-    "total": 53,
-    "critical": 38,
-    "high": 15,
+    "total": 56,
+    "critical": 40,
+    "high": 16,
     "medium": 0,
     "low": 0,
-    "cisaKev": 25,
+    "cisaKev": 26,
     "activeExploits": 15,
-    "totalSources": 621
+    "totalSources": 657
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,68 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-03-001",
+  "featuredBriefing": "TB-2026-03-04-003",
   "briefings": [
+    {
+      "id": "TB-2026-03-04-003",
+      "title": "Hyland Alfresco Transformation Service Unauthenticated Argument Injection Enables SSRF and Full Remote Code Execution on Enterprise Content Management Systems Across All Versions Prior to 4.2.3 (CVE-2026-26339, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-04",
+      "cves": [
+        "CVE-2026-26339"
+      ],
+      "tags": [
+        "alfresco",
+        "content-management",
+        "argument-injection",
+        "rce",
+        "ssrf",
+        "enterprise-ecm"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical security vulnerability was found in the Hyland Alfresco Transformation Service — a component used by the Alfresco enterprise content management platform to automatically convert documents f..."
+    },
+    {
+      "id": "TB-2026-03-04-002",
+      "title": "Trend Micro Apex One Critical Directory Traversal RCE: Unauthenticated Remote Code Execution on Endpoint Security Management Console Affects All On-Premises Deployments Prior to Critical Patch Build 14136 (CVE-2025-71210, CVE-2025-71211, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-04",
+      "cves": [
+        "CVE-2025-71210",
+        "CVE-2025-71211",
+        "CVE-2025-71212",
+        "CVE-2025-71213"
+      ],
+      "tags": [
+        "trend-micro",
+        "apex-one",
+        "directory-traversal",
+        "rce",
+        "endpoint-security",
+        "enterprise"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical security flaw was discovered in Trend Micro Apex One, a widely-used enterprise security product installed on millions of corporate computers to protect them from malware and cyberattacks. T..."
+    },
+    {
+      "id": "TB-2026-03-04-001",
+      "title": "VMware Aria Operations Command Injection CISA KEV: Unauthenticated RCE During Support Migration Enables Full Infrastructure Takeover Across All Aria Operations 8.x and Cloud Foundation 9.x Deployments (CVE-2026-22719, CVSS 8.1)",
+      "severity": "High",
+      "date": "2026-03-04",
+      "cves": [
+        "CVE-2026-22719"
+      ],
+      "tags": [
+        "vmware",
+        "aria-operations",
+        "command-injection",
+        "rce",
+        "cisa-kev",
+        "cloud-infrastructure"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A dangerous security flaw was found in VMware Aria Operations, which is a popular tool used by IT teams in large companies to monitor and manage all their virtual computers and servers from one centra..."
+    },
     {
       "id": "TB-2026-03-03-002",
       "title": "PostgreSQL pgcrypto Extension Heap Buffer Overflow Enables Authenticated RCE as OS User Across All Major PostgreSQL Versions (CVE-2026-2005, CVSS 8.8) — Emergency Out-of-Cycle Patch Released February 26",
