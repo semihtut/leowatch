@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-06T06:08:01.742Z",
-  "date": "2026-03-06",
+  "lastUpdated": "2026-03-09T07:15:52.306Z",
+  "date": "2026-03-09",
   "stats": {
-    "total": 60,
-    "critical": 42,
-    "high": 18,
+    "total": 66,
+    "critical": 47,
+    "high": 19,
     "medium": 0,
     "low": 0,
-    "cisaKev": 27,
+    "cisaKev": 32,
     "activeExploits": 15,
-    "totalSources": 707
+    "totalSources": 790
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,125 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-06-002",
+  "featuredBriefing": "TB-2026-03-09-003",
   "briefings": [
+    {
+      "id": "TB-2026-03-09-003",
+      "title": "Tencent WeKnora LLM Framework Dual CVSS 10.0 RCE Zero-Days: Unauthenticated SQL Injection Bypasses PostgreSQL Protections via Nested Array Expressions, MCP Stdio Command Injection Bypasses Command Validation via npx -p Flag (CVE-2026-30860, CVE-2026-30861)",
+      "severity": "Critical",
+      "date": "2026-03-09",
+      "cves": [
+        "CVE-2026-30860",
+        "CVE-2026-30861"
+      ],
+      "tags": [
+        "ai-ml",
+        "llm",
+        "rag",
+        "rce",
+        "sql-injection",
+        "command-injection"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Security researchers disclosed two maximum-severity vulnerabilities (CVSS 10.0) in WeKnora, an open-source LLM-powered framework developed by Tencent for building AI-powered document understanding and..."
+    },
+    {
+      "id": "TB-2026-03-09-002",
+      "title": "Cisco Catalyst SD-WAN Manager CVE-2026-20122 and CVE-2026-20128 Under Active Exploitation: Authenticated File Overwrite and DCA Credential Disclosure Enable Web Shell Deployment and Cross-Instance Lateral Movement in Enterprise SD-WAN Infrastructure",
+      "severity": "High",
+      "date": "2026-03-09",
+      "cves": [
+        "CVE-2026-20122",
+        "CVE-2026-20128"
+      ],
+      "tags": [
+        "cisco",
+        "sd-wan",
+        "vmanage",
+        "credential-disclosure",
+        "file-overwrite",
+        "webshell"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Cisco has confirmed that attackers are actively exploiting two vulnerabilities in Cisco Catalyst SD-WAN Manager (also known as vManage), the central management software that enterprises use to control..."
+    },
+    {
+      "id": "TB-2026-03-09-001",
+      "title": "D-Link Legacy DSL Router CISA KEV Unauthenticated Command Injection via dnscfg.cgi Enables Full RCE and Mass DNS Hijacking on Hundreds of Thousands of End-of-Life Devices with No Patch Available (CVE-2026-0625, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-09",
+      "cves": [
+        "CVE-2026-0625"
+      ],
+      "tags": [
+        "d-link",
+        "iot",
+        "dns-hijacking",
+        "rce",
+        "command-injection",
+        "eol-device"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Security researchers discovered that attackers have been actively exploiting a critical flaw in several discontinued D-Link home and small business routers since at least November 2025. The vulnerabil..."
+    },
+    {
+      "id": "TB-2026-03-07-003",
+      "title": "Coruna iOS Exploit Kit CISA KEV: Nation-State-Grade 23-Exploit Framework Chains CVE-2023-41974 and CVE-2023-43000 to Steal Cryptocurrency from 42,000+ iPhones via Drive-By WebKit Compromise",
+      "severity": "Critical",
+      "date": "2026-03-07",
+      "cves": [
+        "CVE-2023-41974",
+        "CVE-2023-43000"
+      ],
+      "tags": [
+        "ios",
+        "apple",
+        "webkit",
+        "mobile",
+        "exploit-kit",
+        "cryptocurrency"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A sophisticated nation-state-grade iOS exploit kit called 'Coruna' was publicly disclosed on March 3, 2026 by Google Threat Intelligence and iVerify. The kit strings together 23 separate Apple vulnera..."
+    },
+    {
+      "id": "TB-2026-03-07-002",
+      "title": "Rockwell Automation Logix PLC Hardcoded Cryptographic Key Authentication Bypass CISA KEV: Unauthenticated Attackers Impersonate Engineering Workstations to Modify Industrial Control System Logic (CVE-2021-22681)",
+      "severity": "Critical",
+      "date": "2026-03-07",
+      "cves": [
+        "CVE-2021-22681"
+      ],
+      "tags": [
+        "ics",
+        "ot",
+        "plc",
+        "rockwell",
+        "authentication-bypass",
+        "critical-infrastructure"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical vulnerability in Rockwell Automation industrial controllers (PLCs) was confirmed as actively exploited and added to CISA's must-patch list on March 5, 2026. The flaw stems from a hardcoded ..."
+    },
+    {
+      "id": "TB-2026-03-07-001",
+      "title": "Hikvision IP Camera Improper Authentication CISA KEV: HiatusRAT Threat Actor Exploits CVE-2017-7921 Nine-Year-Old Authentication Bypass for Mass IoT Surveillance Network Infiltration",
+      "severity": "Critical",
+      "date": "2026-03-07",
+      "cves": [
+        "CVE-2017-7921"
+      ],
+      "tags": [
+        "iot",
+        "hikvision",
+        "authentication-bypass",
+        "surveillance",
+        "hiatusrat",
+        "network-security"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A 9-year-old vulnerability in Hikvision security cameras was officially confirmed as actively exploited and added to CISA's must-patch list on March 5, 2026. The flaw allows anyone on the internet to ..."
+    },
     {
       "id": "TB-2026-03-06-002",
       "title": "pac4j-jwt CVSS 10.0 Authentication Bypass via Forged Encrypted JWT Tokens: Null Check Bug Allows Attackers with RSA Public Key to Impersonate Any User Including Administrators in Java Enterprise Applications (CVE-2026-29000)",
