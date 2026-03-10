@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-09T07:15:52.306Z",
-  "date": "2026-03-09",
+  "lastUpdated": "2026-03-10T06:13:14.887Z",
+  "date": "2026-03-10",
   "stats": {
-    "total": 66,
-    "critical": 47,
-    "high": 19,
+    "total": 68,
+    "critical": 48,
+    "high": 20,
     "medium": 0,
     "low": 0,
-    "cisaKev": 32,
+    "cisaKev": 34,
     "activeExploits": 15,
-    "totalSources": 790
+    "totalSources": 813
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,46 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-09-003",
+  "featuredBriefing": "TB-2026-03-10-001",
   "briefings": [
+    {
+      "id": "TB-2026-03-10-002",
+      "title": "Omnissa Workspace ONE UEM Pre-Auth SSRF Exploited in the Wild: CISA KEV Added 5 Years After Disclosure as Active Attacks Resume (CVE-2021-22054)",
+      "severity": "High",
+      "date": "2026-03-10",
+      "cves": [
+        "CVE-2021-22054"
+      ],
+      "tags": [
+        "omnissa",
+        "vmware",
+        "workspace-one",
+        "ssrf",
+        "uem",
+        "mdm"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Omnissa Workspace ONE UEM — a widely deployed enterprise mobile device management platform (formerly VMware Workspace ONE) — contains a pre-authentication Server-Side Request Forgery vulnerability tha..."
+    },
+    {
+      "id": "TB-2026-03-10-001",
+      "title": "SolarWinds Web Help Desk Third-Generation Deserialization RCE Actively Exploited: CISA KEV Mandates Federal Remediation by March 23 (CVE-2025-26399)",
+      "severity": "Critical",
+      "date": "2026-03-10",
+      "cves": [
+        "CVE-2025-26399"
+      ],
+      "tags": [
+        "solarwinds",
+        "deserialization",
+        "rce",
+        "itsm",
+        "java",
+        "supply-chain"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "SolarWinds Web Help Desk, a popular IT service management platform used by thousands of enterprises, contains a critical vulnerability that allows attackers to run malicious code on affected servers w..."
+    },
     {
       "id": "TB-2026-03-09-003",
       "title": "Tencent WeKnora LLM Framework Dual CVSS 10.0 RCE Zero-Days: Unauthenticated SQL Injection Bypasses PostgreSQL Protections via Nested Array Expressions, MCP Stdio Command Injection Bypasses Command Validation via npx -p Flag (CVE-2026-30860, CVE-2026-30861)",
