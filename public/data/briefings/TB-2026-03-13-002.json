@@ -1,0 +1,260 @@
+{
+  "briefing_id": "TB-2026-03-13-002",
+  "title": "Ivanti Endpoint Manager Pre-Auth Authentication Bypass Grants Credential Vault Access: CISA KEV Demands Federal Patch by March 23 (CVE-2026-1603)",
+  "generated_date": "2026-03-13",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.6,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-23"
+  },
+  "cves": [
+    "CVE-2026-1603"
+  ],
+  "tags": [
+    "ivanti",
+    "endpoint-manager",
+    "authentication-bypass",
+    "credential-theft",
+    "cisa-kev",
+    "uem",
+    "enterprise"
+  ],
+  "affected_products": [
+    "Ivanti Endpoint Manager (EPM) all versions prior to 2024 SU5",
+    "Ivanti Endpoint Manager 2024 SU4 SR1 and earlier"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "CISA Alert - CISA Adds Three Known Exploited Vulnerabilities to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/03/09/cisa-adds-three-known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-09",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2026-1603",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1603",
+      "date": "2026-02-10",
+      "type": "Government"
+    },
+    {
+      "name": "Ivanti Security Advisory - February 2026 Security Update",
+      "url": "https://www.ivanti.com/blog/february-2026-security-update",
+      "date": "2026-02-09",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Qualys ThreatPROTECT - CISA Warns About Ivanti EPM Vulnerability CVE-2026-1603",
+      "url": "https://threatprotect.qualys.com/2026/03/11/cisa-warns-about-ivanti-epm-vulnerability-exploited-in-attacks-cve-2026-1603/",
+      "date": "2026-03-11",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - CISA Flags SolarWinds, Ivanti, and Omnissa Flaws as Actively Exploited",
+      "url": "https://thehackernews.com/2026/03/cisa-flags-solarwinds-ivanti-and.html",
+      "date": "2026-03-09",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - CISA Recently Patched Ivanti EPM Flaw Now Actively Exploited",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-recently-patched-ivanti-epm-flaw-now-actively-exploited/",
+      "date": "2026-03-09",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - CISA Adds Ivanti EPM, SolarWinds, and Omnissa Workspace ONE Flaws to KEV",
+      "url": "https://securityaffairs.com/189172/security/u-s-cisa-adds-ivanti-epm-solarwinds-and-omnissa-workspace-one-flaws-to-its-known-exploited-vulnerabilities-catalog.html",
+      "date": "2026-03-09",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online - CISA Warns of Actively Exploited Ivanti EPM and Cisco SD-WAN Flaws",
+      "url": "https://www.csoonline.com/article/4143992/cisa-warns-of-actively-exploited-ivanti-epm-and-cisco-sd-wan-flaws.html",
+      "date": "2026-03-09",
+      "type": "News"
+    },
+    {
+      "name": "Tenable - CVE-2026-1603",
+      "url": "https://www.tenable.com/cve/CVE-2026-1603",
+      "date": "2026-02-10",
+      "type": "Research"
+    },
+    {
+      "name": "Horizon3.ai - CVE-2026-1603 Attack Research",
+      "url": "https://horizon3.ai/attack-research/vulnerabilities/cve-2026-1603/",
+      "date": "2026-02-10",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityWeek - Recent Ivanti Endpoint Manager Flaw Exploited in Attacks",
+      "url": "https://www.securityweek.com/recent-ivanti-endpoint-manager-flaw-exploited-in-attacks/",
+      "date": "2026-03-09",
+      "type": "News"
+    },
+    {
+      "name": "CybersecurityNews - Ivanti Endpoint Manager Authentication Bypass CVE-2026-1603",
+      "url": "https://cybersecuritynews.com/ivanti-endpoint-manager-authentication-bypass/",
+      "date": "2026-03-09",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-09",
+      "event": "Ivanti releases Endpoint Manager 2024 SU5 patching CVE-2026-1603 and companion SQL injection vulnerability CVE-2026-1602"
+    },
+    {
+      "date": "2026-02-10",
+      "event": "CVE-2026-1603 published to NVD with CVSS 8.6 (High) rating; details of the authentication bypass via malformed header concatenation disclosed"
+    },
+    {
+      "date": "2026-03-09",
+      "event": "CISA adds CVE-2026-1603 to Known Exploited Vulnerabilities catalog alongside SolarWinds Web Help Desk and Omnissa Workspace ONE flaws, confirming active exploitation"
+    },
+    {
+      "date": "2026-03-09",
+      "event": "CISA issues mandatory remediation deadline of March 23, 2026 for Federal Civilian Executive Branch agencies under BOD 22-01"
+    },
+    {
+      "date": "2026-03-13",
+      "event": "Active exploitation ongoing; over 700 EPM instances estimated to be internet-exposed globally"
+    },
+    {
+      "date": "2026-03-23",
+      "event": "CISA mandatory patch deadline for federal agencies"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A serious authentication bypass flaw was found in Ivanti Endpoint Manager (EPM), a software platform that organizations use to manage all their employee computers and devices. The vulnerability allows attackers to skip the login process entirely by sending a specially crafted request with a 'magic number' in the HTTP header. Once bypassed, attackers can access EPM's credential vault — a storage area containing administrator passwords and service account credentials. CISA confirmed the flaw is being actively exploited and demanded federal agencies patch by March 23, 2026.",
+    "who_is_affected": "Organizations running Ivanti Endpoint Manager versions prior to 2024 SU5. EPM is widely deployed in enterprises, government agencies, and managed service providers for device lifecycle management. Attackers specifically target EPM because its credential vault holds Domain Administrator and service account passwords, making it a high-value target for ransomware and espionage groups. Approximately 700+ EPM instances are directly exposed to the internet.",
+    "what_attackers_do": "Step 1: Attacker identifies an organization's Ivanti EPM server exposed on the network (directly or through reconnaissance). Step 2: Attacker sends a specially crafted HTTP request containing the value '64' in a specific header field, which triggers a header concatenation flaw that bypasses EPM authentication checks. Step 3: The authentication check incorrectly validates the request as legitimate, granting the attacker access to protected EPM API endpoints without credentials. Step 4: Attacker accesses the EPM credential vault and extracts Domain Administrator password hashes and service account credentials stored for device management operations. Step 5: Attacker uses the stolen credentials for lateral movement across the entire network, potentially establishing persistent access, deploying ransomware, or conducting data exfiltration at scale.",
+    "what_you_should_do": [
+      "Immediately update Ivanti Endpoint Manager to version 2024 SU5 (federal agencies must complete by March 23, 2026)",
+      "If patching is not immediately possible, restrict network access to EPM servers using firewall rules, allowing only trusted management networks",
+      "Rotate all Domain Administrator, service account, and privileged credentials managed by or stored in EPM after patching",
+      "Review EPM access logs from February 9, 2026 onward for unauthenticated access attempts to credential vault endpoints",
+      "Assess whether any EPM credential vault secrets may have been compromised and initiate incident response procedures if suspicious access is detected"
+    ],
+    "why_this_is_serious": "Ivanti EPM's credential vault contains the highest-privilege credentials in an organization — Domain Administrator passwords, service account tokens, and device management keys. Stealing these credentials gives attackers the keys to the entire kingdom: they can access any system in the domain, disable security tools, and move laterally without detection. The fact that exploitation requires no authentication and only a simple crafted HTTP request makes this trivially easy to exploit at scale, explaining the rapid KEV addition just weeks after patch release."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the CVE-2026-1603 authentication bypass in Ivanti EPM to gain unauthenticated access to the credential vault without valid credentials"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1078.002",
+        "technique_name": "Valid Accounts: Domain Accounts",
+        "description": "The EPM credential vault contains Domain Administrator and service account credentials which attackers extract and abuse for persistent authenticated access across the enterprise"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1078",
+        "technique_name": "Valid Accounts",
+        "description": "Using stolen legitimate domain admin credentials allows attackers to blend in with normal administrative activity and evade behavior-based detection"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021.002",
+        "technique_name": "Remote Services: SMB/Windows Admin Shares",
+        "description": "With Domain Administrator credentials obtained from EPM, attackers can move laterally across Windows environments using SMB, WMI, and other administrative protocols"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1087.002",
+        "technique_name": "Account Discovery: Domain Account",
+        "description": "Access to EPM provides attackers with a complete inventory of managed endpoints and associated accounts, accelerating network mapping and target selection"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on monitoring EPM API endpoints for unauthenticated access attempts, specifically looking for requests with malformed headers or the exploitation 'magic number 64' pattern. Lateral movement using newly acquired domain admin credentials is a key post-exploitation indicator. Forensic review of EPM access logs from February 9, 2026 onward is critical for organizations that have not yet patched.",
+    "log_sources": [
+      {
+        "source": "Ivanti EPM Application/Access Logs",
+        "description": "Monitor for unauthenticated or anomalous access to credential vault API endpoints, especially requests bypassing normal authentication flows",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Server / IIS Logs (EPM Server)",
+        "description": "Inspect HTTP request logs for requests to EPM authentication endpoints with unusual header values or anomalous numeric sequences",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Security Event Logs (Domain Controllers)",
+        "description": "Monitor for Domain Admin account logons from unusual source IPs or workstations that do not typically perform administrative tasks — potential indicator of credential misuse post-exploitation",
+        "priority": "High"
+      },
+      {
+        "source": "Network IDS/IPS",
+        "description": "Deploy signatures to detect exploitation attempts against EPM endpoints; monitor for unexpected connections to EPM servers from external or untrusted networks",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unauthenticated requests to EPM credential vault endpoints",
+        "description": "HTTP requests to EPM credential vault API without valid session tokens, particularly from external or unexpected source IPs",
+        "log_field": "cs-uri-stem='/EPM/CredentialVault*' AND cs(Cookie)='' AND sc-status=200",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Magic number 64 in authentication bypass requests",
+        "description": "Requests containing the specific numeric value '64' in header fields used by the authentication mechanism, indicating exploitation attempts",
+        "log_field": "request_header contains '64' AND request_path contains '/EPM/'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Domain Admin logons from unusual sources post-EPM access",
+        "description": "Windows domain administrator logins originating from systems or IP addresses that have not previously performed admin operations — potential post-exploitation credential use",
+        "log_field": "EventID=4624 AND LogonType=3 AND AccountName LIKE '%admin%' AND NOT IpAddress IN (known_admin_hosts)",
+        "severity": "High"
+      },
+      {
+        "indicator": "Large volume of credential vault API requests",
+        "description": "Unusually high frequency of requests to credential-related EPM endpoints, potentially indicating bulk credential harvesting",
+        "log_field": "cs-uri-stem LIKE '/EPM/Credential*' AND request_count > threshold_per_minute",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch Ivanti EPM to version 2024 SU5 immediately",
+      "description": "Apply the Ivanti Endpoint Manager 2024 SU5 update which patches both CVE-2026-1603 (authentication bypass) and CVE-2026-1602 (SQL injection). Federal agencies must complete patching by March 23, 2026. Download from the Ivanti customer portal.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Firewall-restrict EPM server access pending patch",
+      "description": "If immediate patching is not possible, block all external and untrusted network access to the Ivanti EPM server. Allow connections only from known administrator workstations and management networks. Particularly block port 443/80 from internet-facing interfaces.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Rotate all privileged credentials stored in EPM",
+      "description": "After applying the patch, rotate all Domain Administrator passwords, service account credentials, and any other privileged credentials that were stored in or managed by EPM. Treat all EPM-managed credentials as potentially compromised if the server was accessible before patching.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit EPM access logs for exploitation indicators",
+      "description": "Review Ivanti EPM server access logs from February 9, 2026 (patch release date) onward for suspicious unauthenticated access attempts to credential vault endpoints. Look for requests with unusual headers or access patterns from external IP addresses.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Enable enhanced domain controller logon monitoring",
+      "description": "Enable or increase auditing of privileged domain account logons (Event ID 4624, 4625, 4648 on domain controllers). Investigate any domain admin logons from unusual source IPs or workstations that could indicate use of stolen EPM credentials.",
+      "command": "auditpol /set /subcategory:\"Logon\" /success:enable /failure:enable"
+    }
+  ]
+}

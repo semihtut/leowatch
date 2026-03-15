@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-10T06:13:14.887Z",
-  "date": "2026-03-10",
+  "lastUpdated": "2026-03-15T12:04:25.830Z",
+  "date": "2026-03-15",
   "stats": {
-    "total": 68,
-    "critical": 48,
-    "high": 20,
+    "total": 81,
+    "critical": 57,
+    "high": 24,
     "medium": 0,
     "low": 0,
-    "cisaKev": 34,
+    "cisaKev": 39,
     "activeExploits": 15,
-    "totalSources": 813
+    "totalSources": 1009
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,258 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-10-001",
+  "featuredBriefing": "TB-2026-03-15-005",
   "briefings": [
+    {
+      "id": "TB-2026-03-15-005",
+      "title": "n8n Workflow Automation Platform Hit by Cascading Critical RCE Vulnerabilities: CISA Flags Active Exploitation, New Sandbox Escapes Enable Unauthenticated Credential Theft of AWS Keys and OAuth Tokens Across 24,700+ Exposed Instances (CVE-2025-68613, CVE-2026-27577, CVE-2026-27493)",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2025-68613",
+        "CVE-2026-27577",
+        "CVE-2026-27493"
+      ],
+      "tags": [
+        "n8n",
+        "workflow-automation",
+        "rce",
+        "sandbox-escape",
+        "credential-theft",
+        "cisa-kev"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "n8n, a popular open-source workflow automation platform used by tens of thousands of organizations to connect cloud services and automate business processes, has been hit by a cascade of critical secu..."
+    },
+    {
+      "id": "TB-2026-03-15-004",
+      "title": "Juniper Networks Junos OS Evolved Pre-Authentication Root RCE via Exposed Anomaly Detection REST API on PTX Series Routers: watchTowr Research Confirms Single-Packet Full Device Takeover (CVE-2026-21902)",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2026-21902"
+      ],
+      "tags": [
+        "juniper",
+        "junos",
+        "rce",
+        "pre-authentication",
+        "network-infrastructure",
+        "ptx-series"
+      ],
+      "sourcesCount": 19,
+      "excerpt": "Researchers at watchTowr discovered that Juniper Networks' PTX Series core routers (running Junos OS Evolved) contained a built-in diagnostic service called the On-Box Anomaly Detection Framework that..."
+    },
+    {
+      "id": "TB-2026-03-15-003",
+      "title": "Cisco Catalyst SD-WAN Authentication Bypass Actively Exploited Since 2023 by UAT-8616: CISA Emergency Directive 26-03 Orders Immediate Federal Patching of CVSS 10.0 Flaw Granting Full Network Fabric Control (CVE-2026-20127)",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2026-20127"
+      ],
+      "tags": [
+        "cisco",
+        "sd-wan",
+        "authentication-bypass",
+        "rce",
+        "actively-exploited",
+        "cisa-kev"
+      ],
+      "sourcesCount": 18,
+      "excerpt": "A maximum-severity flaw (CVSS 10.0) in Cisco's SD-WAN network management software allows hackers to log in without any password and take complete control of the devices that manage an entire company's..."
+    },
+    {
+      "id": "TB-2026-03-15-002",
+      "title": "CrackArmor: Nine Critical Confused Deputy Vulnerabilities in AppArmor Linux Security Module Allow Unprivileged Local Users to Escalate to Root — 12.6 Million Enterprise Linux Systems Affected Across Ubuntu, Debian, SUSE, and Kubernetes",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [],
+      "tags": [
+        "linux",
+        "apparmor",
+        "privilege-escalation",
+        "ubuntu",
+        "kubernetes",
+        "container-escape"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Security researchers at Qualys discovered nine serious flaws in AppArmor, a built-in security system that comes standard with Ubuntu, Debian, and SUSE Linux — the most widely deployed enterprise Linux..."
+    },
+    {
+      "id": "TB-2026-03-15-001",
+      "title": "Microsoft SharePoint Server Authenticated RCE via Improper Input Validation Patched in March 2026 Patch Tuesday — On-Premises Deployments at Risk (CVE-2026-26106)",
+      "severity": "High",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2026-26106"
+      ],
+      "tags": [
+        "microsoft",
+        "sharepoint",
+        "rce",
+        "patch-tuesday",
+        "on-premises",
+        "improper-input-validation"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Microsoft patched a serious security flaw in its on-premises SharePoint Server product that could allow attackers who already have basic user access to run malicious code on the server. The vulnerabil..."
+    },
+    {
+      "id": "TB-2026-03-14-002",
+      "title": "Microsoft Office Preview Pane Remote Code Execution Requires Zero User Interaction: March 2026 Patch Tuesday Discloses Critical RCE in Word, Excel, and Outlook Via Type Confusion and Pointer Dereference (CVE-2026-26110, CVE-2026-26113)",
+      "severity": "Critical",
+      "date": "2026-03-14",
+      "cves": [
+        "CVE-2026-26110",
+        "CVE-2026-26113"
+      ],
+      "tags": [
+        "microsoft",
+        "office",
+        "rce",
+        "preview-pane",
+        "patch-tuesday",
+        "word"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "Microsoft's March 2026 Patch Tuesday revealed two critical security holes in Microsoft Office that are alarming because victims do not need to open, double-click, or run anything to be compromised. Si..."
+    },
+    {
+      "id": "TB-2026-03-14-001",
+      "title": "Google Chrome Skia Out-of-Bounds Write and V8 Type Confusion Zero-Days Actively Exploited in the Wild: CISA Adds Both to KEV Catalog with Federal Patch Deadline (CVE-2026-3909, CVE-2026-3910)",
+      "severity": "Critical",
+      "date": "2026-03-14",
+      "cves": [
+        "CVE-2026-3909",
+        "CVE-2026-3910"
+      ],
+      "tags": [
+        "browser",
+        "chrome",
+        "chromium",
+        "zero-day",
+        "actively-exploited",
+        "cisa-kev"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Google discovered two critical security holes in its Chrome browser that hackers were already exploiting before Google even released a fix. The first flaw (CVE-2026-3909) is in Skia, the graphics engi..."
+    },
+    {
+      "id": "TB-2026-03-13-006",
+      "title": "Microsoft .NET Base64Url Out-of-Bounds Read Zero-Day Allows Unauthenticated Remote Denial of Service Against All .NET 9 and 10 Applications: March 2026 Patch Tuesday (CVE-2026-26127)",
+      "severity": "High",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-26127"
+      ],
+      "tags": [
+        "microsoft",
+        "dotnet",
+        "denial-of-service",
+        "zero-day",
+        "patch-tuesday",
+        "web-application"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Microsoft disclosed a zero-day denial-of-service vulnerability in the .NET runtime's Base64Url decoding implementation. The flaw exists in the Microsoft.Bcl.Memory library's high-performance Base64Url..."
+    },
+    {
+      "id": "TB-2026-03-13-005",
+      "title": "Veeam Backup & Replication 7 Critical RCE Flaws Let Any Domain User Compromise Backup Infrastructure: Ransomware Groups Expected to Weaponize Within Days (CVE-2026-21666, CVE-2026-21669)",
+      "severity": "Critical",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-21666",
+        "CVE-2026-21669"
+      ],
+      "tags": [
+        "veeam",
+        "backup",
+        "rce",
+        "ransomware",
+        "domain-user",
+        "authenticated"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Veeam released emergency patches on March 12, 2026 for 7 critical vulnerabilities in Backup & Replication — their flagship enterprise backup product. The two most severe flaws (CVE-2026-21666 and CVE-..."
+    },
+    {
+      "id": "TB-2026-03-13-004",
+      "title": "Microsoft SQL Server Elevation of Privilege Zero-Day Grants Sysadmin Access via TDS Protocol Flaw: March 2026 Patch Tuesday (CVE-2026-21262)",
+      "severity": "High",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-21262"
+      ],
+      "tags": [
+        "microsoft",
+        "sql-server",
+        "privilege-escalation",
+        "patch-tuesday",
+        "database",
+        "zero-day"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A security researcher named Erland Sommarskog publicly disclosed a flaw in Microsoft SQL Server before a patch was ready, making this a zero-day. The bug exists in how SQL Server handles the login han..."
+    },
+    {
+      "id": "TB-2026-03-13-003",
+      "title": "Juniper Junos OS Evolved PTX Series Unauthenticated Root RCE via Exposed Anomaly Detection API: watchTowr Emergency Disclosure (CVE-2026-21902)",
+      "severity": "Critical",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-21902"
+      ],
+      "tags": [
+        "juniper",
+        "junos",
+        "ptx-series",
+        "rce",
+        "pre-auth",
+        "network-infrastructure"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Security researchers at watchTowr Labs discovered a critical flaw in Juniper's Junos OS Evolved operating system running on PTX Series high-performance routers. The vulnerability exists because an int..."
+    },
+    {
+      "id": "TB-2026-03-13-002",
+      "title": "Ivanti Endpoint Manager Pre-Auth Authentication Bypass Grants Credential Vault Access: CISA KEV Demands Federal Patch by March 23 (CVE-2026-1603)",
+      "severity": "High",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-1603"
+      ],
+      "tags": [
+        "ivanti",
+        "endpoint-manager",
+        "authentication-bypass",
+        "credential-theft",
+        "cisa-kev",
+        "uem"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A serious authentication bypass flaw was found in Ivanti Endpoint Manager (EPM), a software platform that organizations use to manage all their employee computers and devices. The vulnerability allows..."
+    },
+    {
+      "id": "TB-2026-03-13-001",
+      "title": "n8n Workflow Automation Platform Critical RCE via Expression Injection Exploited in the Wild: CISA KEV Added with March 25 Federal Deadline (CVE-2025-68613)",
+      "severity": "Critical",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2025-68613"
+      ],
+      "tags": [
+        "n8n",
+        "workflow-automation",
+        "rce",
+        "expression-injection",
+        "cisa-kev",
+        "nodejs"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical vulnerability was discovered in n8n, a popular open-source workflow automation platform used by thousands of organizations. The flaw allows users with a basic account to escape the platform..."
+    },
     {
       "id": "TB-2026-03-10-002",
       "title": "Omnissa Workspace ONE UEM Pre-Auth SSRF Exploited in the Wild: CISA KEV Added 5 Years After Disclosure as Active Attacks Resume (CVE-2021-22054)",
