@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-15T12:04:25.830Z",
-  "date": "2026-03-15",
+  "lastUpdated": "2026-03-24T05:33:07.261Z",
+  "date": "2026-03-24",
   "stats": {
-    "total": 81,
-    "critical": 57,
+    "total": 84,
+    "critical": 60,
     "high": 24,
     "medium": 0,
     "low": 0,
     "cisaKev": 39,
     "activeExploits": 15,
-    "totalSources": 1009
+    "totalSources": 1047
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,65 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-15-005",
+  "featuredBriefing": "TB-2026-03-24-003",
   "briefings": [
+    {
+      "id": "TB-2026-03-24-003",
+      "title": "Oracle Releases Emergency Out-of-Band Patch for Critical CVE-2026-21992 (CVSS 9.8): Unauthenticated RCE in Identity Manager and Web Services Manager via Missing Authentication in REST WebServices",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-21992"
+      ],
+      "tags": [
+        "oracle",
+        "identity-manager",
+        "fusion-middleware",
+        "rce",
+        "unauthenticated",
+        "out-of-band-patch"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Oracle released an emergency out-of-band security patch on March 23, 2026 - outside its regular quarterly patch cycle - to fix a critical vulnerability in Oracle Identity Manager and Oracle Web Servic..."
+    },
+    {
+      "id": "TB-2026-03-24-002",
+      "title": "Interlock Ransomware Exploits Cisco Secure Firewall Management Center Zero-Day CVE-2026-20131 (CVSS 10.0): Unauthenticated Java Deserialization Achieves Root Access on Enterprise Firewalls, Exploited 36 Days Before Patch",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-20131"
+      ],
+      "tags": [
+        "cisco",
+        "firewall",
+        "fmc",
+        "ransomware",
+        "interlock",
+        "zero-day"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "The Interlock ransomware group discovered and exploited a maximum-severity vulnerability in Cisco's Secure Firewall Management Center (FMC) as a zero-day, starting on January 26, 2026 - a full 36 days..."
+    },
+    {
+      "id": "TB-2026-03-24-001",
+      "title": "Critical Langflow AI Platform Flaw CVE-2026-33017 Exploited Within 20 Hours of Disclosure: Unauthenticated RCE via exec() Compromises AI Pipelines and Connected Databases Across Exposed Instances",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-33017"
+      ],
+      "tags": [
+        "langflow",
+        "ai-platform",
+        "rce",
+        "code-injection",
+        "unauthenticated",
+        "actively-exploited"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Langflow, a popular open-source platform used by organizations to build AI agents and Retrieval-Augmented Generation (RAG) pipelines, was found to have a critical vulnerability that lets attackers run..."
+    },
     {
       "id": "TB-2026-03-15-005",
       "title": "n8n Workflow Automation Platform Hit by Cascading Critical RCE Vulnerabilities: CISA Flags Active Exploitation, New Sandbox Escapes Enable Unauthenticated Credential Theft of AWS Keys and OAuth Tokens Across 24,700+ Exposed Instances (CVE-2025-68613, CVE-2026-27577, CVE-2026-27493)",
