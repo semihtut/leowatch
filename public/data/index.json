@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-24T05:33:07.261Z",
-  "date": "2026-03-24",
+  "lastUpdated": "2026-03-25T05:15:16.182Z",
+  "date": "2026-03-25",
   "stats": {
-    "total": 84,
-    "critical": 60,
+    "total": 90,
+    "critical": 66,
     "high": 24,
     "medium": 0,
     "low": 0,
-    "cisaKev": 39,
+    "cisaKev": 43,
     "activeExploits": 15,
-    "totalSources": 1047
+    "totalSources": 1133
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,122 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-24-003",
+  "featuredBriefing": "TB-2026-03-25-003",
   "briefings": [
+    {
+      "id": "TB-2026-03-25-003",
+      "title": "Laravel Livewire RCE CVE-2025-54068 (CVSS 9.2) Added to CISA KEV: Unauthenticated Remote Command Execution via Hydration Bypass Threatens 130,000+ Laravel Applications",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2025-54068"
+      ],
+      "tags": [
+        "laravel",
+        "livewire",
+        "rce",
+        "php",
+        "web-framework",
+        "hydration-bypass"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A critical remote command execution vulnerability was discovered in Livewire, the most popular full-stack framework for Laravel PHP applications. The vulnerability (CVE-2025-54068) exists in how Livew..."
+    },
+    {
+      "id": "TB-2026-03-25-002",
+      "title": "Interlock Ransomware Exploits Cisco Secure Firewall Management Center Zero-Day CVE-2026-20131 (CVSS 10.0): 36-Day Pre-Disclosure Exploitation Enables Unauthenticated Root Access via Java Deserialization",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2026-20131"
+      ],
+      "tags": [
+        "interlock-ransomware",
+        "cisco-fmc",
+        "zero-day",
+        "java-deserialization",
+        "firewall",
+        "pre-auth-rce"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "The Interlock ransomware group has been exploiting a maximum-severity vulnerability (CVSS 10.0) in Cisco Secure Firewall Management Center (FMC) as a zero-day for 36 days before Cisco publicly disclos..."
+    },
+    {
+      "id": "TB-2026-03-25-001",
+      "title": "GlassWorm Supply-Chain Attack Expands to 72 Malicious Open VSX Extensions: Transitive Dependency Hijacking Targets Developer Environments via Solana-Based C2 Resolution",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [],
+      "tags": [
+        "glassworm",
+        "supply-chain",
+        "open-vsx",
+        "vscode-extensions",
+        "developer-targeting",
+        "credential-theft"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A sophisticated supply-chain campaign called GlassWorm has compromised the Open VSX extension registry, which provides IDE extensions for editors like VSCodium, Eclipse Theia, and Gitpod. Attackers pu..."
+    },
+    {
+      "id": "TB-2026-03-24-006",
+      "title": "32-Year-Old GNU Telnetd Buffer Overflow Enables Unauthenticated Root RCE Before Login Prompt: CVE-2026-32746 Affects FreeBSD, NetBSD, Citrix NetScaler, TrueNAS and 3,362 Internet-Exposed Hosts With No Patch Available Until April 2026",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-32746"
+      ],
+      "tags": [
+        "telnet",
+        "gnu",
+        "linux",
+        "bsd",
+        "freebsd",
+        "netbsd"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "Security researchers at Dream Security discovered a critical 32-year-old programming error in GNU telnetd — the software that serves Telnet remote access connections on Linux, BSD, and many embedded s..."
+    },
+    {
+      "id": "TB-2026-03-24-005",
+      "title": "Laravel Livewire v3 Unauthenticated Remote Code Execution Actively Exploited by Iranian APT MuddyWater: CISA Adds CVE-2025-54068 to KEV Affecting Millions of PHP Web Applications with Federal Patch Deadline April 3, 2026",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2025-54068"
+      ],
+      "tags": [
+        "laravel",
+        "livewire",
+        "php",
+        "rce",
+        "cisa-kev",
+        "web-application"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical vulnerability in Laravel Livewire v3, a popular PHP web framework component used by millions of websites worldwide, allows attackers to execute arbitrary code on web servers without any aut..."
+    },
+    {
+      "id": "TB-2026-03-24-004",
+      "title": "DarkSword iOS Full-Chain Exploit Kit Deployed by State-Sponsored Actors and Spyware Vendors: CISA Adds Three Zero-Days to KEV as 220 Million iPhone and iPad Devices Face Complete Takeover Risk (CVE-2025-31277, CVE-2025-43510, CVE-2025-43520)",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2025-31277",
+        "CVE-2025-43510",
+        "CVE-2025-43520"
+      ],
+      "tags": [
+        "apple",
+        "ios",
+        "webkit",
+        "zero-day",
+        "spyware",
+        "cisa-kev"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "Security researchers discovered a sophisticated 3-stage iPhone and iPad hacking kit called 'DarkSword' that chains three zero-day vulnerabilities together to completely take over any iOS device runnin..."
+    },
     {
       "id": "TB-2026-03-24-003",
       "title": "Oracle Releases Emergency Out-of-Band Patch for Critical CVE-2026-21992 (CVSS 9.8): Unauthenticated RCE in Identity Manager and Web Services Manager via Missing Authentication in REST WebServices",
