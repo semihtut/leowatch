@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-25T05:15:16.182Z",
-  "date": "2026-03-25",
+  "lastUpdated": "2026-03-26T11:36:03.503Z",
+  "date": "2026-03-26",
   "stats": {
-    "total": 90,
-    "critical": 66,
-    "high": 24,
+    "total": 95,
+    "critical": 69,
+    "high": 26,
     "medium": 0,
     "low": 0,
-    "cisaKev": 43,
+    "cisaKev": 46,
     "activeExploits": 15,
-    "totalSources": 1133
+    "totalSources": 1197
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,102 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-25-003",
+  "featuredBriefing": "TB-2026-03-26-001",
   "briefings": [
+    {
+      "id": "TB-2026-03-26-002",
+      "title": "APT28 Exploits Zimbra ZCS Stored XSS CVE-2025-66376 in Zero-Click Operation GhostMail: Russian State Hackers Steal Session Tokens and 90 Days of Email Data from Ukrainian Government Agencies — CISA KEV Deadline April 1",
+      "severity": "High",
+      "date": "2026-03-26",
+      "cves": [
+        "CVE-2025-66376"
+      ],
+      "tags": [
+        "zimbra",
+        "xss",
+        "apt28",
+        "russia",
+        "ukraine",
+        "espionage"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Russian military hackers (APT28, also known as Fancy Bear) discovered and exploited a security flaw in Zimbra — a popular email and collaboration platform used by corporations, universities, and gover..."
+    },
+    {
+      "id": "TB-2026-03-26-001",
+      "title": "Craft CMS Pre-Authentication RCE CVE-2025-32432 (CVSS 10.0) Added to CISA KEV: PHP Gadget Chain via Image Transform Endpoint Enables Unauthenticated Full System Compromise Across 13,000+ Exposed Instances — Mimo Threat Actor Actively Deploying Cryptominers",
+      "severity": "Critical",
+      "date": "2026-03-26",
+      "cves": [
+        "CVE-2025-32432"
+      ],
+      "tags": [
+        "craft-cms",
+        "rce",
+        "php",
+        "deserialization",
+        "cisa-kev",
+        "unauthenticated"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical security flaw was found in Craft CMS, a popular website content management system used by tens of thousands of organizations worldwide. The flaw is in the image transformation feature and a..."
+    },
+    {
+      "id": "TB-2026-03-25-006",
+      "title": "Citrix NetScaler ADC and Gateway Critical Memory Disclosure CVE-2026-3055 (CVSS 9.3): Unauthenticated Out-of-Bounds Read via SAML IdP Configuration Leaks Session Tokens and Authentication Data — Exploitation Imminent",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2026-3055",
+        "CVE-2026-4368"
+      ],
+      "tags": [
+        "citrix",
+        "netscaler",
+        "adc",
+        "gateway",
+        "memory-disclosure",
+        "saml"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Citrix disclosed a critical security flaw on March 23, 2026, in NetScaler ADC and NetScaler Gateway - the network appliances that millions of enterprises use as their VPN, load balancer, and applicati..."
+    },
+    {
+      "id": "TB-2026-03-25-005",
+      "title": "TeamPCP Supply Chain Campaign Compromises Trivy Security Scanner, LiteLLM PyPI Package and 141 npm Packages: Cascading Attack Steals Cloud Credentials from 1,000+ Environments via CanisterWorm Blockchain C2",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "teampcp",
+        "trivy",
+        "litellm",
+        "pypi",
+        "npm"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A sophisticated hacker group called TeamPCP executed a cascading supply chain attack starting March 19, 2026. They broke into Trivy - one of the most widely used open-source security scanning tools - ..."
+    },
+    {
+      "id": "TB-2026-03-25-004",
+      "title": "VMware Aria Operations Command Injection CVE-2026-22719 (CVSS 8.1) Added to CISA KEV: Unauthenticated RCE During Support-Assisted Migration Threatens Enterprise Cloud Management Infrastructure",
+      "severity": "High",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2026-22719"
+      ],
+      "tags": [
+        "vmware",
+        "aria-operations",
+        "command-injection",
+        "cisa-kev",
+        "cloud-management",
+        "rce"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A serious vulnerability was discovered in VMware Aria Operations, the platform many large companies use to monitor and manage their cloud and virtual machine environments. The flaw allows attackers to..."
+    },
     {
       "id": "TB-2026-03-25-003",
       "title": "Laravel Livewire RCE CVE-2025-54068 (CVSS 9.2) Added to CISA KEV: Unauthenticated Remote Command Execution via Hydration Bypass Threatens 130,000+ Laravel Applications",
