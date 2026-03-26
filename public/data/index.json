@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-26T11:36:03.503Z",
+  "lastUpdated": "2026-03-26T11:47:29.504Z",
   "date": "2026-03-26",
   "stats": {
-    "total": 95,
-    "critical": 69,
+    "total": 97,
+    "critical": 71,
     "high": 26,
     "medium": 0,
     "low": 0,
-    "cisaKev": 46,
+    "cisaKev": 47,
     "activeExploits": 15,
-    "totalSources": 1197
+    "totalSources": 1223
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,44 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-26-001",
+  "featuredBriefing": "TB-2026-03-26-004",
   "briefings": [
+    {
+      "id": "TB-2026-03-26-004",
+      "title": "Langflow AI Pipeline RCE CVE-2026-33017 (CVSS 9.3) Added to CISA KEV: Unauthenticated exec() Code Injection via Public Flow Build Endpoint Exploited Within 20 Hours of Disclosure — Attackers Harvesting LLM API Keys from Exposed Instances",
+      "severity": "Critical",
+      "date": "2026-03-26",
+      "cves": [
+        "CVE-2026-33017"
+      ],
+      "tags": [
+        "langflow",
+        "rce",
+        "ai-security",
+        "cisa-kev",
+        "unauthenticated",
+        "code-injection"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical security vulnerability was discovered in Langflow, a popular open-source tool for building AI application workflows and chatbots. The flaw allows anyone on the internet to execute arbitrary..."
+    },
+    {
+      "id": "TB-2026-03-26-003",
+      "title": "TeamPCP Trojans LiteLLM PyPI Package in Multi-Stage Supply Chain Attack: Malicious Versions 1.82.7–1.82.8 Deploy Credential Stealer, Kubernetes Lateral Movement Toolkit, and Persistent Backdoor via Python .pth Auto-Execution — 3.4 Million Daily Downloads Exposed for 3 Hours",
+      "severity": "Critical",
+      "date": "2026-03-26",
+      "cves": [],
+      "tags": [
+        "pypi",
+        "supply-chain",
+        "litellm",
+        "teampcp",
+        "credential-theft",
+        "kubernetes"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A threat actor known as TeamPCP executed a sophisticated multi-stage supply chain attack that culminated in the compromise of LiteLLM, one of the most popular Python AI libraries with 3.4 million dail..."
+    },
     {
       "id": "TB-2026-03-26-002",
       "title": "APT28 Exploits Zimbra ZCS Stored XSS CVE-2025-66376 in Zero-Click Operation GhostMail: Russian State Hackers Steal Session Tokens and 90 Days of Email Data from Ukrainian Government Agencies — CISA KEV Deadline April 1",
