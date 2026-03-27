@@ -1,0 +1,281 @@
+{
+  "briefing_id": "TB-2026-02-12-004",
+  "title": "Fortinet FortiClientEMS Unauthenticated SQL Injection to RCE: Public PoC Targets Enterprise Endpoint Management with xp_cmdshell Exploitation Chain (CVE-2026-21643)",
+  "generated_date": "2026-02-12",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-21643"
+  ],
+  "tags": [
+    "fortinet",
+    "forticlient-ems",
+    "sql-injection",
+    "rce",
+    "endpoint-management",
+    "enterprise",
+    "poc-available"
+  ],
+  "affected_products": [
+    "Fortinet FortiClientEMS 7.4.4",
+    "Organizations using FortiClientEMS for endpoint management",
+    "Microsoft SQL Server (backend database component)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "NVD - CVE-2026-21643",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21643",
+      "date": "2026-02-06",
+      "type": "Government"
+    },
+    {
+      "name": "Arctic Wolf - CVE-2026-21643 Analysis",
+      "url": "https://arcticwolf.com/resources/blog/cve-2026-21643/",
+      "date": "2026-02-07",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime - CVE-2026-21643 Detection and MITRE ATT&CK Mapping",
+      "url": "https://socprime.com/blog/cve-2026-21643-vulnerability/",
+      "date": "2026-02-07",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable - CVE-2026-21643",
+      "url": "https://www.tenable.com/cve/CVE-2026-21643",
+      "date": "2026-02-06",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Fortinet Patches Critical SQLi Flaw in FortiClientEMS",
+      "url": "https://thehackernews.com/2026/02/fortinet-patches-critical-sqli-flaw.html",
+      "date": "2026-02-07",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Exploit Released for Fortinet RCE Bug",
+      "url": "https://www.bleepingcomputer.com/news/security/exploit-released-for-fortinet-rce-bug-used-in-attacks-patch-now/",
+      "date": "2026-02-08",
+      "type": "News"
+    },
+    {
+      "name": "GBHackers - Critical Fortinet FortiClientEMS Vulnerability",
+      "url": "https://gbhackers.com/critical-fortinet-forticlient-ems-vulnerability/",
+      "date": "2026-02-07",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - Critical FortiClientEMS Flaw Allows RCE",
+      "url": "https://securityaffairs.com/187787/security/critical-fortinet-forticlientems-flaw-allows-remote-code-execution.html",
+      "date": "2026-02-07",
+      "type": "News"
+    },
+    {
+      "name": "CyberSecurityNews - FortiClientEMS RCE Vulnerability",
+      "url": "https://cybersecuritynews.com/forticlientems-rce-vulnerability/",
+      "date": "2026-02-07",
+      "type": "News"
+    },
+    {
+      "name": "Horizon3.ai - CVE-2023-48788 FortiClientEMS SQL Injection Deep Dive (Predecessor Analysis)",
+      "url": "https://horizon3.ai/attack-research/attack-blogs/cve-2023-48788-fortinet-forticlientems-sql-injection-deep-dive/",
+      "date": "2024-03-21",
+      "type": "Research"
+    },
+    {
+      "name": "Darktrace - FortiClient EMS Exploited: Attack Chain and Post-Exploitation Tactics",
+      "url": "https://www.darktrace.com/blog/forticlient-ems-exploited-inside-the-attack-chain-and-post-exploitation-tactics/",
+      "date": "2024-09-15",
+      "type": "Research"
+    },
+    {
+      "name": "Kaspersky Securelist - Patched FortiClientEMS Vulnerability Exploited in the Wild",
+      "url": "https://securelist.com/patched-forticlient-ems-vulnerability-exploited-in-the-wild/115046/",
+      "date": "2024-10-23",
+      "type": "Research"
+    },
+    {
+      "name": "Rescana - FortiClientEMS CVE-2026-21643 Critical SQL Injection",
+      "url": "https://www.rescana.com/post/forticlientems-cve-2026-21643-critical-unauthenticated-sql-injection-vulnerability-allows-remote-co",
+      "date": "2026-02-07",
+      "type": "Research"
+    },
+    {
+      "name": "Red Hot Cyber - CVE-2026-21643 Critical SQL Injection in FortiClientEMS",
+      "url": "https://www.redhotcyber.com/en/post/cve-2026-21643-critical-sql-injection-vulnerability-in-fortinet-forticlientems/",
+      "date": "2026-02-08",
+      "type": "Research"
+    },
+    {
+      "name": "CVEFeed - CVE-2026-21643 Tracking",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-21643",
+      "date": "2026-02-06",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-03-12",
+      "event": "Predecessor vulnerability CVE-2023-48788 (similar SQL injection in FortiClientEMS DAS component) actively exploited by Medusa ransomware group"
+    },
+    {
+      "date": "2026-02-06",
+      "event": "Fortinet discloses CVE-2026-21643 and releases FortiClientEMS 7.4.5 patch; discovered internally by Gwendal Guegniaud of Fortinet PSIRT"
+    },
+    {
+      "date": "2026-02-07",
+      "event": "Security research firms publish advisories and detection guidance for the new vulnerability"
+    },
+    {
+      "date": "2026-02-08",
+      "event": "Proof-of-concept exploit code becomes available on GitHub enabling automated exploitation"
+    },
+    {
+      "date": "2026-02-12",
+      "event": "No wild exploitation confirmed yet but imminent risk due to public PoC and Fortinet's history of rapid post-disclosure exploitation"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical SQL injection vulnerability was discovered in Fortinet FortiClientEMS, the enterprise platform used to centrally manage FortiClient endpoint security agents across organizations. The flaw allows anyone on the network to inject malicious database commands without needing any login credentials, ultimately leading to complete server takeover. A working proof-of-concept exploit has already been published on GitHub, making exploitation trivially easy for attackers.",
+    "who_is_affected": "Organizations running FortiClientEMS version 7.4.4 for endpoint management. FortiClientEMS is used by enterprises, government agencies, healthcare organizations, and financial institutions to deploy and manage FortiClient security agents across thousands of endpoints. The EMS server often has broad network access to all managed endpoints, making it an extremely high-value target.",
+    "what_attackers_do": "Step 1: Attackers identify internet-exposed or network-accessible FortiClientEMS web interfaces running version 7.4.4. Step 2: They send a crafted HTTP request to the EMS administrative GUI containing SQL injection payloads that bypass input validation and manipulate the backend Microsoft SQL Server database. Step 3: Through the SQL injection, attackers enable the xp_cmdshell stored procedure which allows executing Windows system commands directly from the database. Step 4: Using xp_cmdshell, attackers execute PowerShell commands with SYSTEM privileges to download and install remote access tools like ScreenConnect, AnyDesk, or Atera for persistent backdoor access. Step 5: With SYSTEM-level access on the EMS server, attackers harvest endpoint management credentials, deploy ransomware to all managed endpoints simultaneously, or exfiltrate sensitive organizational data.",
+    "what_you_should_do": [
+      "Immediately upgrade FortiClientEMS to version 7.4.5 or later; this is the only complete remediation for the vulnerability",
+      "Restrict network access to the FortiClientEMS web interface to trusted administrative networks only using firewall rules and VPN requirements",
+      "Disable xp_cmdshell on the backend Microsoft SQL Server: EXEC sp_configure 'xp_cmdshell', 0; RECONFIGURE;",
+      "Monitor SQL Server logs for suspicious xp_cmdshell execution, PowerShell commands, and unexpected stored procedure calls",
+      "Review FortiClientEMS access logs for unusual API requests from unrecognized IP addresses since February 6, 2026"
+    ],
+    "why_this_is_serious": "FortiClientEMS is the central management platform that controls endpoint security across entire organizations. Compromising the EMS server gives attackers a direct channel to deploy malware to every managed endpoint, effectively weaponizing the security infrastructure itself. The predecessor vulnerability (CVE-2023-48788) was actively exploited by the Medusa ransomware group in 2024, demonstrating that threat actors have well-established playbooks for this exact attack chain. With a public PoC now available, exploitation of CVE-2026-21643 is not a question of if, but when."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the FortiClientEMS web GUI via unauthenticated SQL injection to gain initial access to the EMS server's database and operating system"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.001",
+        "technique_name": "Command and Scripting Interpreter: PowerShell",
+        "description": "After enabling xp_cmdshell via SQL injection, attackers execute PowerShell commands with SYSTEM privileges to download tools and establish persistence"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "SQL injection escalates from database-level access to SYSTEM-level code execution through Microsoft SQL Server's xp_cmdshell functionality"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027",
+        "technique_name": "Obfuscated Files or Information",
+        "description": "Attackers use URL-encoded and Base64-wrapped PowerShell commands within SQL injection payloads to evade WAF and log detection"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1219",
+        "technique_name": "Remote Access Software",
+        "description": "Post-exploitation involves installing legitimate remote management tools (ScreenConnect, AnyDesk, Atera) as covert command-and-control channels"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1486",
+        "technique_name": "Data Encrypted for Impact",
+        "description": "The predecessor CVE-2023-48788 was actively used by Medusa ransomware group, indicating high probability of ransomware deployment via this attack chain"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor FortiClientEMS web interface for SQL injection attempts in HTTP requests, detect xp_cmdshell activation and command execution on the backend SQL Server, and watch for post-exploitation indicators including RMM tool installation and lateral movement.",
+    "log_sources": [
+      {
+        "source": "FortiClientEMS Application Logs",
+        "description": "Located in C:\\Program Files (x86)\\Fortinet\\FortiClientEMS\\logs\\; monitor for unusual API requests, connection attempts from unrecognized clients, and SQL error messages",
+        "priority": "Critical"
+      },
+      {
+        "source": "Microsoft SQL Server Error Logs",
+        "description": "Located in MSSQL\\Log\\ERRORLOG; monitor for sp_configure changes, xp_cmdshell execution, and unexpected EXEC commands with PowerShell payloads",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Application Firewall (WAF) Logs",
+        "description": "Alert on HTTP requests to FortiClientEMS GUI containing SQL keywords: UNION, SELECT, EXEC, xp_cmdshell, sp_configure, and Base64-encoded payloads",
+        "priority": "High"
+      },
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Monitor SQL Server process (sqlservr.exe) for spawning cmd.exe, powershell.exe, or downloading executables; detect RMM tool installation",
+        "priority": "Critical"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "xp_cmdshell activation in SQL Server",
+        "description": "Detection of sp_configure commands enabling xp_cmdshell indicates an attacker has achieved SQL injection and is escalating to OS command execution",
+        "log_field": "SQL Error Log: 'sp_configure' AND 'xp_cmdshell'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "SQL Server process spawning command interpreter",
+        "description": "sqlservr.exe launching cmd.exe or powershell.exe as child processes indicates successful RCE via xp_cmdshell exploitation",
+        "log_field": "ParentProcess='sqlservr.exe' AND ChildProcess IN ('cmd.exe', 'powershell.exe')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "HTTP requests with SQL injection patterns",
+        "description": "Requests to FortiClientEMS web GUI containing SQL keywords, UNION SELECT statements, or encoded payloads indicate exploitation attempts",
+        "log_field": "url CONTAINS 'UNION' OR url CONTAINS 'xp_cmdshell' OR url CONTAINS 'sp_configure'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Remote management tool installation on EMS server",
+        "description": "Unexpected installation of ScreenConnect, AnyDesk, Atera, or similar RMM tools on the EMS server indicates successful post-exploitation persistence",
+        "log_field": "ProcessName IN ('ScreenConnect*.exe', 'AnyDesk.exe', 'AgentSetup*.msi')",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade FortiClientEMS to version 7.4.5 or later",
+      "description": "This is the only complete remediation. Download the patched version from Fortinet support and upgrade immediately. No workarounds are available from the vendor.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Restrict network access to FortiClientEMS web interface",
+      "description": "Limit access to the EMS administrative GUI to trusted management networks only. Block internet-facing exposure and require VPN for remote administration.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Disable xp_cmdshell on the backend SQL Server",
+      "description": "Prevent SQL-injection-to-RCE escalation by disabling the xp_cmdshell stored procedure on the Microsoft SQL Server instance used by FortiClientEMS.",
+      "command": "EXEC sp_configure 'show advanced options', 1; RECONFIGURE; EXEC sp_configure 'xp_cmdshell', 0; RECONFIGURE;"
+    },
+    {
+      "priority": 4,
+      "action": "Enable comprehensive SQL Server audit logging",
+      "description": "Enable SQL Server audit to capture all login attempts, stored procedure executions, and configuration changes. Alert on xp_cmdshell execution and sp_configure changes.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Review EMS server for indicators of compromise",
+      "description": "Check SQL Server error logs for xp_cmdshell execution, review installed software for unauthorized RMM tools (ScreenConnect, AnyDesk, Atera), and examine PowerShell execution history for suspicious commands.",
+      "command": "Get-WinEvent -FilterHashtable @{LogName='Application';ProviderName='MSSQLSERVER'} | Select-String 'xp_cmdshell'"
+    }
+  ]
+}

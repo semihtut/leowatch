@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-27T04:13:53.868Z",
-  "date": "2026-03-27",
+  "lastUpdated": "2026-03-25T05:15:16.182Z",
+  "date": "2026-03-25",
   "stats": {
-    "total": 100,
-    "critical": 73,
-    "high": 27,
+    "total": 90,
+    "critical": 66,
+    "high": 24,
     "medium": 0,
     "low": 0,
-    "cisaKev": 47,
+    "cisaKev": 43,
     "activeExploits": 15,
-    "totalSources": 1262
+    "totalSources": 1133
   },
   "topTags": [
     "cloud",
@@ -27,197 +27,8 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-27-003",
+  "featuredBriefing": "TB-2026-03-25-003",
   "briefings": [
-    {
-      "id": "TB-2026-03-27-003",
-      "title": "Ubiquiti UniFi Network Application Path Traversal CVE-2026-22557 (CVSS 10.0): Unauthenticated Account Takeover Threatens 88,000 Internet-Exposed Controllers — Chained with NoSQL Injection CVE-2026-22558 for Full Admin Compromise",
-      "severity": "Critical",
-      "date": "2026-03-27",
-      "cves": [
-        "CVE-2026-22557",
-        "CVE-2026-22558",
-        "CVE-2026-22559"
-      ],
-      "tags": [
-        "path-traversal",
-        "account-takeover",
-        "ubiquiti",
-        "unifi",
-        "network-infrastructure",
-        "iot"
-      ],
-      "sourcesCount": 14,
-      "excerpt": "Ubiquiti, maker of the widely-deployed UniFi network equipment management platform, disclosed a perfect-score critical vulnerability on March 18, 2026. The flaw allows any attacker on the internet to ..."
-    },
-    {
-      "id": "TB-2026-03-27-002",
-      "title": "GitLab CE/EE WebAuthn 2FA Bypass CVE-2026-2745 (CVSS 6.8): Inconsistent Input Validation Allows Unauthenticated Account Takeover — Affecting All Versions from 7.11 to 18.10.0, Patch Released March 25",
-      "severity": "High",
-      "date": "2026-03-27",
-      "cves": [
-        "CVE-2026-2745"
-      ],
-      "tags": [
-        "authentication-bypass",
-        "2fa-bypass",
-        "gitlab",
-        "devops",
-        "account-takeover",
-        "webauthn"
-      ],
-      "sourcesCount": 14,
-      "excerpt": "GitLab, the DevOps platform hosting millions of software repositories and CI/CD pipelines, disclosed a serious security flaw in how its two-factor authentication (2FA) works. Normally, logging in requ..."
-    },
-    {
-      "id": "TB-2026-03-27-001",
-      "title": "PTC Windchill & FlexPLM Unauthenticated RCE CVE-2026-4681 (CVSS 10.0): Unsafe Deserialization Grants Full System Compromise — German Federal Police Launch Emergency Response as Imminent Exploitation Threat Declared",
-      "severity": "Critical",
-      "date": "2026-03-27",
-      "cves": [
-        "CVE-2026-4681"
-      ],
-      "tags": [
-        "rce",
-        "deserialization",
-        "plm",
-        "manufacturing",
-        "zero-day",
-        "unpatched"
-      ],
-      "sourcesCount": 11,
-      "excerpt": "PTC, maker of Windchill and FlexPLM — the most widely used product lifecycle management (PLM) software in manufacturing and engineering — disclosed a perfect-score critical vulnerability. Any attacker..."
-    },
-    {
-      "id": "TB-2026-03-26-004",
-      "title": "Langflow AI Pipeline RCE CVE-2026-33017 (CVSS 9.3) Added to CISA KEV: Unauthenticated exec() Code Injection via Public Flow Build Endpoint Exploited Within 20 Hours of Disclosure — Attackers Harvesting LLM API Keys from Exposed Instances",
-      "severity": "Critical",
-      "date": "2026-03-26",
-      "cves": [
-        "CVE-2026-33017"
-      ],
-      "tags": [
-        "langflow",
-        "rce",
-        "ai-security",
-        "cisa-kev",
-        "unauthenticated",
-        "code-injection"
-      ],
-      "sourcesCount": 12,
-      "excerpt": "A critical security vulnerability was discovered in Langflow, a popular open-source tool for building AI application workflows and chatbots. The flaw allows anyone on the internet to execute arbitrary..."
-    },
-    {
-      "id": "TB-2026-03-26-003",
-      "title": "TeamPCP Trojans LiteLLM PyPI Package in Multi-Stage Supply Chain Attack: Malicious Versions 1.82.7–1.82.8 Deploy Credential Stealer, Kubernetes Lateral Movement Toolkit, and Persistent Backdoor via Python .pth Auto-Execution — 3.4 Million Daily Downloads Exposed for 3 Hours",
-      "severity": "Critical",
-      "date": "2026-03-26",
-      "cves": [],
-      "tags": [
-        "pypi",
-        "supply-chain",
-        "litellm",
-        "teampcp",
-        "credential-theft",
-        "kubernetes"
-      ],
-      "sourcesCount": 14,
-      "excerpt": "A threat actor known as TeamPCP executed a sophisticated multi-stage supply chain attack that culminated in the compromise of LiteLLM, one of the most popular Python AI libraries with 3.4 million dail..."
-    },
-    {
-      "id": "TB-2026-03-26-002",
-      "title": "APT28 Exploits Zimbra ZCS Stored XSS CVE-2025-66376 in Zero-Click Operation GhostMail: Russian State Hackers Steal Session Tokens and 90 Days of Email Data from Ukrainian Government Agencies — CISA KEV Deadline April 1",
-      "severity": "High",
-      "date": "2026-03-26",
-      "cves": [
-        "CVE-2025-66376"
-      ],
-      "tags": [
-        "zimbra",
-        "xss",
-        "apt28",
-        "russia",
-        "ukraine",
-        "espionage"
-      ],
-      "sourcesCount": 12,
-      "excerpt": "Russian military hackers (APT28, also known as Fancy Bear) discovered and exploited a security flaw in Zimbra — a popular email and collaboration platform used by corporations, universities, and gover..."
-    },
-    {
-      "id": "TB-2026-03-26-001",
-      "title": "Craft CMS Pre-Authentication RCE CVE-2025-32432 (CVSS 10.0) Added to CISA KEV: PHP Gadget Chain via Image Transform Endpoint Enables Unauthenticated Full System Compromise Across 13,000+ Exposed Instances — Mimo Threat Actor Actively Deploying Cryptominers",
-      "severity": "Critical",
-      "date": "2026-03-26",
-      "cves": [
-        "CVE-2025-32432"
-      ],
-      "tags": [
-        "craft-cms",
-        "rce",
-        "php",
-        "deserialization",
-        "cisa-kev",
-        "unauthenticated"
-      ],
-      "sourcesCount": 15,
-      "excerpt": "A critical security flaw was found in Craft CMS, a popular website content management system used by tens of thousands of organizations worldwide. The flaw is in the image transformation feature and a..."
-    },
-    {
-      "id": "TB-2026-03-25-006",
-      "title": "Citrix NetScaler ADC and Gateway Critical Memory Disclosure CVE-2026-3055 (CVSS 9.3): Unauthenticated Out-of-Bounds Read via SAML IdP Configuration Leaks Session Tokens and Authentication Data — Exploitation Imminent",
-      "severity": "Critical",
-      "date": "2026-03-25",
-      "cves": [
-        "CVE-2026-3055",
-        "CVE-2026-4368"
-      ],
-      "tags": [
-        "citrix",
-        "netscaler",
-        "adc",
-        "gateway",
-        "memory-disclosure",
-        "saml"
-      ],
-      "sourcesCount": 11,
-      "excerpt": "Citrix disclosed a critical security flaw on March 23, 2026, in NetScaler ADC and NetScaler Gateway - the network appliances that millions of enterprises use as their VPN, load balancer, and applicati..."
-    },
-    {
-      "id": "TB-2026-03-25-005",
-      "title": "TeamPCP Supply Chain Campaign Compromises Trivy Security Scanner, LiteLLM PyPI Package and 141 npm Packages: Cascading Attack Steals Cloud Credentials from 1,000+ Environments via CanisterWorm Blockchain C2",
-      "severity": "Critical",
-      "date": "2026-03-25",
-      "cves": [],
-      "tags": [
-        "supply-chain",
-        "teampcp",
-        "trivy",
-        "litellm",
-        "pypi",
-        "npm"
-      ],
-      "sourcesCount": 14,
-      "excerpt": "A sophisticated hacker group called TeamPCP executed a cascading supply chain attack starting March 19, 2026. They broke into Trivy - one of the most widely used open-source security scanning tools - ..."
-    },
-    {
-      "id": "TB-2026-03-25-004",
-      "title": "VMware Aria Operations Command Injection CVE-2026-22719 (CVSS 8.1) Added to CISA KEV: Unauthenticated RCE During Support-Assisted Migration Threatens Enterprise Cloud Management Infrastructure",
-      "severity": "High",
-      "date": "2026-03-25",
-      "cves": [
-        "CVE-2026-22719"
-      ],
-      "tags": [
-        "vmware",
-        "aria-operations",
-        "command-injection",
-        "cisa-kev",
-        "cloud-management",
-        "rce"
-      ],
-      "sourcesCount": 12,
-      "excerpt": "A serious vulnerability was discovered in VMware Aria Operations, the platform many large companies use to monitor and manage their cloud and virtual machine environments. The flaw allows attackers to..."
-    },
     {
       "id": "TB-2026-03-25-003",
       "title": "Laravel Livewire RCE CVE-2025-54068 (CVSS 9.2) Added to CISA KEV: Unauthenticated Remote Command Execution via Hydration Bypass Threatens 130,000+ Laravel Applications",

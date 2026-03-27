@@ -1,0 +1,237 @@
+{
+  "briefing_id": "TB-2026-03-13-006",
+  "title": "Microsoft .NET Base64Url Out-of-Bounds Read Zero-Day Allows Unauthenticated Remote Denial of Service Against All .NET 9 and 10 Applications: March 2026 Patch Tuesday (CVE-2026-26127)",
+  "generated_date": "2026-03-13",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 7.5,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-26127"
+  ],
+  "tags": [
+    "microsoft",
+    "dotnet",
+    "denial-of-service",
+    "zero-day",
+    "patch-tuesday",
+    "web-application",
+    "jwt",
+    "base64"
+  ],
+  "affected_products": [
+    "Microsoft .NET 9.0 (all versions before 9.0.14)",
+    "Microsoft .NET 10.0 (all versions before 10.0.4)",
+    "Microsoft.Bcl.Memory NuGet package",
+    "ASP.NET Core 9.0 / 10.0"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "GitHub dotnet/runtime - CVE-2026-26127 Issue #125393",
+      "url": "https://github.com/dotnet/runtime/issues/125393",
+      "date": "2026-03-10",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "GitHub dotnet/announcements - March 2026 .NET Security Release",
+      "url": "https://github.com/dotnet/announcements/issues/384",
+      "date": "2026-03-10",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": ".NET and .NET Framework March 2026 Servicing Releases - Microsoft .NET Blog",
+      "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-march-2026-servicing-updates/",
+      "date": "2026-03-10",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - NIST CVE-2026-26127",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-26127",
+      "date": "2026-03-10",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable: Microsoft's March 2026 Patch Tuesday Addresses 83 CVEs (CVE-2026-21262, CVE-2026-26127)",
+      "url": "https://www.tenable.com/blog/microsofts-march-2026-patch-tuesday-addresses-83-cves-cve-2026-21262-cve-2026-26127",
+      "date": "2026-03-10",
+      "type": "Research"
+    },
+    {
+      "name": "Qualys: Microsoft Patch Tuesday March 2026 Security Update Review",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/03/10/microsoft-patch-tuesday-march-2026-security-update-review",
+      "date": "2026-03-10",
+      "type": "Research"
+    },
+    {
+      "name": "GitLab Security Advisories - Microsoft.Bcl.Memory CVE-2026-26127",
+      "url": "https://advisories.gitlab.com/pkg/nuget/microsoft.bcl.memory/CVE-2026-26127/",
+      "date": "2026-03-10",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer: Microsoft March 2026 Patch Tuesday Fixes 2 Zero-Days, 79 Flaws",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-march-2026-patch-tuesday-fixes-2-zero-days-79-flaws/",
+      "date": "2026-03-10",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News: Microsoft Patches 84 Flaws in March Patch Tuesday, Including Two Public Zero-Days",
+      "url": "https://thehackernews.com/2026/03/microsoft-patches-84-flaws-in-march.html",
+      "date": "2026-03-10",
+      "type": "News"
+    },
+    {
+      "name": "Malwarebytes: March 2026 Patch Tuesday Fixes Two Zero-Day Vulnerabilities",
+      "url": "https://www.malwarebytes.com/blog/news/2026/03/march-2026-patch-tuesday-fixes-two-zero-day-vulnerabilities",
+      "date": "2026-03-10",
+      "type": "News"
+    },
+    {
+      "name": "Security Boulevard: Microsoft's March 2026 Patch Tuesday Addresses 83 CVEs",
+      "url": "https://securityboulevard.com/2026/03/microsofts-march-2026-patch-tuesday-addresses-83-cves-cve-2026-21262-cve-2026-26127/",
+      "date": "2026-03-10",
+      "type": "News"
+    },
+    {
+      "name": "Krebs on Security: Patch Tuesday March 2026 Edition",
+      "url": "https://krebsonsecurity.com/2026/03/microsoft-patch-tuesday-march-2026-edition/",
+      "date": "2026-03-10",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-10",
+      "event": "CVE-2026-26127 publicly disclosed before patch availability — zero-day status established"
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Microsoft March 2026 Patch Tuesday: .NET 9.0.14 and .NET 10.0.4 released with fix for CVE-2026-26127"
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Microsoft.Bcl.Memory NuGet package updated to address the out-of-bounds read in Base64Url decoding"
+    },
+    {
+      "date": "2026-03-13",
+      "event": "No active exploitation confirmed; EPSS score at 0.00041 indicating low near-term exploitation probability"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Microsoft disclosed a zero-day denial-of-service vulnerability in the .NET runtime's Base64Url decoding implementation. The flaw exists in the Microsoft.Bcl.Memory library's high-performance Base64Url decoder, which uses low-level unsafe code for speed. When processing specially crafted malformed Base64Url input, the decoder's buffer index calculations go out of bounds, causing the entire .NET application process to crash. Because this was publicly known before the patch was released on March 10, 2026, it is classified as a zero-day. It affects all .NET 9.0 and 10.0 deployments; .NET 8.0 and earlier are not affected.",
+    "who_is_affected": "Any organization running web applications, APIs, microservices, or background services built on .NET 9.0 or .NET 10.0. This includes ASP.NET Core applications handling JWT tokens, OAuth authentication flows, file upload endpoints, or any user-controlled Base64Url-encoded input. Cloud, on-premises, and containerized deployments on Windows, macOS, and Linux are all affected.",
+    "what_attackers_do": "Step 1: Attacker identifies a target web application or API running on .NET 9.0 or .NET 10.0 that processes Base64Url-encoded input — such as a login endpoint that validates JWT bearer tokens. Step 2: Attacker constructs a specially crafted HTTP request containing a malformed Base64Url string as a token, parameter, or request body. Step 3: The request is sent without any authentication or special privileges — any internet user can trigger this. Step 4: The .NET Base64Url decoder encounters the out-of-bounds read condition during processing of the malformed input. Step 5: The entire application process crashes immediately, taking all active user sessions offline until the service is manually restarted or an orchestration system restarts the container/pod.",
+    "what_you_should_do": [
+      "Update all .NET 9.0 installations to version 9.0.14 or later, and all .NET 10.0 installations to version 10.0.4 or later — patches are available via Windows Update, package managers, and the .NET download page",
+      "Rebuild and redeploy all containerized .NET applications to pick up the patched runtime, as containers bundle the .NET runtime and do not inherit system-level updates",
+      "Update the Microsoft.Bcl.Memory NuGet package to the patched version in all projects that reference it directly",
+      "Implement WAF rules or API gateway input validation to block or reject requests containing malformed Base64Url patterns as a compensating control",
+      "Enable application health monitoring and automatic restart policies for .NET services to minimize downtime if exploitation occurs before patching"
+    ],
+    "why_this_is_serious": "Any internet-facing .NET 9/10 application with a JWT authentication endpoint or Base64Url input field is vulnerable to complete disruption from a single unauthenticated request. In microservices architectures, repeatedly crashing a key authentication service can cascade into a full platform outage. While the vulnerability does not directly allow data theft or system takeover, denial-of-service attacks against authentication or API gateway services can be used as a smokescreen for other attacks, or weaponized for extortion. The zero-day nature means attackers had awareness of the flaw before defenses were available."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Impact",
+        "technique_id": "T1499.003",
+        "technique_name": "Endpoint Denial of Service: Application Exhaustion Flood",
+        "description": "A single malformed Base64Url request crashes the target .NET application process, causing complete service unavailability without requiring high request volume"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "The vulnerability is triggered via normal HTTP requests to public-facing .NET web applications and APIs processing Base64Url input"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.001",
+        "technique_name": "Impair Defenses: Disable or Modify Tools",
+        "description": "Crashing authentication or security services built on .NET can disable security controls, enabling follow-on attacks under cover of the outage"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying unexpected application crashes and out-of-bounds exceptions in .NET processes, particularly in services handling JWT or OAuth tokens. Monitor for sudden process termination events and spikes in Base64Url decoding failures. Enhanced WAF logging of malformed token patterns will help identify exploitation attempts.",
+    "log_sources": [
+      {
+        "source": ".NET Application Logs / Application Event Log",
+        "description": "Unhandled exceptions including System.IndexOutOfRangeException or AccessViolationException in Base64/encoding modules indicate exploitation attempts",
+        "priority": "Critical"
+      },
+      {
+        "source": "Application Performance Monitoring (APM)",
+        "description": "Tools like Application Insights, Datadog, or New Relic will surface unexpected process crashes, availability drops, and exception rate spikes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Server / Reverse Proxy Logs",
+        "description": "Nginx, IIS, or API gateway logs reveal requests with unusually structured Authorization headers or malformed Base64Url body payloads",
+        "priority": "High"
+      },
+      {
+        "source": "Container / Kubernetes Orchestration Logs",
+        "description": "OOMKilled or CrashLoopBackOff events for .NET containers may indicate repeated exploitation; track restart counts and pod termination reasons",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unexpected process termination in .NET 9/10 applications",
+        "description": "Sudden crash of ASP.NET Core worker process, particularly correlated with incoming requests to authentication or token validation endpoints",
+        "log_field": "Windows Event Log: Event ID 1000 (Application Error) with .NET Runtime in faulting module",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "System.IndexOutOfRangeException in Base64 or Memory decoding paths",
+        "description": "Exception stack traces referencing System.Buffers, Base64Url, or Microsoft.Bcl.Memory indicate the vulnerability trigger point",
+        "log_field": "Application log: Exception: System.IndexOutOfRangeException at System.Buffers.Text.Base64Url",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Requests with malformed Authorization: Bearer tokens",
+        "description": "HTTP requests containing Bearer tokens with invalid Base64Url padding or characters may be exploitation attempts against JWT validation endpoints",
+        "log_field": "IIS/Nginx: status=500 AND uri='/auth' AND Authorization header present with malformed value",
+        "severity": "High"
+      },
+      {
+        "indicator": "Repeated application container restarts",
+        "description": "Kubernetes or Docker containers running .NET 9/10 with elevated restart counts correlated with inbound traffic patterns",
+        "log_field": "kubectl: kubectl get pods --all-namespaces | grep -v Running to find crashing pods",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update .NET Runtime to 9.0.14 or 10.0.4",
+      "description": "Apply the patched .NET runtime immediately. For Windows, use Windows Update or direct download from https://dotnet.microsoft.com/download. For Linux, use apt/yum/dnf package manager. For containers, rebuild images with the patched SDK/runtime base image.",
+      "command": "dotnet --version && dotnet tool update --global dotnet-outdated-tool"
+    },
+    {
+      "priority": 2,
+      "action": "Rebuild and Redeploy All Containerized .NET Applications",
+      "description": "Containers bundle the .NET runtime and are not updated by host-level patches. Every containerized .NET 9/10 application must be rebuilt from a patched base image (mcr.microsoft.com/dotnet/aspnet:9.0.14 or 10.0.4) and redeployed.",
+      "command": "docker pull mcr.microsoft.com/dotnet/aspnet:9.0 && docker build --no-cache -t myapp:patched . && docker push myapp:patched"
+    },
+    {
+      "priority": 3,
+      "action": "Update Microsoft.Bcl.Memory NuGet Package",
+      "description": "Projects that directly reference Microsoft.Bcl.Memory must update to the patched version. Check your .csproj files and run dotnet restore after updating the package reference.",
+      "command": "dotnet add package Microsoft.Bcl.Memory && dotnet restore"
+    },
+    {
+      "priority": 4,
+      "action": "Deploy WAF Rules to Block Malformed Base64Url Inputs",
+      "description": "As a compensating control until patching is complete, deploy WAF rules to validate and reject Base64Url inputs that contain invalid characters or malformed padding before they reach .NET application code. Focus on Authorization headers and known token input fields.",
+      "command": null
+    }
+  ]
+}
