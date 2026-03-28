@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-27T04:13:53.868Z",
-  "date": "2026-03-27",
+  "lastUpdated": "2026-03-28T04:11:40.342Z",
+  "date": "2026-03-28",
   "stats": {
-    "total": 100,
-    "critical": 73,
-    "high": 27,
+    "total": 102,
+    "critical": 74,
+    "high": 28,
     "medium": 0,
     "low": 0,
-    "cisaKev": 47,
+    "cisaKev": 48,
     "activeExploits": 15,
-    "totalSources": 1262
+    "totalSources": 1290
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,46 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-27-003",
+  "featuredBriefing": "TB-2026-03-28-001",
   "briefings": [
+    {
+      "id": "TB-2026-03-28-002",
+      "title": "Ubuntu Snap Local Privilege Escalation CVE-2026-3888 (CVSS 7.8): TOCTOU Race Between snap-confine and systemd-tmpfiles Grants Unprivileged Users Full Root Access on Default Ubuntu 24.04+ Installations — Qualys Discovery, PoC Available",
+      "severity": "High",
+      "date": "2026-03-28",
+      "cves": [
+        "CVE-2026-3888"
+      ],
+      "tags": [
+        "ubuntu",
+        "snapd",
+        "privilege-escalation",
+        "linux",
+        "local-exploit",
+        "race-condition"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "Security researchers at Qualys discovered a serious flaw in how Ubuntu's snap package system interacts with a routine system cleaning process. Snap is Ubuntu's modern app packaging format used in mill..."
+    },
+    {
+      "id": "TB-2026-03-28-001",
+      "title": "Aqua Security Trivy Supply Chain Attack CVE-2026-33634 (CVSS 9.4): TeamPCP Injects CanisterWorm Credential-Stealing Malware into 76 Version Tags — Blockchain-Based C2 Infrastructure Propagates to 141+ npm Packages",
+      "severity": "Critical",
+      "date": "2026-03-28",
+      "cves": [
+        "CVE-2026-33634"
+      ],
+      "tags": [
+        "supply-chain",
+        "trivy",
+        "aquasecurity",
+        "devops",
+        "ci-cd",
+        "credential-theft"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Aqua Security's Trivy — the world's most widely used open-source container vulnerability scanner — was secretly compromised by a hacking group called TeamPCP. The attackers used stolen administrator c..."
+    },
     {
       "id": "TB-2026-03-27-003",
       "title": "Ubiquiti UniFi Network Application Path Traversal CVE-2026-22557 (CVSS 10.0): Unauthenticated Account Takeover Threatens 88,000 Internet-Exposed Controllers — Chained with NoSQL Injection CVE-2026-22558 for Full Admin Compromise",
