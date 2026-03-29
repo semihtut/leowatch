@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-28T04:11:40.342Z",
-  "date": "2026-03-28",
+  "lastUpdated": "2026-03-29T03:12:30.497Z",
+  "date": "2026-03-29",
   "stats": {
-    "total": 102,
-    "critical": 74,
+    "total": 104,
+    "critical": 76,
     "high": 28,
     "medium": 0,
     "low": 0,
-    "cisaKev": 48,
+    "cisaKev": 49,
     "activeExploits": 15,
-    "totalSources": 1290
+    "totalSources": 1325
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,44 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-28-001",
+  "featuredBriefing": "TB-2026-03-29-002",
   "briefings": [
+    {
+      "id": "TB-2026-03-29-002",
+      "title": "Boggy Serpens (MuddyWater) Iranian APT Escalates to Destructive Operations: BlackBeard Rust Backdoor and AI-Generated Malware Target Middle East Energy and Marine Sectors — Wiper Attack Risk Elevated Following Geopolitical Escalation",
+      "severity": "Critical",
+      "date": "2026-03-29",
+      "cves": [],
+      "tags": [
+        "iran",
+        "apt",
+        "muddywater",
+        "boggy-serpens",
+        "blackbeard",
+        "wiper"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "Iranian state-sponsored hacker group Boggy Serpens — also known as MuddyWater, a team linked to Iran's Ministry of Intelligence and Security (MOIS) — has been running a sophisticated multi-wave cybera..."
+    },
+    {
+      "id": "TB-2026-03-29-001",
+      "title": "F5 BIG-IP APM Pre-Auth RCE CVE-2025-53521 (CVSS 9.8) Added to CISA KEV with 3-Day Deadline: Nation-State Supply Chain Origins Enable Root-Level Compromise — BRICKSTORM Backdoor Deployed in Active Exploitation Campaign",
+      "severity": "Critical",
+      "date": "2026-03-29",
+      "cves": [
+        "CVE-2025-53521"
+      ],
+      "tags": [
+        "f5",
+        "big-ip",
+        "apm",
+        "rce",
+        "cisa-kev",
+        "nation-state"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical vulnerability in F5 BIG-IP Access Policy Manager (APM) — a widely used network security appliance deployed at Fortune 500 companies and government agencies — allows attackers to take comple..."
+    },
     {
       "id": "TB-2026-03-28-002",
       "title": "Ubuntu Snap Local Privilege Escalation CVE-2026-3888 (CVSS 7.8): TOCTOU Race Between snap-confine and systemd-tmpfiles Grants Unprivileged Users Full Root Access on Default Ubuntu 24.04+ Installations — Qualys Discovery, PoC Available",
