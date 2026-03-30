@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-29T03:12:30.497Z",
-  "date": "2026-03-29",
+  "lastUpdated": "2026-03-30T03:21:23.260Z",
+  "date": "2026-03-30",
   "stats": {
-    "total": 104,
-    "critical": 76,
-    "high": 28,
+    "total": 106,
+    "critical": 77,
+    "high": 29,
     "medium": 0,
     "low": 0,
     "cisaKev": 49,
     "activeExploits": 15,
-    "totalSources": 1325
+    "totalSources": 1353
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,46 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-29-002",
+  "featuredBriefing": "TB-2026-03-30-001",
   "briefings": [
+    {
+      "id": "TB-2026-03-30-002",
+      "title": "Spring Boot Actuator Authentication Bypass CVE-2026-22731 and CVE-2026-22733 (CVSS 8.2): Silent Unauthenticated Access to Protected Endpoints via Health Group Path Collision and CloudFoundry Namespace Misrouting — Six CVEs Patched Across Spring Ecosystem",
+      "severity": "High",
+      "date": "2026-03-30",
+      "cves": [
+        "CVE-2026-22731",
+        "CVE-2026-22733",
+        "CVE-2026-22732"
+      ],
+      "tags": [
+        "spring-boot",
+        "spring-framework",
+        "authentication-bypass",
+        "actuator",
+        "java",
+        "enterprise"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "VMware/Broadcom's Spring team disclosed six security vulnerabilities affecting the widely-used Spring Boot and Spring Framework Java ecosystem in March 2026. Two of the most impactful — CVE-2026-22731..."
+    },
+    {
+      "id": "TB-2026-03-30-001",
+      "title": "TeamPCP Telnyx PyPI Supply Chain Attack: WAV Steganography Credential Stealer Targets 742,000+ Downloads in Escalating Multi-Package Campaign — Pivot to Vect Ransomware Monetization",
+      "severity": "Critical",
+      "date": "2026-03-30",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "pypi",
+        "telnyx",
+        "teampcp",
+        "credential-theft",
+        "ransomware"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A criminal hacking group called TeamPCP broke into the publishing accounts of the telnyx Python software package and secretly replaced two legitimate versions (4.87.1 and 4.87.2) with malicious ones c..."
+    },
     {
       "id": "TB-2026-03-29-002",
       "title": "Boggy Serpens (MuddyWater) Iranian APT Escalates to Destructive Operations: BlackBeard Rust Backdoor and AI-Generated Malware Target Middle East Energy and Marine Sectors — Wiper Attack Risk Elevated Following Geopolitical Escalation",
