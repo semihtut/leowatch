@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-30T03:21:23.260Z",
-  "date": "2026-03-30",
+  "lastUpdated": "2026-03-31T08:36:55.132Z",
+  "date": "2026-03-31",
   "stats": {
-    "total": 106,
-    "critical": 77,
+    "total": 109,
+    "critical": 80,
     "high": 29,
     "medium": 0,
     "low": 0,
-    "cisaKev": 49,
+    "cisaKev": 51,
     "activeExploits": 15,
-    "totalSources": 1353
+    "totalSources": 1381
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,66 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-30-001",
+  "featuredBriefing": "TB-2026-03-31-003",
   "briefings": [
+    {
+      "id": "TB-2026-03-31-003",
+      "title": "Langflow AI Platform Critical RCE (CVE-2026-33017) Exploited Within 20 Hours of Disclosure — CISA KEV Added, JFrog Reports Patch Bypass in Latest Version",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-33017"
+      ],
+      "tags": [
+        "langflow",
+        "ai-platform",
+        "remote-code-execution",
+        "cisa-kev",
+        "active-exploitation",
+        "unauthenticated"
+      ],
+      "sourcesCount": 10,
+      "excerpt": "A critical vulnerability was discovered in Langflow, the popular open-source platform used to build AI agents and RAG (Retrieval-Augmented Generation) pipelines. The flaw (CVE-2026-33017) allows anyon..."
+    },
+    {
+      "id": "TB-2026-03-31-002",
+      "title": "F5 BIG-IP APM Pre-Auth RCE (CVE-2025-53521) Added to CISA KEV — Six-Month-Old DoS Flaw Reclassified as Critical Remote Code Execution Under Active Exploitation",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2025-53521"
+      ],
+      "tags": [
+        "f5",
+        "big-ip",
+        "apm",
+        "remote-code-execution",
+        "cisa-kev",
+        "active-exploitation"
+      ],
+      "sourcesCount": 9,
+      "excerpt": "A vulnerability in F5 BIG-IP Access Policy Manager (APM) that was originally reported in October 2025 as a moderate denial-of-service issue has been reclassified as a critical pre-authentication remot..."
+    },
+    {
+      "id": "TB-2026-03-31-001",
+      "title": "Citrix NetScaler ADC & Gateway Critical Memory Overread (CVE-2026-3055) Under Active Exploitation — SAML IDP Configurations Leaking Sensitive Data",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-3055",
+        "CVE-2026-4368"
+      ],
+      "tags": [
+        "citrix",
+        "netscaler",
+        "memory-overread",
+        "saml",
+        "active-exploitation",
+        "network-infrastructure"
+      ],
+      "sourcesCount": 9,
+      "excerpt": "Citrix disclosed a critical vulnerability (CVE-2026-3055) in NetScaler ADC and NetScaler Gateway that allows unauthenticated remote attackers to read sensitive data directly from the appliance's memor..."
+    },
     {
       "id": "TB-2026-03-30-002",
       "title": "Spring Boot Actuator Authentication Bypass CVE-2026-22731 and CVE-2026-22733 (CVSS 8.2): Silent Unauthenticated Access to Protected Endpoints via Health Group Path Collision and CloudFoundry Namespace Misrouting — Six CVEs Patched Across Spring Ecosystem",
