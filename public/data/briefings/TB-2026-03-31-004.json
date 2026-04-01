@@ -1,0 +1,314 @@
+{
+  "briefing_id": "TB-2026-03-31-004",
+  "title": "Microsoft SharePoint Server Deserialization RCE CVE-2026-20963 (CVSS 9.8): Unauthenticated Remote Code Execution Actively Exploited — CISA KEV with Expired Federal Deadline",
+  "generated_date": "2026-03-31",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-21"
+  },
+  "cves": [
+    "CVE-2026-20963"
+  ],
+  "tags": [
+    "sharepoint",
+    "microsoft",
+    "deserialization",
+    "rce",
+    "cisa-kev",
+    "enterprise",
+    "web-server",
+    "on-premises"
+  ],
+  "affected_products": [
+    "Microsoft SharePoint Server Subscription Edition (< 16.0.19127.20442)",
+    "Microsoft SharePoint Server 2019 (< 16.0.10417.20083)",
+    "Microsoft SharePoint Enterprise Server 2016 (< 16.0.5535.1001)",
+    "Microsoft SharePoint Server 2013 (end-of-support, no patch available)",
+    "Microsoft SharePoint Server 2010 (end-of-support, no patch available)"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Microsoft Security Response Center – CVE-2026-20963",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-20963",
+      "date": "2026-01-13",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD – CVE-2026-20963 Detail",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20963",
+      "date": "2026-01-13",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog – CVE-2026-20963 Addition",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/03/18/cisa-adds-one-known-exploited-vulnerability-catalog-0",
+      "date": "2026-03-18",
+      "type": "Government"
+    },
+    {
+      "name": "CERT-EU Security Advisory 2026-004",
+      "url": "https://cert.europa.eu/publications/security-advisories/2026-004/",
+      "date": "2026-03-25",
+      "type": "Government"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security – AL26-005",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/al26-005-critical-vulnerability-impacting-microsoft-sharepoint-server-cve-2026-20963",
+      "date": "2026-03-20",
+      "type": "Government"
+    },
+    {
+      "name": "Rapid7 Vulnerability Database – CVE-2026-20963",
+      "url": "https://www.rapid7.com/db/vulnerabilities/microsoft-sharepoint-cve-2026-20963/",
+      "date": "2026-01-13",
+      "type": "Research"
+    },
+    {
+      "name": "Security Boulevard – CVE-2026-20963 SharePoint Deserialization RCE Analysis",
+      "url": "https://securityboulevard.com/2026/03/cve-2026-20963-sharepoint-deserialization-remote-code-execution-vulnerability/",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "Stefan Gossner Blog – SharePoint January 2026 Security Fixes",
+      "url": "https://blog.stefan-gossner.com/2026/01/13/sharepoint-security-fixes-released-with-january-2026-pu-and-offered-through-microsoft-update/",
+      "date": "2026-01-13",
+      "type": "Research"
+    },
+    {
+      "name": "Help Net Security – CISA Warns of Active SharePoint Exploitation",
+      "url": "https://www.helpnetsecurity.com/2026/03/19/sharepoint-vulnerability-cve-2026-20963-exploited/",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek – CISA Warns of Attacks Exploiting Recent SharePoint Vulnerability",
+      "url": "https://www.securityweek.com/cisa-warns-of-attacks-exploiting-recent-sharepoint-vulnerability/",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs – CISA Adds Microsoft SharePoint and Zimbra Flaws to KEV",
+      "url": "https://securityaffairs.com/189628/security/u-s-cisa-adds-microsoft-sharepoint-and-zimbra-flaws-to-its-known-exploited-vulnerabilities-catalog.html",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "The Register – Unknown Attackers Exploit Another Critical SharePoint Bug",
+      "url": "https://www.theregister.com/2026/03/19/unknown_attackers_exploit_yet_another/",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "Beazley Security – Critical Vulnerability in Microsoft SharePoint Under Active Exploitation",
+      "url": "https://beazley.security/alerts-advisories/critical-vulnerability-in-microsoft-sharepoint-under-active-exploitation-cve-2026-20963",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "Microsoft KB5002822 – SharePoint Server Subscription Edition January 2026 Security Update",
+      "url": "https://support.microsoft.com/en-us/topic/description-of-the-security-update-for-sharepoint-server-subscription-edition-january-13-2026-kb5002822-5a680565-72df-44fe-ae4c-9a784b5328c7",
+      "date": "2026-01-13",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-13",
+      "event": "Microsoft patches CVE-2026-20963 as part of January 2026 Patch Tuesday (KB5002822/KB5002825/KB5002828); rated 'less likely to be exploited' at time of disclosure — CVSS 9.8 Critical"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "CISA adds CVE-2026-20963 to the Known Exploited Vulnerabilities (KEV) catalog, confirming active in-the-wild exploitation; federal agencies ordered to patch under BOD 22-01"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "The Register, Help Net Security, SecurityWeek, and Security Affairs publish exploitation warnings; CERT-EU and Canadian Centre for Cyber Security begin drafting advisories"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Canadian Centre for Cyber Security issues Alert AL26-005 urging immediate patching of all on-premises SharePoint deployments"
+    },
+    {
+      "date": "2026-03-21",
+      "event": "Federal civilian agency (FCEB) mandatory remediation deadline under BOD 22-01 — deadline has now passed, meaning any unpatched federal agency systems are in violation"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "CERT-EU publishes formal Security Advisory 2026-004 covering CVE-2026-20963; European organizations urged to apply January 2026 security updates immediately"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "No specific threat actor publicly attributed; exploitation ongoing against unpatched on-premises SharePoint deployments globally; 64-day window since patch release has allowed wide exploitation opportunity"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Microsoft's SharePoint Server — a widely deployed enterprise collaboration platform — contains a critical vulnerability in how it handles serialized data. When SharePoint receives specially crafted data through its web interface, it reconstructs that data into application objects without validating what type of objects are being created. Attackers can exploit this to inject malicious code that executes automatically during the reconstruction process, effectively hijacking the server. Microsoft patched this in January 2026 Patch Tuesday, but CISA confirmed active exploitation by March 18 — 64 days after the patch was available — meaning organizations that did not apply the January updates have been exposed to attacks for over two months.",
+    "who_is_affected": "Any organization running on-premises Microsoft SharePoint Server that has not applied the January 2026 Patch Tuesday updates. This includes SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. Organizations running end-of-support versions (2013, 2010, 2007) are also vulnerable but will receive no patches. SharePoint Online (Microsoft 365 cloud) is NOT affected. On-premises SharePoint is commonly found in government agencies, financial institutions, healthcare systems, legal firms, and large enterprises that handle sensitive documents and collaboration.",
+    "what_attackers_do": "Step 1: The attacker identifies a target organization's internet-exposed or network-accessible SharePoint server by scanning for common SharePoint URL patterns (/_layouts/, /_vti_bin/), confirming the server version via response headers or error pages. Step 2: The attacker crafts a malicious serialized .NET payload using a known gadget chain — pre-built code sequences that exploit the way .NET's deserialization mechanisms instantiate objects — targeting SharePoint's BinaryFormatter or ViewState processing endpoints. Step 3: The attacker submits the malicious payload to a SharePoint endpoint that accepts serialized input, such as a /_layouts/ page or a POST request with crafted ViewState parameters; no valid user account is required for the initial access vector. Step 4: SharePoint's worker process (w3wp.exe) deserializes the payload and the embedded gadget chain triggers, executing arbitrary code in the context of the SharePoint application pool service account — typically a domain account with elevated permissions across the SharePoint farm. Step 5: The attacker uses this code execution to drop a web shell (a .aspx file) into the SharePoint LAYOUTS directory, establishing persistent backdoor access that survives server restarts and is accessible via any web browser. Step 6: Using the web shell, the attacker performs credential harvesting (extracting service account passwords, NTLM hashes), moves laterally within the network using SharePoint's trusted domain access, and exfiltrates sensitive documents and data stored on the SharePoint server.",
+    "what_you_should_do": [
+      "Apply the January 2026 Patch Tuesday security updates immediately: KB5002822 (SharePoint SE), KB5002825 (SharePoint 2019), KB5002828 (SharePoint 2016) — the federal deadline of March 21 has already passed, making this critically overdue",
+      "Audit SharePoint TEMPLATE\\LAYOUTS directories and SharePoint web application roots for unexpected or recently modified .aspx, .ashx, or .asmx files that may indicate web shell implants from prior exploitation",
+      "Monitor Windows Event ID 4688 for unexpected child processes spawned by w3wp.exe (e.g., cmd.exe, powershell.exe, rundll32.exe) and review IIS access logs for unusual POST requests to /_layouts/ endpoints",
+      "If patching cannot occur immediately, restrict external network access to SharePoint servers and require VPN or additional authentication layer at the network perimeter",
+      "Rotate ASP.NET machine keys farm-wide after applying the patch and restart IIS to invalidate any session tokens that may have been forged using previously exposed machine key material"
+    ],
+    "why_this_is_serious": "SharePoint Server is a critical business application storing sensitive documents, HR records, legal files, and strategic communications across thousands of organizations worldwide. Exploitation grants attackers code execution as a privileged domain service account, effectively handing them keys to the broader corporate network. The 64-day gap between Microsoft's January patch and CISA's exploitation confirmation means organizations that deferred patching have been silently compromised. Prior SharePoint deserialization campaigns (2025) attributed to Chinese state-sponsored groups and ransomware operators breached over 400 organizations using nearly identical techniques. End-of-support SharePoint versions (2013, 2010) have no remediation path, leaving those organizations permanently exposed."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attacker exploits CVE-2026-20963 deserialization vulnerability in SharePoint's web interface to achieve unauthenticated remote code execution against the SharePoint worker process"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "Malicious .NET gadget chain payload executes arbitrary code during deserialization within the SharePoint w3wp.exe worker process"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Attackers drop ASPX web shells (e.g., spinstall0.aspx) into SharePoint TEMPLATE\\LAYOUTS directories, establishing persistent backdoor access accessible via HTTP"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1218",
+        "technique_name": "System Binary Proxy Execution",
+        "description": "Post-exploitation commands executed through legitimate Windows system binaries proxied via web shell to evade process-based detection"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.004",
+        "technique_name": "Unsecured Credentials: Private Keys",
+        "description": "ASP.NET machine keys stored in SharePoint configuration may be extracted and abused to forge ViewState tokens or session authentication bypasses"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "SharePoint service accounts typically hold broad permissions across the domain; compromised service account credentials enable lateral movement to SQL servers, domain controllers, and other SharePoint farm nodes"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Documents, credentials, and data staged on the SharePoint server are exfiltrated via the web shell's HTTP interface back to attacker-controlled infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection centers on monitoring w3wp.exe process behavior, IIS logs for anomalous POST requests to /_layouts/ endpoints, and filesystem integrity for unauthorized ASPX file creation. Since exploitation leaves no authentication failure events, proactive hunting is required rather than relying on security alert triggers.",
+    "log_sources": [
+      {
+        "source": "Windows Security Event Log (Event ID 4688)",
+        "description": "Monitor for unexpected child process creation where parent process is w3wp.exe — cmd.exe, powershell.exe, or rundll32.exe spawned by the SharePoint worker process is a strong exploitation indicator",
+        "priority": "Critical"
+      },
+      {
+        "source": "IIS Access Logs",
+        "description": "Review HTTP POST requests returning HTTP 200 to /_layouts/, /_vti_bin/, or management API endpoints; look for unusually large POST bodies or requests with binary/non-standard Content-Type headers",
+        "priority": "Critical"
+      },
+      {
+        "source": "SharePoint ULS (Unified Logging Service) Logs",
+        "description": "Review for serialization errors, unexpected deserialization exceptions, or anomalous request handling patterns that may indicate attempted or successful exploit delivery",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Monitor SharePoint TEMPLATE\\LAYOUTS directories and web application roots for creation of new .aspx, .ashx, or .asmx files — web shells are typically dropped into these writable locations",
+        "priority": "High"
+      },
+      {
+        "source": "Network/Firewall Logs",
+        "description": "Monitor outbound connections from SharePoint server hosts to unknown external IPs — post-exploitation C2 traffic originates from the server itself, which is abnormal for a document management platform",
+        "priority": "High"
+      },
+      {
+        "source": "Sysmon Event ID 3 (Network Connection)",
+        "description": "Detect unexpected outbound TCP connections from w3wp.exe or SharePoint-related processes to external IPs — the SharePoint worker process should not initiate outbound internet connections",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "w3wp.exe spawning cmd.exe or powershell.exe",
+        "description": "The SharePoint IIS worker process (w3wp.exe) spawning command shells is a near-certain indicator of web shell execution or post-exploitation activity; this is not normal SharePoint operation",
+        "log_field": "process.parent.name='w3wp.exe' AND process.name IN ('cmd.exe','powershell.exe','rundll32.exe')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "New .aspx files created in TEMPLATE\\LAYOUTS directory",
+        "description": "Unauthorized ASPX file creation in SharePoint layout directories indicates web shell implantation; compare against known-good file inventory from before March 18, 2026",
+        "log_field": "file.path contains 'TEMPLATE\\LAYOUTS' AND file.extension='.aspx' AND file.created > '2026-03-18'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Large HTTP POST to /_layouts/ without valid SharePoint session cookie",
+        "description": "Exploitation payloads are typically submitted as HTTP POST requests to SharePoint layout pages; requests without valid SPO session tokens exceeding 10KB may indicate exploit attempts",
+        "log_field": "http.method='POST' AND http.path contains '/_layouts/' AND http.request_body_size > 10000",
+        "severity": "High"
+      },
+      {
+        "indicator": "SharePoint server making outbound connections to external IPs",
+        "description": "Post-exploitation reverse shells or data exfiltration involve outbound connections from the server; SharePoint servers in normal operation do not initiate connections to arbitrary external IPs",
+        "log_field": "src_host='[sharepoint-server]' AND dst_ip NOT IN [known-allowlist] AND direction='outbound'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unpatched SharePoint version confirmed via /versioninfo or response headers",
+        "description": "SharePoint version can be confirmed via /_vti_pvt/service.cnf or response headers; builds below 16.0.19127.20442 (SE), 16.0.10417.20083 (2019), or 16.0.5535.1001 (2016) are vulnerable",
+        "log_field": "http.path='/_vti_pvt/service.cnf' AND response.body contains 'vti_extenderversion'",
+        "severity": "Medium"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply January 2026 Patch Tuesday updates to all SharePoint servers",
+      "description": "Install KB5002822 (SharePoint SE → build 16.0.19127.20442), KB5002825 (SharePoint 2019 → build 16.0.10417.20083), and KB5002828 (SharePoint 2016 → build 16.0.5535.1001). The federal deadline of March 21 has passed — any delay increases breach probability significantly.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Hunt for web shells in SharePoint LAYOUTS directories",
+      "description": "Immediately audit all SharePoint servers for unauthorized .aspx, .ashx, and .asmx files in TEMPLATE\\LAYOUTS and web application root directories. Compare against a known-good baseline or file hashes from before March 18, 2026.",
+      "command": "Get-ChildItem -Path 'C:\\Program Files\\Common Files\\microsoft shared\\Web Server Extensions\\16\\TEMPLATE\\LAYOUTS' -Filter '*.aspx' -Recurse | Where-Object {$_.LastWriteTime -gt '2026-03-18'} | Select-Object FullName, LastWriteTime"
+    },
+    {
+      "priority": 3,
+      "action": "Restrict external network access to SharePoint temporarily if patching is delayed",
+      "description": "If the January 2026 updates cannot be applied immediately, restrict internet-facing access to SharePoint servers via firewall rules; require VPN or network-level authentication before SharePoint is accessible from untrusted networks",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Rotate ASP.NET machine keys after patching",
+      "description": "After applying patches, rotate the ASP.NET machine keys on all SharePoint web front-end servers and restart IIS. This invalidates any session tokens or ViewState parameters that may have been crafted using previously exposed machine key material.",
+      "command": "iisreset /restart"
+    },
+    {
+      "priority": 5,
+      "action": "Enable AMSI in Full Mode on SharePoint",
+      "description": "Configure SharePoint to enable AMSI integration in full scanning mode to detect and block malicious serialized payloads before they are processed by the SharePoint deserialization engine",
+      "command": "Set-SPServer -Identity [ServerName] -Role [CurrentRole] -AmsiFull $true"
+    },
+    {
+      "priority": 6,
+      "action": "Review IIS and SharePoint ULS logs for exploitation indicators from March 18 onward",
+      "description": "Conduct retrospective log review covering March 18–31, 2026 for POST requests to /_layouts/ endpoints, unexpected w3wp.exe child processes, and new ASPX file creation events that may indicate prior compromise",
+      "command": null
+    }
+  ]
+}

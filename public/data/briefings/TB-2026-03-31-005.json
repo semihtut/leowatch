@@ -1,0 +1,352 @@
+{
+  "briefing_id": "TB-2026-03-31-005",
+  "title": "Axios npm Supply Chain Attack: DPRK-Linked UNC1069 Compromises Lead Maintainer Account to Deploy Cross-Platform RAT via Phantom Dependency — 600,000 Estimated Downloads in 3-Hour Window",
+  "generated_date": "2026-03-31",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "supply-chain",
+    "npm",
+    "nodejs",
+    "javascript",
+    "dprk",
+    "unc1069",
+    "rat",
+    "credential-theft",
+    "maintainer-compromise"
+  ],
+  "affected_products": [
+    "axios npm package version 1.14.1 (any Node.js project)",
+    "axios npm package version 0.30.4 (any Node.js project)",
+    "plain-crypto-js npm package version 4.2.1 (transitive dependency)",
+    "Any CI/CD pipeline running npm install between 2026-03-31 00:21 UTC and 03:15 UTC"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "StepSecurity Blog – axios Compromised on npm: Malicious Versions Drop Remote Access Trojan",
+      "url": "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Socket.dev – Supply Chain Attack on Axios Pulls Malicious Dependency from npm",
+      "url": "https://socket.dev/blog/axios-npm-package-compromised",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Aikido Security – axios Compromised on npm: Maintainer Account Hijacked, RAT Deployed",
+      "url": "https://www.aikido.dev/blog/axios-npm-compromised-maintainer-hijacked-rat",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News – Axios Supply Chain Attack Pushes Cross-Platform RAT via Compromised npm Account",
+      "url": "https://thehackernews.com/2026/03/axios-supply-chain-attack-pushes-cross.html",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "Elastic Security Labs – Inside the Axios Supply Chain Compromise: One RAT to Rule Them All",
+      "url": "https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "CyberScoop – Attack on axios Software Developer Tool Threatens Widespread Compromises",
+      "url": "https://cyberscoop.com/axios-software-developer-tool-attack-compromise/",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "Huntress Blog – Supply Chain Compromise of axios npm Package",
+      "url": "https://www.huntress.com/blog/supply-chain-compromise-axios-npm-package",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Wiz Blog – Axios NPM Distribution Compromised in Supply Chain Attack",
+      "url": "https://www.wiz.io/blog/axios-npm-compromised-in-supply-chain-attack",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Snyk – Axios npm Package Compromised: Supply Chain Attack Delivers Cross-Platform RAT",
+      "url": "https://snyk.io/blog/axios-npm-package-compromised-supply-chain-attack-delivers-cross-platform/",
+      "date": "2026-03-31",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "SafeDep – axios npm Supply Chain Compromise",
+      "url": "https://safedep.io/axios-npm-supply-chain-compromise/",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "CyberSecurityNews – Axios NPM Packages Compromised in Active Supply Chain Attack",
+      "url": "https://cybersecuritynews.com/axios-npm-packages-compromised/",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "Malwarebytes – Axios Supply Chain Attack Chops Away at npm Trust",
+      "url": "https://www.malwarebytes.com/blog/news/2026/03/axios-supply-chain-attack-chops-away-at-npm-trust",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "Arctic Wolf – Supply Chain Attack Impacts Widely Used Axios npm Package",
+      "url": "https://arcticwolf.com/resources/blog/supply-chain-attack-impacts-widely-used-axios-npm-package/",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityOnline – Axios Under Siege: Critical npm Supply Chain Attack Hijacks Lead Maintainer to Drop Multi-Platform RAT",
+      "url": "https://securityonline.info/axios-npm-supply-chain-attack-poisoned-versions-rat/",
+      "date": "2026-03-31",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-30",
+      "event": "05:57 UTC — Attacker account 'nrwise' (nrwise@proton.me) publishes a clean decoy plain-crypto-js@4.2.0 to npm to establish the package's legitimacy 18 hours in advance"
+    },
+    {
+      "date": "2026-03-30",
+      "event": "23:59:12 UTC — Attacker publishes malicious plain-crypto-js@4.2.1 containing OS-specific RAT payloads pre-staged for macOS, Windows, and Linux"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "00:05:41 UTC — Socket.dev automated supply chain monitoring detects and flags plain-crypto-js@4.2.1 as malicious (6 minutes after publish)"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "00:21:58 UTC — axios@1.14.1 published to npm via compromised lead maintainer account 'jasonsaayman' (email changed to ifstap@proton.me); package pulls in plain-crypto-js@4.2.1 via postinstall hook"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "00:23:27 UTC — First confirmed macOS infection observed by Huntress honeypot (89 seconds after malicious axios@1.14.1 publication)"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "00:58:05 UTC — First confirmed Windows infection (wt.exe dropper) observed"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "01:00:57 UTC — axios@0.30.4 (legacy v0.x branch) published as second malicious version targeting older Node.js projects still on the 0.x branch"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "~03:15 UTC — npm unpublishes both malicious axios versions; total active window approximately 3 hours 8 minutes; estimated 600,000 downloads during exposure"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "03:25 UTC — npm places security hold on plain-crypto-js; stub package plain-crypto-js@0.0.1-security.0 published at 04:26 UTC"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "Elastic Security Labs publishes deep technical analysis attributing macOS C++ binary (WAVESHAPER backdoor) to DPRK threat group UNC1069 (BlueNoroff cluster); infrastructure overlaps with Volexity-tracked 'calltan.com' confirm DPRK attribution"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "North Korean hackers (tracked as UNC1069, part of the BlueNoroff cluster) compromised the npm account of the lead maintainer of axios — one of the most widely used JavaScript HTTP libraries in the world with over 300 million weekly downloads. The attackers changed the maintainer's registered email to their own Proton Mail address, then published two malicious axios versions (1.14.1 and 0.30.4) that automatically installed a hidden dependency (plain-crypto-js) containing platform-specific remote access trojans (RATs). The malicious versions were live for approximately 3 hours before npm removed them, but approximately 600,000 downloads are estimated to have occurred during this window. The attack was pre-staged 18 hours in advance with a clean decoy package to avoid suspicion.",
+    "who_is_affected": "Any developer, CI/CD pipeline, Docker build, or cloud environment that ran npm install axios during the 3-hour window from March 31 00:21 UTC to 03:15 UTC and received axios version 1.14.1 or 0.30.4. Axios is used in virtually every segment of the JavaScript ecosystem — from React and Vue.js frontends to Node.js backend services, serverless functions, and mobile apps. Organizations building web applications, APIs, developer tooling, or cloud services using JavaScript/TypeScript are potentially affected. The attack is cross-platform and executes on macOS, Windows, and Linux equally.",
+    "what_attackers_do": "Step 1: 18 hours in advance, the attackers publish a clean, functional-looking 'plain-crypto-js' package to npm to establish legitimacy and avoid automated malware detection systems that flag brand-new packages. Step 2: Attackers compromise the npm account of the lead axios maintainer (jasonsaayman) by stealing their npm publishing token — likely via phishing or prior credential theft — and change the registered email to their own Proton Mail address (ifstap@proton.me) to lock the legitimate maintainer out. Step 3: The malicious axios@1.14.1 is published to npm's registry with a postinstall script that fetches and executes the malicious plain-crypto-js@4.2.1 package; because this runs automatically when developers execute 'npm install', no further user interaction is required. Step 4: plain-crypto-js@4.2.1's postinstall hook executes a dropper (setup.js) that detects the operating system and downloads the corresponding platform-specific RAT payload from the C2 server (sfrclak.com:8000); the setup.js then deletes itself and replaces package.json with a clean stub to hide any evidence of the malicious dependency. Step 5: On macOS, a compiled C++ Mach-O binary (com.apple.act.mond — masquerading as a legitimate Apple process) is installed under /Library/Caches/ and begins beaconing to the C2 server every 60 seconds; on Windows, a PowerShell dropper installs wt.exe in %PROGRAMDATA% with 'MicrosoftUpdate' registry Run key persistence; on Linux, a Python3 script (/tmp/ld.py) runs detached via nohup. Step 6: The RAT performs full system fingerprinting (hostname, OS, processes, home directory contents, SSH keys, cloud credential files) and sends encrypted beacon data every 60 seconds to the attacker; it can then receive commands to execute arbitrary code, drop additional payloads, or exfiltrate specific files, giving attackers complete control of the developer's machine and access to all credentials stored on it.",
+    "what_you_should_do": [
+      "Immediately check if axios 1.14.1 or 0.30.4 was installed in any environment: run 'npm list axios' in all projects and check package-lock.json, yarn.lock, or pnpm-lock.yaml files for these versions",
+      "Downgrade axios to the last safe version: 'npm install axios@1.14.0' (v1.x users) or 'npm install axios@0.30.3' (legacy v0.x users); also remove plain-crypto-js entirely with 'npm uninstall plain-crypto-js'",
+      "If the malicious versions were installed, treat all credentials on that system as compromised: rotate npm tokens, AWS/GCP/Azure cloud keys, SSH private keys, GitHub/GitLab personal access tokens, CI/CD secrets, database passwords, and any .env file values",
+      "Check for RAT persistence artifacts: macOS: /Library/Caches/com.apple.act.mond; Windows: %PROGRAMDATA%\\wt.exe and registry key HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run 'MicrosoftUpdate'; Linux: /tmp/ld.py running as background process",
+      "Block C2 infrastructure at network firewall: sfrclak.com, 142.11.206.73 (port 8000), callnrwise.com, calltan.com",
+      "Harden npm publishing for your organization: require OIDC-based tokenless publishing, enforce MFA on all npm maintainer accounts, and add 'npm ci --ignore-scripts' to all CI/CD pipelines to prevent postinstall hook execution"
+    ],
+    "why_this_is_serious": "Axios is one of the most downloaded npm packages in the world, appearing as a dependency in millions of projects. This attack is particularly serious because it executes without any user action beyond a routine 'npm install', is cross-platform (Mac/Windows/Linux), and was conducted by a nation-state actor (DPRK's BlueNoroff group) known for cryptocurrency theft and high-value credential harvesting. The attack is the latest in a broader DPRK campaign targeting software supply chains to fund the North Korean regime's weapons programs. Furthermore, this attack occurred the same week as the TeamPCP/Telnyx PyPI supply chain campaign — indicating a convergence of sophisticated state and criminal actors targeting developer ecosystems simultaneously. Any developer environment compromised effectively surrenders all stored secrets, potentially exposing the organization's entire cloud infrastructure to subsequent ransomware or data theft operations."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.001",
+        "technique_name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "description": "Attackers compromised the axios npm package by hijacking the lead maintainer's account (token theft) and publishing malicious versions that inject a RAT via a phantom dependency (plain-crypto-js)"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1078.004",
+        "technique_name": "Valid Accounts: Cloud Accounts",
+        "description": "Compromised npm publishing token for 'jasonsaayman' account used to authenticate to npm registry and publish malicious package versions as the legitimate maintainer"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1546.016",
+        "technique_name": "Event Triggered Execution: Installer Packages",
+        "description": "The npm postinstall lifecycle hook in plain-crypto-js@4.2.1 automatically executes setup.js during package installation without any additional user interaction"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1070.004",
+        "technique_name": "Indicator Removal: File Deletion",
+        "description": "setup.js self-deletes after execution and replaces package.json with a clean stub, removing all forensic traces of the malicious dependency from node_modules"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027",
+        "technique_name": "Obfuscated Files or Information",
+        "description": "Payload delivery uses two-layer obfuscation: reversed Base64 encoding combined with XOR cipher (key: 'OrDeR_7077', constant 333) to evade static analysis and signature-based detection"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547.001",
+        "technique_name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+        "description": "Windows payload installs wt.exe in %PROGRAMDATA% with 'MicrosoftUpdate' registry Run key for persistence across reboots; macOS binary uses /Library/Caches/ path mimicking Apple system processes"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1082",
+        "technique_name": "System Information Discovery",
+        "description": "RAT fingerprints hostname, OS version, CPU architecture, timezone, OS install date, and running process list with full command-line arguments before establishing C2 beacon"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "description": "RAT enumerates $HOME, Documents, Desktop, and .config directories on all platforms to identify high-value files including SSH keys, cloud credentials, and configuration files"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "RAT specifically targets SSH private keys, cloud access tokens (AWS/GCP/Azure), .npmrc tokens, .env files, and browser credential stores accessible from developer home directories"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1071.001",
+        "technique_name": "Application Layer Protocol: Web Protocols",
+        "description": "C2 beaconing uses HTTP POST every 60 seconds with Base64-encoded JSON payload to sfrclak.com:8000; User-Agent spoofed as IE8 on Windows XP (mozilla/4.0 compatible; msie 8.0; windows nt 5.1)"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.001",
+        "technique_name": "Command and Scripting Interpreter: PowerShell",
+        "description": "Windows dropper uses PowerShell with '-w hidden -ep bypass' flags for stealthy execution of 6202033.ps1 stage-2 payload"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying malicious axios versions in package manifests, suspicious npm postinstall hook executions, C2 network connections to sfrclak.com or 142.11.206.73, and platform-specific RAT artifacts (com.apple.act.mond on macOS, wt.exe on Windows, ld.py on Linux). The malicious package self-destructs forensic evidence in node_modules, so lockfile and network log analysis are essential.",
+    "log_sources": [
+      {
+        "source": "npm lockfiles (package-lock.json, yarn.lock, pnpm-lock.yaml)",
+        "description": "Audit all dependency lockfiles for axios@1.14.1 or axios@0.30.4 entries; also search for plain-crypto-js@4.2.1, @shadanai/openclaw, or @qqbrowser/openclaw-qbot entries as additional IOCs",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network/Firewall/DNS Logs",
+        "description": "Monitor all outbound HTTP connections to sfrclak.com (142.11.206.73) port 8000 and DNS queries for callnrwise.com or calltan.com; 60-second beacon interval POST requests from developer workstations are a strong indicator",
+        "priority": "Critical"
+      },
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Alert on creation of com.apple.act.mond under /Library/Caches/ (macOS), wt.exe in %PROGRAMDATA% (Windows), or python3 spawning /tmp/ld.py (Linux); also monitor registry key creation for 'MicrosoftUpdate' Run key",
+        "priority": "Critical"
+      },
+      {
+        "source": "CI/CD Pipeline Build Logs",
+        "description": "Review all pipeline build logs from March 31, 00:21-03:15 UTC for npm install runs that downloaded axios; any build that ran during this window with axios as a direct or transitive dependency should be treated as potentially compromised",
+        "priority": "High"
+      },
+      {
+        "source": "npm audit / SLSA Attestation Verification",
+        "description": "Legitimate axios@1.14.0 has SLSA build provenance attestation; malicious axios@1.14.1 does not — verify SLSA attestation using npm's provenance verification to detect unsigned package installations",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "axios@1.14.1 or axios@0.30.4 in package lockfiles or node_modules",
+        "description": "Direct presence of malicious axios versions confirms the window of exposure; check package-lock.json, yarn.lock, pnpm-lock.yaml, and output of 'npm list axios'",
+        "log_field": "file contains 'axios' AND (version='1.14.1' OR version='0.30.4')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound HTTP POST to sfrclak.com:8000 or 142.11.206.73:8000",
+        "description": "Primary C2 server for RAT payload delivery and 60-second beaconing; any connection confirms active RAT operation on the endpoint",
+        "log_field": "dst_domain='sfrclak.com' OR dst_ip='142.11.206.73' AND dst_port=8000",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "User-Agent: 'mozilla/4.0 (compatible; msie 8.0; windows nt 5.1; trident/4.0)' from non-legacy systems",
+        "description": "The RAT uses a hardcoded IE8/Windows XP era User-Agent for all C2 communications; this is highly anomalous on modern systems and a reliable detection signal",
+        "log_field": "http.user_agent contains 'msie 8.0' AND http.user_agent contains 'windows nt 5.1'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "/Library/Caches/com.apple.act.mond binary on macOS",
+        "description": "WAVESHAPER backdoor binary deployed by the macOS RAT payload; the path mimics legitimate Apple cache processes but the binary is not signed by Apple",
+        "log_field": "file.path='/Library/Caches/com.apple.act.mond'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run 'MicrosoftUpdate' pointing to wt.exe in %PROGRAMDATA%",
+        "description": "Windows registry persistence mechanism; 'MicrosoftUpdate' Run key pointing to a non-Windows-Terminal wt.exe in ProgramData is a definitive RAT indicator",
+        "log_field": "registry.path='HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' AND registry.value='MicrosoftUpdate'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "python3 process executing /tmp/ld.py on Linux",
+        "description": "Linux RAT runs as python3 /tmp/ld.py with nohup in background; any python3 process executing from /tmp is suspicious on production servers",
+        "log_field": "process.name='python3' AND process.cmdline contains '/tmp/ld.py'",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": [
+      "142.11.206.73"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit all environments for malicious axios versions",
+      "description": "Check package-lock.json, yarn.lock, and pnpm-lock.yaml across all projects and running containers for axios 1.14.1 or 0.30.4; also check CI/CD build logs from March 31 00:21-03:15 UTC",
+      "command": "find . -name 'package-lock.json' -exec grep -l '\"axios\"' {} \\; | xargs grep -l '1\\.14\\.1\\|0\\.30\\.4'"
+    },
+    {
+      "priority": 2,
+      "action": "Downgrade axios to last safe version",
+      "description": "Reinstall safe axios version and remove the malicious phantom dependency package from all affected environments",
+      "command": "npm install axios@1.14.0 --save && npm uninstall plain-crypto-js && npm install --ignore-scripts"
+    },
+    {
+      "priority": 3,
+      "action": "Block C2 infrastructure at network perimeter",
+      "description": "Immediately block outbound connections to all known C2 domains and IPs to stop active RAT beaconing and prevent additional payload downloads from any already-compromised endpoints",
+      "command": "iptables -A OUTPUT -d 142.11.206.73 -j DROP"
+    },
+    {
+      "priority": 4,
+      "action": "Check for and remove platform-specific RAT artifacts",
+      "description": "Search all developer workstations and build servers for platform-specific RAT persistence artifacts; if found, do NOT attempt in-place cleaning — rebuild from clean known-good state",
+      "command": "ls /Library/Caches/com.apple.act.mond 2>/dev/null; ls %PROGRAMDATA%\\wt.exe 2>/dev/null; ps aux | grep '/tmp/ld.py'"
+    },
+    {
+      "priority": 5,
+      "action": "Rotate all credentials from affected systems",
+      "description": "If malicious axios versions were installed, treat all secrets as compromised. Rotate: npm publish tokens, AWS/GCP/Azure access keys, SSH private keys, GitHub/GitLab PATs, CI/CD secrets (GitHub Actions, CircleCI, Jenkins), database credentials, and Kubernetes service account tokens",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Harden npm publishing and CI/CD pipeline security",
+      "description": "Enforce npm OIDC-based publishing (no long-lived tokens), require MFA on all npm maintainer accounts, add --ignore-scripts flag to all CI/CD npm install commands, pin dependencies to exact versions with lockfile verification, and enable npm provenance/SLSA attestation verification",
+      "command": "npm ci --ignore-scripts"
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-31T08:36:55.132Z",
-  "date": "2026-03-31",
+  "lastUpdated": "2026-04-01T18:09:19.085Z",
+  "date": "2026-04-01",
   "stats": {
-    "total": 109,
-    "critical": 80,
+    "total": 111,
+    "critical": 82,
     "high": 29,
     "medium": 0,
     "low": 0,
-    "cisaKev": 51,
+    "cisaKev": 52,
     "activeExploits": 15,
-    "totalSources": 1381
+    "totalSources": 1409
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,44 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-31-003",
+  "featuredBriefing": "TB-2026-03-31-005",
   "briefings": [
+    {
+      "id": "TB-2026-03-31-005",
+      "title": "Axios npm Supply Chain Attack: DPRK-Linked UNC1069 Compromises Lead Maintainer Account to Deploy Cross-Platform RAT via Phantom Dependency — 600,000 Estimated Downloads in 3-Hour Window",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "npm",
+        "nodejs",
+        "javascript",
+        "dprk",
+        "unc1069"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "North Korean hackers (tracked as UNC1069, part of the BlueNoroff cluster) compromised the npm account of the lead maintainer of axios — one of the most widely used JavaScript HTTP libraries in the wor..."
+    },
+    {
+      "id": "TB-2026-03-31-004",
+      "title": "Microsoft SharePoint Server Deserialization RCE CVE-2026-20963 (CVSS 9.8): Unauthenticated Remote Code Execution Actively Exploited — CISA KEV with Expired Federal Deadline",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-20963"
+      ],
+      "tags": [
+        "sharepoint",
+        "microsoft",
+        "deserialization",
+        "rce",
+        "cisa-kev",
+        "enterprise"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Microsoft's SharePoint Server — a widely deployed enterprise collaboration platform — contains a critical vulnerability in how it handles serialized data. When SharePoint receives specially crafted da..."
+    },
     {
       "id": "TB-2026-03-31-003",
       "title": "Langflow AI Platform Critical RCE (CVE-2026-33017) Exploited Within 20 Hours of Disclosure — CISA KEV Added, JFrog Reports Patch Bypass in Latest Version",
