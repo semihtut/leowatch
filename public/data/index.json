@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-30T03:21:23.260Z",
-  "date": "2026-03-30",
+  "lastUpdated": "2026-04-01T04:51:55.252Z",
+  "date": "2026-04-01",
   "stats": {
-    "total": 106,
-    "critical": 77,
+    "total": 109,
+    "critical": 80,
     "high": 29,
     "medium": 0,
     "low": 0,
-    "cisaKev": 49,
+    "cisaKev": 51,
     "activeExploits": 15,
-    "totalSources": 1353
+    "totalSources": 1389
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,65 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-30-001",
+  "featuredBriefing": "TB-2026-03-31-003",
   "briefings": [
+    {
+      "id": "TB-2026-03-31-003",
+      "title": "Citrix NetScaler CVE-2026-3055 (CVSS 9.3): SAML IDP Out-of-Bounds Memory Read Actively Exploited via Crafted SAMLRequest — Appliance Memory Leaked Through NSC_TASS Cookie Exposing Session Tokens and Credentials",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-3055"
+      ],
+      "tags": [
+        "citrix",
+        "netscaler",
+        "saml",
+        "memory-disclosure",
+        "out-of-bounds",
+        "authentication"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Citrix disclosed a critical vulnerability in its widely-deployed NetScaler ADC and NetScaler Gateway products that allows attackers to leak sensitive memory from the appliance without any authenticati..."
+    },
+    {
+      "id": "TB-2026-03-31-002",
+      "title": "F5 BIG-IP APM CVE-2025-53521 (CVSS 9.8): DoS Vulnerability Reclassified as Unauthenticated RCE, Added to CISA KEV — Chinese Nation-State Actor UNC5221 Deployed Brickstorm Backdoor After Exploiting Source Code Breach",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2025-53521"
+      ],
+      "tags": [
+        "f5",
+        "big-ip",
+        "apm",
+        "rce",
+        "nation-state",
+        "china"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "F5 Networks' BIG-IP Access Policy Manager (APM) — used by tens of thousands of enterprises as a secure remote access and VPN gateway — contains a vulnerability originally disclosed in October 2025 as ..."
+    },
+    {
+      "id": "TB-2026-03-31-001",
+      "title": "Cisco Secure Firewall Management Center CVE-2026-20131 (CVSS 10.0): Unauthenticated Java Deserialization RCE Exploited as Zero-Day Since January 2026 — Interlock Ransomware Achieves Root Access 36 Days Before Patch",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-20131"
+      ],
+      "tags": [
+        "cisco",
+        "firewall",
+        "deserialization",
+        "rce",
+        "zero-day",
+        "ransomware"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A perfect-10 severity vulnerability was discovered in Cisco's Secure Firewall Management Center (FMC), the central management console used by organizations to control their Cisco firewall fleets. The ..."
+    },
     {
       "id": "TB-2026-03-30-002",
       "title": "Spring Boot Actuator Authentication Bypass CVE-2026-22731 and CVE-2026-22733 (CVSS 8.2): Silent Unauthenticated Access to Protected Endpoints via Health Group Path Collision and CloudFoundry Namespace Misrouting — Six CVEs Patched Across Spring Ecosystem",
