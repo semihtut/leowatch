@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-03-31T08:36:55.132Z",
-  "date": "2026-03-31",
+  "lastUpdated": "2026-04-02T03:15:05.894Z",
+  "date": "2026-04-02",
   "stats": {
-    "total": 109,
-    "critical": 80,
-    "high": 29,
+    "total": 115,
+    "critical": 85,
+    "high": 30,
     "medium": 0,
     "low": 0,
-    "cisaKev": 51,
+    "cisaKev": 52,
     "activeExploits": 15,
-    "totalSources": 1381
+    "totalSources": 1476
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,122 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-03-31-003",
+  "featuredBriefing": "TB-2026-04-02-004",
   "briefings": [
+    {
+      "id": "TB-2026-04-02-004",
+      "title": "North Korea-Linked UNC1069 Compromises Axios npm Package (100M+ Weekly Downloads): WAVESHAPER.V2 Cross-Platform RAT Deployed via Maintainer Account Hijack — Supply Chain Attack Targets Cloud Credentials, 135+ Confirmed Victims in 3-Hour Window",
+      "severity": "Critical",
+      "date": "2026-04-02",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "npm",
+        "axios",
+        "north-korea",
+        "unc1069",
+        "rat"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "North Korean state-sponsored hackers (identified as UNC1069 by Google Threat Intelligence) hijacked the npm publishing account for axios — one of the most downloaded JavaScript packages in the world, ..."
+    },
+    {
+      "id": "TB-2026-04-02-003",
+      "title": "Oracle Identity Manager & Web Services Manager Emergency Out-of-Band RCE CVE-2026-21992 (CVSS 9.8): Missing Authentication in REST WebServices Enables Unauthenticated Full System Compromise — Second Emergency Oracle Alert in Product History",
+      "severity": "Critical",
+      "date": "2026-04-02",
+      "cves": [
+        "CVE-2026-21992",
+        "CVE-2025-61757"
+      ],
+      "tags": [
+        "oracle",
+        "identity-manager",
+        "rce",
+        "unauthenticated",
+        "out-of-band",
+        "rest-api"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Oracle issued a rare emergency security alert — only the second such out-of-band patch in Oracle Identity Manager's history — for a critical vulnerability (CVE-2026-21992) that allows attackers to rem..."
+    },
+    {
+      "id": "TB-2026-04-02-002",
+      "title": "n8n Workflow Automation Platform Critical RCE CVE-2026-21858 (CVSS 10.0) \"Ni8mare\": Content-Type Confusion in Form Webhook Enables Unauthenticated Full System Compromise — 100,000 Exposed Instances, PoC Published, CISA KEV Linked Chain",
+      "severity": "Critical",
+      "date": "2026-04-02",
+      "cves": [
+        "CVE-2026-21858",
+        "CVE-2025-68613"
+      ],
+      "tags": [
+        "n8n",
+        "rce",
+        "workflow-automation",
+        "unauthenticated",
+        "webhook",
+        "content-type-confusion"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "A maximum-severity vulnerability (CVSS 10.0) nicknamed 'Ni8mare' was discovered in n8n, a popular open-source workflow automation platform widely used by developers and businesses to connect apps and ..."
+    },
+    {
+      "id": "TB-2026-04-02-001",
+      "title": "Google Chrome WebGPU Use-After-Free Zero-Day CVE-2026-5281 (CISA KEV): Dawn Component Memory Corruption Enables Sandbox Escape — Fourth Actively Exploited Chrome Zero-Day of 2026, Federal Patch Deadline April 15",
+      "severity": "High",
+      "date": "2026-04-02",
+      "cves": [
+        "CVE-2026-5281"
+      ],
+      "tags": [
+        "chrome",
+        "webgpu",
+        "use-after-free",
+        "browser",
+        "cisa-kev",
+        "zero-day"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Google released an emergency security patch for Chrome after discovering a dangerous memory vulnerability being actively exploited by hackers. The flaw exists in Dawn, the part of Chrome that handles ..."
+    },
+    {
+      "id": "TB-2026-04-01-002",
+      "title": "GNU InetUtils Telnetd Pre-Auth RCE CVE-2026-32746 (CVSS 9.8): 32-Year-Old LINEMODE Buffer Overflow Grants Unauthenticated Root Access — 212,000 Internet-Exposed Telnet Services at Risk, PoC Published",
+      "severity": "Critical",
+      "date": "2026-04-01",
+      "cves": [
+        "CVE-2026-32746"
+      ],
+      "tags": [
+        "telnet",
+        "gnu-inetutils",
+        "buffer-overflow",
+        "pre-auth",
+        "rce",
+        "iot"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Security researchers at Israeli firm Dream Security discovered a 32-year-old bug buried in the GNU InetUtils telnet server — software that has been shipped as part of Linux and Unix distributions sinc..."
+    },
+    {
+      "id": "TB-2026-04-01-001",
+      "title": "Fortinet FortiClient EMS Pre-Auth SQL Injection CVE-2026-21643 (CVSS 9.8) Under Active Exploitation — Unauthenticated Attackers Extract Admin Credentials via Tenant-Routing HTTP Header Injection",
+      "severity": "Critical",
+      "date": "2026-04-01",
+      "cves": [
+        "CVE-2026-21643"
+      ],
+      "tags": [
+        "fortinet",
+        "forticlient",
+        "ems",
+        "sql-injection",
+        "pre-auth",
+        "active-exploitation"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A critical security flaw was found in Fortinet FortiClient EMS version 7.4.4 — the software organizations use to manage endpoint security policies across their entire fleet of computers. The vulnerabi..."
+    },
     {
       "id": "TB-2026-03-31-003",
       "title": "Langflow AI Platform Critical RCE (CVE-2026-33017) Exploited Within 20 Hours of Disclosure — CISA KEV Added, JFrog Reports Patch Bypass in Latest Version",
