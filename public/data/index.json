@@ -2,14 +2,14 @@
   "lastUpdated": "2026-04-02T03:15:05.894Z",
   "date": "2026-04-02",
   "stats": {
-    "total": 115,
-    "critical": 85,
+    "total": 117,
+    "critical": 87,
     "high": 30,
     "medium": 0,
     "low": 0,
     "cisaKev": 52,
     "activeExploits": 15,
-    "totalSources": 1476
+    "totalSources": 1504
   },
   "topTags": [
     "cloud",
@@ -142,6 +142,42 @@
       ],
       "sourcesCount": 14,
       "excerpt": "A critical security flaw was found in Fortinet FortiClient EMS version 7.4.4 — the software organizations use to manage endpoint security policies across their entire fleet of computers. The vulnerabi..."
+    },
+    {
+      "id": "TB-2026-03-31-005",
+      "title": "Axios npm Supply Chain Attack: DPRK-Linked UNC1069 Compromises Lead Maintainer Account to Deploy Cross-Platform RAT via Phantom Dependency — 600,000 Estimated Downloads in 3-Hour Window",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "npm",
+        "nodejs",
+        "javascript",
+        "dprk",
+        "unc1069"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "North Korean hackers (tracked as UNC1069, part of the BlueNoroff cluster) compromised the npm account of the lead maintainer of axios — one of the most widely used JavaScript HTTP libraries in the wor..."
+    },
+    {
+      "id": "TB-2026-03-31-004",
+      "title": "Microsoft SharePoint Server Deserialization RCE CVE-2026-20963 (CVSS 9.8): Unauthenticated Remote Code Execution Actively Exploited — CISA KEV with Expired Federal Deadline",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-20963"
+      ],
+      "tags": [
+        "sharepoint",
+        "microsoft",
+        "deserialization",
+        "rce",
+        "cisa-kev",
+        "enterprise"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Microsoft's SharePoint Server — a widely deployed enterprise collaboration platform — contains a critical vulnerability in how it handles serialized data. When SharePoint receives specially crafted da..."
     },
     {
       "id": "TB-2026-03-31-003",
