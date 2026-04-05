@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-04-05T12:55:48.641Z",
+  "lastUpdated": "2026-04-05T13:07:41.648Z",
   "date": "2026-04-05",
   "stats": {
-    "total": 120,
-    "critical": 89,
-    "high": 31,
+    "total": 123,
+    "critical": 91,
+    "high": 32,
     "medium": 0,
     "low": 0,
-    "cisaKev": 55,
+    "cisaKev": 56,
     "activeExploits": 15,
-    "totalSources": 1547
+    "totalSources": 1587
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,66 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-04-05-003",
+  "featuredBriefing": "TB-2026-04-04-002",
   "briefings": [
+    {
+      "id": "TB-2026-04-04-003",
+      "title": "Operation TrueChaos: Chinese-Nexus Threat Actor Exploits TrueConf Zero-Day CVE-2026-3502 (CISA KEV, Deadline April 16) to Deliver Havoc C2 via Malicious Software Updates — Supply Chain Attack Compromises Southeast Asian Government Networks",
+      "severity": "High",
+      "date": "2026-04-04",
+      "cves": [
+        "CVE-2026-3502"
+      ],
+      "tags": [
+        "supply-chain",
+        "trueconf",
+        "zero-day",
+        "cisa-kev",
+        "nation-state",
+        "china"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "Researchers at Check Point uncovered a sophisticated espionage campaign (Operation TrueChaos) in which attackers exploited a zero-day vulnerability in TrueConf — a video conferencing platform popular ..."
+    },
+    {
+      "id": "TB-2026-04-04-002",
+      "title": "Cisco IMC Critical Authentication Bypass CVE-2026-20093 (CVSS 9.8): Unauthenticated Attacker Can Reset Admin Passwords on UCS Servers — Chainable with CVE-2026-20094 for Full Root RCE Across C-Series Rack Servers and Downstream Appliances",
+      "severity": "Critical",
+      "date": "2026-04-04",
+      "cves": [
+        "CVE-2026-20093",
+        "CVE-2026-20094"
+      ],
+      "tags": [
+        "cisco",
+        "ucs",
+        "imc",
+        "authentication-bypass",
+        "server-management",
+        "infrastructure"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Cisco disclosed a critical security flaw in the Integrated Management Controller (IMC) — the out-of-band management firmware embedded in Cisco UCS servers that allows administrators to control servers..."
+    },
+    {
+      "id": "TB-2026-04-04-001",
+      "title": "Fortinet FortiClient EMS Zero-Day CVE-2026-35616 (CVSS 9.1): Unauthenticated API Bypass Enables RCE on Endpoint Management Platform — Active Exploitation Confirmed via watchTowr Honeypots, Emergency Hotfixes Released April 4",
+      "severity": "Critical",
+      "date": "2026-04-04",
+      "cves": [
+        "CVE-2026-35616"
+      ],
+      "tags": [
+        "fortinet",
+        "forticlient-ems",
+        "zero-day",
+        "api-bypass",
+        "unauthenticated-rce",
+        "endpoint-management"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "Fortinet issued emergency security patches for FortiClient EMS — the server-side component that manages endpoint security policies for FortiClient agents deployed across an organization's devices. A c..."
+    },
     {
       "id": "TB-2026-04-05-003",
       "title": "Cisco Secure Firewall Management Center Unauthenticated RCE CVE-2026-20131 (CVSS 10.0, CISA KEV): Insecure Java Deserialization Grants Root Access — Interlock Ransomware Exploited as Zero-Day 36 Days Before Disclosure, Entire Managed Firewall Estate at Risk",
