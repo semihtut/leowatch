@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-04-05T13:07:41.648Z",
+  "lastUpdated": "2026-04-05T13:27:21.133Z",
   "date": "2026-04-05",
   "stats": {
-    "total": 123,
-    "critical": 91,
+    "total": 126,
+    "critical": 94,
     "high": 32,
     "medium": 0,
     "low": 0,
-    "cisaKev": 56,
+    "cisaKev": 59,
     "activeExploits": 15,
-    "totalSources": 1587
+    "totalSources": 1632
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,66 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-04-04-002",
+  "featuredBriefing": "TB-2026-04-05-006",
   "briefings": [
+    {
+      "id": "TB-2026-04-05-006",
+      "title": "Aqua Security Trivy Supply Chain Compromise CVE-2026-33634 (CISA KEV, Deadline April 9): TeamPCP Backdoors 76 GitHub Action Version Tags — 1,000+ Cloud Environments Infected, 500K+ Credentials Exfiltrated via Poisoned Security Scanner",
+      "severity": "Critical",
+      "date": "2026-04-05",
+      "cves": [
+        "CVE-2026-33634"
+      ],
+      "tags": [
+        "supply-chain",
+        "github-actions",
+        "cicd",
+        "trivy",
+        "aqua-security",
+        "cisa-kev"
+      ],
+      "sourcesCount": 17,
+      "excerpt": "Trivy — one of the most widely used open-source security scanners in the world, trusted by DevOps teams to scan containers and infrastructure for vulnerabilities — was itself turned into a malware del..."
+    },
+    {
+      "id": "TB-2026-04-05-005",
+      "title": "Ivanti EPMM Pre-Auth RCE Zero-Days CVE-2026-1281 & CVE-2026-1340 (CISA KEV): Bash Arithmetic Expansion Command Injection Exploited Before Disclosure — Dutch, Finnish Government Agencies Breached, PoC Public",
+      "severity": "Critical",
+      "date": "2026-04-05",
+      "cves": [
+        "CVE-2026-1281",
+        "CVE-2026-1340"
+      ],
+      "tags": [
+        "ivanti",
+        "epmm",
+        "mdm",
+        "mobile-device-management",
+        "rce",
+        "pre-auth"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Ivanti's Endpoint Manager Mobile (EPMM) — a popular mobile device management platform used by government agencies and enterprises — contained a dangerous flaw in how it handled incoming web requests. ..."
+    },
+    {
+      "id": "TB-2026-04-05-004",
+      "title": "F5 BIG-IP APM Unauthenticated RCE CVE-2025-53521 (CISA KEV, Deadline March 30): Pre-Auth Stack Overflow Reclassified from DoS — Nation-State Exploitation Confirmed, 14,000+ Internet-Exposed Instances, Web Shells Deployed",
+      "severity": "Critical",
+      "date": "2026-04-05",
+      "cves": [
+        "CVE-2025-53521"
+      ],
+      "tags": [
+        "f5",
+        "big-ip",
+        "apm",
+        "rce",
+        "pre-auth",
+        "cisa-kev"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A critical vulnerability in F5 BIG-IP Access Policy Manager (APM) — a widely deployed enterprise VPN and remote access platform — was initially disclosed in October 2025 as a low-urgency denial-of-ser..."
+    },
     {
       "id": "TB-2026-04-04-003",
       "title": "Operation TrueChaos: Chinese-Nexus Threat Actor Exploits TrueConf Zero-Day CVE-2026-3502 (CISA KEV, Deadline April 16) to Deliver Havoc C2 via Malicious Software Updates — Supply Chain Attack Compromises Southeast Asian Government Networks",

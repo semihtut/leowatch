@@ -1,0 +1,297 @@
+{
+  "briefing_id": "TB-2026-04-05-005",
+  "title": "Ivanti EPMM Pre-Auth RCE Zero-Days CVE-2026-1281 & CVE-2026-1340 (CISA KEV): Bash Arithmetic Expansion Command Injection Exploited Before Disclosure — Dutch, Finnish Government Agencies Breached, PoC Public",
+  "generated_date": "2026-04-05",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-01"
+  },
+  "cves": [
+    "CVE-2026-1281",
+    "CVE-2026-1340"
+  ],
+  "tags": [
+    "ivanti",
+    "epmm",
+    "mdm",
+    "mobile-device-management",
+    "rce",
+    "pre-auth",
+    "zero-day",
+    "cisa-kev",
+    "government",
+    "bash-injection"
+  ],
+  "affected_products": [
+    "Ivanti Endpoint Manager Mobile (EPMM) 12.5.0.0",
+    "Ivanti Endpoint Manager Mobile (EPMM) 12.5.1.0",
+    "Ivanti Endpoint Manager Mobile (EPMM) 12.6.0.0",
+    "Ivanti Endpoint Manager Mobile (EPMM) 12.6.1.0",
+    "Ivanti Endpoint Manager Mobile (EPMM) 12.7.0.0"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Ivanti Official Blog — January 2026 EPMM Security Update",
+      "url": "https://www.ivanti.com/blog/january-2026-epmm-security-update",
+      "date": "2026-01-29",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Ivanti Security Advisory — CVE-2026-1281 & CVE-2026-1340",
+      "url": "https://forums.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-CVE-2026-1281-CVE-2026-1340",
+      "date": "2026-01-29",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD — CVE-2026-1281",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1281",
+      "date": "2026-01-29",
+      "type": "Government"
+    },
+    {
+      "name": "NVD — CVE-2026-1340",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1340",
+      "date": "2026-01-29",
+      "type": "Government"
+    },
+    {
+      "name": "CISA KEV Alert — Adds CVE-2026-1281",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/01/29/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "date": "2026-01-29",
+      "type": "Government"
+    },
+    {
+      "name": "BSI (German Federal Office for Information Security) Cybersicherheitswarnung 2026-221601-1032",
+      "url": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2026/2026-221601-1032.pdf",
+      "date": "2026-01-29",
+      "type": "Government"
+    },
+    {
+      "name": "CERT-EU Security Advisory 2026-001",
+      "url": "https://cert.europa.eu/publications/security-advisories/2026-001/",
+      "date": "2026-01-30",
+      "type": "Government"
+    },
+    {
+      "name": "watchTowr Labs — 'Someone Knows Bash Far Too Well' — Ivanti EPMM Pre-Auth RCEs",
+      "url": "https://labs.watchtowr.com/someone-knows-bash-far-too-well-and-we-love-it-ivanti-epmm-pre-auth-rces-cve-2026-1281-cve-2026-1340/",
+      "date": "2026-01-30",
+      "type": "Research"
+    },
+    {
+      "name": "Rapid7 Emerging Threat Response — Ivanti EPMM Zero-Day Exploited in the Wild",
+      "url": "https://www.rapid7.com/blog/post/etr-critical-ivanti-endpoint-manager-mobile-epmm-zero-day-exploited-in-the-wild-eitw-cve-2026-1281-1340/",
+      "date": "2026-01-30",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable Blog — CVE-2026-1281 & CVE-2026-1340 Ivanti EPMM Zero-Day Vulnerabilities",
+      "url": "https://www.tenable.com/blog/cve-2026-1281-cve-2026-1340-ivanti-endpoint-manager-mobile-epmm-zero-day-vulnerabilities",
+      "date": "2026-01-30",
+      "type": "Research"
+    },
+    {
+      "name": "Unit 42 (Palo Alto Networks) — Ivanti EPMM CVE-2026-1281 & CVE-2026-1340 Threat Actor Activity",
+      "url": "https://unit42.paloaltonetworks.com/ivanti-cve-2026-1281-cve-2026-1340/",
+      "date": "2026-02-17",
+      "type": "Research"
+    },
+    {
+      "name": "Telekom Security — Ivanti EPMM CVE-2026-1281 Mass Exploitation Report",
+      "url": "https://github.security.telekom.com/2026/03/ivanti-CVE-2026-1281-exploitation.html",
+      "date": "2026-03-03",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer — Ivanti warns of two EPMM flaws exploited in zero-day attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-two-epmm-flaws-exploited-in-zero-day-attacks/",
+      "date": "2026-01-29",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News — Dutch Authorities Confirm Ivanti Zero-Day Breach",
+      "url": "https://thehackernews.com/2026/02/dutch-authorities-confirm-ivanti-zero.html",
+      "date": "2026-02-05",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-07-01",
+      "event": "Suspected earliest exploitation based on BSI and Telekom Security forensic assessment — attackers had likely compromised the vulnerability before public knowledge"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "Ivanti discloses CVE-2026-1281 and CVE-2026-1340, both CVSS 9.8 Critical, confirming zero-day exploitation in the wild before disclosure; emergency RPM hotfixes released"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "CISA adds CVE-2026-1281 to Known Exploited Vulnerabilities catalog with mandatory 3-day remediation deadline (February 1, 2026) for federal agencies"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "watchTowr Labs publishes full technical root cause analysis of the Bash arithmetic expansion vulnerability; public PoC demonstrated"
+    },
+    {
+      "date": "2026-02-01",
+      "event": "CISA BOD 22-01 federal agency remediation deadline; GreyNoise begins recording exploitation sessions from bulletproof hosting IPs"
+    },
+    {
+      "date": "2026-02-05",
+      "event": "Dutch Data Protection Authority (AP), Dutch Council for the Judiciary (Rvdr), and Finland's Valtori confirm breaches — up to 50,000 Finnish government employees' data exposed"
+    },
+    {
+      "date": "2026-02-09",
+      "event": "'Sleeper' webshell campaign reported — dormant JSP web shells discovered on compromised EPMM servers, waiting for activation via specific HTTP parameters"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "Telekom Security publishes mass exploitation report; 20+ German organizations confirmed compromised; Shadowserver tracks ~1,600 exposed EPMM instances globally"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Ivanti's Endpoint Manager Mobile (EPMM) — a popular mobile device management platform used by government agencies and enterprises — contained a dangerous flaw in how it handled incoming web requests. The vulnerability stems from a Bash scripting mistake: when EPMM processed certain URL parameters, it passed attacker-controlled input directly into a shell arithmetic expression, which Bash evaluates by running any embedded commands. This allowed attackers to execute any operating system command they wanted without logging in — simply by sending a crafted web request. Even more concerning, this vulnerability was being actively exploited by unknown threat actors for months before Ivanti knew about it, meaning governments and organizations were already breached before the patch existed. The Dutch government's data protection authority, the Dutch courts system, Finland's national IT agency (exposing 50,000 employees), and the European Commission were among confirmed victims.",
+    "who_is_affected": "Organizations running Ivanti EPMM on-premises versions 12.5.0.0 through 12.7.0.0. EPMM is particularly common in government agencies (it was formerly MobileIron, a long-established MDM solution). Approximately 1,600 EPMM instances were identified as internet-exposed, with government, healthcare, manufacturing, and legal sectors most heavily affected across the US, Germany, Australia, and Canada. Cloud-based Ivanti Neurons for MDM is not affected.",
+    "what_attackers_do": "Step 1: Attacker sends a crafted GET request to a specific EPMM endpoint (/mifs/c/appstore/fob/3/) containing a URL parameter with an embedded shell command in backtick notation within an array index expression. Step 2: EPMM's server-side Bash script extracts the URL parameter and places it in a shell variable; during arithmetic expansion of an array, Bash evaluates the backtick expression as a shell command under the EPMM server's process context. Step 3: The injected command executes with EPMM server privileges — no authentication required, no user interaction needed — giving the attacker initial shell access. Step 4: Attacker uploads JSP web shells (401.jsp, 403.jsp) to the Tomcat web application directory for persistent backdoor access, including 'sleeper' shells that remain dormant and only activate when triggered by a specific HTTP parameter. Step 5: Attacker harvests device inventory, user credentials, cryptographic keys, and MDM configuration data, gaining visibility into every enrolled mobile device and their associated users across the organization.",
+    "what_you_should_do": [
+      "Apply the Ivanti security RPM hotfix immediately — do not wait for scheduled maintenance windows given confirmed zero-day exploitation status",
+      "Run the Ivanti NCSC-NL detection script to check for existing compromise indicators before patching, as the system may already be breached",
+      "Audit the Tomcat web application directory (/mi/tomcat/webapps/mifs/) for unexpected JSP files (401.jsp, 403.jsp, 1.jsp, or others not part of the standard installation)",
+      "After any EPMM version upgrade, reapply the RPM hotfix — it does not survive upgrades and must be manually reinstalled",
+      "Plan upgrade to EPMM 12.8.0.0 for permanent remediation; restrict external network access to the EPMM management interface where operationally possible"
+    ],
+    "why_this_is_serious": "EPMM manages mobile devices across entire organizations — it holds the keys to every enrolled phone, tablet, and laptop: user identities, device configurations, app inventories, corporate email accounts, and network access credentials. A compromised EPMM server exposes the entire mobile fleet of an organization. The fact that attackers exploited this as a zero-day — before any patch existed — and specifically targeted government agencies demonstrates sophisticated, targeted threat actors. The 'sleeper' webshell tactic (dormant shells that activate on specific trigger) shows attackers are maintaining persistent covert access even on organizations that patched, meaning forensic investigation is mandatory even after patching."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Unauthenticated HTTP GET exploitation of /mifs/c/appstore/fob/ and /mifs/c/aftstore/fob/ endpoints in Ivanti EPMM. The Bash arithmetic expansion vulnerability executes arbitrary commands without any authentication."
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "Bash arithmetic expansion evaluates attacker-controlled array index expressions as shell commands (backtick substitution), enabling arbitrary OS command execution in the context of the EPMM server process."
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "JSP web shells (401.jsp, 403.jsp, 1.jsp) deployed in /mi/tomcat/webapps/mifs/ for persistent access. 'Sleeper' variants remain dormant until triggered by a specific HTTP parameter value, evading detection."
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1213",
+        "technique_name": "Data from Information Repositories",
+        "description": "EPMM's database contains device inventory, enrolled user identities, corporate credentials, cryptographic keys, and MDM configuration policies for all managed devices — a high-value collection target."
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "description": "Post-exploitation reconnaissance of the internal network using the EPMM server's trusted network position to map internal infrastructure accessible from the MDM platform."
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Ivanti has released a detection script developed with NCSC-NL for hunting compromise indicators. Key signals include malicious JSP files in the Tomcat webapps directory, requests to EPMM endpoints containing backtick characters or bracket notation, and network callbacks to OAST/blind injection testing infrastructure. GreyNoise caution: widely shared IOC lists contained inaccurate indicators — validate against authoritative sources.",
+    "log_sources": [
+      {
+        "source": "EPMM / Tomcat Access Logs",
+        "description": "Search for requests to /mifs/c/appstore/fob/ or /mifs/c/aftstore/fob/ containing backtick characters (%60), $() notation, or 'gPath[' patterns indicating exploitation attempts",
+        "priority": "Critical"
+      },
+      {
+        "source": "File System Integrity (EPMM Server)",
+        "description": "Monitor /mi/tomcat/webapps/mifs/ for unexpected JSP, JSF, or other server-side script files not part of the standard installation package",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network / DNS Logs",
+        "description": "Look for outbound DNS or HTTP connections to OAST callback infrastructure (*.oast.live, *.ceye.io, *.eyes.sh) — used by attackers to verify blind RCE exploitability; also check for connections to gobygo.net and introo.sh",
+        "priority": "High"
+      },
+      {
+        "source": "EPMM Application Logs (/mi/tomcat/logs/)",
+        "description": "Check for unusual request patterns, errors from the appstore/aftstore endpoints, or evidence of shell command output in HTTP responses",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Exploitation attempt URL pattern",
+        "description": "Vendor-supplied detection regex for log hunting — matches the specific URL pattern used to deliver the Bash arithmetic injection payload",
+        "log_field": "request_uri REGEXP '^.*/mifs/c/(aft|app)store.*theValue\\?\\?.*'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected JSP files in Tomcat webapps directory",
+        "description": "Files 401.jsp, 403.jsp, 1.jsp, or test.css in /mi/tomcat/webapps/mifs/ are web shells — their presence confirms active compromise",
+        "log_field": "file_path LIKE '/mi/tomcat/webapps/mifs/%.jsp' AND file_not_in_baseline=true",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connection to 193.24.123.42 (PROSPERO OOO AS200593)",
+        "description": "This bulletproof hosting IP was responsible for 83% of observed exploitation traffic per GreyNoise analysis",
+        "log_field": "destination_ip='193.24.123.42'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "DNS or HTTP callback to OAST infrastructure",
+        "description": "Attackers use out-of-band testing services to confirm blind RCE exploitability — connections to these domains from EPMM servers indicate active exploitation",
+        "log_field": "dns_query REGEXP '.*(oast\\.live|ceye\\.io|eyes\\.sh|gobygo\\.net|introo\\.sh)$'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "193.24.123.42",
+      "23.227.199.80",
+      "64.7.199.177",
+      "84.72.235.18",
+      "86.106.143.200",
+      "91.193.19.12",
+      "45.76.28.252",
+      "217.148.142.48",
+      "161.129.60.118"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply Ivanti RPM security hotfix immediately",
+      "description": "Download and apply the appropriate RPM hotfix for your EPMM version from the Ivanti support portal. Two RPM variants: ivanti-security-update-1761642-1.0.0L-5.noarch.rpm for 12.x.0.x and ivanti-security-update-1761642-1.0.0S-5.noarch.rpm for 12.x.1.x. Critical: This hotfix does NOT survive EPMM version upgrades — reapply after any upgrade. Permanent fix is EPMM 12.8.0.0.",
+      "command": "# Apply RPM hotfix (example)\nrpm -ivh ivanti-security-update-1761642-1.0.0L-5.noarch.rpm\n# Verify installation\nrpm -qa | grep ivanti-security-update"
+    },
+    {
+      "priority": 2,
+      "action": "Run Ivanti NCSC-NL detection script before patching",
+      "description": "Ivanti developed a detection script in cooperation with NCSC-NL to identify compromise indicators. Run this script on all EPMM servers before applying patches to preserve forensic evidence and determine if breach response is required. Available via Ivanti support portal.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Hunt for web shells in Tomcat webapps directory",
+      "description": "Immediately check the EPMM Tomcat web application directory for unexpected files. The presence of 401.jsp, 403.jsp, or 1.jsp files confirms active compromise and requires incident response, not just patching.",
+      "command": "# Check for unexpected JSP files\nfind /mi/tomcat/webapps/mifs/ -name '*.jsp' -ls\nfind /mi/tomcat/webapps/mifs/css/ -type f -ls\n# Compare against expected file baseline"
+    },
+    {
+      "priority": 4,
+      "action": "Block known exploitation source IPs at perimeter",
+      "description": "Block the confirmed malicious IP addresses (193.24.123.42 and others from the known_malicious_ips list) at perimeter firewall to stop ongoing exploitation attempts. Note: attackers may use additional IPs not in current IOC lists.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Restrict external access to EPMM management interface",
+      "description": "If EPMM is directly internet-accessible, implement IP allowlisting at the firewall level to restrict access to known corporate IP ranges. EPMM does not need to be directly internet-accessible for MDM functionality — device check-ins can be proxied. This significantly reduces the attack surface.",
+      "command": null
+    }
+  ]
+}
