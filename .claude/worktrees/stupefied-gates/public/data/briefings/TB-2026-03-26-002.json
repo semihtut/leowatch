@@ -1,0 +1,263 @@
+{
+  "briefing_id": "TB-2026-03-26-002",
+  "title": "APT28 Exploits Zimbra ZCS Stored XSS CVE-2025-66376 in Zero-Click Operation GhostMail: Russian State Hackers Steal Session Tokens and 90 Days of Email Data from Ukrainian Government Agencies — CISA KEV Deadline April 1",
+  "generated_date": "2026-03-26",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 7.2,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-04-01"
+  },
+  "cves": [
+    "CVE-2025-66376"
+  ],
+  "tags": [
+    "zimbra",
+    "xss",
+    "apt28",
+    "russia",
+    "ukraine",
+    "espionage",
+    "email",
+    "cisa-kev",
+    "state-sponsored",
+    "zero-click"
+  ],
+  "affected_products": [
+    "Zimbra Collaboration Suite (ZCS) 10.0.x before 10.0.18",
+    "Zimbra Collaboration Suite (ZCS) 10.1.x before 10.1.13"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Zimbra Blog - Patch Release: Zimbra 10.1.13, 10.0.18",
+      "url": "https://blog.zimbra.com/2025/11/patch-release-update-zimbra-10-1-13-10-0-18/",
+      "date": "2025-11-01",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Zimbra Security Advisories - Official Security Center",
+      "url": "https://wiki.zimbra.com/wiki/Zimbra_Security_Advisories",
+      "date": "2025-11-01",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog - CVE-2025-66376",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-18",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer - CISA Orders Feds to Patch Zimbra XSS Flaw Exploited in Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-zimbra-xss-flaw-exploited-in-attacks/",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Russian APT28 Military Hackers Exploit Zimbra Flaw in Ukrainian Govt Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/russian-apt28-military-hackers-exploit-zimbra-flaw-in-ukrainian-govt-attacks/",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - Russian APT Targets Ukraine via Zimbra XSS Flaw CVE-2025-66376",
+      "url": "https://securityaffairs.com/189673/security/russian-apt-targets-ukraine-via-zimbra-xss-flaw-cve-2025-66376.html",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Russian APT Exploits Zimbra Vulnerability Against Ukraine",
+      "url": "https://www.securityweek.com/russian-apt-exploits-zimbra-vulnerability-against-ukraine/",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "Qualys ThreatPROTECT - CISA Added Zimbra Vulnerability to KEV Catalog CVE-2025-66376",
+      "url": "https://threatprotect.qualys.com/2026/03/19/cisa-added-zimbra-vulnerability-to-its-known-exploited-vulnerabilities-catalog-cve-2025-66376/",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "CyberSecurityNews - CISA Warns of Zimbra Vulnerability Exploited in Attacks",
+      "url": "https://cybersecuritynews.com/zimbra-vulnerability-exploited-attacks/",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "CyberSecurityNews - Russian APT Exploits Zimbra XSS to Target Ukrainian Government",
+      "url": "https://cybersecuritynews.com/russian-apt-exploits-zimbra-xss/",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - CISA Adds Microsoft SharePoint and Zimbra Flaws to KEV Catalog",
+      "url": "https://securityaffairs.com/189628/security/u-s-cisa-adds-microsoft-sharepoint-and-zimbra-flaws-to-its-known-exploited-vulnerabilities-catalog.html",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "Vulnerability.circl.lu - CVE-2025-66376 Technical Reference",
+      "url": "https://vulnerability.circl.lu/vuln/CVE-2025-66376",
+      "date": "2025-11-05",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-01",
+      "event": "Zimbra releases security patches for CVE-2025-66376 in versions 10.0.18 and 10.1.13, fixing improper neutralization of CSS @import directives in the Classic UI email renderer"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "APT28 (Fancy Bear / UAC-0001) begins Operation GhostMail — first confirmed exploitation targeting the Ukrainian State Hydrology Agency (DSHC) under the Ministry of Infrastructure using a phishing email impersonating a NAVS student internship inquiry"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "CISA adds CVE-2025-66376 to the Known Exploited Vulnerabilities (KEV) catalog alongside Microsoft SharePoint CVE-2026-20963; federal agencies given April 1, 2026 remediation deadline"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "BleepingComputer, SecurityWeek and Security Affairs publish APT28 attribution details linking the Zimbra exploitation campaign to Russian GRU military intelligence operations"
+    },
+    {
+      "date": "2026-03-26",
+      "event": "Active exploitation campaign ongoing; additional Ukrainian government and critical infrastructure entities targeted; April 1, 2026 federal patch deadline approaches"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "CISA BOD 22-01 mandatory patch deadline for all US Federal Civilian Executive Branch agencies"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Russian military hackers (APT28, also known as Fancy Bear) discovered and exploited a security flaw in Zimbra — a popular email and collaboration platform used by corporations, universities, and government agencies. The vulnerability allows attackers to embed invisible malicious code inside an ordinary-looking email. When the target opens the email using the Zimbra Classic web interface, the malicious code runs automatically — no clicking, no downloading, nothing. The code immediately steals the victim's login session and up to 90 days of their email contents. CISA added this to its mandatory-patch list on March 18, 2026.",
+    "who_is_affected": "Organizations running Zimbra Collaboration Suite (ZCS) versions 10.0.x below 10.0.18 or 10.1.x below 10.1.13 that use the Classic UI web interface. Confirmed targets include Ukrainian government agencies and critical infrastructure entities. Zimbra is widely deployed in government, defense, financial, and academic sectors globally, with millions of mailboxes potentially exposed. Note: Zimbra 10.0 reached End-of-Life December 31, 2025, so many organizations may be running unpatched, unsupported versions.",
+    "what_attackers_do": "Step 1: APT28 crafts a convincing phishing email written in the target language (Ukrainian), impersonating a legitimate contact such as a university student or government official, with subject matter relevant to the target organization. Step 2: The email body contains hidden CSS @import directives that exploit CVE-2025-66376 — when the Zimbra Classic UI renders the HTML email, it fails to sanitize the malicious CSS, which triggers execution of embedded JavaScript code in the victim's authenticated browser session. Step 3: The injected JavaScript silently harvests the victim's Zimbra authentication token (ZMBAuthToken), CSRF token, two-factor authentication backup codes, and browser-stored credentials — all without any visible indication to the victim. Step 4: The stolen session token is exfiltrated via two channels simultaneously: HTTPS for bulk email data transfer and DNS tunneling for stealthy command and control communication, bypassing many perimeter security controls. Step 5: With the stolen session token, APT28 operators authenticate to the victim's mailbox and download up to 90 days of email history, access the organizational contact directory, and potentially pivot to additional accounts and systems using intelligence gathered from the compromised mailbox.",
+    "what_you_should_do": [
+      "Immediately upgrade Zimbra to version 10.0.18 (for 10.0.x deployments) or 10.1.13 (for 10.1.x deployments) — note that ZCS 10.0 is now End-of-Life and migration to 10.1 is strongly recommended",
+      "If immediate patching is not possible, disable Classic UI access and direct all users to the Modern UI, which is not vulnerable to this XSS attack vector",
+      "Review Zimbra server logs for unusual email access patterns, bulk email downloads, and signs of session token theft — look for the same session token being used from two different IP addresses simultaneously",
+      "Implement email gateway filtering rules to strip CSS @import directives from all inbound HTML email before delivery to Zimbra",
+      "For federal agencies, compliance with CISA KEV mandate is required by April 1, 2026 — report remediation status to CISA per BOD 22-01 requirements"
+    ],
+    "why_this_is_serious": "This attack requires absolutely no action from the victim — simply receiving and viewing an email in Zimbra's web interface is enough to be fully compromised. APT28 is Russia's GRU military intelligence unit, one of the world's most capable and aggressive state-sponsored hacking groups with a long history of devastating attacks including the 2016 US election interference and the NotPetya cyberattack. Their active targeting of Ukrainian government and critical infrastructure represents a continuation of cyber warfare supporting Russia's military operations. The stolen email data can reveal intelligence sources, diplomatic communications, military logistics, and internal government deliberations. The ongoing nature of the campaign and the approaching CISA deadline make this a critical priority for immediate action."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.001",
+        "technique_name": "Phishing: Spearphishing Attachment",
+        "description": "APT28 delivers specially crafted HTML emails containing malicious CSS @import directives to targeted individuals at Ukrainian government agencies, impersonating legitimate contacts to increase open rates"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.007",
+        "technique_name": "Command and Scripting Interpreter: JavaScript",
+        "description": "CVE-2025-66376 triggers execution of attacker-controlled JavaScript within the victim's authenticated Zimbra Classic UI browser session when the malicious email is opened, exploiting improper HTML/CSS sanitization"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1539",
+        "technique_name": "Steal Web Session Cookie",
+        "description": "The injected JavaScript harvests the victim's ZMBAuthToken session cookie, CSRF token, and 2FA backup codes from the browser session, providing full account takeover capability without requiring the victim's password"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1114.002",
+        "technique_name": "Email Collection: Remote Email Collection",
+        "description": "Using stolen session tokens, APT28 operators remotely access the victim's Zimbra mailbox and systematically collect up to 90 days of email history, attachments, and the organizational contact directory"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1048",
+        "technique_name": "Exfiltration Over Alternative Protocol",
+        "description": "Harvested session tokens and email data are exfiltrated via dual channels: HTTPS for bulk email data transfer and DNS tunneling for stealthy C2 communication, making detection by traditional perimeter controls more difficult"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection for CVE-2025-66376 exploitation focuses on three areas: email content inspection (identifying malicious CSS @import directives in inbound HTML emails), Zimbra session anomalies (same token used from multiple IPs, bulk email access), and network exfiltration patterns (high-volume DNS queries and unusual HTTPS egress from webmail servers). Given the zero-click nature of this attack, endpoint detection may have limited visibility — server-side monitoring is essential.",
+    "log_sources": [
+      {
+        "source": "Email Gateway / MTA Logs",
+        "description": "Inspect inbound HTML email for CSS @import directives and obfuscated JavaScript payloads; this is the earliest detection point before the XSS triggers in the client browser",
+        "priority": "Critical"
+      },
+      {
+        "source": "Zimbra mailbox.log and audit.log",
+        "description": "Monitor for bulk email access patterns (downloading large quantities of emails in short timeframes), session token reuse from different IP addresses, and SOAP API calls accessing multiple mailboxes",
+        "priority": "Critical"
+      },
+      {
+        "source": "DNS Query Logs",
+        "description": "APT28 uses DNS tunneling for C2 communication — look for high-volume DNS queries with unusually long subdomain labels or Base64-encoded payloads in DNS requests originating from webmail client browsers",
+        "priority": "High"
+      },
+      {
+        "source": "Web Proxy / Firewall Egress Logs",
+        "description": "Monitor outbound HTTPS connections from Zimbra client IP ranges to unexpected destinations, particularly connections to external domains during email viewing sessions",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Inbound HTML email containing CSS @import with external URL references",
+        "description": "Core exploit delivery mechanism — the @import directive loads attacker-controlled stylesheets that contain the malicious JavaScript payload exploiting the Zimbra Classic UI sanitization bypass",
+        "log_field": "email_body contains '@import' AND email_body contains 'url(' AND email_from NOT IN trusted_domains",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Zimbra session token (ZMBAuthToken) used simultaneously from two different IP addresses",
+        "description": "After session token theft, APT28 operators use the token from their own infrastructure while the victim continues using the same session — concurrent access from different IPs is a strong compromise indicator",
+        "log_field": "zimbra_auth_token='[token]' AND src_ip NOT IN [previous_user_ips]",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Bulk SOAP SearchRequest/GetMsgRequest API calls harvesting email in rapid succession",
+        "description": "Post-compromise email harvesting generates characteristic SOAP API call patterns as attackers download 90 days of email history — look for hundreds of GetMsgRequest calls within minutes",
+        "log_field": "zimbra_soap_action='GetMsgRequest' AND request_count > 100 within 300 seconds",
+        "severity": "High"
+      },
+      {
+        "indicator": "High-volume DNS queries with anomalous subdomain label lengths from client IPs",
+        "description": "DNS tunneling exfiltration uses unusually long or encoded subdomain labels to embed exfiltrated data — queries with subdomain labels >30 characters from webmail client ranges are suspicious",
+        "log_field": "dns_query_subdomain_length > 30 AND src_ip IN webmail_client_ranges",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch Zimbra to version 10.0.18 or 10.1.13 immediately",
+      "description": "Apply the November 2025 security patches that fix the CVE-2025-66376 CSS @import sanitization bypass. Note: ZCS 10.0 reached End-of-Life December 31, 2025 — organizations on 10.0.x should plan migration to the supported 10.1.x branch. CISA federal deadline is April 1, 2026.",
+      "command": "zmcontrol version && zmupdate.pl -v 10.1.13"
+    },
+    {
+      "priority": 2,
+      "action": "Disable Classic UI and redirect users to Modern UI if patching is delayed",
+      "description": "The CVE-2025-66376 vulnerability is specific to the Classic UI HTML rendering engine. Temporarily disabling Classic UI access prevents exploitation while patches are staged. Modern UI uses a different rendering stack and is not affected.",
+      "command": "zmprov mcf zimbraWebClientLoginURL /modern"
+    },
+    {
+      "priority": 3,
+      "action": "Implement email gateway CSS @import filtering rule",
+      "description": "Configure your email security gateway (Proofpoint, Mimecast, Exchange Online Protection, etc.) to strip or quarantine HTML emails containing CSS @import directives, particularly those referencing external URLs. This provides defense-in-depth against this and similar XSS techniques.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit active Zimbra sessions for concurrent access anomalies",
+      "description": "Review Zimbra audit logs for session tokens appearing from multiple IP addresses simultaneously, which indicates active session token theft. Invalidate suspicious sessions and force password resets for affected accounts.",
+      "command": "zmprov -l getAllAccounts | while read acct; do zmprov ga $acct zimbraAuthTokenValidityValue; done"
+    },
+    {
+      "priority": 5,
+      "action": "Report suspected compromise to national cybersecurity authorities",
+      "description": "If indicators of APT28 compromise are identified, report to CISA (US), CERT-UA (Ukraine), or your national CERT immediately. APT28 operations are part of broader Russian state intelligence gathering and attribution assists in coordinated national response.",
+      "command": null
+    }
+  ]
+}

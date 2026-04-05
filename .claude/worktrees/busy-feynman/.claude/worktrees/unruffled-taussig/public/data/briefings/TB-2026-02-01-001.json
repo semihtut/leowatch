@@ -1,0 +1,308 @@
+{
+  "briefing_id": "TB-2026-02-01-001",
+  "title": "Ivanti EPMM Critical Zero-Day RCE Chain: Unauthenticated Command Injection with Public PoC and Active Webshell Deployment (CISA KEV)",
+  "generated_date": "2026-02-01",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-01"
+  },
+  "cves": [
+    "CVE-2026-1281",
+    "CVE-2026-1340"
+  ],
+  "tags": [
+    "Ivanti",
+    "EPMM",
+    "zero-day",
+    "RCE",
+    "command-injection",
+    "mobile-device-management",
+    "enterprise",
+    "webshell"
+  ],
+  "affected_products": [
+    "Ivanti Endpoint Manager Mobile (EPMM) 12.7.0.0 and below",
+    "Ivanti EPMM 12.6.0.0 and below",
+    "Ivanti EPMM 12.5.0.0 and below",
+    "Ivanti EPMM 12.6.1.0 and below",
+    "Ivanti EPMM 12.5.1.0 and below"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "BleepingComputer - Ivanti EPMM Zero-Day Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-two-epmm-flaws-exploited-in-zero-day-attacks/",
+      "date": "2026-01-29",
+      "type": "News"
+    },
+    {
+      "name": "Rapid7 - Critical Ivanti EPMM Zero-Day Advisory",
+      "url": "https://www.rapid7.com/blog/post/etr-critical-ivanti-endpoint-manager-mobile-epmm-zero-day-exploited-in-the-wild-eitw-cve-2026-1281-1340/",
+      "date": "2026-01-29",
+      "type": "Research"
+    },
+    {
+      "name": "watchTowr Labs - Ivanti EPMM Pre-Auth RCE Technical Analysis",
+      "url": "https://labs.watchtowr.com/someone-knows-bash-far-too-well-and-we-love-it-ivanti-epmm-pre-auth-rces-cve-2026-1281-cve-2026-1340/",
+      "date": "2026-01-30",
+      "type": "Research"
+    },
+    {
+      "name": "Help Net Security - Ivanti EPMM Temporary Patches",
+      "url": "https://www.helpnetsecurity.com/2026/01/30/ivanti-epmm-cve-2026-1281-cve-2026-1340/",
+      "date": "2026-01-30",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Ivanti EPMM Zero-Days",
+      "url": "https://www.theregister.com/2026/01/30/ivanti_epmm_zero_days/",
+      "date": "2026-01-30",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading - Ivanti EPMM Zero-Day Flaws Exploited",
+      "url": "https://www.darkreading.com/endpoint-security/ivanti-epmm-zero-day-flaws-exploited",
+      "date": "2026-01-30",
+      "type": "News"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-29",
+      "type": "Government"
+    },
+    {
+      "name": "NHS England - Cyber Alert CC-4742",
+      "url": "https://digital.nhs.uk/cyber-alerts/2026/cc-4742",
+      "date": "2026-01-30",
+      "type": "Government"
+    },
+    {
+      "name": "Orange Cyberdefense - Ivanti EPMM Zero-Days Advisory",
+      "url": "https://www.orangecyberdefense.com/global/blog/cert-news/critical-ivanti-epmm-zero-days-actively-exploited-what-organizations-need-to-know",
+      "date": "2026-01-30",
+      "type": "Research"
+    },
+    {
+      "name": "Expel - Security Alert: Ivanti EPMM RCE",
+      "url": "https://expel.com/blog/security-alert-critical-unauthenticated-rce-vulnerabilities-in-ivanti-epmm/",
+      "date": "2026-01-30",
+      "type": "Research"
+    },
+    {
+      "name": "CyberScoop - Ivanti EPMM Defects Exploited",
+      "url": "https://cyberscoop.com/ivanti-epmm-defects-exploited/",
+      "date": "2026-01-30",
+      "type": "News"
+    },
+    {
+      "name": "SOCRadar - Ivanti EPMM Zero-Day RCE Analysis",
+      "url": "https://socradar.io/blog/cve-2026-1281-1340-ivanti-epmm-0day-rce/",
+      "date": "2026-01-30",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2023-07-24",
+      "event": "Previous EPMM zero-day CVE-2023-35078 exploited in the wild, establishing pattern of EPMM targeting"
+    },
+    {
+      "date": "2025-05-13",
+      "event": "EPMM exploit chain CVE-2025-4427 and CVE-2025-4428 exploited in the wild"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "Ivanti discloses CVE-2026-1281 and CVE-2026-1340 as zero-days with active exploitation confirmed"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "CISA adds CVE-2026-1281 to KEV catalog with emergency 3-day remediation deadline"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "Ivanti releases RPM hotfix scripts for affected EPMM versions"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "watchTowr Labs publishes detailed technical analysis and public PoC exploit becomes available"
+    },
+    {
+      "date": "2026-02-01",
+      "event": "CISA remediation deadline for federal agencies"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Two critical zero-day vulnerabilities were discovered in Ivanti Endpoint Manager Mobile (EPMM), the enterprise platform used to manage corporate mobile devices. Attackers found they could inject malicious commands through HTTP requests without needing any login credentials. The flaws were already being exploited before Ivanti even knew about them, with attackers installing backdoors and reverse shells on compromised servers. A public proof-of-concept exploit is now available, dramatically increasing the risk.",
+    "who_is_affected": "Any organization running on-premises Ivanti EPMM (formerly MobileIron Core) for mobile device management. This includes enterprises, government agencies, healthcare organizations, and military networks that rely on EPMM to manage employee smartphones and tablets. Cloud-hosted Ivanti Neurons for MDM is NOT affected.",
+    "what_attackers_do": "Step 1: Attackers send specially crafted HTTP GET requests to EPMM endpoints for app distribution or Android file transfer. Step 2: Malicious Bash commands embedded in the requests bypass all authentication checks. Step 3: The commands execute with EPMM service privileges on the underlying server. Step 4: Attackers install webshells (often modifying error pages like 401.jsp) and deploy WAR/JAR files for persistent reverse shell connections. Step 5: With full server access, attackers harvest administrator credentials, user data, email addresses, phone numbers, IMEI numbers, GPS locations, and can pivot to internal networks via the EPMM API.",
+    "what_you_should_do": [
+      "Apply Ivanti RPM hotfix scripts immediately - no downtime required",
+      "If your EPMM was internet-exposed before patching, assume compromise and initiate incident response",
+      "Search Apache access logs for exploitation attempts using Ivanti's detection regex pattern",
+      "Check for unauthorized webshells especially in error pages like 401.jsp",
+      "Look for unexpected WAR or JAR files and outbound network connections from EPMM",
+      "Reset all local EPMM passwords, LDAP/KDC service accounts, and public certificates",
+      "Review Sentry logs for signs of lateral movement",
+      "If compromise is confirmed, restore from known-good backup or rebuild the EPMM appliance",
+      "Plan upgrade to EPMM 12.8.0.0 when released in Q1 2026 for permanent fix"
+    ],
+    "why_this_is_serious": "EPMM manages the entire mobile device fleet of an organization. Compromise gives attackers access to every managed device's data including GPS locations, phone numbers, installed apps, and IMEI numbers. Attackers can also modify device authentication policies via the EPMM API, potentially pushing malicious configurations to thousands of corporate devices simultaneously. This is the third time EPMM has been hit with zero-days in three years, and a public exploit is now available, meaning mass exploitation is imminent."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Unauthenticated command injection via HTTP GET requests to EPMM app distribution and file transfer endpoints"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "Bash commands injected through crafted HTTP requests execute on the underlying EPMM server"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Attackers install webshells by modifying error pages like 401.jsp for persistent access"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.004",
+        "technique_name": "Server Software Component: IIS Components",
+        "description": "Deployment of malicious WAR/JAR files for persistent reverse shell connections"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "EPMM stores administrator credentials, LDAP service account details, and device certificates"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1119",
+        "technique_name": "Automated Collection",
+        "description": "Mass harvesting of PII including names, emails, phone numbers, IMEI, MAC addresses, and GPS coordinates from managed devices"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021.002",
+        "technique_name": "Remote Services: SMB/Windows Admin Shares",
+        "description": "Pivoting from compromised EPMM appliance to internal network using harvested credentials"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Focus detection efforts on Apache access logs for the EPMM appliance, specifically monitoring the In-House Application Distribution and Android File Transfer Configuration endpoints. Look for anomalous HTTP GET requests with Bash command patterns, unexpected 404 responses, and any outbound network connections from the EPMM server which should not normally occur.",
+    "log_sources": [
+      {
+        "source": "EPMM Apache Access Logs",
+        "description": "HTTP request logs showing access to /mifs/c/appstore/fob/ and /mifs/c/aftstore/fob/ endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "EPMM Application Logs",
+        "description": "EPMM service logs for authentication events and API calls",
+        "priority": "Critical"
+      },
+      {
+        "source": "Firewall/Network Logs",
+        "description": "Outbound connection attempts from EPMM appliance - these should not normally occur",
+        "priority": "Critical"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Changes to JSP files, new WAR/JAR deployments on the EPMM appliance",
+        "priority": "High"
+      },
+      {
+        "source": "Ivanti Sentry Logs",
+        "description": "Monitor for lateral movement indicators from compromised EPMM",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Exploitation attempt on app distribution endpoint",
+        "description": "External requests to /mifs/c/appstore/fob/ or /mifs/c/aftstore/fob/ returning 404 status codes indicate potential exploitation",
+        "log_field": "request_uri MATCHES '/mifs/c/(aft|app)store/fob/' AND status='404' AND src_ip!='127.0.0.1'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Bash command patterns in HTTP requests",
+        "description": "GET requests containing shell metacharacters or common command patterns",
+        "log_field": "request_uri CONTAINS 'bash' OR request_uri CONTAINS '$((' OR request_uri CONTAINS 'curl' OR request_uri CONTAINS 'wget'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Webshell modification of error pages",
+        "description": "Changes to JSP error pages especially 401.jsp indicate webshell installation",
+        "log_field": "file_modified='401.jsp' OR method='POST' AND request_uri CONTAINS '401.jsp'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected outbound connections",
+        "description": "EPMM appliance initiating connections to external IPs, indicating reverse shell activity",
+        "log_field": "src_ip=EPMM_IP AND direction='outbound' AND dst_port NOT IN (443, 80, 53)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "New WAR/JAR file deployment",
+        "description": "Unexpected Java archive files appearing on the EPMM appliance filesystem",
+        "log_field": "file_created MATCHES '*.war' OR file_created MATCHES '*.jar'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply Ivanti RPM hotfix immediately",
+      "description": "Install the appropriate RPM script for your EPMM version. Use RPM 12.x.0.x for versions 12.5.0.x, 12.6.0.x, 12.7.0.x. Use RPM 12.x.1.x for versions 12.5.1.0, 12.6.1.0. No downtime required. Note: RPM must be reapplied after version upgrades.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Assess for compromise if internet-exposed",
+      "description": "If your EPMM instance was accessible from the internet before patching, assume compromise. Search Apache access logs with Ivanti's regex pattern to identify exploitation attempts.",
+      "command": "grep -P '^(?!127\\.0\\.0\\.1:\\d+ .*$).*?\\/mifs\\/c\\/(aft|app)store\\/fob\\/.*?404' /var/log/httpd/access_log"
+    },
+    {
+      "priority": 3,
+      "action": "Hunt for webshells and backdoors",
+      "description": "Check for modified JSP error pages and unexpected WAR/JAR files that indicate attacker persistence.",
+      "command": "find /opt/MobileIron -name '401.jsp' -newer /opt/MobileIron/mi-*.rpm -ls && find /opt/MobileIron -name '*.war' -o -name '*.jar' | xargs ls -la"
+    },
+    {
+      "priority": 4,
+      "action": "Check for outbound connections",
+      "description": "EPMM should not make outbound network connections. Any outbound traffic indicates potential reverse shell activity.",
+      "command": "netstat -tnp | grep ESTABLISHED | grep -v '127.0.0.1'"
+    },
+    {
+      "priority": 5,
+      "action": "Reset all credentials",
+      "description": "Change passwords for local EPMM accounts, LDAP/KDC service accounts, and regenerate public certificates to limit attacker persistence.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Restrict management interface access",
+      "description": "Ensure the EPMM management interface is not directly accessible from the internet. Use VPN or IP allowlists.",
+      "command": null
+    },
+    {
+      "priority": 7,
+      "action": "Plan rebuild if compromised",
+      "description": "If evidence of compromise is found, restore from a known-good backup or rebuild the EPMM appliance entirely, then migrate data to the clean instance.",
+      "command": null
+    }
+  ]
+}

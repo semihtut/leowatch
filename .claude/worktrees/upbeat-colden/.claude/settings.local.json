@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(gh run list:*)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:www.cisa.gov)",
+      "WebFetch(domain:www.helpnetsecurity.com)",
+      "WebFetch(domain:thehackernews.com)",
+      "Bash(ls /Users/leopark/Desktop/ThreatIntel/threat-brief/public/data/briefings/TB-2026-04-*.json)",
+      "Bash(ls /Users/leopark/Desktop/ThreatIntel/threat-brief/public/data/briefings/TB-2026-04-02-*.json)",
+      "WebFetch(domain:cybersecuritynews.com)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(open\\(''$f''\\)\\); print\\(d[''title''], ''|'', d.get\\(''cves'',[]\\)\\); \")",
+      "Bash(done)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(open\\(''$f''\\)\\); print\\(d.get\\(''title'',''''\\), ''|'', [c.get\\(''id'',''''\\) for c in d.get\\(''cves'',[]\\)]\\)\")",
+      "WebFetch(domain:securityaffairs.com)",
+      "WebFetch(domain:cert.europa.eu)",
+      "WebFetch(domain:www.oracle.com)",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}

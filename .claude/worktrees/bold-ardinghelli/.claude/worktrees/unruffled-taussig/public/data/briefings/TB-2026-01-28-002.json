@@ -1,0 +1,282 @@
+{
+  "briefing_id": "TB-2026-01-28-002",
+  "title": "HPE OneView CVSS 10.0 RCE: RondoDox Botnet Launches 40,000+ Attack Campaign (CISA KEV)",
+  "generated_date": "2026-01-28",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10.0,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-01-28"
+  },
+  "cves": [
+    "CVE-2025-37164"
+  ],
+  "tags": [
+    "HPE",
+    "OneView",
+    "infrastructure-management",
+    "RCE",
+    "botnet",
+    "RondoDox",
+    "enterprise",
+    "cloud"
+  ],
+  "affected_products": [
+    "HPE OneView versions prior to 11.0",
+    "HPE OneView versions 5.20 through 10.20 without hotfix",
+    "Data center infrastructure managed by vulnerable HPE OneView instances"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "HPE Security Advisory",
+      "url": "https://support.hpe.com/hpesc/public/docDisplay?docId=hpesbgn04985en_us&docLocale=en_US",
+      "date": "2025-12-17",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Check Point Research",
+      "url": "https://blog.checkpoint.com/research/patch-now-active-exploitation-underway-for-critical-hpe-oneview-vulnerability",
+      "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-07",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/cisa-flags-microsoft-office-and-hpe.html",
+      "date": "2026-01-07",
+      "type": "News"
+    },
+    {
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/16/rondodox_botnet_hpe_oneview",
+      "date": "2026-01-16",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/maximum-severity-hpe-oneview-flaw-exploited",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "Rapid7",
+      "url": "https://www.rapid7.com/blog/post/etr-cve-2025-37164-critical-unauthenticated-rce-affecting-hewlett-packard-enterprise-oneview/",
+      "date": "2025-12-18",
+      "type": "Research"
+    },
+    {
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/01/08/hpe-oneview-cve-2025-37164-exploited/",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "Infosecurity Magazine",
+      "url": "https://www.infosecurity-magazine.com/news/rondodox-botnet-targets-hpe",
+      "date": "2026-01-16",
+      "type": "News"
+    },
+    {
+      "name": "NVD",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-37164",
+      "date": "2025-12-16",
+      "type": "Government"
+    },
+    {
+      "name": "eSentire",
+      "url": "https://www.esentire.com/security-advisories/poc-released-for-hpe-oneview-vulnerability-cve-2025-37164",
+      "date": "2025-12-19",
+      "type": "Research"
+    },
+    {
+      "name": "Techzine",
+      "url": "https://www.techzine.eu/news/security/138004/rondodox-botnet-exploits-hpe-oneview-vulnerability-on-a-massive-scale/",
+      "date": "2026-01-16",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-16",
+      "event": "CVE-2025-37164 published to NVD, reported by security researcher Nguyen Quoc Khanh"
+    },
+    {
+      "date": "2025-12-17",
+      "event": "HPE releases security advisory and hotfix for vulnerable OneView versions"
+    },
+    {
+      "date": "2025-12-19",
+      "event": "Metasploit module for CVE-2025-37164 publicly released"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "Check Point detects 40,000+ attack attempts between 05:45-09:20 UTC"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "CISA adds CVE-2025-37164 to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2026-01-16",
+      "event": "RondoDox botnet attribution confirmed, campaign continues globally"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A maximum severity vulnerability (CVSS 10.0) in HPE OneView infrastructure management platform is being massively exploited by the RondoDox botnet. Check Point Research detected over 40,000 automated attack attempts in just 3.5 hours on January 7, 2026. The flaw allows unauthenticated remote code execution through an exposed REST API endpoint (/rest/id-pools/executeCommand) that executes attacker input directly on the operating system.",
+    "who_is_affected": "Organizations using HPE OneView versions prior to 11.0 for data center infrastructure management. The campaign has primarily targeted government organizations, financial services, and industrial manufacturing sectors. Geographic focus includes the United States (highest volume), Australia, France, Germany, and Austria. Any organization with internet-exposed OneView instances is at critical risk.",
+    "what_attackers_do": "Step 1: Scan for exposed HPE OneView instances on the internet. Step 2: Send unauthenticated HTTP requests to /rest/id-pools/executeCommand endpoint. Step 3: Inject arbitrary commands that execute directly on the underlying OS. Step 4: Deploy RondoDox botnet malware payload. Step 5: Use compromised infrastructure for DDoS attacks, cryptomining, or secondary payload delivery. Step 6: Potentially pivot to managed infrastructure (servers, firmware, lifecycle management) given OneView's privileged position.",
+    "what_you_should_do": [
+      "Immediately upgrade to HPE OneView 11.0 or apply the security hotfix",
+      "Block external access to HPE OneView management interfaces",
+      "Check for signs of compromise - unusual processes, network connections, cryptomining",
+      "Review firewall rules to block access to /rest/id-pools/executeCommand endpoint",
+      "Monitor for connections from known malicious Dutch IP associated with RondoDox",
+      "Audit all infrastructure managed by potentially compromised OneView instances",
+      "Implement network segmentation to isolate management platforms"
+    ],
+    "why_this_is_serious": "HPE OneView is a privileged control plane for enterprise data center infrastructure. It manages servers, storage, networking, and firmware lifecycles at scale. Successful exploitation doesn't just mean RCE on one system - it means potential centralized control over the entire managed infrastructure. Management platforms like OneView are typically deployed deep inside networks with extensive privileges and minimal monitoring. The RondoDox botnet's automated exploitation campaign demonstrates opportunistic attackers are already weaponizing this vulnerability at scale, with a public Metasploit module making exploitation trivial."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploiting the unauthenticated REST API endpoint in HPE OneView"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Executing arbitrary commands on the underlying operating system"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1543",
+        "technique_name": "Create or Modify System Process",
+        "description": "RondoDox botnet establishing persistence on compromised systems"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1496",
+        "technique_name": "Resource Hijacking",
+        "description": "Using compromised systems for cryptomining operations"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1498",
+        "technique_name": "Network Denial of Service",
+        "description": "Using compromised systems as part of DDoS botnet infrastructure"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "Using OneView's management capabilities to pivot to managed infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for unauthorized access to HPE OneView REST API endpoints, particularly /rest/id-pools/executeCommand. Look for signs of RondoDox botnet activity including cryptomining processes and unusual outbound connections.",
+    "log_sources": [
+      {
+        "source": "HPE OneView Audit Logs",
+        "description": "API access logs showing requests to vulnerable endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Application Firewall",
+        "description": "Requests to /rest/id-pools/executeCommand endpoint",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow Data",
+        "description": "Unusual inbound connections to OneView management ports",
+        "priority": "High"
+      },
+      {
+        "source": "System Process Monitoring",
+        "description": "Cryptomining processes or unusual binary execution",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "API endpoint exploitation",
+        "description": "HTTP requests to /rest/id-pools/executeCommand without authentication",
+        "log_field": "URI path contains /rest/id-pools/executeCommand",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Dutch attacker IP",
+        "description": "Connections from known RondoDox-associated Dutch IP address",
+        "log_field": "Source IP in threat intelligence feeds",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Cryptomining processes",
+        "description": "High CPU usage processes associated with cryptocurrency mining",
+        "log_field": "Process names like xmrig, minerd, or high CPU usage",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unusual command execution",
+        "description": "Commands spawned by OneView application processes",
+        "log_field": "Process tree showing OneView spawning shell commands",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Botnet C2 communications",
+        "description": "Outbound connections to known RondoDox C2 infrastructure",
+        "log_field": "Destination IPs matching threat intelligence",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Block External Access",
+      "description": "Immediately block internet access to HPE OneView management interfaces",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Apply Hotfix or Upgrade",
+      "description": "Upgrade to HPE OneView 11.0 or apply security hotfix for versions 5.20-10.20",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Check for Compromise",
+      "description": "Review systems for signs of RondoDox malware, cryptomining, or unauthorized access",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Block Vulnerable Endpoint",
+      "description": "Configure WAF/reverse proxy to block /rest/id-pools/executeCommand",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Audit Managed Infrastructure",
+      "description": "Review all systems managed by potentially compromised OneView for anomalies",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Network Segmentation",
+      "description": "Isolate infrastructure management platforms from general network access",
+      "command": null
+    }
+  ]
+}

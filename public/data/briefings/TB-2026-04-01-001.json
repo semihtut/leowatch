@@ -1,0 +1,275 @@
+{
+  "briefing_id": "TB-2026-04-01-001",
+  "title": "Fortinet FortiClient EMS Pre-Auth SQL Injection CVE-2026-21643 (CVSS 9.8) Under Active Exploitation — Unauthenticated Attackers Extract Admin Credentials via Tenant-Routing HTTP Header Injection",
+  "generated_date": "2026-04-01",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-21643"
+  ],
+  "tags": [
+    "fortinet",
+    "forticlient",
+    "ems",
+    "sql-injection",
+    "pre-auth",
+    "active-exploitation",
+    "endpoint-management"
+  ],
+  "affected_products": [
+    "Fortinet FortiClient EMS 7.4.4"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Fortinet PSIRT Advisory FG-IR-25-1142",
+      "url": "https://fortiguard.fortinet.com/psirt/FG-IR-25-1142",
+      "date": "2026-02-06",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NIST NVD CVE-2026-21643",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21643",
+      "date": "2026-02-06",
+      "type": "Government"
+    },
+    {
+      "name": "Help Net Security: Critical Fortinet FortiClient EMS bug under active attack",
+      "url": "https://www.helpnetsecurity.com/2026/03/30/forticlient-ems-cve-2026-21643-reported-exploitation/",
+      "date": "2026-03-30",
+      "type": "News"
+    },
+    {
+      "name": "Bishop Fox: Pre-Authentication SQL Injection in FortiClient EMS 7.4.4",
+      "url": "https://bishopfox.com/blog/cve-2026-21643-pre-authentication-sql-injection-in-forticlient-ems-7-4-4",
+      "date": "2026-03-10",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf: CVE-2026-21643 Critical SQL Injection in FortiClientEMS",
+      "url": "https://arcticwolf.com/resources/blog/cve-2026-21643/",
+      "date": "2026-03-15",
+      "type": "Research"
+    },
+    {
+      "name": "SecPod Blog: FortiClient EMS Under Fire - CVE-2026-21643 Exploited in Real-World Attacks",
+      "url": "https://www.secpod.com/blog/forticlient-ems-under-fire-critical-cve-2026-21643-exploited-in-real-world-attacks/",
+      "date": "2026-03-28",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer: Critical Fortinet FortiClient EMS flaw now exploited in attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/critical-fortinet-forticlient-ems-flaw-now-exploited-in-attacks/",
+      "date": "2026-03-30",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek: Exploitation of Critical Fortinet FortiClient EMS Flaw Begins",
+      "url": "https://www.securityweek.com/exploitation-of-critical-fortinet-forticlient-ems-flaw-begins/",
+      "date": "2026-03-29",
+      "type": "News"
+    },
+    {
+      "name": "SOC Prime: CVE-2026-21643 Critical FortiClient EMS Vulnerability",
+      "url": "https://socprime.com/blog/cve-2026-21643-vulnerability/",
+      "date": "2026-02-10",
+      "type": "Research"
+    },
+    {
+      "name": "Qualys ThreatPROTECT: FortiClient EMS SQL Injection Vulnerability CVE-2026-21643",
+      "url": "https://threatprotect.qualys.com/2026/02/11/forticlient-endpoint-management-server-ems-sql-injection-vulnerability-cve-2026-21643/",
+      "date": "2026-02-11",
+      "type": "Research"
+    },
+    {
+      "name": "SC World: Critical Fortinet FortiClient EMS vulnerability under attack",
+      "url": "https://www.scworld.com/brief/critical-fortinet-forticlient-ems-vulnerability-under-attack",
+      "date": "2026-03-30",
+      "type": "News"
+    },
+    {
+      "name": "GB Hackers: Critical Fortinet FortiClient EMS Vulnerability Actively Exploited",
+      "url": "https://gbhackers.com/critical-fortinet-forticlient-ems-vulnerability-2/",
+      "date": "2026-03-30",
+      "type": "News"
+    },
+    {
+      "name": "CVE Details: CVE-2026-21643",
+      "url": "https://www.cvedetails.com/cve/CVE-2026-21643/",
+      "date": "2026-02-06",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable: CVE-2026-21643",
+      "url": "https://www.tenable.com/cve/CVE-2026-21643",
+      "date": "2026-02-06",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-06",
+      "event": "Fortinet PSIRT discloses CVE-2026-21643 and releases patch FortiClient EMS 7.4.5"
+    },
+    {
+      "date": "2026-02-06",
+      "event": "NVD record created for CVE-2026-21643"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "Qualys publishes technical analysis of the SQL injection vulnerability"
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Bishop Fox publishes detailed technical breakdown of exploitation mechanics via /api/v1/init_consts endpoint"
+    },
+    {
+      "date": "2026-03-26",
+      "event": "First confirmed active exploitation detected — attackers begin targeting internet-exposed EMS instances"
+    },
+    {
+      "date": "2026-03-30",
+      "event": "Multiple security vendors confirm widespread exploitation; approximately 1,000-2,000 exposed instances identified via Shodan"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "Active exploitation ongoing; CISA KEV listing anticipated given confirmed active exploitation"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical security flaw was found in Fortinet FortiClient EMS version 7.4.4 — the software organizations use to manage endpoint security policies across their entire fleet of computers. The vulnerability allows any attacker on the internet to inject malicious database commands through a specially crafted HTTP header field, without needing any login credentials. The flaw was quietly patched by Fortinet in February 2026, but active attacks began six weeks later once security researchers published technical details of how to exploit it.",
+    "who_is_affected": "Organizations running FortiClient EMS version 7.4.4 in multi-tenant configurations. Approximately 1,000 to 2,000 instances are directly exposed to the internet according to Shodan and Shadowserver scans. Affected industries include enterprises, government agencies, and managed service providers that use Fortinet's endpoint management platform to centrally control security policies across many devices.",
+    "what_attackers_do": "Step 1: Attacker identifies an internet-exposed FortiClient EMS 7.4.4 server using search engines like Shodan or Censys. Step 2: Attacker sends a crafted HTTP request to the unauthenticated /api/v1/init_consts endpoint, injecting SQL commands into the 'Site' HTTP header field used for tenant routing. Step 3: Because the header value is passed directly into a PostgreSQL query without sanitization — before any authentication check occurs — the database executes the attacker's commands and leaks data in error messages. Step 4: Attacker extracts admin credentials, endpoint certificates, security policies, and tenant configuration data from the database. Step 5: Using stolen admin credentials, attacker gains full control of FortiClient EMS, allowing them to push malicious policies to all managed endpoints, steal additional data, or deploy malware across the entire enterprise device fleet.",
+    "what_you_should_do": [
+      "Immediately upgrade FortiClient EMS to version 7.4.5 or later — this is the only complete fix",
+      "Restrict network access to the EMS web interface so only trusted administrator IP addresses can reach it (firewall or WAF rules)",
+      "Search web server access logs for requests to /api/v1/init_consts with unusual 'Site' header values — this is the attack signature",
+      "Rotate all EMS admin credentials and audit the database for unauthorized changes to security policies or new endpoint enrollments",
+      "Check Shodan/Censys to confirm whether your EMS instance is exposed to the internet"
+    ],
+    "why_this_is_serious": "FortiClient EMS is the central control plane for endpoint security in organizations that use Fortinet products. A compromised EMS gives attackers the ability to push malicious configurations or disable security controls on every managed device simultaneously — essentially turning the organization's own security tool into a weapon. The attack requires no credentials and no user interaction, making it trivially automatable. With active exploitation confirmed and technical details publicly available, any unpatched internet-exposed instance should be treated as compromised."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated SQL injection flaw in the publicly accessible /api/v1/init_consts endpoint to gain database-level access without any credentials"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1110",
+        "technique_name": "Brute Force",
+        "description": "Attackers extract admin password hashes and credentials directly from the EMS database via SQL injection, bypassing normal authentication flows"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1082",
+        "technique_name": "System Information Discovery",
+        "description": "Attackers query the EMS database to enumerate managed endpoints, applied security policies, certificates, and tenant configurations"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "With admin access to FortiClient EMS, attackers can push policy changes to all managed endpoints, effectively achieving lateral movement across the enterprise fleet"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547",
+        "technique_name": "Boot or Logon Autostart Execution",
+        "description": "Attackers can deploy persistent backdoor configurations to managed endpoints via compromised EMS policy engine"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying anomalous requests to the unauthenticated EMS API endpoint, SQL injection patterns in HTTP headers, and unusual database error responses. Network-level monitoring should watch for requests to /api/v1/init_consts from untrusted IP ranges, while host-based monitoring should look for PostgreSQL error spikes and unexpected admin account activity.",
+    "log_sources": [
+      {
+        "source": "FortiClient EMS Web Server Access Logs",
+        "description": "Monitor for HTTP requests to /api/v1/init_consts with unusual or long 'Site' header values containing SQL metacharacters",
+        "priority": "Critical"
+      },
+      {
+        "source": "PostgreSQL Database Error Logs",
+        "description": "Watch for SQL syntax errors triggered by injected payloads — error messages in responses are the key exploitation feedback mechanism",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Firewall / WAF Logs",
+        "description": "Track all inbound connections to the EMS web interface; alert on requests from non-whitelisted IP ranges",
+        "priority": "High"
+      },
+      {
+        "source": "EMS Audit Logs",
+        "description": "Monitor for unexpected admin account creation, policy changes, or new endpoint enrollments that did not originate from known administrators",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "HTTP requests to /api/v1/init_consts with abnormal 'Site' header",
+        "description": "The primary attack vector — attackers inject SQL into the Site HTTP header used for tenant routing in multi-tenant EMS deployments",
+        "log_field": "request_uri='/api/v1/init_consts'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "SQL metacharacters in HTTP header fields",
+        "description": "Presence of UNION SELECT, OR 1=1, single quotes, or double-dash comment sequences in any HTTP header values",
+        "log_field": "header_value LIKE '%UNION%' OR header_value LIKE '%OR 1=1%'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "High volume of requests to /api/v1/init_consts from a single IP",
+        "description": "Automated exploitation tools will send many rapid requests to enumerate the database schema — rate spikes from single sources are a strong indicator",
+        "log_field": "client_ip=<source> AND request_count > 50 in 60 seconds",
+        "severity": "High"
+      },
+      {
+        "indicator": "PostgreSQL error messages in HTTP responses",
+        "description": "Successful SQL injection causes the server to return database error messages containing table names, query fragments, or data — watch for 500-series responses with DB error content",
+        "log_field": "response_body CONTAINS 'PostgreSQL' OR 'syntax error'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade FortiClient EMS to 7.4.5 or later immediately",
+      "description": "FortiClient EMS 7.4.5 contains the only complete fix for CVE-2026-21643. Upgrade is mandatory — there are no configuration workarounds that fully protect against this pre-authentication SQL injection flaw.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Restrict EMS web interface access via firewall rules",
+      "description": "Block all inbound access to the EMS web interface (TCP 443/8443) from untrusted networks. Allow only whitelisted administrator IP ranges. This reduces the attack surface even before patching.",
+      "command": "iptables -I INPUT -p tcp --dport 443 -s <trusted_admin_cidr> -j ACCEPT && iptables -I INPUT -p tcp --dport 443 -j DROP"
+    },
+    {
+      "priority": 3,
+      "action": "Audit EMS logs for exploitation indicators",
+      "description": "Review web server access logs for requests to /api/v1/init_consts with unusual 'Site' header values, and check PostgreSQL logs for SQL error spikes. If found, treat the instance as compromised.",
+      "command": "grep 'api/v1/init_consts' /var/log/apache2/access.log | grep -v '200 OK'"
+    },
+    {
+      "priority": 4,
+      "action": "Rotate all admin credentials and audit policy changes",
+      "description": "If exploitation is suspected, rotate all EMS administrator credentials immediately. Review the full audit log for unauthorized policy deployments, new endpoint enrollments, or configuration changes since February 6, 2026.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Verify internet exposure via Shodan or Censys",
+      "description": "Search for your organization's EMS server IP/hostname on Shodan and Censys to confirm whether the interface is publicly accessible. Internet-exposed unpatched instances should be treated as compromised pending forensic review.",
+      "command": null
+    }
+  ]
+}

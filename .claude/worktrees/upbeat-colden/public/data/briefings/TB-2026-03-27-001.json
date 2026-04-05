@@ -1,0 +1,245 @@
+{
+  "briefing_id": "TB-2026-03-27-001",
+  "title": "PTC Windchill & FlexPLM Unauthenticated RCE CVE-2026-4681 (CVSS 10.0): Unsafe Deserialization Grants Full System Compromise — German Federal Police Launch Emergency Response as Imminent Exploitation Threat Declared",
+  "generated_date": "2026-03-27",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-4681"
+  ],
+  "tags": [
+    "rce",
+    "deserialization",
+    "plm",
+    "manufacturing",
+    "zero-day",
+    "unpatched",
+    "critical-infrastructure",
+    "supply-chain"
+  ],
+  "affected_products": [
+    "PTC Windchill PDMLink 11.0 M030",
+    "PTC Windchill PDMLink 11.1 M020",
+    "PTC Windchill PDMLink 11.2.1.0",
+    "PTC Windchill PDMLink 12.0.2.0",
+    "PTC Windchill PDMLink 12.1.2.0",
+    "PTC Windchill PDMLink 13.0.2.0",
+    "PTC Windchill PDMLink 13.1.0.0 - 13.1.3.0",
+    "PTC FlexPLM 11.0 M030 - 13.0.3.0"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "PTC Official Advisory - Windchill & FlexPLM Critical Vulnerability",
+      "url": "https://www.ptc.com/en/about/trust-center/advisory-center/active-advisories/windchill-flexplm-critical-vulnerability",
+      "date": "2026-03-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "PTC Support Article CS466318 - Critical RCE Vulnerability in Windchill",
+      "url": "https://www.ptc.com/en/support/article/CS466318",
+      "date": "2026-03-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD Entry - CVE-2026-4681",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4681",
+      "date": "2026-03-23",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable CVE Database - CVE-2026-4681",
+      "url": "https://www.tenable.com/cve/CVE-2026-4681",
+      "date": "2026-03-23",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer - PTC warns of imminent threat from critical Windchill, FlexPLM RCE bug",
+      "url": "https://www.bleepingcomputer.com/news/security/ptc-warns-of-imminent-threat-from-critical-windchill-flexplm-rce-bug/",
+      "date": "2026-03-21",
+      "type": "News"
+    },
+    {
+      "name": "SC Media - Critical PTC Windchill, FlexPLM vulnerability poses RCE risk",
+      "url": "https://www.scworld.com/brief/critical-ptc-windchill-flexplm-vulnerability-poses-rce-risk",
+      "date": "2026-03-22",
+      "type": "News"
+    },
+    {
+      "name": "Heise Online - Zero-day allows code execution in WindChill and FlexPLM",
+      "url": "https://www.heise.de/en/news/Zero-day-allows-code-execution-in-WindChill-and-FlexPLM-11220546.html",
+      "date": "2026-03-23",
+      "type": "News"
+    },
+    {
+      "name": "NetCrook - German Police Launch Emergency Response to PTC Windchill RCE Vulnerability",
+      "url": "https://www.netcrook.com/german-police-ptc-windchill-rce-vulnerability/",
+      "date": "2026-03-24",
+      "type": "News"
+    },
+    {
+      "name": "Purple Ops - Remote Code Execution in Windchill FlexPLM CVE-2026-4681",
+      "url": "https://www.purple-ops.io/cybersecurity-threat-intelligence-blog/remote-code-execution-windchill/",
+      "date": "2026-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "EAC Product Development Solutions - Notice of Critical Vulnerability",
+      "url": "https://support.eacpds.com/hc/en-us/articles/47429947179796-Notice-of-Windchill-and-FlexPLM-Critical-Vulnerability-March-20-2026",
+      "date": "2026-03-20",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "VulDB - CVE-2026-4681 PTC Windchill PDMLink/FlexPLM Code Injection",
+      "url": "https://vuldb.com/?id.352643=",
+      "date": "2026-03-23",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-20",
+      "event": "PTC issued initial public advisory disclosing CVE-2026-4681 and warning of credible imminent exploitation threat"
+    },
+    {
+      "date": "2026-03-22",
+      "event": "German federal police (BKA) initiated emergency response weekend deployment, notifying 1,000+ affected German customers"
+    },
+    {
+      "date": "2026-03-23",
+      "event": "CVE-2026-4681 published in NVD with CVSS 10.0 score; first malicious webshell indicators (GW.class) observed"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "PTC issued updated advisory; patches still under active development; interim Apache/IIS servlet blocking workaround published"
+    },
+    {
+      "date": "2026-03-27",
+      "event": "No official patch available; vulnerability remains unpatched; PTC providing 24x7 emergency support to all customers"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "PTC, maker of Windchill and FlexPLM — the most widely used product lifecycle management (PLM) software in manufacturing and engineering — disclosed a perfect-score critical vulnerability. Any attacker on the internet can send a specially crafted request to the server and take complete control of the system without needing a username or password. No patch exists yet. German federal police launched an emergency response over the weekend to alert over 1,000 affected organizations, and PTC has confirmed a credible threat of imminent exploitation by a threat group.",
+    "who_is_affected": "Organizations running PTC Windchill PDMLink or FlexPLM versions 11.0 through 13.1.3.0. These products are used in aerospace, automotive, defense, medical devices, and industrial manufacturing to manage product designs, CAD files, engineering documents, and supply chain data. Major Fortune 500 manufacturers worldwide are affected.",
+    "what_attackers_do": "Step 1: Attacker identifies an internet-exposed Windchill or FlexPLM server using tools like Shodan or Censys. Step 2: Attacker sends a specially crafted HTTP request to the vulnerable servlet endpoint (/servlet/WindchillGW/ or /servlet/WindchillAuthGW/) without any authentication. Step 3: The server deserializes the malicious payload, triggering arbitrary code execution with the permissions of the Windchill service account. Step 4: Attacker deploys a webshell (e.g., GW.class or dpr_*.jsp files) to maintain persistent access to the server. Step 5: Attacker exfiltrates product designs, engineering blueprints, trade secrets, supplier data, and credentials, or pivots to connected enterprise systems.",
+    "what_you_should_do": [
+      "Immediately block access to /servlet/WindchillGW/ and /servlet/WindchillAuthGW/ paths at the web server (Apache/IIS) level using PTC's published workaround",
+      "Verify Windchill and FlexPLM servers are not directly reachable from the internet — place behind VPN or internal firewall",
+      "Check servers for indicators of compromise: look for GW.class, payload.bin, or dpr_*.jsp files in the application directories",
+      "Monitor HTTP access logs for requests to the affected servlet paths, especially with unusual parameters",
+      "Apply PTC's official patch immediately once released; sign up for PTC emergency patch notifications"
+    ],
+    "why_this_is_serious": "Windchill and FlexPLM are the backbone of product development and engineering for some of the world's largest manufacturers including aerospace and defense contractors, automotive companies, and medical device makers. A successful attack exposes years of proprietary engineering designs, CAD files, and trade secrets — causing immeasurable intellectual property damage. With CVSS 10.0 and no authentication required, this is as severe as a vulnerability gets. German federal police involvement signals the threat is being treated as a national security issue. No patch exists, making every exposed system a ticking clock."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit CVE-2026-4681 by sending crafted requests to the WindchillGW servlet endpoint, achieving unauthenticated code execution on internet-facing Windchill servers"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Deserialized payload executes arbitrary OS commands via the Windchill service account, enabling post-exploitation activity"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Attackers deploy JSP webshells (dpr_*.jsp, GW.class) into the Windchill application directory to maintain persistent access after initial compromise"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Attackers access and exfiltrate CAD files, engineering documents, product designs, supplier data, and credentials stored in the Windchill PLM system"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detect exploitation attempts by monitoring HTTP access logs for requests to the affected servlet paths, and scanning the filesystem for known webshell artifacts. The lack of a patch makes detection-focused defense critical.",
+    "log_sources": [
+      {
+        "source": "Web Server Access Logs (Apache/IIS)",
+        "description": "Monitor for HTTP requests targeting /servlet/WindchillGW/ and /servlet/WindchillAuthGW/ endpoints, especially with unusual request bodies or parameters containing run?p= or .jsp?c= patterns",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windchill Application Logs",
+        "description": "Check for error log references to GW, GW_READY_OK, or gateway exceptions which may indicate exploitation attempts",
+        "priority": "Critical"
+      },
+      {
+        "source": "Filesystem Integrity Monitoring",
+        "description": "Scan Windchill application directories for unexpected .class or .jsp files, particularly GW.class, payload.bin, or dpr_[8 hex chars].jsp",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow Logs",
+        "description": "Monitor for unusual outbound connections from the Windchill server to external IPs, which may indicate data exfiltration or command-and-control activity",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "HTTP requests to WindchillGW servlet endpoints",
+        "description": "Any POST request to /servlet/WindchillGW/ or /servlet/WindchillAuthGW/ with unusual body content should be treated as a potential exploitation attempt",
+        "log_field": "cs-uri-stem='/servlet/WindchillGW/' OR cs-uri-stem='/servlet/WindchillAuthGW/'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "GW.class webshell file presence",
+        "description": "SHA-256: C818011CAFF82272F8CC50B670304748984350485383EBAD5206D507A4B44FF1 — presence confirms active exploitation",
+        "log_field": "file_path CONTAINS 'GW.class' OR file_path CONTAINS 'payload.bin'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "dpr_*.jsp webshell files",
+        "description": "Dynamically named JSP webshells matching pattern dpr_[8hexchars].jsp in Windchill app directories indicate post-exploitation persistence",
+        "log_field": "file_name MATCHES 'dpr_[0-9a-f]{8}\\.jsp'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual HTTP parameters in Windchill requests",
+        "description": "Requests with run?p= or .jsp?c= parameters combined with suspicious User-Agent strings may indicate exploitation attempts or webshell command execution",
+        "log_field": "cs-query CONTAINS 'run?p=' OR cs-query CONTAINS '.jsp?c='",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Block WindchillGW servlet paths at web server level",
+      "description": "Immediately apply PTC's published interim workaround to deny all access to /servlet/WindchillGW/ and /servlet/WindchillAuthGW/ in your Apache or IIS configuration. This is the only mitigation available while patches are developed.",
+      "command": "# Apache: Add to httpd.conf or .htaccess\n<Location /servlet/WindchillGW/>\n  Require all denied\n</Location>\n<Location /servlet/WindchillAuthGW/>\n  Require all denied\n</Location>"
+    },
+    {
+      "priority": 2,
+      "action": "Remove Windchill servers from internet-facing exposure",
+      "description": "Ensure Windchill and FlexPLM servers are accessible only through VPN or internal network. If direct internet access is required, place behind a WAF or reverse proxy that blocks the vulnerable endpoints immediately.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Hunt for webshell artifacts on all Windchill/FlexPLM servers",
+      "description": "Search for the known IoC files: GW.class (SHA256: C818011CAFF82272F8CC50B670304748984350485383EBAD5206D507A4B44FF1), payload.bin, and any dpr_*.jsp files in the Windchill application directories.",
+      "command": "find /path/to/windchill -name 'GW.class' -o -name 'payload.bin' -o -name 'dpr_????????.jsp' 2>/dev/null"
+    },
+    {
+      "priority": 4,
+      "action": "Monitor for and apply PTC's official patch immediately upon release",
+      "description": "Subscribe to PTC security advisories and emergency notifications. PTC is providing 24x7 emergency support to all customers regardless of support tier. Apply the official patch as soon as it is released.",
+      "command": null
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "briefing_id": "TB-2026-01-28-001",
+  "title": "Microsoft Office Zero-Day: Emergency Patch for Actively Exploited OLE/COM Bypass (CISA KEV)",
+  "generated_date": "2026-01-28",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 7.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-16"
+  },
+  "cves": [
+    "CVE-2026-21509"
+  ],
+  "tags": [
+    "Microsoft",
+    "Office",
+    "zero-day",
+    "OLE",
+    "COM",
+    "security-bypass",
+    "enterprise",
+    "cloud"
+  ],
+  "affected_products": [
+    "Microsoft Office 2016",
+    "Microsoft Office 2019",
+    "Microsoft Office LTSC 2021",
+    "Microsoft Office LTSC 2024",
+    "Microsoft 365 Apps for Enterprise"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Microsoft Security Advisory",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21509",
+      "date": "2026-01-26",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-actively-exploited-office-zero-day-vulnerability/",
+      "date": "2026-01-27",
+      "type": "News"
+    },
+    {
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/27/office_zeroday_exploited_in_the/",
+      "date": "2026-01-27",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/01/27/microsoft-reveals-actively-exploited-office-zero-day-provides-emergency-fix-cve-2026-21509/",
+      "date": "2026-01-27",
+      "type": "News"
+    },
+    {
+      "name": "SOC Prime",
+      "url": "https://socprime.com/blog/latest-threats/cve-2026-21509-vulnerability/",
+      "date": "2026-01-27",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/microsoft-issues-emergency-patch-for.html",
+      "date": "2026-01-27",
+      "type": "News"
+    },
+    {
+      "name": "Sophos",
+      "url": "https://www.sophos.com/en-us/blog/microsoft-office-vulnerability-cve-2026-21509-in-active-exploitation",
+      "date": "2026-01-27",
+      "type": "Research"
+    },
+    {
+      "name": "NHS England Digital Cyber Alert",
+      "url": "https://digital.nhs.uk/cyber-alerts/2026/cc-4740",
+      "date": "2026-01-27",
+      "type": "Government"
+    },
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-26",
+      "type": "Government"
+    },
+    {
+      "name": "NVD",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21509",
+      "date": "2026-01-26",
+      "type": "Government"
+    },
+    {
+      "name": "Infosecurity Magazine",
+      "url": "https://www.infosecurity-magazine.com/news/microsoft-patch-office-zero-day/",
+      "date": "2026-01-27",
+      "type": "News"
+    },
+    {
+      "name": "TechRepublic",
+      "url": "https://www.techrepublic.com/article/news-microsoft-office-zero-day-emergency-patch-january-2026/",
+      "date": "2026-01-27",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-26",
+      "event": "Microsoft releases emergency out-of-band patch for CVE-2026-21509"
+    },
+    {
+      "date": "2026-01-26",
+      "event": "CISA adds CVE-2026-21509 to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "Microsoft confirms active exploitation in targeted attacks, discovered by MSTIC"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "NHS England Digital issues cyber alert for UK healthcare organizations"
+    },
+    {
+      "date": "2026-01-27",
+      "event": "Microsoft releases additional patches for Office 2016 and 2019 (KB5002713)"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Microsoft released an emergency out-of-band security update to fix a zero-day vulnerability (CVE-2026-21509) that is being actively exploited in the wild. The flaw allows attackers to bypass OLE security mitigations in Microsoft Office, exposing users to vulnerable COM/OLE controls including Shell.Explorer.1 (embedded Internet Explorer). Microsoft's Threat Intelligence Center discovered the exploitation, suggesting sophisticated threat actors are targeting specific organizations.",
+    "who_is_affected": "Organizations using any version of Microsoft Office are at risk, including Office 2016, Office 2019, Office LTSC 2021, Office LTSC 2024, and Microsoft 365 Apps for Enterprise. This affects virtually every enterprise worldwide that uses Microsoft Office for document processing, making it one of the most widespread potential attack surfaces.",
+    "what_attackers_do": "Step 1: Craft a malicious Office document containing embedded OLE/COM objects. Step 2: Bypass Microsoft's security mitigations using Shell.Explorer.1 (CLSID {EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B}). Step 3: Deliver the document via phishing email or other social engineering. Step 4: Convince the user to open the malicious document. Step 5: Execute arbitrary code through the embedded browser component which can load local files, execute scripts, and connect to remote servers. Step 6: Establish persistence and potentially move laterally within the organization.",
+    "what_you_should_do": [
+      "Apply Microsoft's emergency patch immediately - Office 2021+ users restart Office applications",
+      "Deploy KB5002713 for Office 2016 and 2019 MSI-based installations",
+      "Block or monitor for Shell.Explorer.1 COM object usage in Office documents",
+      "Enhance email filtering to detect malicious Office attachments",
+      "Train users not to open unexpected Office documents from unknown sources",
+      "Enable Protected View and configure Office to block macros and embedded objects",
+      "Monitor for suspicious Office process behavior and child process spawning"
+    ],
+    "why_this_is_serious": "Microsoft Office is deployed on virtually every enterprise endpoint worldwide. The exploitation was discovered by MSTIC, indicating sophisticated threat actors are actively using this in targeted attacks. OLE/COM vulnerabilities have historically been favored by nation-state actors and advanced persistent threat groups for initial access. With the embedded Internet Explorer component able to execute scripts and connect to remote servers, successful exploitation provides a powerful foothold for further attacks. CISA has mandated federal agencies patch by February 16, 2026."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.001",
+        "technique_name": "Phishing: Spearphishing Attachment",
+        "description": "Delivering malicious Office documents via targeted email campaigns"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1559.001",
+        "technique_name": "Inter-Process Communication: Component Object Model",
+        "description": "Abusing COM/OLE objects to execute code through Office applications"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1218",
+        "technique_name": "System Binary Proxy Execution",
+        "description": "Using Shell.Explorer.1 to proxy execution through embedded Internet Explorer"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.001",
+        "technique_name": "Impair Defenses: Disable or Modify Tools",
+        "description": "Bypassing Microsoft Office security mitigations for OLE objects"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1071.001",
+        "technique_name": "Application Layer Protocol: Web Protocols",
+        "description": "Using embedded browser to establish connections to attacker infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for suspicious Office document activity, particularly OLE/COM object instantiation and unexpected child processes spawned by Office applications. Focus on detecting Shell.Explorer.1 usage and network connections from Office processes.",
+    "log_sources": [
+      {
+        "source": "Windows Security Event Log",
+        "description": "Process creation events (4688) showing Office spawning unusual child processes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Sysmon",
+        "description": "Event ID 1 (Process Create), Event ID 3 (Network Connection), Event ID 7 (Image Load)",
+        "priority": "Critical"
+      },
+      {
+        "source": "Microsoft Defender for Endpoint",
+        "description": "Alerts for suspicious Office behavior and exploit attempts",
+        "priority": "High"
+      },
+      {
+        "source": "Email Gateway Logs",
+        "description": "Quarantined or flagged Office document attachments",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Shell.Explorer.1 COM instantiation",
+        "description": "Office processes loading or instantiating Shell.Explorer.1 COM object",
+        "log_field": "CLSID {EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B}",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Office spawning iexplore.exe or browser processes",
+        "description": "WINWORD.EXE, EXCEL.EXE, or POWERPNT.EXE creating Internet Explorer processes",
+        "log_field": "ParentImage contains Office application, Image contains iexplore",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Network connections from Office",
+        "description": "Office applications making unexpected outbound network connections",
+        "log_field": "Sysmon Event ID 3 with Office process as source",
+        "severity": "High"
+      },
+      {
+        "indicator": "OLE object loading in documents",
+        "description": "Documents containing embedded OLE objects being opened",
+        "log_field": "Office application loading oleaut32.dll or ole32.dll",
+        "severity": "Medium"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Deploy Emergency Patch",
+      "description": "Apply Microsoft's out-of-band update for all Office versions immediately",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Restart Office Applications",
+      "description": "Office 2021+ users must restart applications for server-side fix to take effect",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Deploy KB5002713",
+      "description": "Install security update for Office 2016/2019 MSI installations",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Enable Enhanced Email Filtering",
+      "description": "Block or quarantine Office documents with embedded OLE objects",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Deploy Detection Rules",
+      "description": "Implement Sysmon and SIEM rules to detect Shell.Explorer.1 abuse",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "User Awareness",
+      "description": "Alert users to increased phishing risk with malicious Office documents",
+      "command": null
+    }
+  ]
+}

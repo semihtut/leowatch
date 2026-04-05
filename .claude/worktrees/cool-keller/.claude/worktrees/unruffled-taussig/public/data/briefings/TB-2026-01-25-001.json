@@ -1,0 +1,100 @@
+{
+  "briefing_id": "TB-2026-01-25-001",
+  "title": "FortiCloud SSO Authentication Bypass - Incomplete Patch Under Active Exploitation",
+  "generated_date": "2026-01-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2025-12-23"
+  },
+  "cves": ["CVE-2025-59718"],
+  "tags": ["cloud", "fortinet", "firewall", "sso", "authentication-bypass", "saml", "config-theft"],
+  "affected_products": [
+    "FortiOS 7.6.x, 7.4.x, 7.2.x, 7.0.x",
+    "FortiProxy 7.6.x, 7.4.x",
+    "FortiSwitchManager 7.2.x",
+    "FortiWeb 8.0.x, 7.6.x"
+  ],
+  "sources_analyzed": 4,
+  "sources": [
+    {
+      "name": "BleepingComputer - Patch Incomplete",
+      "url": "https://www.bleepingcomputer.com/news/security/fortinet-confirms-critical-forticloud-auth-bypass-not-fully-patched/",
+      "date": "2026-01-23",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Config Theft Campaign",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-fortinet-fortigate-devices-steal-firewall-configs/",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2025-12-16",
+      "type": "Government"
+    },
+    {
+      "name": "Fortinet PSIRT Advisory FG-IR-25-647",
+      "url": "https://www.fortiguard.com/psirt",
+      "date": "2025-12-09",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {"date": "2025-12-09", "event": "Fortinet releases initial advisory and patch"},
+    {"date": "2025-12-16", "event": "CISA adds to KEV catalog"},
+    {"date": "2025-12-23", "event": "CISA remediation deadline passes"},
+    {"date": "2026-01-22", "event": "Arctic Wolf detects active exploitation campaign creating rogue admin accounts"},
+    {"date": "2026-01-23", "event": "Fortinet confirms December patch is incomplete - working on full fix"}
+  ],
+  "simple_summary": {
+    "what_happened": "A critical authentication bypass vulnerability exists in Fortinet firewalls that allows attackers to access the FortiCloud management panel without valid credentials by sending crafted SAML messages. The patch released in December 2025 did not fully fix the issue, and fully patched firewalls are still being compromised in active attacks.",
+    "who_is_affected": "Any organization using FortiOS, FortiProxy, FortiWeb, or FortiSwitchManager with FortiCloud SSO enabled for centralized management. This includes enterprises, government agencies, and managed security providers.",
+    "what_attackers_do": "Step 1: Attackers scan the internet for exposed Fortinet management interfaces. Step 2: They send specially crafted SAML authentication messages to bypass signature verification. Step 3: They gain administrative access to FortiCloud without valid credentials. Step 4: They create rogue administrator accounts for persistent access. Step 5: They download complete firewall configurations containing VPN credentials, pre-shared keys, and network topology.",
+    "what_you_should_do": [
+      "Disable FortiCloud SSO immediately and switch to local authentication",
+      "Audit all administrator accounts and remove any unauthorized accounts",
+      "Review admin login logs for the past 30 days for suspicious activity",
+      "Restrict management interface access to trusted IP addresses only",
+      "Compare current config against known-good backup for unauthorized changes",
+      "Rotate VPN credentials if configuration theft is suspected",
+      "Monitor Fortinet advisories for complete patch release"
+    ],
+    "why_this_is_serious": "Firewalls are the primary perimeter defense. Compromise provides attackers with VPN credentials, internal network topology, and the ability to modify security rules. This enables ransomware deployment, data exfiltration, and persistent network access. The incomplete patch status means even diligent organizations remain vulnerable."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {"tactic": "Initial Access", "technique_id": "T1078.004", "technique_name": "Valid Accounts: Cloud Accounts", "description": "SAML bypass enables unauthorized access to cloud management accounts"},
+      {"tactic": "Persistence", "technique_id": "T1136.003", "technique_name": "Create Account: Cloud Account", "description": "Attackers create rogue admin accounts for persistent access"},
+      {"tactic": "Credential Access", "technique_id": "T1552.001", "technique_name": "Unsecured Credentials: Credentials In Files", "description": "Firewall configs contain VPN credentials and pre-shared keys"},
+      {"tactic": "Collection", "technique_id": "T1530", "technique_name": "Data from Cloud Storage Object", "description": "Complete firewall configuration exfiltration"},
+      {"tactic": "Defense Evasion", "technique_id": "T1562.001", "technique_name": "Impair Defenses: Disable or Modify Tools", "description": "Firewall rules can be modified to allow malicious traffic"}
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor FortiCloud SSO authentication events, administrator account changes, and configuration exports. Pay special attention to logins from unexpected geographic locations and any new admin accounts created outside normal change management.",
+    "log_sources": [
+      {"source": "FortiGate Event Logs", "description": "Admin login and config change events", "priority": "Critical"},
+      {"source": "FortiCloud Audit Logs", "description": "SSO authentication and API calls", "priority": "Critical"},
+      {"source": "FortiAnalyzer", "description": "Centralized log correlation", "priority": "High"}
+    ],
+    "what_to_look_for": [
+      {"indicator": "New admin account creation", "log_field": "action='user-create' AND user_type='admin'", "severity": "Critical"},
+      {"indicator": "Configuration backup/export", "log_field": "action='config-backup' OR action='config-export'", "severity": "Critical"},
+      {"indicator": "SSO login from unusual location", "log_field": "event='sso-login' AND geo_country NOT IN allowed_countries", "severity": "Critical"},
+      {"indicator": "Admin password change", "log_field": "action='password-change' AND user_type='admin'", "severity": "High"},
+      {"indicator": "Multiple failed then success", "log_field": "status='failed' COUNT>3 FOLLOWED BY status='success'", "severity": "High"}
+    ]
+  },
+  "immediate_actions": [
+    {"priority": 1, "action": "Disable FortiCloud SSO", "description": "Switch to local authentication immediately", "command": "config system global\nset admin-sso disable\nend"},
+    {"priority": 2, "action": "Audit admin accounts", "description": "List all admin accounts and identify unauthorized ones", "command": "get system admin"},
+    {"priority": 3, "action": "Remove suspicious accounts", "description": "Delete any unverified admin accounts", "command": "config system admin\ndelete <suspicious_admin>\nend"},
+    {"priority": 4, "action": "Review login history", "description": "Check past 30 days of admin logins", "command": "execute log filter category event\nexecute log filter field subtype user\nexecute log display"},
+    {"priority": 5, "action": "Restrict management access", "description": "Limit to trusted IPs only", "command": "config system interface\nedit mgmt\nset trusted-ip1 <subnet>\nend"}
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "briefing_id": "TB-2026-03-05-002",
+  "title": "Gradio AI/ML Framework Unauthenticated Hugging Face Token Theft via Flawed OAuth Mocked Flow — Hardcoded Session Signing Key Exposes HF_TOKEN to Any Network Attacker Across 470,000+ Deployed Applications (CVE-2026-27167, CVSS 8.1)",
+  "generated_date": "2026-03-05",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.1,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-27167",
+    "CVE-2026-28415"
+  ],
+  "tags": [
+    "gradio",
+    "huggingface",
+    "credential-theft",
+    "ai-ml",
+    "oauth",
+    "python",
+    "supply-chain",
+    "api-token"
+  ],
+  "affected_products": [
+    "Gradio Python package 4.16.0 through 6.5.x",
+    "Any application using gr.LoginButton or Gradio OAuth integration outside Hugging Face Spaces"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Tenable Research Advisory TRA-2026-11 - Gradio Credential Leakage",
+      "url": "https://www.tenable.com/security/research/tra-2026-11",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable CVE Database - CVE-2026-27167",
+      "url": "https://www.tenable.com/cve/CVE-2026-27167",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "CVEReports - CVE-2026-27167 Official Entry",
+      "url": "https://cvereports.com/reports/CVE-2026-27167",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-27167 Detail",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27167",
+      "date": "2026-02-27",
+      "type": "Government"
+    },
+    {
+      "name": "Gradio GitHub Repository - Security Advisory for CVE-2026-27167",
+      "url": "https://github.com/gradio-app/gradio/security/advisories",
+      "date": "2026-02-18",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Trail of Bits - Auditing Gradio 5: Security Assessment of Hugging Face ML GUI Framework",
+      "url": "https://blog.trailofbits.com/2024/10/10/auditing-gradio-5-hugging-faces-ml-gui-framework/",
+      "date": "2024-10-10",
+      "type": "Research"
+    },
+    {
+      "name": "Horizon3.ai - Exploiting File Read Vulnerabilities in Gradio to Steal Secrets from Hugging Face Spaces",
+      "url": "https://horizon3.ai/attack-research/disclosures/exploiting-file-read-vulnerabilities-in-gradio-to-steal-secrets-from-hugging-face-spaces/",
+      "date": "2025-01-15",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer - Hugging Face Says Hackers Stole Auth Tokens from Spaces",
+      "url": "https://www.bleepingcomputer.com/news/security/ai-platform-hugging-face-says-hackers-stole-auth-tokens-from-spaces/",
+      "date": "2026-02-28",
+      "type": "News"
+    },
+    {
+      "name": "Snyk Vulnerability Database - Gradio Package Security",
+      "url": "https://security.snyk.io/package/pip/gradio",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "CIRCL Vulnerability Lookup - CVE-2026-27167",
+      "url": "https://vulnerability.circl.lu/vuln/cve-2026-27167",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "BitNinja Security - New Vulnerability Alert CVE-2026-28415 in Gradio (Related Open Redirect)",
+      "url": "https://bitninja.com/blog/new-vulnerability-alert-cve-2026-28415-in-gradio/",
+      "date": "2026-02-28",
+      "type": "Research"
+    },
+    {
+      "name": "THREATINT - CVE-2026-27167 Threat Intelligence Entry",
+      "url": "https://cve.threatint.eu/CVE/CVE-2026-27167",
+      "date": "2026-02-27",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-11",
+      "event": "Security researcher discovers and reports credential leakage in Gradio's mocked OAuth flow — HF_TOKEN is embedded in session cookies signed with hardcoded secret '-v4'"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "Gradio team releases version 6.6.0 with patch: mocked OAuth flow replaced with static placeholder tokens; hardcoded signing key removed; open redirect in CVE-2026-28415 also fixed"
+    },
+    {
+      "date": "2026-02-27",
+      "event": "CVE-2026-27167 and CVE-2026-28415 formally assigned and published in NVD and vulnerability databases; Tenable publishes advisory TRA-2026-11"
+    },
+    {
+      "date": "2026-03-05",
+      "event": "Security community widely distributes advisory; ML/AI security researchers assess scope — hundreds of thousands of Gradio deployments potentially affected across development, staging, and production environments"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A serious security flaw was found in Gradio, the popular Python library that AI and machine learning developers use to build demos and web interfaces for their models. The vulnerability is in Gradio's login feature: when running outside of the official Hugging Face platform, Gradio uses a simplified 'mock' login system for testing. The problem is that this mock login accidentally grabs the server's real Hugging Face API token and embeds it in a cookie it sends back to whoever visits the login page — even anonymous strangers. To make matters worse, the cookie is signed with a hardcoded password ('-v4'), meaning anyone can decode it and read the stolen token. The flaw was patched in Gradio 6.6.0 released February 18, 2026.",
+    "who_is_affected": "AI/ML developers, data science teams, and organizations using Gradio versions 4.16.0 through 6.5.x to build model demos, internal tools, or public applications with Hugging Face integration. This spans academic researchers, enterprise AI teams, and independent developers. Any Gradio application that uses gr.LoginButton or HuggingFace OAuth and is network-accessible is potentially vulnerable. The Hugging Face ecosystem hosts approximately 470,000 Gradio-powered applications.",
+    "what_attackers_do": "Step 1: Attacker identifies a Gradio application running outside of official Hugging Face Spaces — this can be on a developer's laptop, a company server, a cloud VM, or any self-hosted deployment using an affected Gradio version. Step 2: Attacker visits the application's Hugging Face login endpoint (e.g., https://target-app.com/login/huggingface) — no credentials required. Step 3: The vulnerable Gradio server automatically calls huggingface_hub.get_token(), retrieves the server's real HF_TOKEN from the environment or credential cache, and embeds it in the session cookie returned to the attacker. Step 4: Attacker decodes the session cookie using the known hardcoded signing key '-v4' to extract the plaintext Hugging Face API token. Step 5: With the stolen token, attacker gains full API access to the victim's Hugging Face account — reading private datasets, downloading proprietary models, modifying model files, injecting malicious code into shared model repositories, or using the victim's Inference API quota for their own purposes.",
+    "what_you_should_do": [
+      "Upgrade Gradio to version 6.6.0 or later immediately: pip install --upgrade gradio",
+      "Rotate your Hugging Face API token immediately if you were running a vulnerable version with the gr.LoginButton feature enabled — even if you did not observe suspicious activity",
+      "Review Hugging Face API access logs for your organization's tokens to identify any unauthorized dataset access, model uploads, or API usage",
+      "Search your codebase and deployment inventory for any Gradio applications using gr.LoginButton or OAuth features and treat them as potentially compromised if running versions 4.16.0 to 6.5.x",
+      "As a defense-in-depth measure, limit network access to Gradio applications to intended audiences only — avoid unnecessary public internet exposure of internal ML demo environments"
+    ],
+    "why_this_is_serious": "Hugging Face tokens are not just login credentials — they are master keys to an organization's AI infrastructure. A stolen token can allow attackers to exfiltrate proprietary models worth months of training compute, steal private datasets containing sensitive business or personal data, and even inject malicious code into shared model repositories that other teams or customers may then download and use. This is particularly dangerous in an AI supply chain context: a compromised model repository could propagate malicious weights or scripts downstream to thousands of users who trust the source. The vulnerability requires no prior knowledge, no authentication, and is trivially exploitable by anyone who can reach the application over the network."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1212",
+        "technique_name": "Exploitation for Credential Access",
+        "description": "Attacker exploits the flawed mocked OAuth flow to trigger server-side token retrieval, obtaining the HF_TOKEN from the session cookie without requiring authentication"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552",
+        "technique_name": "Unsecured Credentials: Credentials in Environment Variables",
+        "description": "The HF_TOKEN environment variable is accessed by the vulnerable Gradio application and inadvertently exposed to network attackers via the session management flaw"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1530",
+        "technique_name": "Data from Cloud Storage",
+        "description": "With stolen HF tokens, attackers can access private Hugging Face repositories, datasets, and model weights stored in cloud-hosted object storage"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Network-accessible Gradio applications with vulnerable OAuth endpoints provide an unauthenticated attack surface exploitable without any prior knowledge of credentials"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1565",
+        "technique_name": "Data Manipulation",
+        "description": "Attackers can use stolen tokens to modify model files, inject malicious weights, or alter dataset contents in Hugging Face repositories, enabling AI supply chain attacks"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying requests to the /login/huggingface endpoint from unexpected clients (especially non-browser user agents), monitoring Hugging Face API audit logs for anomalous token usage, and reviewing application logs for unusual session creation patterns. The hardcoded '-v4' signature in session cookies is a specific forensic indicator.",
+    "log_sources": [
+      {
+        "source": "Gradio Application HTTP Access Logs",
+        "description": "Monitor web server access logs for requests to /login/huggingface endpoints, particularly from non-browser user agents (curl, python-requests, wget) which suggest automated exploitation",
+        "priority": "Critical"
+      },
+      {
+        "source": "Hugging Face API Audit Logs",
+        "description": "Review Hugging Face account activity logs at huggingface.co/settings/tokens for unexpected API calls, new repository operations, or dataset access from unfamiliar IP addresses or times",
+        "priority": "Critical"
+      },
+      {
+        "source": "Application Session Logs",
+        "description": "Review session creation logs for rapid successive session creations from the same IP, or sessions where the access_token field contains a valid HF bearer token",
+        "priority": "High"
+      },
+      {
+        "source": "Host Environment Variable Access Logs",
+        "description": "On Linux hosts with auditd configured, monitor for web process access to HF_TOKEN environment variable or reads from ~/.cache/huggingface/token",
+        "priority": "Medium"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Non-browser requests to /login/huggingface endpoint",
+        "description": "Automated tools or scripts targeting the OAuth endpoint to extract tokens will often have distinctive user agents (curl, python-requests, Go HTTP client) rather than real browser strings",
+        "log_field": "http.request.uri='/login/huggingface' AND http.useragent NOT MATCHES 'Mozilla|Chrome|Safari|Firefox'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Session cookie containing HuggingFace bearer token pattern",
+        "description": "Gradio session cookies on vulnerable versions will contain an access_token field with a Hugging Face API token (format: hf_xxxx). The cookie is signed with hardcoded '-v4' key.",
+        "log_field": "cookie.value CONTAINS 'access_token' AND cookie.value CONTAINS 'hf_'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unusual Hugging Face API activity following normal usage hours",
+        "description": "If a stolen token is being actively used, Hugging Face API logs will show API calls from IP addresses different from normal developer workstations, or at unusual hours",
+        "log_field": "huggingface_api.src_ip NOT IN <known_developer_ips> OR huggingface_api.timestamp OUTSIDE <normal_business_hours>",
+        "severity": "High"
+      },
+      {
+        "indicator": "New model or dataset repositories created via API",
+        "description": "Attackers using stolen tokens may create new repositories to exfiltrate data or stage supply chain payloads. Monitor for unexpected repository creation events in HF audit logs.",
+        "log_field": "huggingface_api.action IN ['create_repo','push_to_hub','upload_file'] AND huggingface_api.src_ip NOT IN <trusted_ips>",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade Gradio to version 6.6.0 or later",
+      "description": "Immediately update all Gradio installations to the patched version 6.6.0 which removes the hardcoded session signing key and prevents HF_TOKEN from being embedded in session cookies in the mocked OAuth flow.",
+      "command": "pip install --upgrade \"gradio>=6.6.0\"\n# Verify version\npython -c \"import gradio; print(gradio.__version__)\""
+    },
+    {
+      "priority": 2,
+      "action": "Rotate Hugging Face API tokens for affected deployments",
+      "description": "Any Gradio deployment running versions 4.16.0 to 6.5.x with gr.LoginButton or HuggingFace OAuth enabled should be treated as potentially compromised. Rotate HF tokens at huggingface.co/settings/tokens and revoke old tokens immediately.",
+      "command": "# Install huggingface_hub CLI and rotate token\npip install huggingface_hub\nhuggingface-cli login  # Enter new token\n# Revoke old token at: https://huggingface.co/settings/tokens"
+    },
+    {
+      "priority": 3,
+      "action": "Audit Hugging Face API activity for unauthorized access",
+      "description": "Review the Hugging Face account's activity log for any suspicious API calls, repository modifications, dataset downloads, or model uploads that may have occurred while using a vulnerable Gradio version. Check at huggingface.co/settings/activity.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Restrict network access to Gradio application endpoints",
+      "description": "Implement network-level controls to limit access to Gradio applications to intended users only. Internal ML demo environments should not be exposed to the public internet without authentication and access controls.",
+      "command": "# Example nginx rule to restrict /login/* endpoints\nlocation /login/ {\n  allow 10.0.0.0/8;\n  allow 192.168.0.0/16;\n  deny all;\n}"
+    }
+  ]
+}

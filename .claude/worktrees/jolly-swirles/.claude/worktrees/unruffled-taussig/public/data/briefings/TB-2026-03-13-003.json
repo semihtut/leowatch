@@ -1,0 +1,287 @@
+{
+  "briefing_id": "TB-2026-03-13-003",
+  "title": "Juniper Junos OS Evolved PTX Series Unauthenticated Root RCE via Exposed Anomaly Detection API: watchTowr Emergency Disclosure (CVE-2026-21902)",
+  "generated_date": "2026-03-13",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-21902"
+  ],
+  "tags": [
+    "juniper",
+    "junos",
+    "ptx-series",
+    "rce",
+    "pre-auth",
+    "network-infrastructure",
+    "router",
+    "watchtowr",
+    "isp"
+  ],
+  "affected_products": [
+    "Juniper Networks Junos OS Evolved 25.4 versions prior to 25.4R1-S1-EVO",
+    "Juniper Networks Junos OS Evolved 25.4 versions prior to 25.4R2-EVO",
+    "Juniper PTX Series high-performance routers only (not SRX, MX, EX series)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "watchTowr Labs - Original Disclosure: CVE-2026-21902 Junos OS Evolved RCE",
+      "url": "https://labs.watchtowr.com/sometimes-you-can-just-feel-the-security-in-the-design-junos-os-evolved-cve-2026-21902-rce/",
+      "date": "2026-02-26",
+      "type": "Research"
+    },
+    {
+      "name": "Juniper Networks Out-of-Cycle Security Bulletin - CVE-2026-21902",
+      "url": "https://supportportal.juniper.net/s/article/2026-02-Out-of-Cycle-Security-Bulletin-Junos-OS-Evolved-PTX-Series-A-vulnerability-allows-a-unauthenticated-network-based-attacker-to-execute-code-as-root-CVE-2026-21902",
+      "date": "2026-02-26",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2026-21902",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21902",
+      "date": "2026-02-26",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable - CVE-2026-21902",
+      "url": "https://www.tenable.com/cve/CVE-2026-21902",
+      "date": "2026-02-26",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer - Critical Juniper Networks PTX Flaw Allows Full Router Takeover",
+      "url": "https://www.bleepingcomputer.com/news/security/critical-juniper-networks-ptx-flaw-allows-full-router-takeover/",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - Juniper Issues Emergency Patch for Critical PTX Router RCE",
+      "url": "https://securityaffairs.com/188609/security/juniper-issues-emergency-patch-for-critical-ptx-router-rce.html",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Juniper Networks PTX Routers Affected by Critical Vulnerability",
+      "url": "https://www.securityweek.com/juniper-networks-ptx-routers-affected-by-critical-vulnerability/",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "CybersecurityNews - Juniper Networks PTX Vulnerability Enables Full Router Takeover",
+      "url": "https://cybersecuritynews.com/juniper-networks-ptx-vulnerability/",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online - Security Hole Could Let Hackers Take Over Juniper Networks PTX Core Routers",
+      "url": "https://www.csoonline.com/article/4138788/security-hole-could-let-hackers-take-over-juniper-networks-ptx-core-routers.html",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "GitHub - watchTowr Labs Detection Artifacts for CVE-2026-21902",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-JunosEvolved-CVE-2026-21902",
+      "date": "2026-02-26",
+      "type": "Research"
+    },
+    {
+      "name": "Rescana Security - Critical CVE-2026-21902 in Juniper Networks PTX Series",
+      "url": "https://www.rescana.com/post/critical-cve-2026-21902-vulnerability-in-juniper-networks-ptx-series-routers-running-junos-os-evolve",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "Cyber Security Agency of Singapore - Alert AL-2026-020",
+      "url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-020/",
+      "date": "2026-02-26",
+      "type": "Government"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security - Security Advisory AV26-172",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/juniper-networks-security-advisory-av26-172",
+      "date": "2026-02-26",
+      "type": "Government"
+    },
+    {
+      "name": "UpGuard - Critical Juniper Networks RCE CVE-2026-21902 Risk Assessment",
+      "url": "https://www.upguard.com/news/juniper-networks-data-breach-2026-03-02",
+      "date": "2026-03-02",
+      "type": "Research"
+    },
+    {
+      "name": "RunZero - Juniper Networks Junos OS Evolved CVE-2026-21902 Analysis",
+      "url": "https://www.runzero.com/blog/junos-os-evo/",
+      "date": "2026-02-27",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-26",
+      "event": "Juniper Networks issues an out-of-cycle security bulletin for CVE-2026-21902, releasing patches for Junos OS Evolved 25.4R1-S1-EVO and 25.4R2-EVO"
+    },
+    {
+      "date": "2026-02-26",
+      "event": "watchTowr Labs publishes full technical disclosure including root cause analysis: the On-Box Anomaly Detection Framework REST API is bound to all network interfaces on port 8160/TCP without any authentication"
+    },
+    {
+      "date": "2026-02-26",
+      "event": "watchTowr Labs releases Detection Artifact Generator (DAG) on GitHub to help organizations detect exploitation attempts"
+    },
+    {
+      "date": "2026-02-26",
+      "event": "Singapore CSA, Canadian CCCS, and multiple national CERTs issue advisories; CVE published to NVD with CVSS 9.8 (Critical)"
+    },
+    {
+      "date": "2026-03-02",
+      "event": "Security researchers assess global exposure; no public evidence of active exploitation in the wild as of this date"
+    },
+    {
+      "date": "2026-03-13",
+      "event": "No confirmed active exploitation; however public PoC and full technical details are available, making weaponization by threat actors likely"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers at watchTowr Labs discovered a critical flaw in Juniper's Junos OS Evolved operating system running on PTX Series high-performance routers. The vulnerability exists because an internal anomaly detection service was accidentally exposed to the network on port 8160 with no authentication whatsoever. Any attacker who can reach the router over the network can send specially crafted API requests to this service and execute commands as the root user — gaining complete control over the router. Juniper issued an emergency out-of-cycle patch the same day watchTowr disclosed the vulnerability.",
+    "who_is_affected": "Organizations running Juniper PTX Series routers with Junos OS Evolved version 25.4R1-EVO up to (but not including) 25.4R1-S1-EVO or 25.4R2-EVO. PTX Series routers are deployed primarily by ISPs, telecommunications carriers, large enterprises, and data centers as core network backbone infrastructure. Compromising a PTX router gives attackers privileged access to core routing infrastructure, enabling traffic interception, network disruption, and lateral movement across the provider network.",
+    "what_attackers_do": "Step 1: Attacker identifies a Juniper PTX Series router running vulnerable Junos OS Evolved through network scanning or reconnaissance, targeting port 8160/TCP. Step 2: Attacker sends HTTP API requests to the On-Box Anomaly Detection Framework's REST API endpoint on port 8160, which is exposed on all network interfaces with no authentication required. Step 3: Attacker crafts workflow or directed acyclic graph (DAG) definitions within the anomaly detection API that contain malicious shell commands, leveraging the API's ability to schedule and execute tasks. Step 4: The anomaly detection service executes the attacker's commands as the root user, providing complete OS-level control over the router. Step 5: Attacker can now read and modify the router's full configuration, intercept network traffic passing through the router, persist backdoors, pivot to adjacent network devices, or cause complete network disruption affecting all downstream customers.",
+    "what_you_should_do": [
+      "Immediately upgrade affected PTX Series routers to Junos OS Evolved 25.4R1-S1-EVO or 25.4R2-EVO",
+      "As an interim workaround, execute 'request pfe anomalies disable' on affected devices to disable the vulnerable service",
+      "Block port 8160/TCP on all network interfaces of PTX routers using firewall filters, allowing access only from trusted management networks",
+      "Audit router configuration and logs for unexpected API calls to the anomaly detection framework endpoints",
+      "Network-segment router management interfaces and restrict access to dedicated out-of-band management networks"
+    ],
+    "why_this_is_serious": "PTX Series routers form the backbone of ISP and carrier networks — they route enormous volumes of internet traffic for millions of users. A single compromised PTX router gives an attacker the ability to intercept, redirect, or disrupt all traffic passing through it. Root-level access on core routing infrastructure is among the highest-impact outcomes in network security. The vulnerability requires zero authentication and only network reachability, making it trivially exploitable. Although no active exploitation has been confirmed yet, full technical details and detection artifacts are publicly available, meaning nation-state actors and sophisticated threat groups could develop weaponized exploits rapidly."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated REST API on port 8160/TCP of Junos OS Evolved's On-Box Anomaly Detection Framework to gain initial access without credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "After exploiting the API, attackers execute arbitrary shell commands as root through the anomaly detection workflow execution mechanism"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "The anomaly detection service runs as root, meaning exploitation immediately grants the highest privilege level without any separate escalation step"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1542.005",
+        "technique_name": "Pre-OS Boot: TFTP Boot",
+        "description": "Attackers with root access to Juniper routers can modify boot configurations, install backdoored firmware, or create persistent scheduled tasks within the router OS"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1020",
+        "technique_name": "Automated Exfiltration",
+        "description": "Compromised PTX routers can be used to intercept, copy, and exfiltrate network traffic passing through core routing infrastructure"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1498",
+        "technique_name": "Network Denial of Service",
+        "description": "Attackers can manipulate routing tables, null-route traffic, or crash the device to cause widespread network outages affecting all downstream customers of affected ISP/carrier infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should prioritize monitoring for unexpected connections to TCP port 8160 on PTX routers. watchTowr Labs has released a Detection Artifact Generator (DAG) tool on GitHub specifically for this CVE. Log sources should include firewall and access control logs for port 8160 connections, router system logs for anomalous process execution, and network flow data showing unexpected connections to router management ports.",
+    "log_sources": [
+      {
+        "source": "Junos OS Syslog / System Log",
+        "description": "Monitor Junos system logs for unexpected activity from the anomaly detection framework daemon (pfe-anomaly-detection), unusual root process spawning, and configuration changes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow / NetFlow / sFlow",
+        "description": "Monitor for unexpected TCP connections to port 8160 on PTX router interfaces, particularly from source IPs outside the management network",
+        "priority": "Critical"
+      },
+      {
+        "source": "Junos Firewall Filter Logs",
+        "description": "Deploy and enable logging on Junos firewall filters blocking port 8160; log entries will reveal exploitation attempts or unauthorized access attempts",
+        "priority": "High"
+      },
+      {
+        "source": "Router Configuration Change Logs",
+        "description": "Monitor for unauthorized routing table modifications, new BGP peer additions, or configuration changes following any suspicious API activity",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Inbound TCP connections to port 8160 on PTX routers",
+        "description": "Any connection to the anomaly detection REST API port from unexpected source IPs should be treated as a potential exploitation attempt",
+        "log_field": "dst_port=8160 AND dst_ip IN (ptx_router_addresses) AND src_ip NOT IN (trusted_management_ips)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "HTTP POST requests to anomaly detection API endpoints",
+        "description": "Specifically crafted HTTP requests to the On-Box Anomaly Detection Framework REST API containing workflow or DAG definitions with command execution payloads",
+        "log_field": "request_method='POST' AND request_path CONTAINS 'anomal' AND dst_port=8160",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected process spawning from anomaly detection daemon",
+        "description": "Shell processes or unexpected child processes spawned from the pfe-anomaly-detection process, indicating successful code execution",
+        "log_field": "parent_process='pfe-anomaly-detection' AND child_process IN ('sh','bash','python','perl')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual root-level operations in Junos OS",
+        "description": "Unexpected file writes, network configuration changes, or command execution as root user not initiated by authorized management sessions",
+        "log_field": "uid=0 AND NOT initiating_session IN (authorized_management_sessions)",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Disable the vulnerable On-Box Anomaly Detection service immediately",
+      "description": "On all affected PTX Series routers running Junos OS Evolved 25.4R1-EVO, execute the following command to disable the vulnerable anomaly detection framework until the patch can be applied. This is the recommended interim mitigation from Juniper.",
+      "command": "request pfe anomalies disable"
+    },
+    {
+      "priority": 2,
+      "action": "Block port 8160/TCP via Junos firewall filters",
+      "description": "Deploy Junos firewall filters (ACLs) to block all inbound connections to TCP port 8160 on all PTX router interfaces, or restrict to trusted management IP ranges only. Apply on both routing engine and packet forwarding engine interfaces.",
+      "command": "set firewall family inet filter BLOCK-8160 term deny-8160 from destination-port 8160"
+    },
+    {
+      "priority": 3,
+      "action": "Upgrade to patched Junos OS Evolved version",
+      "description": "Apply Juniper's emergency patch by upgrading to Junos OS Evolved 25.4R1-S1-EVO or 25.4R2-EVO (or 26.2R1-EVO for the latest branch). Download patches from the Juniper customer portal at https://support.juniper.net. Verify image integrity before installation.",
+      "command": "request system software add /var/tmp/junos-evo-25.4R1-S1.tgz"
+    },
+    {
+      "priority": 4,
+      "action": "Audit router configurations and logs for compromise indicators",
+      "description": "Review Junos system logs and network flow data for any connections to port 8160 since February 26, 2026 (disclosure date). Use watchTowr's Detection Artifact Generator (https://github.com/watchtowrlabs/watchTowr-vs-JunosEvolved-CVE-2026-21902) to validate exposure and detect exploitation attempts.",
+      "command": "show log messages | match 'pfe-anomaly\\|8160\\|anomaly'"
+    },
+    {
+      "priority": 5,
+      "action": "Harden router management access and network segmentation",
+      "description": "Ensure PTX router management interfaces are accessible only from dedicated out-of-band management networks. Disable direct internet exposure of router management ports. Review and tighten routing engine access controls for all management protocols (SSH, NETCONF, REST).",
+      "command": null
+    }
+  ]
+}

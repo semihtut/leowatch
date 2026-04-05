@@ -1,0 +1,268 @@
+{
+  "briefing_id": "TB-2026-04-05-001",
+  "title": "Progress ShareFile Storage Zones Controller Pre-Auth RCE Chain CVE-2026-2699 & CVE-2026-2701 (CVSS 9.8): Authentication Bypass + Arbitrary File Upload Enables Unauthenticated Full Server Compromise — watchTowr PoC Released, 30,000 Internet-Exposed Instances at Risk",
+  "generated_date": "2026-04-05",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-2699",
+    "CVE-2026-2701"
+  ],
+  "tags": [
+    "progress",
+    "sharefile",
+    "rce",
+    "pre-auth",
+    "authentication-bypass",
+    "file-upload",
+    "webshell"
+  ],
+  "affected_products": [
+    "Progress ShareFile Storage Zones Controller 5.x (prior to 5.12.4)"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "watchTowr Labs - ShareFile Pre-Auth RCE Chain Research",
+      "url": "https://labs.watchtowr.com/youre-not-supposed-to-sharefile-with-everyone-progress-sharefile-pre-auth-rce-chain-cve-2026-2699-cve-2026-2701/",
+      "date": "2026-04-02",
+      "type": "Research"
+    },
+    {
+      "name": "SOCRadar - Progress ShareFile CVE-2026-2699 & CVE-2026-2701 RCE Analysis",
+      "url": "https://socradar.io/blog/progress-sharefile-cve-2026-2699-2701-rce/",
+      "date": "2026-04-02",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable CVE Coverage - CVE-2026-2699",
+      "url": "https://www.tenable.com/cve/CVE-2026-2699",
+      "date": "2026-04-02",
+      "type": "Research"
+    },
+    {
+      "name": "Malware.news Threat Intelligence - Progress ShareFile RCE",
+      "url": "https://malware.news/t/progress-sharefile-flaws-cve-2026-2699-cve-2026-2701-rce/105708",
+      "date": "2026-04-02",
+      "type": "Research"
+    },
+    {
+      "name": "Beazley Security Alert - Critical Vulnerabilities in Progress ShareFile",
+      "url": "https://beazley.security/alerts-advisories/critical-vulnerabilities-in-progress-sharefile-cve-2026-2699-cve-2026-2701",
+      "date": "2026-04-02",
+      "type": "Research"
+    },
+    {
+      "name": "watchTowr GitHub - Detection Artifact Generator for CVE-2026-2699",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-Progress-ShareFile-CVE-2026-2699",
+      "date": "2026-04-02",
+      "type": "Research"
+    },
+    {
+      "name": "Progress ShareFile Official Security Documentation",
+      "url": "https://docs.sharefile.com/en-us/storage-zones-controller/5-0/security-vulnerability-feb26",
+      "date": "2026-03-10",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NIST NVD - CVE-2026-2699",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2699",
+      "date": "2026-04-02",
+      "type": "Government"
+    },
+    {
+      "name": "NIST NVD - CVE-2026-2701",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2701",
+      "date": "2026-04-02",
+      "type": "Government"
+    },
+    {
+      "name": "CISecurity Advisory - Multiple Vulnerabilities in Progress ShareFile",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-progress-sharefile-could-allow-for-remote-code-execution_2026-030",
+      "date": "2026-03-25",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer - New Progress ShareFile Flaws Chained in Pre-Auth RCE Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/new-progress-sharefile-flaws-can-be-chained-in-pre-auth-rce-attacks/",
+      "date": "2026-04-02",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Critical ShareFile Flaws Lead to Unauthenticated RCE",
+      "url": "https://www.securityweek.com/critical-sharefile-flaws-lead-to-unauthenticated-rce/",
+      "date": "2026-04-02",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity Dive - Researchers Find Critical Flaws in Progress ShareFile",
+      "url": "https://www.cybersecuritydive.com/news/researchers-critical-flaws-progress-sharefile/816599/",
+      "date": "2026-04-02",
+      "type": "News"
+    },
+    {
+      "name": "SC Media - Progress ShareFile Vulnerabilities Allow Unauthenticated File Exfiltration",
+      "url": "https://www.scworld.com/brief/progress-sharefile-vulnerabilities-allow-unauthenticated-file-exfiltration",
+      "date": "2026-04-02",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-06",
+      "event": "watchTowr Labs discovers the authentication bypass and file upload vulnerability chain and reports to Progress Software"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "Full exploit chain confirmed by watchTowr against ShareFile Storage Zones Controller"
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Progress Software releases patched version: ShareFile Storage Zones Controller 5.12.4"
+    },
+    {
+      "date": "2026-04-02",
+      "event": "watchTowr publicly discloses full vulnerability chain with proof-of-concept exploit and GitHub detection tool"
+    },
+    {
+      "date": "2026-04-05",
+      "event": "Active exploitation window open; approximately 30,000 unpatched internet-exposed instances remain at critical risk"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers at watchTowr Labs discovered a two-vulnerability attack chain in Progress ShareFile's Storage Zones Controller (SZC) — the on-premises file-sharing component used by thousands of enterprises, law firms, healthcare organizations, and financial institutions. The first flaw (CVE-2026-2699, CVSS 9.8) lets anyone access the admin panel without a password by exploiting how the server handles HTTP redirects. The second flaw (CVE-2026-2701, CVSS 9.1) allows uploading and executing malicious code on the server. Chained together, a complete server takeover is possible with zero credentials required. A public proof-of-concept exploit was released April 2, 2026, placing all unpatched instances in immediate danger.",
+    "who_is_affected": "Any organization running Progress ShareFile Storage Zones Controller version 5.x prior to 5.12.4. This includes enterprises, law firms, healthcare providers, financial institutions, and managed service providers using ShareFile for on-premises file storage and collaboration. Approximately 30,000 internet-exposed instances are vulnerable. The ShareFile 6.x branch is not affected.",
+    "what_attackers_do": "Step 1: Attacker scans the internet for exposed ShareFile Storage Zones Controller instances running version 5.x. Step 2: Attacker sends an unauthenticated HTTP GET request to the admin panel at /ConfigService/Admin.aspx — the server sends a redirect to the login page, but page execution continues in the background due to the authentication bypass flaw (CVE-2026-2699), granting full admin access without any credentials. Step 3: Attacker uses the now-unlocked admin interface to modify the storage zone configuration, controlling where uploaded files get extracted. Step 4: Attacker crafts a ZIP archive containing a malicious ASPX web shell file (e.g., shell.aspx). Step 5: Attacker uploads the ZIP to the /StorageCenter/Upload.aspx endpoint (CVE-2026-2701), which the server automatically extracts into a web-accessible directory. Step 6: Attacker accesses the web shell via browser and gains full remote code execution on the server — able to run any command, steal stored files, deploy ransomware, or pivot deeper into the corporate network.",
+    "what_you_should_do": [
+      "Immediately upgrade all Progress ShareFile Storage Zones Controller 5.x instances to version 5.12.4 — patching is the only effective remediation",
+      "Restrict network access so the SZC admin interface (/ConfigService/Admin.aspx) is never directly accessible from the internet — apply firewall or WAF rules immediately as an interim measure",
+      "Audit IIS web root directories (C:\\inetpub\\wwwroot\\ShareFile\\StorageCenter\\) for unexpected or recently created .aspx files that may indicate a prior compromise",
+      "Review IIS access logs from March 10, 2026 onward for suspicious requests to /ConfigService/Admin.aspx and POST requests to /StorageCenter/Upload.aspx",
+      "Organizations unable to patch immediately should consider taking SZC instances offline or isolating them from internet access until patching can be completed"
+    ],
+    "why_this_is_serious": "This attack requires zero credentials and can be fully automated — any internet-exposed ShareFile instance could be compromised in under a minute. ShareFile is widely deployed in regulated industries (legal, healthcare, finance) that store highly sensitive client documents. The public PoC means even low-skill attackers can now exploit this at scale. This follows the exact same pattern as the catastrophic Progress MOVEit Transfer breach in 2023, which caused hundreds of millions of dollars in damages and affected 2,000+ organizations including government agencies. History is likely to repeat itself if organizations don't patch immediately."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit CVE-2026-2699 (Execution After Redirect / improper access control) on the ShareFile Storage Zones Controller admin interface to gain unauthenticated administrative access"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Attackers deploy ASPX web shells to web-accessible IIS directories via CVE-2026-2701 (arbitrary file upload), establishing persistent command-and-control access that survives server reboots"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.001",
+        "technique_name": "Command and Scripting Interpreter: PowerShell",
+        "description": "Web shells enable execution of arbitrary PowerShell and system commands with IIS application pool (w3wp.exe) privileges on the compromised server"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036",
+        "technique_name": "Masquerading",
+        "description": "Malicious ASPX web shell files are placed in the ShareFile application web root directory, masquerading as legitimate application components to evade detection"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1567",
+        "technique_name": "Exfiltration Over Web Service",
+        "description": "Sensitive files stored in ShareFile repositories are directly accessible and exfiltrable via the web shell or by modifying storage zone configurations to redirect file paths"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on IIS access logs for unauthorized requests to the admin and upload endpoints, filesystem monitoring for unexpected ASPX file creation in web root directories, and process monitoring for IIS worker processes spawning command-line interpreters. The authentication bypass is detectable as HTTP 302 responses with anomalously large body content (>10KB) from the admin endpoint, indicating the page executed despite the redirect.",
+    "log_sources": [
+      {
+        "source": "IIS Access Logs",
+        "description": "Primary detection source — reveals unauthorized requests to /ConfigService/Admin.aspx (authentication bypass), POST uploads to /StorageCenter/Upload.aspx, and subsequent access to web shell files",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows File System Audit Logs (Security Event ID 4663/11)",
+        "description": "Monitor for new file creation events in C:\\inetpub\\wwwroot\\ShareFile\\StorageCenter\\ — particularly .aspx files created by the IIS worker process (w3wp.exe), which indicates web shell deployment",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Security Event Logs (Event ID 4688)",
+        "description": "Process creation events showing cmd.exe or powershell.exe spawned as child processes of w3wp.exe are a high-fidelity indicator of active web shell command execution",
+        "priority": "High"
+      },
+      {
+        "source": "Network Flow / Proxy Logs",
+        "description": "Outbound connections from the ShareFile server to external IP addresses — may indicate command-and-control communications or data exfiltration after successful compromise",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unauthenticated admin panel access with large HTTP response body",
+        "description": "HTTP GET to /ConfigService/Admin.aspx returning status 200 or 302 with response body size exceeding 10KB indicates successful authentication bypass exploitation (legitimate redirects return small 302 responses)",
+        "log_field": "cs-uri-stem='/ConfigService/Admin.aspx' AND sc-bytes>10000",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "ZIP file upload to StorageCenter upload endpoint",
+        "description": "POST requests uploading ZIP archive files to /StorageCenter/Upload.aspx from unauthenticated or unusual source IPs — payload likely contains malicious ASPX web shell",
+        "log_field": "cs-uri-stem='/StorageCenter/Upload.aspx' AND cs-method='POST'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "New ASPX files created in ShareFile web root by IIS worker process",
+        "description": "File creation events for .aspx files in C:\\inetpub\\wwwroot\\ShareFile\\StorageCenter\\ originating from w3wp.exe confirm web shell deployment",
+        "log_field": "ParentImage='w3wp.exe' AND TargetFilename LIKE 'C:\\inetpub\\wwwroot\\ShareFile\\StorageCenter\\%.aspx'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "IIS worker process spawning command-line interpreter",
+        "description": "w3wp.exe spawning cmd.exe or powershell.exe as a child process is a definitive indicator of active web shell command execution on the server",
+        "log_field": "ParentImage='w3wp.exe' AND Image IN ('cmd.exe','powershell.exe','net.exe')",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch Storage Zones Controller to version 5.12.4",
+      "description": "Upgrade all SZC 5.x instances to version 5.12.4 immediately. If running 6.x, no action is needed. Patching is the only effective remediation — no workaround exists.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Block public internet access to admin and upload endpoints",
+      "description": "Apply firewall or WAF rules to block access to /ConfigService/Admin.aspx and /StorageCenter/Upload.aspx from untrusted networks. These endpoints should only be reachable from trusted management networks.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Hunt for web shells in ShareFile web root directories",
+      "description": "Immediately scan web-accessible ShareFile directories for unauthorized .aspx files that may have been planted before patching. Any unexpected .aspx file is a high-confidence indicator of compromise.",
+      "command": "dir C:\\inetpub\\wwwroot\\ShareFile\\StorageCenter\\ /S /B *.aspx"
+    },
+    {
+      "priority": 4,
+      "action": "Review IIS access logs for exploitation evidence",
+      "description": "Search IIS logs from March 10, 2026 (patch release date) through today for unauthorized access to admin and upload endpoints. Evidence found before your patch date may indicate a compromise occurred.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Enable enhanced process and file system auditing on SZC servers",
+      "description": "Enable Windows Advanced Audit Policy for process creation and file system access on SZC servers. Configure SIEM/EDR alerts for w3wp.exe spawning cmd.exe or powershell.exe — this is a zero-false-positive indicator of web shell execution.",
+      "command": "auditpol /set /subcategory:\"Process Creation\" /success:enable /failure:enable"
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "briefing_id": "TB-2026-04-02-004",
+  "title": "North Korea-Linked UNC1069 Compromises Axios npm Package (100M+ Weekly Downloads): WAVESHAPER.V2 Cross-Platform RAT Deployed via Maintainer Account Hijack — Supply Chain Attack Targets Cloud Credentials, 135+ Confirmed Victims in 3-Hour Window",
+  "generated_date": "2026-04-02",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "supply-chain",
+    "npm",
+    "axios",
+    "north-korea",
+    "unc1069",
+    "rat",
+    "waveshaper",
+    "credential-theft",
+    "cloud-security"
+  ],
+  "affected_products": [
+    "axios npm package v1.14.1 (malicious)",
+    "axios npm package v0.30.4 (malicious)",
+    "plain-crypto-js npm package v4.2.1 (malicious dependency)"
+  ],
+  "sources_analyzed": 20,
+  "sources": [
+    {
+      "name": "Google Cloud Blog - North Korea Threat Actor Targets Axios npm Package (UNC1069 Attribution)",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/north-korean-threat-actor-targets-axios-npm-package",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Google Attributes Axios npm Supply Chain Attack to North Korea",
+      "url": "https://thehackernews.com/2026/04/google-attributes-axios-npm-supply.html",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "Microsoft Security Blog - Mitigating the Axios npm Supply Chain Compromise",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Huntress Blog - Supply Chain Compromise of Axios npm Package",
+      "url": "https://www.huntress.com/blog/supply-chain-compromise-axios-npm-package",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Elastic Security Labs - Axios Supply Chain Compromise Detections",
+      "url": "https://www.elastic.co/security-labs/axios-supply-chain-compromise-detections",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Socket.dev Blog - Axios npm Package Compromised",
+      "url": "https://socket.dev/blog/axios-npm-package-compromised",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Wiz Blog - Axios npm Compromised in Supply Chain Attack",
+      "url": "https://www.wiz.io/blog/axios-npm-compromised-in-supply-chain-attack",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable Blog - FAQ: The Axios npm Supply Chain Attack by North Korea-Nexus UNC1069",
+      "url": "https://www.tenable.com/blog/faq-about-the-axios-npm-supply-chain-attack-by-north-korea-nexus-threat-actor-unc1069",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "SANS Institute - Axios npm Supply Chain Compromise Analysis",
+      "url": "https://www.sans.org/blog/axios-npm-supply-chain-compromise-malicious-packages-remote-access-trojan",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Datadog Security Labs - Technical Analysis of Cross-Platform RAT Delivery",
+      "url": "https://securitylabs.datadoghq.com/articles/axios-npm-supply-chain-compromise/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf - Supply Chain Impact: Widely Used Axios npm Package",
+      "url": "https://arcticwolf.com/resources/blog/supply-chain-impact-widely-used-axios-npm-package/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Unit 42 Palo Alto Networks - Axios Supply Chain Attack Threat Brief",
+      "url": "https://unit42.paloaltonetworks.com/axios-supply-chain-attack/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Snyk Blog - Axios npm Package Compromised Supply Chain Attack",
+      "url": "https://snyk.io/blog/axios-npm-package-compromised-supply-chain-attack-delivers-cross-platform/",
+      "date": "2026-03-31",
+      "type": "Research"
+    },
+    {
+      "name": "Malwarebytes Blog - Axios Supply Chain Attack Chops Away at npm Trust",
+      "url": "https://www.malwarebytes.com/blog/news/2026/03/axios-supply-chain-attack-chops-away-at-npm-trust",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Axios npm Backdoor RAT Technical Deep Dive",
+      "url": "https://www.theregister.com/2026/03/31/axios_npm_backdoor_rat/",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "SOCRadar - Axios npm Supply Chain Attack 2026: CISO Guide with IOCs",
+      "url": "https://socradar.io/blog/axios-npm-supply-chain-attack-2026-ciso-guide/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Help Net Security - North Korean Hackers Linked to Axios npm Compromise",
+      "url": "https://www.helpnetsecurity.com/2026/04/01/north-korean-hackers-linked-to-axios-npm-supply-chain-compromise/",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "GitHub axios/axios Issue #10604 - Official Incident Disclosure",
+      "url": "https://github.com/axios/axios/issues/10604",
+      "date": "2026-03-31",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Axios News - North Korean Hackers Implicated in Major Supply Chain Attack",
+      "url": "https://www.axios.com/2026/03/31/north-korean-hackers-implicated-in-major-supply-chain-attack",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "Sophos Blog - Axios npm Package Compromised to Deploy Malware",
+      "url": "https://www.sophos.com/en-us/blog/axios-npm-package-compromised-to-deploy-malware",
+      "date": "2026-04-01",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-30",
+      "event": "North Korean threat actor UNC1069 compromises npm maintainer account for the axios package"
+    },
+    {
+      "date": "2026-03-30",
+      "event": "23:59 UTC: Malicious dependency plain-crypto-js@4.2.0 (clean decoy) and plain-crypto-js@4.2.1 (malicious dropper) published to npm registry to build plausible registry history"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "00:21 UTC: axios@1.14.1 published to npm with malicious plain-crypto-js@4.2.1 dependency injected into package.json (tagged 'latest')"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "01:00 UTC: axios@0.30.4 published with same malicious dependency (tagged 'legacy'), expanding attack to legacy users"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "01:50 UTC (89 seconds after first publication): First known victim system executes the malicious postinstall dropper, deploying WAVESHAPER.V2 RAT"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "Socket.dev automated security scanner detects malicious package within 6 minutes and alerts npm security team"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "03:20-03:25 UTC: npm removes malicious axios@1.14.1 and axios@0.30.4 packages; approximately 3 hours of malicious exposure window"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "22:17 UTC: Security researcher Jordan Sexton publishes complete Windows stage-2 RAT (WAVESHAPER.V2) source code, enabling broad detection"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "22:25 UTC: C2 infrastructure (sfrclak.com:8000) goes intermittent as operators scramble following source code exposure"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "Google Threat Intelligence Group officially attributes attack to UNC1069, North Korea-nexus financially motivated threat actor; Microsoft Threat Intelligence concurrently attributes to Sapphire Sleet"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "Huntress confirms 135+ compromised systems among its customer base; actual global victim count likely significantly higher"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "North Korean state-sponsored hackers (identified as UNC1069 by Google Threat Intelligence) hijacked the npm publishing account for axios — one of the most downloaded JavaScript packages in the world, used by over 100 million developers per week — and secretly replaced the latest version with malicious code. Anyone who installed or updated axios between 00:21 and 03:25 UTC on March 31, 2026 received a hidden backdoor called WAVESHAPER.V2, which gives attackers complete remote control over the infected computer. The attack was extremely well-planned: attackers first created a fake 'dependency' package to appear legitimate, then published malicious axios versions that silently install the RAT via an automatic post-install script. The backdoor works on Windows, macOS, and Linux. Although npm removed the packages within 3 hours, systems that installed during that window remain compromised unless the malware is identified and removed.",
+    "who_is_affected": "Any developer, CI/CD pipeline, Docker container, or production system that ran 'npm install', 'npm update', or a fresh 'npm ci' between 00:21-03:25 UTC on March 31, 2026 with axios listed as a dependency. This includes anyone who installed axios@1.14.1 or axios@0.30.4 during that window. Given axios's 100+ million weekly downloads and presence in roughly 80% of cloud and code environments, the potential blast radius is enormous. Huntress confirmed 135+ compromised systems among its own customers. The attack focuses on cloud development environments, CI/CD pipelines, and production Node.js services — environments likely to store cloud credentials and API keys.",
+    "what_attackers_do": "Step 1: UNC1069 compromises an axios npm maintainer's account via credential theft or phishing, gaining the ability to publish new package versions. Step 2: Attackers create a fake but plausible-looking dependency (plain-crypto-js@4.2.1) with a hidden postinstall script and publish it to npm to establish registry presence. Step 3: Attackers publish malicious axios@1.14.1 and axios@0.30.4 versions that include plain-crypto-js as a dependency — anyone installing axios automatically also installs the malicious dependency. Step 4: When npm install runs on a target system, the postinstall hook in plain-crypto-js silently downloads and executes a platform-specific RAT payload (WAVESHAPER.V2) connecting to the attacker's C2 server at sfrclak.com:8000. Step 5: The RAT establishes persistent access, performs system reconnaissance (hostname, processes, OS version), and enables attackers to execute arbitrary commands, read files, steal cloud credentials and API keys, and use the compromised system as a pivot point for further attacks.",
+    "what_you_should_do": [
+      "Check all package-lock.json and yarn.lock files across your codebase for any reference to axios@1.14.1, axios@0.30.4, or plain-crypto-js — these confirm exposure",
+      "Downgrade to axios@1.14.0 (or axios@0.30.3 for legacy) and delete node_modules/plain-crypto-js immediately on any potentially affected systems",
+      "Block the C2 domain sfrclak.com and IP address 142.11.206.73 at your perimeter firewall and DNS",
+      "Treat any system that installed axios during the 00:21-03:25 UTC window on March 31 as fully compromised — rotate all credentials and API keys on those systems",
+      "Rebuild affected systems from clean snapshots rather than attempting to clean malware in-place"
+    ],
+    "why_this_is_serious": "axios is one of the most foundational JavaScript packages in the ecosystem — it's the standard way Node.js applications make HTTP requests, meaning it's present in virtually every Node.js web application, microservice, and CI/CD pipeline. North Korean state actors chose this package specifically because of its massive reach and its presence in cloud development environments where AWS keys, GCP credentials, API secrets, and database passwords are commonly available. The WAVESHAPER.V2 RAT gives attackers persistent remote control — even if you delete the malicious package, infected systems remain compromised until the RAT is removed. North Korean cyber operations are primarily financially motivated (targeting cryptocurrency and cloud credentials to fund the state), meaning stolen credentials will be actively monetized."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.002",
+        "technique_name": "Supply Chain Compromise — Software Supply Chain",
+        "description": "Attackers compromised the axios npm package maintainer account and published malicious versions to the npm registry, embedding a dropper in the widely trusted package to infect developer and production environments at scale."
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1204.003",
+        "technique_name": "User Execution — Malicious File",
+        "description": "The malicious postinstall hook in plain-crypto-js@4.2.1 automatically executes when developers or CI/CD pipelines run npm install, requiring no user interaction beyond the standard package installation workflow."
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547.001",
+        "technique_name": "Boot or Logon Initialization Scripts — Registry Run Keys / Startup Folder",
+        "description": "On Windows, WAVESHAPER.V2 establishes persistence via Windows Registry run keys (PowerShell.exe copied to %PROGRAMDATA%\\wt.exe). On macOS, persistence is achieved via LaunchDaemon disguised as com.apple.act.mond."
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036.005",
+        "technique_name": "Masquerading — Match Legitimate Name or Location",
+        "description": "The RAT binary on macOS is disguised as an Apple system cache daemon (com.apple.act.mond), and on Windows PowerShell is copied to an inconspicuous path as wt.exe to evade process monitoring."
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1552",
+        "technique_name": "Unsecured Credentials",
+        "description": "WAVESHAPER.V2 performs file system reconnaissance specifically targeting cloud credential files (.aws/credentials, .config/gcloud, kubeconfig, .env files) commonly present in developer environments and CI/CD systems."
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1071.001",
+        "technique_name": "Application Layer Protocol — HTTP/HTTPS",
+        "description": "The RAT communicates with C2 infrastructure at sfrclak.com:8000 via HTTP POST requests with base64-encoded JSON payloads, beaconing every 60 seconds. A spoofed IE8 User-Agent (Mozilla/4.0 compatible; MSIE 8.0) is used to evade network signature detection."
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection centers on identifying malicious package versions in lockfiles, blocking known C2 infrastructure, monitoring for RAT-specific persistence artifacts and process behaviors, and auditing system activity on any environment that ran npm install during the 3-hour exposure window on March 31, 2026.",
+    "log_sources": [
+      {
+        "source": "Package lockfiles (package-lock.json, yarn.lock, pnpm-lock.yaml)",
+        "description": "Search all lockfiles in your repositories and CI/CD systems for references to axios@1.14.1, axios@0.30.4, or plain-crypto-js. Presence of plain-crypto-js at any version is a critical indicator of compromise.",
+        "priority": "Critical"
+      },
+      {
+        "source": "EDR / Endpoint Detection Logs",
+        "description": "Look for WAVESHAPER.V2 persistence artifacts: PowerShell.exe copied to %PROGRAMDATA%\\wt.exe (Windows), /Library/Caches/com.apple.act.mond binary (macOS), /tmp/ld.py Python script (Linux)",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Firewall / DNS Logs",
+        "description": "Monitor for outbound connections to sfrclak.com (IP: 142.11.206.73) on port 8000. Any communication to this infrastructure confirms active WAVESHAPER.V2 infection.",
+        "priority": "Critical"
+      },
+      {
+        "source": "CI/CD Pipeline Logs",
+        "description": "Review npm install logs from March 31, 2026 (00:21-03:25 UTC) in all CI/CD pipelines. Any pipeline that ran during this window and installed axios is potentially compromised.",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "plain-crypto-js in package-lock.json or node_modules",
+        "description": "The malicious dependency plain-crypto-js should NEVER appear in any legitimate axios installation. Any presence of this package is a definitive indicator of exposure to the malicious axios versions.",
+        "log_field": "file_path CONTAINS 'plain-crypto-js' OR package_lock CONTAINS 'plain-crypto-js'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound HTTP POST to sfrclak.com:8000",
+        "description": "Active WAVESHAPER.V2 infections beacon to the C2 server every 60 seconds via HTTP POST. Any network traffic to sfrclak.com or 142.11.206.73 on port 8000 confirms active malware.",
+        "log_field": "dest_ip='142.11.206.73' AND dest_port=8000 AND http_method='POST'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "PowerShell.exe copied to %PROGRAMDATA%\\wt.exe (Windows)",
+        "description": "WAVESHAPER.V2 copies the Windows PowerShell interpreter to %PROGRAMDATA%\\wt.exe as a persistence and evasion technique on Windows systems",
+        "log_field": "file_path='%PROGRAMDATA%\\wt.exe' AND file_hash NOT IN known_good_hashes",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Node.js spawning curl, osascript, or cscript from node_modules",
+        "description": "The postinstall dropper in plain-crypto-js executes platform-specific download/execution commands. Monitor for node.exe spawning system utilities (curl, osascript, cscript.exe) from within node_modules directories.",
+        "log_field": "parent_process='node.exe' AND parent_path CONTAINS 'node_modules' AND child_process IN ('curl','osascript','cscript.exe','wscript.exe')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "HTTP User-Agent: Mozilla/4.0 (compatible; MSIE 8.0) from Node.js process",
+        "description": "WAVESHAPER.V2 uses a spoofed Internet Explorer 8 User-Agent string for C2 communications. A Node.js process using this outdated UA is highly anomalous.",
+        "log_field": "user_agent='Mozilla/4.0 (compatible; MSIE 8.0)' AND process_name IN ('node.exe','node')",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "142.11.206.73"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Scan all lockfiles for malicious axios versions and plain-crypto-js",
+      "description": "Immediately search your entire codebase, CI/CD configurations, and deployed containers for package-lock.json or yarn.lock files referencing axios@1.14.1, axios@0.30.4, or any version of plain-crypto-js. Any hit requires immediate incident response.",
+      "command": "# Search entire git repo for malicious package references\ngrep -r 'plain-crypto-js' . --include='*.json' --include='*.lock'\ngrep -rE '\"axios\": \"1\\.14\\.1\"|\"axios\": \"0\\.30\\.4\"' . --include='*.json'"
+    },
+    {
+      "priority": 2,
+      "action": "Block C2 infrastructure at perimeter firewall and DNS",
+      "description": "Immediately add firewall rules and DNS blackhole entries to block outbound connections to sfrclak.com and 142.11.206.73 on all networks. Also block callnrwise.com (related infrastructure). This cuts off active WAVESHAPER.V2 RAT communications.",
+      "command": "# Block C2 IP at iptables\niptables -I OUTPUT -d 142.11.206.73 -j DROP\n# Add to /etc/hosts DNS blackhole\necho '0.0.0.0 sfrclak.com' >> /etc/hosts\necho '0.0.0.0 callnrwise.com' >> /etc/hosts"
+    },
+    {
+      "priority": 3,
+      "action": "Downgrade axios and remove plain-crypto-js on exposed systems",
+      "description": "On any system that may have installed the malicious versions, downgrade axios to 1.14.0 (or 0.30.3 for legacy), run npm install to rebuild node_modules, and ensure plain-crypto-js does not appear in node_modules. Note: this removes the delivery mechanism but NOT an already-deployed WAVESHAPER.V2 RAT.",
+      "command": "# Downgrade axios\nnpm install axios@1.14.0\n# Remove malicious dependency\nnpm uninstall plain-crypto-js\nrm -rf node_modules/plain-crypto-js\n# Verify clean\nls node_modules | grep plain"
+    },
+    {
+      "priority": 4,
+      "action": "Treat exposed systems as fully compromised — rotate all credentials",
+      "description": "Any system that executed npm install during the 00:21-03:25 UTC window on March 31 should be treated as compromised. Immediately rotate all AWS/GCP/Azure credentials, API keys, database passwords, and any other secrets accessible from those systems. Rebuild from clean snapshots where possible.",
+      "command": "# AWS: rotate all access keys\naws iam list-access-keys --user-name <username>\naws iam delete-access-key --access-key-id <key-id>\naws iam create-access-key --user-name <username>"
+    },
+    {
+      "priority": 5,
+      "action": "Hunt for WAVESHAPER.V2 persistence artifacts on potentially exposed systems",
+      "description": "On systems that may have been exposed, actively search for WAVESHAPER.V2 persistence indicators: %PROGRAMDATA%\\wt.exe (Windows), /Library/Caches/com.apple.act.mond (macOS), /tmp/ld.py (Linux). Isolate and reimage any system where RAT artifacts are found.",
+      "command": "# Linux: check for RAT artifacts\nls -la /tmp/ld.py 2>/dev/null\nfind / -name 'ld.py' -path '/tmp/*' 2>/dev/null\n# macOS\nls -la /Library/Caches/com.apple.act.mond 2>/dev/null"
+    }
+  ]
+}

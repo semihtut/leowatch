@@ -1,0 +1,276 @@
+{
+  "briefing_id": "TB-2026-03-06-001",
+  "title": "Cisco Secure Firewall Management Center Dual CVSS 10.0 Vulnerabilities: Unauthenticated Authentication Bypass and Java Deserialization RCE Grant Immediate Root Access to Enterprise Firewall Infrastructure (CVE-2026-20079, CVE-2026-20131)",
+  "generated_date": "2026-03-06",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-20079",
+    "CVE-2026-20131"
+  ],
+  "tags": [
+    "cisco",
+    "firewall",
+    "authentication-bypass",
+    "java-deserialization",
+    "rce",
+    "network-security"
+  ],
+  "affected_products": [
+    "Cisco Secure Firewall Management Center (FMC) 6.4.0.x",
+    "Cisco Secure Firewall Management Center (FMC) 7.0.x",
+    "Cisco Secure Firewall Management Center (FMC) 7.1.x",
+    "Cisco Secure Firewall Management Center (FMC) 7.2.x",
+    "Cisco Security Cloud Control (SCC) Firewall Management"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "BleepingComputer - Cisco warns of max-severity Secure FMC flaws giving root access",
+      "url": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-max-severity-secure-fmc-flaws-giving-root-access/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "Cisco Security Advisory - Authentication Bypass CVE-2026-20079",
+      "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-onprem-fmc-authbypass-5JPp45V2",
+      "date": "2026-03-04",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Cisco Security Advisory - Java Deserialization RCE CVE-2026-20131",
+      "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-rce-NKhnULJh",
+      "date": "2026-03-04",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CyberScoop - Cisco reveals 2 max-severity defects in firewall management software",
+      "url": "https://cyberscoop.com/cisco-critical-vulnerabilities-secure-firewall-management-center-software/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "SecurityAffairs - Cisco fixes maximum severity Secure FMC bugs",
+      "url": "https://securityaffairs.com/188921/security/cisco-fixes-maximum-severity-secure-fmc-bugs-threatening-firewall-security.html",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Cisco Patches Critical Vulnerabilities in Enterprise Networking Products",
+      "url": "https://www.securityweek.com/cisco-patches-critical-vulnerabilities-in-enterprise-networking-products/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "TheHackerWire - Cisco FMC Critical Auth Bypass to Root RCE",
+      "url": "https://www.thehackerwire.com/cisco-fmc-critical-auth-bypass-to-root-rce/",
+      "date": "2026-03-04",
+      "type": "Research"
+    },
+    {
+      "name": "TheHackerWire - Cisco FMC RCE via Insecure Deserialization CVE-2026-20131",
+      "url": "https://www.thehackerwire.com/cisco-fmc-rce-via-insecure-deserialization-cve-2026-20131/",
+      "date": "2026-03-04",
+      "type": "Research"
+    },
+    {
+      "name": "CSO Online - Cisco issues emergency patches for critical firewall vulnerabilities",
+      "url": "https://www.csoonline.com/article/4141268/cisco-issues-emergency-patches-for-critical-firewall-vulnerabilities.html",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Cisco warns of SD-WAN Manager exploitation, fixes 48 firewall vulnerabilities",
+      "url": "https://www.helpnetsecurity.com/2026/03/05/cisco-cve-2026-20128-cve-2026-20122-exploited/",
+      "date": "2026-03-05",
+      "type": "News"
+    },
+    {
+      "name": "CybersecurityNews - Cisco Secure Firewall Management Vulnerability Allow Attackers to Bypass Authentication",
+      "url": "https://cybersecuritynews.com/cisco-secure-firewall-management-vulnerability-allow-attackers-to-bypass-authentication/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "Infosecurity Magazine - Cisco Issues Patches for 48 Vulnerabilities",
+      "url": "https://www.infosecurity-magazine.com/news/cisco-issues-patches-48/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "TheStack - Two CVSS 10s on Cisco Secure Firewall Management Center",
+      "url": "https://www.thestack.technology/two-cvss-10s-on-cisco-secure-firewall-management-center/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "Abstract Security - Critical Cisco Vulnerabilities CVE-2026-20079 and CVE-2026-20131",
+      "url": "https://www.abstract.security/blog/critical-cisco-vulnerabilities-cve-2026-20079-and-cve-2026-20131",
+      "date": "2026-03-04",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-04",
+      "event": "Cisco published 25 security advisories covering 48 CVEs, including two CVSS 10.0 critical vulnerabilities in Cisco Secure Firewall Management Center (FMC): CVE-2026-20079 (authentication bypass) and CVE-2026-20131 (Java deserialization RCE)"
+    },
+    {
+      "date": "2026-03-04",
+      "event": "Cisco released patched FMC versions (7.0.9, 7.2.11) — no workarounds available for either vulnerability; patching is the only mitigation"
+    },
+    {
+      "date": "2026-03-04",
+      "event": "Emergency coverage by major security news outlets; Dutch NCSC published alert warning of expected public PoC and large-scale exploitation"
+    },
+    {
+      "date": "2026-03-05",
+      "event": "Additional security research coverage published; runZero released asset discovery guidance for identifying vulnerable FMC instances on enterprise networks"
+    },
+    {
+      "date": "2026-03-06",
+      "event": "No confirmed active exploitation reported as of briefing date; however, security analysts expect proof-of-concept exploits and widespread scanning imminently"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Cisco discovered two maximum-severity security flaws (CVSS 10.0) in its Firewall Management Center (FMC) — the central software that IT teams use to manage Cisco Firepower firewalls across an organization. The first flaw (CVE-2026-20079) allows anyone on the network to bypass the login screen entirely due to an improper process started at device boot time. The second flaw (CVE-2026-20131) allows attackers to send a specially crafted malicious Java object to the FMC, which the software processes without checking whether it is safe, leading to arbitrary code execution as the root (all-powerful) administrator. Neither flaw requires a username or password to exploit, and there are no workarounds — only patching resolves the risk.",
+    "who_is_affected": "Any organization running Cisco Secure Firewall Management Center on-premises, specifically versions 6.4.0.x, 7.0.x, 7.1.x, and 7.2.x. FMC is used by enterprises, government agencies, and critical infrastructure operators worldwide to centrally manage Cisco Firepower and FTD (Firewall Threat Defense) appliances. Downstream devices managed by a compromised FMC — including all Firepower and FTD firewalls — are also at risk of policy manipulation.",
+    "what_attackers_do": "Step 1: Attackers identify Cisco FMC instances on the internet or the target network using network scanning tools — FMC management interfaces typically listen on port 8305. Step 2: For CVE-2026-20079 (auth bypass), the attacker sends crafted HTTP requests to the FMC web interface, exploiting an improperly created boot-time process to bypass authentication and gain root access without any credentials. Step 3: For CVE-2026-20131 (Java deserialization), the attacker sends a serialized Java payload containing malicious bytecode to a vulnerable FMC endpoint; when the server deserializes it without validation, arbitrary Java code executes as root. Step 4: With root access to FMC, the attacker can modify firewall rules to open holes in the network perimeter, exfiltrate data, install backdoors on the FMC itself, or push malicious configurations to all managed Firepower and FTD devices downstream. Step 5: The attacker maintains persistent access to the entire firewall infrastructure, enabling long-term surveillance, traffic interception, and lateral movement across the victim's network.",
+    "what_you_should_do": [
+      "Immediately identify all Cisco FMC instances in your environment and determine which are running versions 6.4.0.x, 7.0.x, 7.1.x, or 7.2.x",
+      "Apply Cisco's patches as a top priority: upgrade to FMC 7.0.9 or later for 7.0.x deployments, and 7.2.11 or later for 7.1.x/7.2.x deployments",
+      "Until patching is complete, restrict network access to the FMC management interface — block direct internet access and limit connections to known trusted IP ranges via firewall rules",
+      "Enable logging and monitoring on FMC management interface traffic; look for unexpected requests containing Java serialization magic bytes (0xACED0005) or unauthenticated access to the admin panel",
+      "After patching, audit FMC logs and managed device configurations for any unauthorized changes that may indicate prior exploitation"
+    ],
+    "why_this_is_serious": "Cisco FMC is the command center for an organization's Cisco firewall infrastructure. Compromising it gives attackers complete control over the organization's network perimeter — they can silently remove firewall rules, allow attacker traffic, redirect connections, or shut down defenses entirely. Both CVEs carry a perfect CVSS score of 10.0 and require no authentication, meaning any internet-connected FMC is one malicious HTTP request away from full compromise. Because FMC manages all downstream Firepower/FTD devices, a single FMC compromise cascades to every firewall it controls."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated authentication bypass (CVE-2026-20079) or Java deserialization flaw (CVE-2026-20131) in the Cisco FMC web interface to gain initial root access without credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.002",
+        "technique_name": "Command and Scripting Interpreter: AppleScript / Shell",
+        "description": "CVE-2026-20079 enables execution of arbitrary system scripts via the boot-time process bypass; CVE-2026-20131 enables arbitrary Java code execution as root through the insecure deserialization endpoint"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547.001",
+        "technique_name": "Boot or Logon Autostart Execution",
+        "description": "The authentication bypass (CVE-2026-20079) is rooted in an improper boot-time system process, and attackers can leverage their root access to implant persistent backdoors that survive reboots"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1570",
+        "technique_name": "Lateral Tool Transfer",
+        "description": "A compromised FMC can be used to push malicious configurations, backdoors, or altered firewall rules to all downstream Firepower Threat Defense (FTD) and ASA devices under its management"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.004",
+        "technique_name": "Impair Defenses: Disable or Modify System Firewall",
+        "description": "Attackers with root FMC access can silently modify, delete, or disable firewall rules across all managed appliances, effectively neutralizing network perimeter defenses"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on monitoring FMC web interface access logs for unauthenticated requests to protected endpoints, network traffic containing Java serialization magic bytes (0xACED0005) targeting FMC management ports, and any unexpected root-level process executions or configuration changes on the FMC appliance.",
+    "log_sources": [
+      {
+        "source": "Cisco FMC Web Server Access Logs",
+        "description": "Monitor HTTP/HTTPS requests to the FMC management interface for unauthenticated access to administrative endpoints and POST requests with binary Java serialization payloads",
+        "priority": "Critical"
+      },
+      {
+        "source": "FMC Application and Audit Logs",
+        "description": "Review FMC audit logs for unexpected configuration changes, unusual authentication events, and privilege escalation or root-level command execution",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network IDS/IPS",
+        "description": "Deploy signatures detecting Java deserialization magic bytes (0xACED0005) in HTTP traffic targeting FMC management ports (typically 8305, 8307); alert on unusual source IPs accessing the FMC",
+        "priority": "High"
+      },
+      {
+        "source": "Firewall/WAF Logs",
+        "description": "Monitor perimeter firewall and WAF logs for traffic to FMC management ports originating from unexpected sources; flag any internet-originating connections to FMC ports",
+        "priority": "High"
+      },
+      {
+        "source": "FMC System Syslog",
+        "description": "Monitor OS-level syslog on FMC for new process spawns, unexpected cron job additions, SSH key changes, or outbound network connections that may indicate post-exploitation activity",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST requests to FMC management endpoints with Java serialization magic bytes",
+        "description": "HTTP POST or PUT requests containing the Java serialization stream header 0xACED0005 targeting FMC web management ports indicate CVE-2026-20131 exploitation attempts",
+        "log_field": "http.request_body contains '\\xac\\xed\\x00\\x05'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unauthenticated access to FMC administrative endpoints",
+        "description": "Requests to /admin/ or authenticated-only FMC API endpoints that succeed without a valid session token or credentials may indicate CVE-2026-20079 exploitation",
+        "log_field": "http.status=200 AND http.auth_header IS NULL AND http.url CONTAINS '/admin'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected outbound connections from FMC appliance",
+        "description": "FMC initiating connections to external IPs or unusual internal hosts may indicate post-exploitation reverse shell or C2 beaconing activity",
+        "log_field": "src_ip=FMC_IP AND direction=outbound AND dst_port IN (4444, 8080, 443, 80)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected FMC firewall policy changes",
+        "description": "Configuration audit log entries showing firewall rule additions, deletions, or modifications by unexpected users or at unusual times may indicate an attacker manipulating defenses",
+        "log_field": "fmc_audit.action IN ('rule_added','rule_deleted','policy_modified') AND user NOT IN (known_admins)",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Identify and assess all FMC instances",
+      "description": "Use your asset inventory or runZero/Shodan to identify all Cisco FMC appliances. Determine which version each runs. Prioritize internet-facing FMC deployments as highest risk.",
+      "command": "curl -s https://www.shodan.io/search?query=Cisco+Firepower+Management+Center+http.title"
+    },
+    {
+      "priority": 2,
+      "action": "Immediately restrict FMC management interface access",
+      "description": "As an emergency measure, implement firewall ACLs to block all access to FMC management ports (8305, 8307, 443) from internet-facing IPs. Only allow connections from known trusted admin workstation IP ranges.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Apply Cisco patches to all affected FMC instances",
+      "description": "Upgrade affected FMC versions: 6.4.0.x and 7.0.x → upgrade to 7.0.9 or later; 7.1.x and 7.2.x → upgrade to 7.2.11 or later. Use Cisco Software Checker to confirm exact required versions. No workarounds exist — patching is mandatory.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Enable IDS/IPS signatures for Java deserialization attacks",
+      "description": "Deploy or enable network IDS rules detecting Java serialization magic bytes (0xACED0005) in HTTP traffic targeting FMC ports. Review existing Cisco Firepower intrusion rules for deserialization detection.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Audit FMC logs and managed device configs for prior compromise indicators",
+      "description": "If your FMC was internet-accessible before patching, assume potential compromise. Review the past 30 days of FMC audit logs for unauthorized configuration changes, new admin accounts, or unexpected system processes. Verify all managed Firepower/FTD device policy integrity.",
+      "command": null
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "briefing_id": "TB-2026-03-25-002",
+  "title": "Interlock Ransomware Exploits Cisco Secure Firewall Management Center Zero-Day CVE-2026-20131 (CVSS 10.0): 36-Day Pre-Disclosure Exploitation Enables Unauthenticated Root Access via Java Deserialization",
+  "generated_date": "2026-03-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-04-07"
+  },
+  "cves": [
+    "CVE-2026-20131"
+  ],
+  "tags": [
+    "interlock-ransomware",
+    "cisco-fmc",
+    "zero-day",
+    "java-deserialization",
+    "firewall",
+    "pre-auth-rce",
+    "ransomware",
+    "network-infrastructure",
+    "actively-exploited"
+  ],
+  "affected_products": [
+    "Cisco Secure Firewall Management Center (FMC) - all versions prior to the March 4 2026 security patch",
+    "Organizations using Cisco FMC to manage Cisco Secure Firewall (Firepower) appliances",
+    "Any network where Cisco FMC management interface is reachable from untrusted networks"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "The Hacker News: Interlock Ransomware Exploits Cisco FMC Zero-Day CVE-2026-20131 for Root Access",
+      "url": "https://thehackernews.com/2026/03/interlock-ransomware-exploits-cisco-fmc.html",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security: Cisco FMC flaw was exploited by Interlock weeks before patch (CVE-2026-20131)",
+      "url": "https://www.helpnetsecurity.com/2026/03/20/cisco-fmc-interlock-ransomware-cve-2026-20131/",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "Amazon Web Services: Amazon threat intelligence teams identify Interlock ransomware campaign targeting enterprise firewalls",
+      "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-teams-identify-interlock-ransomware-campaign-targeting-enterprise-firewalls/",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityAffairs: Interlock group exploiting the CISCO FMC flaw CVE-2026-20131 36 days before disclosure",
+      "url": "https://securityaffairs.com/189636/malware/interlock-group-exploiting-the-cisco-fmc-flaw-cve-2026-20131-36-days-before-disclosure.html",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek: Cisco Firewall Vulnerability Exploited as Zero-Day in Interlock Ransomware Attacks",
+      "url": "https://www.securityweek.com/cisco-firewall-vulnerability-exploited-as-zero-day-in-interlock-ransomware-attacks/",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online: Ransomware group exploited Cisco firewall vulnerability as a zero-day, weeks before a patch appeared",
+      "url": "https://www.csoonline.com/article/4147770/ransomware-group-exploited-cisco-firewall-vulnerability-as-a-zero-day-weeks-before-a-patch-appeared.html",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "TheCyberExpress: Interlock Exploits FMC CVE-2026-20131 Via Amazon MadPot",
+      "url": "https://thecyberexpress.com/interlock-fmc-cve-2026-20131/",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "ITSC News: Cybersecurity Threat Advisory - Interlock targets Cisco Secure FMC in zero-day",
+      "url": "https://www.itscnews.com/news/cybersecurity-threat-advisory-interlock-targets-cisco-secure-fmc-in-zero-day/",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "Cisco Security Advisory for CVE-2026-20131",
+      "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-rce-CVE-2026-20131",
+      "date": "2026-03-04",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Vulert: Interlock Ransomware Exploits Cisco FMC Zero-Day CVE-2026-20131 for Root Access",
+      "url": "https://vulert.com/blog/interlock-ransomware-exploits-cisco-cve-2026-20131/",
+      "date": "2026-03-18",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-26",
+      "event": "Interlock ransomware group begins zero-day exploitation of CVE-2026-20131 against Cisco FMC instances, 36 days before public disclosure"
+    },
+    {
+      "date": "2026-03-04",
+      "event": "Cisco publicly discloses CVE-2026-20131 and releases security patches for Secure Firewall Management Center"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "Multiple security researchers and Amazon MadPot threat intelligence teams publicly confirm Interlock ransomware gang was exploiting the vulnerability as a zero-day since late January"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "CISA adds CVE-2026-20131 to the Known Exploited Vulnerabilities catalog with remediation deadline; extensive post-exploitation TTPs documented including PowerShell-based reconnaissance and ScreenConnect deployment"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "Active exploitation continues against unpatched Cisco FMC instances; organizations urged to verify patch status and investigate for indicators of prior compromise during the 36-day zero-day window"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "The Interlock ransomware group has been exploiting a maximum-severity vulnerability (CVSS 10.0) in Cisco Secure Firewall Management Center (FMC) as a zero-day for 36 days before Cisco publicly disclosed and patched it. The vulnerability, CVE-2026-20131, stems from insecure deserialization of user-supplied Java byte streams, allowing unauthenticated remote attackers to bypass authentication and execute arbitrary Java code as root on the FMC appliance. Amazon's MadPot threat intelligence honeypot network was instrumental in detecting and attributing the exploitation to the Interlock ransomware gang.",
+    "who_is_affected": "Any organization using Cisco Secure Firewall Management Center (FMC) to manage their Cisco Firepower firewall infrastructure. This includes enterprises, government agencies, and service providers relying on Cisco FMC for centralized firewall policy management, threat detection, and network security monitoring. Organizations that had FMC management interfaces reachable from untrusted networks during the January 26 to March 4 zero-day window are at highest risk of having been already compromised.",
+    "what_attackers_do": "Step 1: Interlock scans for internet-exposed Cisco FMC management interfaces and sends crafted HTTP requests containing a malicious serialized Java object to a specific endpoint in the FMC web interface. Step 2: The FMC application deserializes the attacker-supplied Java byte stream without proper validation, allowing arbitrary Java code execution as root on the appliance. Step 3: The exploit payload contains two embedded URLs - one delivering configuration data to support the exploit and another causing the vulnerable target to perform an HTTP PUT request uploading a file to confirm successful exploitation. Step 4: Attackers deploy a PowerShell-based reconnaissance script that systematically collects detailed system and network information from the compromised FMC and connected network infrastructure. Step 5: Interlock installs unauthorized ScreenConnect remote access agents on compromised systems for persistent access, then moves laterally through the network deploying ransomware to enterprise systems.",
+    "what_you_should_do": [
+      "Immediately apply the Cisco security patch for CVE-2026-20131 released on March 4 2026 to all Firewall Management Center instances",
+      "Investigate for compromise indicators during the January 26 to March 4 zero-day exploitation window - check FMC logs for unexpected HTTP requests with serialized Java objects",
+      "Ensure Cisco FMC management interfaces are not accessible from untrusted networks - restrict access to dedicated management VLANs only",
+      "Audit all systems for unauthorized ScreenConnect installations which Interlock deploys for persistent remote access",
+      "Review network segmentation to ensure FMC compromise cannot provide a pivot point to the broader enterprise network"
+    ],
+    "why_this_is_serious": "Cisco Firewall Management Center is the centralized brain of an organization's Cisco firewall infrastructure, controlling security policies, threat detection rules, and network access controls across the entire firewall deployment. Compromising FMC gives attackers root-level access to the device that manages all firewalls, effectively giving them the keys to disable security controls, create backdoor access rules, and move laterally with impunity. The 36-day zero-day exploitation window means many organizations may already be compromised without knowing it, and the CVSS 10.0 score reflects the devastating combination of no authentication required, remote exploitation, and root-level code execution."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Interlock exploits CVE-2026-20131 in internet-exposed Cisco FMC management interfaces to achieve unauthenticated remote code execution as root via Java deserialization"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.001",
+        "technique_name": "Command and Scripting Interpreter: PowerShell",
+        "description": "Post-exploitation involves deployment of PowerShell-based reconnaissance scripts that systematically collect system and network configuration details from compromised infrastructure"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1219",
+        "technique_name": "Remote Access Software",
+        "description": "Interlock deploys unauthorized ScreenConnect remote access agents on compromised systems for persistent access that survives reboots and security tool restarts"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1018",
+        "technique_name": "Remote System Discovery",
+        "description": "PowerShell reconnaissance scripts enumerate the network to identify additional targets, mapping the organization's firewall infrastructure and connected systems"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "From the compromised FMC, attackers leverage network access and discovered credentials to move laterally to enterprise systems for ransomware deployment"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1486",
+        "technique_name": "Data Encrypted for Impact",
+        "description": "Interlock deploys ransomware to encrypt enterprise systems after achieving sufficient lateral movement from the initial FMC compromise"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying exploitation attempts against Cisco FMC web interfaces through HTTP request analysis, monitoring for unauthorized ScreenConnect installations, and detecting PowerShell-based reconnaissance scripts. Organizations should also retroactively analyze logs from the January 26 to March 4 zero-day window for indicators of prior compromise.",
+    "log_sources": [
+      {
+        "source": "Cisco FMC Web Server Logs",
+        "description": "Monitor for HTTP requests with unusually large or encoded request bodies targeting FMC web endpoints, particularly those containing serialized Java objects (magic bytes AC ED 00 05)",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Monitoring (NDR/IDS)",
+        "description": "Alert on outbound HTTP PUT requests from Cisco FMC appliances to external IP addresses, which indicate successful exploitation confirmation callbacks",
+        "priority": "Critical"
+      },
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Monitor for unauthorized ScreenConnect agent installations across the enterprise, as Interlock uses this for persistent remote access post-exploitation",
+        "priority": "High"
+      },
+      {
+        "source": "Windows Event Logs / PowerShell Logging",
+        "description": "Enable and monitor PowerShell script block logging for reconnaissance scripts that enumerate system configuration, network topology, and firewall policies",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "HTTP requests to Cisco FMC with serialized Java objects in request body",
+        "description": "Exploitation sends crafted HTTP requests containing malicious Java byte streams to FMC web endpoints; look for requests with binary content containing Java serialization magic bytes",
+        "log_field": "dst_port IN (443, 8443) AND dst_host='fmc' AND http_content_type CONTAINS 'application/java' OR request_body CONTAINS 'rO0AB'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound HTTP PUT requests from Cisco FMC to external IP addresses",
+        "description": "Successful exploitation causes the FMC to make an HTTP PUT request uploading a file to attacker infrastructure as a confirmation beacon",
+        "log_field": "src_ip IN cisco_fmc_ips AND http_method='PUT' AND dst_ip NOT IN trusted_cisco_destinations",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unauthorized ScreenConnect agent installations on enterprise systems",
+        "description": "Interlock deploys ScreenConnect for persistent remote access; any ScreenConnect installation not approved by IT is a strong indicator of compromise",
+        "log_field": "process_name CONTAINS 'ScreenConnect' AND installation_source != 'approved_deployment'",
+        "severity": "High"
+      },
+      {
+        "indicator": "PowerShell scripts performing systematic network and system enumeration",
+        "description": "Post-exploitation involves PowerShell reconnaissance collecting detailed system info, network maps, and firewall configurations",
+        "log_field": "event_id=4104 AND scriptblock_text MATCHES 'Get-NetAdapter|Get-NetFirewallRule|Get-DomainComputer|systeminfo'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply Cisco security patch for CVE-2026-20131 immediately on all FMC instances",
+      "description": "Cisco released patches on March 4, 2026. All versions of Cisco Secure Firewall Management Center prior to the patch are vulnerable to unauthenticated root-level RCE. Apply the update during the next available maintenance window or immediately if FMC is internet-facing.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Restrict Cisco FMC management interface access to trusted management networks only",
+      "description": "Ensure FMC management interfaces are only accessible from dedicated management VLANs and jump hosts. Block all internet-facing access to FMC web interfaces on ports 443 and 8443.",
+      "command": "iptables -I INPUT -p tcp --dport 443 -s 0.0.0.0/0 -j DROP && iptables -I INPUT -p tcp --dport 443 -s MGMT_VLAN_CIDR -j ACCEPT"
+    },
+    {
+      "priority": 3,
+      "action": "Investigate for compromise during the January 26 to March 4 zero-day window",
+      "description": "Review Cisco FMC logs and network traffic captures from this period for exploitation indicators including unusual HTTP requests with serialized payloads and outbound PUT requests to external IPs.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Scan all enterprise systems for unauthorized ScreenConnect installations",
+      "description": "Interlock deploys ScreenConnect remote access agents after initial FMC compromise. Search for any unauthorized ScreenConnect installations across the environment.",
+      "command": "Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -like '*ScreenConnect*' } | Select-Object Name, InstallDate, Vendor"
+    }
+  ]
+}

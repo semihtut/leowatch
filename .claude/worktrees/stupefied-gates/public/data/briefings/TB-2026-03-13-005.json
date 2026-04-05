@@ -1,0 +1,274 @@
+{
+  "briefing_id": "TB-2026-03-13-005",
+  "title": "Veeam Backup & Replication 7 Critical RCE Flaws Let Any Domain User Compromise Backup Infrastructure: Ransomware Groups Expected to Weaponize Within Days (CVE-2026-21666, CVE-2026-21669)",
+  "generated_date": "2026-03-13",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.9,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-21666",
+    "CVE-2026-21669"
+  ],
+  "tags": [
+    "veeam",
+    "backup",
+    "rce",
+    "ransomware",
+    "domain-user",
+    "authenticated",
+    "data-protection"
+  ],
+  "affected_products": [
+    "Veeam Backup & Replication 12.x (all versions before 12.3.2.4465)",
+    "Veeam Backup & Replication 13.x (all versions before 13.0.1.2067)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "Veeam KB4830 - Security Vulnerabilities Fixed in Veeam Backup & Replication 12.3.2.4465",
+      "url": "https://www.veeam.com/kb4830",
+      "date": "2026-03-12",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Veeam KB4831 - Security Vulnerabilities Fixed in Veeam Backup & Replication 13.0.1.2067",
+      "url": "https://www.veeam.com/kb4831",
+      "date": "2026-03-12",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - NIST CVE-2026-21666",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21666",
+      "date": "2026-03-12",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - NIST CVE-2026-21669",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21669",
+      "date": "2026-03-12",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable CVE-2026-21666 - Veeam Backup & Replication Authenticated RCE",
+      "url": "https://www.tenable.com/cve/CVE-2026-21666",
+      "date": "2026-03-12",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable CVE-2026-21669 - Veeam Backup Server Authenticated RCE",
+      "url": "https://www.tenable.com/cve/CVE-2026-21669",
+      "date": "2026-03-12",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf: Critical Vulnerabilities Patched in Veeam Backup & Replication",
+      "url": "https://arcticwolf.com/resources/blog/critical-vulnerabilities-patched-in-veeam-products/",
+      "date": "2026-03-12",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer: Veeam Warns of Critical Flaws Exposing Backup Servers to RCE Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/veeam-warns-of-critical-flaws-exposing-backup-servers-to-rce-attacks/",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News: Veeam Patches 7 Critical Backup & Replication Flaws Allowing Remote Code Execution",
+      "url": "https://thehackernews.com/2026/03/veeam-patches-7-critical-backup.html",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer: Akira and Fog Ransomware Now Exploiting Critical Veeam RCE Flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/akira-and-fog-ransomware-now-exploiting-critical-veeam-rce-flaw/",
+      "date": "2025-10-10",
+      "type": "News"
+    },
+    {
+      "name": "watchTowr Labs: Veeam Backup & Replication RCE Research (CVE-2024-40711)",
+      "url": "https://labs.watchtowr.com/veeam-backup-response-rce-with-auth-but-mostly-without-auth-cve-2024-40711-2/",
+      "date": "2024-09-18",
+      "type": "Research"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security: Veeam Security Advisory AV26-229",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/veeam-security-advisory-av26-229",
+      "date": "2026-03-12",
+      "type": "Government"
+    },
+    {
+      "name": "SecurityWeek: Veeam Patches Critical RCE Vulnerabilities in Backup & Replication",
+      "url": "https://www.securityweek.com/veeam-patches-critical-rce-vulnerabilities-backup-replication/",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "Rapid7: Critical Veeam Backup & Replication Vulnerability Research (CVE-2025-23120 context)",
+      "url": "https://www.rapid7.com/blog/post/2025/03/19/etr-critical-veeam-backup-and-replication-cve-2025-23120/",
+      "date": "2025-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-13",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-10-10",
+      "event": "Akira and Fog ransomware groups actively exploited prior Veeam RCE flaw (CVE-2024-40711), establishing ransomware groups' targeting pattern for Veeam infrastructure"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "CVE-2025-23120 (earlier critical Veeam RCE) added to CISA KEV Catalog after ransomware exploitation"
+    },
+    {
+      "date": "2026-03-12",
+      "event": "Veeam publicly discloses 7 critical vulnerabilities affecting Backup & Replication versions 12.x and 13.x"
+    },
+    {
+      "date": "2026-03-12",
+      "event": "Veeam releases patched versions: 12.3.2.4465 (KB4830) and 13.0.1.2067 (KB4831)"
+    },
+    {
+      "date": "2026-03-13",
+      "event": "No confirmed active exploitation yet; ransomware groups historically exploit Veeam flaws within 15-30 days of disclosure"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Veeam released emergency patches on March 12, 2026 for 7 critical vulnerabilities in Backup & Replication — their flagship enterprise backup product. The two most severe flaws (CVE-2026-21666 and CVE-2026-21669) both score CVSS 9.9 and allow any domain user in an organization to remotely execute arbitrary code on the backup server. The root cause: a broken access control check in the Mount service incorrectly grants access to all members of the Windows 'Users' group — which includes every domain user by default. Only domain-joined backup servers are affected, but nearly all enterprise deployments are domain-joined.",
+    "who_is_affected": "All organizations running domain-joined Veeam Backup & Replication servers on version 12.x before 12.3.2.4465 or version 13.x before 13.0.1.2067. This includes most enterprise environments using Veeam for VM, cloud, or physical server backups — particularly in financial services, healthcare, manufacturing, and critical infrastructure sectors.",
+    "what_attackers_do": "Step 1: Attacker obtains any domain user credentials — even a standard employee account — through phishing, credential stuffing, or prior breach. Step 2: Attacker identifies the Veeam Backup Server on the network (typically reachable on port 6161 or 9202). Step 3: Attacker connects to the Veeam Mount service and exploits the broken access control check (CMountServiceAccessChecker.HasAccess) which incorrectly permits all domain Users group members. Step 4: Attacker sends a malicious RPC payload to trigger remote code execution, running commands as the Veeam service account. Step 5: With full control of the backup server, attacker can steal all backup data, delete or encrypt backups to prevent recovery, extract credentials stored in backup images, and pivot laterally throughout the entire infrastructure.",
+    "what_you_should_do": [
+      "Immediately upgrade to Veeam 12.3.2.4465 (for version 12 deployments) or 13.0.1.2067 (for version 13 deployments) — patches are available now",
+      "Restrict network access to Veeam service ports (6161, 9202, 7007, 7008) using firewall rules to allow only authorized Veeam console servers and administrators",
+      "Review Veeam access logs for any unusual authentication attempts from unexpected domain accounts in the past 30-60 days",
+      "Consider isolating backup servers on a separate network segment accessible only to backup administrators and protected infrastructure",
+      "Maintain offline or air-gapped backup copies that cannot be reached from domain-joined Veeam servers, as a ransomware resilience measure"
+    ],
+    "why_this_is_serious": "Backup infrastructure is the last line of defense against ransomware. When attackers compromise Veeam, they can delete all backups before triggering encryption, eliminating the victim's recovery options and dramatically increasing the pressure to pay ransom. Veeam has been targeted by LockBit, Akira, Fog, and Frag ransomware groups in previous campaigns. With a CVSS 9.9 score, domain-user-level exploitation, and Veeam's ubiquity in enterprise environments, security researchers estimate public proof-of-concept exploits will emerge within days, and ransomware weaponization within two to four weeks."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1078.002",
+        "technique_name": "Valid Accounts: Domain Accounts",
+        "description": "Attackers use any valid domain user account to authenticate to the Veeam Mount service and trigger the access control bypass"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1569.002",
+        "technique_name": "System Services: Service Execution",
+        "description": "Remote code execution is achieved via the vulnerable Veeam service, running code in the context of the Veeam service account"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1486",
+        "technique_name": "Data Encrypted for Impact",
+        "description": "Ransomware groups historically compromise Veeam to delete or encrypt backups before deploying ransomware across the organization, eliminating recovery options"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Backup repositories contain full disk images and file-level backups of all organizational systems, providing attackers access to all data in the environment"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "Credentials extracted from backup images enable lateral movement to all systems whose backups are stored on the compromised Veeam server"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on unusual access to Veeam service ports from non-administrative accounts, unexpected process execution from Veeam service accounts, and large data transfers from backup repositories. Monitor Windows Event Logs on the backup server for domain user logins from unexpected systems.",
+    "log_sources": [
+      {
+        "source": "Veeam Backup & Replication Application Logs",
+        "description": "Native Veeam logs record all service interactions, job activity, and authentication events; review for unexpected domain user access",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Security Event Log (Backup Server)",
+        "description": "Event IDs 4624 (successful logon), 4625 (failed logon), 4648 (explicit credential use) on the Veeam server reveal unauthorized access attempts",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow / Firewall Logs",
+        "description": "Monitor connections to Veeam ports 6161, 9202, 7007, 7008 from unexpected source IPs or during unusual hours",
+        "priority": "High"
+      },
+      {
+        "source": "Windows Process Creation Events (Sysmon Event ID 1)",
+        "description": "Detect unusual processes spawned by Veeam service accounts (e.g., cmd.exe, powershell.exe, mshta.exe as child of Veeam processes)",
+        "priority": "Critical"
+      },
+      {
+        "source": "EDR Telemetry",
+        "description": "Endpoint detection products monitoring the backup server can identify exploitation via anomalous process trees and network connections",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Domain user accounts accessing Veeam service ports from non-Veeam-console systems",
+        "description": "Non-admin domain users connecting to port 6161 or 9202 from workstations or servers not designated as Veeam management consoles",
+        "log_field": "Firewall: dst_port=6161 OR dst_port=9202 AND src_ip NOT IN [authorized_veeam_consoles]",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected process execution under Veeam service accounts",
+        "description": "cmd.exe, powershell.exe, wscript.exe, or other interpreter processes spawned by VeeamBackupSvc, VeeamMountSvc, or related Veeam service processes",
+        "log_field": "Sysmon Event ID 1: ParentImage contains 'Veeam' AND Image contains 'cmd.exe' OR 'powershell.exe'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Large outbound data transfers from backup repository paths",
+        "description": "Bulk data reads from backup repository directories followed by network transfers to external destinations, indicative of backup exfiltration",
+        "log_field": "Network: large outbound transfers from backup server to non-Veeam destinations",
+        "severity": "High"
+      },
+      {
+        "indicator": "Deletion or modification of backup jobs and restore points",
+        "description": "Ransomware actors delete or corrupt backups before triggering encryption across the organization",
+        "log_field": "Veeam Logs: Delete operations on restore points, backup job disabling events from unexpected sessions",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch Veeam Backup & Replication Immediately",
+      "description": "Upgrade to version 12.3.2.4465 (KB4830) if on the version 12 branch, or 13.0.1.2067 (KB4831) if on version 13. Patches address all 7 critical vulnerabilities disclosed on March 12, 2026. Test in non-production first if possible, but given exploitation history, prioritize speed.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Isolate Veeam Service Ports with Firewall Rules",
+      "description": "Immediately restrict inbound access to Veeam ports 6161, 9202, 7007, and 7008 to only the specific IP addresses of Veeam management consoles and authorized administrator workstations. Block all other sources.",
+      "command": "netsh advfirewall firewall add rule name='Veeam Restrict' protocol=TCP dir=in localport=6161,9202 action=block"
+    },
+    {
+      "priority": 3,
+      "action": "Verify Backup Integrity and Create Offline Copies",
+      "description": "Before and after patching, verify the integrity of all existing restore points. Create immutable or offline backup copies that cannot be accessed from the domain-joined Veeam server, providing ransomware resilience even if the server is compromised.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Review Veeam Access Logs for Suspicious Activity",
+      "description": "Examine Veeam application logs and Windows Security Event Logs on the backup server for any unauthorized domain user access in the past 30-60 days. Look for logins from unexpected accounts or source IPs, particularly during off-hours.",
+      "command": "Get-EventLog -LogName Security -ComputerName <VeeamServer> -InstanceId 4624 -Newest 1000 | Where-Object {$_.Message -notmatch 'SYSTEM|NETWORK SERVICE|LOCAL SERVICE'}"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "briefing_id": "TB-2026-03-25-003",
+  "title": "Laravel Livewire RCE CVE-2025-54068 (CVSS 9.2) Added to CISA KEV: Unauthenticated Remote Command Execution via Hydration Bypass Threatens 130,000+ Laravel Applications",
+  "generated_date": "2026-03-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.2,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-04-10"
+  },
+  "cves": [
+    "CVE-2025-54068"
+  ],
+  "tags": [
+    "laravel",
+    "livewire",
+    "rce",
+    "php",
+    "web-framework",
+    "hydration-bypass",
+    "cisa-kev",
+    "actively-exploited",
+    "unauthenticated"
+  ],
+  "affected_products": [
+    "Laravel Livewire versions 3.0.0-beta.1 through 3.6.3",
+    "Any Laravel application using Livewire components with client-side state hydration",
+    "Estimated 130,000+ Laravel applications using Livewire in production environments"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "NVD: CVE-2025-54068 Detail",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-54068",
+      "date": "2026-03-15",
+      "type": "Government"
+    },
+    {
+      "name": "CISA: Adds Five Known Exploited Vulnerabilities to Catalog (March 20 2026)",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/03/20/cisa-adds-five-known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-20",
+      "type": "Government"
+    },
+    {
+      "name": "Wiz: CVE-2025-54068 Impact Exploitability and Mitigation Steps",
+      "url": "https://www.wiz.io/vulnerability-database/cve/cve-2025-54068",
+      "date": "2026-03-18",
+      "type": "Research"
+    },
+    {
+      "name": "Synacktiv: Livewire Remote Command Execution Through Unmarshaling",
+      "url": "https://www.synacktiv.com/en/publications/livewire-remote-command-execution-through-unmarshaling",
+      "date": "2026-03-10",
+      "type": "Research"
+    },
+    {
+      "name": "Laravel News: Livewire Security Vulnerability",
+      "url": "https://laravel-news.com/livewire-security-vulnerability",
+      "date": "2026-03-12",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "SentinelOne: CVE-2025-54068 Laravel Livewire RCE Vulnerability",
+      "url": "https://www.sentinelone.com/vulnerability-database/cve-2025-54068/",
+      "date": "2026-03-15",
+      "type": "Research"
+    },
+    {
+      "name": "GitHub Advisory Database: GHSA-29cq-5w36-x7w3 - Livewire Remote Command Execution",
+      "url": "https://github.com/advisories/GHSA-29cq-5w36-x7w3",
+      "date": "2026-03-10",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "RedHotCyber: Livewire Vulnerability Exposed - 130k Apps at Risk of Remote Code Execution",
+      "url": "https://www.redhotcyber.com/en/post/livewire-vulnerability-exposed-130k-apps-at-risk-of-remote-code-execution/",
+      "date": "2026-03-16",
+      "type": "News"
+    },
+    {
+      "name": "Tech Jacks Solutions: Laravel Livewire Remote Code Execution via Code Injection CVE-2025-54068",
+      "url": "https://techjacksolutions.com/scc-intel/laravel-livewire-remote-code-execution-via-code-injection-cve-2025-54068/",
+      "date": "2026-03-15",
+      "type": "Research"
+    },
+    {
+      "name": "THREATINT: CVE-2025-54068",
+      "url": "https://cve.threatint.eu/CVE/CVE-2025-54068",
+      "date": "2026-03-14",
+      "type": "Research"
+    },
+    {
+      "name": "Vulnerability-Lookup: CVE-2025-54068",
+      "url": "https://vulnerability.circl.lu/vuln/CVE-2025-54068",
+      "date": "2026-03-12",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-10",
+      "event": "Synacktiv publishes detailed technical research on Livewire remote command execution through unmarshaling bypass; GitHub Security Advisory GHSA-29cq-5w36-x7w3 published"
+    },
+    {
+      "date": "2026-03-12",
+      "event": "Laravel News publishes security advisory; Livewire version 3.6.4 released with the fix; CVE-2025-54068 assigned with CVSS v4.0 score of 9.2 (Critical)"
+    },
+    {
+      "date": "2026-03-15",
+      "event": "NVD publishes full CVE-2025-54068 details; multiple security vendors including SentinelOne and Wiz add the vulnerability to their databases with active exploitation warnings"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "CISA adds CVE-2025-54068 to the Known Exploited Vulnerabilities catalog confirming active exploitation in the wild; federal remediation deadline set"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "Exploitation continues targeting unpatched Laravel applications; no workarounds available - upgrade to Livewire 3.6.4 is the only remediation"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical remote command execution vulnerability was discovered in Livewire, the most popular full-stack framework for Laravel PHP applications. The vulnerability (CVE-2025-54068) exists in how Livewire hydrates component properties - the process that synchronizes client-side state with server-side PHP properties on each HTTP request. A specially crafted update payload can bypass validation and sanitization, causing the framework to interpret untrusted input as executable PHP code. CISA confirmed active exploitation on March 20, 2026, adding it to the Known Exploited Vulnerabilities catalog. No workarounds exist - upgrading to Livewire 3.6.4 is the only fix.",
+    "who_is_affected": "An estimated 130,000+ Laravel applications using Livewire in production are potentially vulnerable. Livewire is the dominant reactive UI framework in the Laravel ecosystem, used by startups, enterprises, and government agencies building web applications with Laravel. Any application running Livewire versions 3.0.0-beta.1 through 3.6.3 with mounted components that accept client-side property updates is exploitable without authentication.",
+    "what_attackers_do": "Step 1: Attacker identifies a Laravel application using Livewire by detecting characteristic HTTP request patterns (livewire/update endpoint) or Livewire-specific response headers. Step 2: Attacker crafts a malicious HTTP request to the Livewire update endpoint containing a specially formed property update payload designed to bypass the hydration validation logic. Step 3: The Livewire framework processes the malicious payload during the hydration cycle, where the crafted input bypasses the usual sanitization and is interpreted as executable PHP code on the server. Step 4: Attacker achieves remote command execution on the web server, gaining the ability to read files, access databases, steal credentials, and install backdoors. Step 5: Attacker pivots from the compromised web server to access backend databases, cloud services, and internal network resources connected to the Laravel application.",
+    "what_you_should_do": [
+      "Immediately upgrade all Livewire installations to version 3.6.4 or later - this is the only remediation as no workarounds exist",
+      "Audit all Laravel applications in your environment to identify which ones use Livewire and their current versions (check composer.lock for livewire/livewire)",
+      "Implement WAF rules to inspect and filter requests to /livewire/update endpoints for suspicious serialized payloads",
+      "Review web server logs for unusual POST requests to Livewire update endpoints that may indicate exploitation attempts",
+      "Conduct incident response investigation on any unpatched Livewire applications that were internet-facing since the vulnerability disclosure on March 10"
+    ],
+    "why_this_is_serious": "Livewire is deeply embedded in the Laravel ecosystem - it powers the reactive UI components that handle user input, form submissions, and real-time updates in hundreds of thousands of web applications. The vulnerability requires no authentication and no user interaction to exploit, making every unpatched Livewire application an easy target. With CISA confirming active exploitation and no workaround available, organizations that cannot upgrade immediately have no defensive option other than taking affected applications offline. The Laravel/PHP ecosystem's widespread use in business-critical web applications amplifies the potential impact across industries."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the Livewire hydration bypass vulnerability in internet-facing Laravel applications to achieve unauthenticated remote code execution"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "RCE through the hydration bypass allows execution of arbitrary system commands on the underlying web server via PHP system functions"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "Attackers access Laravel .env files containing database passwords, API keys, mail credentials, and third-party service secrets stored in plaintext"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1213",
+        "technique_name": "Data from Information Repositories",
+        "description": "Compromised Laravel applications provide access to connected databases containing user data, business records, and other sensitive information"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Attackers may install PHP web shells on compromised servers to maintain persistent access beyond the initial exploitation"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on monitoring HTTP requests to Livewire update endpoints for anomalous payloads that may indicate hydration bypass attempts. Web application firewall rules and server-side request logging are the primary detection mechanisms for this web framework vulnerability.",
+    "log_sources": [
+      {
+        "source": "Web Application Firewall (WAF) Logs",
+        "description": "Monitor and filter POST requests to /livewire/update endpoints for payloads containing unusual serialized objects or code injection patterns that deviate from normal Livewire component update traffic",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Server Access Logs (Apache/Nginx)",
+        "description": "Analyze POST requests to /livewire/update for abnormal request sizes, unusual user agents, or high-frequency requests from single IP addresses that may indicate exploitation scanning",
+        "priority": "Critical"
+      },
+      {
+        "source": "PHP Error Logs / Application Logs",
+        "description": "Monitor for PHP errors related to Livewire hydration failures, unexpected class instantiation, or serialization errors that may indicate failed exploitation attempts",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Monitor Laravel application directories for creation of new PHP files (web shells) or modification of existing files that may indicate post-exploitation activity",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Anomalous POST requests to /livewire/update with crafted hydration payloads",
+        "description": "Exploitation sends specially formed JSON payloads to the Livewire update endpoint designed to bypass property hydration validation; look for requests with unusual property update structures",
+        "log_field": "http_uri CONTAINS '/livewire/update' AND http_method='POST' AND request_body_size > normal_threshold",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "PHP process spawning system commands after Livewire request processing",
+        "description": "Successful exploitation results in arbitrary command execution; monitor for the PHP-FPM or Apache/Nginx worker process spawning shell commands or accessing sensitive system files",
+        "log_field": "parent_process IN ('php-fpm', 'apache2', 'nginx') AND child_process IN ('sh', 'bash', 'cmd') AND timestamp NEAR livewire_request",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Access to Laravel .env files or database configuration from web processes",
+        "description": "Post-exploitation typically involves reading the Laravel .env file to harvest database credentials, API keys, and mail configuration",
+        "log_field": "process_name IN ('php-fpm', 'apache2') AND file_access MATCHES '\\.env$|database\\.php$' AND access_context='post_request'",
+        "severity": "High"
+      },
+      {
+        "indicator": "New PHP files created in web-accessible directories after Livewire requests",
+        "description": "Attackers may deploy web shells for persistent access; monitor for creation of new .php files in public, storage, or other web-accessible directories",
+        "log_field": "file_create AND file_path MATCHES '\\.(php|phtml|phar)$' AND directory IN (webroot, storage, public)",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade Livewire to version 3.6.4 or later immediately across all Laravel applications",
+      "description": "This is the only remediation - no workarounds exist. Update the Livewire package in all Laravel applications and deploy the updated composer.lock to production.",
+      "command": "composer require livewire/livewire:^3.6.4 && composer update livewire/livewire"
+    },
+    {
+      "priority": 2,
+      "action": "Identify all Laravel applications using vulnerable Livewire versions",
+      "description": "Audit your application inventory to find all Laravel projects with Livewire as a dependency. Check composer.lock files for livewire/livewire version entries between 3.0.0-beta.1 and 3.6.3.",
+      "command": "grep -r 'livewire/livewire' /path/to/apps/*/composer.lock | grep -v '3.6.4'"
+    },
+    {
+      "priority": 3,
+      "action": "Deploy WAF rules to inspect Livewire update endpoint traffic",
+      "description": "Implement web application firewall rules to inspect POST requests to /livewire/update endpoints for malicious serialized payloads while the upgrade is being rolled out.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Investigate internet-facing Laravel applications for signs of compromise since March 10",
+      "description": "Review web server logs for suspicious POST requests to /livewire/update endpoints. Check for new PHP files in web directories, unauthorized database access, and modifications to .env files.",
+      "command": "grep 'livewire/update' /var/log/nginx/access.log | awk '{print $1}' | sort | uniq -c | sort -rn | head -20"
+    }
+  ]
+}

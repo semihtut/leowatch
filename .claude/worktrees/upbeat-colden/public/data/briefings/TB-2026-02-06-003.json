@@ -1,0 +1,343 @@
+{
+  "briefing_id": "TB-2026-02-06-003",
+  "title": "vLLM Critical RCE via Video Processing Heap Overflow Threatens Millions of AI Servers (CVE-2026-22778)",
+  "generated_date": "2026-02-06",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-22778",
+    "CVE-2025-32444",
+    "CVE-2025-47277",
+    "CVE-2025-62164"
+  ],
+  "tags": [
+    "ai-ml",
+    "vllm",
+    "rce",
+    "heap-overflow",
+    "video-processing",
+    "supply-chain",
+    "llm-infrastructure",
+    "aslr-bypass",
+    "opencv",
+    "deserialization"
+  ],
+  "affected_products": [
+    "vLLM >= 0.8.3 and < 0.14.1 (video-capable multimodal deployments)",
+    "OpenCV 4.x with bundled FFmpeg 5.1.x (libopenjp2 JPEG2000 decoder)",
+    "Any AI/ML inference platform using vLLM for multimodal video model serving"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "GitHub Security Advisory GHSA-4r2x-xpjr-7cvv - vLLM Heap Overflow RCE",
+      "url": "https://github.com/advisories/GHSA-4r2x-xpjr-7cvv",
+      "date": "2026-02-02",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "OX Security - CVE-2026-22778: Millions of AI Servers at Risk from vLLM RCE",
+      "url": "https://www.ox.security/blog/cve-2026-22778-vllm-rce-vulnerability/",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "Orca Security - Critical RCE in vLLM: CVE-2026-22778 Analysis",
+      "url": "https://orca.security/resources/blog/cve-2026-22778-vllm-rce-vulnerability/",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "Salt Security - Critical vLLM Flaw Exposes the Soft Underbelly of AI Infrastructure",
+      "url": "https://salt.security/blog/critical-vllm-flaw-exposes-the-soft-underbelly-of-ai-infrastructure",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "Kodem Security - CVE-2026-22778 Critical Remote Code Execution in vLLM Multimodal Inference",
+      "url": "https://www.kodemsecurity.com/resources/cve-2026-22778-critical-remote-code-execution-in-vllm-multimodal-inference",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "The Cyber Express - CVE-2026-22778: vLLM RCE Exposes Millions via Malicious Video Link",
+      "url": "https://thecyberexpress.com/cve-2026-22778-vllm-rce-malicious-video-link/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "eSecurity Planet - Critical vLLM Flaw Puts AI Systems at Risk of Remote Code Execution",
+      "url": "https://www.esecurityplanet.com/artificial-intelligence/critical-vllm-flaw-puts-ai-systems-at-risk-of-remote-code-execution/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "SecurityOnline - Critical CVSS 9.8 RCE Flaw in vLLM Exposes AI Hosts to Remote Attacks",
+      "url": "https://securityonline.info/critical-cvss-9-8-rce-flaw-in-vllm-exposes-ai-hosts-to-remote-attacks/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "Feedly CVE Tracking - CVE-2026-22778 Threat Intelligence",
+      "url": "https://feedly.com/cve/CVE-2026-22778",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-22778 Detail",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-22778",
+      "date": "2026-02-02",
+      "type": "Government"
+    },
+    {
+      "name": "GitHub Advisory GHSA-hj4w-hm2g-p6w5 - CVE-2025-32444 Mooncake Pickle RCE",
+      "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-hj4w-hm2g-p6w5",
+      "date": "2025-04-29",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "GitHub Advisory GHSA-hjq4-87xh-g4fv - CVE-2025-47277 PyNcclPipe Pickle RCE",
+      "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-hjq4-87xh-g4fv",
+      "date": "2025-05-21",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "GitHub Advisory GHSA-mrw7-hf4f-83pf - CVE-2025-62164 prompt_embeds Deserialization",
+      "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-mrw7-hf4f-83pf",
+      "date": "2025-11-25",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Hendry Adrian - Critical vLLM Flaw Exposes Millions of AI Servers to RCE",
+      "url": "https://www.hendryadrian.com/critical-vllm-flaw-exposes-millions-of-ai-servers-to-remote-code-execution/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "GitLab Advisory Database - CVE-2026-22778 vLLM",
+      "url": "https://advisories.gitlab.com/pkg/pypi/vllm/CVE-2026-22778/",
+      "date": "2026-02-02",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-03-14",
+      "event": "CVE-2025-29783 disclosed: first vLLM Mooncake integration pickle deserialization RCE, establishing a pattern of unsafe deserialization in AI/ML inference infrastructure"
+    },
+    {
+      "date": "2025-04-29",
+      "event": "CVE-2025-32444 (CVSS 10.0) disclosed: second Mooncake pickle RCE in vLLM, demonstrating the fix for the prior variant was incomplete"
+    },
+    {
+      "date": "2025-05-21",
+      "event": "CVE-2025-47277 (CVSS 9.8) disclosed: PyNcclPipe communication service pickle deserialization RCE in vLLM, widening the attack surface beyond Mooncake"
+    },
+    {
+      "date": "2025-11-25",
+      "event": "CVE-2025-62164 (CVSS 8.8) disclosed by Wiz Security: prompt_embeds torch.load() deserialization enabling DoS/RCE in vLLM"
+    },
+    {
+      "date": "2026-02-02",
+      "event": "CVE-2026-22778 (CVSS 9.8) publicly disclosed via GitHub Security Advisory GHSA-4r2x-xpjr-7cvv; OX Security identified as discoverer; vLLM 0.14.1 released with fix"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "Wild exploitation confirmed within 24 hours of disclosure; OX Security publishes detailed technical writeup with full exploit chain walkthrough; public PoC appears on GitHub"
+    },
+    {
+      "date": "2026-02-04",
+      "event": "Multiple security vendors (Orca Security, Salt Security, eSecurity Planet) publish analyses warning of widespread impact on AI infrastructure; exploitation activity increases"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical remote code execution vulnerability was discovered in vLLM, the most widely-deployed open-source large language model inference engine with over 3 million monthly PyPI downloads. The flaw (CVE-2026-22778) allows unauthenticated attackers to take full control of any vLLM server running video-capable multimodal models by simply submitting a malicious video URL to the API. The exploit chains together an information leak that defeats memory protection (ASLR) and a heap buffer overflow in the JPEG2000 video decoder to hijack function pointers and execute arbitrary system commands. Wild exploitation was confirmed within 24 hours of the February 2 disclosure, and a public proof-of-concept is now available on GitHub. This is the fifth critical RCE vulnerability in vLLM in under 12 months, revealing systemic security weaknesses in AI/ML inference infrastructure.",
+    "who_is_affected": "Any organization running vLLM versions 0.8.3 through 0.14.0 that serves video-capable multimodal AI models is vulnerable. With over 3 million monthly PyPI downloads, millions of AI servers are potentially at risk. Default vLLM installations have no authentication enabled, and the /v1/invocations endpoint can be exploited before authentication validation even when API keys are configured. Organizations deploying AI/ML inference infrastructure in cloud environments, research institutions, AI service providers, and enterprises using vLLM for internal AI workloads are particularly at risk. Deployments that only serve text or image models (not video) are NOT affected by this specific CVE.",
+    "what_attackers_do": "Step 1: The attacker sends a crafted request with an invalid image to the vLLM multimodal API endpoint, triggering a PIL error that leaks a heap memory address in the error response (e.g., '<_io.BytesIO object at 0x7a95e299e750>'), reducing ASLR protection from ~4 billion possible addresses to only ~8 guesses. Step 2: Using the leaked heap address to calculate memory layout, the attacker crafts a malicious JPEG2000 video file with a specially constructed 'cdef' (channel definition) box that remaps the Y luminance channel into the smaller U chrominance buffer. Step 3: The attacker submits a video_url pointing to the malicious video via the vLLM API; vLLM fetches the raw bytes and passes them to OpenCV's cv2.VideoCapture() for processing. Step 4: FFmpeg's libopenjp2 JPEG2000 decoder processes the malicious cdef box, causing a 7,200-byte heap buffer overflow that corrupts adjacent AVBuffer function pointers in memory. Step 5: When the corrupted memory is freed, the hijacked function pointer redirects execution to system(), giving the attacker arbitrary command execution on the server with the privileges of the vLLM process, enabling full server takeover, model theft, data exfiltration, and lateral movement across AI infrastructure.",
+    "what_you_should_do": [
+      "Immediately upgrade vLLM to version 0.14.1 or later, which patches both the heap overflow and the information leak",
+      "If immediate patching is not possible, disable video model support and block video_url parameters at the API gateway or WAF level",
+      "Implement authentication on all vLLM endpoints immediately; default installations have no auth, and the /v1/invocations endpoint bypasses auth even when API keys are configured",
+      "Restrict network access to vLLM API endpoints to only trusted clients using firewall rules and security groups; block outbound internet access from vLLM servers to prevent fetching attacker-controlled video URLs",
+      "Monitor vLLM processes for unexpected child processes (/bin/sh, /bin/bash, cmd.exe), memory corruption signals (SIGSEGV/SIGABRT), and API responses containing heap address patterns like 'BytesIO object at 0x'",
+      "Audit your environment for all historical vLLM CVEs: ensure version >= 0.8.5 (fixes pickle RCEs), >= 0.13.0 (fixes prompt_embeds deserialization), and disable Mooncake/PyNcclPipe integrations if not required"
+    ],
+    "why_this_is_serious": "This vulnerability enables complete, unauthenticated takeover of AI inference servers that power critical business applications through a single malicious API request. The exploit is low-complexity, requires no credentials, and a public PoC already exists with wild exploitation confirmed within 24 hours. AI/GPU infrastructure typically runs with elevated privileges and contains high-value assets: proprietary models worth millions in training compute, sensitive training data, and all inference prompts and responses flowing through the system. The pattern of five critical RCEs in under 12 months reveals that vLLM's security architecture is fundamentally immature, suggesting organizations should treat all AI/ML serving infrastructure as high-risk assets requiring the same security controls as traditional critical infrastructure."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the vLLM API endpoint directly by submitting malicious video URLs to /v1/chat/completions or /v1/invocations; default installations have no authentication and many are internet-facing"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "The chained heap buffer overflow in the JPEG2000 decoder corrupts AVBuffer function pointers, redirecting execution to system() for arbitrary command execution on the vLLM server"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.006",
+        "technique_name": "Command and Scripting Interpreter: Python",
+        "description": "vLLM runs as a Python process; post-exploitation commands execute within the Python runtime environment, enabling use of Python-based payloads and reverse shells"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1211",
+        "technique_name": "Exploitation for Defense Evasion",
+        "description": "The information leak stage defeats ASLR by exposing heap memory addresses through PIL error messages, reducing randomization from ~4 billion possibilities to ~8 guesses"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Post-exploitation persistence can be achieved by deploying web shells or backdoors on the compromised vLLM server infrastructure"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials in Files",
+        "description": "Post-exploitation access to API keys, model configuration files, cloud credentials, and environment variables stored on the vLLM server"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Exfiltration of proprietary AI models, training datasets, fine-tuning data, and inference logs containing potentially sensitive user prompts and responses"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1210",
+        "technique_name": "Exploitation of Remote Services",
+        "description": "Pivoting from a compromised vLLM node to other systems in the AI/ML cluster or broader network, leveraging distributed deployment architectures and shared GPU infrastructure"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1496",
+        "technique_name": "Resource Hijacking",
+        "description": "Abuse of expensive GPU compute resources for cryptocurrency mining, unauthorized AI inference workloads, or other resource-intensive operations"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1565.001",
+        "technique_name": "Data Manipulation: Stored Data Manipulation",
+        "description": "Poisoning of AI model weights or inference outputs to produce manipulated, biased, or malicious responses, potentially affecting downstream applications and decision-making"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on three phases: the information leak stage (API responses containing heap addresses), the exploitation stage (malicious video URLs and JPEG2000 content), and post-exploitation (unexpected processes and network connections from vLLM servers). Monitor API request patterns for video_url parameters from untrusted sources, error responses leaking memory addresses, and anomalous behavior from vLLM Python processes.",
+    "log_sources": [
+      {
+        "source": "vLLM Application Logs",
+        "description": "Monitor for repeated PIL error messages containing memory addresses (BytesIO object at 0x...), which indicate the information leak stage of the exploit. Alert on unusual error rates from multimodal video processing endpoints.",
+        "priority": "Critical"
+      },
+      {
+        "source": "API Gateway / WAF Logs",
+        "description": "Monitor POST requests to /v1/chat/completions and /v1/invocations for video_url parameters pointing to external or suspicious domains. Inspect response bodies for memory address patterns. Alert on JPEG2000 content in request/response flows.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Process Monitoring (auditd / Sysmon / EDR)",
+        "description": "Alert on the vLLM Python process spawning unexpected child processes including /bin/sh, /bin/bash, cmd.exe, or any shell interpreter. Monitor for anomalous execve system calls from the vLLM process tree. Detect SIGSEGV/SIGABRT signals that may indicate brute-force ASLR bypass attempts.",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Monitoring / IDS",
+        "description": "Monitor outbound HTTP requests from vLLM servers fetching content from untrusted URLs. Alert on reverse shell connections or C2 traffic originating from vLLM infrastructure. Detect unusual outbound data transfers indicating model or data exfiltration.",
+        "priority": "High"
+      },
+      {
+        "source": "Container Runtime Logs",
+        "description": "If vLLM runs in containers, monitor for container escape attempts, unexpected file system writes outside designated paths, and anomalous resource utilization patterns that could indicate cryptomining or unauthorized workloads.",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Heap address leak in API error responses",
+        "description": "API responses from vLLM endpoints containing Python BytesIO object memory addresses (e.g., '<_io.BytesIO object at 0x7a95e299e750>') indicate the information leak exploitation stage",
+        "log_field": "API response body matches regex '<_io\\.BytesIO object at 0x[0-9a-f]+>'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Malicious video_url submissions from untrusted sources",
+        "description": "POST requests to /v1/chat/completions or /v1/invocations containing video_url parameters pointing to external, newly-registered, or suspicious domains",
+        "log_field": "API Gateway: POST body contains 'video_url' AND URL domain not in trusted allowlist",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes from vLLM Python process",
+        "description": "Shell interpreters (/bin/sh, /bin/bash, cmd.exe) or system utilities (curl, wget, nc) spawned as child processes of the vLLM Python runtime indicate successful exploitation",
+        "log_field": "Process monitoring: parent_process contains 'python' AND (child_process IN ['/bin/sh', '/bin/bash', 'cmd.exe', 'curl', 'wget', 'nc'])",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Memory corruption signals from vLLM/OpenCV",
+        "description": "Repeated SIGSEGV or SIGABRT signals from vLLM or OpenCV processes may indicate brute-force ASLR bypass attempts (approximately 8 attempts needed for successful exploitation)",
+        "log_field": "System logs: signal IN ['SIGSEGV', 'SIGABRT'] AND process IN ['vllm', 'python', 'opencv']",
+        "severity": "High"
+      },
+      {
+        "indicator": "JPEG2000 content with anomalous channel definitions",
+        "description": "Deep packet inspection detecting JPEG2000 files (.jp2, .j2k) with cdef boxes where the Y luminance channel is remapped to the U chrominance plane, indicating a crafted exploit payload",
+        "log_field": "DPI/WAF: JPEG2000 content with cdef channel remapping anomaly",
+        "severity": "High"
+      },
+      {
+        "indicator": "Outbound connections from vLLM servers to untrusted destinations",
+        "description": "vLLM servers initiating outbound HTTP connections to fetch video content from external URLs, or establishing reverse shell/C2 connections after exploitation",
+        "log_field": "Network log: source_ip=vLLM_server AND destination NOT IN trusted_list AND protocol IN ['HTTP', 'HTTPS', 'TCP']",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade vLLM to version 0.14.1 or later immediately",
+      "description": "This is the definitive fix for CVE-2026-22778. Version 0.14.1 includes an updated OpenCV release addressing the JPEG2000 decoder heap overflow and fixes the PIL error message information leak that enables ASLR bypass. Apply the update via pip: pip install --upgrade vllm>=0.14.1",
+      "command": "pip install --upgrade 'vllm>=0.14.1'"
+    },
+    {
+      "priority": 2,
+      "action": "Disable video model functionality if immediate patching is not possible",
+      "description": "If upgrading cannot be done immediately, disable all multimodal video endpoints. Remove or disable video model serving configurations. Block video_url parameters at the API gateway or WAF level. Deployments serving only text or image models are NOT affected by CVE-2026-22778.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Implement authentication and restrict API access",
+      "description": "Enable API key authentication on all vLLM endpoints. Note that the /v1/invocations endpoint may be exploitable before auth validation even when API keys are configured, so network-level restrictions are essential. Use firewall rules and security groups to limit API access to trusted clients only. Block outbound internet access from vLLM servers to prevent fetching attacker-controlled video URLs.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Deploy monitoring for exploitation indicators on all vLLM infrastructure",
+      "description": "Implement detection rules for: API responses containing heap address patterns (BytesIO object at 0x...), requests with video_url parameters from untrusted sources, unexpected child processes from vLLM Python processes, and SIGSEGV/SIGABRT signals indicating ASLR brute-force attempts. Enable process monitoring and audit logging on all vLLM hosts.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Audit and remediate all historical vLLM CVEs across the environment",
+      "description": "vLLM has had 5 critical RCEs in 12 months. Ensure all instances are >= 0.8.5 (fixes CVE-2025-32444 and CVE-2025-47277 Mooncake/PyNcclPipe pickle RCEs), >= 0.13.0 (fixes CVE-2025-62164 prompt_embeds deserialization), and now >= 0.14.1. Disable Mooncake integration and PyNcclPipe KV cache transfer if not actively required.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Harden vLLM container and runtime environment",
+      "description": "Run vLLM in hardened containers with minimal privileges, enable seccomp profiles to restrict system calls, use read-only file systems where possible, and ensure ASLR, DEP/NX, and other OS-level protections are active. Implement network segmentation to isolate AI inference infrastructure from the broader network. Apply egress filtering to prevent reverse shell and C2 connections.",
+      "command": null
+    }
+  ]
+}

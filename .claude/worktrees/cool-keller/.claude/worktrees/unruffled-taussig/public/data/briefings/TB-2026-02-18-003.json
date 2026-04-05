@@ -1,0 +1,271 @@
+{
+  "briefing_id": "TB-2026-02-18-003",
+  "title": "Keenadu Android Firmware Backdoor: Supply Chain Compromise Embeds Multi-Stage Loader in Tablet Firmware via Signed OTA Updates, Enabling Full Remote Device Control Across 13,000+ Devices Worldwide",
+  "generated_date": "2026-02-18",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.4,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "android",
+    "firmware-backdoor",
+    "supply-chain",
+    "mobile",
+    "keenadu",
+    "botnet"
+  ],
+  "affected_products": [
+    "Alldocube iPlay 50 mini Pro (T811M) tablets",
+    "Alldocube iPlay 50 mini Pro NFE tablets",
+    "Multiple undisclosed Android tablet manufacturers",
+    "Google Play apps: Eoolii, Ziicam, Eyeplus (by Hangzhou Denghong Technology Co., Ltd.)",
+    "Android devices with firmware containing modified libandroid_runtime.so"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "Kaspersky Securelist - Keenadu the tablet conqueror and the links between major Android botnets",
+      "url": "https://securelist.com/keenadu-android-backdoor/118913/",
+      "date": "2026-02-17",
+      "type": "Research"
+    },
+    {
+      "name": "Kaspersky Press Release - Kaspersky discovers Keenadu",
+      "url": "https://www.kaspersky.com/about/press-releases/kaspersky-discovers-keenadu-a-multifaceted-android-malware-that-can-come-preinstalled-on-new-devices",
+      "date": "2026-02-17",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer - New Keenadu backdoor found in Android firmware, Google Play apps",
+      "url": "https://www.bleepingcomputer.com/news/security/new-keenadu-backdoor-found-in-android-firmware-google-play-apps/",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - Keenadu Firmware Backdoor Infects Android Tablets via Signed OTA Updates",
+      "url": "https://thehackernews.com/2026/02/keenadu-firmware-backdoor-infects.html",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading - Supply Chain Attack Embeds Malware in Android Devices",
+      "url": "https://www.darkreading.com/mobile-security/supply-chain-attack-embeds-malware-android-devices",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Firmware-level Android backdoor found on tablets from multiple manufacturers",
+      "url": "https://www.helpnetsecurity.com/2026/02/17/firmware-level-android-backdoor-keenadu-tablets/",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "Android Authority - Multiple brands of Android tablets shipped with built-in malware",
+      "url": "https://www.androidauthority.com/android-tablets-keenadu-malware-firmware-backdoor-3641651/",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online - Keenadu: Android malware that comes preinstalled and cannot be removed by users",
+      "url": "https://www.csoonline.com/article/4133774/keenadu-android-malware-that-comes-preinstalled-and-cant-be-removed-by-users.html",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity News - Keenadu Android Malware Infects Firmware, Spreads via Google Play",
+      "url": "https://cybersecuritynews.com/keenadu-android-malware/",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "CyberInsider - New Keenadu Android backdoor found pre-installed in tablet firmware",
+      "url": "https://cyberinsider.com/new-keenadu-android-backdoor-found-pre-installed-in-tablet-firmware/",
+      "date": "2026-02-17",
+      "type": "News"
+    },
+    {
+      "name": "Global Security Mag - Kaspersky discovers Keenadu multifaceted Android malware",
+      "url": "https://www.globalsecuritymag.com/kaspersky-discovers-keenadu-a-multifaceted-android-malware-that-can-come.html",
+      "date": "2026-02-17",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2023-08-18",
+      "event": "Earliest known infected firmware identified on Alldocube iPlay 50 mini Pro (T811M) tablets"
+    },
+    {
+      "date": "2023-11-07",
+      "event": "Alldocube iPlay 50 mini Pro NFE initially ships with clean firmware, but all subsequent OTA updates through May 2024 contain Keenadu"
+    },
+    {
+      "date": "2025-12-01",
+      "event": "Kaspersky initially discloses Keenadu discovery and begins detailed analysis"
+    },
+    {
+      "date": "2026-02-17",
+      "event": "Kaspersky publishes full technical analysis on Securelist revealing connections to Triada, BADBOX, and Vo1d botnets"
+    },
+    {
+      "date": "2026-02-17",
+      "event": "Google confirms removal of malicious Google Play apps and recommends Play Protect verification"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Kaspersky security researchers discovered a sophisticated Android malware called Keenadu that was embedded directly into the firmware of tablets made by multiple manufacturers, including Alldocube. The malware was integrated during the manufacturing process, meaning devices were infected before they ever reached consumers. Keenadu hides inside a critical Android system library (libandroid_runtime.so) that loads when the device boots up, allowing it to inject itself into every application the user opens. The investigation revealed that Keenadu is connected to three other major Android botnet families - Triada, BADBOX, and Vo1d - suggesting a coordinated underground ecosystem of device-level malware. Over 13,000 devices worldwide have been confirmed infected, and malicious apps carrying Keenadu modules were also found on Google Play with over 300,000 downloads.",
+    "who_is_affected": "Consumers and organizations using Android tablets from affected manufacturers, primarily Alldocube (iPlay 50 mini Pro and iPlay 50 mini Pro NFE models) and other undisclosed tablet brands. Users in Russia, Japan, Germany, Brazil, and the Netherlands are most heavily affected. Additionally, users who downloaded the camera apps Eoolii, Ziicam, or Eyeplus from Google Play (300,000+ combined downloads) from publisher Hangzhou Denghong Technology Co., Ltd. are at risk. Any organization allowing employees to use personal Android tablets for work could have corporate data exposed.",
+    "what_attackers_do": "Step 1: The attackers compromise the firmware supply chain during the device build phase, embedding a malicious library (libVndxUtils.a) that modifies libandroid_runtime.so, a critical system library loaded during every Android boot sequence. Step 2: When the device starts, the backdoor injects into the Zygote process, which is the parent process for all Android applications, giving Keenadu access to every app the user opens and bypassing Android's application sandbox. Step 3: The AKServer module runs in the system_server process with maximum privileges, communicating with command-and-control servers hosted on Alibaba Cloud to receive payload delivery instructions. Step 4: Multiple specialized modules are deployed including browser search hijacking (redirecting Chrome queries), shopping cart manipulation (targeting Amazon, Shein, Temu), ad click fraud, and install monetization schemes. Step 5: The malware can also function as a full backdoor, granting attackers unrestricted remote access to all device data including banking credentials, messages, photos, location, and even Chrome incognito browsing history.",
+    "what_you_should_do": [
+      "Check if your Android tablets are from affected manufacturers (Alldocube iPlay 50 mini Pro models); if so, check for firmware updates and rescan with a mobile security solution after updating",
+      "Uninstall Google Play apps Eoolii, Ziicam, and Eyeplus if installed; verify Google Play Protect is enabled on all Android devices",
+      "Look for infection indicators: check for files at /data/dalvik-cache/arm64/system@framework@vndx_10x.jar@classes.jar and AK_CPP debug tags in logcat",
+      "Disable compromised system apps via ADB if removal is not possible: adb shell pm disable --user 0 <package_name>",
+      "Consider replacing confirmed-infected devices, as firmware-level malware may persist through factory resets"
+    ],
+    "why_this_is_serious": "This represents one of the most sophisticated Android supply chain compromises ever documented. Unlike typical malware that users install accidentally, Keenadu comes pre-installed in the device firmware with valid digital signatures, making it invisible to most security tools and impossible for users to remove without technical knowledge. The malware bypasses Android's core security protections - application sandboxing and the permission system - because it operates within the system runtime itself. The confirmed connection to three other major botnets (Triada, BADBOX, Vo1d) suggests a large organized ecosystem of firmware-level malware affecting potentially millions of devices beyond the 13,000 confirmed by Kaspersky telemetry. While currently used primarily for ad fraud, the backdoor capability means attackers can pivot to stealing banking credentials, corporate data, or personal information at any time."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.002",
+        "technique_name": "Supply Chain Compromise: Compromise Software Supply Chain",
+        "description": "Malicious code injected during the firmware build phase, compromising libandroid_runtime.so before devices reach consumers via signed OTA updates"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1574",
+        "technique_name": "Hijack Execution Flow",
+        "description": "Compromises libandroid_runtime.so in the system partition, ensuring the backdoor loads on every boot and injects into every application via Zygote process"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1055",
+        "technique_name": "Process Injection",
+        "description": "Injects into the Zygote parent process, the root of all Android application processes, gaining access to every app's memory space and bypassing sandbox isolation"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036",
+        "technique_name": "Masquerading",
+        "description": "Malware embedded in legitimate system libraries with valid digital signatures; implements 2.5-month activation delay and avoids Chinese locales to evade detection"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1110",
+        "technique_name": "Brute Force",
+        "description": "Exfiltrates banking credentials, messaging app data, and authentication tokens from compromised applications via the injected client module"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1636",
+        "technique_name": "Protected User Data",
+        "description": "Grants and revokes arbitrary app permissions to access protected data including location, contacts, messages, and Chrome incognito browsing history"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Transmits IMEI, MAC address, device model, and stolen data to C2 servers via AES-128-CFB encrypted communications hosted on Alibaba Cloud CDN"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection requires checking for firmware-level indicators including modified system libraries, specific file artifacts in the dalvik-cache directory, and network communications to known C2 infrastructure. Standard Android security tools may not detect firmware-level compromises.",
+    "log_sources": [
+      {
+        "source": "Android Logcat",
+        "description": "Monitor for AK_CPP debug log tags and protected broadcast actions (com.action.SystemOptimizeService, com.action.SystemProtectService) indicating Keenadu activity",
+        "priority": "Critical"
+      },
+      {
+        "source": "Mobile Device Management (MDM)",
+        "description": "Inventory corporate-managed Android devices for affected manufacturers and firmware versions; check for presence of suspicious system apps",
+        "priority": "High"
+      },
+      {
+        "source": "Network Traffic Analysis",
+        "description": "Monitor for connections to known Keenadu C2 domains (keepgo123.com, gsonx.com, zcnewy.com, trends.search-hub.cn) and Alibaba Cloud CDN endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "File System Integrity",
+        "description": "Check for infection artifacts at /data/dalvik-cache/arm64/system@framework@vndx_10x.jar@classes.jar and presence of libhshelper.so native library",
+        "priority": "Critical"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Modified libandroid_runtime.so system library",
+        "description": "Core Android runtime library modified to include Keenadu loader code that injects into the Zygote process on boot",
+        "log_field": "md5 IN (bccd56a6b6c9496ff1acd40628edd25e, c4c0e65a5c56038034555ec4a09d3a37, cb9f86c02f756fb9afdb2fe1ad0184ee)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Keenadu cache artifacts in dalvik-cache",
+        "description": "Presence of vndx_10x.jar in dalvik-cache directory indicates active Keenadu infection",
+        "log_field": "path='/data/dalvik-cache/arm*/system@framework@vndx_10x.jar@classes.*'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "C2 communication to known domains",
+        "description": "Network connections to Keenadu C2 infrastructure for module delivery and device registration",
+        "log_field": "dns_query IN ('keepgo123.com', 'gsonx.com', 'zcnewy.com', 'trends.search-hub.cn')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "AK_CPP debug tags in logcat output",
+        "description": "Debug logging from Keenadu's AKServer and AKClient modules indicating active malware execution",
+        "log_field": "logcat tag='AK_CPP'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Suspicious system broadcast actions",
+        "description": "Protected broadcasts used by Keenadu for inter-module communication",
+        "log_field": "broadcast IN ('com.action.SystemOptimizeService', 'com.action.SystemProtectService')",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "67.198.232.4",
+      "67.198.232.187"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Identify affected devices in your environment",
+      "description": "Inventory all Android tablets, especially Alldocube models (iPlay 50 mini Pro, iPlay 50 mini Pro NFE). Check firmware build dates and versions. Use MDM to scan for known infection indicators.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Check for infection artifacts",
+      "description": "On suspected devices, check for Keenadu infection markers in the dalvik-cache directory and logcat output. The presence of vndx_10x.jar or AK_CPP log tags confirms infection.",
+      "command": "adb shell ls /data/dalvik-cache/arm64/system@framework@vndx_10x.jar@classes.* && adb logcat -d | grep AK_CPP"
+    },
+    {
+      "priority": 3,
+      "action": "Block known C2 domains and IPs",
+      "description": "Add Keenadu C2 infrastructure to your network blocklists: domains keepgo123.com, gsonx.com, zcnewy.com, trends.search-hub.cn; IPs 67.198.232.4 and 67.198.232.187.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Remove malicious Google Play apps",
+      "description": "Uninstall Eoolii, Ziicam, and Eyeplus camera apps if installed. Verify Google Play Protect is enabled. These apps by Hangzhou Denghong Technology Co., Ltd. delivered Keenadu payloads.",
+      "command": "adb uninstall com.eoolii.camera && adb uninstall com.ziicam.camera && adb uninstall com.eyeplus.camera"
+    },
+    {
+      "priority": 5,
+      "action": "Disable compromised system apps on infected devices",
+      "description": "If device replacement is not immediately possible, disable known compromised system apps including the facial recognition service and modified launcher via ADB. Note that firmware-level infection may persist through factory resets.",
+      "command": "adb shell pm disable --user 0 com.aiworks.faceidservice"
+    }
+  ]
+}

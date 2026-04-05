@@ -1,0 +1,325 @@
+{
+  "briefing_id": "TB-2026-04-02-002",
+  "title": "n8n Workflow Automation Platform Critical RCE CVE-2026-21858 (CVSS 10.0) \"Ni8mare\": Content-Type Confusion in Form Webhook Enables Unauthenticated Full System Compromise — 100,000 Exposed Instances, PoC Published, CISA KEV Linked Chain",
+  "generated_date": "2026-04-02",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-21858",
+    "CVE-2025-68613"
+  ],
+  "tags": [
+    "n8n",
+    "rce",
+    "workflow-automation",
+    "unauthenticated",
+    "webhook",
+    "content-type-confusion",
+    "active-exploitation"
+  ],
+  "affected_products": [
+    "n8n versions 1.65.0 through 1.120.4",
+    "n8n (self-hosted deployments only)"
+  ],
+  "sources_analyzed": 20,
+  "sources": [
+    {
+      "name": "NVD - National Vulnerability Database - CVE-2026-21858",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21858",
+      "date": "2026-01-07",
+      "type": "Government"
+    },
+    {
+      "name": "Orca Security - CVE-2026-21858 n8n RCE Vulnerability Deep Dive",
+      "url": "https://orca.security/resources/blog/cve-2026-21858-n8n-rce-vulnerability/",
+      "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Critical n8n Vulnerability CVSS 10.0 Under Active Exploitation",
+      "url": "https://thehackernews.com/2026/01/critical-n8n-vulnerability-cvss-100.html",
+      "date": "2026-01-07",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Max Severity Ni8mare Flaw Lets Hackers Hijack n8n Servers",
+      "url": "https://www.bleepingcomputer.com/news/security/max-severity-ni8mare-flaw-lets-hackers-hijack-n8n-servers/",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "Rapid7 Emerging Threats - Ni8mare and N8scape Flaws: Multiple Critical Vulnerabilities in n8n",
+      "url": "https://www.rapid7.com/blog/post/etr-ni8mare-n8scape-flaws-multiple-critical-vulnerabilities-affecting-n8n/",
+      "date": "2026-01-09",
+      "type": "Research"
+    },
+    {
+      "name": "Horizon3.ai - The Ni8mare Test: n8n RCE Under the Microscope",
+      "url": "https://horizon3.ai/attack-research/attack-blogs/the-ni8mare-test-n8n-rce-under-the-microscope-cve-2026-21858/",
+      "date": "2026-01-08",
+      "type": "Research"
+    },
+    {
+      "name": "n8n Official Security Advisory",
+      "url": "https://blog.n8n.io/security-advisory-20260108/",
+      "date": "2026-01-08",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "n8n Community Forum - Security Advisory",
+      "url": "https://community.n8n.io/t/security-advisory-security-vulnerability-in-n8n-versions-1-65-1-120-4/247305",
+      "date": "2026-01-08",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Picus Security - Ni8mare RCE Vulnerability CVE-2026-21858 Explained",
+      "url": "https://www.picussecurity.com/resource/blog/ni8mare-n8n-cve-2026-21858-remote-code-execution-vulnerability-explained",
+      "date": "2026-01-08",
+      "type": "Research"
+    },
+    {
+      "name": "Aikido Security - n8n RCE Vulnerability CVE-2026-21858",
+      "url": "https://www.aikido.dev/blog/n8n-rce-vulnerability-cve-2026-21858",
+      "date": "2026-01-09",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf - CVE-2026-21858 n8n Analysis",
+      "url": "https://arcticwolf.com/resources/blog/cve-2026-21858/",
+      "date": "2026-01-10",
+      "type": "Research"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog (CVE-2025-68613)",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-11",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - CISA Flags Actively Exploited n8n RCE Bug",
+      "url": "https://thehackernews.com/2026/03/cisa-flags-actively-exploited-n8n-rce.html",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "The Register - CISA Flags n8n Exploit as RCE Bug Enters KEV",
+      "url": "https://www.theregister.com/2026/03/12/cisa_n8n_rce/",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "VulnCheck - n8n Should Have More Than One CISA KEV Entry",
+      "url": "https://www.vulncheck.com/blog/n8n-needs-more-kev",
+      "date": "2026-03-12",
+      "type": "Research"
+    },
+    {
+      "name": "Censys Advisory - n8n Unauthenticated RCE (Ni8mare)",
+      "url": "https://censys.com/advisory/cve-2026-21858/",
+      "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "Cyber.gov.au - Critical Unauthenticated RCE Vulnerability in n8n",
+      "url": "https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/critical-unauthenticated-remote-code-execution-vulnerability-in-n8n-workflow-automation-platform",
+      "date": "2026-01-10",
+      "type": "Government"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security - AL26-001 n8n Vulnerabilities",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/al26-001-vulnerabilities-affecting-n8n-cve-2026-21858-cve-2026-21877-cve-2025-68613",
+      "date": "2026-01-10",
+      "type": "Government"
+    },
+    {
+      "name": "SecurityAffairs - CISA Adds n8n Flaw to KEV Catalog",
+      "url": "https://securityaffairs.com/189326/security/u-s-cisa-adds-a-flaw-in-n8n-to-its-known-exploited-vulnerabilities-catalog.html",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "Tenable - CVE-2026-21858 Vulnerability Database Entry",
+      "url": "https://www.tenable.com/cve/CVE-2026-21858",
+      "date": "2026-01-07",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-09",
+      "event": "Vulnerability discovered and privately reported to n8n team"
+    },
+    {
+      "date": "2025-11-10",
+      "event": "n8n acknowledges the report"
+    },
+    {
+      "date": "2025-11-18",
+      "event": "n8n releases patched version 1.121.0 fixing the Content-Type confusion flaw"
+    },
+    {
+      "date": "2026-01-06",
+      "event": "CVE-2026-21858 officially assigned"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "Public disclosure: Orca Security, Cyera Research, and NVD publish technical details; PoC released approximately 9 hours after disclosure"
+    },
+    {
+      "date": "2026-01-08",
+      "event": "BleepingComputer, Horizon3.ai, Picus Security publish follow-up analysis; multiple GitHub PoC exploits published"
+    },
+    {
+      "date": "2026-01-09",
+      "event": "Rapid7, Aikido, Censys confirm approximately 100,000 internet-exposed n8n instances; active exploitation confirmed by VulnCheck canaries"
+    },
+    {
+      "date": "2026-01-10",
+      "event": "Australian Cyber Security Centre, Canadian CCCS, and other government agencies publish advisories"
+    },
+    {
+      "date": "2026-03-11",
+      "event": "CISA adds related chained vulnerability CVE-2025-68613 (n8n expression injection) to KEV catalog"
+    },
+    {
+      "date": "2026-03-12",
+      "event": "VulnCheck publishes research noting CVE-2026-21858 itself should be in KEV due to confirmed exploitation; daily exploitation attempts tracked by Shadowserver and GreyNoise"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A maximum-severity vulnerability (CVSS 10.0) nicknamed 'Ni8mare' was discovered in n8n, a popular open-source workflow automation platform widely used by developers and businesses to connect apps and automate tasks. The flaw exists in how n8n handles file uploads through its Form Webhook feature. By sending a specially crafted HTTP request with a manipulated Content-Type header, an unauthenticated attacker on the internet can trick n8n into exposing its internal database file — which contains admin credentials. With those credentials, the attacker gains full admin access and can run any command on the server hosting n8n. Exploitation is easy and a public proof-of-concept has been available since January 2026. Attacks are ongoing, and CISA placed a related n8n vulnerability on its KEV list in March 2026.",
+    "who_is_affected": "Organizations running self-hosted n8n workflow automation instances on versions 1.65.0 through 1.120.4. Approximately 100,000 n8n instances are publicly accessible on the internet (confirmed by Censys with 26,500+ exposed instances). The vulnerability does NOT affect n8n's managed cloud offering. Industries commonly using self-hosted n8n include technology companies, SaaS businesses, marketing automation teams, and DevOps/platform engineering teams.",
+    "what_attackers_do": "Step 1: Attacker identifies an internet-exposed n8n instance that has a Form Webhook workflow configured (very common in automation setups). Step 2: Attacker sends an HTTP POST request to the Form Webhook endpoint with a manipulated Content-Type header (e.g., application/json instead of multipart/form-data), tricking n8n's upload handler. Step 3: The confused parser copies attacker-controlled file path references to persistent storage, allowing the attacker to read arbitrary files on the server — including /home/node/.n8n/database.sqlite. Step 4: Attacker downloads the SQLite database and extracts the administrator's hashed credentials and the encryption key from /home/node/.n8n/config. Step 5: Using extracted secrets, attacker forges a valid admin authentication token, gains full administrative access without knowing the original password, creates a malicious n8n workflow using the 'Execute Command' node, and runs arbitrary operating system commands achieving full server compromise.",
+    "what_you_should_do": [
+      "Upgrade n8n to version 1.121.0 or later immediately — this is the only complete fix",
+      "If immediate upgrade is not possible, block public internet access to n8n Form Webhook endpoints as an emergency measure",
+      "Review n8n access logs for suspicious POST requests to webhook/form paths with unusual Content-Type headers since January 7, 2026",
+      "Rotate all credentials and API keys stored in n8n workflows if you cannot confirm your instance was not compromised",
+      "Move n8n behind VPN or restrict access to known IP addresses until patching is complete"
+    ],
+    "why_this_is_serious": "A CVSS 10.0 score means this vulnerability is as severe as possible: no authentication, no user interaction, no complex conditions — any attacker on the internet can fully compromise your n8n server in minutes using publicly available exploit code. n8n workflows typically store sensitive credentials for third-party services (Slack, AWS, databases, payment processors, CRMs) that get stolen along with server access. CISA's KEV listing of a related n8n flaw signals active attacks on real organizations. With 100,000+ exposed instances and PoC code freely available on GitHub, automated exploitation is straightforward and ongoing."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated Content-Type confusion vulnerability in n8n's publicly accessible Form Webhook endpoint to gain initial foothold on the server."
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1555",
+        "technique_name": "Credentials from Password Stores",
+        "description": "After exploiting the file read vulnerability, attackers download the SQLite database (/home/node/.n8n/database.sqlite) to extract admin credentials and the encryption key from /home/node/.n8n/config."
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1078",
+        "technique_name": "Valid Accounts",
+        "description": "Using extracted encryption secrets, attackers forge a valid admin JWT session token to authenticate as administrator without triggering authentication failure alerts."
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Attackers create malicious n8n workflows using the built-in 'Execute Command' node to run arbitrary operating system commands on the host server as the n8n process user."
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1552",
+        "technique_name": "Unsecured Credentials",
+        "description": "n8n workflows routinely store credentials for integrated services (cloud providers, databases, SaaS APIs). Attackers extract all stored integration credentials from the n8n database."
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on monitoring Form Webhook HTTP traffic for Content-Type manipulation, alerting on unusual file access patterns on n8n servers, and detecting admin sessions that were not initiated via the standard login flow. No public IOCs (IP addresses, hashes) have been published as exploitation is opportunistic and distributed.",
+    "log_sources": [
+      {
+        "source": "n8n Application Logs",
+        "description": "Monitor n8n logs for POST requests to /webhook/ and /form/ paths with unexpected Content-Type headers (anything other than multipart/form-data for form endpoints)",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Application Firewall (WAF) Logs",
+        "description": "Deploy WAF rules to detect and block requests with Content-Type header mismatches targeting n8n form webhook endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "File System Audit Logs (Linux auditd)",
+        "description": "Monitor for read access to /home/node/.n8n/database.sqlite and /home/node/.n8n/config from unexpected processes or users",
+        "priority": "High"
+      },
+      {
+        "source": "Container/Host Process Logs",
+        "description": "Monitor for unexpected command execution spawned from the n8n Node.js process, indicating abuse of the Execute Command workflow node",
+        "priority": "Critical"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST requests to Form Webhook with non-multipart Content-Type",
+        "description": "Exploitation sends a POST to /webhook-test/ or /form/ endpoint with application/json or other non-multipart Content-Type header while the body contains file path references",
+        "log_field": "request_method='POST' AND url_path CONTAINS '/form/' AND content_type NOT CONTAINS 'multipart/form-data'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected read of database.sqlite",
+        "description": "Successful exploitation results in reading of the n8n SQLite database outside of normal n8n startup or scheduled backup windows",
+        "log_field": "file_path='/home/node/.n8n/database.sqlite' AND process_name NOT IN ('node','n8n')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Admin session from unknown IP",
+        "description": "Admin sessions created via forged JWT tokens will originate from attacker IP addresses not seen in previous login history",
+        "log_field": "event_type='admin_login' AND source_ip NOT IN known_admin_ips",
+        "severity": "High"
+      },
+      {
+        "indicator": "Execute Command workflow node triggered by unknown workflow",
+        "description": "Attackers create new workflows containing Execute Command nodes; monitor for execution of system commands via n8n workflow executor",
+        "log_field": "n8n_node_type='n8n-nodes-base.executeCommand' AND workflow_created_by='api'",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade n8n to version 1.121.0 or later",
+      "description": "This is the only complete fix. Update n8n via npm or your container deployment. The patch corrects Content-Type validation in Form Webhook handling to prevent the file path manipulation attack.",
+      "command": "# npm global install\nnpm update -g n8n\n# Docker\ndocker pull n8nio/n8n:latest\ndocker compose pull && docker compose up -d"
+    },
+    {
+      "priority": 2,
+      "action": "Block public internet access to Form Webhook endpoints",
+      "description": "If patching is delayed, immediately restrict internet access to n8n's webhook endpoints. Place n8n behind a VPN or restrict to known IP allowlist using your WAF or firewall.",
+      "command": "# Nginx: restrict webhook access to known IPs only\nlocation /webhook/ {\n  allow 10.0.0.0/8;\n  deny all;\n}"
+    },
+    {
+      "priority": 3,
+      "action": "Check for compromise indicators in access logs",
+      "description": "Search n8n and web server logs for POST requests to form webhook paths with unusual Content-Type headers. Also check for unexpected admin logins and new workflows created via API, especially any containing 'executeCommand' nodes.",
+      "command": "# Search nginx/apache logs for suspicious webhook requests\ngrep -E 'POST.*/form/.*Content-Type.*application/json' /var/log/nginx/access.log"
+    },
+    {
+      "priority": 4,
+      "action": "Rotate all credentials stored in n8n workflows",
+      "description": "If compromise cannot be ruled out, rotate all API keys, passwords, and tokens stored in n8n credentials. This includes cloud provider credentials (AWS, GCP, Azure), database passwords, SaaS API tokens, and any other credentials managed by n8n workflows.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Enable n8n user management and disable public form webhooks",
+      "description": "If your n8n use case allows, enable user authentication on the n8n instance and disable public-facing Form Webhook nodes in all workflows until the patch is applied.",
+      "command": null
+    }
+  ]
+}

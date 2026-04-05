@@ -1,0 +1,273 @@
+{
+  "briefing_id": "TB-2026-01-22-014",
+  "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-21858",
+    "CVE-2026-21877"
+  ],
+  "tags": [
+    "n8n",
+    "workflow",
+    "automation",
+    "RCE",
+    "cloud",
+    "webhook",
+    "authentication-bypass",
+    "container"
+  ],
+  "affected_products": [
+    "n8n Self-Hosted (versions < 1.121.0)",
+    "n8n Cloud",
+    "n8n Docker deployments",
+    "n8n Kubernetes deployments"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Cyera Research Labs (Original Discovery)",
+      "url": "https://www.cyera.com/research-labs/ni8mare-unauthenticated-remote-code-execution-in-n8n-cve-2026-21858",
+      "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "n8n Community - Official Security Advisory",
+      "url": "https://community.n8n.io/t/security-advisory-security-vulnerability-in-n8n-versions-1-65-1-120-4/247305",
+      "date": "2026-01-07",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - NIST",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21858",
+      "date": "2026-01-06",
+      "type": "Government"
+    },
+    {
+      "name": "Canadian Centre for Cyber Security",
+      "url": "https://www.cyber.gc.ca/en/alerts-advisories/al26-001-vulnerabilities-affecting-n8n-cve-2026-21858-cve-2026-21877-cve-2025-68613",
+      "date": "2026-01-08",
+      "type": "Government"
+    },
+    {
+      "name": "Australian Cyber Security Centre",
+      "url": "https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/critical-unauthenticated-remote-code-execution-vulnerability-in-n8n-workflow-automation-platform",
+      "date": "2026-01-08",
+      "type": "Government"
+    },
+    {
+      "name": "Horizon3.ai - Technical Analysis",
+      "url": "https://horizon3.ai/attack-research/attack-blogs/the-ni8mare-test-n8n-rce-under-the-microscope-cve-2026-21858/",
+      "date": "2026-01-09",
+      "type": "Research"
+    },
+    {
+      "name": "Orca Security",
+      "url": "https://orca.security/resources/blog/cve-2026-21858-n8n-rce-vulnerability/",
+      "date": "2026-01-08",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf",
+      "url": "https://arcticwolf.com/resources/blog/cve-2026-21858/",
+      "date": "2026-01-08",
+      "type": "Research"
+    },
+    {
+      "name": "Censys Advisory",
+      "url": "https://censys.com/advisory/cve-2026-21858",
+      "date": "2026-01-07",
+      "type": "Research"
+    },
+    {
+      "name": "Picus Security",
+      "url": "https://www.picussecurity.com/resource/blog/ni8mare-n8n-cve-2026-21858-remote-code-execution-vulnerability-explained",
+      "date": "2026-01-10",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime",
+      "url": "https://socprime.com/blog/cve-2026-21858-vulnerability/",
+      "date": "2026-01-09",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/critical-n8n-vulnerability-cvss-100.html",
+      "date": "2026-01-07",
+      "type": "News"
+    },
+    {
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/08/n8n_rce_bug/",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online",
+      "url": "https://www.csoonline.com/article/4113980/critical-rce-flaw-allows-full-takeover-of-n8n-ai-workflow-platform.html",
+      "date": "2026-01-08",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-09",
+      "event": "Cyera Research Labs discovers vulnerability and reports to n8n"
+    },
+    {
+      "date": "2025-11-18",
+      "event": "n8n releases patch in version 1.121.0"
+    },
+    {
+      "date": "2026-01-06",
+      "event": "CVE-2026-21858 officially assigned"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "Public disclosure and technical details published"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "Second related vulnerability (CVE-2026-21877) disclosed with CVSS 10.0"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform. n8n is a Zapier-like tool that automates workflows by connecting different applications. The discovered flaw allows attackers to gain full server control without any authentication.",
+    "who_is_affected": "All organizations using n8n are at risk, especially those running self-hosted instances. There are 26,512 exposed n8n servers worldwide - 7,079 in the US and 4,280 in Germany. If you're running n8n exposed to the internet, immediate action is required.",
+    "what_attackers_do": "Step 1: Attacker sends a specially crafted HTTP request to n8n's webhook endpoint. Step 2: Bypasses security controls by manipulating Content-Type header. Step 3: Reads sensitive files on the server (database, credential files). Step 4: Steals admin passwords and encryption keys. Step 5: Creates forged session cookies to log in as admin. Step 6: Uses Execute Command feature to run arbitrary commands - full server control.",
+    "what_you_should_do": [
+      "Immediately upgrade n8n to version 1.121.0 or higher (latest: 1.123.10, 2.1.5, 2.2.4, 2.3.0)",
+      "Do not expose n8n to the internet - place behind VPN or internal network",
+      "Enforce authentication on all Forms",
+      "Temporarily disable public webhook endpoints",
+      "If you were running a pre-patch version, rotate all credentials",
+      "Change passwords for all connected systems (API keys, database credentials)"
+    ],
+    "why_this_is_serious": "n8n is typically connected to an organization's most critical systems - CRM, databases, cloud storage, email, Slack, and more. If an attacker compromises n8n, they gain access to all connected systems. CVSS 10.0 is the maximum severity - the attack requires no authentication and can be executed remotely."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers target internet-exposed n8n webhook endpoints"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "System commands executed using n8n Execute Command node"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Credentials In Files",
+        "description": "Credentials extracted from n8n database and config files"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1550.001",
+        "technique_name": "Application Access Token",
+        "description": "Forged session cookies created using stolen encryption key"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Sensitive data collected via arbitrary file read"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor HTTP requests to n8n webhook endpoints. Pay special attention to Content-Type manipulation and requests containing unexpected file paths.",
+    "log_sources": [
+      {
+        "source": "n8n Application Logs",
+        "description": "Webhook requests, authentication events, and workflow execution logs",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Server / Reverse Proxy Logs",
+        "description": "nginx/Apache/Traefik logs - especially /webhook and /form-data endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "Container Runtime Logs",
+        "description": "Docker or Kubernetes logs - unexpected command executions",
+        "priority": "High"
+      },
+      {
+        "source": "Network Traffic Logs",
+        "description": "External traffic to n8n ports (5678)",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Content-Type header manipulation",
+        "description": "Requests sending application/json when multipart/form-data is expected",
+        "log_field": "Content-Type: application/json on /webhook/form/* endpoints",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Path traversal attempts in request body",
+        "description": "Request body containing file paths like /etc/passwd, database.sqlite",
+        "log_field": "req.body contains '../' or absolute paths",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected Execute Command workflow creation",
+        "description": "Newly created workflows containing Execute Command node",
+        "log_field": "workflow.nodes contains 'n8n-nodes-base.executeCommand'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Authentication bypass indicators",
+        "description": "Successful admin login followed by activity from unexpected IP",
+        "log_field": "auth.success from unusual IP after failed attempts",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Check and Update n8n Version",
+      "description": "Check your current version. If below 1.121.0, upgrade IMMEDIATELY",
+      "command": "docker exec n8n n8n --version"
+    },
+    {
+      "priority": 2,
+      "action": "Block Internet Access",
+      "description": "Make n8n inaccessible from public internet - place behind VPN or firewall",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Review Webhook Endpoints",
+      "description": "Identify which webhooks are public and disable unnecessary ones",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Review Last 90 Days of Logs",
+      "description": "Search webhook logs for suspicious Content-Type or file path requests",
+      "command": "grep -r 'webhook' /var/log/n8n/ | grep -E '(etc/passwd|database|sqlite|Content-Type)'"
+    },
+    {
+      "priority": 5,
+      "action": "Credential Rotation",
+      "description": "Rotate API keys and credentials for all services connected to n8n",
+      "command": null
+    }
+  ]
+}

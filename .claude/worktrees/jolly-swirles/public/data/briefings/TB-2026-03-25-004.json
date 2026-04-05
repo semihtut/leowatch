@@ -1,0 +1,240 @@
+{
+  "briefing_id": "TB-2026-03-25-004",
+  "title": "VMware Aria Operations Command Injection CVE-2026-22719 (CVSS 8.1) Added to CISA KEV: Unauthenticated RCE During Support-Assisted Migration Threatens Enterprise Cloud Management Infrastructure",
+  "generated_date": "2026-03-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.1,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-24"
+  },
+  "cves": [
+    "CVE-2026-22719"
+  ],
+  "tags": [
+    "vmware",
+    "aria-operations",
+    "command-injection",
+    "cisa-kev",
+    "cloud-management",
+    "rce",
+    "broadcom"
+  ],
+  "affected_products": [
+    "VMware Aria Operations 8.18.0 - 8.18.5",
+    "VMware Aria Operations 9.0.0 - 9.0.1",
+    "VMware Cloud Foundation (with integrated Aria Operations)",
+    "VMware Telco Cloud Platform 2.0",
+    "VMware Telco Cloud Infrastructure"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Broadcom Security Advisory VMSA-2026-0001",
+      "url": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/36947",
+      "date": "2026-02-24",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Broadcom Knowledge Base - Workaround Instructions for CVE-2026-22719",
+      "url": "https://knowledge.broadcom.com/external/article/430349",
+      "date": "2026-02-24",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CISA Adds Actively Exploited VMware Aria Operations Flaw to KEV Catalog",
+      "url": "https://thehackernews.com/2026/03/cisa-adds-actively-exploited-vmware.html",
+      "date": "2026-03-03",
+      "type": "News"
+    },
+    {
+      "name": "CISA Flags VMware Aria Operations RCE Flaw as Exploited in Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-vmware-aria-operations-rce-flaw-as-exploited-in-attacks/",
+      "date": "2026-03-03",
+      "type": "News"
+    },
+    {
+      "name": "VMware Aria Operations Vulnerability Added to CISA KEV Catalog - Qualys ThreatPROTECT",
+      "url": "https://threatprotect.qualys.com/2026/03/04/vmware-aria-operations-vulnerability-added-to-cisa-known-exploited-vulnerabilities-catalog-cve-2026-22719/",
+      "date": "2026-03-04",
+      "type": "Research"
+    },
+    {
+      "name": "CVE-2026-22719: VMware Aria Operations Command Injection Analysis",
+      "url": "https://socradar.io/blog/cve-2026-22719-vmware-aria-operations/",
+      "date": "2026-03-05",
+      "type": "Research"
+    },
+    {
+      "name": "CVE-2026-22719 - Tenable Vulnerability Database",
+      "url": "https://www.tenable.com/cve/CVE-2026-22719",
+      "date": "2026-02-24",
+      "type": "Research"
+    },
+    {
+      "name": "VMware Aria Operations Bug Exploited, Cloud Resources at Risk",
+      "url": "https://www.darkreading.com/cloud-security/vmware-aria-operations-bug-exploited-cloud-risk",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "VMware Aria Operations Vulnerability Exploited in the Wild",
+      "url": "https://www.securityweek.com/vmware-aria-operations-vulnerability-exploited-in-the-wild/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "CVE-2026-22719: VMware Aria Operations RCE via Command Injection Analysis",
+      "url": "https://techjacksolutions.com/scc-intel/cve-2026-22719-vmware-aria-operations-rce-via-command-injection/",
+      "date": "2026-03-05",
+      "type": "Research"
+    },
+    {
+      "name": "CVE-2026-22719 - SentinelOne Vulnerability Database",
+      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-22719/",
+      "date": "2026-03-03",
+      "type": "Research"
+    },
+    {
+      "name": "CVE-2026-22719 - OSV Vulnerability Database",
+      "url": "https://osv.dev/vulnerability/CVE-2026-22719",
+      "date": "2026-02-24",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-24",
+      "event": "Broadcom/VMware discloses CVE-2026-22719 via VMSA-2026-0001 and releases patches (v8.18.6, v9.0.2)"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "CISA adds CVE-2026-22719 to the Known Exploited Vulnerabilities (KEV) catalog, confirming active exploitation in the wild"
+    },
+    {
+      "date": "2026-03-04",
+      "event": "Broadcom updates advisory confirming awareness of reports of potential exploitation in the wild; workaround script published"
+    },
+    {
+      "date": "2026-03-24",
+      "event": "CISA FCEB (Federal Civilian Executive Branch) agency remediation deadline passes; organizations still unpatched face ongoing exploitation risk"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "Active exploitation continues; all unpatched Aria Operations deployments remain high-risk targets"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A serious vulnerability was discovered in VMware Aria Operations, the platform many large companies use to monitor and manage their cloud and virtual machine environments. The flaw allows attackers to run malicious commands on the system without needing a username or password. The U.S. government confirmed real-world attacks are happening and ordered all federal agencies to patch within 3 weeks.",
+    "who_is_affected": "Organizations running VMware Aria Operations versions 8.18.5 or earlier, or 9.0.1 or earlier, are vulnerable. This includes enterprises managing hybrid or multi-cloud environments through VMware's monitoring platform, as well as companies using VMware Cloud Foundation (VCF). Federal agencies in the U.S. were required to patch by March 24, 2026.",
+    "what_attackers_do": "Step 1: Attacker identifies an exposed VMware Aria Operations management interface accessible over the network. Step 2: Attacker waits or monitors for when a support-assisted migration process is active on the target system. Step 3: Attacker sends specially crafted network requests containing shell metacharacters (semicolons, pipes, backticks) embedded in input fields processed by the migration workflow. Step 4: The vulnerable application incorporates the attacker-controlled input directly into system commands without sanitization, causing the injected commands to execute with Aria Operations service privileges. Step 5: Attacker achieves remote code execution, can establish persistence, pivot to connected cloud infrastructure, steal cloud credentials, and expand access across the entire VMware-managed environment.",
+    "what_you_should_do": [
+      "Immediately identify all VMware Aria Operations deployments and check their versions - if running 8.18.5 or earlier, or 9.0.1 or earlier, treat as compromised until patched",
+      "Apply the official patches: upgrade to Aria Operations 8.18.6 or 9.0.2 as the priority action; for VCF, apply the corresponding component update",
+      "If patching is not immediately possible, apply Broadcom's temporary workaround script 'aria-ops-rce-workaround.sh' as root on each Aria Operations appliance node to disable the vulnerable migration service",
+      "After patching, rotate all cloud credentials, service account tokens, and API keys accessible from Aria Operations, and audit audit logs for signs of unauthorized access since February 24, 2026"
+    ],
+    "why_this_is_serious": "VMware Aria Operations sits at the heart of enterprise cloud infrastructure management - it has visibility into every virtual machine, cloud account, and workload in an organization's environment. Attackers who compromise Aria Operations gain access to a privileged vantage point: they can see credentials, steal cloud access tokens, and pivot to attack cloud accounts at AWS, Azure, or GCP. CISA confirmed active attacks are occurring, the federal patch deadline has already passed, and the attack doesn't require any login credentials, making exploitation straightforward for skilled attackers."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the command injection vulnerability in the VMware Aria Operations support-assisted migration workflow exposed over the network to gain initial foothold without authentication"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "The command injection causes the application to execute attacker-controlled shell commands via Unix shell interpreters on the Aria Operations appliance"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials in Files",
+        "description": "Post-exploitation, attackers can harvest cloud provider credentials, API tokens, and service account keys stored in the Aria Operations configuration"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1098.001",
+        "technique_name": "Account Manipulation: Additional Cloud Credentials",
+        "description": "Stolen cloud credentials from Aria Operations allow attackers to create additional cloud accounts or tokens for persistent access to cloud environments"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on monitoring VMware Aria Operations application and system logs for anomalous command execution patterns during migration workflows, unusual outbound network connections, and suspicious process activity. Organizations should also monitor cloud provider audit logs for unexpected API calls originating from the Aria Operations system.",
+    "log_sources": [
+      {
+        "source": "VMware Aria Operations Application Logs",
+        "description": "Review migration service logs for malformed input containing shell metacharacters (semicolons, pipes, backticks, ampersands) in migration workflow parameters",
+        "priority": "Critical"
+      },
+      {
+        "source": "Linux System Auditd Logs",
+        "description": "Monitor for unexpected child processes spawned by Aria Operations service accounts, particularly bash/sh executions with suspicious arguments",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow Logs",
+        "description": "Monitor for unexpected outbound connections from Aria Operations appliances to external IPs, which may indicate C2 communication post-exploitation",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Audit Logs (CloudTrail/Azure Monitor)",
+        "description": "Watch for API calls originating from Aria Operations service identities at unusual hours or calling sensitive APIs not typically used by monitoring workflows",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Shell metacharacters in migration workflow input",
+        "description": "Presence of ; | & ` characters in HTTP requests targeting Aria Operations migration endpoints may indicate exploitation attempts",
+        "log_field": "http_request_body contains ';' OR '|' OR '`' AND url contains '/migration'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected process execution by Aria Operations service",
+        "description": "System processes like wget, curl, nc, bash spawned as children of the Aria Operations migration service are highly suspicious",
+        "log_field": "parent_process='vmware-casa-migration-service' AND process_name IN ('bash','sh','wget','curl','nc','python')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connections from Aria Operations appliance to unknown IPs",
+        "description": "Post-exploitation C2 beaconing or exfiltration traffic from the Aria Operations VM to external endpoints not in the expected VMware or cloud provider IP ranges",
+        "log_field": "source_ip=<aria_ops_ip> AND destination_ip NOT IN (vmware_known_ips, cloud_provider_ips)",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Inventory and Patch VMware Aria Operations",
+      "description": "Identify all Aria Operations deployments. Upgrade to version 8.18.6 (for 8.x) or 9.0.2 (for 9.x) immediately. For VMware Cloud Foundation, apply the corresponding platform update.",
+      "command": "# Check Aria Operations version via vSphere Client or SSH to appliance\ncat /usr/lib/vmware-vpostgres/data/version\n# Apply update via Aria Operations Lifecycle Manager (vRSLCM)"
+    },
+    {
+      "priority": 2,
+      "action": "Apply Temporary Workaround if Patching is Delayed",
+      "description": "If immediate patching is not possible, run the official Broadcom workaround script 'aria-ops-rce-workaround.sh' as root on EACH Aria Operations Virtual Appliance node. This disables the vulnerable migration service. Note: this does NOT remediate other CVEs in the same advisory.",
+      "command": "sudo bash aria-ops-rce-workaround.sh"
+    },
+    {
+      "priority": 3,
+      "action": "Rotate All Credentials Accessible from Aria Operations",
+      "description": "Rotate all cloud provider credentials (AWS, Azure, GCP), service account tokens, API keys, and any vCenter/vSphere credentials that Aria Operations has access to. Treat all such credentials as potentially compromised if the system was unpatched since February 24, 2026.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit Logs for Signs of Exploitation",
+      "description": "Review Aria Operations application logs, Linux auditd logs, and cloud provider audit logs (CloudTrail, Azure Monitor, GCP Cloud Audit Logs) for suspicious activity going back to February 24, 2026. Look for unexpected process executions, outbound connections, and unusual cloud API calls.",
+      "command": "# Search for suspicious patterns in Aria Operations logs\ngrep -r 'migration' /var/log/vmware/ | grep -E '[;|&`]'"
+    }
+  ]
+}

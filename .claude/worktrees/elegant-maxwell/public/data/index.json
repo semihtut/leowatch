@@ -1,0 +1,2114 @@
+{
+  "lastUpdated": "2026-03-31T08:36:55.132Z",
+  "date": "2026-03-31",
+  "stats": {
+    "total": 109,
+    "critical": 80,
+    "high": 29,
+    "medium": 0,
+    "low": 0,
+    "cisaKev": 51,
+    "activeExploits": 15,
+    "totalSources": 1381
+  },
+  "topTags": [
+    "cloud",
+    "phishing",
+    "fortinet",
+    "Microsoft",
+    "vmware",
+    "kubernetes"
+  ],
+  "topVendors": [
+    "Fortinet",
+    "Microsoft",
+    "Trend Micro",
+    "HPE",
+    "VMware",
+    "Cisco"
+  ],
+  "featuredBriefing": "TB-2026-03-31-003",
+  "briefings": [
+    {
+      "id": "TB-2026-03-31-003",
+      "title": "Langflow AI Platform Critical RCE (CVE-2026-33017) Exploited Within 20 Hours of Disclosure — CISA KEV Added, JFrog Reports Patch Bypass in Latest Version",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-33017"
+      ],
+      "tags": [
+        "langflow",
+        "ai-platform",
+        "remote-code-execution",
+        "cisa-kev",
+        "active-exploitation",
+        "unauthenticated"
+      ],
+      "sourcesCount": 10,
+      "excerpt": "A critical vulnerability was discovered in Langflow, the popular open-source platform used to build AI agents and RAG (Retrieval-Augmented Generation) pipelines. The flaw (CVE-2026-33017) allows anyon..."
+    },
+    {
+      "id": "TB-2026-03-31-002",
+      "title": "F5 BIG-IP APM Pre-Auth RCE (CVE-2025-53521) Added to CISA KEV — Six-Month-Old DoS Flaw Reclassified as Critical Remote Code Execution Under Active Exploitation",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2025-53521"
+      ],
+      "tags": [
+        "f5",
+        "big-ip",
+        "apm",
+        "remote-code-execution",
+        "cisa-kev",
+        "active-exploitation"
+      ],
+      "sourcesCount": 9,
+      "excerpt": "A vulnerability in F5 BIG-IP Access Policy Manager (APM) that was originally reported in October 2025 as a moderate denial-of-service issue has been reclassified as a critical pre-authentication remot..."
+    },
+    {
+      "id": "TB-2026-03-31-001",
+      "title": "Citrix NetScaler ADC & Gateway Critical Memory Overread (CVE-2026-3055) Under Active Exploitation — SAML IDP Configurations Leaking Sensitive Data",
+      "severity": "Critical",
+      "date": "2026-03-31",
+      "cves": [
+        "CVE-2026-3055",
+        "CVE-2026-4368"
+      ],
+      "tags": [
+        "citrix",
+        "netscaler",
+        "memory-overread",
+        "saml",
+        "active-exploitation",
+        "network-infrastructure"
+      ],
+      "sourcesCount": 9,
+      "excerpt": "Citrix disclosed a critical vulnerability (CVE-2026-3055) in NetScaler ADC and NetScaler Gateway that allows unauthenticated remote attackers to read sensitive data directly from the appliance's memor..."
+    },
+    {
+      "id": "TB-2026-03-30-002",
+      "title": "Spring Boot Actuator Authentication Bypass CVE-2026-22731 and CVE-2026-22733 (CVSS 8.2): Silent Unauthenticated Access to Protected Endpoints via Health Group Path Collision and CloudFoundry Namespace Misrouting — Six CVEs Patched Across Spring Ecosystem",
+      "severity": "High",
+      "date": "2026-03-30",
+      "cves": [
+        "CVE-2026-22731",
+        "CVE-2026-22733",
+        "CVE-2026-22732"
+      ],
+      "tags": [
+        "spring-boot",
+        "spring-framework",
+        "authentication-bypass",
+        "actuator",
+        "java",
+        "enterprise"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "VMware/Broadcom's Spring team disclosed six security vulnerabilities affecting the widely-used Spring Boot and Spring Framework Java ecosystem in March 2026. Two of the most impactful — CVE-2026-22731..."
+    },
+    {
+      "id": "TB-2026-03-30-001",
+      "title": "TeamPCP Telnyx PyPI Supply Chain Attack: WAV Steganography Credential Stealer Targets 742,000+ Downloads in Escalating Multi-Package Campaign — Pivot to Vect Ransomware Monetization",
+      "severity": "Critical",
+      "date": "2026-03-30",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "pypi",
+        "telnyx",
+        "teampcp",
+        "credential-theft",
+        "ransomware"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A criminal hacking group called TeamPCP broke into the publishing accounts of the telnyx Python software package and secretly replaced two legitimate versions (4.87.1 and 4.87.2) with malicious ones c..."
+    },
+    {
+      "id": "TB-2026-03-29-002",
+      "title": "Boggy Serpens (MuddyWater) Iranian APT Escalates to Destructive Operations: BlackBeard Rust Backdoor and AI-Generated Malware Target Middle East Energy and Marine Sectors — Wiper Attack Risk Elevated Following Geopolitical Escalation",
+      "severity": "Critical",
+      "date": "2026-03-29",
+      "cves": [],
+      "tags": [
+        "iran",
+        "apt",
+        "muddywater",
+        "boggy-serpens",
+        "blackbeard",
+        "wiper"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "Iranian state-sponsored hacker group Boggy Serpens — also known as MuddyWater, a team linked to Iran's Ministry of Intelligence and Security (MOIS) — has been running a sophisticated multi-wave cybera..."
+    },
+    {
+      "id": "TB-2026-03-29-001",
+      "title": "F5 BIG-IP APM Pre-Auth RCE CVE-2025-53521 (CVSS 9.8) Added to CISA KEV with 3-Day Deadline: Nation-State Supply Chain Origins Enable Root-Level Compromise — BRICKSTORM Backdoor Deployed in Active Exploitation Campaign",
+      "severity": "Critical",
+      "date": "2026-03-29",
+      "cves": [
+        "CVE-2025-53521"
+      ],
+      "tags": [
+        "f5",
+        "big-ip",
+        "apm",
+        "rce",
+        "cisa-kev",
+        "nation-state"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical vulnerability in F5 BIG-IP Access Policy Manager (APM) — a widely used network security appliance deployed at Fortune 500 companies and government agencies — allows attackers to take comple..."
+    },
+    {
+      "id": "TB-2026-03-28-002",
+      "title": "Ubuntu Snap Local Privilege Escalation CVE-2026-3888 (CVSS 7.8): TOCTOU Race Between snap-confine and systemd-tmpfiles Grants Unprivileged Users Full Root Access on Default Ubuntu 24.04+ Installations — Qualys Discovery, PoC Available",
+      "severity": "High",
+      "date": "2026-03-28",
+      "cves": [
+        "CVE-2026-3888"
+      ],
+      "tags": [
+        "ubuntu",
+        "snapd",
+        "privilege-escalation",
+        "linux",
+        "local-exploit",
+        "race-condition"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "Security researchers at Qualys discovered a serious flaw in how Ubuntu's snap package system interacts with a routine system cleaning process. Snap is Ubuntu's modern app packaging format used in mill..."
+    },
+    {
+      "id": "TB-2026-03-28-001",
+      "title": "Aqua Security Trivy Supply Chain Attack CVE-2026-33634 (CVSS 9.4): TeamPCP Injects CanisterWorm Credential-Stealing Malware into 76 Version Tags — Blockchain-Based C2 Infrastructure Propagates to 141+ npm Packages",
+      "severity": "Critical",
+      "date": "2026-03-28",
+      "cves": [
+        "CVE-2026-33634"
+      ],
+      "tags": [
+        "supply-chain",
+        "trivy",
+        "aquasecurity",
+        "devops",
+        "ci-cd",
+        "credential-theft"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Aqua Security's Trivy — the world's most widely used open-source container vulnerability scanner — was secretly compromised by a hacking group called TeamPCP. The attackers used stolen administrator c..."
+    },
+    {
+      "id": "TB-2026-03-27-003",
+      "title": "Ubiquiti UniFi Network Application Path Traversal CVE-2026-22557 (CVSS 10.0): Unauthenticated Account Takeover Threatens 88,000 Internet-Exposed Controllers — Chained with NoSQL Injection CVE-2026-22558 for Full Admin Compromise",
+      "severity": "Critical",
+      "date": "2026-03-27",
+      "cves": [
+        "CVE-2026-22557",
+        "CVE-2026-22558",
+        "CVE-2026-22559"
+      ],
+      "tags": [
+        "path-traversal",
+        "account-takeover",
+        "ubiquiti",
+        "unifi",
+        "network-infrastructure",
+        "iot"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Ubiquiti, maker of the widely-deployed UniFi network equipment management platform, disclosed a perfect-score critical vulnerability on March 18, 2026. The flaw allows any attacker on the internet to ..."
+    },
+    {
+      "id": "TB-2026-03-27-002",
+      "title": "GitLab CE/EE WebAuthn 2FA Bypass CVE-2026-2745 (CVSS 6.8): Inconsistent Input Validation Allows Unauthenticated Account Takeover — Affecting All Versions from 7.11 to 18.10.0, Patch Released March 25",
+      "severity": "High",
+      "date": "2026-03-27",
+      "cves": [
+        "CVE-2026-2745"
+      ],
+      "tags": [
+        "authentication-bypass",
+        "2fa-bypass",
+        "gitlab",
+        "devops",
+        "account-takeover",
+        "webauthn"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "GitLab, the DevOps platform hosting millions of software repositories and CI/CD pipelines, disclosed a serious security flaw in how its two-factor authentication (2FA) works. Normally, logging in requ..."
+    },
+    {
+      "id": "TB-2026-03-27-001",
+      "title": "PTC Windchill & FlexPLM Unauthenticated RCE CVE-2026-4681 (CVSS 10.0): Unsafe Deserialization Grants Full System Compromise — German Federal Police Launch Emergency Response as Imminent Exploitation Threat Declared",
+      "severity": "Critical",
+      "date": "2026-03-27",
+      "cves": [
+        "CVE-2026-4681"
+      ],
+      "tags": [
+        "rce",
+        "deserialization",
+        "plm",
+        "manufacturing",
+        "zero-day",
+        "unpatched"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "PTC, maker of Windchill and FlexPLM — the most widely used product lifecycle management (PLM) software in manufacturing and engineering — disclosed a perfect-score critical vulnerability. Any attacker..."
+    },
+    {
+      "id": "TB-2026-03-26-004",
+      "title": "Langflow AI Pipeline RCE CVE-2026-33017 (CVSS 9.3) Added to CISA KEV: Unauthenticated exec() Code Injection via Public Flow Build Endpoint Exploited Within 20 Hours of Disclosure — Attackers Harvesting LLM API Keys from Exposed Instances",
+      "severity": "Critical",
+      "date": "2026-03-26",
+      "cves": [
+        "CVE-2026-33017"
+      ],
+      "tags": [
+        "langflow",
+        "rce",
+        "ai-security",
+        "cisa-kev",
+        "unauthenticated",
+        "code-injection"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical security vulnerability was discovered in Langflow, a popular open-source tool for building AI application workflows and chatbots. The flaw allows anyone on the internet to execute arbitrary..."
+    },
+    {
+      "id": "TB-2026-03-26-003",
+      "title": "TeamPCP Trojans LiteLLM PyPI Package in Multi-Stage Supply Chain Attack: Malicious Versions 1.82.7–1.82.8 Deploy Credential Stealer, Kubernetes Lateral Movement Toolkit, and Persistent Backdoor via Python .pth Auto-Execution — 3.4 Million Daily Downloads Exposed for 3 Hours",
+      "severity": "Critical",
+      "date": "2026-03-26",
+      "cves": [],
+      "tags": [
+        "pypi",
+        "supply-chain",
+        "litellm",
+        "teampcp",
+        "credential-theft",
+        "kubernetes"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A threat actor known as TeamPCP executed a sophisticated multi-stage supply chain attack that culminated in the compromise of LiteLLM, one of the most popular Python AI libraries with 3.4 million dail..."
+    },
+    {
+      "id": "TB-2026-03-26-002",
+      "title": "APT28 Exploits Zimbra ZCS Stored XSS CVE-2025-66376 in Zero-Click Operation GhostMail: Russian State Hackers Steal Session Tokens and 90 Days of Email Data from Ukrainian Government Agencies — CISA KEV Deadline April 1",
+      "severity": "High",
+      "date": "2026-03-26",
+      "cves": [
+        "CVE-2025-66376"
+      ],
+      "tags": [
+        "zimbra",
+        "xss",
+        "apt28",
+        "russia",
+        "ukraine",
+        "espionage"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Russian military hackers (APT28, also known as Fancy Bear) discovered and exploited a security flaw in Zimbra — a popular email and collaboration platform used by corporations, universities, and gover..."
+    },
+    {
+      "id": "TB-2026-03-26-001",
+      "title": "Craft CMS Pre-Authentication RCE CVE-2025-32432 (CVSS 10.0) Added to CISA KEV: PHP Gadget Chain via Image Transform Endpoint Enables Unauthenticated Full System Compromise Across 13,000+ Exposed Instances — Mimo Threat Actor Actively Deploying Cryptominers",
+      "severity": "Critical",
+      "date": "2026-03-26",
+      "cves": [
+        "CVE-2025-32432"
+      ],
+      "tags": [
+        "craft-cms",
+        "rce",
+        "php",
+        "deserialization",
+        "cisa-kev",
+        "unauthenticated"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical security flaw was found in Craft CMS, a popular website content management system used by tens of thousands of organizations worldwide. The flaw is in the image transformation feature and a..."
+    },
+    {
+      "id": "TB-2026-03-25-006",
+      "title": "Citrix NetScaler ADC and Gateway Critical Memory Disclosure CVE-2026-3055 (CVSS 9.3): Unauthenticated Out-of-Bounds Read via SAML IdP Configuration Leaks Session Tokens and Authentication Data — Exploitation Imminent",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2026-3055",
+        "CVE-2026-4368"
+      ],
+      "tags": [
+        "citrix",
+        "netscaler",
+        "adc",
+        "gateway",
+        "memory-disclosure",
+        "saml"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Citrix disclosed a critical security flaw on March 23, 2026, in NetScaler ADC and NetScaler Gateway - the network appliances that millions of enterprises use as their VPN, load balancer, and applicati..."
+    },
+    {
+      "id": "TB-2026-03-25-005",
+      "title": "TeamPCP Supply Chain Campaign Compromises Trivy Security Scanner, LiteLLM PyPI Package and 141 npm Packages: Cascading Attack Steals Cloud Credentials from 1,000+ Environments via CanisterWorm Blockchain C2",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "teampcp",
+        "trivy",
+        "litellm",
+        "pypi",
+        "npm"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A sophisticated hacker group called TeamPCP executed a cascading supply chain attack starting March 19, 2026. They broke into Trivy - one of the most widely used open-source security scanning tools - ..."
+    },
+    {
+      "id": "TB-2026-03-25-004",
+      "title": "VMware Aria Operations Command Injection CVE-2026-22719 (CVSS 8.1) Added to CISA KEV: Unauthenticated RCE During Support-Assisted Migration Threatens Enterprise Cloud Management Infrastructure",
+      "severity": "High",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2026-22719"
+      ],
+      "tags": [
+        "vmware",
+        "aria-operations",
+        "command-injection",
+        "cisa-kev",
+        "cloud-management",
+        "rce"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A serious vulnerability was discovered in VMware Aria Operations, the platform many large companies use to monitor and manage their cloud and virtual machine environments. The flaw allows attackers to..."
+    },
+    {
+      "id": "TB-2026-03-25-003",
+      "title": "Laravel Livewire RCE CVE-2025-54068 (CVSS 9.2) Added to CISA KEV: Unauthenticated Remote Command Execution via Hydration Bypass Threatens 130,000+ Laravel Applications",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2025-54068"
+      ],
+      "tags": [
+        "laravel",
+        "livewire",
+        "rce",
+        "php",
+        "web-framework",
+        "hydration-bypass"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A critical remote command execution vulnerability was discovered in Livewire, the most popular full-stack framework for Laravel PHP applications. The vulnerability (CVE-2025-54068) exists in how Livew..."
+    },
+    {
+      "id": "TB-2026-03-25-002",
+      "title": "Interlock Ransomware Exploits Cisco Secure Firewall Management Center Zero-Day CVE-2026-20131 (CVSS 10.0): 36-Day Pre-Disclosure Exploitation Enables Unauthenticated Root Access via Java Deserialization",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [
+        "CVE-2026-20131"
+      ],
+      "tags": [
+        "interlock-ransomware",
+        "cisco-fmc",
+        "zero-day",
+        "java-deserialization",
+        "firewall",
+        "pre-auth-rce"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "The Interlock ransomware group has been exploiting a maximum-severity vulnerability (CVSS 10.0) in Cisco Secure Firewall Management Center (FMC) as a zero-day for 36 days before Cisco publicly disclos..."
+    },
+    {
+      "id": "TB-2026-03-25-001",
+      "title": "GlassWorm Supply-Chain Attack Expands to 72 Malicious Open VSX Extensions: Transitive Dependency Hijacking Targets Developer Environments via Solana-Based C2 Resolution",
+      "severity": "Critical",
+      "date": "2026-03-25",
+      "cves": [],
+      "tags": [
+        "glassworm",
+        "supply-chain",
+        "open-vsx",
+        "vscode-extensions",
+        "developer-targeting",
+        "credential-theft"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A sophisticated supply-chain campaign called GlassWorm has compromised the Open VSX extension registry, which provides IDE extensions for editors like VSCodium, Eclipse Theia, and Gitpod. Attackers pu..."
+    },
+    {
+      "id": "TB-2026-03-24-006",
+      "title": "32-Year-Old GNU Telnetd Buffer Overflow Enables Unauthenticated Root RCE Before Login Prompt: CVE-2026-32746 Affects FreeBSD, NetBSD, Citrix NetScaler, TrueNAS and 3,362 Internet-Exposed Hosts With No Patch Available Until April 2026",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-32746"
+      ],
+      "tags": [
+        "telnet",
+        "gnu",
+        "linux",
+        "bsd",
+        "freebsd",
+        "netbsd"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "Security researchers at Dream Security discovered a critical 32-year-old programming error in GNU telnetd — the software that serves Telnet remote access connections on Linux, BSD, and many embedded s..."
+    },
+    {
+      "id": "TB-2026-03-24-005",
+      "title": "Laravel Livewire v3 Unauthenticated Remote Code Execution Actively Exploited by Iranian APT MuddyWater: CISA Adds CVE-2025-54068 to KEV Affecting Millions of PHP Web Applications with Federal Patch Deadline April 3, 2026",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2025-54068"
+      ],
+      "tags": [
+        "laravel",
+        "livewire",
+        "php",
+        "rce",
+        "cisa-kev",
+        "web-application"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical vulnerability in Laravel Livewire v3, a popular PHP web framework component used by millions of websites worldwide, allows attackers to execute arbitrary code on web servers without any aut..."
+    },
+    {
+      "id": "TB-2026-03-24-004",
+      "title": "DarkSword iOS Full-Chain Exploit Kit Deployed by State-Sponsored Actors and Spyware Vendors: CISA Adds Three Zero-Days to KEV as 220 Million iPhone and iPad Devices Face Complete Takeover Risk (CVE-2025-31277, CVE-2025-43510, CVE-2025-43520)",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2025-31277",
+        "CVE-2025-43510",
+        "CVE-2025-43520"
+      ],
+      "tags": [
+        "apple",
+        "ios",
+        "webkit",
+        "zero-day",
+        "spyware",
+        "cisa-kev"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "Security researchers discovered a sophisticated 3-stage iPhone and iPad hacking kit called 'DarkSword' that chains three zero-day vulnerabilities together to completely take over any iOS device runnin..."
+    },
+    {
+      "id": "TB-2026-03-24-003",
+      "title": "Oracle Releases Emergency Out-of-Band Patch for Critical CVE-2026-21992 (CVSS 9.8): Unauthenticated RCE in Identity Manager and Web Services Manager via Missing Authentication in REST WebServices",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-21992"
+      ],
+      "tags": [
+        "oracle",
+        "identity-manager",
+        "fusion-middleware",
+        "rce",
+        "unauthenticated",
+        "out-of-band-patch"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Oracle released an emergency out-of-band security patch on March 23, 2026 - outside its regular quarterly patch cycle - to fix a critical vulnerability in Oracle Identity Manager and Oracle Web Servic..."
+    },
+    {
+      "id": "TB-2026-03-24-002",
+      "title": "Interlock Ransomware Exploits Cisco Secure Firewall Management Center Zero-Day CVE-2026-20131 (CVSS 10.0): Unauthenticated Java Deserialization Achieves Root Access on Enterprise Firewalls, Exploited 36 Days Before Patch",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-20131"
+      ],
+      "tags": [
+        "cisco",
+        "firewall",
+        "fmc",
+        "ransomware",
+        "interlock",
+        "zero-day"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "The Interlock ransomware group discovered and exploited a maximum-severity vulnerability in Cisco's Secure Firewall Management Center (FMC) as a zero-day, starting on January 26, 2026 - a full 36 days..."
+    },
+    {
+      "id": "TB-2026-03-24-001",
+      "title": "Critical Langflow AI Platform Flaw CVE-2026-33017 Exploited Within 20 Hours of Disclosure: Unauthenticated RCE via exec() Compromises AI Pipelines and Connected Databases Across Exposed Instances",
+      "severity": "Critical",
+      "date": "2026-03-24",
+      "cves": [
+        "CVE-2026-33017"
+      ],
+      "tags": [
+        "langflow",
+        "ai-platform",
+        "rce",
+        "code-injection",
+        "unauthenticated",
+        "actively-exploited"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Langflow, a popular open-source platform used by organizations to build AI agents and Retrieval-Augmented Generation (RAG) pipelines, was found to have a critical vulnerability that lets attackers run..."
+    },
+    {
+      "id": "TB-2026-03-15-005",
+      "title": "n8n Workflow Automation Platform Hit by Cascading Critical RCE Vulnerabilities: CISA Flags Active Exploitation, New Sandbox Escapes Enable Unauthenticated Credential Theft of AWS Keys and OAuth Tokens Across 24,700+ Exposed Instances (CVE-2025-68613, CVE-2026-27577, CVE-2026-27493)",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2025-68613",
+        "CVE-2026-27577",
+        "CVE-2026-27493"
+      ],
+      "tags": [
+        "n8n",
+        "workflow-automation",
+        "rce",
+        "sandbox-escape",
+        "credential-theft",
+        "cisa-kev"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "n8n, a popular open-source workflow automation platform used by tens of thousands of organizations to connect cloud services and automate business processes, has been hit by a cascade of critical secu..."
+    },
+    {
+      "id": "TB-2026-03-15-004",
+      "title": "Juniper Networks Junos OS Evolved Pre-Authentication Root RCE via Exposed Anomaly Detection REST API on PTX Series Routers: watchTowr Research Confirms Single-Packet Full Device Takeover (CVE-2026-21902)",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2026-21902"
+      ],
+      "tags": [
+        "juniper",
+        "junos",
+        "rce",
+        "pre-authentication",
+        "network-infrastructure",
+        "ptx-series"
+      ],
+      "sourcesCount": 19,
+      "excerpt": "Researchers at watchTowr discovered that Juniper Networks' PTX Series core routers (running Junos OS Evolved) contained a built-in diagnostic service called the On-Box Anomaly Detection Framework that..."
+    },
+    {
+      "id": "TB-2026-03-15-003",
+      "title": "Cisco Catalyst SD-WAN Authentication Bypass Actively Exploited Since 2023 by UAT-8616: CISA Emergency Directive 26-03 Orders Immediate Federal Patching of CVSS 10.0 Flaw Granting Full Network Fabric Control (CVE-2026-20127)",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2026-20127"
+      ],
+      "tags": [
+        "cisco",
+        "sd-wan",
+        "authentication-bypass",
+        "rce",
+        "actively-exploited",
+        "cisa-kev"
+      ],
+      "sourcesCount": 18,
+      "excerpt": "A maximum-severity flaw (CVSS 10.0) in Cisco's SD-WAN network management software allows hackers to log in without any password and take complete control of the devices that manage an entire company's..."
+    },
+    {
+      "id": "TB-2026-03-15-002",
+      "title": "CrackArmor: Nine Critical Confused Deputy Vulnerabilities in AppArmor Linux Security Module Allow Unprivileged Local Users to Escalate to Root — 12.6 Million Enterprise Linux Systems Affected Across Ubuntu, Debian, SUSE, and Kubernetes",
+      "severity": "Critical",
+      "date": "2026-03-15",
+      "cves": [],
+      "tags": [
+        "linux",
+        "apparmor",
+        "privilege-escalation",
+        "ubuntu",
+        "kubernetes",
+        "container-escape"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Security researchers at Qualys discovered nine serious flaws in AppArmor, a built-in security system that comes standard with Ubuntu, Debian, and SUSE Linux — the most widely deployed enterprise Linux..."
+    },
+    {
+      "id": "TB-2026-03-15-001",
+      "title": "Microsoft SharePoint Server Authenticated RCE via Improper Input Validation Patched in March 2026 Patch Tuesday — On-Premises Deployments at Risk (CVE-2026-26106)",
+      "severity": "High",
+      "date": "2026-03-15",
+      "cves": [
+        "CVE-2026-26106"
+      ],
+      "tags": [
+        "microsoft",
+        "sharepoint",
+        "rce",
+        "patch-tuesday",
+        "on-premises",
+        "improper-input-validation"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Microsoft patched a serious security flaw in its on-premises SharePoint Server product that could allow attackers who already have basic user access to run malicious code on the server. The vulnerabil..."
+    },
+    {
+      "id": "TB-2026-03-14-002",
+      "title": "Microsoft Office Preview Pane Remote Code Execution Requires Zero User Interaction: March 2026 Patch Tuesday Discloses Critical RCE in Word, Excel, and Outlook Via Type Confusion and Pointer Dereference (CVE-2026-26110, CVE-2026-26113)",
+      "severity": "Critical",
+      "date": "2026-03-14",
+      "cves": [
+        "CVE-2026-26110",
+        "CVE-2026-26113"
+      ],
+      "tags": [
+        "microsoft",
+        "office",
+        "rce",
+        "preview-pane",
+        "patch-tuesday",
+        "word"
+      ],
+      "sourcesCount": 20,
+      "excerpt": "Microsoft's March 2026 Patch Tuesday revealed two critical security holes in Microsoft Office that are alarming because victims do not need to open, double-click, or run anything to be compromised. Si..."
+    },
+    {
+      "id": "TB-2026-03-14-001",
+      "title": "Google Chrome Skia Out-of-Bounds Write and V8 Type Confusion Zero-Days Actively Exploited in the Wild: CISA Adds Both to KEV Catalog with Federal Patch Deadline (CVE-2026-3909, CVE-2026-3910)",
+      "severity": "Critical",
+      "date": "2026-03-14",
+      "cves": [
+        "CVE-2026-3909",
+        "CVE-2026-3910"
+      ],
+      "tags": [
+        "browser",
+        "chrome",
+        "chromium",
+        "zero-day",
+        "actively-exploited",
+        "cisa-kev"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Google discovered two critical security holes in its Chrome browser that hackers were already exploiting before Google even released a fix. The first flaw (CVE-2026-3909) is in Skia, the graphics engi..."
+    },
+    {
+      "id": "TB-2026-03-13-006",
+      "title": "Microsoft .NET Base64Url Out-of-Bounds Read Zero-Day Allows Unauthenticated Remote Denial of Service Against All .NET 9 and 10 Applications: March 2026 Patch Tuesday (CVE-2026-26127)",
+      "severity": "High",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-26127"
+      ],
+      "tags": [
+        "microsoft",
+        "dotnet",
+        "denial-of-service",
+        "zero-day",
+        "patch-tuesday",
+        "web-application"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Microsoft disclosed a zero-day denial-of-service vulnerability in the .NET runtime's Base64Url decoding implementation. The flaw exists in the Microsoft.Bcl.Memory library's high-performance Base64Url..."
+    },
+    {
+      "id": "TB-2026-03-13-005",
+      "title": "Veeam Backup & Replication 7 Critical RCE Flaws Let Any Domain User Compromise Backup Infrastructure: Ransomware Groups Expected to Weaponize Within Days (CVE-2026-21666, CVE-2026-21669)",
+      "severity": "Critical",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-21666",
+        "CVE-2026-21669"
+      ],
+      "tags": [
+        "veeam",
+        "backup",
+        "rce",
+        "ransomware",
+        "domain-user",
+        "authenticated"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Veeam released emergency patches on March 12, 2026 for 7 critical vulnerabilities in Backup & Replication — their flagship enterprise backup product. The two most severe flaws (CVE-2026-21666 and CVE-..."
+    },
+    {
+      "id": "TB-2026-03-13-004",
+      "title": "Microsoft SQL Server Elevation of Privilege Zero-Day Grants Sysadmin Access via TDS Protocol Flaw: March 2026 Patch Tuesday (CVE-2026-21262)",
+      "severity": "High",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-21262"
+      ],
+      "tags": [
+        "microsoft",
+        "sql-server",
+        "privilege-escalation",
+        "patch-tuesday",
+        "database",
+        "zero-day"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A security researcher named Erland Sommarskog publicly disclosed a flaw in Microsoft SQL Server before a patch was ready, making this a zero-day. The bug exists in how SQL Server handles the login han..."
+    },
+    {
+      "id": "TB-2026-03-13-003",
+      "title": "Juniper Junos OS Evolved PTX Series Unauthenticated Root RCE via Exposed Anomaly Detection API: watchTowr Emergency Disclosure (CVE-2026-21902)",
+      "severity": "Critical",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-21902"
+      ],
+      "tags": [
+        "juniper",
+        "junos",
+        "ptx-series",
+        "rce",
+        "pre-auth",
+        "network-infrastructure"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Security researchers at watchTowr Labs discovered a critical flaw in Juniper's Junos OS Evolved operating system running on PTX Series high-performance routers. The vulnerability exists because an int..."
+    },
+    {
+      "id": "TB-2026-03-13-002",
+      "title": "Ivanti Endpoint Manager Pre-Auth Authentication Bypass Grants Credential Vault Access: CISA KEV Demands Federal Patch by March 23 (CVE-2026-1603)",
+      "severity": "High",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2026-1603"
+      ],
+      "tags": [
+        "ivanti",
+        "endpoint-manager",
+        "authentication-bypass",
+        "credential-theft",
+        "cisa-kev",
+        "uem"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A serious authentication bypass flaw was found in Ivanti Endpoint Manager (EPM), a software platform that organizations use to manage all their employee computers and devices. The vulnerability allows..."
+    },
+    {
+      "id": "TB-2026-03-13-001",
+      "title": "n8n Workflow Automation Platform Critical RCE via Expression Injection Exploited in the Wild: CISA KEV Added with March 25 Federal Deadline (CVE-2025-68613)",
+      "severity": "Critical",
+      "date": "2026-03-13",
+      "cves": [
+        "CVE-2025-68613"
+      ],
+      "tags": [
+        "n8n",
+        "workflow-automation",
+        "rce",
+        "expression-injection",
+        "cisa-kev",
+        "nodejs"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical vulnerability was discovered in n8n, a popular open-source workflow automation platform used by thousands of organizations. The flaw allows users with a basic account to escape the platform..."
+    },
+    {
+      "id": "TB-2026-03-10-002",
+      "title": "Omnissa Workspace ONE UEM Pre-Auth SSRF Exploited in the Wild: CISA KEV Added 5 Years After Disclosure as Active Attacks Resume (CVE-2021-22054)",
+      "severity": "High",
+      "date": "2026-03-10",
+      "cves": [
+        "CVE-2021-22054"
+      ],
+      "tags": [
+        "omnissa",
+        "vmware",
+        "workspace-one",
+        "ssrf",
+        "uem",
+        "mdm"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Omnissa Workspace ONE UEM — a widely deployed enterprise mobile device management platform (formerly VMware Workspace ONE) — contains a pre-authentication Server-Side Request Forgery vulnerability tha..."
+    },
+    {
+      "id": "TB-2026-03-10-001",
+      "title": "SolarWinds Web Help Desk Third-Generation Deserialization RCE Actively Exploited: CISA KEV Mandates Federal Remediation by March 23 (CVE-2025-26399)",
+      "severity": "Critical",
+      "date": "2026-03-10",
+      "cves": [
+        "CVE-2025-26399"
+      ],
+      "tags": [
+        "solarwinds",
+        "deserialization",
+        "rce",
+        "itsm",
+        "java",
+        "supply-chain"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "SolarWinds Web Help Desk, a popular IT service management platform used by thousands of enterprises, contains a critical vulnerability that allows attackers to run malicious code on affected servers w..."
+    },
+    {
+      "id": "TB-2026-03-09-003",
+      "title": "Tencent WeKnora LLM Framework Dual CVSS 10.0 RCE Zero-Days: Unauthenticated SQL Injection Bypasses PostgreSQL Protections via Nested Array Expressions, MCP Stdio Command Injection Bypasses Command Validation via npx -p Flag (CVE-2026-30860, CVE-2026-30861)",
+      "severity": "Critical",
+      "date": "2026-03-09",
+      "cves": [
+        "CVE-2026-30860",
+        "CVE-2026-30861"
+      ],
+      "tags": [
+        "ai-ml",
+        "llm",
+        "rag",
+        "rce",
+        "sql-injection",
+        "command-injection"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Security researchers disclosed two maximum-severity vulnerabilities (CVSS 10.0) in WeKnora, an open-source LLM-powered framework developed by Tencent for building AI-powered document understanding and..."
+    },
+    {
+      "id": "TB-2026-03-09-002",
+      "title": "Cisco Catalyst SD-WAN Manager CVE-2026-20122 and CVE-2026-20128 Under Active Exploitation: Authenticated File Overwrite and DCA Credential Disclosure Enable Web Shell Deployment and Cross-Instance Lateral Movement in Enterprise SD-WAN Infrastructure",
+      "severity": "High",
+      "date": "2026-03-09",
+      "cves": [
+        "CVE-2026-20122",
+        "CVE-2026-20128"
+      ],
+      "tags": [
+        "cisco",
+        "sd-wan",
+        "vmanage",
+        "credential-disclosure",
+        "file-overwrite",
+        "webshell"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Cisco has confirmed that attackers are actively exploiting two vulnerabilities in Cisco Catalyst SD-WAN Manager (also known as vManage), the central management software that enterprises use to control..."
+    },
+    {
+      "id": "TB-2026-03-09-001",
+      "title": "D-Link Legacy DSL Router CISA KEV Unauthenticated Command Injection via dnscfg.cgi Enables Full RCE and Mass DNS Hijacking on Hundreds of Thousands of End-of-Life Devices with No Patch Available (CVE-2026-0625, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-09",
+      "cves": [
+        "CVE-2026-0625"
+      ],
+      "tags": [
+        "d-link",
+        "iot",
+        "dns-hijacking",
+        "rce",
+        "command-injection",
+        "eol-device"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Security researchers discovered that attackers have been actively exploiting a critical flaw in several discontinued D-Link home and small business routers since at least November 2025. The vulnerabil..."
+    },
+    {
+      "id": "TB-2026-03-07-003",
+      "title": "Coruna iOS Exploit Kit CISA KEV: Nation-State-Grade 23-Exploit Framework Chains CVE-2023-41974 and CVE-2023-43000 to Steal Cryptocurrency from 42,000+ iPhones via Drive-By WebKit Compromise",
+      "severity": "Critical",
+      "date": "2026-03-07",
+      "cves": [
+        "CVE-2023-41974",
+        "CVE-2023-43000"
+      ],
+      "tags": [
+        "ios",
+        "apple",
+        "webkit",
+        "mobile",
+        "exploit-kit",
+        "cryptocurrency"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A sophisticated nation-state-grade iOS exploit kit called 'Coruna' was publicly disclosed on March 3, 2026 by Google Threat Intelligence and iVerify. The kit strings together 23 separate Apple vulnera..."
+    },
+    {
+      "id": "TB-2026-03-07-002",
+      "title": "Rockwell Automation Logix PLC Hardcoded Cryptographic Key Authentication Bypass CISA KEV: Unauthenticated Attackers Impersonate Engineering Workstations to Modify Industrial Control System Logic (CVE-2021-22681)",
+      "severity": "Critical",
+      "date": "2026-03-07",
+      "cves": [
+        "CVE-2021-22681"
+      ],
+      "tags": [
+        "ics",
+        "ot",
+        "plc",
+        "rockwell",
+        "authentication-bypass",
+        "critical-infrastructure"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical vulnerability in Rockwell Automation industrial controllers (PLCs) was confirmed as actively exploited and added to CISA's must-patch list on March 5, 2026. The flaw stems from a hardcoded ..."
+    },
+    {
+      "id": "TB-2026-03-07-001",
+      "title": "Hikvision IP Camera Improper Authentication CISA KEV: HiatusRAT Threat Actor Exploits CVE-2017-7921 Nine-Year-Old Authentication Bypass for Mass IoT Surveillance Network Infiltration",
+      "severity": "Critical",
+      "date": "2026-03-07",
+      "cves": [
+        "CVE-2017-7921"
+      ],
+      "tags": [
+        "iot",
+        "hikvision",
+        "authentication-bypass",
+        "surveillance",
+        "hiatusrat",
+        "network-security"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A 9-year-old vulnerability in Hikvision security cameras was officially confirmed as actively exploited and added to CISA's must-patch list on March 5, 2026. The flaw allows anyone on the internet to ..."
+    },
+    {
+      "id": "TB-2026-03-06-002",
+      "title": "pac4j-jwt CVSS 10.0 Authentication Bypass via Forged Encrypted JWT Tokens: Null Check Bug Allows Attackers with RSA Public Key to Impersonate Any User Including Administrators in Java Enterprise Applications (CVE-2026-29000)",
+      "severity": "Critical",
+      "date": "2026-03-06",
+      "cves": [
+        "CVE-2026-29000"
+      ],
+      "tags": [
+        "java",
+        "jwt",
+        "authentication-bypass",
+        "pac4j",
+        "enterprise",
+        "cryptography"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Researchers discovered a critical flaw (CVSS 10.0) in pac4j-jwt, a widely-used Java security library that many enterprise applications rely on to verify login tokens (JWTs). The bug is a single null c..."
+    },
+    {
+      "id": "TB-2026-03-06-001",
+      "title": "Cisco Secure Firewall Management Center Dual CVSS 10.0 Vulnerabilities: Unauthenticated Authentication Bypass and Java Deserialization RCE Grant Immediate Root Access to Enterprise Firewall Infrastructure (CVE-2026-20079, CVE-2026-20131)",
+      "severity": "Critical",
+      "date": "2026-03-06",
+      "cves": [
+        "CVE-2026-20079",
+        "CVE-2026-20131"
+      ],
+      "tags": [
+        "cisco",
+        "firewall",
+        "authentication-bypass",
+        "java-deserialization",
+        "rce",
+        "network-security"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Cisco discovered two maximum-severity security flaws (CVSS 10.0) in its Firewall Management Center (FMC) — the central software that IT teams use to manage Cisco Firepower firewalls across an organiza..."
+    },
+    {
+      "id": "TB-2026-03-05-002",
+      "title": "Gradio AI/ML Framework Unauthenticated Hugging Face Token Theft via Flawed OAuth Mocked Flow — Hardcoded Session Signing Key Exposes HF_TOKEN to Any Network Attacker Across 470,000+ Deployed Applications (CVE-2026-27167, CVSS 8.1)",
+      "severity": "High",
+      "date": "2026-03-05",
+      "cves": [
+        "CVE-2026-27167",
+        "CVE-2026-28415"
+      ],
+      "tags": [
+        "gradio",
+        "huggingface",
+        "credential-theft",
+        "ai-ml",
+        "oauth",
+        "python"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A serious security flaw was found in Gradio, the popular Python library that AI and machine learning developers use to build demos and web interfaces for their models. The vulnerability is in Gradio's..."
+    },
+    {
+      "id": "TB-2026-03-04-003",
+      "title": "Hyland Alfresco Transformation Service Unauthenticated Argument Injection Enables SSRF and Full Remote Code Execution on Enterprise Content Management Systems Across All Versions Prior to 4.2.3 (CVE-2026-26339, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-04",
+      "cves": [
+        "CVE-2026-26339"
+      ],
+      "tags": [
+        "alfresco",
+        "content-management",
+        "argument-injection",
+        "rce",
+        "ssrf",
+        "enterprise-ecm"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical security vulnerability was found in the Hyland Alfresco Transformation Service — a component used by the Alfresco enterprise content management platform to automatically convert documents f..."
+    },
+    {
+      "id": "TB-2026-03-04-002",
+      "title": "Trend Micro Apex One Critical Directory Traversal RCE: Unauthenticated Remote Code Execution on Endpoint Security Management Console Affects All On-Premises Deployments Prior to Critical Patch Build 14136 (CVE-2025-71210, CVE-2025-71211, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-04",
+      "cves": [
+        "CVE-2025-71210",
+        "CVE-2025-71211",
+        "CVE-2025-71212",
+        "CVE-2025-71213"
+      ],
+      "tags": [
+        "trend-micro",
+        "apex-one",
+        "directory-traversal",
+        "rce",
+        "endpoint-security",
+        "enterprise"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical security flaw was discovered in Trend Micro Apex One, a widely-used enterprise security product installed on millions of corporate computers to protect them from malware and cyberattacks. T..."
+    },
+    {
+      "id": "TB-2026-03-04-001",
+      "title": "VMware Aria Operations Command Injection CISA KEV: Unauthenticated RCE During Support Migration Enables Full Infrastructure Takeover Across All Aria Operations 8.x and Cloud Foundation 9.x Deployments (CVE-2026-22719, CVSS 8.1)",
+      "severity": "High",
+      "date": "2026-03-04",
+      "cves": [
+        "CVE-2026-22719"
+      ],
+      "tags": [
+        "vmware",
+        "aria-operations",
+        "command-injection",
+        "rce",
+        "cisa-kev",
+        "cloud-infrastructure"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A dangerous security flaw was found in VMware Aria Operations, which is a popular tool used by IT teams in large companies to monitor and manage all their virtual computers and servers from one centra..."
+    },
+    {
+      "id": "TB-2026-03-03-002",
+      "title": "PostgreSQL pgcrypto Extension Heap Buffer Overflow Enables Authenticated RCE as OS User Across All Major PostgreSQL Versions (CVE-2026-2005, CVSS 8.8) — Emergency Out-of-Cycle Patch Released February 26",
+      "severity": "High",
+      "date": "2026-03-03",
+      "cves": [
+        "CVE-2026-2005"
+      ],
+      "tags": [
+        "postgresql",
+        "database",
+        "rce",
+        "heap-overflow",
+        "pgcrypto",
+        "authenticated"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "A critical memory corruption flaw was found in PostgreSQL's pgcrypto extension — a widely-used module that handles encryption and decryption operations in databases. The vulnerability is in how pgcryp..."
+    },
+    {
+      "id": "TB-2026-03-03-001",
+      "title": "Google Android March 2026 Security Bulletin: Actively Exploited Qualcomm Display Driver Zero-Day (CVE-2026-21385) Plus Critical No-Interaction RCE Among 129 Vulnerabilities Patched — Largest Android Update Since April 2018",
+      "severity": "Critical",
+      "date": "2026-03-03",
+      "cves": [
+        "CVE-2026-21385",
+        "CVE-2026-0006"
+      ],
+      "tags": [
+        "android",
+        "qualcomm",
+        "zero-day",
+        "cisa-kev",
+        "mobile",
+        "privilege-escalation"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Google released its largest Android security update since April 2018, patching 129 security vulnerabilities including one that attackers are already actively exploiting in the wild. The exploited vuln..."
+    },
+    {
+      "id": "TB-2026-03-02-003",
+      "title": "Juniper Networks PTX Series Router Critical Unauthenticated Root RCE via On-Box Anomaly Detection Framework Misconfiguration Enables Complete Network Infrastructure Takeover (CVE-2026-21902, CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2026-03-02",
+      "cves": [
+        "CVE-2026-21902"
+      ],
+      "tags": [
+        "juniper",
+        "ptx-router",
+        "rce",
+        "network-infrastructure",
+        "anomaly-detection",
+        "unauthenticated"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "A critical vulnerability was discovered in Juniper Networks PTX Series routers, which are high-performance core and edge network devices used by Internet Service Providers, telecommunications companie..."
+    },
+    {
+      "id": "TB-2026-03-02-002",
+      "title": "Roundcube Webmail Critical Deserialization RCE and SVG XSS Under Active Nation-State Exploitation: CamoFei APT Deploys Godzilla Webshells Against 84,000+ Unpatched Servers (CVE-2025-49113, CVE-2025-68461, CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-03-02",
+      "cves": [
+        "CVE-2025-49113",
+        "CVE-2025-68461"
+      ],
+      "tags": [
+        "roundcube",
+        "webmail",
+        "deserialization",
+        "rce",
+        "xss",
+        "cisa-kev"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Two critical vulnerabilities were discovered in Roundcube Webmail, one of the most widely deployed open-source email platforms with over 2.4 million internet-facing instances worldwide. The first flaw..."
+    },
+    {
+      "id": "TB-2026-03-02-001",
+      "title": "Cisco Catalyst SD-WAN Controller CVSS 10.0 Authentication Bypass Zero-Day: Threat Actor UAT-8616 Exploits CVE-2026-20127 Since 2023 for Global Network Infrastructure Takeover, Triggering CISA Emergency Directive ED 26-03 and Five Eyes Joint Advisory",
+      "severity": "Critical",
+      "date": "2026-03-02",
+      "cves": [
+        "CVE-2026-20127",
+        "CVE-2022-20775"
+      ],
+      "tags": [
+        "cisco",
+        "sd-wan",
+        "zero-day",
+        "authentication-bypass",
+        "cisa-kev",
+        "nation-state"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A maximum-severity vulnerability was discovered in Cisco SD-WAN, the networking platform used by thousands of enterprises and government agencies to manage their wide-area networks. A sophisticated th..."
+    },
+    {
+      "id": "TB-2026-02-20-004",
+      "title": "Shadow Campaigns: State-Backed APT Group TGR-STA-1030 Conducts Massive Global Cyber Espionage Operation Targeting 155 Countries, Breaching 70+ Government and Critical Infrastructure Organizations Using ShadowGuard eBPF Rootkit and Diaoyu Loader",
+      "severity": "Critical",
+      "date": "2026-02-20",
+      "cves": [],
+      "tags": [
+        "apt",
+        "espionage",
+        "china-nexus",
+        "critical-infrastructure",
+        "government",
+        "rootkit"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Palo Alto Networks Unit 42 research team uncovered one of the largest state-sponsored cyber espionage operations ever documented, dubbed Shadow Campaigns. The operation is conducted by a threat group ..."
+    },
+    {
+      "id": "TB-2026-02-20-003",
+      "title": "OpenSSL CMS AuthEnvelopedData Critical Stack Buffer Overflow (CVE-2025-15467) Enables Pre-Authentication Remote Code Execution Across All OpenSSL 3.x Deployments, Discovered by AI-Assisted Research Team AISLE",
+      "severity": "Critical",
+      "date": "2026-02-20",
+      "cves": [
+        "CVE-2025-15467"
+      ],
+      "tags": [
+        "openssl",
+        "rce",
+        "buffer-overflow",
+        "cryptography",
+        "supply-chain",
+        "ai-discovery"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "A critical stack buffer overflow vulnerability was discovered in OpenSSL, the most widely used cryptographic library that secures most of the internet's encrypted communications. The flaw exists in th..."
+    },
+    {
+      "id": "TB-2026-02-20-002",
+      "title": "Grandstream GXP1600 Series VoIP Phones Critical Unauthenticated Stack Buffer Overflow (CVE-2026-2329) Enables Remote Code Execution as Root, Silent Eavesdropping via SIP Proxy Hijacking, and Full Network Compromise",
+      "severity": "Critical",
+      "date": "2026-02-20",
+      "cves": [
+        "CVE-2026-2329"
+      ],
+      "tags": [
+        "voip",
+        "rce",
+        "eavesdropping",
+        "iot",
+        "grandstream",
+        "buffer-overflow"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Rapid7 security researcher Stephen Fewer discovered a critical vulnerability in the Grandstream GXP1600 series of VoIP (Voice over IP) desk phones, which are widely used by small and medium businesses..."
+    },
+    {
+      "id": "TB-2026-02-20-001",
+      "title": "PromptSpy: First Android Malware to Weaponize Google Gemini AI at Runtime for Automated Persistence, Enabling VNC Remote Access, PIN Capture, and AI-Driven UI Navigation on Infected Devices",
+      "severity": "High",
+      "date": "2026-02-20",
+      "cves": [],
+      "tags": [
+        "android",
+        "malware",
+        "generative-ai",
+        "gemini",
+        "mobile",
+        "banking-trojan"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "ESET security researchers discovered a groundbreaking Android malware called PromptSpy that represents a dangerous first: it uses Google's Gemini generative AI assistant at runtime to automate malicio..."
+    },
+    {
+      "id": "TB-2026-02-18-003",
+      "title": "Keenadu Android Firmware Backdoor: Supply Chain Compromise Embeds Multi-Stage Loader in Tablet Firmware via Signed OTA Updates, Enabling Full Remote Device Control Across 13,000+ Devices Worldwide",
+      "severity": "High",
+      "date": "2026-02-18",
+      "cves": [],
+      "tags": [
+        "android",
+        "firmware-backdoor",
+        "supply-chain",
+        "mobile",
+        "keenadu",
+        "botnet"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Kaspersky security researchers discovered a sophisticated Android malware called Keenadu that was embedded directly into the firmware of tablets made by multiple manufacturers, including Alldocube. Th..."
+    },
+    {
+      "id": "TB-2026-02-18-002",
+      "title": "Critical VSCode Extension Supply Chain Vulnerabilities Expose 128 Million Developer Installations to File Theft, Remote Code Execution, and Credential Exfiltration (CVE-2025-65717, CVE-2025-65715, CVE-2025-65716)",
+      "severity": "Critical",
+      "date": "2026-02-18",
+      "cves": [
+        "CVE-2025-65717",
+        "CVE-2025-65715",
+        "CVE-2025-65716"
+      ],
+      "tags": [
+        "vscode",
+        "supply-chain",
+        "developer-tools",
+        "ide",
+        "rce",
+        "file-exfiltration"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Security researchers at OX Security discovered critical vulnerabilities in four of the most popular Visual Studio Code extensions, which together have been downloaded over 128 million times. These ext..."
+    },
+    {
+      "id": "TB-2026-02-18-001",
+      "title": "Dell RecoverPoint for Virtual Machines CVSS 10.0 Zero-Day: China-Nexus UNC6201 Exploits Hardcoded Tomcat Credentials Since Mid-2024 to Deploy BRICKSTORM and GRIMBOLT Backdoors (CVE-2026-22769)",
+      "severity": "Critical",
+      "date": "2026-02-18",
+      "cves": [
+        "CVE-2026-22769"
+      ],
+      "tags": [
+        "dell",
+        "recoverpoint",
+        "zero-day",
+        "china-apt",
+        "hardcoded-credentials",
+        "vmware"
+      ],
+      "sourcesCount": 13,
+      "excerpt": "A maximum-severity vulnerability was discovered in Dell RecoverPoint for Virtual Machines, the enterprise disaster recovery platform used to protect and replicate virtual machine workloads. The flaw i..."
+    },
+    {
+      "id": "TB-2026-02-17-003",
+      "title": "BQTLock and GREENBLOOD: Emerging Ransomware Families Combine Stealth Process Injection, Rapid ChaCha8 Encryption, and TOR-Based Extortion for Maximum Business Disruption",
+      "severity": "High",
+      "date": "2026-02-17",
+      "cves": [],
+      "tags": [
+        "ransomware",
+        "bqtlock",
+        "greenblood",
+        "remcos",
+        "uac-bypass",
+        "chacha8"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Two new ransomware families have emerged in February 2026, each designed to cause maximum damage in minimum time. BQTLock is a stealth-focused ransomware that hides inside Windows system processes to ..."
+    },
+    {
+      "id": "TB-2026-02-17-002",
+      "title": "Google Chrome First Zero-Day of 2026: CSS Use-After-Free Vulnerability Under Active Exploitation Enables In-Sandbox Code Execution (CVE-2026-2441)",
+      "severity": "High",
+      "date": "2026-02-17",
+      "cves": [
+        "CVE-2026-2441"
+      ],
+      "tags": [
+        "google-chrome",
+        "zero-day",
+        "use-after-free",
+        "css",
+        "browser",
+        "rce"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical zero-day vulnerability was discovered in Google Chrome's CSS rendering engine. The flaw is a use-after-free bug, where Chrome accidentally uses memory that has already been freed, allowing ..."
+    },
+    {
+      "id": "TB-2026-02-17-001",
+      "title": "Apple dyld Zero-Day Memory Corruption: Extremely Sophisticated Targeted Attacks Exploit CVE-2026-20700 Across All Apple Platforms (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-17",
+      "cves": [
+        "CVE-2026-20700",
+        "CVE-2025-14174",
+        "CVE-2025-43529"
+      ],
+      "tags": [
+        "apple",
+        "zero-day",
+        "dyld",
+        "ios",
+        "macos",
+        "memory-corruption"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical zero-day vulnerability was discovered in Apple's dyld component, which is the Dynamic Link Editor responsible for loading software libraries on every Apple device. The flaw allows attackers..."
+    },
+    {
+      "id": "TB-2026-02-12-004",
+      "title": "Fortinet FortiClientEMS Unauthenticated SQL Injection to RCE: Public PoC Targets Enterprise Endpoint Management with xp_cmdshell Exploitation Chain (CVE-2026-21643)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2026-21643"
+      ],
+      "tags": [
+        "fortinet",
+        "forticlient-ems",
+        "sql-injection",
+        "rce",
+        "endpoint-management",
+        "enterprise"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical SQL injection vulnerability was discovered in Fortinet FortiClientEMS, the enterprise platform used to centrally manage FortiClient endpoint security agents across organizations. The flaw a..."
+    },
+    {
+      "id": "TB-2026-02-12-003",
+      "title": "GNU InetUtils telnetd 11-Year Authentication Bypass: Trivial Root Shell via USER Environment Variable Under Mass Exploitation by rwxrwx Group (CVE-2026-24061, CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2026-24061"
+      ],
+      "tags": [
+        "telnet",
+        "authentication-bypass",
+        "gnu-inetutils",
+        "cisa-kev",
+        "active-exploitation",
+        "linux"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "An 11-year-old vulnerability was discovered in the GNU InetUtils telnetd service, which is the standard Telnet server on many Linux and Unix systems. The flaw is incredibly simple: an attacker can sen..."
+    },
+    {
+      "id": "TB-2026-02-12-002",
+      "title": "WatchGuard Firebox IKEv2 VPN Zero-Day: Unauthenticated Out-of-Bounds Write Enables Root RCE on 125,000+ Firewalls (CVE-2025-14733, CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2025-14733"
+      ],
+      "tags": [
+        "watchguard",
+        "firewall",
+        "vpn",
+        "ikev2",
+        "zero-day",
+        "cisa-kev"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A critical zero-day vulnerability was found in WatchGuard Firebox firewalls that allows attackers to take complete control of the device remotely without any login credentials. The flaw is in the IKEv..."
+    },
+    {
+      "id": "TB-2026-02-12-001",
+      "title": "Microsoft February 2026 Patch Tuesday: Six Actively Exploited Zero-Days Across Windows Shell, MSHTML, Office, DWM, and Remote Desktop Services (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-12",
+      "cves": [
+        "CVE-2026-21510",
+        "CVE-2026-21513",
+        "CVE-2026-21514",
+        "CVE-2026-21519",
+        "CVE-2026-21525",
+        "CVE-2026-21533"
+      ],
+      "tags": [
+        "Microsoft",
+        "zero-day",
+        "patch-tuesday",
+        "cisa-kev",
+        "active-exploitation",
+        "windows"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Microsoft released its February 2026 security update fixing 58 vulnerabilities, including 6 zero-day flaws that hackers were already actively exploiting before the patch was available. Three of these ..."
+    },
+    {
+      "id": "TB-2026-02-10-002",
+      "title": "Sangoma FreePBX EncystPHP Webshell Campaign: INJ3CTOR3 Threat Actor Deploys Multi-Stage VoIP Infrastructure Backdoor via CISA KEV Vulnerabilities (CVE-2025-64328)",
+      "severity": "High",
+      "date": "2026-02-10",
+      "cves": [
+        "CVE-2025-64328",
+        "CVE-2019-19006"
+      ],
+      "tags": [
+        "freepbx",
+        "voip",
+        "webshell",
+        "cisa-kev",
+        "active-exploitation",
+        "persistence"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A sophisticated threat actor group known as INJ3CTOR3, active since 2020, launched a new campaign in December 2025 targeting FreePBX VoIP phone systems used by businesses worldwide. The attackers expl..."
+    },
+    {
+      "id": "TB-2026-02-10-001",
+      "title": "BeyondTrust Remote Support Pre-Auth RCE: AI-Discovered CVSS 9.9 Command Injection Exposes 11,000 Enterprise Instances (CVE-2026-1731)",
+      "severity": "Critical",
+      "date": "2026-02-10",
+      "cves": [
+        "CVE-2026-1731"
+      ],
+      "tags": [
+        "beyondtrust",
+        "remote-support",
+        "privileged-access",
+        "pre-auth-rce",
+        "command-injection",
+        "enterprise"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A near-maximum severity vulnerability was discovered in BeyondTrust Remote Support and Privileged Remote Access, enterprise tools used by over 20,000 organizations including 75% of Fortune 100 compani..."
+    },
+    {
+      "id": "TB-2026-02-09-004",
+      "title": "APT28 Operation Neusploit: Russian GRU Weaponizes Microsoft Office Zero-Day Within 24 Hours Against NATO-Aligned Nations (CVE-2026-21509)",
+      "severity": "High",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2026-21509"
+      ],
+      "tags": [
+        "apt28",
+        "fancy-bear",
+        "russia",
+        "gru",
+        "espionage",
+        "microsoft-office"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "Russia's APT28 (Fancy Bear / GRU Unit 26165) weaponized a Microsoft Office zero-day vulnerability within approximately 24 hours of its public disclosure and launched a concentrated espionage campaign ..."
+    },
+    {
+      "id": "TB-2026-02-09-003",
+      "title": "n8n Workflow Automation Sandbox Escape: Third Critical RCE in Three Months Threatens Enterprise AI Systems (CVE-2026-25049)",
+      "severity": "Critical",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2026-25049",
+        "CVE-2026-25056",
+        "CVE-2026-21858",
+        "CVE-2026-1470",
+        "CVE-2026-25115"
+      ],
+      "tags": [
+        "n8n",
+        "workflow-automation",
+        "sandbox-escape",
+        "rce",
+        "javascript",
+        "ai-infrastructure"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical sandbox escape vulnerability was discovered in n8n, a popular open-source workflow automation platform used by enterprises to connect AI services, databases, and business applications. CVE-..."
+    },
+    {
+      "id": "TB-2026-02-09-002",
+      "title": "React Native CLI Metro4Shell: Developer Tool Command Injection Under Active Exploitation (CVE-2025-11953)",
+      "severity": "Critical",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2025-11953"
+      ],
+      "tags": [
+        "react-native",
+        "metro",
+        "developer-tools",
+        "command-injection",
+        "cisa-kev",
+        "active-exploitation"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical OS command injection vulnerability was discovered in the React Native CLI's Metro Development Server, a tool used by millions of mobile app developers worldwide. The flaw allows attackers o..."
+    },
+    {
+      "id": "TB-2026-02-09-001",
+      "title": "SmarterMail Unauthenticated RCE via ConnectToHub API Exploited in Ransomware Attacks (CVE-2026-24423)",
+      "severity": "Critical",
+      "date": "2026-02-09",
+      "cves": [
+        "CVE-2026-24423",
+        "CVE-2026-23760",
+        "CVE-2026-25067"
+      ],
+      "tags": [
+        "smartermail",
+        "email-server",
+        "rce",
+        "ransomware",
+        "cisa-kev",
+        "active-exploitation"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A critical unauthenticated remote code execution vulnerability was discovered in SmarterTools SmarterMail, an email server platform used by approximately 15 million users across 120 countries. The fla..."
+    },
+    {
+      "id": "TB-2026-02-06-003",
+      "title": "vLLM Critical RCE via Video Processing Heap Overflow Threatens Millions of AI Servers (CVE-2026-22778)",
+      "severity": "Critical",
+      "date": "2026-02-06",
+      "cves": [
+        "CVE-2026-22778",
+        "CVE-2025-32444",
+        "CVE-2025-47277",
+        "CVE-2025-62164"
+      ],
+      "tags": [
+        "ai-ml",
+        "vllm",
+        "rce",
+        "heap-overflow",
+        "video-processing",
+        "supply-chain"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical remote code execution vulnerability was discovered in vLLM, the most widely-deployed open-source large language model inference engine with over 3 million monthly PyPI downloads. The flaw (..."
+    },
+    {
+      "id": "TB-2026-02-06-002",
+      "title": "SolarWinds Web Help Desk Critical Java Deserialization RCE Chain Under Active Exploitation (CVE-2025-40551)",
+      "severity": "Critical",
+      "date": "2026-02-06",
+      "cves": [
+        "CVE-2025-40551",
+        "CVE-2025-40552",
+        "CVE-2025-40553",
+        "CVE-2025-40554",
+        "CVE-2025-40536",
+        "CVE-2025-40537"
+      ],
+      "tags": [
+        "solarwinds",
+        "deserialization",
+        "rce",
+        "cisa-kev",
+        "active-exploitation",
+        "java"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Six critical and high-severity vulnerabilities were discovered in SolarWinds Web Help Desk (WHD), an IT service management platform used by approximately 300,000 organizations worldwide including gove..."
+    },
+    {
+      "id": "TB-2026-02-06-001",
+      "title": "Notepad++ Supply Chain Compromise via WinGUp Updater Hijack by Lotus Blossom APT (CVE-2025-15556)",
+      "severity": "Critical",
+      "date": "2026-02-06",
+      "cves": [
+        "CVE-2025-15556"
+      ],
+      "tags": [
+        "supply-chain",
+        "apt",
+        "china",
+        "dll-sideloading",
+        "backdoor",
+        "software-update"
+      ],
+      "sourcesCount": 16,
+      "excerpt": "Chinese state-sponsored hackers from the Lotus Blossom APT group compromised the hosting infrastructure behind Notepad++, one of the world's most popular text editors with millions of users. By hijack..."
+    },
+    {
+      "id": "TB-2026-02-01-002",
+      "title": "WordPress Modular DS Plugin CVSS 10.0 Unauthenticated Admin Takeover: 40,000+ Sites Under Active Attack with Public PoC",
+      "severity": "Critical",
+      "date": "2026-02-01",
+      "cves": [
+        "CVE-2026-23550",
+        "CVE-2026-23800"
+      ],
+      "tags": [
+        "WordPress",
+        "plugin",
+        "privilege-escalation",
+        "authentication-bypass",
+        "CMS",
+        "web"
+      ],
+      "sourcesCount": 10,
+      "excerpt": "A maximum-severity vulnerability was discovered in the Modular DS WordPress plugin, which is installed on over 40,000 websites. The plugin is designed to let site owners and hosting providers remotely..."
+    },
+    {
+      "id": "TB-2026-02-01-001",
+      "title": "Ivanti EPMM Critical Zero-Day RCE Chain: Unauthenticated Command Injection with Public PoC and Active Webshell Deployment (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-02-01",
+      "cves": [
+        "CVE-2026-1281",
+        "CVE-2026-1340"
+      ],
+      "tags": [
+        "Ivanti",
+        "EPMM",
+        "zero-day",
+        "RCE",
+        "command-injection",
+        "mobile-device-management"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Two critical zero-day vulnerabilities were discovered in Ivanti Endpoint Manager Mobile (EPMM), the enterprise platform used to manage corporate mobile devices. Attackers found they could inject malic..."
+    },
+    {
+      "id": "TB-2026-01-30-002",
+      "title": "Trend Micro Apex Central Critical Unauthenticated RCE (CVE-2025-69258) - PoC Exploit Released",
+      "severity": "Critical",
+      "date": "2026-01-07",
+      "cves": [
+        "CVE-2025-69258",
+        "CVE-2025-69259",
+        "CVE-2025-69260"
+      ],
+      "tags": [
+        "Trend Micro",
+        "Apex Central",
+        "DLL-hijack",
+        "RCE",
+        "endpoint-security",
+        "enterprise"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Critical unauthenticated RCE in Trend Micro Apex Central allows SYSTEM-level code execution via DLL hijacking. PoC exploit released by Tenable Research..."
+    },
+    {
+      "id": "TB-2026-01-30-001",
+      "title": "Google Cloud Application Integration Multi-Cloud Phishing Campaign - OAuth Consent Attacks Targeting 3,200+ Businesses",
+      "severity": "High",
+      "date": "2026-01-21",
+      "cves": [],
+      "tags": [
+        "phishing",
+        "Google Cloud",
+        "OAuth",
+        "Azure AD",
+        "Microsoft 365",
+        "cloud",
+        "credential-theft"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Cybercriminals abuse Google Cloud Application Integration to send phishing emails from legitimate Google domains, targeting Microsoft 365 credentials and Azure AD OAuth consent..."
+    },
+    {
+      "id": "TB-2026-01-29-002",
+      "title": "SmarterMail Auth Bypass to RCE Chain: 6,000+ Servers Exposed to Automated Hijacking (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-26",
+      "cves": [
+        "CVE-2026-23760",
+        "CVE-2025-52691"
+      ],
+      "tags": [
+        "SmarterMail",
+        "email",
+        "authentication-bypass",
+        "file-upload",
+        "RCE",
+        "cloud",
+        "enterprise"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Two critical vulnerabilities in SmarterMail create a devastating attack chain enabling SYSTEM-level RCE from unauthenticated requests..."
+    },
+    {
+      "id": "TB-2026-01-29-001",
+      "title": "Fortinet FortiCloud SSO Zero-Day: Cross-Account Device Hijacking Under Active Exploitation (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-28",
+      "cves": [
+        "CVE-2026-24858"
+      ],
+      "tags": [
+        "Fortinet",
+        "FortiOS",
+        "FortiCloud",
+        "SSO",
+        "zero-day",
+        "authentication-bypass",
+        "firewall",
+        "cloud"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical zero-day in FortiCloud SSO allows attackers with any FortiCloud account to access devices registered to other organizations..."
+    },
+    {
+      "id": "TB-2026-01-28-002",
+      "title": "HPE OneView CVSS 10.0 RCE: RondoDox Botnet Launches 40,000+ Attack Campaign (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-07",
+      "cves": [
+        "CVE-2025-37164"
+      ],
+      "tags": [
+        "HPE",
+        "OneView",
+        "infrastructure-management",
+        "RCE",
+        "botnet",
+        "RondoDox",
+        "enterprise",
+        "cloud"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "RondoDox botnet launched over 40,000 automated attacks exploiting maximum severity HPE OneView vulnerability..."
+    },
+    {
+      "id": "TB-2026-01-28-001",
+      "title": "Microsoft Office Zero-Day: Emergency Patch for Actively Exploited OLE/COM Bypass (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-27",
+      "cves": [
+        "CVE-2026-21509"
+      ],
+      "tags": [
+        "Microsoft",
+        "Office",
+        "zero-day",
+        "OLE",
+        "COM",
+        "security-bypass",
+        "enterprise",
+        "cloud"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Microsoft released an emergency out-of-band patch for actively exploited zero-day allowing attackers to bypass OLE security mitigations..."
+    },
+    {
+      "id": "TB-2026-01-27-001",
+      "title": "Cisco Unified Communications Critical Zero-Day Under Active Exploitation (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-21",
+      "cves": [
+        "CVE-2026-20045"
+      ],
+      "tags": [
+        "Cisco",
+        "unified-communications",
+        "zero-day",
+        "RCE",
+        "cloud",
+        "enterprise",
+        "voip",
+        "webex"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A critical zero-day vulnerability in Cisco Unified Communications products is being actively exploited, allowing attackers to execute arbitrary code and gain root access..."
+    },
+    {
+      "id": "TB-2026-01-26-001",
+      "title": "SAP Critical Vulnerabilities: S/4HANA SQL Injection and Wily RCE Threaten Enterprise Financial Systems",
+      "severity": "Critical",
+      "date": "2026-01-14",
+      "cves": [
+        "CVE-2026-0501",
+        "CVE-2026-0500",
+        "CVE-2026-0502"
+      ],
+      "tags": [
+        "SAP",
+        "S/4HANA",
+        "cloud",
+        "SQL-injection",
+        "RCE",
+        "ERP"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "SAP released critical security patches addressing SQL injection in S/4HANA General Ledger and RCE in Wily Introscope Enterprise Manager..."
+    },
+    {
+      "id": "TB-2026-01-25-006",
+      "title": "Chainlit AI Framework Vulnerabilities Enable Cloud Environment Breach",
+      "severity": "High",
+      "date": "2026-01-21",
+      "cves": [],
+      "tags": [
+        "cloud",
+        "ai",
+        "llm",
+        "kubernetes",
+        "credential-theft"
+      ],
+      "sourcesCount": 1,
+      "excerpt": "Two high-severity vulnerabilities in Chainlit AI framework allow attackers to read arbitrary files and steal cloud credentials..."
+    },
+    {
+      "id": "TB-2026-01-25-005",
+      "title": "Zimbra Collaboration Suite PHP Remote File Inclusion - Active Exploitation (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": [
+        "CVE-2025-68645"
+      ],
+      "tags": [
+        "cloud",
+        "email",
+        "collaboration",
+        "zimbra",
+        "rfi"
+      ],
+      "sourcesCount": 2,
+      "excerpt": "Zimbra Collaboration Suite has a PHP remote file inclusion vulnerability in /h/rest endpoint..."
+    },
+    {
+      "id": "TB-2026-01-25-004",
+      "title": "Versa Concerto SD-WAN Authentication Bypass - Active Exploitation (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-22",
+      "cves": [
+        "CVE-2025-34026"
+      ],
+      "tags": [
+        "cloud",
+        "sd-wan",
+        "network",
+        "authentication-bypass"
+      ],
+      "sourcesCount": 2,
+      "excerpt": "Versa Concerto SD-WAN orchestration platform has an authentication bypass in Traefik reverse proxy configuration..."
+    },
+    {
+      "id": "TB-2026-01-25-003",
+      "title": "VMware vCenter Server Remote Code Execution - Active Exploitation (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-23",
+      "cves": [
+        "CVE-2024-37079"
+      ],
+      "tags": [
+        "cloud",
+        "vmware",
+        "vcenter",
+        "virtualization",
+        "rce"
+      ],
+      "sourcesCount": 2,
+      "excerpt": "A critical RCE vulnerability in VMware vCenter Server allows attackers with network access to execute arbitrary code without authentication..."
+    },
+    {
+      "id": "TB-2026-01-25-002",
+      "title": "ShinyHunters SSO Vishing Campaign Targeting Cloud Identity Providers",
+      "severity": "High",
+      "date": "2026-01-23",
+      "cves": [],
+      "tags": [
+        "cloud",
+        "identity",
+        "okta",
+        "microsoft-entra",
+        "sso",
+        "vishing"
+      ],
+      "sourcesCount": 3,
+      "excerpt": "The ShinyHunters extortion gang is conducting voice phishing attacks targeting employees at organizations using Okta, Microsoft Entra ID, and Google Workspace..."
+    },
+    {
+      "id": "TB-2026-01-25-001",
+      "title": "FortiCloud SSO Authentication Bypass - Incomplete Patch Under Active Exploitation",
+      "severity": "Critical",
+      "date": "2026-01-23",
+      "cves": [
+        "CVE-2025-59718"
+      ],
+      "tags": [
+        "cloud",
+        "fortinet",
+        "firewall",
+        "sso",
+        "authentication-bypass"
+      ],
+      "sourcesCount": 4,
+      "excerpt": "A critical authentication bypass in Fortinet firewalls allows attackers to access the FortiCloud management panel without credentials..."
+    },
+    {
+      "id": "TB-2026-01-24-001",
+      "title": "ESXi Escape: Chinese APT Exploits VMware Zero-Days for Hypervisor Takeover (CISA KEV)",
+      "severity": "Critical",
+      "date": "2026-01-09",
+      "cves": [
+        "CVE-2025-22224",
+        "CVE-2025-22225",
+        "CVE-2025-22226"
+      ],
+      "tags": [
+        "VMware",
+        "ESXi",
+        "hypervisor",
+        "VM-escape",
+        "zero-day",
+        "China"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Three critical zero-day vulnerabilities in VMware ESXi allow attackers to escape from a virtual machine..."
+    },
+    {
+      "id": "TB-2026-01-23-003",
+      "title": "SecretBreak: Critical Cross-Namespace Secret Access in External Secrets Operator (CVSS 9.3)",
+      "severity": "Critical",
+      "date": "2026-01-20",
+      "cves": [
+        "CVE-2026-22822"
+      ],
+      "tags": [
+        "kubernetes",
+        "external-secrets",
+        "secret-management",
+        "cross-namespace"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A critical vulnerability in the External Secrets Operator allows attackers to bypass Kubernetes namespace isolation..."
+    },
+    {
+      "id": "TB-2026-01-23-002",
+      "title": "ChainLeak: Critical AI Framework Vulnerabilities Enable Cloud Account Takeover",
+      "severity": "Critical",
+      "date": "2026-01-20",
+      "cves": [
+        "CVE-2026-22218",
+        "CVE-2026-22219"
+      ],
+      "tags": [
+        "AI",
+        "Chainlit",
+        "cloud",
+        "AWS",
+        "SSRF",
+        "credential-theft"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "Security researchers at Zafran Labs discovered two critical vulnerabilities in Chainlit AI framework..."
+    },
+    {
+      "id": "TB-2026-01-23-001",
+      "title": "CodeBreach: AWS Console Supply Chain Attack via CodeBuild Misconfiguration",
+      "severity": "Critical",
+      "date": "2026-01-15",
+      "cves": [],
+      "tags": [
+        "AWS",
+        "supply-chain",
+        "CodeBuild",
+        "GitHub",
+        "CI/CD",
+        "cloud"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Wiz Research discovered a critical supply chain vulnerability dubbed CodeBreach in AWS CodeBuild..."
+    },
+    {
+      "id": "TB-2026-01-22-018",
+      "title": "IngressNightmare: Critical Kubernetes RCE Chain Exposing 43% of Cloud Environments (CVSS 9.8)",
+      "severity": "Critical",
+      "date": "2025-04-17",
+      "cves": [
+        "CVE-2025-1974",
+        "CVE-2025-1097",
+        "CVE-2025-1098",
+        "CVE-2025-24514"
+      ],
+      "tags": [
+        "kubernetes",
+        "ingress-nginx",
+        "RCE",
+        "cloud",
+        "container"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A series of critical vulnerabilities dubbed IngressNightmare were discovered in the Ingress NGINX Controller..."
+    },
+    {
+      "id": "TB-2026-01-22-017",
+      "title": "Storm-0501: Cloud-Native Ransomware Targeting Hybrid Azure Environments",
+      "severity": "High",
+      "date": "2024-09-01",
+      "cves": [],
+      "tags": [
+        "ransomware",
+        "azure",
+        "entra-id",
+        "hybrid-cloud",
+        "storm-0501"
+      ],
+      "sourcesCount": 10,
+      "excerpt": "Storm-0501 is a financially motivated threat actor that has evolved from traditional on-premises ransomware..."
+    },
+    {
+      "id": "TB-2026-01-22-016",
+      "title": "React2Shell: Critical RCE in React Server Components (CVSS 10.0, CISA KEV)",
+      "severity": "Critical",
+      "date": "2025-12-15",
+      "cves": [
+        "CVE-2025-55182"
+      ],
+      "tags": [
+        "react",
+        "next.js",
+        "rce",
+        "cloud",
+        "kubernetes"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical remote code execution vulnerability (CVSS 10.0) was discovered in React Server Components..."
+    },
+    {
+      "id": "TB-2026-01-22-015",
+      "title": "MongoBleed: MongoDB Memory Leak Under Active Exploitation (CISA KEV)",
+      "severity": "High",
+      "date": "2026-01-19",
+      "cves": [
+        "CVE-2025-14847"
+      ],
+      "tags": [
+        "mongodb",
+        "database",
+        "memory-leak",
+        "cloud",
+        "data-breach"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical HeartBleed-like vulnerability has been discovered in MongoDB database..."
+    },
+    {
+      "id": "TB-2026-01-22-014",
+      "title": "n8n Workflow Automation Critical RCE - Ni8mare (CVSS 10.0)",
+      "severity": "Critical",
+      "date": "2026-01-15",
+      "cves": [
+        "CVE-2026-21858",
+        "CVE-2026-21877"
+      ],
+      "tags": [
+        "n8n",
+        "workflow",
+        "automation",
+        "RCE",
+        "cloud"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Security researchers discovered a maximum severity vulnerability (CVSS 10.0) in n8n workflow automation platform..."
+    }
+  ]
+}

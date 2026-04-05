@@ -1,0 +1,285 @@
+{
+  "briefing_id": "TB-2026-02-17-003",
+  "title": "BQTLock and GREENBLOOD: Emerging Ransomware Families Combine Stealth Process Injection, Rapid ChaCha8 Encryption, and TOR-Based Extortion for Maximum Business Disruption",
+  "generated_date": "2026-02-17",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 0,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "ransomware",
+    "bqtlock",
+    "greenblood",
+    "remcos",
+    "uac-bypass",
+    "chacha8",
+    "data-exfiltration",
+    "extortion",
+    "golang"
+  ],
+  "affected_products": [
+    "Windows-based enterprise systems",
+    "Windows Server environments",
+    "Organizations across all industries"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "ANY.RUN - Emerging Ransomware Threats: BQTLock and GREENBLOOD Analysis",
+      "url": "https://any.run/cybersecurity-blog/emerging-ransomware-bqtlock-greenblood/",
+      "date": "2026-02-11",
+      "type": "Research"
+    },
+    {
+      "name": "ANY.RUN Medium - Emerging Ransomware BQTLock and GREENBLOOD",
+      "url": "https://medium.com/@anyrun/emerging-ransomware-bqtlock-greenblood-disrupt-businesses-in-minutes-2fab172935bc",
+      "date": "2026-02-11",
+      "type": "Research"
+    },
+    {
+      "name": "CyberPress - BQTLock and GREENBLOOD Target Organizations",
+      "url": "https://cyberpress.org/bqtlock-greenblood-target-organizations/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "CyberSecurityNews - BQTLock and GREENBLOOD Ransomware Attacking Organizations",
+      "url": "https://cybersecuritynews.com/bqtlock-greenblood-ransomware-attacking-organizations/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "BackBox.org News - Emerging Ransomware BQTLock and GREENBLOOD",
+      "url": "https://news.backbox.org/2026/02/11/emerging-ransomware-bqtlock-greenblood-disrupt-businesses-in-minutes/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "National Law Review - Emerging Ransomware Drive Rapid Business Disruption",
+      "url": "https://natlawreview.com/press-releases/emerging-ransomware-bqtlock-and-greenblood-drive-rapid-business-disruption",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "Medium - Analysis of BQTLock Ransomware by Shubho57",
+      "url": "https://medium.com/@shubhandrew/analysis-of-bqtlock-ransomware-2c63a9ecff84",
+      "date": "2026-02-12",
+      "type": "Research"
+    },
+    {
+      "name": "Medium - Analysis of GreenBlood Ransomware Group by Shubho57",
+      "url": "https://medium.com/@shubhandrew/analysis-of-greenblood-ransomware-af402cd34355",
+      "date": "2026-02-12",
+      "type": "Research"
+    },
+    {
+      "name": "SOCRadar - Dark Web Profile: BQTLock Ransomware",
+      "url": "https://socradar.io/blog/dark-web-profile-bqtlock-ransomware/",
+      "date": "2026-02-13",
+      "type": "Research"
+    },
+    {
+      "name": "Foresiet - Reverse Engineering Green Blood Ransomware",
+      "url": "https://foresiet.com/blog/reverse-engineering-green-blood-ransomware/",
+      "date": "2026-02-12",
+      "type": "Research"
+    },
+    {
+      "name": "Check Point Research - 16th February Threat Intelligence Report",
+      "url": "https://research.checkpoint.com/2026/16th-february-threat-intelligence-report/",
+      "date": "2026-02-16",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-28",
+      "event": "First known BQTLock ransomware samples observed in the wild targeting enterprise environments"
+    },
+    {
+      "date": "2026-02-01",
+      "event": "GREENBLOOD ransomware operations begin with TOR-based leak site established for double extortion"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "ANY.RUN publishes comprehensive behavioral analysis of both BQTLock and GREENBLOOD families"
+    },
+    {
+      "date": "2026-02-12",
+      "event": "Independent researchers publish detailed reverse engineering analysis of both ransomware families"
+    },
+    {
+      "date": "2026-02-13",
+      "event": "SOCRadar publishes dark web intelligence profile on BQTLock operations and affiliate program"
+    },
+    {
+      "date": "2026-02-16",
+      "event": "Check Point Research includes BQTLock and GREENBLOOD in weekly threat intelligence report"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Two new ransomware families have emerged in February 2026, each designed to cause maximum damage in minimum time. BQTLock is a stealth-focused ransomware that hides inside Windows system processes to avoid detection while stealing data and encrypting files. GREENBLOOD is a speed-focused ransomware written in Go that can encrypt entire systems in minutes using military-grade encryption. Both families combine file encryption with data theft and operate leak sites where stolen data is published to pressure victims into paying ransoms.",
+    "who_is_affected": "All Windows-based organizations are potential targets. Both ransomware families target enterprise environments across multiple industries. Organizations with weak endpoint protection, unpatched systems, or insufficient backup procedures are at highest risk. GREENBLOOD operates a TOR-based leak site for double extortion, meaning even organizations that can recover from encryption face the threat of having sensitive data published publicly.",
+    "what_attackers_do": "Step 1: BQTLock gains initial access and injects the Remcos remote access trojan directly into explorer.exe, a core Windows process, making the malware invisible to basic security tools. Step 2: It performs a UAC bypass using the legitimate Windows tool fodhelper.exe to silently escalate to administrator privileges without triggering any user prompt. Step 3: With elevated access, BQTLock establishes autorun persistence in the registry and begins harvesting credentials and capturing screenshots for intelligence gathering. Step 4: GREENBLOOD deploys its Go-based payload that uses ChaCha8 encryption (an optimized variant of ChaCha20) to rapidly encrypt files across the network, appending the .tgbg extension. Step 5: Both families exfiltrate stolen data before encryption, then GREENBLOOD self-deletes to hamper forensic analysis while its TOR leak site threatens to publish exfiltrated data unless ransom is paid.",
+    "what_you_should_do": [
+      "Ensure EDR solutions are configured to detect process injection into explorer.exe and UAC bypass via fodhelper.exe",
+      "Block known BQTLock IOCs including Remcos C2 infrastructure and associated file hashes at the network perimeter",
+      "Verify offline backup integrity and test restoration procedures as GREENBLOOD encryption completes before response teams can react",
+      "Monitor for GREENBLOOD indicators including the GREENBLOOD_ENCRYPTOR_MUTEX_ mutex pattern and .tgbg file extensions",
+      "Implement network segmentation to limit lateral movement and restrict unnecessary SMB/RDP access between systems"
+    ],
+    "why_this_is_serious": "These ransomware families represent the evolution of modern ransomware toward maximum impact in minimum time. BQTLock's ability to hide inside legitimate Windows processes makes it extremely difficult to detect with traditional security tools. GREENBLOOD's ChaCha8 encryption can process hundreds of gigabytes per hour, meaning an entire organization can be encrypted in minutes before response teams can intervene. The combination of stealth infiltration, rapid encryption, data theft, and public leak-site extortion creates a multi-layered threat that overwhelms traditional incident response workflows."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Execution",
+        "technique_id": "T1055",
+        "technique_name": "Process Injection",
+        "description": "BQTLock injects Remcos RAT payload into explorer.exe to execute malicious code within a trusted system process"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1548.002",
+        "technique_name": "Bypass User Account Control",
+        "description": "BQTLock uses fodhelper.exe to bypass UAC and gain elevated administrative privileges without user interaction"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547.001",
+        "technique_name": "Registry Run Keys / Startup Folder",
+        "description": "BQTLock establishes autorun persistence in Windows registry to survive system reboots"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1070.004",
+        "technique_name": "File Deletion",
+        "description": "GREENBLOOD performs self-deletion after encryption to reduce forensic evidence and complicate incident response"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1113",
+        "technique_name": "Screen Capture",
+        "description": "BQTLock captures screenshots post-escalation for intelligence gathering and to identify high-value targets"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Both families exfiltrate stolen data to attacker-controlled infrastructure before initiating encryption"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1486",
+        "technique_name": "Data Encrypted for Impact",
+        "description": "GREENBLOOD uses ChaCha8 encryption to rapidly encrypt files with .tgbg extension; BQTLock encrypts files with .bqtlock extension"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1490",
+        "technique_name": "Inhibit System Recovery",
+        "description": "GREENBLOOD deletes shadow copies and backup catalogs using wmic shadowcopy delete and wbadmin delete catalog commands"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Focus detection on BQTLock's distinctive process injection and UAC bypass patterns, and GREENBLOOD's unique mutex and file extension indicators. Behavioral detection through sandbox analysis and EDR is essential as both families employ evasion techniques.",
+    "log_sources": [
+      {
+        "source": "Windows Sysmon / Event Logs",
+        "description": "Monitor for process injection events (Event ID 8), registry modifications to Run keys, and fodhelper.exe execution with unusual child processes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Detect Remcos injection into explorer.exe, UAC bypass patterns, ChaCha8 encryption activity, and shadow copy deletion",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Analysis",
+        "description": "Monitor for Telegram and Discord webhook C2 communications used by BQTLock, and TOR traffic used by GREENBLOOD",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Alert on rapid file modifications with .bqtlock or .tgbg extensions, and creation of READ_ME_TO_RECOVER_FILES.txt ransom notes",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Process injection into explorer.exe by unknown parent process",
+        "description": "BQTLock injects Remcos RAT into explorer.exe; any unexpected DLL injection or memory writes to explorer.exe should trigger alerts",
+        "log_field": "target_process='explorer.exe' AND event='CreateRemoteThread' OR event='WriteProcessMemory'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "fodhelper.exe spawning unexpected child processes",
+        "description": "BQTLock abuses fodhelper.exe for UAC bypass; this binary should not normally spawn PowerShell, cmd.exe, or other executables",
+        "log_field": "parent_process='fodhelper.exe' AND child_process NOT IN ('default_handler')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "GREENBLOOD_ENCRYPTOR_MUTEX_ mutex creation",
+        "description": "GREENBLOOD creates a mutex with this distinctive prefix to prevent multiple instances; detection of this mutex indicates active encryption",
+        "log_field": "event='CreateMutex' AND mutex_name CONTAINS 'GREENBLOOD_ENCRYPTOR_MUTEX_'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Files being renamed with .tgbg or .bqtlock extensions",
+        "description": "Mass file renaming with these extensions indicates active ransomware encryption in progress",
+        "log_field": "event='FileRename' AND new_extension IN ('.tgbg', '.bqtlock')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Shadow copy and backup catalog deletion commands",
+        "description": "GREENBLOOD uses wmic shadowcopy delete and wbadmin delete catalog to prevent recovery",
+        "log_field": "command_line CONTAINS 'shadowcopy delete' OR command_line CONTAINS 'wbadmin delete catalog'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Ransom note creation: READ_ME_TO_RECOVER_FILES.txt",
+        "description": "GREENBLOOD drops this ransom note with TOR-based payment and leak site links",
+        "log_field": "event='FileCreate' AND file_name='READ_ME_TO_RECOVER_FILES.txt'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update EDR detection rules for BQTLock and GREENBLOOD indicators",
+      "description": "Add detection rules for Remcos injection into explorer.exe, fodhelper.exe UAC bypass, GREENBLOOD_ENCRYPTOR_MUTEX_ mutex pattern, and .tgbg/.bqtlock file extensions",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Verify and test offline backup integrity",
+      "description": "GREENBLOOD encrypts systems in minutes and deletes shadow copies. Ensure offline backups exist, are current, and restoration has been tested recently",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Block known C2 infrastructure",
+      "description": "Block Telegram and Discord webhook URLs used by BQTLock for C2 communications at the web proxy or firewall level if not required for business operations",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Restrict fodhelper.exe execution",
+      "description": "Use application control policies (AppLocker/WDAC) to restrict execution of fodhelper.exe or alert when it spawns child processes, as it is commonly abused for UAC bypass",
+      "command": "New-AppLockerPolicy -RuleType Path -Action Deny -Path '%SystemRoot%\\System32\\fodhelper.exe'"
+    },
+    {
+      "priority": 5,
+      "action": "Implement network segmentation",
+      "description": "Restrict SMB and RDP access between workstations and limit lateral movement paths that ransomware uses to spread across the network",
+      "command": null
+    }
+  ]
+}

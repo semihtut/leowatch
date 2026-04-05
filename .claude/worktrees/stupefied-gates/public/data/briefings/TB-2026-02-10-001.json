@@ -1,0 +1,277 @@
+{
+  "briefing_id": "TB-2026-02-10-001",
+  "title": "BeyondTrust Remote Support Pre-Auth RCE: AI-Discovered CVSS 9.9 Command Injection Exposes 11,000 Enterprise Instances (CVE-2026-1731)",
+  "generated_date": "2026-02-10",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.9,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-1731"
+  ],
+  "tags": [
+    "beyondtrust",
+    "remote-support",
+    "privileged-access",
+    "pre-auth-rce",
+    "command-injection",
+    "enterprise"
+  ],
+  "affected_products": [
+    "BeyondTrust Remote Support (RS) 25.3.1 and prior",
+    "BeyondTrust Privileged Remote Access (PRA) 24.3.4 and prior"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Rapid7 Emergent Threat Response",
+      "url": "https://www.rapid7.com/blog/post/etr-cve-2026-1731-critical-unauthenticated-remote-code-execution-rce-beyondtrust-remote-support-rs-privileged-remote-access-pra/",
+      "date": "2026-02-09",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf Security Bulletin",
+      "url": "https://arcticwolf.com/resources/blog/cve-2026-1731/",
+      "date": "2026-02-09",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-warns-of-critical-rce-flaw-in-remote-support-software/",
+      "date": "2026-02-09",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/02/beyondtrust-fixes-critical-pre-auth-rce.html",
+      "date": "2026-02-09",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/02/09/beyondtrust-remote-access-vulnerability-cve-2026-1731/",
+      "date": "2026-02-09",
+      "type": "News"
+    },
+    {
+      "name": "BeyondTrust Security Advisory BT26-02",
+      "url": "https://www.beyondtrust.com/trust-center/security-advisories/bt26-02",
+      "date": "2026-02-06",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2026-1731",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1731",
+      "date": "2026-02-06",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable CVE Details",
+      "url": "https://www.tenable.com/cve/CVE-2026-1731",
+      "date": "2026-02-09",
+      "type": "Research"
+    },
+    {
+      "name": "Malware News Analysis",
+      "url": "https://malware.news/t/cve-2026-1731-unauthenticated-os-command-injection-vulnerability-in-beyondtrust-remote-support-and-privileged-remote-access/103968",
+      "date": "2026-02-09",
+      "type": "Research"
+    },
+    {
+      "name": "CyberSecurity News",
+      "url": "https://cybersecuritynews.com/beyondtrust-remote-access-products-0-day-vulnerability/",
+      "date": "2026-02-09",
+      "type": "News"
+    },
+    {
+      "name": "GitHub Advisory Database",
+      "url": "https://github.com/advisories/GHSA-p5wr-5p37-2wm6",
+      "date": "2026-02-06",
+      "type": "Research"
+    },
+    {
+      "name": "CodeKeeper Security Alert",
+      "url": "https://codekeeper.co/ticker/beyondtrust-zero-day-vulnerability-cve-2026-1731",
+      "date": "2026-02-09",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-12-02",
+      "event": "Chinese Silk Typhoon group exploits earlier BeyondTrust vulnerabilities (CVE-2024-12356, CVE-2024-12686) to breach U.S. Treasury Department"
+    },
+    {
+      "date": "2026-01-31",
+      "event": "Hacktron AI researchers discover CVE-2026-1731 through AI-enabled variant analysis"
+    },
+    {
+      "date": "2026-02-02",
+      "event": "BeyondTrust automatically patches all Remote Support and PRA SaaS instances"
+    },
+    {
+      "date": "2026-02-06",
+      "event": "BeyondTrust publishes security advisory BT26-02 with details and self-hosted patches"
+    },
+    {
+      "date": "2026-02-06",
+      "event": "NVD publishes CVE-2026-1731 with CVSS 4.0 score of 9.9 Critical"
+    },
+    {
+      "date": "2026-02-09",
+      "event": "Rapid7, Arctic Wolf, and major security vendors publish analysis; ~11,000 exposed instances identified"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A near-maximum severity vulnerability was discovered in BeyondTrust Remote Support and Privileged Remote Access, enterprise tools used by over 20,000 organizations including 75% of Fortune 100 companies to provide remote technical support and manage privileged access. The flaw allows anyone on the internet to execute commands on vulnerable servers without any login credentials, potentially taking complete control of the system.",
+    "who_is_affected": "Organizations using BeyondTrust Remote Support version 25.3.1 or earlier, and Privileged Remote Access version 24.3.4 or earlier. Approximately 11,000 instances are exposed to the internet, with roughly 8,500 being on-premises deployments that require manual patching. BeyondTrust serves 75% of Fortune 100 companies across 100+ countries.",
+    "what_attackers_do": "Step 1: Attacker identifies an internet-exposed BeyondTrust Remote Support or PRA instance using Shodan or similar scanning tools. Step 2: Attacker sends a specially crafted HTTP request to the target without needing any authentication credentials. Step 3: The malicious request exploits improper neutralization of special elements in OS commands (CWE-78), injecting arbitrary operating system commands. Step 4: Commands execute in the context of the site user, giving the attacker a foothold on the server. Step 5: Attacker escalates privileges, exfiltrates sensitive data, deploys backdoors, or pivots to internal networks through the remote access infrastructure.",
+    "what_you_should_do": [
+      "Immediately upgrade BeyondTrust Remote Support to version 25.3.2 or later by applying patch BT26-02-RS",
+      "Immediately upgrade BeyondTrust Privileged Remote Access to version 25.1.1 or later by applying patch BT26-02-PRA",
+      "If running legacy versions older than RS 21.3 or PRA 22.1, perform a full version upgrade to a supported release first",
+      "Verify SaaS instances received the automatic February 2 patch by checking the version in the admin console",
+      "Monitor BeyondTrust access logs for anomalous unauthenticated requests and unusual command execution patterns",
+      "Restrict network access to BeyondTrust management interfaces using firewall rules or VPN"
+    ],
+    "why_this_is_serious": "BeyondTrust remote access tools sit at the heart of enterprise IT infrastructure, providing privileged access to critical systems. A previous BeyondTrust vulnerability chain was exploited by the Chinese state-backed Silk Typhoon group to breach the U.S. Treasury Department and CFIUS in late 2024. With a CVSS 9.9 score, straightforward exploitation requiring no authentication, and approximately 8,500 vulnerable on-premises instances exposed to the internet, this vulnerability presents an imminent risk of nation-state and ransomware exploitation against high-value targets."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the pre-authentication command injection in internet-exposed BeyondTrust Remote Support or PRA instances to gain initial access without credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "Injected OS commands execute in the context of the site user, enabling arbitrary command execution on the underlying operating system"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "Attackers may leverage the site user context to escalate privileges to root or SYSTEM level on the host"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "Compromised BeyondTrust instances provide built-in remote access capabilities that attackers can abuse to pivot to managed endpoints and internal systems"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Attackers may harvest stored credentials, session tokens, and configuration data from the compromised BeyondTrust deployment"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1489",
+        "technique_name": "Service Stop",
+        "description": "Attackers could disable or manipulate the remote support infrastructure to disrupt business operations or cover their tracks"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor BeyondTrust Remote Support and PRA instances for anomalous unauthenticated HTTP requests, unexpected command execution, and unusual process spawning. Focus on web server access logs and system-level process monitoring for signs of command injection exploitation.",
+    "log_sources": [
+      {
+        "source": "BeyondTrust Application Logs",
+        "description": "Monitor for unusual API calls, failed authentication attempts, and anomalous session creation patterns in BeyondTrust access logs",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Server Access Logs (IIS/Apache)",
+        "description": "Inspect HTTP request logs for unusually long URLs, encoded shell metacharacters, or suspicious query parameters targeting BeyondTrust endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "Operating System Process Logs",
+        "description": "Monitor for unexpected child processes spawned by the BeyondTrust web application service (e.g., cmd.exe, bash, powershell spawned by IIS worker or Tomcat)",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic / WAF Logs",
+        "description": "Look for command injection patterns in HTTP request payloads including shell metacharacters (;, |, &&, backticks, $()) targeting BeyondTrust URLs",
+        "priority": "High"
+      },
+      {
+        "source": "EDR / Endpoint Detection",
+        "description": "Alert on process creation events where the parent process is the BeyondTrust service and child process is a shell interpreter",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unauthenticated requests with OS command injection payloads",
+        "description": "HTTP requests to BeyondTrust endpoints containing shell metacharacters (semicolons, pipes, backticks, $() subshells) in query parameters or POST body",
+        "log_field": "http.request.uri contains ';' OR '|' OR '`' targeting BeyondTrust paths",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected process spawning from web service",
+        "description": "BeyondTrust application server process spawning shell interpreters (bash, cmd.exe, powershell.exe) or system utilities (whoami, id, net user)",
+        "log_field": "process.parent.name='bomgar' OR 'java' AND process.name IN ('bash','cmd.exe','powershell.exe')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connections from BeyondTrust server",
+        "description": "Unexpected outbound network connections from the BeyondTrust server to external IP addresses, potentially indicating reverse shell or data exfiltration",
+        "log_field": "source.ip=beyondtrust_server AND destination.ip NOT IN internal_ranges",
+        "severity": "High"
+      },
+      {
+        "indicator": "Version check for vulnerable instances",
+        "description": "BeyondTrust Remote Support versions 25.3.1 or earlier, or PRA versions 24.3.4 or earlier are vulnerable",
+        "log_field": "software.version <= '25.3.1' AND software.name='BeyondTrust Remote Support'",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch BeyondTrust Remote Support and PRA immediately",
+      "description": "Apply patch BT26-02-RS to upgrade Remote Support to version 25.3.2+, or BT26-02-PRA to upgrade PRA to version 25.1.1+. Self-hosted customers must apply manually. SaaS instances were auto-patched on February 2.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Verify SaaS patch deployment",
+      "description": "If using BeyondTrust SaaS, verify that your instance has been updated to the patched version by checking the About page or Admin console version display.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Restrict network access to management interfaces",
+      "description": "Implement firewall rules or network segmentation to limit access to BeyondTrust management interfaces to trusted IP ranges only. Remove direct internet exposure where possible.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Scan for exposed instances",
+      "description": "Use vulnerability scanning tools (Rapid7 InsightVM, Tenable, Qualys) to identify all BeyondTrust Remote Support and PRA instances in your environment and verify their patch status.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Review access logs for exploitation attempts",
+      "description": "Examine BeyondTrust web server access logs for suspicious unauthenticated requests, particularly those containing shell metacharacters or encoded command injection payloads, dating back to February 6 when the advisory was published.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Upgrade legacy versions",
+      "description": "If running Remote Support older than 21.3 or PRA older than 22.1, these versions require a full upgrade path to a supported release before the security patch can be applied.",
+      "command": null
+    }
+  ]
+}

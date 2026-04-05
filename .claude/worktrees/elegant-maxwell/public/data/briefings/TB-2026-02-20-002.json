@@ -1,0 +1,278 @@
+{
+  "briefing_id": "TB-2026-02-20-002",
+  "title": "Grandstream GXP1600 Series VoIP Phones Critical Unauthenticated Stack Buffer Overflow (CVE-2026-2329) Enables Remote Code Execution as Root, Silent Eavesdropping via SIP Proxy Hijacking, and Full Network Compromise",
+  "generated_date": "2026-02-20",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-2329"
+  ],
+  "tags": [
+    "voip",
+    "rce",
+    "eavesdropping",
+    "iot",
+    "grandstream",
+    "buffer-overflow",
+    "network-infrastructure"
+  ],
+  "affected_products": [
+    "Grandstream GXP1610 VoIP phones (firmware < 1.0.7.81)",
+    "Grandstream GXP1615 VoIP phones (firmware < 1.0.7.81)",
+    "Grandstream GXP1620 VoIP phones (firmware < 1.0.7.81)",
+    "Grandstream GXP1625 VoIP phones (firmware < 1.0.7.81)",
+    "Grandstream GXP1628 VoIP phones (firmware < 1.0.7.81)",
+    "Grandstream GXP1630 VoIP phones (firmware < 1.0.7.81)"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Rapid7 Blog - CVE-2026-2329: Critical Unauthenticated Stack Buffer Overflow in Grandstream GXP1600 VoIP Phones",
+      "url": "https://www.rapid7.com/blog/post/ve-cve-2026-2329-critical-unauthenticated-stack-buffer-overflow-in-grandstream-gxp1600-voip-phones-fixed/",
+      "date": "2026-02-18",
+      "type": "Research"
+    },
+    {
+      "name": "Metasploit Framework - Add exploit and auxiliary modules for Grandstream GXP1600 series",
+      "url": "https://github.com/rapid7/metasploit-framework/pull/20983",
+      "date": "2026-02-18",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-2329",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2329",
+      "date": "2026-02-18",
+      "type": "Government"
+    },
+    {
+      "name": "CVE.org Record - CVE-2026-2329",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-2329",
+      "date": "2026-02-18",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable - CVE-2026-2329",
+      "url": "https://www.tenable.com/cve/CVE-2026-2329",
+      "date": "2026-02-18",
+      "type": "Research"
+    },
+    {
+      "name": "Grandstream Forums - Firmware 1.0.7.81 for GXP1610/1615/1620/1625/1628/1630 released",
+      "url": "https://forums.grandstream.com/t/firmware-1-0-7-81-for-gxp1610-1615-1620-1625-1628-1630-released-as-official/62211",
+      "date": "2026-02-03",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "BleepingComputer - Flaw in Grandstream VoIP phones allows stealthy eavesdropping",
+      "url": "https://www.bleepingcomputer.com/news/security/flaw-in-grandstream-voip-phones-allows-stealthy-eavesdropping/",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - Grandstream GXP1600 VoIP Phones Exposed to Unauthenticated Remote Code Execution",
+      "url": "https://thehackernews.com/2026/02/grandstream-gxp1600-voip-phones-exposed.html",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading - Critical Grandstream VoIP Bug Highlights SMB Security Blind Spot",
+      "url": "https://www.darkreading.com/threat-intelligence/grandstream-bug-voip-security-blind-spot",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Bug in widely used VoIP phones allows stealthy network footholds, call interception",
+      "url": "https://www.helpnetsecurity.com/2026/02/19/grandstream-voip-phones-vulnerability-cve-2026-2329/",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "SC Media - Critical flaw in Grandstream GXP1600 VoIP phones could lead to call eavesdropping",
+      "url": "https://www.scworld.com/news/critical-flaw-in-grandstream-gxp1600-voip-phones-could-lead-to-call-eavesdropping",
+      "date": "2026-02-18",
+      "type": "News"
+    },
+    {
+      "name": "runZero Blog - How to find Grandstream VoIP phones on your network (CVE-2026-2329)",
+      "url": "https://www.runzero.com/blog/grandstream-voip-phones/",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "Secure.com - Grandstream VoIP Bug Leaves SMBs Open to Call Interception and Network Breaches",
+      "url": "https://www.secure.com/blog/grandstream-voip-bug-leaves-smbs-open-to-call-interception-and-network-breaches",
+      "date": "2026-02-19",
+      "type": "News"
+    },
+    {
+      "name": "Cyberwarzone - Critical RCE in Grandstream GXP1600 VoIP phones enables silent eavesdropping",
+      "url": "https://cyberwarzone.com/2026/02/18/critical-rce-in-grandstream-gxp1600-voip-phones-enables-silent-eavesdropping-cve-2026-2329/",
+      "date": "2026-02-18",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-12",
+      "event": "Rapid7 researcher Stephen Fewer discovers the stack buffer overflow vulnerability in Grandstream GXP1600 series web interface"
+    },
+    {
+      "date": "2025-11-15",
+      "event": "Rapid7 reports the vulnerability to Grandstream through coordinated disclosure process"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "Grandstream releases firmware version 1.0.7.81 containing the security fix for GXP1610/1615/1620/1625/1628/1630 models"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "Rapid7 publishes full technical disclosure with proof-of-concept and Metasploit exploit modules; CVE-2026-2329 assigned CVSS 9.3"
+    },
+    {
+      "date": "2026-02-18",
+      "event": "NVD publishes CVE-2026-2329 entry; widespread news coverage begins"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Rapid7 security researcher Stephen Fewer discovered a critical vulnerability in the Grandstream GXP1600 series of VoIP (Voice over IP) desk phones, which are widely used by small and medium businesses worldwide. The flaw is a stack buffer overflow in the phone's built-in web server, specifically in the /cgi-bin/api.values.get endpoint. An attacker on the same network can send a specially crafted HTTP request to the phone without needing any username or password, and gain complete control of the device as the root (administrator) user. Rapid7 also published ready-to-use Metasploit exploit modules that demonstrate how an attacker can not only take over the phone but also silently redirect all phone calls through their own server to eavesdrop on conversations.",
+    "who_is_affected": "Organizations using Grandstream GXP1610, GXP1615, GXP1620, GXP1625, GXP1628, or GXP1630 VoIP desk phones running firmware versions prior to 1.0.7.81. These phones are popular in small and medium businesses, call centers, hotels, and office environments. Any organization with these phones on an accessible network segment is at risk. The vulnerability is particularly dangerous in environments where VoIP phones share the same network as workstations and servers, as a compromised phone becomes a persistent, stealthy foothold for further network attacks.",
+    "what_attackers_do": "Step 1: The attacker identifies Grandstream GXP1600 series phones on the target network through simple port scanning or network discovery - the phones expose a web interface on port 80/443 by default. Step 2: The attacker sends a specially crafted HTTP GET request to the /cgi-bin/api.values.get endpoint with an oversized parameter that triggers a stack buffer overflow, allowing the attacker to inject and execute arbitrary code. Step 3: The exploit gives the attacker a root shell on the phone's embedded Linux system without requiring any authentication or user interaction. Step 4: Using Rapid7's post-exploitation modules, the attacker reconfigures the phone's SIP proxy settings to route all voice calls through an attacker-controlled server, enabling silent eavesdropping on every phone conversation. Step 5: The compromised phone is used as a persistent network foothold to pivot into the broader corporate network, harvest credentials from SIP traffic, and maintain long-term access that is virtually invisible to traditional endpoint security tools.",
+    "what_you_should_do": [
+      "Immediately update all Grandstream GXP1610/1615/1620/1625/1628/1630 phones to firmware version 1.0.7.81 or later",
+      "Isolate VoIP phones on a dedicated VLAN separate from workstations and servers to limit lateral movement if a phone is compromised",
+      "Disable or restrict access to the phone's web management interface (port 80/443) from untrusted network segments",
+      "Audit SIP proxy configurations on all VoIP phones for unauthorized changes that could indicate eavesdropping",
+      "Use network scanning tools to inventory all Grandstream devices and verify firmware versions across your environment"
+    ],
+    "why_this_is_serious": "This vulnerability is extremely dangerous because it requires no authentication, is trivially exploitable with publicly available Metasploit modules, and gives attackers root-level access to a device that most organizations never monitor with security tools. VoIP phones are effectively small Linux computers sitting on the corporate network, yet they rarely have endpoint protection, are seldom patched, and are often on the same network segment as sensitive systems. The demonstrated eavesdropping capability means an attacker can silently listen to all phone conversations - including those discussing sensitive business deals, legal matters, and security incidents. Additionally, compromised phones provide an ideal persistent foothold because they are always powered on, always connected, and virtually never investigated by security teams."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploits the unauthenticated stack buffer overflow in the Grandstream GXP1600 web interface (/cgi-bin/api.values.get) to gain initial access without credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Achieves remote code execution as root on the phone's embedded Linux OS through the buffer overflow, enabling arbitrary command execution"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1542",
+        "technique_name": "Pre-OS Boot",
+        "description": "Compromised VoIP phone provides persistent network access as devices are rarely rebooted or monitored, maintaining long-term foothold"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1040",
+        "technique_name": "Network Sniffing",
+        "description": "Captures SIP credentials and authentication data from VoIP traffic passing through the compromised device"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1123",
+        "technique_name": "Audio Capture",
+        "description": "Silently eavesdrops on phone conversations by reconfiguring SIP proxy to route all voice calls through an attacker-controlled server"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1210",
+        "technique_name": "Exploitation of Remote Services",
+        "description": "Uses the compromised phone as a pivot point to attack other systems on the corporate network from a trusted internal device"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying exploitation attempts against the vulnerable web endpoint, monitoring for unauthorized SIP proxy configuration changes, and detecting anomalous network traffic from VoIP phones. Network segmentation monitoring is critical since exploited phones may be used for lateral movement.",
+    "log_sources": [
+      {
+        "source": "Network IDS/IPS",
+        "description": "Monitor for oversized HTTP GET requests to /cgi-bin/api.values.get on Grandstream phone IPs; signature should flag abnormally long query parameters indicating buffer overflow attempts",
+        "priority": "Critical"
+      },
+      {
+        "source": "VoIP/SIP Server Logs",
+        "description": "Monitor SIP registration and proxy configuration changes on your PBX/SIP server; unexpected proxy redirections indicate eavesdropping compromise",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow Data",
+        "description": "Analyze traffic patterns from VoIP phone IP addresses; look for non-SIP/RTP traffic, connections to unexpected external IPs, or lateral movement to other internal hosts",
+        "priority": "High"
+      },
+      {
+        "source": "DHCP/Asset Inventory",
+        "description": "Maintain an inventory of all Grandstream devices with firmware versions; correlate with network scans to identify unpatched phones",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Oversized HTTP requests to VoIP phone web interface",
+        "description": "Buffer overflow exploitation requires sending an HTTP GET request with an oversized parameter to /cgi-bin/api.values.get",
+        "log_field": "http_uri='/cgi-bin/api.values.get' AND http_request_length > 1024",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unauthorized SIP proxy configuration change",
+        "description": "Attacker reconfigures the phone's SIP outbound proxy to route calls through an eavesdropping server",
+        "log_field": "sip_proxy_change=true AND source!='authorized_admin'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Non-standard traffic from VoIP phone IPs",
+        "description": "Compromised phones generating traffic that is not SIP/RTP voice traffic, such as SSH, HTTP to internal servers, or reverse shells",
+        "log_field": "src_ip IN (voip_phone_range) AND dst_port NOT IN (5060, 5061, 10000-20000, 80, 443)",
+        "severity": "High"
+      },
+      {
+        "indicator": "Grandstream phones with outdated firmware",
+        "description": "Devices running firmware versions prior to 1.0.7.81 are vulnerable to CVE-2026-2329",
+        "log_field": "device_type='Grandstream GXP16xx' AND firmware_version < '1.0.7.81'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update firmware on all Grandstream GXP1600 series phones",
+      "description": "Immediately update all GXP1610, GXP1615, GXP1620, GXP1625, GXP1628, and GXP1630 phones to firmware version 1.0.7.81 or later. This is the only complete fix for CVE-2026-2329. Grandstream provides firmware through their official download portal.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Restrict web interface access on VoIP phones",
+      "description": "Disable the HTTP/HTTPS web management interface on VoIP phones or restrict access to a dedicated management VLAN. This mitigates exploitation even on unpatched devices since the vulnerability is in the web server.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Segment VoIP phones on a dedicated VLAN",
+      "description": "Ensure all VoIP phones are on a separate VLAN with firewall rules restricting traffic to only SIP/RTP protocols and the PBX server. This limits lateral movement if a phone is compromised.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit SIP proxy settings on all phones",
+      "description": "Check the outbound SIP proxy configuration on all Grandstream phones. If the proxy points to an unexpected IP address, the phone may already be compromised for eavesdropping. Compare against your legitimate PBX/SIP server addresses.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Deploy IDS signatures for exploitation attempts",
+      "description": "Add network IDS/IPS signatures to detect oversized HTTP requests targeting /cgi-bin/api.values.get on Grandstream phone IP ranges. Metasploit modules are publicly available, making exploitation attempts likely.",
+      "command": null
+    }
+  ]
+}

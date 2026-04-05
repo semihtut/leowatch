@@ -1,0 +1,74 @@
+{
+  "briefing_id": "TB-2026-01-25-004",
+  "title": "Versa Concerto SD-WAN Authentication Bypass - Active Exploitation (CISA KEV)",
+  "generated_date": "2026-01-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.6,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-12"
+  },
+  "cves": ["CVE-2025-34026"],
+  "tags": ["cloud", "sd-wan", "network", "authentication-bypass", "traefik", "orchestration"],
+  "affected_products": ["Versa Concerto SD-WAN Orchestration Platform"],
+  "sources_analyzed": 2,
+  "sources": [
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-22",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-confirms-active-exploitation-of-four-enterprise-software-bugs/",
+      "date": "2026-01-23",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {"date": "2026-01-22", "event": "CISA adds CVE-2025-34026 to KEV catalog"},
+    {"date": "2026-01-23", "event": "Active exploitation confirmed"},
+    {"date": "2026-02-12", "event": "CISA remediation deadline"}
+  ],
+  "simple_summary": {
+    "what_happened": "Versa Concerto SD-WAN orchestration platform contains an authentication bypass vulnerability in its Traefik reverse proxy configuration. Attackers can access administrative endpoints without authentication and retrieve sensitive data including heap dumps and trace logs containing credentials.",
+    "who_is_affected": "Organizations using Versa Concerto for SD-WAN management and orchestration across distributed enterprise networks.",
+    "what_attackers_do": "Step 1: Identify exposed Versa Concerto deployments on the internet. Step 2: Exploit Traefik reverse proxy misconfiguration to bypass authentication. Step 3: Access internal Actuator endpoints without credentials. Step 4: Retrieve heap dumps containing passwords, API keys, and secrets. Step 5: Pivot to SD-WAN infrastructure for full network control.",
+    "what_you_should_do": [
+      "Apply Versa security patches immediately",
+      "Restrict access to Concerto management interface to internal networks only",
+      "Rotate all credentials that may have been exposed in heap dumps",
+      "Review access logs for unauthorized activity",
+      "Implement network segmentation for management plane"
+    ],
+    "why_this_is_serious": "SD-WAN orchestration platforms control network connectivity across distributed enterprise sites. Compromise enables network manipulation, traffic interception, man-in-the-middle attacks, and lateral movement to branch offices and cloud environments."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {"tactic": "Initial Access", "technique_id": "T1190", "technique_name": "Exploit Public-Facing Application", "description": "Authentication bypass via Traefik misconfiguration"},
+      {"tactic": "Credential Access", "technique_id": "T1552.001", "technique_name": "Unsecured Credentials: Credentials In Files", "description": "Credentials extracted from heap dumps"},
+      {"tactic": "Lateral Movement", "technique_id": "T1021.007", "technique_name": "Remote Services: Cloud Services", "description": "Pivot to SD-WAN managed network infrastructure"}
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor access to Concerto management interface for unauthorized requests to /actuator endpoints. Watch for unusual API calls and credential usage patterns.",
+    "log_sources": [
+      {"source": "Versa Concerto Logs", "description": "Management API access logs", "priority": "Critical"},
+      {"source": "Network Firewall Logs", "description": "Traffic to management interface", "priority": "High"},
+      {"source": "WAF Logs", "description": "Detect /actuator endpoint access attempts", "priority": "High"}
+    ],
+    "what_to_look_for": [
+      {"indicator": "Access to /actuator endpoints", "log_field": "request.path CONTAINS '/actuator'", "severity": "Critical"},
+      {"indicator": "Heap dump requests", "log_field": "request.path CONTAINS 'heapdump'", "severity": "Critical"},
+      {"indicator": "Unauthenticated admin API calls", "log_field": "auth=null AND endpoint IN admin_endpoints", "severity": "Critical"}
+    ]
+  },
+  "immediate_actions": [
+    {"priority": 1, "action": "Patch Versa Concerto", "description": "Apply vendor security updates immediately", "command": null},
+    {"priority": 2, "action": "Restrict management access", "description": "Block public access to Concerto interface", "command": null},
+    {"priority": 3, "action": "Rotate credentials", "description": "Change all passwords that may have been in heap dumps", "command": null},
+    {"priority": 4, "action": "Review access logs", "description": "Check for /actuator endpoint access in past 30 days", "command": null}
+  ]
+}

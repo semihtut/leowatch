@@ -1,0 +1,317 @@
+{
+  "briefing_id": "TB-2026-03-09-001",
+  "title": "D-Link Legacy DSL Router CISA KEV Unauthenticated Command Injection via dnscfg.cgi Enables Full RCE and Mass DNS Hijacking on Hundreds of Thousands of End-of-Life Devices with No Patch Available (CVE-2026-0625, CVSS 9.8)",
+  "generated_date": "2026-03-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-26"
+  },
+  "cves": [
+    "CVE-2026-0625"
+  ],
+  "tags": [
+    "d-link",
+    "iot",
+    "dns-hijacking",
+    "rce",
+    "command-injection",
+    "eol-device",
+    "cisa-kev"
+  ],
+  "affected_products": [
+    "D-Link DSL-2740R",
+    "D-Link DSL-2640B",
+    "D-Link DSL-2780B",
+    "D-Link DSL-526B",
+    "D-Link DSL-500",
+    "D-Link DSL-500G",
+    "D-Link DSL-502G",
+    "D-Link DSL-2640T",
+    "D-Link DIR-600",
+    "D-Link DIR-608",
+    "D-Link DIR-610",
+    "D-Link DIR-611",
+    "D-Link DIR-615",
+    "D-Link DIR-905L",
+    "D-Link DNS-320",
+    "D-Link DNS-325",
+    "D-Link DNS-345"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-26",
+      "type": "Government"
+    },
+    {
+      "name": "D-Link Official Security Announcement SAP10488",
+      "url": "https://supportannouncement.us.dlink.com/security/publication.aspx?name=SAP10488",
+      "date": "2025-12-15",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "VulnCheck Advisory - D-Link DSL Command Injection via DNS Configuration Endpoint",
+      "url": "https://www.vulncheck.com/advisories/dlink-dsl-command-injection-via-dns-configuration-endpoint",
+      "date": "2026-01-05",
+      "type": "Research"
+    },
+    {
+      "name": "Field Effect Blog - Legacy D-Link Routers Exploited via Unauthenticated DNS Hijacking",
+      "url": "https://fieldeffect.com/blog/legacy-d-link-routers-exploited-via-unauthenticated-dns-hijacking",
+      "date": "2026-01-06",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable CVE-2026-0625",
+      "url": "https://www.tenable.com/cve/CVE-2026-0625",
+      "date": "2026-01-05",
+      "type": "Research"
+    },
+    {
+      "name": "SentinelOne Vulnerability Database - CVE-2026-0625",
+      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-0625/",
+      "date": "2026-01-06",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Ongoing Attacks Exploiting Critical RCE Vulnerability in Legacy D-Link DSL Routers",
+      "url": "https://thehackernews.com/2026/01/active-exploitation-hits-legacy-d-link.html",
+      "date": "2026-01-06",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Hackers Exploit Zero-Day in Discontinued D-Link Devices",
+      "url": "https://www.securityweek.com/hackers-exploit-zero-day-in-discontinued-d-link-devices/",
+      "date": "2026-01-06",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading - Attackers Exploit Zero-Day in End-of-Life D-Link Routers",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/attackers-exploit-zero-day-end-of-life-d-link-routers",
+      "date": "2026-01-06",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - New D-Link Flaw in Legacy DSL Routers Actively Exploited in Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/new-d-link-flaw-in-legacy-dsl-routers-actively-exploited-in-attacks/",
+      "date": "2026-01-05",
+      "type": "News"
+    },
+    {
+      "name": "SC Media - Critical D-Link DSL Gateway Vulnerability Actively Exploited",
+      "url": "https://www.scworld.com/brief/critical-d-link-dsl-gateway-vulnerability-actively-exploited",
+      "date": "2026-01-06",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - Hackers Actively Exploit Critical RCE Flaw in Legacy D-Link DSL Routers",
+      "url": "https://securityaffairs.com/186616/hacking/hackers-actively-exploit-critical-rce-flaw-in-legacy-d-link-dsl-routers.html",
+      "date": "2026-01-06",
+      "type": "News"
+    },
+    {
+      "name": "CVEFeed - CVE-2026-0625 D-Link DSL/DIR/DNS Command Injection",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2026-0625",
+      "date": "2026-01-05",
+      "type": "Government"
+    },
+    {
+      "name": "Cybernews - Legacy D-Link Routers Actively Exploited in the Wild",
+      "url": "https://cybernews.com/security/legacy-dlink-routers-zero-day-attacks/",
+      "date": "2026-01-06",
+      "type": "News"
+    },
+    {
+      "name": "CIRCL Vulnerability-Lookup CVE-2026-0625",
+      "url": "https://vulnerability.circl.lu/vuln/CVE-2026-0625",
+      "date": "2026-01-05",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2019-01-01",
+      "event": "GhostDNS malware ecosystem documented exploiting similar DNS configuration vulnerabilities in D-Link routers; over 100,000 routers compromised in Brazil alone"
+    },
+    {
+      "date": "2020-01-01",
+      "event": "D-Link officially declares all affected DSL/DIR/DNS series devices end-of-life; no further firmware updates planned"
+    },
+    {
+      "date": "2025-11-27",
+      "event": "Shadowserver Foundation honeypot detects first active exploitation attempt of CVE-2026-0625 in the wild"
+    },
+    {
+      "date": "2025-12-15",
+      "event": "VulnCheck discovers active exploitation and alerts D-Link; D-Link officially notified of vulnerability"
+    },
+    {
+      "date": "2025-12-16",
+      "event": "VulnCheck publishes internal advisory documenting active exploitation of compromised CGI library in D-Link devices"
+    },
+    {
+      "date": "2026-01-05",
+      "event": "VulnCheck releases public advisory; CVE-2026-0625 publicly disclosed; major news outlets begin reporting"
+    },
+    {
+      "date": "2026-01-05",
+      "event": "D-Link publishes Security Announcement SAP10488 confirming end-of-life status and recommending device retirement; no patches will be released"
+    },
+    {
+      "date": "2026-01-26",
+      "event": "CISA adds CVE-2026-0625 to Known Exploited Vulnerabilities catalog; FCEB agencies mandated to retire affected devices by March 26, 2026"
+    },
+    {
+      "date": "2026-03-09",
+      "event": "Active exploitation continues with no patch available; organizations still operating affected devices remain at critical risk"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers discovered that attackers have been actively exploiting a critical flaw in several discontinued D-Link home and small business routers since at least November 2025. The vulnerability exists in a web interface component called 'dnscfg.cgi' — the part of the router responsible for handling DNS (Domain Name System) settings — which fails to properly validate user input, allowing any attacker on the internet to inject and execute arbitrary commands without any password or authentication. What makes this especially dangerous is that D-Link has confirmed these devices are end-of-life and will never receive a security patch. CISA added this vulnerability to its Known Exploited Vulnerabilities catalog on January 26, 2026.",
+    "who_is_affected": "Organizations and individuals operating any of these D-Link models: DSL-2740R, DSL-2640B, DSL-2780B, DSL-526B, DSL-500, DSL-500G, DSL-502G, DIR-600/608/610/611/615/905L, DNS-320/325/345. These are consumer-grade and small business DSL gateway routers from the 2016-2019 era. Many ISPs globally distributed these as customer premise equipment, meaning they remain deployed in homes and small offices worldwide. Additionally, organizations in Brazil, other Latin American countries, and regions where D-Link was a dominant ISP supplier face heightened risk.",
+    "what_attackers_do": "Step 1: Attackers scan the internet for D-Link DSL routers with web management interfaces exposed on ports 80, 8080, or 8443, identifying vulnerable device models from their HTTP response headers and web page content. Step 2: Without any authentication, attackers send a crafted HTTP POST request to the /dnscfg.cgi endpoint containing shell command injection payloads embedded within DNS server configuration parameters (e.g., using $() syntax or backticks). Step 3: The vulnerable router's CGI script processes the DNS configuration request and executes the embedded shell commands with root/system-level privileges, granting the attacker full control over the device. Step 4: Attackers modify the router's DNS settings to point all downstream devices to attacker-controlled DNS servers, enabling silent DNS hijacking that redirects users' web traffic without their knowledge. Step 5: All devices behind the compromised router — PCs, phones, smart devices — now receive malicious DNS responses, allowing attackers to redirect banking websites to phishing clones, intercept credentials, serve malware to any device on the network, and maintain persistent access that survives device reboots.",
+    "what_you_should_do": [
+      "Immediately identify and inventory all D-Link DSL, DIR, and DNS series routers in your environment — especially DSL-2740R, DSL-2640B, DSL-2780B, DSL-526B, and DIR-6xx/9xx models",
+      "Replace affected end-of-life D-Link devices with currently supported networking equipment from any vendor that still receives security patches",
+      "If immediate replacement is not possible, disable remote management access and restrict the router's web interface to only be accessible from specific trusted internal IP addresses",
+      "Check current DNS server settings on all affected routers for unauthorized changes to unknown IP addresses, which may indicate compromise has already occurred",
+      "Monitor outbound DNS traffic for queries to unexpected or newly-observed DNS resolver IP addresses, which could indicate post-compromise DNS hijacking is active"
+    ],
+    "why_this_is_serious": "This threat is uniquely dangerous because there is absolutely no patch coming — D-Link has confirmed these devices are end-of-life and will never be fixed. With active exploitation confirmed since November 2025 and CISA KEV listing, every day an organization continues operating these devices represents an unmitigated critical risk. DNS hijacking is one of the most damaging attack types because it silently redirects all network traffic; victims can visit what appears to be their legitimate bank website but be unknowingly connected to a perfect phishing clone. The GhostDNS malware family that inspired this attack style previously compromised 100,000+ routers in a single campaign. With millions of these discontinued D-Link devices still connected globally, the attack surface is enormous."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated /dnscfg.cgi endpoint exposed on the router's web management interface to inject shell commands without any credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Injected shell commands execute with root privileges on the router's underlying Linux-based operating system via the vulnerable CGI script"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1601.002",
+        "technique_name": "Modify System Image",
+        "description": "Attackers modify DNS configuration settings that persist across reboots, maintaining persistent network-level access and traffic interception capability"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036",
+        "technique_name": "Masquerading",
+        "description": "Malicious DNS responses make phishing sites appear as legitimate websites to all devices on the network, with no visible warning to end users"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "description": "Threat actors conduct mass internet scans for D-Link devices with exposed management interfaces on ports 80, 8080, and 8443"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1557",
+        "technique_name": "Adversary-in-the-Middle",
+        "description": "DNS hijacking enables man-in-the-middle positioning for all devices on the network segment, allowing traffic interception and credential harvesting"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1565.002",
+        "technique_name": "Transmitted Data Manipulation",
+        "description": "Malicious DNS servers return falsified IP addresses for legitimate domains, redirecting users to attacker-controlled infrastructure for phishing, malware delivery, and credential theft"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying unauthorized DNS configuration changes on affected routers, anomalous DNS traffic patterns from network devices, and exploitation attempts against the /dnscfg.cgi endpoint. Network-level monitoring for DNS resolver changes is the most reliable detection method given the device's limited logging capabilities.",
+    "log_sources": [
+      {
+        "source": "Router Web Server Logs",
+        "description": "HTTP access logs showing requests to /dnscfg.cgi, especially POST requests from external IP addresses without corresponding admin login events",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Firewall/IDS Logs",
+        "description": "Traffic logs showing inbound HTTP requests to router management ports (80, 8080, 8443) from untrusted external IP addresses",
+        "priority": "High"
+      },
+      {
+        "source": "DNS Query Logs",
+        "description": "DNS resolution logs from downstream devices showing queries being answered by unexpected or newly-observed DNS resolver IP addresses",
+        "priority": "Critical"
+      },
+      {
+        "source": "DHCP Server Logs",
+        "description": "DHCP lease records showing DNS server assignments being delivered to clients — changes here indicate router-level DNS modification",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST requests to /dnscfg.cgi from external IPs",
+        "description": "Unauthenticated POST requests to the DNS configuration CGI endpoint from non-management IP addresses indicate active exploitation attempts",
+        "log_field": "request_uri='/dnscfg.cgi' AND method='POST' AND src_ip NOT IN trusted_admin_ips",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "DNS server configuration change to unknown IP",
+        "description": "Router DNS settings changed to IP addresses not belonging to known/legitimate DNS providers (e.g., not 8.8.8.8, 1.1.1.1, or ISP-assigned resolvers)",
+        "log_field": "dns_server_primary NOT IN known_legitimate_dns_servers",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Shell metacharacters in DNS parameter fields",
+        "description": "CGI parameters containing $(), backticks, semicolons, pipe characters, or && operators in DNS server fields indicate injection attempts",
+        "log_field": "param_value CONTAINS '$(', '`', ';', '|', '&&'",
+        "severity": "High"
+      },
+      {
+        "indicator": "DNS queries resolving to unusual IP blocks",
+        "description": "Downstream devices receiving unexpected IP addresses for well-known domains (banks, email providers, cloud services) may indicate active DNS hijacking",
+        "log_field": "dns_response_ip NOT IN expected_ip_range FOR known_domain",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Inventory and retire affected D-Link devices",
+      "description": "Immediately identify all D-Link DSL-series, DIR-series, and DNS-series routers (especially DSL-2740R, DSL-2640B, DSL-2780B, DSL-526B, DIR-6xx/9xx, DNS-3xx) in your environment. These are end-of-life with no patches available; the only complete remediation is device replacement with supported hardware.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Check current DNS settings on all affected routers",
+      "description": "Log into each affected router's admin interface and verify the DNS server settings are pointing to known-legitimate resolvers (e.g., ISP-provided, 8.8.8.8, 1.1.1.1). Unexpected DNS server IP addresses strongly indicate compromise has already occurred.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Block external access to router management interfaces",
+      "description": "If the router's web management interface (ports 80, 8080, 8443) is accessible from the internet, immediately apply access controls to restrict it to trusted internal IP ranges only. Disabling remote management entirely is the safest interim mitigation.",
+      "command": "iptables -A INPUT -p tcp --dport 80 -s 0.0.0.0/0 ! -s 192.168.0.0/16 -j DROP"
+    },
+    {
+      "priority": 4,
+      "action": "Monitor DNS resolution from network segments using affected routers",
+      "description": "Implement monitoring to detect DNS hijacking that may have already occurred. Verify DNS responses for critical domains (banking, email, cloud services) match expected IP addresses. Consider deploying DNS-over-HTTPS (DoH) on endpoint devices as a bypass for compromised router DNS.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Report to CISA if compromise confirmed",
+      "description": "If evidence of active exploitation or DNS hijacking is found on affected devices, report the incident to CISA at https://www.cisa.gov/report. Preserve router logs, configuration files, and network traffic captures for forensic analysis before device retirement.",
+      "command": null
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-04-02T03:15:05.894Z",
-  "date": "2026-04-02",
+  "lastUpdated": "2026-04-05T12:55:48.641Z",
+  "date": "2026-04-05",
   "stats": {
-    "total": 117,
-    "critical": 87,
-    "high": 30,
+    "total": 120,
+    "critical": 89,
+    "high": 31,
     "medium": 0,
     "low": 0,
-    "cisaKev": 52,
+    "cisaKev": 55,
     "activeExploits": 15,
-    "totalSources": 1504
+    "totalSources": 1547
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,67 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-04-02-004",
+  "featuredBriefing": "TB-2026-04-05-003",
   "briefings": [
+    {
+      "id": "TB-2026-04-05-003",
+      "title": "Cisco Secure Firewall Management Center Unauthenticated RCE CVE-2026-20131 (CVSS 10.0, CISA KEV): Insecure Java Deserialization Grants Root Access — Interlock Ransomware Exploited as Zero-Day 36 Days Before Disclosure, Entire Managed Firewall Estate at Risk",
+      "severity": "Critical",
+      "date": "2026-04-05",
+      "cves": [
+        "CVE-2026-20131",
+        "CVE-2026-20079"
+      ],
+      "tags": [
+        "cisco",
+        "firewall",
+        "rce",
+        "deserialization",
+        "ransomware",
+        "interlock"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "A maximum-severity vulnerability (CVSS 10.0) was discovered in Cisco's Firewall Management Center (FMC) — the central brain used by organizations to manage their entire fleet of Cisco firewalls. The f..."
+    },
+    {
+      "id": "TB-2026-04-05-002",
+      "title": "TrueConf Client Update Integrity Bypass CVE-2026-3502 (CISA KEV, Deadline April 16): Chinese-Nexus Operation TrueChaos Deploys Havoc RAT Against Southeast Asian Governments via Tampered Software Updates and DLL Sideloading",
+      "severity": "High",
+      "date": "2026-04-05",
+      "cves": [
+        "CVE-2026-3502"
+      ],
+      "tags": [
+        "trueconf",
+        "cisa-kev",
+        "supply-chain",
+        "dll-sideloading",
+        "havoc",
+        "government"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A Chinese-linked hacking group (tracked as Operation TrueChaos by Check Point Research) exploited a critical flaw in TrueConf — a popular video conferencing platform widely used by governments, defens..."
+    },
+    {
+      "id": "TB-2026-04-05-001",
+      "title": "Progress ShareFile Storage Zones Controller Pre-Auth RCE Chain CVE-2026-2699 & CVE-2026-2701 (CVSS 9.8): Authentication Bypass + Arbitrary File Upload Enables Unauthenticated Full Server Compromise — watchTowr PoC Released, 30,000 Internet-Exposed Instances at Risk",
+      "severity": "Critical",
+      "date": "2026-04-05",
+      "cves": [
+        "CVE-2026-2699",
+        "CVE-2026-2701"
+      ],
+      "tags": [
+        "progress",
+        "sharefile",
+        "rce",
+        "pre-auth",
+        "authentication-bypass",
+        "file-upload"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Security researchers at watchTowr Labs discovered a two-vulnerability attack chain in Progress ShareFile's Storage Zones Controller (SZC) — the on-premises file-sharing component used by thousands of ..."
+    },
     {
       "id": "TB-2026-04-02-004",
       "title": "North Korea-Linked UNC1069 Compromises Axios npm Package (100M+ Weekly Downloads): WAVESHAPER.V2 Cross-Platform RAT Deployed via Maintainer Account Hijack — Supply Chain Attack Targets Cloud Credentials, 135+ Confirmed Victims in 3-Hour Window",

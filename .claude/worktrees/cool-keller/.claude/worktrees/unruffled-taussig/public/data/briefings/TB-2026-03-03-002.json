@@ -1,0 +1,270 @@
+{
+  "briefing_id": "TB-2026-03-03-002",
+  "title": "PostgreSQL pgcrypto Extension Heap Buffer Overflow Enables Authenticated RCE as OS User Across All Major PostgreSQL Versions (CVE-2026-2005, CVSS 8.8) — Emergency Out-of-Cycle Patch Released February 26",
+  "generated_date": "2026-03-03",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-2005"
+  ],
+  "tags": [
+    "postgresql",
+    "database",
+    "rce",
+    "heap-overflow",
+    "pgcrypto",
+    "authenticated",
+    "supply-chain"
+  ],
+  "affected_products": [
+    "PostgreSQL 14 before 14.22",
+    "PostgreSQL 15 before 15.17",
+    "PostgreSQL 16 before 16.13",
+    "PostgreSQL 17 before 17.9",
+    "PostgreSQL 18 before 18.3"
+  ],
+  "sources_analyzed": 13,
+  "sources": [
+    {
+      "name": "PostgreSQL Official Security Advisory — CVE-2026-2005",
+      "url": "https://www.postgresql.org/support/security/CVE-2026-2005/",
+      "date": "2026-02-12",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Wiz Security Vulnerability Database — CVE-2026-2005",
+      "url": "https://www.wiz.io/vulnerability-database/cve/cve-2026-2005",
+      "date": "2026-02-12",
+      "type": "Research"
+    },
+    {
+      "name": "NIST NVD — CVE-2026-2005",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2005",
+      "date": "2026-02-12",
+      "type": "Government"
+    },
+    {
+      "name": "PostgreSQL Release Announcement — 18.2, 17.8, 16.12, 15.16, 14.21",
+      "url": "https://www.postgresql.org/about/news/postgresql-182-178-1612-1516-and-1421-released-3235/",
+      "date": "2026-02-12",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "PostgreSQL Out-of-Cycle Release Notice — February 26, 2026",
+      "url": "https://www.postgresql.org/about/news/out-of-cycle-release-scheduled-for-february-26-2026-3241/",
+      "date": "2026-02-26",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "TheHackerWire — PostgreSQL pgcrypto Heap Overflow CVE-2026-2005",
+      "url": "https://www.thehackerwire.com/postgresql-pgcrypto-heap-overflow-cve-2026-2005/",
+      "date": "2026-02-13",
+      "type": "News"
+    },
+    {
+      "name": "OffSeq Threat Radar — CVE-2026-2005 Threat Intelligence",
+      "url": "https://radar.offseq.com/threat/cve-2026-2005-heap-based-buffer-overflow-in-postgr-f6887628",
+      "date": "2026-02-14",
+      "type": "Research"
+    },
+    {
+      "name": "THREATINT CVE Database — CVE-2026-2005",
+      "url": "https://cve.threatint.eu/CVE/CVE-2026-2005",
+      "date": "2026-02-12",
+      "type": "Research"
+    },
+    {
+      "name": "SUSE Security Advisory — CVE-2026-2005",
+      "url": "https://www.suse.com/security/cve/CVE-2026-2005.html",
+      "date": "2026-02-15",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "PostgreSQL Mail Archive — pgcrypto Fix Details",
+      "url": "http://www.mail-archive.com/pgsql-committers@lists.postgresql.org/msg44412.html",
+      "date": "2026-02-12",
+      "type": "Research"
+    },
+    {
+      "name": "PBXScience — PostgreSQL Critical Security Update: Remote Code Execution Vulnerabilities",
+      "url": "https://pbxscience.com/postgresql-releases-critical-security-update-addressing-remote-code-execution-vulnerabilities/",
+      "date": "2026-02-13",
+      "type": "News"
+    },
+    {
+      "name": "Fortiguard Encyclopedia — PostgreSQL pgcrypto Memory Errors Endpoint Vulnerability",
+      "url": "https://www.fortiguard.com/encyclopedia/endpoint-vuln/31623",
+      "date": "2026-02-16",
+      "type": "Research"
+    },
+    {
+      "name": "PostgreSQL Security Information Page",
+      "url": "https://www.postgresql.org/support/security/",
+      "date": "2026-02-26",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-01",
+      "event": "Heap buffer overflow in PostgreSQL pgcrypto extension discovered and reported to PostgreSQL security team by Team Xint Code (zeroday.cloud)"
+    },
+    {
+      "date": "2026-02-12",
+      "event": "PostgreSQL released emergency patches: versions 18.2, 17.8, 16.12, 15.16, and 14.21, along with the official security advisory for CVE-2026-2005"
+    },
+    {
+      "date": "2026-02-13",
+      "event": "Security researchers published technical analysis; Wiz, Fortiguard, and threat intelligence platforms catalogued the vulnerability"
+    },
+    {
+      "date": "2026-02-26",
+      "event": "PostgreSQL released a second out-of-cycle update (18.3, 17.9, 16.13, 15.17, 14.22) to address regressions introduced in the February 12 patch — this is the recommended version"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "Vulnerability remains unpatched across a significant portion of internet-exposed PostgreSQL instances; patch adoption tracking underway by security community"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical memory corruption flaw was found in PostgreSQL's pgcrypto extension — a widely-used module that handles encryption and decryption operations in databases. The vulnerability is in how pgcrypto processes PGP-encrypted data: it reads the key size from the incoming message without checking if it exceeds safe limits, allowing an attacker to overflow a memory buffer. This can cause the database server to execute arbitrary attacker-controlled code running with the same operating system privileges as the PostgreSQL service — which on many servers means full system access. PostgreSQL released an initial patch on February 12, then a follow-up fix on February 26 after the first patch introduced regressions.",
+    "who_is_affected": "Any organization running PostgreSQL versions 14 through 18 with the pgcrypto extension installed is potentially at risk. PostgreSQL is the world's most popular advanced open-source relational database, used by thousands of enterprises, SaaS applications, financial institutions, healthcare providers, and government agencies. The pgcrypto module is particularly common in applications that store sensitive encrypted data such as healthcare records, financial data, and personal information. Applications that allow users to submit data that eventually gets processed by pgcrypto decryption functions are especially at risk.",
+    "what_attackers_do": "Step 1: Attacker identifies a PostgreSQL instance running a vulnerable version (14.21 or earlier, 15.16 or earlier, 16.12 or earlier, 17.8 or earlier, or 18.2 or earlier) with the pgcrypto extension enabled — this can be confirmed via public Shodan/Censys scans or by attempting a connection. Step 2: Attacker obtains or already has authenticated database access — this could be a low-privilege application account, a stolen credential, or access via a web application that uses the database. Step 3: Attacker crafts a malicious PGP-encrypted message with an artificially inflated session key length field in the PGP header that exceeds the buffer allocated by pgcrypto's decryption function. Step 4: Attacker passes this crafted ciphertext to a pgcrypto decryption function (pgp_pub_decrypt_bytea, pgp_sym_decrypt) — either directly via SQL or indirectly through an application endpoint. Step 5: The integer overflow and heap buffer overflow condition is triggered, corrupting adjacent memory. The attacker uses this to overwrite function pointers or return addresses and redirect execution to attacker-controlled shellcode, achieving OS-level code execution as the PostgreSQL service account.",
+    "what_you_should_do": [
+      "Immediately identify all PostgreSQL instances in your environment and check their version using: SELECT version();",
+      "Upgrade to the latest patched versions: PostgreSQL 18.3, 17.9, 16.13, 15.17, or 14.22 (use the February 26 release, NOT the February 12 release, to avoid regressions)",
+      "Verify if pgcrypto is installed on affected instances: SELECT * FROM pg_extension WHERE extname='pgcrypto'; — if it returns a row, you are potentially vulnerable",
+      "Apply principle of least privilege: review database users and revoke unnecessary permissions; ensure application accounts cannot execute arbitrary pgcrypto functions with attacker-controlled input",
+      "Monitor PostgreSQL process for unexpected crashes, core dumps, or child processes spawned by the postgres service user that suggest exploitation attempts"
+    ],
+    "why_this_is_serious": "PostgreSQL powers some of the most sensitive databases on the internet — medical records, financial transactions, authentication systems, and government data. A vulnerability that allows authenticated code execution as the database OS user means that any attacker who compromises even a low-privilege database account can escalate to full server compromise. The pgcrypto module is often used precisely where the most sensitive data lives (encrypted health records, payment information), making this a high-value target. The fact that a regression in the first patch required a second emergency out-of-cycle release two weeks later further highlights the severity — the PostgreSQL team considered this critical enough to break from normal release cycles twice. Organizations running self-managed PostgreSQL instances (especially those exposed to the internet) face the greatest risk."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "If the PostgreSQL instance is network-accessible or served through a web application, the attacker exploits CVE-2026-2005 via the application's database queries that feed user-controlled data into pgcrypto decryption functions"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "The heap buffer overflow in pgcrypto is triggered to achieve arbitrary code execution on the database server, escalating from authenticated database user to OS-level code execution as the postgres service account"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1548",
+        "technique_name": "Abuse Elevation Control Mechanism",
+        "description": "The PostgreSQL service often runs as a privileged OS user; gaining RCE through CVE-2026-2005 effectively provides OS-level privileges beyond the database context, especially on misconfigured servers where postgres runs as root"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1555",
+        "technique_name": "Credentials from Password Stores",
+        "description": "With OS-level access to the database server, attackers can read PostgreSQL configuration files (pg_hba.conf, postgresql.conf), dump database hashes, and access other credentials stored on the server"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "description": "Using credentials and network access obtained from the compromised database server, attackers pivot to connected application servers, backup systems, and other infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Focus detection efforts on identifying unpatched PostgreSQL instances, monitoring for pgcrypto function calls with abnormally large input data, and watching for anomalous process behavior from the PostgreSQL service user. There are no known public IOCs for active exploitation of this specific vulnerability yet.",
+    "log_sources": [
+      {
+        "source": "PostgreSQL Query Logs",
+        "description": "Enable statement logging (log_statement = 'all' or 'ddl') to capture SQL queries invoking pgcrypto decryption functions. Look for pgp_pub_decrypt_bytea(), pgp_sym_decrypt(), and related calls with unusually large bytea arguments.",
+        "priority": "Critical"
+      },
+      {
+        "source": "OS Process Audit Logs (auditd / syslog)",
+        "description": "Monitor for unexpected system calls, process spawning, or file writes originating from the postgres service account. A successful exploit will cause OS-level activity from the postgres process.",
+        "priority": "Critical"
+      },
+      {
+        "source": "PostgreSQL Error Logs",
+        "description": "Watch for segmentation faults, out-of-memory errors, or unexpected process crashes in PostgreSQL logs — these may indicate failed exploitation attempts or stability issues from the unpatched February 12 release.",
+        "priority": "High"
+      },
+      {
+        "source": "Network IDS/IPS",
+        "description": "Monitor for anomalous database connection patterns: authentication from unexpected source IPs, sudden increases in query volume, or connections from systems that don't normally access the database.",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring (FIM)",
+        "description": "Monitor PostgreSQL data directory, configuration files, and any directories writable by the postgres OS user for unexpected modifications — a sign of post-exploitation activity.",
+        "priority": "Medium"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "pgcrypto decryption functions called with abnormally large bytea input",
+        "description": "Exploitation requires feeding a specially crafted large PGP-format ciphertext to pgcrypto. Queries with pgp_pub_decrypt_bytea() or pgp_sym_decrypt() taking inputs larger than a few KB should be investigated.",
+        "log_field": "pg_log: 'pgp_pub_decrypt_bytea' OR 'pgp_sym_decrypt' with parameter length > 10240 bytes",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "PostgreSQL version reporting vulnerable release",
+        "description": "Any instance returning a version earlier than 14.22, 15.17, 16.13, 17.9, or 18.3 with pgcrypto installed should be treated as actively at-risk",
+        "log_field": "SELECT version(); returning PostgreSQL 1[4-8]\\.(0-2[0-1]|[0-8])",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unexpected network connections or OS commands from postgres user",
+        "description": "Post-exploitation indicator: the postgres OS account initiating outbound connections, executing shell commands, or writing files outside the database data directory",
+        "log_field": "auditd: uid=postgres (or uid matching postgres service account) execve OR connect syscall to unexpected destination",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "PostgreSQL core dump or SIGSEGV from pgcrypto context",
+        "description": "Failed exploitation attempts or crashes in the vulnerable code path produce crash dumps. Repeated crashes from the same session may indicate probing.",
+        "log_field": "syslog: 'postgres' AND ('SIGSEGV' OR 'core dumped' OR 'invalid memory alloc')",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade PostgreSQL to latest patched version",
+      "description": "Upgrade to PostgreSQL 18.3, 17.9, 16.13, 15.17, or 14.22 immediately. Use the February 26, 2026 releases (NOT the February 12 releases which have regressions). On Ubuntu/Debian: use apt-get upgrade postgresql. On RHEL/CentOS: use yum update postgresql. Cloud-managed databases (AWS RDS, Azure Database for PostgreSQL, GCP Cloud SQL) should apply minor version updates through their respective consoles.",
+      "command": "psql -c \"SELECT version();\"  # Check current version; then upgrade via package manager"
+    },
+    {
+      "priority": 2,
+      "action": "Identify all PostgreSQL instances with pgcrypto installed",
+      "description": "Query every PostgreSQL instance in your environment to check if pgcrypto is enabled. If pgcrypto is not in use, consider removing it to reduce attack surface. If it is in use, document which applications depend on it and prioritize those instances for immediate patching.",
+      "command": "psql -c \"SELECT extname, extversion FROM pg_extension WHERE extname='pgcrypto';\""
+    },
+    {
+      "priority": 3,
+      "action": "Restrict database user permissions around pgcrypto",
+      "description": "As a temporary compensating control if immediate patching is not possible: revoke EXECUTE privilege on pgcrypto functions from application users that don't need to call decryption functions directly. This limits the attack surface to only users who genuinely need pgcrypto access.",
+      "command": "REVOKE EXECUTE ON FUNCTION pgp_pub_decrypt_bytea FROM <app_user>;  -- For users that don't need decryption"
+    },
+    {
+      "priority": 4,
+      "action": "Enable enhanced PostgreSQL logging",
+      "description": "If not already enabled, set log_statement = 'all' in postgresql.conf and reload the configuration. This enables detection of malicious pgcrypto calls via query logs. On high-traffic instances, consider log_min_duration_statement to limit log volume while capturing relevant queries.",
+      "command": "psql -c \"ALTER SYSTEM SET log_statement = 'all'; SELECT pg_reload_conf();\""
+    },
+    {
+      "priority": 5,
+      "action": "Audit network exposure of PostgreSQL instances",
+      "description": "Verify that PostgreSQL instances are not directly exposed to the internet. PostgreSQL should only be accessible from application servers, not from public IPs. Check firewall rules and security groups to ensure port 5432 is restricted. Any internet-exposed PostgreSQL instance with pgcrypto installed should be treated as critically compromised until patched.",
+      "command": "ss -tlnp | grep 5432  # Check if PostgreSQL is listening on all interfaces (0.0.0.0)"
+    }
+  ]
+}

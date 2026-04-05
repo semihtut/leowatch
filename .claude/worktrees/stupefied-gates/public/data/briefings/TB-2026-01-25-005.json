@@ -1,0 +1,76 @@
+{
+  "briefing_id": "TB-2026-01-25-005",
+  "title": "Zimbra Collaboration Suite PHP Remote File Inclusion - Active Exploitation (CISA KEV)",
+  "generated_date": "2026-01-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.1,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-12"
+  },
+  "cves": ["CVE-2025-68645"],
+  "tags": ["cloud", "email", "collaboration", "zimbra", "rfi", "php", "webmail"],
+  "affected_products": ["Synacor Zimbra Collaboration Suite (ZCS)"],
+  "sources_analyzed": 2,
+  "sources": [
+    {
+      "name": "CISA KEV Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-22",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-confirms-active-exploitation-of-four-enterprise-software-bugs/",
+      "date": "2026-01-23",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {"date": "2026-01-22", "event": "CISA adds CVE-2025-68645 to KEV catalog"},
+    {"date": "2026-01-23", "event": "Active exploitation confirmed in the wild"},
+    {"date": "2026-02-12", "event": "CISA remediation deadline"}
+  ],
+  "simple_summary": {
+    "what_happened": "Zimbra Collaboration Suite has a PHP remote file inclusion vulnerability in the /h/rest endpoint that allows attackers to manipulate internal request dispatching and include arbitrary files from the WebRoot directory, potentially leading to remote code execution on the mail server.",
+    "who_is_affected": "Organizations using Zimbra for email and collaboration, including on-premises deployments and cloud-hosted instances. Zimbra is widely used by enterprises, universities, and government organizations.",
+    "what_attackers_do": "Step 1: Craft malicious HTTP requests to the /h/rest endpoint. Step 2: Manipulate internal request dispatching through parameter injection. Step 3: Include arbitrary PHP files from the WebRoot directory. Step 4: Achieve remote code execution on the mail server. Step 5: Access all emails, contact lists, calendars, and pivot to internal network.",
+    "what_you_should_do": [
+      "Patch Zimbra to the latest version immediately",
+      "Implement WAF rules to block malicious /h/rest requests",
+      "Review mail server access logs for suspicious request patterns",
+      "Audit user accounts for unauthorized access or new accounts",
+      "Check for webshells or unauthorized files in WebRoot"
+    ],
+    "why_this_is_serious": "Email servers contain highly sensitive corporate communications, contact information, and calendar data. They are often trusted by internal systems for authentication. Compromise enables email theft, business email compromise (BEC) attacks from legitimate accounts, and lateral movement into the corporate network."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {"tactic": "Initial Access", "technique_id": "T1190", "technique_name": "Exploit Public-Facing Application", "description": "RFI vulnerability exploitation via /h/rest endpoint"},
+      {"tactic": "Execution", "technique_id": "T1059.004", "technique_name": "Command and Scripting Interpreter: Unix Shell", "description": "Code execution through PHP file inclusion"},
+      {"tactic": "Collection", "technique_id": "T1114.002", "technique_name": "Email Collection: Remote Email Collection", "description": "Access to all mailboxes on compromised server"},
+      {"tactic": "Persistence", "technique_id": "T1505.003", "technique_name": "Server Software Component: Web Shell", "description": "Webshell deployment for persistent access"}
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor Zimbra access logs for suspicious requests to /h/rest endpoint. Watch for unusual file access patterns and new files appearing in WebRoot.",
+    "log_sources": [
+      {"source": "Zimbra mailbox.log", "description": "Mail server access and API logs", "priority": "Critical"},
+      {"source": "Web Server Access Logs", "description": "HTTP request logs for /h/rest endpoint", "priority": "Critical"},
+      {"source": "File Integrity Monitoring", "description": "Detect new or modified files in WebRoot", "priority": "High"}
+    ],
+    "what_to_look_for": [
+      {"indicator": "Suspicious /h/rest requests", "log_field": "request.path='/h/rest' AND request.params CONTAINS '../'", "severity": "Critical"},
+      {"indicator": "PHP file inclusion attempts", "log_field": "request CONTAINS '.php' AND response=200", "severity": "Critical"},
+      {"indicator": "New files in WebRoot", "log_field": "file.created AND file.path CONTAINS 'webroot'", "severity": "High"},
+      {"indicator": "Unusual mailbox access", "log_field": "mailbox.access FROM external_ip", "severity": "High"}
+    ]
+  },
+  "immediate_actions": [
+    {"priority": 1, "action": "Patch Zimbra", "description": "Apply latest security updates from Synacor", "command": null},
+    {"priority": 2, "action": "Deploy WAF rules", "description": "Block malicious requests to /h/rest endpoint", "command": null},
+    {"priority": 3, "action": "Scan for webshells", "description": "Check WebRoot for unauthorized PHP files", "command": "find /opt/zimbra/jetty/webapps -name '*.php' -mtime -30"},
+    {"priority": 4, "action": "Review access logs", "description": "Search for /h/rest exploitation attempts", "command": "grep '/h/rest' /opt/zimbra/log/access*.log | grep -v normal_patterns"}
+  ]
+}

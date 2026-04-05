@@ -1,0 +1,269 @@
+{
+  "briefing_id": "TB-2026-02-12-002",
+  "title": "WatchGuard Firebox IKEv2 VPN Zero-Day: Unauthenticated Out-of-Bounds Write Enables Root RCE on 125,000+ Firewalls (CVE-2025-14733, CISA KEV)",
+  "generated_date": "2026-02-12",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": true,
+    "cisa_deadline": "2025-12-26"
+  },
+  "cves": [
+    "CVE-2025-14733"
+  ],
+  "tags": [
+    "watchguard",
+    "firewall",
+    "vpn",
+    "ikev2",
+    "zero-day",
+    "cisa-kev",
+    "active-exploitation"
+  ],
+  "affected_products": [
+    "WatchGuard Fireware OS 11.10.2 through 11.12.4 Update1",
+    "WatchGuard Fireware OS 12.0 through 12.11.5",
+    "WatchGuard Fireware OS 12.5.x (before 12.5.15)",
+    "WatchGuard Fireware OS 2025.1 through 2025.1.3",
+    "WatchGuard Fireware OS 12.3.1 FIPS",
+    "All Firebox models with IKEv2 VPN enabled"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "WatchGuard PSIRT Advisory - WGSA-2025-00027",
+      "url": "https://www.watchguard.com/wgrd-psirt/advisory/wgsa-2025-00027",
+      "date": "2025-12-18",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CISA - Adds One Known Exploited Vulnerability to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2025/12/19/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "date": "2025-12-19",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer - Critical RCE flaw impacts over 115,000 WatchGuard firewalls",
+      "url": "https://www.bleepingcomputer.com/news/security/over-115-000-watchguard-firewalls-vulnerable-to-ongoing-rce-attacks/",
+      "date": "2025-12-18",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - WatchGuard Warns of Active Exploitation of Critical Fireware OS VPN Vulnerability",
+      "url": "https://thehackernews.com/2025/12/watchguard-warns-of-active-exploitation.html",
+      "date": "2025-12-19",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading - Threat Actors Exploit Zero-Day in WatchGuard Firebox Devices",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/threat-actors-zero-day-watchguard-firebox",
+      "date": "2025-12-19",
+      "type": "News"
+    },
+    {
+      "name": "NVD - CVE-2025-14733",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14733",
+      "date": "2025-12-18",
+      "type": "Government"
+    },
+    {
+      "name": "Help Net Security - WatchGuard Firebox firewalls under attack (CVE-2025-14733)",
+      "url": "https://www.helpnetsecurity.com/2025/12/22/watchguard-firebox-vulnerability-cve-2025-14733/",
+      "date": "2025-12-22",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - WatchGuard Patches Firebox Zero-Day Exploited in the Wild",
+      "url": "https://www.securityweek.com/watchguard-patches-firebox-zero-day-exploited-in-the-wild/",
+      "date": "2025-12-19",
+      "type": "News"
+    },
+    {
+      "name": "SOC Prime - CVE-2025-14733 Vulnerability Detection",
+      "url": "https://socprime.com/blog/cve-2025-14733-vulnerability/",
+      "date": "2025-12-20",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf - CVE-2025-14733 Analysis",
+      "url": "https://arcticwolf.com/resources/blog/cve-2025-14733/",
+      "date": "2025-12-20",
+      "type": "Research"
+    },
+    {
+      "name": "CyberSecurityNews - 125,000 WatchGuard Firebox Devices Exposed to 0-day RCE",
+      "url": "https://cybersecuritynews.com/125000-ips-watchguard-firebox-devices/",
+      "date": "2025-12-20",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-18",
+      "event": "WatchGuard publicly discloses CVE-2025-14733 and releases firmware patches (v2025.1.4, v12.11.6, v12.5.15)"
+    },
+    {
+      "date": "2025-12-19",
+      "event": "Active exploitation confirmed within 48 hours of disclosure; CISA adds to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2025-12-20",
+      "event": "Shadowserver Foundation identifies approximately 125,000 vulnerable internet-exposed Firebox IP addresses"
+    },
+    {
+      "date": "2025-12-22",
+      "event": "Exploitation campaigns expand; threat actors exfiltrating configuration files and credential databases from compromised devices"
+    },
+    {
+      "date": "2025-12-26",
+      "event": "CISA federal remediation deadline for FCEB agencies"
+    },
+    {
+      "date": "2026-02-12",
+      "event": "Tens of thousands of devices remain unpatched globally with ongoing exploitation activity"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical zero-day vulnerability was found in WatchGuard Firebox firewalls that allows attackers to take complete control of the device remotely without any login credentials. The flaw is in the IKEv2 VPN service, which many organizations use for secure remote access and site-to-site connections. Approximately 125,000 firewalls were found exposed to the internet, and attackers began exploiting the vulnerability within 48 hours of its public disclosure.",
+    "who_is_affected": "Any organization using WatchGuard Firebox firewalls with IKEv2 VPN enabled. This includes approximately 125,000 internet-exposed devices worldwide, with over 40,000 in the United States, 13,000 in Germany, 11,300 in Italy, and 9,000 in the United Kingdom. Small-to-medium businesses are especially impacted as WatchGuard is a popular choice in that market segment.",
+    "what_attackers_do": "Step 1: Attackers scan the internet for WatchGuard Firebox devices with the IKEv2 VPN service exposed on standard ports. Step 2: They send a specially crafted IKEv2 packet containing more than 8 certificates in the certificate chain, with oversized certificate payloads exceeding 2,000 bytes. Step 3: The malformed packet triggers an out-of-bounds memory write in the iked process, corrupting memory and allowing arbitrary code execution with root privileges. Step 4: With root access, attackers extract the firewall configuration file containing VPN settings, network topology, and firewall rules. Step 5: Attackers harvest the local management user database and VPN credential store, stealing admin passwords, VPN pre-shared keys, and SSL certificates for persistent access and lateral movement into the internal network.",
+    "what_you_should_do": [
+      "Immediately update WatchGuard Fireware OS to patched versions: 2025.1.4, 12.11.6, 12.5.15, or 12.3.1 Update4 depending on your firmware branch",
+      "If patching is not immediately possible, disable IKEv2 VPN (Mobile User VPN and BOVPN with dynamic gateway peers) as a temporary mitigation",
+      "Check firewall logs for IKEv2 sessions with certificate chains containing more than 8 entries or certificate payloads exceeding 2,000 bytes",
+      "Rotate all credentials stored on the firewall: admin passwords, VPN pre-shared keys, LDAP integration credentials, and SSL certificates",
+      "Monitor for outbound connections from Firebox management IP to known C2 addresses: 45.95.19.50, 51.15.17.89, 172.93.107.67, 199.247.7.82"
+    ],
+    "why_this_is_serious": "Firewalls are the first line of defense for any network. When the firewall itself is compromised with root access, attackers bypass all security controls simultaneously. They can modify firewall rules to allow further attacks, intercept all network traffic, steal VPN credentials for persistent access, and use the compromised firewall as a launchpad for attacking internal systems. With 125,000 devices exposed and active exploitation ongoing, this represents one of the largest perimeter device compromise campaigns in recent history."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the IKEv2 VPN service on internet-facing WatchGuard Firebox firewalls by sending crafted packets with oversized certificate chains to trigger out-of-bounds write"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "After achieving code execution via memory corruption, attackers execute arbitrary commands with root privileges on the Firebox operating system"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1601",
+        "technique_name": "Modify System Image",
+        "description": "Attackers modify Fireware OS boot configuration or firmware to maintain persistent access across reboots and firmware updates"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1003",
+        "technique_name": "OS Credential Dumping",
+        "description": "Attackers extract VPN credentials, admin passwords, LDAP credentials, and pre-shared keys from the compromised firewall's local database"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562",
+        "technique_name": "Impair Defenses",
+        "description": "With root access on the firewall, attackers disable logging, modify firewall rules, and suppress security alerts to avoid detection"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Stolen configuration files and credential databases are compressed into archives and exfiltrated to attacker-controlled IP addresses"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Focus detection on anomalous IKEv2 VPN traffic patterns, iked process crashes, unexpected outbound connections from firewall management interfaces, and credential database access. Network-level monitoring of known C2 IPs is critical.",
+    "log_sources": [
+      {
+        "source": "WatchGuard Fireware System Logs",
+        "description": "Monitor iked process logs for certificate chain violations (>8 certs), large payload warnings (>2000 bytes), process crashes, and segmentation faults",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Monitor / IDS",
+        "description": "Detect IKEv2 IKE_AUTH packets with abnormally large certificate payloads and monitor for outbound connections to known C2 IPs",
+        "priority": "Critical"
+      },
+      {
+        "source": "Firewall Management Interface Logs",
+        "description": "Monitor for unauthorized configuration changes, new admin accounts, modified firewall policies, and unexpected firmware modifications",
+        "priority": "High"
+      },
+      {
+        "source": "NetFlow / Traffic Analytics",
+        "description": "Detect unusual data exfiltration patterns from firewall IP addresses, especially compressed archives (.tar.gz, .zip) to external destinations",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "IKEv2 certificate chain with more than 8 entries",
+        "description": "The iked process generates a log message at default error logging level when more than 8 certificates are received in an IKE_AUTH message, which is a strong indicator of exploitation attempt",
+        "log_field": "iked log: certificate chain count > 8",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "iked process crash or hang",
+        "description": "The iked daemon crashing (fault report) or hanging (interrupting VPN tunnel negotiations) indicates successful or attempted exploitation of the memory corruption vulnerability",
+        "log_field": "process='iked' AND (event='crash' OR event='fault' OR event='hang')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connections to known C2 addresses",
+        "description": "Connections from the Firebox management IP to attacker infrastructure used for exfiltrating stolen configuration and credentials",
+        "log_field": "dst_ip IN (45.95.19.50, 51.15.17.89, 172.93.107.67, 199.247.7.82)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Large outbound data transfer from firewall",
+        "description": "Compressed archive files (.tar.gz, .zip) being sent from the firewall to external IP addresses indicates active data exfiltration of configuration and credential databases",
+        "log_field": "src_ip=firebox_mgmt AND bytes_out > 1MB AND dst_ip=external",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "45.95.19.50",
+      "51.15.17.89",
+      "172.93.107.67",
+      "199.247.7.82"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update Fireware OS to patched firmware immediately",
+      "description": "Upgrade all WatchGuard Firebox devices to patched versions: Fireware 2025.1.4, 12.11.6, 12.5.15, or 12.3.1_Update4 (B728352) depending on your firmware branch. This is the only complete fix.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Disable IKEv2 VPN if patching is not immediately possible",
+      "description": "As temporary mitigation, disable Mobile User VPN with IKEv2 and any BOVPN connections using IKEv2 with dynamic gateway peers. Note: devices with deleted IKEv2 configs but existing BOVPN to static gateway peers may still be at risk.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Block known C2 IP addresses at network perimeter",
+      "description": "Add the following IPs to firewall blocklists across all perimeter devices: 45.95.19.50, 51.15.17.89, 172.93.107.67, 199.247.7.82. These are confirmed C2 destinations used in active exploitation campaigns.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Rotate all credentials stored on Firebox devices",
+      "description": "After patching, immediately change all passwords and secrets stored on the firewall: admin accounts, VPN user credentials, pre-shared keys, LDAP/AD integration credentials, SSL certificates, and API tokens.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Forensic review of Firebox logs for exploitation indicators",
+      "description": "Review iked process logs for certificate chain anomalies (>8 certs), process crashes, and large payload warnings. Check for unauthorized configuration changes, new admin accounts, and unexpected outbound data transfers.",
+      "command": null
+    }
+  ]
+}

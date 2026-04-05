@@ -1,0 +1,297 @@
+{
+  "briefing_id": "TB-2026-03-07-003",
+  "title": "Coruna iOS Exploit Kit CISA KEV: Nation-State-Grade 23-Exploit Framework Chains CVE-2023-41974 and CVE-2023-43000 to Steal Cryptocurrency from 42,000+ iPhones via Drive-By WebKit Compromise",
+  "generated_date": "2026-03-07",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 8.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-26"
+  },
+  "cves": [
+    "CVE-2023-41974",
+    "CVE-2023-43000"
+  ],
+  "tags": [
+    "ios",
+    "apple",
+    "webkit",
+    "mobile",
+    "exploit-kit",
+    "cryptocurrency",
+    "spyware",
+    "use-after-free",
+    "coruna"
+  ],
+  "affected_products": [
+    "Apple iOS 13.0 through iOS 17.2.1 (all iPhone XS and later)",
+    "Apple iPadOS 13.0 through 17.2.1 (iPad Pro, iPad Air 3rd gen+, iPad 6th gen+, iPad mini 5th gen+)",
+    "Apple Safari before 16.6 (macOS Ventura before 13.5)",
+    "All iOS/iPadOS versions before 17.3 remain at elevated risk"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "CISA Alert - CISA Adds Five Known Exploited Vulnerabilities to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/03/05/cisa-adds-five-known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-05",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-05",
+      "type": "Government"
+    },
+    {
+      "name": "Google Threat Intelligence - Coruna: A Powerful iOS Exploit Kit",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit",
+      "date": "2026-03-03",
+      "type": "Research"
+    },
+    {
+      "name": "iVerify - Coruna: Inside the Nation-State-Grade iOS Exploit Kit",
+      "url": "https://iverify.io/blog/coruna-inside-the-nation-state-grade-ios-exploit-kit-we-ve-been-tracking",
+      "date": "2026-03-03",
+      "type": "Research"
+    },
+    {
+      "name": "iVerify Press Release - First Known Mass iOS Attack",
+      "url": "https://iverify.io/press-releases/first-known-mass-ios-attack",
+      "date": "2026-03-03",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityWeek - CISA Adds iOS Flaws From Coruna Exploit Kit to KEV List",
+      "url": "https://www.securityweek.com/cisa-adds-ios-flaws-from-coruna-exploit-kit-to-kev/",
+      "date": "2026-03-06",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Nation-State iOS Exploit Kit Coruna Found Powering Global Attacks",
+      "url": "https://www.securityweek.com/nation-state-ios-exploit-kit-coruna-found-powering-global-attacks/",
+      "date": "2026-03-03",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Spyware-grade Coruna iOS Exploit Kit Now Used in Crypto Theft",
+      "url": "https://www.bleepingcomputer.com/news/security/spyware-grade-coruna-ios-exploit-kit-now-used-in-crypto-theft-attacks/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - CISA Warns of Apple Flaws Exploited in Spyware Crypto Theft",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-apple-flaws-exploited-in-spyware-crypto-theft-attacks/",
+      "date": "2026-03-05",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Coruna Spy-Grade iOS Exploit Kit Powering Financial Crime",
+      "url": "https://www.helpnetsecurity.com/2026/03/03/coruna-ios-exploit-kit/",
+      "date": "2026-03-03",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Coruna iOS Exploit Kit Uses 23 Exploits to Compromise iPhones",
+      "url": "https://thehackernews.com/2026/03/coruna-ios-exploit-kit-uses-23-exploits.html",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "CyberScoop - Possible U.S.-Developed Exploits Linked to First Known Mass iOS Attack",
+      "url": "https://cyberscoop.com/coruna-ios-exploit-kit-leaked-us-framework/",
+      "date": "2026-03-04",
+      "type": "News"
+    },
+    {
+      "name": "Zimperium - Coruna iOS Exploit Kit Highlights Multi-Layer Mobile Defense",
+      "url": "https://zimperium.com/blog/coruna-ios-exploit-kit-highlights-the-need-for-multi-layer-mobile-defense",
+      "date": "2026-03-05",
+      "type": "Research"
+    },
+    {
+      "name": "Apple iOS 17 Security Content - CVE-2023-41974 patch details",
+      "url": "https://support.apple.com/en-us/120949",
+      "date": "2023-09-18",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "SC Media - 3 Apple Flaws From Coruna Exploit Kit Added to CISA Vulnerability List",
+      "url": "https://www.scworld.com/news/3-apple-flaws-from-coruna-exploit-kit-added-to-cisa-vulnerability-list",
+      "date": "2026-03-05",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2023-07-01",
+      "event": "Apple releases Safari 16.6, iOS 16.6, and macOS 13.5 patching CVE-2023-43000 (WebKit use-after-free)"
+    },
+    {
+      "date": "2023-09-18",
+      "event": "Apple releases iOS 17.0 patching CVE-2023-41974 (iOS kernel use-after-free)"
+    },
+    {
+      "date": "2024-01-10",
+      "event": "CVE-2023-41974 formally published to NVD; public attribution to researcher Félix Poulin-Bélanger"
+    },
+    {
+      "date": "2025-02-01",
+      "event": "Google Threat Intelligence Group (GTIG) first detects Coruna exploit kit in use by a commercial surveillance vendor customer; highly targeted surveillance operations affecting hundreds of devices"
+    },
+    {
+      "date": "2025-07-01",
+      "event": "Russian espionage group UNC6353 repurposes Coruna for watering hole attacks on compromised Ukrainian websites targeting industrial and retail sectors"
+    },
+    {
+      "date": "2025-12-01",
+      "event": "Financially motivated Chinese threat actor UNC6691 acquires Coruna and pivots to mass cryptocurrency theft targeting fake Chinese gambling, finance, and crypto websites"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "Google Threat Intelligence and iVerify jointly publish full Coruna public disclosure; 42,000+ device compromises confirmed in UNC6691 cryptocurrency theft campaign alone"
+    },
+    {
+      "date": "2026-03-05",
+      "event": "CISA adds CVE-2023-41974 and CVE-2023-43000 (and CVE-2021-30952) to KEV catalog; federal remediation deadline set for March 26, 2026"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A sophisticated nation-state-grade iOS exploit kit called 'Coruna' was publicly disclosed on March 3, 2026 by Google Threat Intelligence and iVerify. The kit strings together 23 separate Apple vulnerabilities into 5 complete attack chains that can fully compromise any iPhone running iOS 13.0 through 17.2.1 — a 4-year range of devices. Two core vulnerabilities (CVE-2023-41974 and CVE-2023-43000) were added to CISA's must-patch list on March 5, 2026. Originally developed as a surveillance tool, Coruna was later acquired by a Chinese cybercriminal group that used it to steal cryptocurrency from over 42,000 iPhones by luring victims to fake websites.",
+    "who_is_affected": "iPhone and iPad users running iOS/iPadOS 13.0 through 17.2.1 who visited malicious websites. High-risk targets include cryptocurrency users with mobile wallets (MetaMask, Phantom, Exodus), employees at organizations targeted by Russian and Chinese threat actors, and anyone using an unpatched iPhone as a corporate device. Devices running iOS 17.3 or later, or those with Lockdown Mode enabled, are not affected.",
+    "what_attackers_do": "Step 1: The victim visits a malicious website (a fake cryptocurrency exchange, financial app, or a legitimate site that has been silently compromised with a hidden iframe) on their iPhone. Step 2: The malicious page triggers CVE-2023-43000 — a use-after-free bug in WebKit (Safari's engine) — to execute arbitrary code within the browser process. Step 3: The exploit chain breaks out of the browser sandbox, escalating access to the broader iOS system. Step 4: CVE-2023-41974 — a use-after-free in the iOS kernel — is triggered to achieve kernel-level code execution, fully bypassing Apple's memory protection mechanisms. Step 5: The PlasmaLoader malware payload is injected into the powerd system daemon (a root-level process), giving attackers persistent, high-privilege access to the device. Step 6: PlasmaLoader silently harvests seed phrases and private keys from 18 cryptocurrency wallet apps (including MetaMask, Phantom, and Exodus), scans Apple Memos for sensitive data, and exfiltrates everything over encrypted HTTPS to attacker-controlled infrastructure.",
+    "what_you_should_do": [
+      "Update all iPhones and iPads to iOS 17.3 or later immediately (iOS 17.3+ is immune to all known Coruna chains)",
+      "For devices that cannot update, enable Lockdown Mode via Settings > Privacy & Security > Lockdown Mode — this completely blocks the Coruna exploit chain",
+      "Move high-value cryptocurrency assets to hardware wallets and remove sensitive seed phrases from mobile devices and iCloud Memos",
+      "Enable DNS filtering to block identified Coruna C2 infrastructure and deploy mobile threat detection (MTD) solutions on enterprise iOS fleets",
+      "Audit enterprise MDM policies to ensure all managed iOS devices are running iOS 17.3+ and enforce compliance before March 26, 2026"
+    ],
+    "why_this_is_serious": "Coruna represents the first documented mass-scale iOS exploitation campaign in history, affecting 42,000+ devices. iOS has historically been considered highly resistant to drive-by compromise, but this kit demolishes that assumption by chaining 23 vulnerabilities. The kit evolved from government-grade surveillance tool to mass criminal infrastructure in under one year. The cryptocurrency theft campaign demonstrates immediate financial harm, while the Russian espionage use shows geopolitical targeting potential. Any organization issuing iPhones to employees — especially those in finance, defense, or critical infrastructure — faces real risk until devices are updated."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1189",
+        "technique_name": "Drive-by Compromise",
+        "description": "Victims are directed to malicious websites (fake crypto/finance sites or legitimate sites with injected iframes) where Coruna's WebKit exploits automatically trigger upon page load without any user interaction beyond visiting the page"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "CVE-2023-43000 (WebKit use-after-free) triggers arbitrary code execution in the Safari browser process, while CVE-2023-41974 (kernel use-after-free) achieves kernel-level execution"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "The exploit chain escalates from browser sandbox → system user → kernel privileges through multiple chained vulnerabilities, ultimately achieving root-level process injection via CVE-2023-41974"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1055",
+        "technique_name": "Process Injection",
+        "description": "PlasmaLoader is injected into the legitimate powerd system daemon (runs as root), hiding malicious activity within a trusted system process to evade detection"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552",
+        "technique_name": "Unsecured Credentials",
+        "description": "PlasmaLoader targets 18 cryptocurrency wallet applications to extract BIP39 recovery phrases, private keys, and wallet seed phrases stored on the device"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Harvested credentials, recovery phrases, and sensitive data are exfiltrated over AES-encrypted HTTPS to attacker-controlled C2 infrastructure using Domain Generation Algorithm (DGA) for resilience"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection of Coruna exploitation is challenging on unmonitored personal devices but possible through specific log artifacts, network traffic patterns, and behavioral indicators. Enterprise environments with Mobile Device Management (MDM) and Mobile Threat Detection (MTD) platforms have the best detection visibility. Key indicators include a specific PowerD log error message, abnormal Safari crash patterns, and unusual network connections.",
+    "log_sources": [
+      {
+        "source": "iOS System Logs (via MDM or device forensics)",
+        "description": "Monitor for the specific log message indicating PlasmaLoader C2 process injection attempt: 'failed lookup: name = com.plasma.springboard.ipc, flags = 0x1, requestor = locationd[69], error = 3: No such process' — this is highly specific to Coruna compromise",
+        "priority": "Critical"
+      },
+      {
+        "source": "DNS / Network Monitoring",
+        "description": "Monitor enterprise DNS and network traffic for connections to Coruna C2 domains. Google Safe Browsing has indexed all identified domains. Zimperium reports blocking 80%+ of known C2 infrastructure through domain blocking",
+        "priority": "Critical"
+      },
+      {
+        "source": "Mobile Device Management (MDM) Platform",
+        "description": "Monitor device iOS version compliance, unexpected Lockdown Mode deactivation events, and abnormal battery/data usage patterns that may indicate background C2 communication from PlasmaLoader",
+        "priority": "High"
+      },
+      {
+        "source": "Web Proxy / Secure Web Gateway",
+        "description": "Monitor for HTTP requests with suspicious headers (sdkv, x-ts) that are characteristic of Coruna C2 communication. Block fake cryptocurrency and financial websites identified in active campaigns",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Specific PlasmaLoader IPC error in iOS system logs",
+        "description": "The string 'failed lookup: name = com.plasma.springboard.ipc' in iOS system logs is a definitive indicator of PlasmaLoader payload execution and active Coruna compromise",
+        "log_field": "ios.log CONTAINS 'com.plasma.springboard.ipc'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Suspicious HTTP headers in network traffic",
+        "description": "HTTP requests containing 'sdkv' or 'x-ts' headers are characteristic of Coruna's PlasmaLoader C2 communication protocol",
+        "log_field": "http.request.header CONTAINS 'sdkv' OR http.request.header CONTAINS 'x-ts'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Repeated Safari/WebKit process crashes",
+        "description": "Abnormal or repeated WebKit process crashes, especially when visiting cryptocurrency or financial websites, may indicate active exploitation chain attempts",
+        "log_field": "process.name='WebContent' AND process.event='crash' AND count > 2 within 5min",
+        "severity": "High"
+      },
+      {
+        "indicator": "Cryptocurrency wallet app access during low-activity periods",
+        "description": "PlasmaLoader harvests data from cryptocurrency apps; unexpected access to MetaMask, Phantom, Exodus, or other wallet apps when the device screen is off may indicate malicious access",
+        "log_field": "app.accessed IN crypto_wallet_list AND device.screen_state='off'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update All iOS Devices to iOS 17.3 or Later Immediately",
+      "description": "iOS 17.3+ is fully immune to all known Coruna exploit chains. Update via Settings > General > Software Update. For enterprise fleets, enforce via MDM policy requiring iOS 17.3 minimum version. Federal agencies must complete this by March 26, 2026 per BOD 22-01.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Enable Lockdown Mode on Devices That Cannot Update",
+      "description": "For devices that cannot immediately update to iOS 17.3+, enable Lockdown Mode via Settings > Privacy & Security > Lockdown Mode. Lockdown Mode 100% blocks Coruna's exploit chain execution — the kit detects Lockdown Mode and self-aborts. Available on iOS 16.0 and later. Some non-essential features will be disabled.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Secure Cryptocurrency Assets Immediately",
+      "description": "Users with cryptocurrency wallet apps (MetaMask, Phantom, Exodus, BitKeep, Uniswap) should immediately move high-value assets to hardware wallets (Ledger, Trezor). Remove recovery phrases and seed phrases from Apple Memos, iCloud Backup, and any mobile-accessible storage. Enable 2FA on all exchange accounts.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Deploy Mobile Threat Detection and Block Coruna C2 Infrastructure",
+      "description": "Deploy a Mobile Threat Detection (MTD) platform (Zimperium, Lookout, or equivalent) on enterprise iOS devices. Configure enterprise DNS filtering to block known Coruna C2 domains and fake cryptocurrency website categories. Zimperium blocks 80%+ of known Coruna C2 infrastructure.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Conduct Forensic Investigation of High-Risk Devices",
+      "description": "For high-value employees (executives, finance, IT administrators) using iPhones with iOS 13.0-17.2.1 who may have visited cryptocurrency or finance websites, conduct forensic analysis using iVerify's published IOCs. Look for the specific PlasmaLoader log string: 'failed lookup: name = com.plasma.springboard.ipc'.",
+      "command": null
+    }
+  ]
+}

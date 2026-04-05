@@ -1,0 +1,292 @@
+{
+  "briefing_id": "TB-2026-03-09-003",
+  "title": "Tencent WeKnora LLM Framework Dual CVSS 10.0 RCE Zero-Days: Unauthenticated SQL Injection Bypasses PostgreSQL Protections via Nested Array Expressions, MCP Stdio Command Injection Bypasses Command Validation via npx -p Flag (CVE-2026-30860, CVE-2026-30861)",
+  "generated_date": "2026-03-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-30860",
+    "CVE-2026-30861"
+  ],
+  "tags": [
+    "ai-ml",
+    "llm",
+    "rag",
+    "rce",
+    "sql-injection",
+    "command-injection",
+    "tencent",
+    "weknora"
+  ],
+  "affected_products": [
+    "Tencent WeKnora prior to 0.2.12 (CVE-2026-30860)",
+    "Tencent WeKnora 0.2.5 through 0.2.9 (CVE-2026-30861)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "GitLab Advisory Database - CVE-2026-30860: WeKnora SQL Injection RCE in AI Database Query Tool",
+      "url": "https://advisories.gitlab.com/pkg/golang/github.com/tencent/weknora/CVE-2026-30860/",
+      "date": "2026-03-07",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "GitLab Advisory Database - CVE-2026-30861: WeKnora MCP Stdio Command Injection RCE",
+      "url": "https://advisories.gitlab.com/pkg/golang/github.com/tencent/weknora/CVE-2026-30861/",
+      "date": "2026-03-07",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2026-30860",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-30860",
+      "date": "2026-03-07",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2026-30861",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-30861",
+      "date": "2026-03-07",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable - CVE-2026-30861",
+      "url": "https://www.tenable.com/cve/CVE-2026-30861",
+      "date": "2026-03-07",
+      "type": "Research"
+    },
+    {
+      "name": "THREATINT - CVE-2026-30860",
+      "url": "https://cve.threatint.eu/CVE/CVE-2026-30860",
+      "date": "2026-03-07",
+      "type": "Research"
+    },
+    {
+      "name": "THREATINT - CVE-2026-30861",
+      "url": "https://cve.threatint.eu/CVE/CVE-2026-30861",
+      "date": "2026-03-07",
+      "type": "Research"
+    },
+    {
+      "name": "CIRCL Vulnerability-Lookup - CVE-2026-30860",
+      "url": "https://vulnerability.circl.lu/vuln/cve-2026-30860",
+      "date": "2026-03-07",
+      "type": "Government"
+    },
+    {
+      "name": "CIRCL Vulnerability-Lookup - CVE-2026-30861",
+      "url": "https://vulnerability.circl.lu/vuln/cve-2026-30861",
+      "date": "2026-03-07",
+      "type": "Government"
+    },
+    {
+      "name": "TheHackerWire - WeKnora Critical RCE in Database Query Functionality (CVE-2026-30860)",
+      "url": "https://www.thehackerwire.com/weknora-critical-rce-in-database-query-functionality/",
+      "date": "2026-03-07",
+      "type": "News"
+    },
+    {
+      "name": "TheHackerWire - WeKnora RCE CVE-2026-30861 Unauthenticated Command Injection",
+      "url": "https://www.thehackerwire.com/weknora-rce-cve-2026-30861-unauthenticated-command-injection/",
+      "date": "2026-03-07",
+      "type": "News"
+    },
+    {
+      "name": "TheHackerWire - CVE-2026-30860 Critical Vulnerability",
+      "url": "https://www.thehackerwire.com/vulnerability/CVE-2026-30860/",
+      "date": "2026-03-07",
+      "type": "News"
+    },
+    {
+      "name": "TheHackerWire - CVE-2026-30861 Critical Vulnerability",
+      "url": "https://www.thehackerwire.com/vulnerability/CVE-2026-30861/",
+      "date": "2026-03-07",
+      "type": "News"
+    },
+    {
+      "name": "GitHub - Tencent/WeKnora Repository",
+      "url": "https://github.com/Tencent/WeKnora",
+      "date": "2026-03-07",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "GitLab Advisory Database - CVE-2026-30858: WeKnora DNS Rebinding Vulnerability in web_fetch Tool",
+      "url": "https://advisories.gitlab.com/pkg/golang/github.com/tencent/weknora/CVE-2026-30858/",
+      "date": "2026-03-07",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-01",
+      "event": "WeKnora LLM-powered document understanding framework released by Tencent as open-source project; adopts Model Context Protocol (MCP) for AI tool integration"
+    },
+    {
+      "date": "2026-01-15",
+      "event": "WeKnora version 0.2.5 released, introducing MCP stdio configuration feature that contains the CVE-2026-30861 command injection vulnerability"
+    },
+    {
+      "date": "2026-02-01",
+      "event": "Security researchers begin analyzing WeKnora's attack surface, discovering multiple logic flaws in SQL validation and MCP command processing"
+    },
+    {
+      "date": "2026-03-07",
+      "event": "Six security vulnerabilities publicly disclosed across WeKnora, including CVE-2026-30860 (CVSS 10.0 SQL injection RCE) and CVE-2026-30861 (CVSS 10.0 command injection RCE); patches released in versions 0.2.10 and 0.2.12"
+    },
+    {
+      "date": "2026-03-07",
+      "event": "Vendor releases patched versions: 0.2.10 (CVE-2026-30861 fix) and 0.2.12 (CVE-2026-30860 fix)"
+    },
+    {
+      "date": "2026-03-09",
+      "event": "Vulnerabilities are 2 days post-disclosure; exploitation attempts expected to increase rapidly as weaponized proof-of-concepts circulate"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers disclosed two maximum-severity vulnerabilities (CVSS 10.0) in WeKnora, an open-source LLM-powered framework developed by Tencent for building AI-powered document understanding and question-answering systems. WeKnora uses the Retrieval-Augmented Generation (RAG) approach — it processes and indexes documents so AI models can answer questions about them. CVE-2026-30860 is a SQL injection flaw where WeKnora's database query validation fails to inspect nested PostgreSQL array expressions, allowing attackers to hide dangerous database functions inside apparently safe queries and execute arbitrary code on the database server. CVE-2026-30861 is a command injection flaw in WeKnora's Model Context Protocol (MCP) configuration feature that can be bypassed using Node.js's '-p' preload flag, which is not blocked by the application's command whitelist. Both vulnerabilities allow completely unauthenticated attackers to achieve full remote code execution.",
+    "who_is_affected": "Organizations and developers that have deployed Tencent's WeKnora framework for AI-powered document processing and knowledge base systems. Affected versions include all WeKnora versions prior to 0.2.12 for CVE-2026-30860, and versions 0.2.5 through 0.2.9 for CVE-2026-30861. Given WeKnora's use in enterprise RAG (Retrieval-Augmented Generation) deployments for document intelligence, affected environments may include legal, financial, healthcare, and technology organizations that have deployed it to process sensitive internal documents.",
+    "what_attackers_do": "Step 1: For CVE-2026-30861, any unauthenticated attacker registers a new user account on the WeKnora instance (account registration is unrestricted by default), gaining a valid session to interact with the MCP configuration API. Step 2: The attacker sends a POST request to the /api/v1/mcp-services endpoint with a JSON payload specifying 'npx' as the command and ['node', '-p', '<malicious JavaScript>'] as arguments — the '-p' preload flag is not blocked by the validation logic. Step 3: When the attacker triggers the MCP service test endpoint, WeKnora executes the crafted npx node command, running arbitrary JavaScript code with the application process's operating system privileges. Step 4: For CVE-2026-30860, attackers craft SQL queries containing PostgreSQL array expressions that wrap dangerous built-in functions like lo_import (for writing files) and lo_export (for reading files), bypassing the flat validation that doesn't inspect nested array/row expression children. Step 5: By chaining both vulnerabilities — using CVE-2026-30861 for initial RCE at the application level, then CVE-2026-30860 for database-level RCE — attackers achieve complete system compromise including the ability to read all processed documents, steal credentials and API keys, modify database contents, and establish persistent backdoors across both the application and database layers.",
+    "what_you_should_do": [
+      "Immediately upgrade WeKnora to version 0.2.12 or later, which patches both CVE-2026-30860 and CVE-2026-30861",
+      "If immediate upgrade is not possible, disable or firewall-restrict the /api/v1/mcp-services API endpoint and the database query tool interface to trusted IP ranges only",
+      "Review database transaction logs for evidence of SQL injection attempts containing PostgreSQL lo_import, lo_export, or array expression functions",
+      "Audit recently-created WeKnora user accounts for any registrations not associated with known employees, and review MCP service configurations for any unexpected entries",
+      "Rotate all database credentials and API keys accessible to the WeKnora application, and audit connected downstream systems for signs of lateral movement"
+    ],
+    "why_this_is_serious": "Maximum CVSS 10.0 vulnerabilities in AI frameworks are rare and particularly dangerous because these systems are often deployed with high database privileges to process sensitive organizational documents — legal contracts, financial reports, HR records, and intellectual property. A successful attack gives adversaries not just code execution but access to all documents ever processed by the AI system. With WeKnora specifically, the combination of an SQL injection bypass in the AI database layer and a command injection in the MCP integration layer means attackers can compromise both the application server and the underlying PostgreSQL database in a chained attack. The vulnerabilities are simple to exploit, require no credentials, and were disclosed only 2 days ago — weaponized exploits are expected imminently."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Both CVE-2026-30860 and CVE-2026-30861 exploit public-facing API endpoints of the WeKnora web application, requiring no prior authentication for exploitation"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.007",
+        "technique_name": "Command and Scripting Interpreter: JavaScript",
+        "description": "CVE-2026-30861 exploits Node.js's -p flag to execute arbitrary JavaScript code via the npx node command execution pathway in WeKnora's MCP stdio configuration feature"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "CVE-2026-30860 abuses PostgreSQL's built-in large object functions (lo_import, lo_export) and library loading capabilities to execute arbitrary code in the database server context"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027",
+        "technique_name": "Obfuscated Files or Information",
+        "description": "CVE-2026-30860 exploits a validation bypass where dangerous SQL functions are obfuscated inside nested PostgreSQL array expressions and row expressions that the flat validation logic does not recursively inspect"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036",
+        "technique_name": "Masquerading",
+        "description": "CVE-2026-30861 uses the legitimate npx command (whitelisted by WeKnora's validation) as a vehicle for command injection, masquerading a malicious payload as an allowed command"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1213",
+        "technique_name": "Data from Information Repositories",
+        "description": "Compromised WeKnora systems contain all documents previously processed by the AI framework, potentially including highly sensitive business documents, contracts, financial records, and intellectual property"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1485",
+        "technique_name": "Data Destruction",
+        "description": "Database-level code execution via CVE-2026-30860 enables destruction of all stored document embeddings, knowledge base data, and associated metadata"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying exploitation attempts against the /api/v1/mcp-services endpoint and suspicious PostgreSQL function usage in database query logs. The 2-day window since disclosure means organizations should prioritize rapid patching and monitoring for early exploitation attempts.",
+    "log_sources": [
+      {
+        "source": "WeKnora Application Access Logs",
+        "description": "HTTP request logs for the WeKnora API, specifically POST requests to /api/v1/mcp-services and /api/v1/mcp-services/{id}/test endpoints from unexpected sources",
+        "priority": "Critical"
+      },
+      {
+        "source": "PostgreSQL Database Query Logs",
+        "description": "Database transaction logs showing SQL queries containing lo_import, lo_export, array expression functions, or library loading commands (CREATE EXTENSION, CREATE FUNCTION with LANGUAGE 'c')",
+        "priority": "Critical"
+      },
+      {
+        "source": "OS Process Execution Logs",
+        "description": "System-level process monitoring for npx/node executions spawned by the WeKnora application process, especially with unexpected arguments or flags like '-p'",
+        "priority": "High"
+      },
+      {
+        "source": "WeKnora User Registration Logs",
+        "description": "Account creation events — unexpected new registrations may indicate attackers creating accounts to exploit CVE-2026-30861, which requires a valid (but freely registerable) account",
+        "priority": "Medium"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST requests to /api/v1/mcp-services with -p flag in args",
+        "description": "Requests configuring MCP services with the Node.js -p (preload) flag in the command arguments are the primary exploitation pattern for CVE-2026-30861",
+        "log_field": "request_uri='/api/v1/mcp-services' AND request_body CONTAINS '\"-p\"'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "PostgreSQL lo_import or lo_export in WeKnora queries",
+        "description": "SQL queries routed through WeKnora's database query tool that contain PostgreSQL large object functions indicate CVE-2026-30860 exploitation attempts",
+        "log_field": "db_query CONTAINS 'lo_import' OR db_query CONTAINS 'lo_export' OR db_query CONTAINS 'lo_write'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "npx node process spawned by WeKnora with suspicious arguments",
+        "description": "Process execution events showing 'npx node -p' or similar Node.js invocations spawned as child processes of the WeKnora application — legitimate WeKnora operation should not spawn npx node with -p",
+        "log_field": "parent_process='weknora' AND child_process='node' AND command_line CONTAINS '-p'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "New user account registrations followed by immediate MCP API access",
+        "description": "A pattern of new account creation immediately followed by API calls to /api/v1/mcp-services suggests attacker-controlled account creation for CVE-2026-30861 exploitation",
+        "log_field": "event_type='user_registration' FOLLOWED_BY event_type='api_access' AND endpoint='/api/v1/mcp-services' WITHIN 60_seconds",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade WeKnora to version 0.2.12 immediately",
+      "description": "Version 0.2.12 patches both CVE-2026-30860 (SQL injection RCE) and CVE-2026-30861 (command injection RCE). This is the only complete remediation. Do not stop at 0.2.10, which only patches CVE-2026-30861.",
+      "command": "pip install weknora==0.2.12 --break-system-packages"
+    },
+    {
+      "priority": 2,
+      "action": "Restrict network access to WeKnora instances",
+      "description": "If immediate patching is not possible, restrict access to the WeKnora web application to trusted internal IP ranges only. Block external internet access to the WeKnora API port entirely. This prevents unauthenticated exploitation while a patch window is arranged.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Disable MCP stdio configuration feature if patching is delayed",
+      "description": "As a targeted mitigation for CVE-2026-30861, disable or remove access to the /api/v1/mcp-services API endpoint in WeKnora's configuration or via a reverse proxy/WAF rule until the patch can be applied.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit database for SQL injection artifacts",
+      "description": "Review PostgreSQL query logs and large object (pg_largeobject) table for unauthorized entries that may have been created via CVE-2026-30860 exploitation. Check for unexpected shared library files in the PostgreSQL data directory.",
+      "command": "SELECT * FROM pg_largeobject_metadata ORDER BY lomowner, oid DESC LIMIT 50;"
+    },
+    {
+      "priority": 5,
+      "action": "Rotate database credentials and review processed documents",
+      "description": "Rotate all database credentials used by the WeKnora application. Audit the list of documents that have been processed by the WeKnora system to understand the potential scope of data exposure if exploitation occurred.",
+      "command": null
+    }
+  ]
+}

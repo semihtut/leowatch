@@ -1,0 +1,406 @@
+{
+  "briefing_id": "TB-2026-02-06-001",
+  "title": "Notepad++ Supply Chain Compromise via WinGUp Updater Hijack by Lotus Blossom APT (CVE-2025-15556)",
+  "generated_date": "2026-02-06",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 7.7,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2025-15556"
+  ],
+  "tags": [
+    "supply-chain",
+    "apt",
+    "china",
+    "dll-sideloading",
+    "backdoor",
+    "software-update",
+    "notepad++",
+    "lotus-blossom",
+    "espionage"
+  ],
+  "affected_products": [
+    "Notepad++ versions prior to 8.8.9",
+    "WinGUp (Generic Updater / GUP) component",
+    "Notepad++ update infrastructure (notepad-plus-plus.org)"
+  ],
+  "sources_analyzed": 16,
+  "sources": [
+    {
+      "name": "Rapid7 Labs - The Chrysalis Backdoor: A Deep Dive into Lotus Blossom's Toolkit",
+      "url": "https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/",
+      "date": "2026-02-02",
+      "type": "Research"
+    },
+    {
+      "name": "Kaspersky Securelist - The Notepad++ Supply Chain Attack: Unnoticed Execution Chains and New IoCs",
+      "url": "https://securelist.com/notepad-supply-chain-attack/118708/",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "Notepad++ Official Disclosure - Hijacked Incident Information Update",
+      "url": "https://notepad-plus-plus.org/news/hijacked-incident-info-update/",
+      "date": "2026-02-02",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2025-15556",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-15556",
+      "date": "2026-02-02",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable - Frequently Asked Questions About Notepad++ Supply Chain Compromise",
+      "url": "https://www.tenable.com/blog/frequently-asked-questions-about-notepad-supply-chain-compromise",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "Arctic Wolf - Notepad++ Publishes Full Details of 2025 Compromise",
+      "url": "https://arcticwolf.com/resources/blog/notepad-publishes-full-details-2025-compromise/",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Notepad++ Hosting Breach Attributed to China-Linked Lotus Blossom Hacking Group",
+      "url": "https://thehackernews.com/2026/02/notepad-hosting-breach-attributed-to.html",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Notepad++ Update Feature Hijacked by Chinese State Hackers for Months",
+      "url": "https://www.bleepingcomputer.com/news/security/notepad-plus-plus-update-feature-hijacked-by-chinese-state-hackers-for-months/",
+      "date": "2026-02-02",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Notepad++ Patches Update Chain After Targeted Compromise",
+      "url": "https://www.theregister.com/2026/02/02/notepad_plusplus_intrusion/",
+      "date": "2026-02-02",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Notepad++ Supply Chain Hack Conducted by China via Hosting Provider",
+      "url": "https://www.securityweek.com/notepad-supply-chain-hack-conducted-by-china-via-hosting-provider/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "Dark Reading - Chinese Hackers Hijack Notepad++ Updates for 6 Months",
+      "url": "https://www.darkreading.com/application-security/chinese-hackers-hijack-notepad-updates-6-months",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Notepad++ Supply Chain Attack: Researchers Reveal Details, IoCs, Targets",
+      "url": "https://www.helpnetsecurity.com/2026/02/03/notepad-supply-chain-attack-iocs-targets/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "GitHub - Check-NotepadPlusPlusIOC Detection Script",
+      "url": "https://github.com/roady001/Check-NotepadPlusPlusIOC",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "Notepad++ v8.8.9 Release Notes - Vulnerability Fix",
+      "url": "https://notepad-plus-plus.org/news/v889-released/",
+      "date": "2025-12-09",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "TechCrunch - Notepad++ Says Chinese Government Hackers Hijacked Its Software Updates for Months",
+      "url": "https://techcrunch.com/2026/02/02/notepad-says-chinese-government-hackers-hijacked-its-software-updates-for-months/",
+      "date": "2026-02-02",
+      "type": "News"
+    },
+    {
+      "name": "CVEFeed.io - CVE-2025-15556 Detail",
+      "url": "https://cvefeed.io/vuln/detail/CVE-2025-15556",
+      "date": "2026-02-02",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-06-01",
+      "event": "Hosting provider infrastructure compromised; attackers gain access to Notepad++ shared server kernel and firmware, beginning selective update traffic redirection"
+    },
+    {
+      "date": "2025-07-01",
+      "event": "Chain #1 deployed: ProShow exploitation chain delivering Cobalt Strike Beacon via Metasploit downloader to initial targets in Vietnam and El Salvador"
+    },
+    {
+      "date": "2025-09-01",
+      "event": "Chain #2 deployed: Lua script execution chain with enhanced system information collection targeting additional victims"
+    },
+    {
+      "date": "2025-09-02",
+      "event": "Hosting provider patches server kernel and firmware; attackers lose direct infrastructure access but retain working credentials for internal services"
+    },
+    {
+      "date": "2025-10-01",
+      "event": "Chain #3 deployed: DLL sideloading chain delivering the Chrysalis backdoor via BluetoothService.exe and log.dll to government and financial targets"
+    },
+    {
+      "date": "2025-12-02",
+      "event": "Hosting provider detects breach and rotates all credentials; attacker access fully terminated after six months of compromise"
+    },
+    {
+      "date": "2025-12-09",
+      "event": "Notepad++ v8.8.9 released with initial vulnerability fix; creator Don Ho discloses traffic hijacking in release notes"
+    },
+    {
+      "date": "2026-02-02",
+      "event": "Full public disclosure: Notepad++ publishes complete incident report; Rapid7 publishes Chrysalis backdoor analysis attributing attack to Lotus Blossom APT"
+    },
+    {
+      "date": "2026-02-02",
+      "event": "CVE-2025-15556 assigned for WinGUp updater lack of integrity verification (CWE-494: Download of Code Without Integrity Check)"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "Kaspersky GReAT publishes additional execution chains and previously unreported IoCs; Tenable releases detection plugin 297583"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Chinese state-sponsored hackers from the Lotus Blossom APT group compromised the hosting infrastructure behind Notepad++, one of the world's most popular text editors with millions of users. By hijacking the hosting provider's servers, they were able to intercept software update requests and selectively redirect a small number of targeted users to malicious download servers. Instead of receiving legitimate Notepad++ updates, these victims downloaded trojanized installers that deployed sophisticated backdoor malware called Chrysalis. The attack lasted approximately six months, from June through December 2025, before being fully remediated. The vast majority of Notepad++ users were unaffected because the attackers deliberately targeted only about a dozen machines belonging to specific organizations and individuals.",
+    "who_is_affected": "Notepad++ users running versions prior to 8.8.9 who used the built-in auto-update feature between June and December 2025 were potentially at risk. The attackers specifically targeted: individuals in Vietnam, El Salvador, and Australia; a government organization in the Philippines; a financial organization in El Salvador; and a Vietnamese IT service provider. Organizations in the telecom, government, aviation, critical infrastructure, and media sectors across Southeast Asia and Central America were the primary focus. Any organization that used Notepad++ during the compromise window should verify their installations against published IOCs.",
+    "what_attackers_do": "Step 1: The attackers compromised the shared hosting server that hosts notepad-plus-plus.org at the infrastructure level, gaining access to the server's kernel, firmware, and internal service credentials. Step 2: Using this access, they intercepted update requests from Notepad++ users and selectively redirected targeted users' traffic to attacker-controlled servers based on IP address filtering. Step 3: The malicious server delivered a trojanized NSIS installer (update.exe) instead of the legitimate Notepad++ update, exploiting the fact that WinGUp (the updater) performed no cryptographic signature validation on downloaded files. Step 4: The installer deployed a DLL sideloading attack using a renamed legitimate Bitdefender Submission Wizard (BluetoothService.exe) that loaded a malicious log.dll, which decrypted embedded shellcode using custom stream cipher algorithms. Step 5: The shellcode initialized the Chrysalis backdoor, which established encrypted C2 communications with attacker servers (api.skycloudcenter.com, api.wiresguard.com), providing 16 remote control commands including interactive shell access, file exfiltration, process execution, and complete self-removal capabilities.",
+    "what_you_should_do": [
+      "Immediately update Notepad++ to version 8.9.1 or later by manually downloading from the official website (do NOT rely on the built-in updater for this update)",
+      "Check systems for IOC directories: %APPDATA%\\ProShow\\, %APPDATA%\\Adobe\\Scripts\\, and %APPDATA%\\Bluetooth\\ which indicate active compromise",
+      "Scan for known malicious file hashes using published SHA-256 indicators, particularly log.dll (3bdc4c0637591533f1d4198a72a33426c01f69bd2e15ceee547866f65e26b7ad) and update.exe (a511be5164dc1122fb5a7daa3eef9467e43d8458425b15a640235796006590c9)",
+      "Block known C2 domains and IPs at the firewall: api.skycloudcenter.com, api.wiresguard.com, cdncheck.it.com, safe-dns.it.com, self-dns.it.com, 45.76.155.202, 45.32.144.255, 95.179.213.0, 45.77.31.210",
+      "Run the community IOC checking script from github.com/roady001/Check-NotepadPlusPlusIOC on all Windows endpoints",
+      "Review network logs for connections to known C2 infrastructure during the June-December 2025 timeframe and investigate any matches as potential active compromises"
+    ],
+    "why_this_is_serious": "This represents a highly sophisticated supply chain attack against one of the world's most widely used development tools, leveraging a trusted software update mechanism to deliver state-sponsored espionage malware. The attack demonstrates that even infrastructure-level compromises at hosting providers can be weaponized to target specific high-value organizations while flying under the radar of millions of other users. The Chrysalis backdoor's 16-command capability set, combined with the use of Microsoft Warbird obfuscation, custom encryption, and legitimate binary sideloading, shows a significant evolution in Lotus Blossom's tooling that makes detection extremely difficult. The six-month dwell time before discovery underscores the stealth of this operation."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.002",
+        "technique_name": "Supply Chain Compromise: Compromise Software Supply Chain",
+        "description": "Attackers compromised the hosting provider infrastructure serving Notepad++ updates, enabling them to intercept and redirect update traffic to deliver trojanized installers to targeted users"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1204.002",
+        "technique_name": "User Execution: Malicious File",
+        "description": "Targeted users executed the trojanized update.exe installer delivered through the hijacked update mechanism, believing it was a legitimate Notepad++ update"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1574.002",
+        "technique_name": "Hijack Execution Flow: DLL Side-Loading",
+        "description": "The malicious NSIS installer dropped a renamed legitimate Bitdefender Submission Wizard (BluetoothService.exe) alongside a malicious log.dll to trigger DLL sideloading for payload execution"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027.007",
+        "technique_name": "Obfuscated Files or Information: Dynamic API Resolution",
+        "description": "Chrysalis backdoor used two-stage API hashing (FNV-1a + MurmurHash avalanche) to dynamically resolve Windows API functions, avoiding static detection of API imports"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1140",
+        "technique_name": "Deobfuscate/Decode Files or Information",
+        "description": "Multiple encryption layers used including XOR with key 'gQ2JR&9;', RC4 with key 'qwhvb^435h&*7' for configuration, and custom stream cipher for shellcode decryption"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1620",
+        "technique_name": "Reflective Code Loading",
+        "description": "Chrysalis backdoor loaded shellcode reflectively in memory, and Chain #2 used EnumWindowStationsW API callback to execute shellcode from compiled Lua scripts"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547.001",
+        "technique_name": "Boot or Logon Autostart Execution: Registry Run Keys",
+        "description": "Chrysalis established persistence through Windows Registry Run keys and service creation to maintain access across system reboots"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1543.003",
+        "technique_name": "Create or Modify System Process: Windows Service",
+        "description": "Chrysalis backdoor could install itself as a Windows service for persistent execution, using the -i command-line flag for service installation"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1082",
+        "technique_name": "System Information Discovery",
+        "description": "Malicious installers executed 'whoami && tasklist && systeminfo && netstat -ano' to collect system information, user context, running processes, and network connections"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1033",
+        "technique_name": "System Owner/User Discovery",
+        "description": "Reconnaissance commands (whoami) executed immediately upon installation to identify the compromised user account context"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1049",
+        "technique_name": "System Network Connections Discovery",
+        "description": "The 'netstat -ano' command was used to enumerate active network connections and listening ports on compromised systems"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1071.001",
+        "technique_name": "Application Layer Protocol: Web Protocols",
+        "description": "C2 communications used HTTPS to domains mimicking legitimate services (api.skycloudcenter.com, api.wiresguard.com, cdncheck.it.com, safe-dns.it.com) with RC4 encryption using key 'vAuig34%^325hGV'"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "System reconnaissance data was exfiltrated to temp.sh and self-dns.it.com/list via curl; Chrysalis backdoor supported file reading and upload over the C2 channel"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying the three known execution chains: ProShow exploitation, Lua script execution, and DLL sideloading via BluetoothService.exe. Monitor for suspicious directory creation under %APPDATA%, unexpected DLL loading by renamed legitimate binaries, connections to known C2 infrastructure, and sequential reconnaissance commands typical of this campaign. Kaspersky EDR and Tenable plugin 297583 provide automated detection capabilities.",
+    "log_sources": [
+      {
+        "source": "Windows Sysmon (Event IDs 1, 7, 11, 13)",
+        "description": "Monitor process creation for renamed legitimate binaries (BluetoothService.exe, ProShow.exe, script.exe), DLL loading events for log.dll sideloading, file creation in suspicious %APPDATA% subdirectories, and Registry Run key modifications",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network/DNS Logs",
+        "description": "Monitor for DNS queries and HTTPS connections to known C2 domains (api.skycloudcenter.com, api.wiresguard.com, cdncheck.it.com, safe-dns.it.com, self-dns.it.com) and C2 IP addresses",
+        "priority": "Critical"
+      },
+      {
+        "source": "EDR/Endpoint Logs",
+        "description": "Detect process trees showing GUP.exe spawning update.exe, NSIS installer execution creating files in %APPDATA%\\Bluetooth\\, %APPDATA%\\ProShow\\, or %APPDATA%\\Adobe\\Scripts\\",
+        "priority": "Critical"
+      },
+      {
+        "source": "Proxy/Firewall Logs",
+        "description": "Alert on connections to known malicious IPs (45.76.155.202, 45.32.144.255, 95.179.213.0, 45.77.31.210, 59.110.7.32, 124.222.137.114) and unusual temp.sh uploads",
+        "priority": "High"
+      },
+      {
+        "source": "Windows Event Logs (Security/System)",
+        "description": "Monitor for new service creation events and Registry Run key additions that may indicate Chrysalis persistence installation",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Alert on creation of log.dll, BluetoothService shellcode files, alien.ini compiled Lua scripts, or any files matching known malicious hashes in user profile directories",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Suspicious %APPDATA% subdirectory creation",
+        "description": "The three attack chains create staging directories at %APPDATA%\\ProShow\\, %APPDATA%\\Adobe\\Scripts\\, and %APPDATA%\\Bluetooth\\ respectively",
+        "log_field": "Sysmon EventID=11 TargetFilename contains '\\AppData\\Roaming\\ProShow\\' OR '\\AppData\\Roaming\\Adobe\\Scripts\\' OR '\\AppData\\Roaming\\Bluetooth\\'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "DLL sideloading via BluetoothService.exe loading log.dll",
+        "description": "Renamed Bitdefender Submission Wizard (BluetoothService.exe) sideloading malicious log.dll from %APPDATA%\\Bluetooth\\ directory to decrypt and execute Chrysalis shellcode",
+        "log_field": "Sysmon EventID=7 Image contains 'BluetoothService.exe' AND ImageLoaded contains 'log.dll'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Sequential reconnaissance commands after installer execution",
+        "description": "Attack chains execute 'whoami && tasklist && systeminfo && netstat -ano' in sequence shortly after NSIS installer runs",
+        "log_field": "Sysmon EventID=1 CommandLine contains 'whoami' followed by 'tasklist' and 'systeminfo' within 60 seconds",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "DNS queries to known C2 domains",
+        "description": "Chrysalis and Cobalt Strike beacons communicate with api.skycloudcenter.com, api.wiresguard.com, cdncheck.it.com, safe-dns.it.com, self-dns.it.com",
+        "log_field": "DNS query matches 'skycloudcenter.com' OR 'wiresguard.com' OR 'cdncheck.it.com' OR 'safe-dns.it.com' OR 'self-dns.it.com'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "GUP.exe spawning unexpected child processes",
+        "description": "The legitimate Notepad++ updater (GUP.exe) executing downloaded update.exe which then spawns NSIS installer processes",
+        "log_field": "Sysmon EventID=1 ParentImage contains 'GUP.exe' AND Image NOT contains 'npp.Installer'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Cobalt Strike beacon with XOR key CRAZY",
+        "description": "Cobalt Strike beacon configurations in this campaign use XOR encryption key 'CRAZY' and specific User-Agent strings mimicking Chrome 138-140",
+        "log_field": "Network traffic matching Cobalt Strike beacon patterns to 45.77.31.210 or cdncheck.it.com",
+        "severity": "High"
+      },
+      {
+        "indicator": "Data exfiltration to temp.sh",
+        "description": "Chain #1 uploads system reconnaissance data to temp.sh via curl, which is highly unusual in corporate environments",
+        "log_field": "DNS query for 'temp.sh' OR proxy log URL contains 'temp.sh'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Lua interpreter execution from Adobe Scripts directory",
+        "description": "Chain #2 drops a legitimate Lua interpreter (script.exe) and malicious compiled Lua script (alien.ini) in %APPDATA%\\Adobe\\Scripts\\",
+        "log_field": "Sysmon EventID=1 Image contains 'script.exe' AND CurrentDirectory contains 'Adobe\\Scripts'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "45.76.155.202",
+      "45.32.144.255",
+      "95.179.213.0",
+      "45.77.31.210",
+      "59.110.7.32",
+      "124.222.137.114",
+      "61.4.102.97"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update Notepad++ to version 8.9.1 or later via manual download",
+      "description": "Download the latest Notepad++ installer directly from notepad-plus-plus.org and manually install. Do NOT use the built-in auto-updater for this update. Version 8.9.1 includes XMLDSig signature validation for updates. Version 8.9.2 (expected soon) will enforce mandatory certificate verification.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Scan all Windows endpoints for IOC staging directories",
+      "description": "Check all systems for the three known attack chain staging directories: %APPDATA%\\ProShow\\, %APPDATA%\\Adobe\\Scripts\\, and %APPDATA%\\Bluetooth\\. The presence of any of these directories with executable files, DLLs, or encrypted data files indicates active compromise requiring immediate incident response.",
+      "command": "powershell -Command \"$paths = @('$env:APPDATA\\ProShow', '$env:APPDATA\\Adobe\\Scripts', '$env:APPDATA\\Bluetooth'); foreach($p in $paths) { if(Test-Path $p) { Write-Host '[ALERT] Suspicious directory found:' $p -ForegroundColor Red; Get-ChildItem $p -Recurse } else { Write-Host '[OK]' $p 'not found' -ForegroundColor Green } }\""
+    },
+    {
+      "priority": 3,
+      "action": "Block known C2 infrastructure at network perimeter",
+      "description": "Add the following domains and IPs to firewall/proxy blocklists: Domains - api.skycloudcenter.com, api.wiresguard.com, cdncheck.it.com, safe-dns.it.com, self-dns.it.com. IPs - 45.76.155.202, 45.32.144.255, 95.179.213.0, 45.77.31.210, 59.110.7.32, 124.222.137.114, 61.4.102.97.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Hash-scan for known malicious files across the environment",
+      "description": "Search for the following SHA-256 hashes on all endpoints: update.exe (a511be5164dc1122fb5a7daa3eef9467e43d8458425b15a640235796006590c9), log.dll (3bdc4c0637591533f1d4198a72a33426c01f69bd2e15ceee547866f65e26b7ad), BluetoothService.exe (2da00de67720f5f13b17e9d985fe70f10f153da60c9ab1086fe58f069a156924), conf.c (f4d829739f2d6ba7e3ede83dad428a0ced1a703ec582fc73a4eee3df3704629a).",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Review historical network logs for C2 communication during compromise window",
+      "description": "Search network logs, proxy logs, and DNS query logs from June 1 through December 31, 2025 for connections to any of the known C2 domains and IPs. Pay special attention to connections from systems running Notepad++. Any matches should be treated as confirmed compromise requiring full incident response.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Run community IOC detection script on Windows endpoints",
+      "description": "Download and execute the community IOC checking PowerShell script from github.com/roady001/Check-NotepadPlusPlusIOC which checks 25 known malicious file hashes, suspicious directories, running processes (ProShow, GUP, BluetoothService), active C2 connections, and DNS cache entries for C2 domains.",
+      "command": null
+    },
+    {
+      "priority": 7,
+      "action": "Deploy Tenable detection plugin and update EDR signatures",
+      "description": "If using Tenable, deploy plugin 297583 to identify vulnerable Notepad++ installations. Update EDR tools with Kaspersky's published detection rules including lolc2_connection_activity_network, system_owner_user_discovery, system_information_discovery_win, and temporary_folder_in_registry_autorun.",
+      "command": null
+    }
+  ]
+}

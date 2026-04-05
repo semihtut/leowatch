@@ -1,0 +1,292 @@
+{
+  "briefing_id": "TB-2026-03-26-001",
+  "title": "Craft CMS Pre-Authentication RCE CVE-2025-32432 (CVSS 10.0) Added to CISA KEV: PHP Gadget Chain via Image Transform Endpoint Enables Unauthenticated Full System Compromise Across 13,000+ Exposed Instances — Mimo Threat Actor Actively Deploying Cryptominers",
+  "generated_date": "2026-03-26",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-04-03"
+  },
+  "cves": [
+    "CVE-2025-32432"
+  ],
+  "tags": [
+    "craft-cms",
+    "rce",
+    "php",
+    "deserialization",
+    "cisa-kev",
+    "unauthenticated",
+    "cryptominer",
+    "supply-chain"
+  ],
+  "affected_products": [
+    "Craft CMS 3.0.0-RC1 through 3.9.14",
+    "Craft CMS 4.0.0-RC1 through 4.14.14",
+    "Craft CMS 5.0.0-RC1 through 5.6.16"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "Craft CMS Official Advisory - CVE-2025-32432",
+      "url": "https://craftcms.com/knowledge-base/craft-cms-cve-2025-32432",
+      "date": "2025-04-10",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2025-32432 National Vulnerability Database",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-32432",
+      "date": "2025-04-10",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog - CVE-2025-32432",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-20",
+      "type": "Government"
+    },
+    {
+      "name": "GitHub Advisory Database - GHSA-f3gw-9ww9-jmc3",
+      "url": "https://github.com/advisories/GHSA-f3gw-9ww9-jmc3",
+      "date": "2025-04-10",
+      "type": "Research"
+    },
+    {
+      "name": "Rapid7 Metasploit Module - Craft CMS Image Transform Pre-Auth RCE",
+      "url": "https://www.rapid7.com/db/modules/exploit/linux/http/craftcms_preauth_rce_cve_2025_32432/",
+      "date": "2025-04-25",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable - CVE-2025-32432 Vulnerability Details",
+      "url": "https://www.tenable.com/cve/CVE-2025-32432",
+      "date": "2025-04-12",
+      "type": "Research"
+    },
+    {
+      "name": "Wiz - CVE-2025-32432 Impact, Exploitability, and Mitigation Steps",
+      "url": "https://www.wiz.io/vulnerability-database/cve/cve-2025-32432",
+      "date": "2025-04-15",
+      "type": "Research"
+    },
+    {
+      "name": "Censys Advisory - Critical RCE Vulnerability in Craft CMS",
+      "url": "https://censys.com/advisory/cve-2025-32432",
+      "date": "2025-04-18",
+      "type": "Research"
+    },
+    {
+      "name": "Sekoia.io - The Sharp Taste of Mimo'lette: Analyzing Mimo's Campaign Targeting Craft CMS",
+      "url": "https://blog.sekoia.io/the-sharp-taste-of-mimolette-analyzing-mimos-latest-campaign-targeting-craft-cms/",
+      "date": "2025-05-08",
+      "type": "Research"
+    },
+    {
+      "name": "SensePost / Orange Cyberdefense - Investigating In-the-Wild Campaign Using RCE in CraftCMS",
+      "url": "https://sensepost.com/blog/2025/investigating-an-in-the-wild-campaign-using-rce-in-craftcms/",
+      "date": "2025-04-20",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Hackers Exploit Critical Craft CMS Flaws",
+      "url": "https://thehackernews.com/2025/04/hackers-exploit-critical-craft-cms.html",
+      "date": "2025-04-18",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - CISA Warns of Craft CMS Code Injection Flaw Exploited in Attacks",
+      "url": "https://cybersecuritynews.com/cms-code-injection-vulnerability-exploited/",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "SOC Prime - CVE-2025-32432 Critical Craft CMS RCE Vulnerability",
+      "url": "https://socprime.com/blog/cve-2025-32432-rce-vulnerability-in-craft-cms/",
+      "date": "2025-04-17",
+      "type": "Research"
+    },
+    {
+      "name": "SonicWall - CraftCMS Vulnerability Pre-Auth RCE Exploited in the Wild",
+      "url": "https://www.sonicwall.com/blog/craftcms-vulnerability-exposes-systems-to-pre-auth-rce-now-exploited-in-the-wild-cve-2025-32432-/",
+      "date": "2025-04-19",
+      "type": "Research"
+    },
+    {
+      "name": "Sangfor FarSight Labs - CVE-2025-32432 Craft CMS Remote Code Execution",
+      "url": "https://www.sangfor.com/farsight-labs-threat-intelligence/cybersecurity/cve-2025-32432-craft-cms-remote-code-execution",
+      "date": "2025-04-22",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-04-07",
+      "event": "Orange Cyberdefense discovers CVE-2025-32432 during an active incident response investigation on a compromised Craft CMS server"
+    },
+    {
+      "date": "2025-04-10",
+      "event": "Craft CMS releases emergency patches: versions 3.9.15, 4.14.15, and 5.6.17 — vendor notifies all license holders via email"
+    },
+    {
+      "date": "2025-04-17",
+      "event": "Active in-the-wild exploitation confirmed; ~13,000 vulnerable instances identified globally, ~300 reported compromised within one week of patch release"
+    },
+    {
+      "date": "2025-04-25",
+      "event": "Rapid7 releases public Metasploit module for CVE-2025-32432; multiple PoC exploits appear on GitHub accelerating mass exploitation"
+    },
+    {
+      "date": "2025-05-08",
+      "event": "Sekoia.io attributes exploitation campaign to Mimo intrusion set (aka Hezb); cryptomining and residential proxyware payloads deployed across compromised systems"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "CISA adds CVE-2025-32432 to Known Exploited Vulnerabilities (KEV) catalog alongside Apple DarkSword and Laravel Livewire flaws; federal agencies given April 3, 2026 remediation deadline"
+    },
+    {
+      "date": "2026-04-03",
+      "event": "CISA BOD 22-01 mandatory patch deadline for all US Federal Civilian Executive Branch agencies"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical security flaw was found in Craft CMS, a popular website content management system used by tens of thousands of organizations worldwide. The flaw is in the image transformation feature and allows attackers to run any code they want on the server without needing a username or password. Hackers began exploiting this vulnerability within days of the patch being released, and a well-known threat group called Mimo has been using it to install cryptocurrency miners and monetize victims' internet bandwidth. CISA added this to its mandatory patch list on March 20, 2026.",
+    "who_is_affected": "Any organization running Craft CMS versions 3.x, 4.x, or 5.x that has not applied the April 2025 security patches. Approximately 13,000 vulnerable instances were identified on the internet. Industries most affected include media companies, marketing agencies, e-commerce sites, nonprofits, and government web portals that use Craft CMS as their website platform.",
+    "what_attackers_do": "Step 1: The attacker identifies an internet-exposed Craft CMS website and sends a series of automated GET requests to the /actions/assets/generate-transform endpoint to discover a valid asset ID number — no login required. Step 2: The attacker crafts a malicious GET request that tricks the CMS into writing PHP code into a temporary session file stored on the server's disk. Step 3: The attacker sends a follow-up POST request to the same endpoint with a serialized PHP object containing a FieldLayoutBehavior to PhpManager gadget chain in the __class parameter. Step 4: Craft CMS deserializes the attacker's PHP object without validation, which causes the PHP engine to load and execute the malicious code previously written to the session file. Step 5: The attacker now has full remote command execution on the web server — they download and install a cryptocurrency miner (XMRig for Monero), a residential proxy agent (IPRoyal), and a web shell for persistent backdoor access, while hiding these processes using LD_PRELOAD injection to disguise malicious processes as legitimate kernel threads.",
+    "what_you_should_do": [
+      "Immediately upgrade Craft CMS to version 3.9.15, 4.14.15, or 5.6.17 depending on your current branch — this is the only effective fix",
+      "After patching, rotate your security key (php craft setup/security-key) and change all database credentials, as compromised sessions may have exposed these",
+      "Review web server access logs for POST requests to /actions/assets/generate-transform containing a __class parameter, and search for session files with embedded PHP code in your temp directories",
+      "Check running processes and /etc/ld.so.preload for unauthorized modifications — compromise indicators include XMRig miner processes and IPRoyal proxy agents masquerading as system threads",
+      "If any compromise is detected, re-image affected systems rather than attempting cleanup, as the Mimo loader achieves deep persistence via LD_PRELOAD kernel-level hooks"
+    ],
+    "why_this_is_serious": "This is a maximum-severity (CVSS 10.0) vulnerability requiring zero authentication and zero user interaction — any attacker anywhere on the internet can fully compromise a vulnerable Craft CMS server with a single HTTP request sequence. Exploit code is publicly available in Metasploit and GitHub, making attacks trivially automated. The Mimo threat actor has already compromised hundreds of servers and continues scanning for unpatched instances nearly a year after the patch was released. CISA's March 2026 KEV addition confirms ongoing active exploitation. A compromised web server can result in customer data theft, ransomware deployment, website defacement, and use of the organization's network infrastructure for criminal activity."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated image transform endpoint in Craft CMS to gain initial code execution on the web server without any credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "After RCE is achieved, attackers execute bash shell commands to download and run payloads including the 4l4md4r.sh dropper script and subsequent Mimo Loader components"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Mimo deploys PHP web shells on compromised Craft CMS servers to maintain persistent access independent of the initial vulnerability"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1574.006",
+        "technique_name": "Hijack Execution Flow: Dynamic Linker Hijacking",
+        "description": "Attackers modify /etc/ld.so.preload to inject alamdar.so shared library, which masks malicious process names to resemble legitimate kernel threads and evades process-based detection"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1496",
+        "technique_name": "Resource Hijacking",
+        "description": "Mimo deploys XMRig Monero cryptocurrency miner and IPRoyal residential proxy agent to monetize compromised server resources for financial gain"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying the two-stage exploit pattern in web access logs (GET request to plant payload followed by POST with __class parameter), monitoring for unauthorized file modifications in temp directories and /etc/ld.so.preload, and detecting process anomalies associated with the Mimo payload chain including XMRig miner activity and IPRoyal proxy connections.",
+    "log_sources": [
+      {
+        "source": "Web Server Access Logs (Apache/Nginx)",
+        "description": "Primary detection source — logs capture the exploit sequence: initial GET to generate-transform for asset enumeration, followed by POST with serialized PHP gadget chain payload",
+        "priority": "Critical"
+      },
+      {
+        "source": "Craft CMS Application Logs",
+        "description": "Application-level logs capture failed image transform operations and PHP errors generated during exploitation attempts; look for 'Image transform cannot be created' errors paired with unusual request patterns",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring (FIM)",
+        "description": "Monitors for unauthorized creation of PHP session files in temp directories, modification of /etc/ld.so.preload, and appearance of new shared objects like alamdar.so",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic / EDR Endpoint Telemetry",
+        "description": "Detects outbound connections to cryptomining pools, IPRoyal proxy endpoints, and Mimo loader distribution servers; process creation anomalies from web server parent processes",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST request to /actions/assets/generate-transform with __class parameter in body",
+        "description": "Core exploit indicator — the POST body containing a serialized PHP gadget chain triggers the unsafe deserialization that leads to RCE",
+        "log_field": "request='POST /actions/assets/generate-transform' AND body contains '__class'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Repeated GET requests to /actions/assets/generate-transform with incrementing asset IDs",
+        "description": "Pre-exploitation reconnaissance phase where attacker enumerates valid asset IDs to use in the exploit chain",
+        "log_field": "request='GET /actions/assets/generate-transform' AND params match 'assetId=[0-9]+'",
+        "severity": "High"
+      },
+      {
+        "indicator": "PHP session files containing PHP code in temp/session directories",
+        "description": "Stage 1 of exploit writes malicious PHP into a session file; presence of PHP code in session files is abnormal and indicates active exploitation attempt",
+        "log_field": "file_path='/tmp/sess_*' OR file_path='/var/lib/php/sessions/sess_*' contains '<?php'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Modification of /etc/ld.so.preload by web server process",
+        "description": "Mimo's alamdar.so LD_PRELOAD injection technique modifies this system file to hide malicious processes — any modification by non-root/non-system processes is critical",
+        "log_field": "file_path='/etc/ld.so.preload' AND process_parent in ['apache2','nginx','php-fpm']",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connections to XMRig mining pool domains or IPRoyal endpoints",
+        "description": "Post-exploitation payload indicators — cryptomining pool connections on port 3333/4444 or IPRoyal proxy agent registration traffic",
+        "log_field": "dst_port in [3333,4444] OR dst_domain contains 'iproyal.com'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "85.106.113.168"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch Craft CMS immediately",
+      "description": "Upgrade to the patched version for your branch: 3.9.15 (for 3.x), 4.14.15 (for 4.x), or 5.6.17 (for 5.x). This is the only complete remediation. If immediate patching is not possible, implement WAF rules to block POST requests to /actions/assets/generate-transform.",
+      "command": "php craft update"
+    },
+    {
+      "priority": 2,
+      "action": "Rotate security keys and credentials",
+      "description": "After patching, regenerate the Craft CMS security key and rotate all database credentials. Active session tokens may have been exposed during exploitation.",
+      "command": "php craft setup/security-key"
+    },
+    {
+      "priority": 3,
+      "action": "Hunt for indicators of compromise in logs and filesystem",
+      "description": "Search web server access logs for POST requests to the generate-transform endpoint with __class in the body. Check /tmp and PHP session directories for session files containing PHP code. Inspect /etc/ld.so.preload for unauthorized entries.",
+      "command": "grep -r '__class' /var/log/apache2/access.log; find /tmp -name 'sess_*' | xargs grep -l '<?php'"
+    },
+    {
+      "priority": 4,
+      "action": "Scan for active cryptominer and backdoor processes",
+      "description": "Check for running XMRig miner processes, IPRoyal proxy agents, and web shells. The Mimo loader uses LD_PRELOAD to disguise process names — use lsof and rkhunter for deeper inspection.",
+      "command": "ps aux | grep -E 'xmrig|iproyal'; lsof /etc/ld.so.preload; rkhunter --check"
+    },
+    {
+      "priority": 5,
+      "action": "Report to CISA and follow BOD 22-01 for federal agencies",
+      "description": "Federal Civilian Executive Branch agencies must remediate by April 3, 2026 per CISA Binding Operational Directive 22-01. All organizations should consider submitting compromise indicators to CISA for coordinated response.",
+      "command": null
+    }
+  ]
+}

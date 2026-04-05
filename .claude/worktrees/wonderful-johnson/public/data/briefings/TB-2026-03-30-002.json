@@ -1,0 +1,291 @@
+{
+  "briefing_id": "TB-2026-03-30-002",
+  "title": "Spring Boot Actuator Authentication Bypass CVE-2026-22731 and CVE-2026-22733 (CVSS 8.2): Silent Unauthenticated Access to Protected Endpoints via Health Group Path Collision and CloudFoundry Namespace Misrouting — Six CVEs Patched Across Spring Ecosystem",
+  "generated_date": "2026-03-30",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.2,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-22731",
+    "CVE-2026-22733",
+    "CVE-2026-22732"
+  ],
+  "tags": [
+    "spring-boot",
+    "spring-framework",
+    "authentication-bypass",
+    "actuator",
+    "java",
+    "enterprise",
+    "web-application"
+  ],
+  "affected_products": [
+    "Spring Boot 4.0.0 through 4.0.3",
+    "Spring Boot 3.5.0 through 3.5.10",
+    "Spring Boot 3.4.0 through 3.4.14",
+    "Spring Boot 3.3.0 through 3.3.16 (CVE-2026-22733 only)",
+    "Spring Boot 2.7.x before 2.7.31 (CVE-2026-22733 only)",
+    "Spring Security 6.x before 6.5.9",
+    "Spring Security 7.0.x before 7.0.4"
+  ],
+  "sources_analyzed": 16,
+  "sources": [
+    {
+      "name": "NVD - CVE-2026-22731",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22731",
+      "date": "2026-03-19",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2026-22733",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22733",
+      "date": "2026-03-19",
+      "type": "Government"
+    },
+    {
+      "name": "Spring Official Security Advisory - CVE-2026-22731",
+      "url": "https://spring.io/security/cve-2026-22731/",
+      "date": "2026-03-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Spring Official Security Advisory - CVE-2026-22733",
+      "url": "https://spring.io/security/cve-2026-22733/",
+      "date": "2026-03-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Spring Official Security Advisory - CVE-2026-22732",
+      "url": "https://spring.io/security/cve-2026-22732/",
+      "date": "2026-03-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Spring Boot 4.0.4 Release Announcement",
+      "url": "https://spring.io/blog/2026/03/19/spring-boot-4-0-4-available-now/",
+      "date": "2026-03-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "GitLab Advisory Database - CVE-2026-22731",
+      "url": "https://advisories.gitlab.com/pkg/maven/org.springframework.boot/spring-boot-starter-actuator/CVE-2026-22731/",
+      "date": "2026-03-19",
+      "type": "Government"
+    },
+    {
+      "name": "GitLab Advisory Database - CVE-2026-22733",
+      "url": "https://advisories.gitlab.com/pkg/maven/org.springframework.boot/spring-boot-starter-actuator/CVE-2026-22733/",
+      "date": "2026-03-19",
+      "type": "Government"
+    },
+    {
+      "name": "SecurityOnline - Spring Boot Authentication Bypass Actuator Flaws CVE-2026-22731",
+      "url": "https://securityonline.info/spring-boot-authentication-bypass-actuator-flaws-cve-2026-22731/",
+      "date": "2026-03-20",
+      "type": "News"
+    },
+    {
+      "name": "HeroDevs - Spring Boot Authentication Bypass: Two New CVEs Enterprise Teams Cannot Afford to Ignore",
+      "url": "https://www.herodevs.com/blog-posts/spring-boot-authentication-bypass-two-new-cves-that-enterprise-teams-cannot-afford-to-ignore-cve-2026-22731-cve-2026-22733",
+      "date": "2026-03-21",
+      "type": "Research"
+    },
+    {
+      "name": "HeroDevs - March 2026 Spring CVE Roundup: Six New Vulnerabilities Patched Across Spring Ecosystem",
+      "url": "https://www.herodevs.com/blog-posts/march-2026-spring-cve-roundup-six-new-vulnerabilities-patched-across-the-spring-ecosystem",
+      "date": "2026-03-22",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable - CVE-2026-22733",
+      "url": "https://www.tenable.com/cve/CVE-2026-22733",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "Wiz Research - Spring Boot Actuator Misconfigurations and Security Risks",
+      "url": "https://www.wiz.io/blog/spring-boot-actuator-misconfigurations",
+      "date": "2026-03-23",
+      "type": "Research"
+    },
+    {
+      "name": "Spring Security Advisory - CVE-2026-22737",
+      "url": "https://spring.io/security/cve-2026-22737/",
+      "date": "2026-03-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Spring Cloud Config Advisory - CVE-2026-22739",
+      "url": "https://spring.io/security/cve-2026-22739/",
+      "date": "2026-03-23",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "InfoQ - Spring News Roundup March 2026",
+      "url": "https://www.infoq.com/news/2026/03/spring-news-roundup-mar16-2026/",
+      "date": "2026-03-24",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-19",
+      "event": "Spring team discloses CVE-2026-22731, CVE-2026-22732, CVE-2026-22733, CVE-2026-22737, CVE-2026-22738 as part of coordinated March 2026 security release"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "Spring Boot 4.0.4 and 3.5.12 released with patches for CVE-2026-22731 and CVE-2026-22733; Spring Security 6.5.9 and 7.0.4 released addressing CVE-2026-22732"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Security researchers begin analyzing authentication bypass mechanics; find that exploitation requires specific Actuator health group configurations"
+    },
+    {
+      "date": "2026-03-21",
+      "event": "HeroDevs publishes detailed enterprise advisory confirming silent failure mode — no logs indicate authentication was bypassed during attack"
+    },
+    {
+      "date": "2026-03-23",
+      "event": "Spring Cloud Config releases patches for related CVE-2026-22739 (SSRF/path traversal in profile substitution, CVSS 8.6)"
+    },
+    {
+      "date": "2026-03-30",
+      "event": "No confirmed active exploitation reported; patch adoption in enterprise environments ongoing; threat remains relevant due to widespread Spring Boot deployment"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "VMware/Broadcom's Spring team disclosed six security vulnerabilities affecting the widely-used Spring Boot and Spring Framework Java ecosystem in March 2026. Two of the most impactful — CVE-2026-22731 and CVE-2026-22733 — allow attackers to access protected application endpoints without any authentication. The bypass works silently: applications process the unauthorized requests normally and generate no error logs, making the attack essentially invisible without dedicated monitoring. Spring Boot powers a significant portion of enterprise Java applications worldwide, making these vulnerabilities relevant to a large number of organizations. Patches were released same-day, but adoption in large enterprise environments can lag weeks or months.",
+    "who_is_affected": "Organizations running Spring Boot applications with the Spring Boot Actuator dependency configured with either custom health group paths or CloudFoundry platform support. This affects Spring Boot 4.0.0-4.0.3, 3.5.0-3.5.10, 3.4.0-3.4.14, and older branches. Spring Boot is one of the most widely deployed Java frameworks globally, used extensively in financial services, healthcare, telecommunications, and enterprise SaaS platforms. Applications in microservices architectures are particularly exposed due to common Actuator endpoint patterns.",
+    "what_attackers_do": "Step 1: An attacker identifies a target application using Spring Boot Actuator by probing for common Actuator endpoints such as /actuator/health, /actuator/info, or custom health group paths like /healthz. Step 2: For CVE-2026-22731, the attacker sends HTTP requests to a path that looks like a health group subpath (e.g., /healthz/admin) — Spring Boot's EndpointRequest matcher generates overly broad path patterns that silently extend the permissive Actuator security policy to adjacent application paths, dropping authentication requirements. Step 3: For CVE-2026-22733, the attacker targets the /cloudfoundryapplication/ namespace; requests to paths under this namespace that are NOT registered Actuator endpoints fall through to other handler mappings, bypassing both the Actuator authentication and the application's Spring Security configuration. Step 4: The attacker successfully calls protected APIs, administrative functions, or sensitive endpoints without providing any credentials — the server processes the request normally and returns the response. Step 5: Using unauthorized access, the attacker can enumerate application internals, extract sensitive configuration data, manipulate application state, or pivot to further attacks within the internal network.",
+    "what_you_should_do": [
+      "Upgrade Spring Boot to version 4.0.4 (or 3.5.12, 3.4.15) immediately — patches were released March 19, 2026 and are the only supported remediation",
+      "Upgrade Spring Security to 6.5.9 or 7.0.4 to address the related critical CVE-2026-22732 (HTTP headers bypass, CVSS 9.1)",
+      "Audit all Spring Boot applications for Actuator configurations that use management.endpoint.health.group.* with additional-paths or that have CloudFoundry support enabled — these are the specific conditions required for exploitation",
+      "Add explicit security rules to deny unauthenticated access to all paths under health group paths and /cloudfoundryapplication/ as a defensive layer while patching is scheduled",
+      "Review application access logs retroactively for unexpected unauthenticated requests to Actuator-adjacent paths going back to March 19, 2026"
+    ],
+    "why_this_is_serious": "Spring Boot is one of the most widely deployed application frameworks in enterprise Java development, estimated to power tens of thousands of production applications globally. The silent failure mode of these vulnerabilities is particularly dangerous — organizations may have been unknowingly exposed to unauthorized access since March 19 without any log entries indicating a breach. Additionally, the March 2026 Spring security release includes a related critical vulnerability (CVE-2026-22732, CVSS 9.1) in Spring Security's HTTP header handling, meaning organizations face multiple attack surfaces that require coordinated patching. End-of-life Spring Boot 2.7.x users face the additional burden of seeking commercial patch support, creating a prolonged window of exposure for legacy systems."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attacker exploits authentication bypass in publicly exposed Spring Boot Actuator endpoints to gain unauthorized access to the application without credentials"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.001",
+        "technique_name": "Impair Defenses: Disable or Modify Tools",
+        "description": "The authentication bypass operates silently — no error logs, no security events, no authentication failures are generated, effectively evading security monitoring that relies on authentication failure events"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "description": "Attacker enumerates Actuator endpoints (/actuator/health, /actuator/env, /actuator/beans) to map application internals and identify exposed configuration and dependency information"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1213",
+        "technique_name": "Data from Information Repositories",
+        "description": "Using bypassed authentication, attacker accesses application data, configuration endpoints, environment variables, and internal API endpoints without authorization"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1021.007",
+        "technique_name": "Remote Services: Cloud Services",
+        "description": "Unauthorized access to Spring Boot application internals may expose cloud service credentials, internal API tokens, and database connection strings enabling lateral movement"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying suspicious access patterns to Actuator-adjacent paths, requests to /cloudfoundryapplication/ subpaths, and unexpectedly successful unauthenticated requests to paths that should require authentication. Since the vulnerability produces no server-side errors, detection must be proactive via web application firewall rules and anomaly detection rather than error-based alerting.",
+    "log_sources": [
+      {
+        "source": "Web Application Firewall / Reverse Proxy Logs",
+        "description": "Monitor for successful (HTTP 200) responses to requests targeting Actuator health group subpaths or /cloudfoundryapplication/ paths without Authorization headers",
+        "priority": "Critical"
+      },
+      {
+        "source": "Application Access Logs",
+        "description": "Audit requests to paths matching /healthz/*, /health/*, /actuator/*, and /cloudfoundryapplication/* for any requests without authentication tokens that received 200 responses",
+        "priority": "High"
+      },
+      {
+        "source": "Spring Boot Application Logs (INFO level)",
+        "description": "Review application startup logs to identify Actuator health group configurations and additional-path mappings that create vulnerable endpoint patterns",
+        "priority": "High"
+      },
+      {
+        "source": "SIEM / Anomaly Detection",
+        "description": "Baseline normal authenticated traffic to administrative endpoints and alert on unauthenticated requests that receive successful responses from protected API paths",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "HTTP 200 responses to requests without Authorization header for Actuator subpaths",
+        "description": "Successful unauthenticated access to any path mapped as a health group additional-path subpath indicates active exploitation; example: GET /healthz/admin with no Authorization header returns HTTP 200",
+        "log_field": "http.status=200 AND http.path contains '/healthz/' AND NOT http.headers contains 'Authorization'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Requests to /cloudfoundryapplication/ paths not matching known Actuator endpoints",
+        "description": "Requests to application-specific paths under /cloudfoundryapplication/ namespace that return successful responses indicate CVE-2026-22733 exploitation",
+        "log_field": "http.path startswith '/cloudfoundryapplication/' AND http.status=200 AND NOT http.headers contains 'X-Cf-App-Instance'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Spring Boot version 3.4.x, 3.5.x, or 4.0.0-4.0.3 in production without patch",
+        "description": "Presence of vulnerable Spring Boot versions confirmed via /actuator/info or build metadata indicates unpatched exposure",
+        "log_field": "http.path='/actuator/info' AND response.body contains 'spring-boot' AND response.body NOT contains '4.0.4'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Actuator health group additional-paths configuration active",
+        "description": "Applications with management.endpoint.health.group.*.additional-path configuration are specifically vulnerable to CVE-2026-22731",
+        "log_field": "config.key='management.endpoint.health.group' AND config.value contains 'additional-path'",
+        "severity": "Medium"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade Spring Boot to patched version",
+      "description": "Update all Spring Boot applications to 4.0.4, 3.5.12, 3.4.15, or later; this is the only supported remediation for CVE-2026-22731 and CVE-2026-22733",
+      "command": "mvn versions:use-latest-releases -Dincludes=org.springframework.boot:spring-boot-starter-parent"
+    },
+    {
+      "priority": 2,
+      "action": "Upgrade Spring Security for CVE-2026-22732",
+      "description": "Update Spring Security to 6.5.9, 7.0.4, or 7.1.0-M3 to address the related critical CVE-2026-22732 (HTTP headers not written, CVSS 9.1) disclosed in the same update",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Audit Actuator health group configurations",
+      "description": "Search all application properties and YAML files for management.endpoint.health.group.*.additional-path settings; any application with this configuration and authentication requirements on subpaths is vulnerable to CVE-2026-22731",
+      "command": "grep -r 'additional-path' src/main/resources/"
+    },
+    {
+      "priority": 4,
+      "action": "Disable CloudFoundry Actuator support if not required",
+      "description": "Set management.cloudfoundry.enabled=false in application.properties if the application is not deployed on CloudFoundry; this eliminates the CVE-2026-22733 attack surface entirely",
+      "command": "echo 'management.cloudfoundry.enabled=false' >> src/main/resources/application.properties"
+    },
+    {
+      "priority": 5,
+      "action": "Retroactively audit logs for exploitation attempts",
+      "description": "Review web server and application access logs from March 19-30, 2026 for successful unauthenticated requests to health group subpaths or /cloudfoundryapplication/ paths",
+      "command": null
+    }
+  ]
+}

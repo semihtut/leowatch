@@ -1,0 +1,271 @@
+{
+  "briefing_id": "TB-2026-03-10-002",
+  "title": "Omnissa Workspace ONE UEM Pre-Auth SSRF Exploited in the Wild: CISA KEV Added 5 Years After Disclosure as Active Attacks Resume (CVE-2021-22054)",
+  "generated_date": "2026-03-10",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 7.5,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-23"
+  },
+  "cves": [
+    "CVE-2021-22054"
+  ],
+  "tags": [
+    "omnissa",
+    "vmware",
+    "workspace-one",
+    "ssrf",
+    "uem",
+    "mdm",
+    "cloud",
+    "internal-network",
+    "active-exploitation"
+  ],
+  "affected_products": [
+    "Omnissa (VMware) Workspace ONE UEM 20.0.8 prior to 20.0.8.37",
+    "Omnissa (VMware) Workspace ONE UEM 20.11.0 prior to 20.11.0.40",
+    "Omnissa (VMware) Workspace ONE UEM 21.2.0 prior to 21.2.0.27",
+    "Omnissa (VMware) Workspace ONE UEM 21.5.0 prior to 21.5.0.37",
+    "VMware AirWatch Console (older affected versions)"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Assetnote - Advisory: VMware Workspace ONE UEM SSRF (CVE-2021-22054)",
+      "url": "https://www.assetnote.io/resources/research/advisory-vmware-workspace-one-uem-ssrf-cve-2021-22054",
+      "date": "2022-04-27",
+      "type": "Research"
+    },
+    {
+      "name": "VMware Security Blog - Workspace ONE UEM SSRF CVE-2021-22054 Patch Alert",
+      "url": "https://blogs.vmware.com/security/2022/04/workspace-one-uem-ssrf-cve-2021-22054-patch-alert.html",
+      "date": "2022-04-27",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Omnissa Knowledge Base - KB87167: Security Advisory VMSA-2021-0029",
+      "url": "https://kb.omnissa.com/s/article/87167",
+      "date": "2021-12-16",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2021-22054",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22054",
+      "date": "2021-12-20",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-09",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable - CVE-2021-22054",
+      "url": "https://www.tenable.com/cve/CVE-2021-22054",
+      "date": "2021-12-16",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer - CISA Urges VMware Admins to Patch Critical Workspace ONE UEM Flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-urges-vmware-admins-to-patch-critical-flaw-in-workspace-one-uem/",
+      "date": "2021-12-17",
+      "type": "News"
+    },
+    {
+      "name": "PortSwigger Daily Swig - Security Bug in VMware Workspace ONE Could Allow Access to Internal Cloud Networks",
+      "url": "https://portswigger.net/daily-swig/security-bug-in-vmware-workspace-one-could-allow-access-to-internal-cloud-networks",
+      "date": "2021-12-17",
+      "type": "News"
+    },
+    {
+      "name": "SC World - Audit Finds SSRF Vulnerability in VMware Workspace ONE UEM",
+      "url": "https://www.scworld.com/analysis/audit-finds-ssrf-vulnerability-in-vmware-workspace-one-uem",
+      "date": "2021-12-17",
+      "type": "News"
+    },
+    {
+      "name": "GBHackers - Critical SSRF Bug in VMware Workspace ONE UEM Console",
+      "url": "https://gbhackers.com/critical-ssrf-bug-in-vmware-workspace-one-uem-console/",
+      "date": "2021-12-17",
+      "type": "News"
+    },
+    {
+      "name": "FortiGuard Labs IPS Database - VMware Workspace ONE UEM SSRF",
+      "url": "https://fortiguard.fortinet.com/encyclopedia/ips/52038",
+      "date": "2022-01-10",
+      "type": "Research"
+    },
+    {
+      "name": "CISA Alert - CISA Adds Three Known Exploited Vulnerabilities to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/03/09/cisa-adds-three-known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-09",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2021-11-19",
+      "event": "Assetnote Security Research Team (Keiran Sampson) identifies SSRF vulnerability in VMware Workspace ONE UEM BlobHandler.ashx endpoint and discloses to VMware"
+    },
+    {
+      "date": "2021-12-04",
+      "event": "VMware acknowledges vulnerability and agrees to extended disclosure timeline with Assetnote"
+    },
+    {
+      "date": "2021-12-15",
+      "event": "VMware announces patch will be released December 16"
+    },
+    {
+      "date": "2021-12-16",
+      "event": "VMware releases security advisory VMSA-2021-0029 and patches for affected versions (20.0.8.37, 20.11.0.40, 21.2.0.27, 21.5.0.37)"
+    },
+    {
+      "date": "2022-04-27",
+      "event": "Assetnote publishes full technical advisory with exploitation details; VMware releases secondary patch alert with additional remediation guidance including master key rotation (KB88323)"
+    },
+    {
+      "date": "2026-03-09",
+      "event": "CISA adds CVE-2021-22054 to Known Exploited Vulnerabilities catalog alongside CVE-2025-26399 and CVE-2026-1603, confirming active exploitation is now occurring; federal remediation deadline set for March 23, 2026"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Omnissa Workspace ONE UEM — a widely deployed enterprise mobile device management platform (formerly VMware Workspace ONE) — contains a pre-authentication Server-Side Request Forgery vulnerability that allows attackers to force the server to make HTTP requests to arbitrary internal or external destinations. Originally disclosed and patched in December 2021, CISA added it to its Known Exploited Vulnerabilities catalog on March 9, 2026, confirming attackers are actively exploiting unpatched or misconfigured instances nearly five years after the original patch. The vulnerability is notable because the Catalog endpoint is often internet-exposed even in organizations that restrict access to the main admin console.",
+    "who_is_affected": "Organizations running Omnissa (formerly VMware) Workspace ONE UEM on-premises in versions prior to 20.0.8.37, 20.11.0.40, 21.2.0.27, or 21.5.0.37. This includes enterprises, healthcare organizations, government agencies, and educational institutions using Workspace ONE for mobile device management. On-premises deployments are specifically impacted (cloud-hosted SaaS instances may have been patched by the vendor).",
+    "what_attackers_do": "Step 1: Attackers identify internet-facing Omnissa Workspace ONE UEM instances, specifically looking for the /Catalog/BlobHandler.ashx endpoint which is often publicly accessible even when the main admin console (/AirWatch/) is restricted. Step 2: Attackers reverse-engineer or obtain the hardcoded static encryption key used to sign the 'Url' parameter accepted by BlobHandler.ashx, allowing them to craft a valid encrypted request pointing to any target host. Step 3: Attackers send an unauthenticated HTTP request to BlobHandler.ashx with an encrypted URL parameter pointing to an internal target (e.g., AWS metadata service at 169.254.169.254, internal databases, admin panels). Step 4: The Workspace ONE UEM server proxies the request to the internal target as if it originated from itself, returning the internal response to the attacker — effectively bypassing network perimeter controls. Step 5: Attackers use SSRF to retrieve AWS/Azure/GCP instance metadata credentials, enumerate internal services, access internal admin interfaces, and pivot to sensitive backend systems not exposed to the internet. Step 6: With cloud credentials obtained from metadata endpoints, attackers escalate privileges to the cloud environment, potentially accessing S3 buckets, databases, secrets, or establishing persistent cloud-level access.",
+    "what_you_should_do": [
+      "Verify Workspace ONE UEM version and apply patches immediately — update to 20.0.8.37, 20.11.0.40, 21.2.0.27, 21.5.0.37, or any later version",
+      "Rotate the static master encryption key per Omnissa KB88323, as patching alone may not remediate risk if the key has been compromised",
+      "Implement network access controls to restrict BlobHandler.ashx endpoints (/Catalog/BlobHandler.ashx and /AirWatch/BlobHandler.ashx) from internet access, or enforce WAF rules blocking suspicious Url parameter patterns",
+      "Review UEM server outbound network logs for unexpected HTTP requests to internal IP ranges (10.x, 172.16.x, 192.168.x) or cloud metadata endpoints (169.254.169.254, 100.100.100.200)",
+      "Audit cloud IAM credentials associated with systems co-located with or accessible from the UEM server — rotate any instance credentials that may have been exposed"
+    ],
+    "why_this_is_serious": "Workspace ONE UEM is a privileged platform with deep integration into corporate networks, cloud environments, and mobile device fleets. The SSRF enables attackers to use the UEM server as a proxy to reach internal resources that should never be internet-accessible — cloud metadata APIs, internal databases, backup systems, and administrative interfaces. The BlobHandler Catalog endpoint's common public exposure means this attack often succeeds even against organizations that followed standard security practices. The 2026 CISA KEV addition after five years of patch availability suggests threat actors are actively targeting organizations that have not updated legacy UEM deployments."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Unauthenticated SSRF exploitation via the internet-facing /Catalog/BlobHandler.ashx endpoint using hardcoded encryption parameters to forge valid requests"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1526",
+        "technique_name": "Cloud Service Discovery",
+        "description": "SSRF is used to query cloud instance metadata APIs (AWS: 169.254.169.254, Azure: 169.254.169.254/metadata, GCP: metadata.google.internal) to enumerate cloud services, roles, and credentials"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.005",
+        "technique_name": "Unsecured Credentials: Cloud Instance Metadata API",
+        "description": "Cloud instance metadata endpoints queried via SSRF yield temporary IAM credentials (AWS access keys, Azure managed identity tokens) that attackers leverage for cloud-level access"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Scanning",
+        "description": "Attackers use SSRF to enumerate internal network hosts and services, probing RFC 1918 addresses to map internal infrastructure without direct network access"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1090",
+        "technique_name": "Proxy",
+        "description": "The UEM server acts as an involuntary proxy, allowing attackers to relay requests to internal services otherwise protected by network segmentation"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Internal service responses (database outputs, admin panel content, secrets manager values) are retrieved and returned through the SSRF proxy to the attacker"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor outbound HTTP requests from the Workspace ONE UEM server to internal IP ranges and cloud metadata addresses, watch for BlobHandler.ashx requests with encrypted URL parameters containing internal destinations, and review access logs for the Catalog endpoint from external IPs.",
+    "log_sources": [
+      {
+        "source": "Web Application / IIS Logs (UEM Server)",
+        "description": "Monitor GET/POST requests to /Catalog/BlobHandler.ashx and /AirWatch/BlobHandler.ashx for the 'Url' query parameter, particularly requests from external IP addresses",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Egress / Firewall Logs",
+        "description": "Monitor outbound HTTP/HTTPS requests originating from the UEM server to RFC 1918 addresses (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), the AWS metadata IP (169.254.169.254), or other cloud metadata endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "Cloud Provider Audit Logs (AWS CloudTrail, Azure Activity Log, GCP Audit Logs)",
+        "description": "Monitor for GetInstanceMetadata API calls or unusual IAM role assumption events associated with instance credentials that may have been harvested via SSRF",
+        "priority": "High"
+      },
+      {
+        "source": "WAF / Reverse Proxy Logs",
+        "description": "WAF logs can detect SSRF payload patterns in the Url parameter before they reach the UEM application; enable logging of blocked and suspicious requests to BlobHandler endpoints",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "External access to /Catalog/BlobHandler.ashx or /AirWatch/BlobHandler.ashx with Url parameter",
+        "description": "BlobHandler.ashx is an internal utility endpoint — access from external IPs with a Url parameter is a strong indicator of SSRF exploitation",
+        "log_field": "cs-uri-stem LIKE '%BlobHandler.ashx%' AND cs-uri-query LIKE '%Url=%' AND NOT c-ip IN (internal_ip_ranges)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound request from UEM server to 169.254.169.254",
+        "description": "Connection to the cloud instance metadata service originating from the UEM server process (IIS/w3wp.exe) indicates successful SSRF to harvest cloud credentials",
+        "log_field": "src_ip=<UEM_SERVER_IP> AND dst_ip='169.254.169.254'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "UEM server making HTTP requests to internal RFC 1918 addresses",
+        "description": "Outbound HTTP connections from the UEM server to internal private IP ranges that are not expected UEM communication partners indicate SSRF-enabled internal reconnaissance",
+        "log_field": "src_ip=<UEM_SERVER_IP> AND dst_ip IN ('10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16') AND app='http'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unusual cloud IAM credential usage or API calls following UEM access",
+        "description": "If instance metadata credentials were harvested via SSRF, expect subsequent unusual API calls from cloud credentials — especially ListBuckets, GetSecretValue, or DescribeInstances from unusual source IPs",
+        "log_field": "eventSource='sts.amazonaws.com' AND requestParameters.roleArn CONTAINS '<UEM_INSTANCE_ROLE>'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply patches to Omnissa Workspace ONE UEM immediately",
+      "description": "Update to patched versions: 20.0.8.37+, 20.11.0.40+, 21.2.0.27+, 21.5.0.37+, or any later release. For Omnissa-managed cloud instances, verify with Omnissa support whether patches have been applied automatically.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Rotate the static master encryption key per KB88323",
+      "description": "The SSRF exploits a hardcoded encryption key used to sign BlobHandler URL parameters. Even after patching, rotate the master key following Omnissa KB88323 to invalidate any keys that may have been extracted by attackers from previous exploitation.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Block or restrict BlobHandler.ashx from internet access",
+      "description": "Implement WAF rules or network ACLs to block external access to /Catalog/BlobHandler.ashx and /AirWatch/BlobHandler.ashx. These endpoints should only be accessible from internal systems. As a quick filter, deny requests with a Url query parameter to these paths from non-internal sources.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit outbound connections from UEM server for SSRF evidence",
+      "description": "Review the last 90 days of network flow logs or firewall logs for outbound HTTP connections from the UEM server to internal RFC 1918 addresses or cloud metadata IPs (169.254.169.254). Any such connections indicate successful SSRF exploitation.",
+      "command": "Get-WinEvent -FilterHashtable @{LogName='Security'; Id=5156} | Where-Object { $_.Message -match '169.254.169.254' -or $_.Message -match '10\\.' } | Select TimeCreated, Message | Export-Csv ssrf_evidence.csv"
+    },
+    {
+      "priority": 5,
+      "action": "Rotate cloud IAM credentials and review cloud audit logs",
+      "description": "If any SSRF evidence is found, immediately rotate all cloud instance credentials (AWS IAM instance profile, Azure managed identity tokens, GCP service account keys) associated with or accessible from the UEM server. Review cloud audit logs (AWS CloudTrail, Azure Activity Log) for unauthorized API activity.",
+      "command": "aws iam list-instance-profiles && aws sts get-caller-identity"
+    }
+  ]
+}

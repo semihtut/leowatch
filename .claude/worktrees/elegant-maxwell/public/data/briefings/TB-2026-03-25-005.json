@@ -1,0 +1,289 @@
+{
+  "briefing_id": "TB-2026-03-25-005",
+  "title": "TeamPCP Supply Chain Campaign Compromises Trivy Security Scanner, LiteLLM PyPI Package and 141 npm Packages: Cascading Attack Steals Cloud Credentials from 1,000+ Environments via CanisterWorm Blockchain C2",
+  "generated_date": "2026-03-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "supply-chain",
+    "teampcp",
+    "trivy",
+    "litellm",
+    "pypi",
+    "npm",
+    "github-actions",
+    "credential-theft",
+    "cloud-security",
+    "canisterworm"
+  ],
+  "affected_products": [
+    "Trivy Security Scanner (aquasecurity/trivy-action - 76 of 77 version tags)",
+    "Trivy (aquasecurity/setup-trivy - all 7 version tags)",
+    "Trivy binary v0.69.4 (malicious)",
+    "LiteLLM PyPI package v1.82.7 and v1.82.8",
+    "Checkmarx ast-github-action (compromised tags)",
+    "Checkmarx kics-github-action (compromised tags)",
+    "141+ malicious npm packages across 66+ unique packages"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "Wiz Research - Trivy Compromised by TeamPCP Supply Chain Attack",
+      "url": "https://www.wiz.io/blog/trivy-compromised-teampcp-supply-chain-attack",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "Microsoft Security Blog - Detecting, Investigating and Defending Against the Trivy Supply Chain Compromise",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/",
+      "date": "2026-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Trivy Security Scanner GitHub Actions Breached by TeamPCP",
+      "url": "https://thehackernews.com/2026/03/trivy-security-scanner-github-actions.html",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Popular LiteLLM PyPI Package Compromised in TeamPCP Supply Chain Attack",
+      "url": "https://www.bleepingcomputer.com/news/security/popular-litellm-pypi-package-compromised-in-teampcp-supply-chain-attack/",
+      "date": "2026-03-24",
+      "type": "News"
+    },
+    {
+      "name": "The Register - LiteLLM Credential-Stealing Code Traced to Trivy Supply Chain Compromise",
+      "url": "https://www.theregister.com/2026/03/24/trivy_compromise_litellm/",
+      "date": "2026-03-24",
+      "type": "News"
+    },
+    {
+      "name": "Endor Labs - CanisterWorm: Self-Propagating npm Malware Analysis",
+      "url": "https://www.endorlabs.com/learn/canisterworm",
+      "date": "2026-03-21",
+      "type": "Research"
+    },
+    {
+      "name": "Endor Labs - TeamPCP Isn't Done: LiteLLM PyPI Compromise (95M Monthly Downloads)",
+      "url": "https://www.endorlabs.com/learn/teampcp-isnt-done",
+      "date": "2026-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "Snyk - Poisoned Security Scanner Backdooring LiteLLM",
+      "url": "https://snyk.io/articles/poisoned-security-scanner-backdooring-litellm/",
+      "date": "2026-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "Sysdig - TeamPCP Expands Supply Chain Compromise from Trivy to Checkmarx GitHub Actions",
+      "url": "https://www.sysdig.com/blog/teampcp-expands-supply-chain-compromise-spreads-from-trivy-to-checkmarx-github-actions",
+      "date": "2026-03-22",
+      "type": "Research"
+    },
+    {
+      "name": "GitGuardian - Trivy's March Supply Chain Attack Shows Where Secret Exposure Hurts Most",
+      "url": "https://blog.gitguardian.com/trivys-march-supply-chain-attack-shows-where-secret-exposure-hurts-most/",
+      "date": "2026-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "Datadog Security Labs - LiteLLM Compromised PyPI: TeamPCP Supply Chain Campaign",
+      "url": "https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/",
+      "date": "2026-03-25",
+      "type": "Research"
+    },
+    {
+      "name": "CrowdStrike - From Scanner to Stealer: Inside the Trivy Action Supply Chain Compromise",
+      "url": "https://www.crowdstrike.com/en-us/blog/from-scanner-to-stealer-inside-the-trivy-action-supply-chain-compromise/",
+      "date": "2026-03-21",
+      "type": "Research"
+    },
+    {
+      "name": "Aqua Security - Trivy Supply Chain Attack: What You Need to Know",
+      "url": "https://www.aquasec.com/blog/trivy-supply-chain-attack-what-you-need-to-know/",
+      "date": "2026-03-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "ReversingLabs - TeamPCP Supply Chain Attack Spreads Across Ecosystems",
+      "url": "https://www.reversinglabs.com/blog/teampcp-supply-chain-attack-spreads",
+      "date": "2026-03-25",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-28",
+      "event": "Prior incident: threat actor 'hackerbot-claw' exploits pull_request_target GitHub Actions misconfiguration, steals a Personal Access Token (PAT) from Aqua Security's cx-plugins-releases service account"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "TeamPCP uses stolen PAT to force-push malicious commits to 76 of 77 version tags in aquasecurity/trivy-action and all 7 tags in aquasecurity/setup-trivy; malicious Trivy binary v0.69.4 published containing credential-stealing 'TeamPCP Cloud stealer' malware"
+    },
+    {
+      "date": "2026-03-19",
+      "event": "Aqua Security detects and removes malicious artifacts; over 10,000 development teams already exposed; active exploitation phase begins affecting 1,000+ cloud environments"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "CanisterWorm npm worm begins self-propagating across npm ecosystem, using Internet Computer (ICP) blockchain canister as decentralized command-and-control infrastructure"
+    },
+    {
+      "date": "2026-03-21",
+      "event": "TeamPCP uses credentials stolen via Trivy attack to compromise Checkmarx GitHub Actions (ast-github-action, kics-github-action); malicious Checkmarx OpenVSX extensions published"
+    },
+    {
+      "date": "2026-03-24",
+      "event": "Malicious LiteLLM versions 1.82.7 and 1.82.8 published to PyPI; attackers used Trivy to steal LiteLLM's CI/CD build credentials; packages downloaded by thousands before PyPI quarantines them within 3 hours; CanisterWorm expands to 141+ artifacts across 66+ npm packages"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "Full scope of cascading attack confirmed across GitHub Actions, PyPI, npm, and OpenVSX ecosystems; threat actor TeamPCP still active"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A sophisticated hacker group called TeamPCP executed a cascading supply chain attack starting March 19, 2026. They broke into Trivy - one of the most widely used open-source security scanning tools - by exploiting a previously stolen GitHub access token. They replaced the legitimate Trivy software with a malicious version that secretly steals cloud credentials from every CI/CD pipeline that runs it. Using credentials stolen through this attack, they then compromised LiteLLM (an AI proxy library downloaded 95 million times per month on PyPI), Checkmarx security tools, and deployed a self-spreading worm across the npm JavaScript ecosystem. The attack is unprecedented in scope, compromising security tools that developers trust to protect them.",
+    "who_is_affected": "Any organization whose CI/CD pipelines ran Trivy (aquasecurity/trivy-action or setup-trivy) between March 19-19, 2026 is potentially compromised. Developers who installed LiteLLM versions 1.82.7 or 1.82.8 are at high risk. Organizations using Checkmarx GitHub Actions or any of 66+ compromised npm packages may also be affected. The attack specifically targets cloud development teams using AWS, Azure, GCP, and Kubernetes.",
+    "what_attackers_do": "Step 1: Attackers compromised Trivy's GitHub Actions by using a previously stolen Personal Access Token, replacing legitimate software with a malicious version containing a credential stealer. Step 2: When developers ran security scans using the malicious Trivy in their CI/CD pipelines, the malware silently activated, dumped process memory, and harvested SSH keys, cloud credentials (AWS/Azure/GCP tokens), Kubernetes secrets, and .env files. Step 3: Stolen credentials were encrypted using AES-256 + RSA-4096 and exfiltrated to attacker-controlled servers. Step 4: Using the stolen LiteLLM PyPI credentials, attackers published backdoored versions (1.82.7, 1.82.8) with a three-stage payload: credential harvesting, Kubernetes lateral movement, and persistent backdoor via systemd service polling checkmarx.zone/raw for additional malware. Step 5: A self-spreading npm worm called CanisterWorm used stolen npm tokens to automatically republish infected versions of victim developers' packages, using an Internet Computer blockchain canister as resilient command-and-control infrastructure that cannot be taken down by domain seizures.",
+    "what_you_should_do": [
+      "Immediately rotate ALL cloud credentials (AWS access keys, Azure service principals, GCP service accounts), Kubernetes secrets, SSH keys, and CI/CD tokens for any systems that ran Trivy between March 19-20, 2026 or that installed LiteLLM 1.82.7 or 1.82.8",
+      "Pin all GitHub Actions to specific commit SHAs rather than version tags to prevent future tag-hijacking attacks; audit your package-lock.json and requirements.txt for affected package versions",
+      "Search CI/CD runner systems for signs of compromise: look for ~/.config/sysmon.py, systemd service named sysmon.service, or network connections to 67.217.57.240, 44.252.85.168, or checkmarx.zone",
+      "Audit cloud provider activity logs (AWS CloudTrail, Azure Monitor, GCP Audit Logs) for unauthorized API calls or resource creation since March 19, 2026; treat any compromised environment as fully owned until credential rotation and forensic investigation are complete"
+    ],
+    "why_this_is_serious": "This attack is uniquely dangerous because it weaponized security tools that developers inherently trust. Trivy is used by thousands of organizations specifically to find vulnerabilities - attackers turned it into the attack vector itself. The CanisterWorm's use of blockchain infrastructure for command-and-control makes it nearly impossible to neutralize through traditional domain takedowns. With 95 million monthly downloads, LiteLLM's compromise means the malware reached an enormous portion of the AI development ecosystem. Stolen cloud credentials give attackers administrative access to production cloud infrastructure, databases, and customer data across all compromised organizations."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.002",
+        "technique_name": "Supply Chain Compromise: Compromise Software Supply Chain",
+        "description": "TeamPCP compromised the Trivy security scanner's GitHub Actions and release pipeline using a stolen Personal Access Token, injecting malware into software trusted by thousands of development teams"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials in Files",
+        "description": "The malicious Trivy payload harvests SSH keys from ~/.ssh/, cloud provider credentials, .env files, and Kubernetes secrets from CI/CD runner environments"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.007",
+        "technique_name": "Unsecured Credentials: Container API Credentials",
+        "description": "The malware specifically targets Kubernetes service account tokens and cluster credentials for lateral movement into container environments"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1543.002",
+        "technique_name": "Create or Modify System Process: Systemd Service",
+        "description": "LiteLLM backdoor drops ~/.config/systemd/user/sysmon.service to achieve persistent execution, polling checkmarx.zone/raw for additional malware payloads"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1570",
+        "technique_name": "Lateral Tool Transfer",
+        "description": "CanisterWorm propagates by scanning for npm tokens in ~/.npmrc and using stolen publisher credentials to inject malicious code into victims' own npm packages, creating a self-propagating supply chain worm"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1567.002",
+        "technique_name": "Exfiltration Over Web Service",
+        "description": "Stolen credentials are AES-256 + RSA-4096 encrypted and exfiltrated to attacker-controlled C2 servers; CanisterWorm uses Internet Computer (ICP) blockchain canisters as resilient dead-drop C2 infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection requires checking CI/CD pipeline logs for Trivy action usage, scanning systems for malware artifacts (sysmon.py, sysmon.service), monitoring for connections to known malicious IPs, auditing npm packages for unexpected republication, and reviewing cloud provider audit logs for suspicious API activity post-March 19.",
+    "log_sources": [
+      {
+        "source": "GitHub Actions Workflow Logs",
+        "description": "Search for uses of aquasecurity/trivy-action or aquasecurity/setup-trivy in workflow runs between March 19-20, 2026 to identify potentially compromised pipelines",
+        "priority": "Critical"
+      },
+      {
+        "source": "CI/CD Runner Filesystem",
+        "description": "Check for malware artifacts: ~/.config/sysmon.py, ~/.config/systemd/user/sysmon.service, and any recently created files in home directories of runner service accounts",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow Logs / EDR Telemetry",
+        "description": "Monitor for outbound connections to known malicious C2 IPs (67.217.57.240, 44.252.85.168) and polling connections to checkmarx.zone from CI/CD infrastructure",
+        "priority": "Critical"
+      },
+      {
+        "source": "PyPI and npm Package Registry Logs",
+        "description": "Verify installed versions of litellm (block 1.82.7, 1.82.8) and audit organization npm packages for unexpected version publications or modifications",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Audit Logs",
+        "description": "Review AWS CloudTrail, Azure Activity Log, and GCP Cloud Audit Logs for unusual API calls, new IAM users/roles, or resource creation from CI/CD systems since March 19, 2026",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Trivy action usage in CI/CD between March 19-20, 2026",
+        "description": "Any pipeline execution using aquasecurity/trivy-action or setup-trivy during the compromise window should be treated as potentially exposing all secrets in that runner environment",
+        "log_field": "github_action_name IN ('aquasecurity/trivy-action', 'aquasecurity/setup-trivy') AND run_date BETWEEN '2026-03-19' AND '2026-03-20'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Presence of sysmon.py or sysmon.service backdoor files",
+        "description": "The LiteLLM backdoor drops these persistence files; their presence confirms active compromise",
+        "log_field": "file_path IN ('~/.config/sysmon.py', '~/.config/systemd/user/sysmon.service')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "npm package republication without developer action",
+        "description": "CanisterWorm automatically publishes new versions of victim developers' npm packages; unexpected version bumps in your published packages without corresponding code commits are a strong compromise indicator",
+        "log_field": "npm_publish_event AND publisher_email=<your_email> AND no_corresponding_git_commit=true",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "LiteLLM versions 1.82.7 or 1.82.8 installed",
+        "description": "These specific versions contain the three-stage credential-stealing backdoor; any system with these versions installed should be treated as compromised",
+        "log_field": "package_name='litellm' AND package_version IN ('1.82.7', '1.82.8')",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": [
+      "67.217.57.240",
+      "44.252.85.168"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Rotate All Cloud and CI/CD Credentials for Affected Systems",
+      "description": "For any CI/CD pipeline that executed Trivy between March 19-20, 2026, or any system that installed LiteLLM 1.82.7/1.82.8: immediately rotate AWS access keys, Azure service principals, GCP service accounts, Kubernetes secrets, SSH keys, npm tokens, PyPI tokens, and any other secrets accessible from those environments.",
+      "command": "# Check if your pipelines used malicious Trivy\ngrep -r 'trivy-action\\|setup-trivy' .github/workflows/ | grep -v 'sha'"
+    },
+    {
+      "priority": 2,
+      "action": "Remove Malicious Package Versions and Pin Dependencies",
+      "description": "Remove litellm 1.82.7 and 1.82.8 from all environments. Update to 1.82.6 or wait for verified clean releases. Pin trivy-action to SHA: use aquasecurity/trivy-action@v0.2.6 or a specific commit SHA. Audit package-lock.json for CanisterWorm-infected npm packages from affected scopes.",
+      "command": "pip uninstall litellm && pip install 'litellm==1.82.6'\n# Check npm packages from affected scopes\nnpm ls | grep -E '@EmilGroup|@opengov|@teale.io/eslint-config'"
+    },
+    {
+      "priority": 3,
+      "action": "Scan for Malware Artifacts on CI/CD Systems",
+      "description": "Check all CI/CD runner systems and developer workstations for TeamPCP malware artifacts: the sysmon.py backdoor and sysmon.service persistence mechanism dropped by the LiteLLM payload.",
+      "command": "find / -name 'sysmon.py' -path '*/.config/*' 2>/dev/null\nsystemctl --user list-units | grep sysmon\nfind ~/.config/systemd/user/ -name 'sysmon.service'"
+    },
+    {
+      "priority": 4,
+      "action": "Block Known Malicious C2 IPs and Domains",
+      "description": "Block outbound connections to known TeamPCP C2 infrastructure at 67.217.57.240 and 44.252.85.168. Also block polling connections to checkmarx.zone (used by LiteLLM backdoor) at the firewall level.",
+      "command": "# Block at firewall (example for iptables)\niptables -A OUTPUT -d 67.217.57.240 -j DROP\niptables -A OUTPUT -d 44.252.85.168 -j DROP"
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "briefing_id": "TB-2026-02-09-002",
+  "title": "React Native CLI Metro4Shell: Developer Tool Command Injection Under Active Exploitation (CVE-2025-11953)",
+  "generated_date": "2026-02-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-26"
+  },
+  "cves": [
+    "CVE-2025-11953"
+  ],
+  "tags": [
+    "react-native",
+    "metro",
+    "developer-tools",
+    "command-injection",
+    "cisa-kev",
+    "active-exploitation",
+    "supply-chain",
+    "ci-cd",
+    "rust-malware"
+  ],
+  "affected_products": [
+    "@react-native-community/cli-server-api versions 4.8.0 through 20.0.0-alpha.2",
+    "@react-native-community/cli versions 4.8.0 through 20.0.0-alpha.2",
+    "Metro Development Server (binds to 0.0.0.0 by default)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "JFrog Security Blog - CVE-2025-11953 Critical React Native CLI Vulnerability",
+      "url": "https://jfrog.com/blog/cve-2025-11953-critical-react-native-community-cli-vulnerability/",
+      "date": "2025-11-03",
+      "type": "Research"
+    },
+    {
+      "name": "JFrog Security Research Advisory JFSA-2025-001495618",
+      "url": "https://research.jfrog.com/vulnerabilities/react-native-cli-command-injection-jfsa-2025-001495618/",
+      "date": "2025-11-03",
+      "type": "Research"
+    },
+    {
+      "name": "VulnCheck - Metro4Shell Exploitation in the Wild",
+      "url": "https://www.vulncheck.com/blog/metro4shell_eitw",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2025-11953",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11953",
+      "date": "2025-11-03",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/02/05/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "date": "2026-02-05",
+      "type": "Government"
+    },
+    {
+      "name": "GitHub Advisory GHSA-399j-vxmf-hjvr",
+      "url": "https://github.com/advisories/GHSA-399j-vxmf-hjvr",
+      "date": "2025-11-03",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CCB Belgium - Critical React Native CLI Vulnerability Advisory",
+      "url": "https://ccb.belgium.be/advisories/warning-critical-react-native-cli-vulnerability-patch-immediately",
+      "date": "2026-02-05",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - Hackers Exploit Metro4Shell RCE Flaw",
+      "url": "https://thehackernews.com/2026/02/hackers-exploit-metro4shell-rce-flaw-in.html",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - Hackers Exploit Critical React Native Metro Bug",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-react-native-metro-bug-to-breach-dev-systems/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Critical React Native Metro Dev Server Bug",
+      "url": "https://www.theregister.com/2026/02/03/critical_react_native_metro_server/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Critical React Native Vulnerability Exploited in the Wild",
+      "url": "https://www.securityweek.com/critical-react-native-vulnerability-exploited-in-the-wild/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - Rust Malware via React Native CLI Flaw",
+      "url": "https://securityaffairs.com/187587/hacking/hackers-abused-react-native-cli-flaw-to-deploy-rust-malware-before-public-disclosure.html",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "ZeroPath Blog - CVE-2025-11953 OS Command Injection Analysis",
+      "url": "https://zeropath.com/blog/cve-2025-11953-react-native-metro-cli-os-command-injection",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "SOCRadar - Metro4Shell React Native Metro RCE Analysis",
+      "url": "https://socradar.io/blog/cve-2025-11953-metro4shell-react-native-metro-rce/",
+      "date": "2026-02-04",
+      "type": "Research"
+    },
+    {
+      "name": "Cyber Security Agency of Singapore Advisory",
+      "url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2025-104/",
+      "date": "2025-11-06",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-03",
+      "event": "JFrog Security Research Team (Or Peles) publicly discloses CVE-2025-11953; Meta releases patch (commit 15089907); NVD publishes initial entry"
+    },
+    {
+      "date": "2025-12-21",
+      "event": "First active exploitation detected by VulnCheck Canary network: base64-encoded PowerShell payloads delivering UPX-packed Rust malware via the vulnerable /open-url endpoint"
+    },
+    {
+      "date": "2026-01-04",
+      "event": "Second wave of exploitation observed with identical payloads, indicating a sustained and mature operational campaign rather than opportunistic scanning"
+    },
+    {
+      "date": "2026-01-21",
+      "event": "Third exploitation wave detected by VulnCheck with same payload infrastructure, confirming persistent attacker interest"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "VulnCheck publishes detailed exploitation analysis blog with IOCs; The Hacker News, BleepingComputer, and SecurityWeek report on active exploitation"
+    },
+    {
+      "date": "2026-02-05",
+      "event": "CISA adds CVE-2025-11953 to Known Exploited Vulnerabilities catalog with remediation deadline of February 26, 2026"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical OS command injection vulnerability was discovered in the React Native CLI's Metro Development Server, a tool used by millions of mobile app developers worldwide. The flaw allows attackers on the local network to execute arbitrary system commands on developer machines by sending a simple HTTP POST request to the /open-url endpoint. The vulnerability exists because Metro binds to all network interfaces (0.0.0.0) by default despite logging 'localhost', and the URL parameter is passed unsanitized to the system's open command. Active exploitation has been ongoing since December 21, 2025, with attackers deploying UPX-packed Rust-based malware through multiple waves of attacks. CISA added this to the KEV catalog on February 5, 2026. Approximately 3,500 exposed Metro servers have been found via internet scanning.",
+    "who_is_affected": "All organizations and developers using @react-native-community/cli versions 4.8.0 through 20.0.0-alpha.2 are at risk when running Metro Dev Server (npm start or npx react-native start). The package has 2-2.5 million weekly downloads. Developer workstations, CI/CD build servers, and any environment running Metro are vulnerable if the server is network-accessible. Windows developers face the highest risk with full arbitrary command execution, while macOS and Linux developers face arbitrary executable execution with limited parameter control. Projects using Expo's dev server are NOT affected. ZoomEye scanning identified approximately 3,500 exposed React Native Metro servers on the internet.",
+    "what_attackers_do": "Step 1: The attacker scans the network for Metro Dev Servers listening on port 8081, which are exposed due to Metro binding to all interfaces (0.0.0.0) by default instead of localhost only. Step 2: The attacker sends an HTTP POST request to the /open-url endpoint with a malicious URL parameter containing injected shell commands; no authentication is required. Step 3: On Windows targets, the URL parameter is passed unsanitized to the open npm package, which constructs cmd /c start '' /b <payload>, allowing shell metacharacters to inject arbitrary commands including base64-encoded PowerShell payloads. Step 4: The PowerShell loader adds Microsoft Defender exclusion paths for the current working directory and %TEMP% via Add-MpPreference to evade detection. Step 5: The loader establishes a raw TCP socket to C2 infrastructure (8.218.43.248:60124), sends a GET /windows request to retrieve the next-stage payload, writes it as a UPX-packed Rust binary to %TEMP%, and executes it with encoded arguments, completing the compromise of the developer workstation.",
+    "what_you_should_do": [
+      "Immediately update @react-native-community/cli-server-api to version 18.0.1, 19.1.2, or 20.0.0 or later across all development environments and CI/CD pipelines",
+      "As an interim mitigation, always start Metro with explicit localhost binding: npx react-native start --host 127.0.0.1",
+      "Block external access to port 8081 on all developer machines and CI/CD runners via firewall rules",
+      "Scan developer workstations for IOCs: connections to 8.218.43.248:60124 or 47.86.33.195:60130, PowerShell Add-MpPreference commands, UPX-packed executables in %TEMP%",
+      "Run npm audit across all React Native projects to identify vulnerable dependencies",
+      "Implement network segmentation to isolate development environments from production networks and restrict outbound connections from dev machines"
+    ],
+    "why_this_is_serious": "This vulnerability represents a rare and dangerous attack vector targeting the software development pipeline itself. Unlike most vulnerabilities that affect production systems, Metro4Shell compromises developer workstations and CI/CD infrastructure, giving attackers access to source code, signing keys, deployment credentials, and the ability to inject malicious code into production builds. The sustained, multi-wave exploitation campaign (3 waves over 4 weeks with consistent payloads) indicates mature, professional threat actors rather than opportunistic scanning. The combination of 2.5 million weekly downloads, default exposure to the network, and zero authentication makes this an attractive target for supply chain attacks. Cross-platform Rust malware payloads for both Windows and Linux demonstrate the attackers' capability to compromise diverse development environments."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the externally-exposed Metro Dev Server /open-url endpoint on port 8081, which requires no authentication and is network-accessible due to default binding to all interfaces"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.001",
+        "technique_name": "Command and Scripting Interpreter: PowerShell",
+        "description": "Base64-encoded PowerShell loader is executed via cmd.exe on Windows targets to disable Defender, download payloads, and execute the Rust malware binary"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.001",
+        "technique_name": "Impair Defenses: Disable or Modify Tools",
+        "description": "PowerShell payload adds Microsoft Defender exclusion paths for the current working directory and %TEMP% directory via Add-MpPreference to prevent detection of dropped payloads"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1027.002",
+        "technique_name": "Obfuscated Files or Information: Software Packing",
+        "description": "The Rust-based malware payload is packed with UPX to evade static detection and includes anti-analysis runtime checks"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1071.001",
+        "technique_name": "Application Layer Protocol: Web Protocols",
+        "description": "Raw TCP socket connections using HTTP GET requests to C2 infrastructure at 8.218.43.248:60124 and 47.86.33.195:60130 for payload retrieval"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1105",
+        "technique_name": "Ingress Tool Transfer",
+        "description": "Rust malware payload downloaded from C2 infrastructure via GET /windows or GET /linux requests and written to %TEMP% directory"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying HTTP POST requests to port 8081 targeting the /open-url or /open-stack-frame endpoints, PowerShell execution with Defender exclusion modifications, outbound connections to known C2 infrastructure, and unexpected process spawning from Node.js/Metro processes on developer workstations.",
+    "log_sources": [
+      {
+        "source": "Network Firewall / IDS",
+        "description": "Monitor for HTTP POST requests to port 8081 targeting /open-url or /open-stack-frame endpoints from external sources. Alert on any inbound connections to port 8081 from outside the localhost address range. Detect outbound TCP connections to known C2 IPs (8.218.43.248:60124, 47.86.33.195:60130).",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Event Logs (PowerShell ScriptBlock Logging, Sysmon)",
+        "description": "Alert on PowerShell invocations with -EncodedCommand parameter originating from web services or Node.js processes. Detect Add-MpPreference commands adding Defender exclusion paths. Monitor for process execution from %TEMP% with random naming patterns.",
+        "priority": "Critical"
+      },
+      {
+        "source": "EDR / Endpoint Protection",
+        "description": "Monitor for unexpected process chains: node.exe -> cmd.exe -> powershell.exe. Detect UPX-packed Rust binaries executing from temporary directories. Alert on anti-analysis behaviors and connections to C2 infrastructure from development workstations.",
+        "priority": "Critical"
+      },
+      {
+        "source": "npm Audit Logs",
+        "description": "Run npm audit across all React Native projects to identify installations of vulnerable @react-native-community/cli-server-api versions. Track package update status across the development organization.",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "HTTP POST to /open-url on port 8081 from external IP",
+        "description": "Metro Dev Server /open-url endpoint receiving POST requests from any source other than localhost indicates active exploitation",
+        "log_field": "Firewall/IDS: dest_port=8081 AND HTTP POST /open-url AND source_ip NOT IN [127.0.0.1, ::1]",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "PowerShell Add-MpPreference exclusion commands",
+        "description": "Attacker payloads add Defender exclusions for CWD and %TEMP% to evade detection before dropping malware",
+        "log_field": "PowerShell ScriptBlock: contains 'Add-MpPreference' AND contains '-ExclusionPath'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connections to known C2 infrastructure",
+        "description": "TCP connections to 8.218.43.248:60124 or 47.86.33.195:60130 from developer machines indicate successful exploitation",
+        "log_field": "Network log: dest_ip IN ['8.218.43.248', '47.86.33.195'] AND dest_port IN [60124, 60130]",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "UPX-packed Rust binary execution from %TEMP%",
+        "description": "Malware payload is written to %TEMP% with random filename and executed with encoded arguments",
+        "log_field": "Sysmon EventID=1: Image matches '%TEMP%\\*.exe' AND FileDescription contains 'UPX' or PE header contains UPX markers",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Node.js spawning cmd.exe or shell processes",
+        "description": "Metro/Node.js process creating child shell processes indicates the /open-url command injection was triggered",
+        "log_field": "Sysmon EventID=1: ParentImage contains 'node' AND (Image contains 'cmd.exe' OR 'powershell.exe')",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "65.109.182.231",
+      "223.6.249.141",
+      "134.209.69.155",
+      "8.218.43.248",
+      "47.86.33.195"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update @react-native-community/cli-server-api to patched versions",
+      "description": "Update to version 18.0.1, 19.1.2, or 20.0.0+ across all development environments and CI/CD pipelines. Run npm audit to verify all React Native projects are using patched versions.",
+      "command": "npm audit && npm install @react-native-community/cli-server-api@latest"
+    },
+    {
+      "priority": 2,
+      "action": "Bind Metro to localhost only as interim mitigation",
+      "description": "If immediate package update is not possible, start Metro with explicit localhost binding to prevent network exposure. This prevents remote exploitation while preserving local development functionality.",
+      "command": "npx react-native start --host 127.0.0.1"
+    },
+    {
+      "priority": 3,
+      "action": "Block port 8081 from external access on all dev machines",
+      "description": "Configure host-based firewalls or network firewalls to block all inbound connections to port 8081 from external IP addresses on developer workstations and CI/CD servers.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Scan for IOCs on developer workstations and CI/CD runners",
+      "description": "Search for known malicious file hashes (Windows: d8337df3aff749250557bf11daf069eb404cce0e6f4f91c6bd6d3f78aed6e9d6, Linux: d1886b189474b02467ed2845df0938cec9785e99c3d4b04e0b7de3cafbee4182), connections to C2 IPs (8.218.43.248, 47.86.33.195), and PowerShell Defender exclusion modifications.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Block C2 infrastructure at network perimeter",
+      "description": "Add the following IPs to firewall blocklists: exploitation sources (65.109.182.231, 223.6.249.141, 134.209.69.155) and C2/payload servers (8.218.43.248:60124, 47.86.33.195:60130). Monitor for connections to these addresses from any internal host.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Implement network segmentation for development environments",
+      "description": "Isolate developer workstations and CI/CD infrastructure from production networks. Restrict outbound connections from development environments to only required services. This limits the blast radius if a developer machine is compromised via Metro4Shell.",
+      "command": null
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "briefing_id": "TB-2026-03-04-003",
+  "title": "Hyland Alfresco Transformation Service Unauthenticated Argument Injection Enables SSRF and Full Remote Code Execution on Enterprise Content Management Systems Across All Versions Prior to 4.2.3 (CVE-2026-26339, CVSS 9.8)",
+  "generated_date": "2026-03-04",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-26339"
+  ],
+  "tags": [
+    "alfresco",
+    "content-management",
+    "argument-injection",
+    "rce",
+    "ssrf",
+    "enterprise-ecm"
+  ],
+  "affected_products": [
+    "Hyland Alfresco Transformation Service (Enterprise) versions prior to 4.2.3",
+    "Alfresco Community Transform Core versions prior to 5.2.4"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Hyland Official Product Support Status - Alfresco Security Patches",
+      "url": "https://www.hyland.com/en/resources/alfresco-product-support-status",
+      "date": "2026-02-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - National Vulnerability Database CVE-2026-26339",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-26339",
+      "date": "2026-02-19",
+      "type": "Government"
+    },
+    {
+      "name": "Tenable CVE-2026-26339 Vulnerability Intelligence",
+      "url": "https://www.tenable.com/cve/CVE-2026-26339",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "TheHackerWire - Hyland Alfresco Transformation Service RCE via Argument Injection",
+      "url": "https://www.thehackerwire.com/hyland-alfresco-transformation-service-rce-via-argument-injection/",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "OffSeq Threat Radar - CVE-2026-26339 CWE-918 Server-Side Request Forgery Analysis",
+      "url": "https://radar.offseq.com/threat/cve-2026-26339-cwe-918-server-side-request-forgery-f1de4ab8",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "PT Security dbugs - CVE-2026-26339 Vulnerability Entry",
+      "url": "https://dbugs.ptsecurity.com/vulnerability/PT-2026-20878",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "OpenCVE - CVE-2026-26339 Tracking",
+      "url": "https://app.opencve.io/cve/CVE-2026-26339",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "RedPacket Security - CVE Alert CVE-2026-26337 Hyland Alfresco Related Vulnerability",
+      "url": "https://www.redpacketsecurity.com/cve-alert-cve-2026-26337-hyland-alfresco-transformation-service-enterprise/",
+      "date": "2026-02-20",
+      "type": "News"
+    },
+    {
+      "name": "RedPacket Security - CVE Alert CVE-2026-26336 Hyland Alfresco Enterprise",
+      "url": "https://www.redpacketsecurity.com/cve-alert-cve-2026-26336-hyland-alfresco-enterprise/",
+      "date": "2026-02-20",
+      "type": "News"
+    },
+    {
+      "name": "Qualys Application Security Detections Published February 2026",
+      "url": "https://notifications.qualys.com/notifications/2026/02/27/application-security-detections-published-in-february-2026",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "eXtreme Hosting CVE Database - CVE-2026-26339",
+      "url": "https://extremehosting.nl/cve/cve-details/CVE-2026-26339/",
+      "date": "2026-02-19",
+      "type": "Research"
+    },
+    {
+      "name": "CISA Vulnerability Summary Bulletin - Week of February 2026",
+      "url": "https://www.cisa.gov/news-events/bulletins/sb26-040",
+      "date": "2026-02-09",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-01",
+      "event": "Security researcher Piotr Bazydlo (@chudyPB) of watchTowr Labs discovers argument injection vulnerability in Alfresco Transformation Service during routine security assessment"
+    },
+    {
+      "date": "2026-02-19",
+      "event": "CVE-2026-26339 officially published; Hyland releases patched versions: Alfresco Transformation Service 4.2.3 (Enterprise) and Transform Core 5.2.4 (Community)"
+    },
+    {
+      "date": "2026-02-19",
+      "event": "Hyland updates product support status page with security advisory recommending immediate upgrade"
+    },
+    {
+      "date": "2026-02-20",
+      "event": "Multiple security research platforms (RedPacket Security, OffSeq, PT Security) publish analysis of CVE-2026-26339 alongside related Alfresco vulnerabilities CVE-2026-26336 and CVE-2026-26337"
+    },
+    {
+      "date": "2026-02-27",
+      "event": "Qualys releases detection QIDs for CVE-2026-26339, enabling automated vulnerability scanning of Alfresco deployments"
+    },
+    {
+      "date": "2026-03-04",
+      "event": "Intelleo briefing published; no confirmed in-the-wild exploitation yet, but high weaponization risk given CVSS 9.8, unauthenticated attack vector, and document repository access"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical security vulnerability was found in the Hyland Alfresco Transformation Service — a component used by the Alfresco enterprise content management platform to automatically convert documents from one format to another (for example, turning a Word document into a PDF for web preview). The bug allows attackers to inject additional command-line arguments into the document processing commands, tricking the server into making unauthorized network requests (SSRF) and eventually executing arbitrary code on the server without needing any login credentials.",
+    "who_is_affected": "Organizations using Hyland Alfresco Transformation Service (Enterprise) versions before 4.2.3, or Alfresco Community Transform Core before 5.2.4. Alfresco is a widely deployed enterprise content management system used by government agencies, healthcare organizations, financial institutions, and large enterprises globally to manage sensitive documents, contracts, and records. Any organization with an internet-exposed or network-accessible Alfresco Transformation Service endpoint is at high risk.",
+    "what_attackers_do": "Step 1: Attacker identifies an Alfresco Transformation Service endpoint exposed on the network (commonly running on port 8090 or 8080) by using network scanning or internet search tools. Step 2: Attacker crafts a malicious document transformation request that includes injected command-line arguments in a parameter that the service passes directly to underlying processing tools like LibreOffice or ImageMagick without proper sanitization. Step 3: The injected arguments cause the transformation tool to make unauthorized HTTP requests to internal servers (Server-Side Request Forgery), allowing the attacker to map internal network services, access cloud metadata endpoints (like AWS EC2 metadata at 169.254.169.254), or reach internal APIs. Step 4: Building on SSRF access, the attacker escalates to remote code execution by injecting shell-execution arguments, gaining arbitrary command execution with the privileges of the Transformation Service process. Step 5: Attacker establishes persistent access to the server, exfiltrates sensitive documents from the Alfresco content repository, or pivots further into the corporate network using credentials obtained from cloud metadata services.",
+    "what_you_should_do": [
+      "Immediately upgrade Alfresco Transformation Service (Enterprise) to version 4.2.3 or later, or Alfresco Transform Core (Community) to version 5.2.4 or later",
+      "If patching cannot be done immediately, restrict network access to the Transformation Service endpoint (ports 8090/8080) using firewall rules so only the Alfresco repository server can reach it — the service should never be internet-facing",
+      "Block outbound HTTP requests from the Transformation Service server to cloud metadata IP addresses (169.254.169.254) and to any internal services that should not be accessible from it",
+      "Review transformation request logs for unusual arguments in document conversion requests, particularly any containing dashes, eval strings, or URL-like parameters in unexpected fields"
+    ],
+    "why_this_is_serious": "Document management systems like Alfresco are trusted repositories for an organization's most sensitive content — legal contracts, financial records, HR files, and strategic plans. A vulnerability that grants unauthenticated code execution on such a server can lead to massive data breaches. The SSRF component is especially dangerous in cloud environments, where it can be used to steal cloud identity credentials from metadata services, giving attackers access to the entire cloud account. With CVSS 9.8 and no authentication required, this is easily weaponizable and represents a significant risk to any unpatched deployment."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the argument injection vulnerability in the Alfresco Transformation Service's document processing endpoint, achieving code execution without authentication via a network-accessible service"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Injected command-line arguments passed to LibreOffice or ImageMagick processing tools enable execution of arbitrary OS commands with the privileges of the transformation service process"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "description": "SSRF exploitation allows attackers to probe and map internal network services and cloud infrastructure that are not directly accessible from the internet"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.005",
+        "technique_name": "Unsecured Credentials: Cloud Instance Metadata API",
+        "description": "SSRF can be directed at cloud metadata endpoints (169.254.169.254 for AWS/Azure/GCP) to steal instance identity credentials and IAM role tokens, enabling full cloud account compromise"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1213",
+        "technique_name": "Data from Information Repositories",
+        "description": "With code execution on the Alfresco server, attackers have access to the entire document repository including sensitive organizational content stored in Alfresco"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying anomalous command-line arguments in Transformation Service request parameters, unexpected outbound HTTP connections from the transformation server (SSRF indicators), and unusual child processes spawned by LibreOffice or ImageMagick.",
+    "log_sources": [
+      {
+        "source": "Alfresco Transformation Service Application Logs",
+        "description": "Transform service logs (alfresco-transform-core-app.log) — review transformation request parameters for unusual arguments not consistent with normal document format conversion requests",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Egress Logs / Proxy Logs",
+        "description": "Monitor all outbound HTTP/HTTPS connections from the Transformation Service server; SSRF attacks will generate unexpected HTTP requests to internal services or cloud metadata endpoints",
+        "priority": "Critical"
+      },
+      {
+        "source": "Linux Audit Logs (auditd) - Process Execution",
+        "description": "Track child processes spawned by LibreOffice (soffice.bin) and ImageMagick (convert, identify) — they should only perform file conversion, not spawn shells or make network connections",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Network Flow Logs",
+        "description": "For cloud-hosted deployments: alert on any HTTP requests from the Transformation Service to the instance metadata endpoint (169.254.169.254) which indicates SSRF exploitation",
+        "priority": "Critical"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unusual arguments in transformation requests (command injection patterns)",
+        "description": "Transformation requests containing shell execution arguments like --eval, -Xmx, shell metacharacters, URL schemes, or executable paths in document format parameters",
+        "log_field": "transform.request.options contains '--eval' OR transform.request.options contains '$(\\'' OR transform.source_path matches '(http|ftp)://'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound requests to cloud metadata endpoint",
+        "description": "HTTP requests from the Transformation Service server to 169.254.169.254 (AWS/Azure/GCP instance metadata) indicate active SSRF exploitation for credential theft",
+        "log_field": "network.destination.ip='169.254.169.254' AND source.ip=[transform-service-ip]",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "LibreOffice or ImageMagick spawning shell processes",
+        "description": "Document conversion processes should not spawn bash, sh, curl, wget, or nc — any such behavior indicates successful argument injection",
+        "log_field": "process.parent.name IN ('soffice.bin','convert','identify') AND process.name IN ('bash','sh','curl','wget','nc','python')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connections from Transformation Service to internal RFC1918 addresses",
+        "description": "SSRF exploitation often targets internal services; monitor for unexpected HTTP connections from the transform service to internal IP ranges (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)",
+        "log_field": "network.source.ip=[transform-service-ip] AND network.destination.ip CIDR '10.0.0.0/8,172.16.0.0/12,192.168.0.0/16'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade Alfresco Transformation Service to Patched Version",
+      "description": "For Alfresco Enterprise: upgrade Transformation Service to version 4.2.3 or higher (recommended: 4.3.0+). For Alfresco Community: upgrade Transform Core to version 5.2.4 or higher (recommended: 5.3.0+). Download from the Hyland customer portal or Alfresco Community repository.",
+      "command": "docker pull alfresco/alfresco-transform-core-aio:5.2.4"
+    },
+    {
+      "priority": 2,
+      "action": "Isolate Transformation Service from Internet Exposure",
+      "description": "The Transformation Service should NEVER be directly internet-accessible. Apply firewall rules so only the Alfresco repository server's IP can communicate with the Transformation Service on ports 8090 and 8080. Confirm this isolation in your current deployment.",
+      "command": "iptables -I INPUT -p tcp --dport 8090 ! -s <alfresco-repo-ip> -j DROP"
+    },
+    {
+      "priority": 3,
+      "action": "Block Outbound Requests to Cloud Metadata Services",
+      "description": "If running in a cloud environment, immediately add an egress firewall rule or host-based iptables rule blocking all traffic from the Transformation Service to the instance metadata IP (169.254.169.254) to prevent SSRF-based credential theft.",
+      "command": "iptables -I OUTPUT -d 169.254.169.254 -j DROP"
+    },
+    {
+      "priority": 4,
+      "action": "Review Transformation Service Logs for Exploitation Evidence",
+      "description": "Inspect transformation request logs for any parameters containing unusual command-line arguments, shell metacharacters, or URL schemes in document format fields. Any such entries warrant immediate incident investigation.",
+      "command": "grep -E '(--eval|\\$\\(|\\|\\||&&|169\\.254\\.|http://)' /var/log/alfresco/alfresco-transform*.log"
+    },
+    {
+      "priority": 5,
+      "action": "Rotate Cloud Credentials If SSRF Exploitation Suspected",
+      "description": "If logs show any requests to the cloud metadata endpoint (169.254.169.254), treat all cloud IAM credentials associated with the server as compromised and rotate them immediately. Review cloud access logs for unauthorized API calls.",
+      "command": null
+    }
+  ]
+}

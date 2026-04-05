@@ -1,0 +1,304 @@
+{
+  "briefing_id": "TB-2026-02-12-001",
+  "title": "Microsoft February 2026 Patch Tuesday: Six Actively Exploited Zero-Days Across Windows Shell, MSHTML, Office, DWM, and Remote Desktop Services (CISA KEV)",
+  "generated_date": "2026-02-12",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 8.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-03"
+  },
+  "cves": [
+    "CVE-2026-21510",
+    "CVE-2026-21513",
+    "CVE-2026-21514",
+    "CVE-2026-21519",
+    "CVE-2026-21525",
+    "CVE-2026-21533"
+  ],
+  "tags": [
+    "Microsoft",
+    "zero-day",
+    "patch-tuesday",
+    "cisa-kev",
+    "active-exploitation",
+    "windows"
+  ],
+  "affected_products": [
+    "Windows 10 (all supported versions)",
+    "Windows 11 (25H2, 26H1)",
+    "Windows Server 2012 R2 through 2025",
+    "Microsoft 365 Apps for Enterprise",
+    "Office LTSC 2021/2024",
+    "Office 2016/2019",
+    "Internet Explorer / MSHTML",
+    "Microsoft Edge (IE Mode)",
+    "Windows Desktop Window Manager (DWM)",
+    "Windows Remote Access Connection Manager",
+    "Windows Remote Desktop Services (RDS)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "BleepingComputer - Microsoft February 2026 Patch Tuesday fixes 6 zero-days, 58 flaws",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-february-2026-patch-tuesday-fixes-6-zero-days-58-flaws/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "Tenable - Microsoft's February 2026 Patch Tuesday Addresses 54 CVEs",
+      "url": "https://www.tenable.com/blog/microsofts-february-2026-patch-tuesday-addresses-54-cves-cve-2026-21510-cve-2026-21513",
+      "date": "2026-02-11",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityWeek - 6 Actively Exploited Zero-Days Patched by Microsoft",
+      "url": "https://www.securityweek.com/6-actively-exploited-zero-days-patched-by-microsoft-with-february-2026-updates/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - Microsoft Patches 59 Vulnerabilities Including Six Zero-Days",
+      "url": "https://thehackernews.com/2026/02/microsoft-patches-59-vulnerabilities.html",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "Krebs on Security - Patch Tuesday February 2026 Edition",
+      "url": "https://krebsonsecurity.com/2026/02/patch-tuesday-february-2026-edition/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "Rapid7 - Patch Tuesday February 2026",
+      "url": "https://www.rapid7.com/blog/post/em-patch-tuesday-february-2026/",
+      "date": "2026-02-11",
+      "type": "Research"
+    },
+    {
+      "name": "Qualys - Microsoft Patch Tuesday February 2026 Security Update Review",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/02/10/microsoft-patch-tuesday-february-2026-security-update-review",
+      "date": "2026-02-10",
+      "type": "Research"
+    },
+    {
+      "name": "Malwarebytes - February 2026 Patch Tuesday includes six actively exploited zero-days",
+      "url": "https://www.malwarebytes.com/blog/news/2026/02/february-2026-patch-tuesday-includes-six-actively-exploited-zero-days",
+      "date": "2026-02-11",
+      "type": "Research"
+    },
+    {
+      "name": "CISA - Adds Six Known Exploited Vulnerabilities to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/02/10/cisa-adds-six-known-exploited-vulnerabilities-catalog",
+      "date": "2026-02-10",
+      "type": "Government"
+    },
+    {
+      "name": "SecurityAffairs - Microsoft Patch Tuesday February 2026 fix six zero-days",
+      "url": "https://securityaffairs.com/187848/uncategorized/microsoft-patch-tuesday-security-updates-for-february-2026-fix-six-actively-exploited-zero-days.html",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "CyberSecurityNews - Microsoft Patch Tuesday February 2026",
+      "url": "https://cybersecuritynews.com/microsoft-patch-tuesday-february-2026/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - February 2026 Patch Tuesday",
+      "url": "https://www.helpnetsecurity.com/2026/02/11/february-2026-patch-tuesday/",
+      "date": "2026-02-11",
+      "type": "News"
+    },
+    {
+      "name": "NVD - CVE-2026-21514",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21514",
+      "date": "2026-02-11",
+      "type": "Government"
+    },
+    {
+      "name": "Wiz - CVE-2026-21513 Impact and Mitigation",
+      "url": "https://www.wiz.io/vulnerability-database/cve/cve-2026-21513",
+      "date": "2026-02-11",
+      "type": "Research"
+    },
+    {
+      "name": "Microsoft Security Response Center - February 2026 Security Updates",
+      "url": "https://msrc.microsoft.com/update-guide/releaseNote/2026-Feb",
+      "date": "2026-02-11",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-01",
+      "event": "Active exploitation of zero-days detected in the wild by multiple threat intelligence firms"
+    },
+    {
+      "date": "2026-02-10",
+      "event": "CISA adds all six CVEs to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "Microsoft releases February 2026 Patch Tuesday addressing 54-59 CVEs including 6 zero-days"
+    },
+    {
+      "date": "2026-02-11",
+      "event": "Security research firms publish detailed analyses of all zero-day vulnerabilities"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "CISA federal patch deadline for all FCEB agencies"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Microsoft released its February 2026 security update fixing 58 vulnerabilities, including 6 zero-day flaws that hackers were already actively exploiting before the patch was available. Three of these zero-days were publicly known before Microsoft could fix them. CISA has added all six to the Known Exploited Vulnerabilities catalog with a March 3 deadline for federal agencies.",
+    "who_is_affected": "Every organization running Windows desktops (Windows 10/11), Windows Server (2012 R2 through 2025), Microsoft Office (365, LTSC 2021/2024, 2016/2019), or Remote Desktop Services. This covers virtually all enterprise Windows environments worldwide.",
+    "what_attackers_do": "Step 1: Attackers send phishing emails with malicious links or Office document attachments to targets. Step 2: When victims click links, CVE-2026-21510 bypasses Windows SmartScreen warnings, or CVE-2026-21513 bypasses MSHTML security filters, allowing malware to run without any user warning. Step 3: Malicious Office documents exploit CVE-2026-21514 to bypass OLE protections and execute code silently without the usual security prompts. Step 4: Once inside, attackers use CVE-2026-21519 (DWM type confusion) to escalate from normal user to SYSTEM administrator privileges. Step 5: Attackers leverage CVE-2026-21533 to escalate privileges on Remote Desktop servers, or use CVE-2026-21525 to crash VPN/remote access services and disrupt operations.",
+    "what_you_should_do": [
+      "Deploy February 2026 Patch Tuesday updates to all Windows systems immediately, prioritizing internet-facing and critical systems within 24-48 hours",
+      "Block or quarantine Office attachments from external email sources and warn users about clicking links from unknown senders",
+      "Enforce MFA on all Remote Desktop Services and restrict RDS access to specific trusted IP ranges",
+      "Hunt for indicators of prior compromise: check for Office processes spawning unexpected child processes, DWM privilege escalation attempts, and RasMan service crashes",
+      "Disable Internet Explorer mode in Edge and legacy MSHTML rendering where not required by business applications"
+    ],
+    "why_this_is_serious": "Six simultaneously exploited zero-days is an exceptionally high number for a single Patch Tuesday. The combination of security feature bypasses (allowing initial access without warnings) and privilege escalation flaws (enabling full system takeover) creates a devastating attack chain. Threat actors including APT groups are already using these in coordinated campaigns. Every unpatched Windows system is at immediate risk."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.001",
+        "technique_name": "Phishing: Spearphishing Link",
+        "description": "CVE-2026-21510 and CVE-2026-21513 enable attackers to bypass SmartScreen and MSHTML security filters via crafted links, allowing malware delivery without security warnings"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.002",
+        "technique_name": "Phishing: Spearphishing Attachment",
+        "description": "CVE-2026-21514 allows malicious Office documents to bypass OLE mitigations and execute embedded code without triggering Protected View warnings"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1559",
+        "technique_name": "Inter-Process Communication",
+        "description": "Attackers abuse OLE/COM objects in Office documents to execute arbitrary code after bypassing OLE security mitigations"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "CVE-2026-21519 (DWM type confusion) and CVE-2026-21533 (RDS privilege management flaw) allow escalation from standard user to SYSTEM"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036",
+        "technique_name": "Masquerading",
+        "description": "Security feature bypasses in SmartScreen and MSHTML allow malicious content to appear trustworthy and avoid detection prompts"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1499",
+        "technique_name": "Endpoint Denial of Service",
+        "description": "CVE-2026-21525 causes null pointer dereference in Remote Access Connection Manager, crashing VPN services and disrupting remote access"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for phishing-based initial access attempts exploiting SmartScreen and MSHTML bypasses, Office documents executing without security prompts, DWM and RDS privilege escalation, and RasMan service crashes indicating DoS exploitation.",
+    "log_sources": [
+      {
+        "source": "Windows Security Event Log",
+        "description": "Event ID 4688 (Process Creation) for Office spawning unexpected child processes, and Event ID 4624 for SYSTEM-level logons from standard user processes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Application Event Log",
+        "description": "RasMan service crash events (Event ID 7034/7036) indicating CVE-2026-21525 exploitation attempts",
+        "priority": "High"
+      },
+      {
+        "source": "Microsoft Defender for Endpoint",
+        "description": "Alerts for SmartScreen bypass attempts, suspicious OLE/COM object instantiation, and DWM type confusion exploitation",
+        "priority": "Critical"
+      },
+      {
+        "source": "Email Gateway Logs",
+        "description": "Phishing emails containing malicious .lnk files, Office attachments with embedded OLE objects, or links to MSHTML exploit pages",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows RDS Event Logs",
+        "description": "Event ID 4625 (failed logon) followed by Event ID 4624 with elevated privileges on RDS servers indicating CVE-2026-21533 exploitation",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Office process spawning cmd.exe or powershell.exe",
+        "description": "Microsoft Word, Excel, or Outlook launching command-line interpreters indicates successful OLE bypass and code execution via CVE-2026-21514",
+        "log_field": "ParentProcessName='WINWORD.EXE' AND ProcessName='cmd.exe'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "SmartScreen bypass with .lnk file execution",
+        "description": "Shortcut files executing without SmartScreen warning dialog suggests CVE-2026-21510 exploitation",
+        "log_field": "EventID=4688 AND CommandLine CONTAINS '.lnk'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "DWM.exe abnormal behavior or privilege escalation",
+        "description": "Desktop Window Manager process exhibiting type confusion or spawning high-privilege child processes indicates CVE-2026-21519 exploitation",
+        "log_field": "ParentProcessName='dwm.exe' AND TokenElevationType='Full'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "RasMan service unexpected restart",
+        "description": "Remote Access Connection Manager crashing and restarting indicates CVE-2026-21525 denial-of-service exploitation",
+        "log_field": "EventID=7034 AND ServiceName='RasMan'",
+        "severity": "High"
+      },
+      {
+        "indicator": "RDS session privilege escalation to SYSTEM",
+        "description": "Standard user RDS session gaining SYSTEM privileges indicates CVE-2026-21533 exploitation",
+        "log_field": "EventID=4672 AND LogonType=10 AND SubjectUserSid!=S-1-5-18",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Deploy February 2026 Patch Tuesday updates immediately",
+      "description": "Apply KB security updates for all Windows systems, prioritizing internet-facing servers and critical infrastructure. Target 24-48 hours for critical systems, 7 days for all systems.",
+      "command": "wusa.exe /quiet /norestart (or use WSUS/SCCM/Intune for enterprise deployment)"
+    },
+    {
+      "priority": 2,
+      "action": "Block malicious Office attachments at email gateway",
+      "description": "Configure email security to quarantine or block Office documents with embedded OLE objects from external senders. Enable attachment sandboxing.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Restrict and harden Remote Desktop Services",
+      "description": "Enforce MFA on all RDS sessions, restrict RDS access to specific IP ranges via firewall rules, and disable RDS on systems that do not require it.",
+      "command": "Set-ItemProperty -Path 'HKLM:\\System\\CurrentControlSet\\Control\\Terminal Server' -Name 'fDenyTSConnections' -Value 1"
+    },
+    {
+      "priority": 4,
+      "action": "Disable Internet Explorer mode and MSHTML rendering",
+      "description": "Disable IE mode in Microsoft Edge and legacy MSHTML rendering via Group Policy where not required by line-of-business applications.",
+      "command": "reg add \"HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\" /v \"InternetExplorerIntegrationLevel\" /t REG_DWORD /d 0 /f"
+    },
+    {
+      "priority": 5,
+      "action": "Hunt for prior exploitation indicators",
+      "description": "Search Windows Security and Application event logs for: Office processes spawning cmd.exe/powershell.exe, DWM type confusion crashes, RasMan service failures, and unexpected SYSTEM-level logons from RDS sessions.",
+      "command": "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4688} | Where-Object {$_.Message -match 'WINWORD.*cmd\\.exe'}"
+    }
+  ]
+}

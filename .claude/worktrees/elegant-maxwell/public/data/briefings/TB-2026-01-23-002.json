@@ -1,0 +1,275 @@
+{
+  "briefing_id": "TB-2026-01-23-002",
+  "title": "ChainLeak: Critical AI Framework Vulnerabilities Enable Cloud Account Takeover",
+  "generated_date": "2026-01-23",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.1,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-22218",
+    "CVE-2026-22219"
+  ],
+  "tags": [
+    "AI",
+    "Chainlit",
+    "cloud",
+    "AWS",
+    "SSRF",
+    "file-read",
+    "credential-theft",
+    "LLM"
+  ],
+  "affected_products": [
+    "Chainlit < 2.9.4",
+    "AI applications built on Chainlit framework",
+    "AWS EC2 instances with IMDSv1 enabled",
+    "Chainlit deployments using SQLAlchemy data layer",
+    "Enterprise AI chatbots and applications"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "Zafran Labs (Original Research)",
+      "url": "https://www.zafran.io/resources/chainleak-critical-ai-framework-vulnerabilities-expose-data-enable-cloud-takeover",
+      "date": "2026-01-20",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - CVE-2026-22218",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22218",
+      "date": "2026-01-20",
+      "type": "Government"
+    },
+    {
+      "name": "NVD - CVE-2026-22219",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22219",
+      "date": "2026-01-20",
+      "type": "Government"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/chainlit-ai-framework-bugs-let-hackers-breach-cloud-environments/",
+      "date": "2026-01-20",
+      "type": "News"
+    },
+    {
+      "name": "The Register",
+      "url": "https://www.theregister.com/2026/01/20/ai_framework_flaws_enterprise_clouds",
+      "date": "2026-01-20",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/chainlit-ai-framework-flaws-enable-data.html",
+      "date": "2026-01-20",
+      "type": "News"
+    },
+    {
+      "name": "Infosecurity Magazine",
+      "url": "https://www.infosecurity-magazine.com/news/chainlit-security-flaws-ai-apps/",
+      "date": "2026-01-20",
+      "type": "News"
+    },
+    {
+      "name": "SecurityIT",
+      "url": "https://www.show.it/en/chainlit-vulnerabilities-may-leak-sensitive-information/",
+      "date": "2026-01-21",
+      "type": "News"
+    },
+    {
+      "name": "Qualys - IMDSv1 Risks",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2024/09/12/totalcloud-insights-unmasking-aws-instance-metadata-service-v1-imdsv1-the-hidden-flaw-in-aws-security",
+      "date": "2024-09-12",
+      "type": "Research"
+    },
+    {
+      "name": "Datadog Security Labs - IMDS",
+      "url": "https://securitylabs.datadoghq.com/articles/misconfiguration-spotlight-imds/",
+      "date": "2024-10-15",
+      "type": "Research"
+    },
+    {
+      "name": "F5 Labs - EC2 Metadata Attacks",
+      "url": "https://www.f5.com/labs/articles/threat-intelligence/campaign-targets-amazon-ec2-instance-metadata-via-ssrf",
+      "date": "2025-03-15",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-23",
+      "event": "Zafran Labs discovers vulnerabilities and notifies Chainlit maintainers"
+    },
+    {
+      "date": "2025-12-09",
+      "event": "Chainlit maintainers acknowledge the vulnerability report"
+    },
+    {
+      "date": "2025-12-24",
+      "event": "Chainlit releases version 2.9.4 with security fixes"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "Public disclosure by Zafran Labs as part of Project DarkSide"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers at Zafran Labs discovered two critical vulnerabilities in Chainlit, a popular open-source Python framework used to build AI chatbots and applications. The flaws, dubbed ChainLeak, allow attackers to steal sensitive files including cloud credentials (CVE-2026-22218) and perform Server-Side Request Forgery attacks (CVE-2026-22219). When combined, these vulnerabilities enable complete cloud account takeover without any user interaction.",
+    "who_is_affected": "Chainlit averages 700,000 downloads per month on PyPI with over 5 million total downloads. The framework is used by major enterprises in financial services, energy sectors, and universities to build production AI applications. Organizations running Chainlit versions below 2.9.4 on AWS EC2 instances with IMDSv1 enabled are at highest risk. The framework integrates with LangChain, OpenAI, AWS Bedrock, and LlamaIndex.",
+    "what_attackers_do": "Step 1: Attacker identifies an internet-facing Chainlit application. Step 2: Exploits CVE-2026-22218 by sending a malicious PUT request to /project/element with a crafted 'path' field. Step 3: Reads /proc/self/environ to extract environment variables containing AWS_SECRET_KEY, API keys, and database credentials. Step 4: For deeper access, exploits CVE-2026-22219 SSRF to reach AWS metadata endpoint at 169.254.169.254. Step 5: Retrieves IAM role credentials from the metadata service. Step 6: Uses stolen credentials for lateral movement across the cloud environment.",
+    "what_you_should_do": [
+      "Immediately upgrade Chainlit to version 2.9.4 or later (current latest: 2.9.6)",
+      "Migrate all EC2 instances from IMDSv1 to IMDSv2 to prevent metadata theft via SSRF",
+      "Implement network segmentation to restrict outbound requests from AI application servers",
+      "Review and rotate any credentials that may have been exposed in environment variables",
+      "Add WAF rules to block suspicious PUT requests to /project/element endpoint",
+      "Audit all Chainlit deployments for external accessibility and restrict to internal networks where possible"
+    ],
+    "why_this_is_serious": "This vulnerability represents a new attack surface emerging from the rapid adoption of AI frameworks. Chainlit is referenced in official technical blogs from NVIDIA and Microsoft, indicating widespread enterprise adoption. The combination of arbitrary file read and SSRF creates a powerful attack chain that requires no authentication and no user interaction. With AI applications increasingly deployed in cloud environments with access to sensitive data and credentials, ChainLeak demonstrates how AI infrastructure can become a gateway for broader cloud compromise."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploiting vulnerabilities in internet-facing Chainlit AI applications"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "Reading /proc/self/environ to extract AWS credentials and API keys"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.005",
+        "technique_name": "Unsecured Credentials: Cloud Instance Metadata API",
+        "description": "Accessing AWS EC2 instance metadata via SSRF to retrieve IAM credentials"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1083",
+        "technique_name": "File and Directory Discovery",
+        "description": "Reading arbitrary files to discover configuration and secrets"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1550.001",
+        "technique_name": "Use Alternate Authentication Material: Application Access Token",
+        "description": "Using stolen cloud credentials to access other resources"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1213",
+        "technique_name": "Data from Information Repositories",
+        "description": "Exfiltrating data from SQLite databases and configuration files"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for unusual requests to Chainlit element endpoints, attempts to read sensitive file paths, and outbound requests to cloud metadata services. Focus on detecting file path traversal patterns and SSRF indicators.",
+    "log_sources": [
+      {
+        "source": "Web Application Logs",
+        "description": "HTTP requests to Chainlit endpoints, especially PUT to /project/element",
+        "priority": "Critical"
+      },
+      {
+        "source": "AWS CloudTrail",
+        "description": "API calls made with EC2 instance role credentials",
+        "priority": "Critical"
+      },
+      {
+        "source": "VPC Flow Logs",
+        "description": "Outbound connections to 169.254.169.254 metadata endpoint",
+        "priority": "Critical"
+      },
+      {
+        "source": "Application Server Logs",
+        "description": "File access patterns and environment variable reads",
+        "priority": "High"
+      },
+      {
+        "source": "WAF Logs",
+        "description": "Blocked requests containing path traversal patterns",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Suspicious element requests with file paths",
+        "description": "PUT requests to /project/element containing 'path' fields with sensitive file locations",
+        "log_field": "Request body containing /proc/self/environ, /etc/passwd, .env, or ../ patterns",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "SSRF to metadata endpoint",
+        "description": "Outbound requests from application server to AWS metadata service",
+        "log_field": "Destination IP 169.254.169.254 from Chainlit server",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual IAM credential usage",
+        "description": "EC2 instance role credentials used from unexpected locations or for unusual actions",
+        "log_field": "CloudTrail events with instance role but unusual sourceIPAddress",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Environment variable access",
+        "description": "Application accessing /proc/self/environ or similar paths",
+        "log_field": "File read events for process environment files",
+        "severity": "High"
+      },
+      {
+        "indicator": "Bulk file read attempts",
+        "description": "Multiple element requests attempting to read various file paths",
+        "log_field": "High volume of PUT requests to /project/element from single source",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Check Chainlit Version",
+      "description": "Identify all Chainlit deployments and their versions",
+      "command": "pip show chainlit | grep Version"
+    },
+    {
+      "priority": 2,
+      "action": "Upgrade Chainlit",
+      "description": "Upgrade to patched version 2.9.4 or later",
+      "command": "pip install --upgrade chainlit>=2.9.4"
+    },
+    {
+      "priority": 3,
+      "action": "Check EC2 IMDS Version",
+      "description": "Verify EC2 instances are using IMDSv2",
+      "command": "aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,MetadataOptions.HttpTokens]' --output table"
+    },
+    {
+      "priority": 4,
+      "action": "Enforce IMDSv2",
+      "description": "Migrate from IMDSv1 to IMDSv2 on all EC2 instances",
+      "command": "aws ec2 modify-instance-metadata-options --instance-id <instance-id> --http-tokens required --http-endpoint enabled"
+    },
+    {
+      "priority": 5,
+      "action": "Block Endpoint Temporarily",
+      "description": "Add WAF rule to block PUT requests to vulnerable endpoint",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Rotate Exposed Credentials",
+      "description": "Rotate any AWS keys, API tokens, or secrets that may have been in environment variables",
+      "command": null
+    }
+  ]
+}

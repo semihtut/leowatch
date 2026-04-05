@@ -1,0 +1,82 @@
+{
+  "briefing_id": "TB-2026-01-25-003",
+  "title": "VMware vCenter Server Remote Code Execution - Active Exploitation (CISA KEV)",
+  "generated_date": "2026-01-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-13"
+  },
+  "cves": ["CVE-2024-37079"],
+  "tags": ["cloud", "vmware", "vcenter", "virtualization", "rce", "dcerpc", "hybrid-cloud", "vsphere"],
+  "affected_products": [
+    "VMware vCenter Server 8.0 (before 8.0 U3)",
+    "VMware vCenter Server 7.0 (before 7.0 U3r)",
+    "VMware Cloud Foundation 5.x and 4.x"
+  ],
+  "sources_analyzed": 2,
+  "sources": [
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-01-23",
+      "type": "Government"
+    },
+    {
+      "name": "Broadcom VMware Security Advisory VMSA-2024-0012",
+      "url": "https://www.vmware.com/security/advisories/VMSA-2024-0012.html",
+      "date": "2024-06-17",
+      "type": "Vendor Advisory"
+    }
+  ],
+  "timeline": [
+    {"date": "2024-06-17", "event": "VMware releases security advisory VMSA-2024-0012 with patches"},
+    {"date": "2024-06-18", "event": "CVE-2024-37079 published in NIST NVD"},
+    {"date": "2025-12-01", "event": "Active exploitation detected in the wild"},
+    {"date": "2026-01-23", "event": "CISA adds to Known Exploited Vulnerabilities catalog"},
+    {"date": "2026-02-13", "event": "CISA remediation deadline"}
+  ],
+  "simple_summary": {
+    "what_happened": "A critical remote code execution vulnerability exists in VMware vCenter Server, the central management platform for VMware virtualization environments. The flaw is in the DCERPC protocol implementation and allows attackers with network access to execute arbitrary code without authentication.",
+    "who_is_affected": "Any organization running VMware vCenter Server or VMware Cloud Foundation for managing virtual infrastructure. This includes private data centers, hybrid cloud environments, and organizations using VMware Cloud on AWS, Azure VMware Solution, or Google Cloud VMware Engine.",
+    "what_attackers_do": "Step 1: Attackers scan networks for exposed vCenter Server management interfaces. Step 2: They send specially crafted DCERPC network packets to the vCenter server. Step 3: The malformed packets trigger an out-of-bounds write in memory. Step 4: Attackers achieve remote code execution with vCenter service privileges. Step 5: With vCenter control, they can access all managed VMs, deploy ransomware, or pivot to connected cloud environments.",
+    "what_you_should_do": [
+      "Immediately patch vCenter Server to 8.0 U3 or 7.0 U3r",
+      "If patching is not immediately possible, restrict network access to vCenter management interface",
+      "Audit vCenter access logs for suspicious authentication or API activity",
+      "Review virtual machine inventory for unauthorized VMs or snapshots",
+      "Verify integrity of vCenter backup and ensure offline copies exist"
+    ],
+    "why_this_is_serious": "vCenter Server is the brain of VMware infrastructure. Compromising vCenter provides god-mode access to every virtual machine in the environment. Attackers can read VM memory, access virtual disks, deploy malware to all VMs, or encrypt the entire virtual infrastructure for ransomware."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {"tactic": "Initial Access", "technique_id": "T1190", "technique_name": "Exploit Public-Facing Application", "description": "DCERPC vulnerability exploitation on network-accessible vCenter"},
+      {"tactic": "Execution", "technique_id": "T1203", "technique_name": "Exploitation for Client Execution", "description": "Memory corruption leads to code execution"},
+      {"tactic": "Lateral Movement", "technique_id": "T1021.007", "technique_name": "Remote Services: Cloud Services", "description": "vCenter access enables movement to all managed VMs"},
+      {"tactic": "Impact", "technique_id": "T1486", "technique_name": "Data Encrypted for Impact", "description": "Ransomware deployment across virtual infrastructure"}
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor network traffic to vCenter Server for anomalous DCERPC connections. Watch for unexpected service account activity, new VM deployments, and configuration changes.",
+    "log_sources": [
+      {"source": "vCenter Server Events", "description": "vSphere client events and operations", "priority": "Critical"},
+      {"source": "Network IDS/IPS", "description": "DCERPC traffic anomaly detection", "priority": "Critical"},
+      {"source": "vCenter Appliance OS Logs", "description": "VCSA system logs", "priority": "High"}
+    ],
+    "what_to_look_for": [
+      {"indicator": "Anomalous DCERPC traffic", "log_field": "protocol='dcerpc' AND anomaly=true", "severity": "Critical"},
+      {"indicator": "vCenter service crash", "log_field": "service='vpxd' AND event='crash'", "severity": "Critical"},
+      {"indicator": "Unauthorized admin login", "log_field": "user='administrator@vsphere.local' AND src_ip NOT IN trusted", "severity": "Critical"},
+      {"indicator": "Mass VM operations", "log_field": "event IN ('VmPoweredOn','VmSnapshot') COUNT > 10 WITHIN 5m", "severity": "High"}
+    ]
+  },
+  "immediate_actions": [
+    {"priority": 1, "action": "Patch vCenter Server", "description": "Update to 8.0 U3 or 7.0 U3r immediately", "command": null},
+    {"priority": 2, "action": "Restrict network access", "description": "Ensure vCenter is only accessible from management networks", "command": null},
+    {"priority": 3, "action": "Review admin accounts", "description": "Audit vCenter SSO domain for unauthorized accounts", "command": null},
+    {"priority": 4, "action": "Verify backup integrity", "description": "Ensure offline/immutable backups exist", "command": null}
+  ]
+}

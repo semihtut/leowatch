@@ -1,0 +1,260 @@
+{
+  "briefing_id": "TB-2026-03-04-002",
+  "title": "Trend Micro Apex One Critical Directory Traversal RCE: Unauthenticated Remote Code Execution on Endpoint Security Management Console Affects All On-Premises Deployments Prior to Critical Patch Build 14136 (CVE-2025-71210, CVE-2025-71211, CVSS 9.8)",
+  "generated_date": "2026-03-04",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2025-71210",
+    "CVE-2025-71211",
+    "CVE-2025-71212",
+    "CVE-2025-71213"
+  ],
+  "tags": [
+    "trend-micro",
+    "apex-one",
+    "directory-traversal",
+    "rce",
+    "endpoint-security",
+    "enterprise"
+  ],
+  "affected_products": [
+    "Trend Micro Apex One 2019 (On-Premises, prior to Critical Patch Build 14136)",
+    "Trend Micro Apex One as a Service (Trend Vision One Endpoint - Standard Endpoint Protection, auto-mitigated)",
+    "Trend Micro Apex One for macOS (older versions)"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Trend Micro Official Security Bulletin KA-0022458",
+      "url": "https://success.trendmicro.com/en-US/solution/KA-0022458",
+      "date": "2026-02-24",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "SecurityWeek - Trend Micro Patches Critical Apex One Vulnerabilities",
+      "url": "https://www.securityweek.com/trend-micro-patches-critical-apex-one-vulnerabilities/",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "SecurityAffairs - Trend Micro Fixes Two Critical Flaws in Apex One",
+      "url": "https://securityaffairs.com/188572/security/trend-micro-fixes-two-critical-flaws-in-apex-one.html",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "GBHackers - Critical Trend Micro Apex One Vulnerabilities Expose Enterprises to RCE",
+      "url": "https://gbhackers.com/critical-trend-micro-apex-one-vulnerabilities/",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "Tenable CVE-2025-71210 Vulnerability Database Entry",
+      "url": "https://www.tenable.com/cve/CVE-2025-71210",
+      "date": "2026-02-24",
+      "type": "Research"
+    },
+    {
+      "name": "CyberPress - Critical Trend Micro Apex One Flaws Allow Remote Code Execution",
+      "url": "https://cyberpress.org/critical-trend-micro-apex-one-flaws/",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "SC Media - Trend Micro Patches Critical Apex One Bugs",
+      "url": "https://www.scworld.com/brief/trend-micro-patches-critical-apex-one-bugs",
+      "date": "2026-02-26",
+      "type": "News"
+    },
+    {
+      "name": "SOCFortress - Trend Micro Warns of Critical Apex One Code Execution Flaws",
+      "url": "https://socfortress.medium.com/trend-micro-warns-of-critical-apex-one-code-execution-flaws-dd24b0797887",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "PT Security dbugs - CVE-2025-71210 Technical Analysis",
+      "url": "https://dbugs.ptsecurity.com/vulnerability/PT-2026-21991",
+      "date": "2026-02-24",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - National Vulnerability Database CVE-2025-71210",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71210",
+      "date": "2026-02-24",
+      "type": "Government"
+    },
+    {
+      "name": "Rocket Boys Security Lab - Trend Micro Apex One Multiple Vulnerabilities Fixed",
+      "url": "https://rocket-boys.co.jp/security-measures-lab/trend-micro-apex-one-multiple-vulnerabilities-fixed-cve-2025-71210-71217/",
+      "date": "2026-02-27",
+      "type": "Research"
+    },
+    {
+      "name": "eSecurity Planet - Trend Micro Patches Critical Apex One RCE Flaws",
+      "url": "https://www.esecurityplanet.com/threats/trend-micro-patches-critical-apex-one-rce-flaws/",
+      "date": "2026-02-26",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-01-01",
+      "event": "Earlier Apex One RCE vulnerabilities (CVE-2025-54948, CVE-2025-54987) disclosed and actively exploited, establishing pattern of console RCE risk in Apex One"
+    },
+    {
+      "date": "2025-12-01",
+      "event": "Security researchers Jacky Hsieh and Charles Yang (CoreCloud Tech) working with Trend Micro's Zero Day Initiative (ZDI) discover directory traversal vulnerabilities in Apex One management console"
+    },
+    {
+      "date": "2026-02-24",
+      "event": "Trend Micro publishes comprehensive security bulletin KA-0022458 covering 8 CVEs including two critical RCE flaws (CVE-2025-71210 and CVE-2025-71211) and releases Critical Patch Build 14136"
+    },
+    {
+      "date": "2026-02-24",
+      "event": "Apex One SaaS customers automatically protected via platform-level mitigation; on-premises customers must apply patch manually"
+    },
+    {
+      "date": "2026-02-26",
+      "event": "Major security media outlets (SecurityWeek, SecurityAffairs, GBHackers, SC Media) publish warnings for Apex One on-premises users to patch urgently"
+    },
+    {
+      "date": "2026-03-02",
+      "event": "CERT-IN (Indian Computer Emergency Response Team) issues vulnerability alert to Indian enterprises using Trend Micro products"
+    },
+    {
+      "date": "2026-03-04",
+      "event": "Intelleo briefing published; no confirmed in-the-wild exploitation as of this date, but high weaponization risk due to critical CVSS score and public disclosure"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical security flaw was discovered in Trend Micro Apex One, a widely-used enterprise security product installed on millions of corporate computers to protect them from malware and cyberattacks. The vulnerability is in the Apex One management console — the web interface that IT security teams use to control and monitor protection across all company devices. The flaw allows attackers to use a technique called directory traversal to trick the console into placing malicious files outside of the safe directories where it should operate, enabling them to run any code they want on the server without ever logging in.",
+    "who_is_affected": "Organizations running Trend Micro Apex One 2019 on-premises (local server installations) using Management Server Version 14039 and below are vulnerable. Companies using Apex One as a cloud service (SaaS) were automatically protected and need no action. The vulnerability affects enterprises across all industries globally — particularly those that have not yet updated to Critical Patch Build 14136 released on February 24, 2026.",
+    "what_attackers_do": "Step 1: Attacker identifies a corporate network with an exposed Trend Micro Apex One management console by scanning for its distinctive HTTP response signature on common ports (8080, 443). Step 2: Attacker crafts an HTTP request containing path traversal sequences (../../../) targeting the file upload functionality of the management console, bypassing the intended directory restrictions. Step 3: The malicious request uploads an attacker-controlled executable file into a system directory where it can be executed by the server. Step 4: The attacker triggers execution of the uploaded file, achieving arbitrary code execution with the privileges of the management console process. Step 5: With control of the endpoint protection management server, the attacker can disable antivirus protection on all endpoints, deploy malware through the trusted update mechanism to every managed device in the organization, steal endpoint telemetry data, and establish persistent backdoors across the entire corporate network.",
+    "what_you_should_do": [
+      "Immediately apply Trend Micro Apex One Critical Patch Build 14136 to all on-premises Apex One management servers (download from the Trend Micro Customer Licensing Portal)",
+      "While patching, restrict network access to the Apex One management console to trusted administrator IP addresses only using firewall rules",
+      "Monitor HTTP access logs for the management console for directory traversal patterns (sequences containing ../ or encoded equivalents %2e%2e%2f) in any request paths",
+      "If you use Apex One as a Service (SaaS), no action is required — your deployment was automatically protected"
+    ],
+    "why_this_is_serious": "The maximum CVSS severity of 9.8 reflects that this requires no password, no user interaction, and works over the network. An endpoint security management console is an extremely high-value target because it controls the security software on every device in the organization — compromising it effectively gives attackers administrative control over all protected endpoints simultaneously. Given that earlier Apex One console vulnerabilities (CVE-2025-54948) were actively exploited, threat actors are well-practiced at targeting this attack surface."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the directory traversal vulnerability in the Apex One management console web interface, achieving code execution without authentication"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.003",
+        "technique_name": "Command and Scripting Interpreter: Windows Command Shell",
+        "description": "Uploaded malicious executables or scripts are triggered to execute arbitrary code with the privileges of the Apex One management console process"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562.001",
+        "technique_name": "Impair Defenses: Disable or Modify Tools",
+        "description": "With control of the endpoint protection management server, attackers can disable or modify security policies across all managed endpoints, removing protection before deploying malware"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1072",
+        "technique_name": "Software Deployment Tools",
+        "description": "Attackers abuse the Apex One software distribution mechanism to deploy malware as legitimate security updates to every managed endpoint in the organization"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1574.010",
+        "technique_name": "Hijack Execution Flow: ServicesFile Permissions Weakness",
+        "description": "CVE-2025-71212 allows local privilege escalation via symlink following in the Apex One scan engine, enabling low-privilege attackers to gain SYSTEM-level access on Windows endpoints"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection requires monitoring the Apex One management console web access logs for directory traversal patterns, tracking unusual file creation in system directories, and alerting on unexpected process execution from the Apex One service context.",
+    "log_sources": [
+      {
+        "source": "Apex One Management Console Web Server Logs",
+        "description": "IIS or Apache access logs for the Apex One management server — look for requests containing ../ path traversal sequences or URL-encoded equivalents (%2e%2e%2f) in the request URI",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Event Log (Security) - Process Creation (Event ID 4688)",
+        "description": "Monitor for unexpected processes spawned by the Apex One server service (TmListen.exe, ofcservice.exe) particularly cmd.exe, powershell.exe, or wscript.exe",
+        "priority": "Critical"
+      },
+      {
+        "source": "File System Monitoring (Windows Audit Object Access)",
+        "description": "Alert on new executable files (.exe, .dll, .bat, .ps1) created outside normal Apex One installation directories by the Apex One service account",
+        "priority": "High"
+      },
+      {
+        "source": "EDR/XDR Process Tree Telemetry",
+        "description": "Behavioral detection rules watching for the Apex One web server process spawning command interpreters or network utilities",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Directory traversal sequences in HTTP requests to management console",
+        "description": "Requests to the Apex One console containing ../ or URL-encoded equivalents (%2e%2e%2f, %2e%2e/) in the path portion targeting upload endpoints",
+        "log_field": "cs-uri-stem contains '../' OR cs-uri-stem contains '%2e%2e'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "New files created in Windows System32 or Apex One service directories",
+        "description": "Unexpected executable or script files created in system directories by the Apex One service process may indicate successful exploitation",
+        "log_field": "file.path contains 'System32' AND process.name IN ('ofcservice.exe','TmListen.exe') AND file.extension IN ('.exe','.dll','.bat','.ps1')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Apex One service spawning command interpreters",
+        "description": "The management console service should not spawn cmd.exe, powershell.exe, or similar shells during normal operation",
+        "log_field": "EventID=4688 AND ParentProcessName='ofcservice.exe' AND ProcessName IN ('cmd.exe','powershell.exe','wscript.exe','cscript.exe')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Sudden mass policy changes pushing to all managed endpoints",
+        "description": "An attacker with console access may push malicious policy updates or disable protection across all endpoints — alert on bulk policy changes outside change windows",
+        "log_field": "apex_one.event_type='policy_update' AND apex_one.affected_endpoints > 100",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply Trend Micro Apex One Critical Patch Build 14136",
+      "description": "Download and install Critical Patch Build 14136 on all Apex One 2019 on-premises management servers. This patch fixes all 8 CVEs including the two critical RCE vulnerabilities. SaaS customers require no action — they are already protected automatically.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Restrict Management Console Network Access Immediately",
+      "description": "Apply firewall rules to limit access to the Apex One management console (typically TCP 8080 and 443) to the specific IP addresses of authorized administrator workstations only. Block all other access while patching is in progress.",
+      "command": "netsh advfirewall firewall add rule name='Block Apex One External' protocol=TCP dir=in localport=8080,443 action=block"
+    },
+    {
+      "priority": 3,
+      "action": "Review Console Access Logs for Exploitation Indicators",
+      "description": "Examine IIS/Apache access logs for the Apex One management server for requests containing directory traversal sequences. Check for any files recently created outside the Apex One installation directory by the service account.",
+      "command": "findstr /I \"%2e%2e\" C:\\ProgramData\\Trend Micro\\AMSP\\log\\*.log"
+    },
+    {
+      "priority": 4,
+      "action": "Verify Endpoint Agent Connectivity and Policy Integrity",
+      "description": "After patching, verify that endpoint agents are still receiving policies from the patched management server and check for any unauthorized policy modifications that may have been pushed by an attacker.",
+      "command": null
+    }
+  ]
+}

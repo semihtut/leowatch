@@ -1,0 +1,268 @@
+{
+  "briefing_id": "TB-2026-04-01-002",
+  "title": "GNU InetUtils Telnetd Pre-Auth RCE CVE-2026-32746 (CVSS 9.8): 32-Year-Old LINEMODE Buffer Overflow Grants Unauthenticated Root Access — 212,000 Internet-Exposed Telnet Services at Risk, PoC Published",
+  "generated_date": "2026-04-01",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-32746"
+  ],
+  "tags": [
+    "telnet",
+    "gnu-inetutils",
+    "buffer-overflow",
+    "pre-auth",
+    "rce",
+    "iot",
+    "ics-ot",
+    "legacy-protocol"
+  ],
+  "affected_products": [
+    "GNU InetUtils telnetd all versions through 2.7",
+    "Debian Linux (inetutils-telnetd)",
+    "Ubuntu Linux (inetutils-telnetd)",
+    "RHEL / SUSE Linux Enterprise Server 12 SP5",
+    "FreeBSD, NetBSD, DragonFlyBSD",
+    "Synology NAS (DSM)",
+    "Legacy ICS/OT and embedded devices running Telnet"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "watchTowr Labs: A 32-Year-Old Bug Walks Into A Telnet Server (CVE-2026-32746)",
+      "url": "https://labs.watchtowr.com/a-32-year-old-bug-walks-into-a-telnet-server-gnu-inetutils-telnetd-cve-2026-32746/",
+      "date": "2026-03-18",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News: Critical Unpatched Telnetd Flaw CVE-2026-32746",
+      "url": "https://thehackernews.com/2026/03/critical-telnetd-flaw-cve-2026-32746.html",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs: Researchers warn of unpatched critical Telnetd flaw affecting all versions",
+      "url": "https://securityaffairs.com/189620/hacking/researchers-warn-of-unpatched-critical-telnetd-flaw-affecting-all-versions.html",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "CyCognito: Emerging Threat — GNU InetUtils LINEMODE SLC Buffer Overflow CVE-2026-32746",
+      "url": "https://www.cycognito.com/blog/emerging-threat-gnu-inetutils-telnetd-linemode-slc-buffer-overflow-cve-2026-32746/",
+      "date": "2026-03-20",
+      "type": "Research"
+    },
+    {
+      "name": "NIST NVD: CVE-2026-32746",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32746",
+      "date": "2026-03-18",
+      "type": "Government"
+    },
+    {
+      "name": "Censys Advisory: Pre-Authentication RCE in GNU InetUtils Telnetd",
+      "url": "https://censys.com/advisory/cve-2026-32746",
+      "date": "2026-03-18",
+      "type": "Research"
+    },
+    {
+      "name": "SentinelOne Vulnerability Database: CVE-2026-32746",
+      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-32746/",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "CVEReports: Pre-Authentication RCE via BSS Overflow in GNU Telnetd",
+      "url": "https://cvereports.com/reports/CVE-2026-32746",
+      "date": "2026-03-20",
+      "type": "Research"
+    },
+    {
+      "name": "CSO Online: Telnet vulnerability opens door to remote code execution as root",
+      "url": "https://www.csoonline.com/article/4147674/telnet-vulnerability-opens-door-to-remote-code-execution-as-root.html",
+      "date": "2026-03-19",
+      "type": "News"
+    },
+    {
+      "name": "Vulert Blog: Critical Unpatched Telnetd Flaw CVE-2026-32746",
+      "url": "https://vulert.com/blog/cve-2026-32746-telnetd-unauthenticated-root-rce/",
+      "date": "2026-03-20",
+      "type": "Research"
+    },
+    {
+      "name": "Industrial Cyber: Dream Security flags critical RCE in GNU InetUtils telnetd affecting ICS/OT",
+      "url": "https://industrialcyber.co/threats-attacks/dream-security-flags-critical-rce-vulnerability-in-gnu-inetutils-telnetd-exposing-ics-and-ot-systems/",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "Debian Security Tracker: CVE-2026-32746",
+      "url": "https://security-tracker.debian.org/tracker/CVE-2026-32746",
+      "date": "2026-03-18",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "SUSE Security: CVE-2026-32746",
+      "url": "https://www.suse.com/security/cve/CVE-2026-32746.html",
+      "date": "2026-03-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "GitHub PoC: CVE-2026-32746 Proof of Concept",
+      "url": "https://github.com/jeffaf/cve-2026-32746",
+      "date": "2026-03-20",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-11",
+      "event": "Israeli cybersecurity firm Dream Security discovers the buffer overflow in GNU InetUtils telnetd and reports it to maintainers"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "Public disclosure — watchTowr Labs publishes full technical analysis; Censys estimates 3,362 directly exploitable hosts exposed to the internet"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Public proof-of-concept (PoC) exploit published on GitHub by security researcher jeffaf"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Debian and SUSE publish security tracker entries; distribution patches begin shipping"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "GNU InetUtils 2.8 patch released fixing CVE-2026-32746; exploitation in the wild not yet confirmed but PoC availability significantly raises risk"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers at Israeli firm Dream Security discovered a 32-year-old bug buried in the GNU InetUtils telnet server — software that has been shipped as part of Linux and Unix distributions since the 1990s. The flaw is in the part of the telnet protocol that handles keyboard character mapping settings (called LINEMODE SLC), which is processed before a user ever types a username or password. An attacker can send a specially crafted connection request that overflows a small fixed buffer, corrupts nearby memory, and takes over the server with root-level privileges — all without any credentials. A working proof-of-concept exploit is publicly available.",
+    "who_is_affected": "Any system running the GNU InetUtils telnetd service on port 23, particularly: Linux servers (Debian, Ubuntu, RHEL, SUSE) with inetutils-telnetd installed, BSD systems (FreeBSD, NetBSD), Synology NAS devices, and critically — industrial control systems (ICS), SCADA systems, PLCs, and legacy embedded devices that still rely on Telnet for remote management. Censys identified 3,362 directly exploitable hosts; Shodan shows over 212,000 internet-facing devices with port 23 open globally.",
+    "what_attackers_do": "Step 1: Attacker scans the internet for port 23 (Telnet) using tools like Shodan or Masscan and identifies vulnerable GNU InetUtils telnetd instances. Step 2: Attacker initiates a Telnet connection to the target — no credentials are needed, as the vulnerability exists in the initial protocol negotiation phase before any login prompt appears. Step 3: During the negotiation, the attacker sends a crafted LINEMODE SLC (Set Local Characters) suboption containing more than 35 triplets, each 3 bytes long, which overflows a fixed 108-byte buffer in the add_slc() function in telnetd/slc.c. Step 4: The overflow corrupts adjacent BSS memory including the slcptr pointer used by the end_slc() function. Step 5: When telnetd calls end_slc() to finalize the SLC negotiation, it dereferences the corrupted pointer and writes attacker-controlled data to an arbitrary memory location, achieving remote code execution as root — giving the attacker full control of the server.",
+    "what_you_should_do": [
+      "Immediately disable telnetd on all systems — replace with SSH for remote access",
+      "Block port 23 at the network perimeter firewall and at host-level (iptables/ufw) for any system that cannot immediately migrate off Telnet",
+      "Audit all systems (including ICS/OT and network devices) to identify those running GNU InetUtils telnetd or any telnetd service",
+      "For systems that must retain Telnet, upgrade GNU InetUtils to version 2.8 (patch released April 1, 2026) and apply OS vendor patches from Debian, Ubuntu, SUSE immediately",
+      "Review Shodan/Censys for your organization's IP space to identify any internet-exposed Telnet services"
+    ],
+    "why_this_is_serious": "Telnet is a plaintext, insecure protocol that should have been replaced by SSH everywhere decades ago — yet it persists widely in legacy infrastructure, industrial equipment, and embedded devices that are difficult or impossible to update quickly. The combination of a public proof-of-concept exploit, 212,000 internet-exposed Telnet services, no credentials required for attack, and the fact that the vulnerable code dates back to 1994 creates extremely high mass-exploitation risk. Industrial and OT environments are particularly vulnerable because they often cannot be patched quickly and rely on Telnet for equipment management."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers send crafted LINEMODE SLC suboptions to telnetd during protocol negotiation — before any authentication — to trigger a buffer overflow and gain code execution as root on the target system"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "After achieving root-level RCE via the buffer overflow, attackers execute arbitrary shell commands to establish persistence, exfiltrate data, or pivot to adjacent systems"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1548",
+        "technique_name": "Abuse Elevation Control Mechanism",
+        "description": "telnetd typically runs as root via inetd/xinetd, meaning exploitation immediately grants the highest system privileges without requiring a separate privilege escalation step"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1046",
+        "technique_name": "Network Service Discovery",
+        "description": "Threat actors use Shodan, Censys, or active scanning to identify internet-exposed Telnet services running vulnerable GNU InetUtils telnetd versions before launching exploits"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection primarily relies on network monitoring for anomalous Telnet connection patterns — specifically malformed LINEMODE SLC suboptions during protocol negotiation — combined with inventory scanning to identify exposed port 23 services. Host-based detection should monitor for telnetd crashes, unexpected root-owned child processes, and new persistent mechanisms following Telnet connections. Many organizations should use this vulnerability as justification to audit and disable all Telnet services.",
+    "log_sources": [
+      {
+        "source": "Network IDS/IPS (Snort/Suricata)",
+        "description": "Monitor for malformed Telnet LINEMODE SLC suboptions — alert on SLC packets with more than 35 triplets or total suboption payload exceeding 108 bytes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow / NetFlow Data (port 23)",
+        "description": "Track all inbound connections to port 23 from external IP addresses; flag connections that terminate abnormally or very quickly after connection (failed exploit attempts) and connections followed by unusual outbound traffic (successful exploits)",
+        "priority": "High"
+      },
+      {
+        "source": "Host-Based Process Monitoring",
+        "description": "Monitor for telnetd crashes (core dumps) and unexpected root-owned processes spawned by telnetd that are not typical login shells",
+        "priority": "High"
+      },
+      {
+        "source": "System Authentication Logs (/var/log/auth.log)",
+        "description": "Look for successful root logins originating from Telnet sessions or unusual root activity following Telnet connections",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "LINEMODE SLC suboption payload exceeding 108 bytes in Telnet negotiation",
+        "description": "The core exploit mechanism — the add_slc() function has a fixed 108-byte buffer; any SLC suboption larger than this is a buffer overflow attempt",
+        "log_field": "proto=telnet AND suboption=LINEMODE AND slc_payload_length > 108",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Multiple rapid Telnet connection attempts from a single external IP",
+        "description": "Automated scanning and exploit tools make rapid sequential connections during reconnaissance and exploitation — high connection rates to port 23 from a single source indicate active attack",
+        "log_field": "dst_port=23 AND connection_rate > 10/minute FROM single_src_ip",
+        "severity": "High"
+      },
+      {
+        "indicator": "telnetd core dump or crash events",
+        "description": "Failed exploit attempts or exploit development activity may cause telnetd to crash — monitor for core dump files in /var/crash or similar",
+        "log_field": "process=telnetd AND event=segfault",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unexpected listening processes or new cron jobs after Telnet sessions",
+        "description": "Successful exploitation grants root — attackers typically establish persistence via new cron jobs, SSH keys, or additional listening services immediately after gaining access",
+        "log_field": "new_listener OR crontab_modification AFTER telnet_session",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Disable telnetd immediately on all internet-facing systems",
+      "description": "The safest remediation is full removal of the telnet service. Telnet is insecure by design (plaintext) and should be replaced by SSH in all environments. Disabling it eliminates the CVE-2026-32746 attack vector entirely.",
+      "command": "systemctl stop inetutils-inetd && systemctl disable inetutils-inetd && apt-get remove --purge inetutils-telnetd"
+    },
+    {
+      "priority": 2,
+      "action": "Block port 23 at network perimeter and host firewall",
+      "description": "If Telnet cannot be immediately disabled (e.g., legacy ICS/OT systems), block all inbound connections to port 23 from untrusted networks at the perimeter firewall immediately. Also apply host-level rules.",
+      "command": "iptables -I INPUT -p tcp --dport 23 -j DROP && iptables -I INPUT -p tcp --dport 23 -s <trusted_mgmt_network> -j ACCEPT"
+    },
+    {
+      "priority": 3,
+      "action": "Apply GNU InetUtils 2.8 patch and OS vendor security updates",
+      "description": "For systems that must retain Telnet access, upgrade to GNU InetUtils 2.8 (released April 1, 2026). Also apply OS-level patches: Debian DSA for inetutils-telnetd, SUSE SUSE-SU advisory, Ubuntu USN advisory as they become available.",
+      "command": "apt-get update && apt-get upgrade inetutils-telnetd"
+    },
+    {
+      "priority": 4,
+      "action": "Inventory all systems running Telnet services",
+      "description": "Conduct an internal network scan to identify all systems listening on port 23. Include ICS/OT networks, NAS devices, legacy servers, and network appliances. Any system running GNU InetUtils telnetd ≤ 2.7 is vulnerable.",
+      "command": "nmap -p 23 --open -sV <network_range> | grep telnet"
+    },
+    {
+      "priority": 5,
+      "action": "Check for internet exposure via Shodan or Censys",
+      "description": "Search your organization's IP space on Shodan (port:23) and Censys to identify any Telnet services inadvertently exposed to the internet. Any internet-exposed Telnet instance running vulnerable GNU InetUtils must be treated as highest priority.",
+      "command": null
+    }
+  ]
+}

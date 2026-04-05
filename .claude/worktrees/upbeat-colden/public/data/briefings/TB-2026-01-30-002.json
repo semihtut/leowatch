@@ -1,0 +1,277 @@
+{
+  "briefing_id": "TB-2026-01-30-002",
+  "title": "Trend Micro Apex Central Critical Unauthenticated RCE (CVE-2025-69258) - PoC Exploit Released",
+  "generated_date": "2026-01-30",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2025-69258",
+    "CVE-2025-69259",
+    "CVE-2025-69260"
+  ],
+  "tags": [
+    "Trend Micro",
+    "Apex Central",
+    "DLL hijack",
+    "RCE",
+    "endpoint-security",
+    "enterprise"
+  ],
+  "affected_products": [
+    "Trend Micro Apex Central (on-premise, Windows) - all versions below Build 7190",
+    "Trend Micro Apex Central as a Service (check vendor advisory for cloud impact)"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "Trend Micro Advisory",
+      "url": "https://success.trendmicro.com/en-US/solution/KA-0022071",
+      "date": "2026-01-07",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/01/08/trend-micro-apex-central-cve-2025-69258-rce-poc/",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/trend-micro-apex-central-rce-flaw.html",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/trend-micro-fixes-critical-rce-flaw-in-apex-central-console/",
+      "date": "2026-01-07",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs",
+      "url": "https://securityaffairs.com/186733/hacking/trend-micro-fixed-a-remote-code-execution-in-apex-central.html",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "Arctic Wolf",
+      "url": "https://arcticwolf.com/resources/blog-uk/cve-2025-69258-trend-micro-apex-central-remote-code-execution-vulnerability/",
+      "date": "2026-01-09",
+      "type": "Research"
+    },
+    {
+      "name": "WebProNews",
+      "url": "https://www.webpronews.com/trend-micro-patches-critical-rce-vulnerability-in-apex-central-cve-2025-69258/",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "CybersecurityNews",
+      "url": "https://cybersecuritynews.com/trend-micro-apex-central-vulnerabilities/",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "CyberPress",
+      "url": "https://cyberpress.org/trend-micro-apex-central-vulnerabilities-enable-remote-code-execution-attacks/",
+      "date": "2026-01-08",
+      "type": "News"
+    },
+    {
+      "name": "Rescana",
+      "url": "https://www.rescana.com/post/critical-unauthenticated-rce-vulnerability-cve-2025-69258-in-trend-micro-apex-central-on-prem-wind",
+      "date": "2026-01-09",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable Research",
+      "url": "https://www.tenable.com/security/research/tra-2026-01",
+      "date": "2026-01-07",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-08",
+      "event": "Tenable discovers and reports CVE-2025-69258, CVE-2025-69259, and CVE-2025-69260 to Trend Micro"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "Trend Micro releases Critical Patch Build 7190 to address all three vulnerabilities"
+    },
+    {
+      "date": "2026-01-07",
+      "event": "Tenable publishes technical details and proof-of-concept exploit code for CVE-2025-69258"
+    },
+    {
+      "date": "2026-01-08",
+      "event": "Multiple security outlets report on the vulnerability and PoC availability"
+    },
+    {
+      "date": "2026-01-09",
+      "event": "Arctic Wolf issues security bulletin flagging CVE-2025-69258 as high priority"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Tenable discovered a critical unauthenticated remote code execution vulnerability (CVE-2025-69258, CVSS 9.8) in Trend Micro Apex Central, an on-premise enterprise endpoint security management console running on Windows. The flaw exists in the MsgReceiver.exe component, which listens on TCP port 20001. An unauthenticated attacker can send a specially crafted message with the opcode 0x0a8d (SC_INSTALL_HANDLER_REQUEST) to trigger a LoadLibraryEX call that loads a malicious DLL, resulting in arbitrary code execution as SYSTEM. Tenable reported the vulnerability in August 2025 and published a full proof-of-concept exploit on January 7, 2026, the same day Trend Micro released the patch (Build 7190). Two additional vulnerabilities were also disclosed: CVE-2025-69259 and CVE-2025-69260, both denial-of-service flaws. No confirmed in-the-wild exploitation has been reported yet, but the availability of a public PoC and historical precedent (CVE-2022-26871 in Apex Central was actively exploited) makes exploitation highly likely.",
+    "who_is_affected": "Organizations running Trend Micro Apex Central on-premise on Windows with versions below Build 7190. Apex Central is widely deployed in enterprises as a centralized management console for Trend Micro endpoint security products. Any organization with Apex Central's MsgReceiver service (TCP port 20001) reachable from untrusted networks is at immediate risk. This is most critical for environments where the management console is exposed to the internet or accessible from less-trusted network segments.",
+    "what_attackers_do": "Step 1: Scan for Trend Micro Apex Central instances by probing TCP port 20001, where the MsgReceiver.exe service listens. Step 2: Send a specially crafted network message with opcode 0x0a8d (SC_INSTALL_HANDLER_REQUEST) to the MsgReceiver service without requiring any authentication. Step 3: The crafted message triggers a LoadLibraryEX call in MsgReceiver.exe, causing it to load an attacker-controlled DLL via DLL search order hijacking. Step 4: The malicious DLL executes with SYSTEM privileges, granting the attacker full control over the Apex Central server. Step 5: From the compromised Apex Central console, the attacker can deploy commands to all managed endpoints, disable security protections, exfiltrate security telemetry, or use the management infrastructure as a pivot point for lateral movement across the enterprise.",
+    "what_you_should_do": [
+      "Immediately apply Trend Micro Apex Central Critical Patch Build 7190",
+      "Verify that TCP port 20001 (MsgReceiver) is not exposed to the internet or untrusted networks",
+      "Implement network segmentation to restrict access to the Apex Central management server to authorized administrator workstations only",
+      "Review Apex Central server logs for any suspicious connections to TCP port 20001 from unexpected source IPs",
+      "Check for unauthorized DLL files in the Apex Central installation directory and Windows system directories",
+      "Monitor for unexpected SYSTEM-level process creation on the Apex Central server",
+      "If patching is delayed, consider firewall rules to block external access to TCP port 20001 as a temporary mitigation",
+      "Review historical Apex Central access patterns for indicators of compromise given the PoC has been public since January 7"
+    ],
+    "why_this_is_serious": "This is an unauthenticated remote code execution vulnerability with a CVSS score of 9.8 that executes as SYSTEM, requiring no user interaction or credentials. A public proof-of-concept exploit is available, dramatically lowering the barrier for exploitation. Apex Central is a centralized security management platform -- compromising it gives attackers control over the entire endpoint security infrastructure, the ability to disable protections across all managed endpoints, and access to security telemetry that reveals the organization's defensive capabilities. Trend Micro Apex Central has been targeted before: CVE-2022-26871 was actively exploited in the wild, establishing clear historical precedent that threat actors target this platform. The combination of a public PoC, SYSTEM-level execution, and the strategic value of the target makes rapid patching essential."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploiting the unauthenticated MsgReceiver.exe service on TCP port 20001 to gain initial access to the Apex Central server"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1574.001",
+        "technique_name": "Hijack Execution Flow: DLL Search Order Hijacking",
+        "description": "Sending opcode 0x0a8d (SC_INSTALL_HANDLER_REQUEST) to trigger LoadLibraryEX to load an attacker-controlled DLL via DLL search order hijacking"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Using the loaded malicious DLL to execute arbitrary commands on the compromised Apex Central server as SYSTEM"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "The exploit immediately achieves SYSTEM-level privileges through the MsgReceiver.exe service context, providing the highest level of access on the Windows server"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor TCP port 20001 for anomalous connection patterns, watch for unexpected DLL loading by MsgReceiver.exe, and alert on SYSTEM-level process creation originating from the Apex Central server. Network-level detection of the exploit opcode and host-based detection of DLL hijacking are both viable approaches.",
+    "log_sources": [
+      {
+        "source": "Network Firewall / IDS Logs",
+        "description": "Connection logs for TCP port 20001 traffic to the Apex Central server, including source IPs and connection frequency",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Event Logs (System & Security)",
+        "description": "Service events, process creation (Event ID 4688), and DLL loading events on the Apex Central server",
+        "priority": "Critical"
+      },
+      {
+        "source": "Sysmon Logs",
+        "description": "Detailed process creation (Event ID 1), DLL loading (Event ID 7), and network connection (Event ID 3) events for MsgReceiver.exe",
+        "priority": "Critical"
+      },
+      {
+        "source": "EDR Telemetry",
+        "description": "Process lineage, DLL load events, and behavioral anomalies on the Apex Central host",
+        "priority": "High"
+      },
+      {
+        "source": "Apex Central Application Logs",
+        "description": "Internal application logs that may record MsgReceiver activity and error conditions",
+        "priority": "Medium"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Unexpected connections to TCP port 20001",
+        "description": "Network connections to the MsgReceiver.exe listening port from IP addresses outside the expected management subnet or from the internet",
+        "log_field": "Firewall logs: dst_port=20001 AND src_ip NOT IN (approved_management_subnets)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual DLL loading by MsgReceiver.exe",
+        "description": "MsgReceiver.exe loading DLLs from unexpected directories such as temp folders, user-writable paths, or network shares",
+        "log_field": "Sysmon Event ID 7: Image='*\\MsgReceiver.exe' AND ImageLoaded NOT LIKE '*\\Trend Micro\\*'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "SYSTEM-level child processes from MsgReceiver.exe",
+        "description": "New processes spawned by MsgReceiver.exe, particularly command interpreters (cmd.exe, powershell.exe) or other unexpected executables",
+        "log_field": "Sysmon Event ID 1: ParentImage='*\\MsgReceiver.exe' AND (Image='*\\cmd.exe' OR Image='*\\powershell.exe' OR Image='*\\rundll32.exe')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Network traffic with opcode 0x0a8d",
+        "description": "Network payload inspection for the SC_INSTALL_HANDLER_REQUEST message opcode used in the exploit",
+        "log_field": "IDS/IPS: alert tcp any any -> $APEX_CENTRAL_IP 20001 (content:\"|0a 8d|\"; msg:\"CVE-2025-69258 Exploit Attempt\";)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "New or modified DLLs in Apex Central directory",
+        "description": "File creation or modification events for DLL files in the Apex Central installation directory or Windows system directories on the server",
+        "log_field": "Sysmon Event ID 11: TargetFilename='*\\Trend Micro\\Apex Central\\*\\.dll' OR TargetFilename='*\\System32\\*.dll'",
+        "severity": "High"
+      },
+      {
+        "indicator": "High-volume connections to port 20001",
+        "description": "Scanning activity or exploitation attempts indicated by rapid successive connections from the same source to TCP port 20001",
+        "log_field": "Firewall logs: dst_port=20001 GROUP BY src_ip HAVING connection_count > 10 WITHIN 60s",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply Critical Patch Build 7190",
+      "description": "Immediately download and install the Trend Micro Apex Central Critical Patch Build 7190 from the Trend Micro Download Center to remediate CVE-2025-69258, CVE-2025-69259, and CVE-2025-69260",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Block External Access to TCP Port 20001",
+      "description": "Configure host-based and network firewalls to block all external and untrusted network access to TCP port 20001 on the Apex Central server",
+      "command": "netsh advfirewall firewall add rule name=\"Block External MsgReceiver\" dir=in action=block protocol=TCP localport=20001 remoteip=any"
+    },
+    {
+      "priority": 3,
+      "action": "Allow Only Authorized Management IPs",
+      "description": "Create a firewall allow rule for TCP port 20001 restricted to authorized management workstation IP addresses only",
+      "command": "netsh advfirewall firewall add rule name=\"Allow MsgReceiver Mgmt\" dir=in action=allow protocol=TCP localport=20001 remoteip=<authorized_mgmt_subnet>"
+    },
+    {
+      "priority": 4,
+      "action": "Audit for Unauthorized DLLs",
+      "description": "Check the Apex Central installation directory and system directories for any unexpected or recently modified DLL files that may indicate prior exploitation",
+      "command": "forfiles /P \"C:\\Program Files\\Trend Micro\\Apex Central\" /S /M *.dll /D +01/01/2026 /C \"cmd /c echo @path @fdate @ftime\""
+    },
+    {
+      "priority": 5,
+      "action": "Review Network Connections to Port 20001",
+      "description": "Examine current and historical connections to TCP port 20001 for any unauthorized source IP addresses",
+      "command": "netstat -an | findstr :20001"
+    },
+    {
+      "priority": 6,
+      "action": "Check for Anomalous SYSTEM Processes",
+      "description": "Review running processes on the Apex Central server for unexpected SYSTEM-level processes or child processes of MsgReceiver.exe",
+      "command": "wmic process where \"ParentProcessId=(wmic process where name='MsgReceiver.exe' get ProcessId /value)\" get Name,ProcessId,CommandLine"
+    },
+    {
+      "priority": 7,
+      "action": "Enable Enhanced Logging",
+      "description": "Deploy Sysmon or enable advanced audit policies on the Apex Central server to capture DLL loading events, process creation, and network connections for ongoing monitoring",
+      "command": null
+    }
+  ]
+}

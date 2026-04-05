@@ -1,0 +1,307 @@
+{
+  "briefing_id": "TB-2026-02-20-004",
+  "title": "Shadow Campaigns: State-Backed APT Group TGR-STA-1030 Conducts Massive Global Cyber Espionage Operation Targeting 155 Countries, Breaching 70+ Government and Critical Infrastructure Organizations Using ShadowGuard eBPF Rootkit and Diaoyu Loader",
+  "generated_date": "2026-02-20",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.6,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "apt",
+    "espionage",
+    "china-nexus",
+    "critical-infrastructure",
+    "government",
+    "rootkit",
+    "ebpf",
+    "nation-state"
+  ],
+  "affected_products": [
+    "Government ministries and agencies worldwide (37 countries confirmed breached)",
+    "Critical infrastructure operators (telecommunications, energy, water)",
+    "Financial institutions and central banks",
+    "Aerospace and defense contractors",
+    "Mining and natural resources companies",
+    "Linux servers and infrastructure (targeted by ShadowGuard eBPF rootkit)",
+    "SAP NetWeaver, Microsoft Exchange, D-Link routers, Windows systems (initial access vectors)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "Unit 42 (Palo Alto Networks) - The Shadow Campaigns: Uncovering Global Espionage",
+      "url": "https://unit42.paloaltonetworks.com/shadow-campaigns-uncovering-global-espionage/",
+      "date": "2026-02-05",
+      "type": "Research"
+    },
+    {
+      "name": "BleepingComputer - State actor targets 155 countries in Shadow Campaigns espionage op",
+      "url": "https://www.bleepingcomputer.com/news/security/state-actor-targets-155-countries-in-shadow-campaigns-espionage-op/",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "The Hacker News - Asian State-Backed Group TGR-STA-1030 Breaches 70 Government Infrastructure Entities",
+      "url": "https://thehackernews.com/2026/02/asian-state-backed-group-tgr-sta-1030.html",
+      "date": "2026-02-06",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Cyberspy Group Hacked Governments and Critical Infrastructure in 37 Countries",
+      "url": "https://www.securityweek.com/cyberspy-group-hacked-governments-and-critical-infrastructure-in-37-countries/",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity Dive - Asian government espionage campaign breached critical infrastructure in 37 countries",
+      "url": "https://www.cybersecuritydive.com/news/asian-governments-espionage-campaign-breached-critical-infrastructure-in-3/811472/",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Asia-based spies hacked 37 countries critical networks",
+      "url": "https://www.theregister.com/2026/02/05/asia_government_spies_hacked_37_critical_networks/",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "The Record (Recorded Future News) - Researchers uncover vast cyberespionage operation targeting dozens of governments",
+      "url": "https://therecord.media/research-cyber-espionage-targeting-dozens-worldwide",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online - New APT group breached gov and critical infrastructure orgs in 37 countries",
+      "url": "https://www.csoonline.com/article/4128378/new-apt-group-breached-gov-and-critical-infrastructure-orgs-in-37-countries.html",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "Security Boulevard - Threat Group Running Espionage Operations Against Dozens of Governments",
+      "url": "https://securityboulevard.com/2026/02/threat-group-running-espionage-operations-against-dozens-of-governments/",
+      "date": "2026-02-05",
+      "type": "News"
+    },
+    {
+      "name": "SecurityOnline - JackMa and ShadowGuard: TGR-STA-1030 Spies on 37 Nations via Linux Rootkit",
+      "url": "https://securityonline.info/jackma-shadowguard-tgr-sta-1030-spies-on-37-nations-via-linux-rootkit/",
+      "date": "2026-02-08",
+      "type": "Research"
+    },
+    {
+      "name": "PolySwarm Blog - Shadow Campaigns Show Evidence of Global Espionage Using ShadowGuard Rootkit",
+      "url": "https://blog.polyswarm.io/shadow-campaigns-show-evidence-of-global-espionage-using-shadowguard-rootkit",
+      "date": "2026-02-13",
+      "type": "Research"
+    },
+    {
+      "name": "Industrial Cyber - Unit 42 identifies TGR-STA-1030 targeting critical infrastructure and government networks",
+      "url": "https://industrialcyber.co/ransomware/unit-42-identifies-tgr-sta-1030-cyber-espionage-group-targeting-critical-infrastructure-government-networks/",
+      "date": "2026-02-06",
+      "type": "News"
+    },
+    {
+      "name": "CyberInsider - Global espionage operation Shadow Campaigns breaches 70 orgs in 37 countries",
+      "url": "https://cyberinsider.com/global-espionage-operation-shadow-campaigns-breaches-70-orgs-in-37-countries/",
+      "date": "2026-02-06",
+      "type": "News"
+    },
+    {
+      "name": "Field Effect - Global espionage operation employs eBPF rootkit targeting Linux systems",
+      "url": "https://fieldeffect.com/blog/global-espionage-operation-ebpf-rootkit-linux-systems",
+      "date": "2026-02-06",
+      "type": "Research"
+    },
+    {
+      "name": "ThaiCERT - Shadow Campaigns APT Espionage Operation Targets 155 Countries Worldwide",
+      "url": "https://www.thaicert.or.th/en/2026/02/09/shadow-campaigns-apt-espionage-operation-targets-155-countries-worldwide/",
+      "date": "2026-02-09",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-01-01",
+      "event": "TGR-STA-1030 begins initial reconnaissance and exploitation operations, scanning infrastructure across 155 countries"
+    },
+    {
+      "date": "2024-06-15",
+      "event": "First confirmed breaches of government ministries and critical infrastructure operators detected in retrospective analysis"
+    },
+    {
+      "date": "2025-03-01",
+      "event": "Group transitions from Cobalt Strike to VShell command-and-control framework to evade improved detection signatures"
+    },
+    {
+      "date": "2025-09-01",
+      "event": "ShadowGuard eBPF rootkit deployed on compromised Linux servers, providing kernel-level stealth and persistence"
+    },
+    {
+      "date": "2026-02-05",
+      "event": "Unit 42 (Palo Alto Networks) publishes comprehensive report exposing Shadow Campaigns, revealing 70+ breached organizations across 37 countries"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Palo Alto Networks Unit 42 research team uncovered one of the largest state-sponsored cyber espionage operations ever documented, dubbed Shadow Campaigns. The operation is conducted by a threat group tracked as TGR-STA-1030 (also linked to UNC6619), believed to be backed by a nation-state in Asia with strong indicators pointing to China. Since January 2024, the group has scanned infrastructure across 155 countries and successfully breached over 70 organizations in 37 countries, including government ministries, law enforcement agencies, critical infrastructure operators, telecommunications providers, and financial institutions. The attackers use an arsenal of custom tools including the Diaoyu loader, the ShadowGuard eBPF rootkit that hides at the Linux kernel level, and multiple command-and-control frameworks including Cobalt Strike and VShell.",
+    "who_is_affected": "Government agencies and ministries in at least 37 countries worldwide, with particular focus on developing nations in Southeast Asia, Africa, the Middle East, and South America. Critical infrastructure operators including telecommunications companies, energy utilities, and water systems. Financial institutions and central banks. Aerospace and defense contractors. Mining and natural resources companies - especially those in regions with strategic mineral deposits. Any organization running internet-facing SAP NetWeaver, Microsoft Exchange, D-Link routers, or unpatched Windows servers is at heightened risk, as these are the primary initial access vectors used by TGR-STA-1030.",
+    "what_attackers_do": "Step 1: TGR-STA-1030 conducts massive reconnaissance scanning across 155 countries, identifying internet-facing systems with known vulnerabilities in SAP NetWeaver, Microsoft Exchange, D-Link routers, and Windows servers, building a target database of exploitable infrastructure. Step 2: The attackers gain initial access by exploiting 15+ known vulnerabilities in these products, or through targeted phishing campaigns delivering malicious ZIP archives hosted on Mega.nz file sharing. Step 3: Once inside, the Diaoyu loader deploys multiple tools including Behinder, Neo-reGeorg, and Godzilla web shells for persistent web-based access, while also deploying Cobalt Strike and VShell command-and-control implants for direct system control. Step 4: On critical Linux servers, the group installs ShadowGuard, a sophisticated eBPF (extended Berkeley Packet Filter) rootkit that operates at the kernel level, hiding malicious processes, network connections, and files from all user-space security tools and system administrators. Step 5: The attackers conduct long-term intelligence collection, exfiltrating sensitive government documents, diplomatic communications, critical infrastructure operational data, and strategic economic information back to their handlers through encrypted channels, maintaining persistent access for months to years.",
+    "what_you_should_do": [
+      "Immediately patch all internet-facing SAP NetWeaver, Microsoft Exchange, and D-Link router instances to the latest versions; these are the primary exploitation vectors",
+      "Hunt for indicators of compromise including Diaoyu loader, ShadowGuard rootkit, and known TGR-STA-1030 C2 infrastructure on your network",
+      "Deploy eBPF-aware monitoring tools on Linux servers to detect ShadowGuard rootkit activity that traditional security tools cannot see",
+      "Review and restrict inbound connections from China Mobile IP ranges and other known TGR-STA-1030 infrastructure blocks",
+      "Conduct thorough log review of web server access logs for Behinder, Neo-reGeorg, and Godzilla web shell indicators"
+    ],
+    "why_this_is_serious": "Shadow Campaigns represents one of the most far-reaching state-sponsored espionage operations ever publicly documented, rivaling the scope of APT campaigns like Salt Typhoon and Volt Typhoon. The scale alone is staggering: 155 countries scanned, 70+ organizations confirmed breached across 37 countries. The ShadowGuard eBPF rootkit is particularly concerning because it operates at the Linux kernel level, making it invisible to virtually all user-space security tools including EDR, antivirus, and system utilities like ps, netstat, and ls. This means compromised organizations may have no idea they are breached even with modern security tooling in place. The targeting of government ministries and critical infrastructure suggests strategic intelligence collection objectives that could affect national security, economic policy, and diplomatic relations for the affected nations. The operation has been running for over a year, meaning the attackers have had extensive time to exfiltrate sensitive data."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Exploits 15+ known vulnerabilities in SAP NetWeaver, Microsoft Exchange, D-Link routers, and Windows servers to gain initial foothold in target networks"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.001",
+        "technique_name": "Phishing: Spearphishing Attachment",
+        "description": "Delivers malicious ZIP archives hosted on Mega.nz through targeted phishing emails to gain access where direct exploitation is not possible"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.004",
+        "technique_name": "Command and Scripting Interpreter: Unix Shell",
+        "description": "Executes commands through deployed web shells (Behinder, Godzilla, Neo-reGeorg) and C2 implants on compromised Linux and Windows systems"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1505.003",
+        "technique_name": "Server Software Component: Web Shell",
+        "description": "Deploys Behinder, Neo-reGeorg, and Godzilla web shells on compromised web servers for persistent remote access through legitimate web traffic"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1014",
+        "technique_name": "Rootkit",
+        "description": "Deploys ShadowGuard eBPF rootkit on Linux servers that hooks kernel functions to hide malicious processes, files, and network connections from all user-space monitoring tools"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1071.001",
+        "technique_name": "Application Layer Protocol: Web Protocols",
+        "description": "Uses Cobalt Strike, VShell, Havoc, SparkRat, and Sliver C2 frameworks over HTTPS for encrypted command-and-control communications that blend with legitimate web traffic"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Collects sensitive government documents, diplomatic communications, infrastructure operational data, and strategic intelligence from compromised systems"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Exfiltrates collected intelligence through encrypted C2 channels, with data staged and compressed before exfiltration to minimize detection"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection requires a multi-layered approach combining vulnerability scanning for initial access vectors, web shell detection, eBPF-level monitoring for the ShadowGuard rootkit, and network traffic analysis for C2 communications. Traditional endpoint detection tools may not detect the eBPF rootkit, requiring specialized kernel-level monitoring.",
+    "log_sources": [
+      {
+        "source": "Web Server Access Logs",
+        "description": "Monitor for indicators of Behinder, Neo-reGeorg, and Godzilla web shell access patterns including unusual POST requests to JSP/ASPX/PHP files and encoded command payloads",
+        "priority": "Critical"
+      },
+      {
+        "source": "Linux Kernel Audit Logs",
+        "description": "Enable eBPF program auditing (bpftool) to detect unauthorized eBPF programs loaded into the kernel that may indicate ShadowGuard rootkit installation",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow and DNS Logs",
+        "description": "Monitor for connections to known TGR-STA-1030 C2 infrastructure, unusual outbound HTTPS traffic patterns, and DNS queries to suspicious domains used for C2",
+        "priority": "Critical"
+      },
+      {
+        "source": "Vulnerability Scanner",
+        "description": "Scan all internet-facing infrastructure for unpatched SAP NetWeaver, Microsoft Exchange, D-Link, and Windows vulnerabilities exploited by TGR-STA-1030",
+        "priority": "High"
+      },
+      {
+        "source": "EDR/XDR Telemetry",
+        "description": "Monitor for Cobalt Strike, VShell, Havoc, SparkRat, and Sliver beacon behaviors including sleep patterns, named pipes, and process injection",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "ShadowGuard eBPF rootkit loaded in kernel",
+        "description": "Unauthorized eBPF programs attached to kernel tracepoints or kprobes that intercept system calls to hide processes, files, and network connections",
+        "log_field": "bpftool prog list | grep -v known_programs",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Behinder/Godzilla web shell traffic patterns",
+        "description": "HTTP POST requests with AES-encrypted payloads to unexpected JSP, ASPX, or PHP files, typically with fixed content-length patterns",
+        "log_field": "http_method='POST' AND uri_extension IN ('.jsp', '.aspx', '.php') AND response_code=200 AND content_type='application/octet-stream'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Cobalt Strike or VShell beacon activity",
+        "description": "Periodic HTTPS callbacks with consistent timing intervals (jitter), typically to cloud-hosted infrastructure or compromised legitimate domains",
+        "log_field": "outbound_https=true AND interval_consistency > 0.8 AND dst NOT IN (known_services)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Exploitation of known initial access vulnerabilities",
+        "description": "Attempts to exploit SAP NetWeaver, Microsoft Exchange ProxyShell/ProxyLogon, or D-Link router vulnerabilities from external IP addresses",
+        "log_field": "src_zone='external' AND attack_signature IN ('SAP_exploit', 'Exchange_ProxyShell', 'DLink_RCE')",
+        "severity": "High"
+      },
+      {
+        "indicator": "Mega.nz file download from phishing",
+        "description": "Users downloading ZIP archives from mega.nz domains following receipt of targeted phishing emails",
+        "log_field": "url LIKE '%mega.nz%' AND file_extension='.zip' AND referrer='email_client'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch all internet-facing systems for known exploited vulnerabilities",
+      "description": "Immediately update SAP NetWeaver, Microsoft Exchange, D-Link routers, and Windows Server instances to the latest security patches. TGR-STA-1030 exploits 15+ known vulnerabilities for initial access - closing these gaps is the highest priority.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Hunt for web shells on all web servers",
+      "description": "Scan all web servers for indicators of Behinder, Neo-reGeorg, and Godzilla web shells. Check for recently modified or newly created JSP, ASPX, and PHP files. Compare file hashes against known web shell signatures.",
+      "command": "find /var/www -name '*.jsp' -o -name '*.aspx' -o -name '*.php' -newer /var/www/index.html -ls"
+    },
+    {
+      "priority": 3,
+      "action": "Audit eBPF programs on Linux servers",
+      "description": "Check all Linux servers for unauthorized eBPF programs that may indicate the ShadowGuard rootkit. Any eBPF program not associated with known legitimate software should be investigated immediately.",
+      "command": "bpftool prog list && bpftool map list"
+    },
+    {
+      "priority": 4,
+      "action": "Review network traffic for C2 indicators",
+      "description": "Analyze network flow data for periodic HTTPS beacons with consistent callback intervals, connections to cloud infrastructure with low reputation scores, and traffic to known Cobalt Strike/VShell C2 profiles.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Brief leadership on state-sponsored threat",
+      "description": "Inform senior leadership and relevant government agencies about the Shadow Campaigns threat. Organizations in government, critical infrastructure, telecommunications, finance, and mining sectors should consider this a high-priority threat. Engage with national CERT if you suspect compromise.",
+      "command": null
+    }
+  ]
+}

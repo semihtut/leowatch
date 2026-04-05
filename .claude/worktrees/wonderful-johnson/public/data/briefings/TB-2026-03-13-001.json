@@ -1,0 +1,279 @@
+{
+  "briefing_id": "TB-2026-03-13-001",
+  "title": "n8n Workflow Automation Platform Critical RCE via Expression Injection Exploited in the Wild: CISA KEV Added with March 25 Federal Deadline (CVE-2025-68613)",
+  "generated_date": "2026-03-13",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.9,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-03-25"
+  },
+  "cves": [
+    "CVE-2025-68613"
+  ],
+  "tags": [
+    "n8n",
+    "workflow-automation",
+    "rce",
+    "expression-injection",
+    "cisa-kev",
+    "nodejs",
+    "automation"
+  ],
+  "affected_products": [
+    "n8n versions 0.211.0 through 1.120.3",
+    "n8n versions 1.121.0 (fixed in 1.121.1)",
+    "n8n cloud and self-hosted deployments"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "Orca Security - CVE-2025-68613 n8n RCE Vulnerability Analysis",
+      "url": "https://orca.security/resources/blog/cve-2025-68613-n8n-rce-vulnerability/",
+      "date": "2025-12-22",
+      "type": "Research"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog - CVE-2025-68613",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-03-11",
+      "type": "Government"
+    },
+    {
+      "name": "GitHub Advisory Database - GHSA-v98v-ff95-f3cp",
+      "url": "https://github.com/advisories/GHSA-v98v-ff95-f3cp",
+      "date": "2025-12-19",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2025-68613",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-68613",
+      "date": "2025-12-22",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - CISA Flags Actively Exploited n8n RCE Vulnerability",
+      "url": "https://thehackernews.com/2026/03/cisa-flags-actively-exploited-n8n-rce.html",
+      "date": "2026-03-11",
+      "type": "News"
+    },
+    {
+      "name": "The Register - CISA Orders Feds to Patch n8n RCE",
+      "url": "https://www.theregister.com/2026/03/12/cisa_n8n_rce/",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - CISA Orders Feds to Patch n8n RCE Flaw Exploited in Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-n8n-rce-flaw-exploited-in-attacks/",
+      "date": "2026-03-11",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - CISA Adds n8n Flaw to Known Exploited Vulnerabilities Catalog",
+      "url": "https://securityaffairs.com/189326/security/u-s-cisa-adds-a-flaw-in-n8n-to-its-known-exploited-vulnerabilities-catalog.html",
+      "date": "2026-03-12",
+      "type": "News"
+    },
+    {
+      "name": "Tenable - CVE-2025-68613",
+      "url": "https://www.tenable.com/cve/CVE-2025-68613",
+      "date": "2025-12-22",
+      "type": "Research"
+    },
+    {
+      "name": "Censys - CVE-2025-68613 Advisory",
+      "url": "https://censys.com/advisory/cve-2025-68613/",
+      "date": "2025-12-22",
+      "type": "Research"
+    },
+    {
+      "name": "Secure Layer 7 - CVE-2025-68613 n8n RCE Exploitation",
+      "url": "https://blog.securelayer7.net/cve-2025-68613-n8n-rce-exploitation/",
+      "date": "2025-12-22",
+      "type": "Research"
+    },
+    {
+      "name": "IONIX - CVE-2025-68613 Critical RCE via n8n Expression Injection",
+      "url": "https://www.ionix.io/blog/cve-2025-68613-critical-rce-n8n-expression-injection/",
+      "date": "2025-12-22",
+      "type": "Research"
+    },
+    {
+      "name": "Resecurity - CVE-2025-68613 Remote Code Execution via Expression Injection in n8n",
+      "url": "https://www.resecurity.com/blog/article/cve-2025-68613-remote-code-execution-via-expression-injection-in-n8n-2",
+      "date": "2025-12-22",
+      "type": "Research"
+    },
+    {
+      "name": "SOCRadar - CVE-2025-68613 RCE n8n Workflow Automation",
+      "url": "https://socradar.io/blog/cve-2025-68613-rce-n8n-workflow-automation/",
+      "date": "2025-12-22",
+      "type": "Research"
+    },
+    {
+      "name": "Penligent Labs - CVE-2025-68613 Authenticated Expression Injection RCE in n8n",
+      "url": "https://www.penligent.ai/hackinglabs/cve-2025-68613-authenticated-expression-injection-rce-in-n8n-cwe-913-whats-affected-what-to-patch-and-how-to-contain-it/",
+      "date": "2025-12-22",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-19",
+      "event": "Vulnerability initially disclosed in GitHub Advisory Database (GHSA-v98v-ff95-f3cp)"
+    },
+    {
+      "date": "2025-12-22",
+      "event": "Censys identifies 103,476 potentially vulnerable n8n instances; multiple security research blogs publish technical analyses and PoC exploit code"
+    },
+    {
+      "date": "2025-12-22",
+      "event": "n8n releases patched versions 1.120.4, 1.121.1, and 1.122.0"
+    },
+    {
+      "date": "2026-03-11",
+      "event": "CISA adds CVE-2025-68613 to Known Exploited Vulnerabilities (KEV) catalog confirming active exploitation in the wild"
+    },
+    {
+      "date": "2026-03-12",
+      "event": "Major security news outlets report on CISA KEV addition; public PoC exploits widely available"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "CISA mandatory patch deadline for Federal Civilian Executive Branch (FCEB) agencies under BOD 22-01"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical vulnerability was discovered in n8n, a popular open-source workflow automation platform used by thousands of organizations. The flaw allows users with a basic account to escape the platform's security sandbox and execute any command directly on the server. Attackers can use this to take full control of the server hosting n8n and access everything connected to it. CISA has confirmed active exploitation and ordered US federal agencies to patch by March 25, 2026.",
+    "who_is_affected": "Any organization or individual running a self-hosted n8n instance on versions 0.211.0 through 1.120.3 or 1.121.0. This includes enterprises automating business workflows, developers running n8n for CI/CD integrations, and organizations connecting n8n to internal databases, APIs, and services. Over 103,000 potentially vulnerable instances were identified online as of late December 2025.",
+    "what_attackers_do": "Step 1: Attacker obtains or creates a valid n8n user account (either through credential theft, open registration, or social engineering). Step 2: Attacker accesses the workflow editor and creates or edits a workflow with a malicious JavaScript expression such as process.mainModule.require('child_process').execSync('command'). Step 3: The n8n expression engine evaluates the injected code without proper sandboxing, allowing access to Node.js global objects including the process object. Step 4: The malicious expression executes arbitrary system commands with the privileges of the n8n process. Step 5: Attacker achieves full remote code execution on the server, gains access to all secrets and API keys stored in n8n environment variables, modifies or backdoors workflows, and pivots laterally to all systems connected to n8n.",
+    "what_you_should_do": [
+      "Immediately update n8n to version 1.120.4, 1.121.1, or 1.122.0 or later",
+      "Restrict workflow creation and editing permissions to trusted users only; disable open/public registration",
+      "Rotate all API keys, credentials, and secrets stored in or accessible by n8n following the patch",
+      "Review n8n logs for suspicious workflow creation events or unexpected system-level commands since December 2025",
+      "Implement network segmentation to limit what n8n servers can reach internally"
+    ],
+    "why_this_is_serious": "n8n serves as a central hub connecting dozens or hundreds of internal and external services in many organizations. Compromising n8n gives attackers visibility into and access to every system it orchestrates — databases, APIs, cloud services, internal tools. With a CVSS score of 9.9 and over 100,000 exposed instances, combined with publicly available exploit code and confirmed active exploitation, this vulnerability poses an immediate and high-impact threat. Federal agencies face a mandatory March 25 deadline."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the CVE-2025-68613 expression injection flaw in n8n to gain initial access to the server running the workflow automation platform"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.007",
+        "technique_name": "Command and Scripting Interpreter: JavaScript",
+        "description": "Malicious JavaScript expressions are injected into n8n workflow definitions and executed by the Node.js runtime without proper sandboxing, allowing arbitrary command execution"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials in Files",
+        "description": "Attackers access n8n environment variables and configuration files containing API keys, database passwords, and service credentials stored for workflow integrations"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1199",
+        "technique_name": "Trusted Relationship",
+        "description": "Since n8n acts as a trusted integration hub, compromising it enables attackers to abuse established trust relationships to access connected databases, APIs, and cloud services"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1098",
+        "technique_name": "Account Manipulation",
+        "description": "Attackers can modify existing n8n workflows or create new backdoor workflows to maintain persistent access and code execution capability"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on monitoring n8n workflow API endpoints for suspicious expression content, tracking child process spawning from the n8n process, and alerting on unexpected outbound network connections. Network-level inspection of POST requests to n8n workflow endpoints for known injection patterns is the most reliable early-detection method.",
+    "log_sources": [
+      {
+        "source": "n8n Application Logs",
+        "description": "Monitor workflow creation/modification events, expression evaluation errors, and authentication events in n8n's own log output",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Application Firewall / Reverse Proxy Logs",
+        "description": "Inspect HTTP POST request bodies to /rest/workflows and workflow execution endpoints for JavaScript injection patterns like constructor.constructor, process.mainModule, child_process, execSync",
+        "priority": "Critical"
+      },
+      {
+        "source": "Linux auditd / OS Process Audit",
+        "description": "Monitor execve() system calls from the node process, particularly any child processes spawned by n8n that execute shell commands (bash, sh, cmd)",
+        "priority": "High"
+      },
+      {
+        "source": "Network Flow / EDR Telemetry",
+        "description": "Alert on unexpected outbound connections from the n8n server process to external IP addresses following workflow execution events",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Suspicious expression patterns in workflow API calls",
+        "description": "HTTP POST bodies to /rest/workflows containing JavaScript injection tokens",
+        "log_field": "request_body contains 'constructor.constructor' OR 'process.mainModule' OR 'child_process' OR 'execSync'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes from n8n",
+        "description": "Shell processes (bash, sh, cmd.exe) spawned as children of the node/n8n process",
+        "log_field": "parent_process='node' AND process_name IN ('bash','sh','cmd','powershell')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unusual outbound network connections from n8n host",
+        "description": "Outbound connections from n8n server to external IPs not previously observed in baseline",
+        "log_field": "src_process='node' AND dst_ip NOT IN (known_n8n_integrations)",
+        "severity": "High"
+      },
+      {
+        "indicator": "New workflow creation by unexpected accounts",
+        "description": "Workflow creation events from accounts that do not normally create workflows, or from suspicious source IPs",
+        "log_field": "event_type='workflow.created' AND user NOT IN (known_workflow_authors)",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update n8n to patched version immediately",
+      "description": "Upgrade all n8n instances to version 1.120.4, 1.121.1, 1.122.0, or later. For npm installations run: npm install n8n@latest. For Docker: docker pull n8nio/n8n:latest. Federal agencies must complete by March 25, 2026.",
+      "command": "npm install n8n@latest"
+    },
+    {
+      "priority": 2,
+      "action": "Restrict workflow creation and editing permissions",
+      "description": "While patching is in progress, limit workflow creation and editing to a minimal set of trusted users. Disable open registration if enabled. Revoke workflow editing access from all non-essential accounts.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Rotate all credentials and secrets accessible by n8n",
+      "description": "After patching, rotate all API keys, database passwords, OAuth tokens, and service credentials stored in n8n environment variables or used in workflows, as they may have been exfiltrated during exploitation.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Search historical logs for signs of exploitation",
+      "description": "Review n8n application logs and web server access logs from December 2025 onward for POST requests to /rest/workflows containing suspicious expression content (constructor.constructor, process.mainModule, child_process, execSync).",
+      "command": "grep -r 'constructor.constructor\\|process.mainModule\\|child_process\\|execSync' /var/log/n8n/"
+    },
+    {
+      "priority": 5,
+      "action": "Network-isolate n8n instances pending patch",
+      "description": "If immediate patching is not possible, restrict network access to n8n instances to trusted internal IPs only. Block all internet-facing exposure. Implement WAF rules to detect and block known injection patterns.",
+      "command": null
+    }
+  ]
+}

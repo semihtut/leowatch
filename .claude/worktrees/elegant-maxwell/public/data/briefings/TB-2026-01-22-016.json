@@ -1,0 +1,269 @@
+{
+  "briefing_id": "TB-2026-01-22-016",
+  "title": "React2Shell: Critical RCE in React Server Components (CVSS 10.0, CISA KEV)",
+  "generated_date": "2026-01-22",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-01-15"
+  },
+  "cves": [
+    "CVE-2025-55182"
+  ],
+  "tags": [
+    "react",
+    "next.js",
+    "rce",
+    "cloud",
+    "kubernetes",
+    "deserialization",
+    "state-sponsored"
+  ],
+  "affected_products": [
+    "React 19.0, 19.1.0, 19.1.1, 19.2.0",
+    "Next.js 15.x with App Router",
+    "Next.js 16.x with App Router",
+    "Any framework using React Server Components"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "React Official Blog",
+      "url": "https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components",
+      "date": "2025-12-03",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/",
+      "date": "2025-12-15",
+      "type": "Research"
+    },
+    {
+      "name": "NVD - NIST",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-55182",
+      "date": "2025-12-03",
+      "type": "Government"
+    },
+    {
+      "name": "AWS Security Blog",
+      "url": "https://aws.amazon.com/blogs/security/china-nexus-cyber-threat-groups-rapidly-exploit-react2shell-vulnerability-cve-2025-55182/",
+      "date": "2025-12-10",
+      "type": "Research"
+    },
+    {
+      "name": "Google Cloud Threat Intelligence",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actors-exploit-react2shell-cve-2025-55182",
+      "date": "2025-12-12",
+      "type": "Research"
+    },
+    {
+      "name": "Wiz Research",
+      "url": "https://www.wiz.io/blog/critical-vulnerability-in-react-cve-2025-55182",
+      "date": "2025-12-08",
+      "type": "Research"
+    },
+    {
+      "name": "Qualys",
+      "url": "https://blog.qualys.com/product-tech/2025/12/10/react2shell-decoding-cve-2025-55182-the-silent-threat-in-react-server-components",
+      "date": "2025-12-10",
+      "type": "Research"
+    },
+    {
+      "name": "Palo Alto Unit 42",
+      "url": "https://unit42.paloaltonetworks.com/cve-2025-55182-react-and-cve-2025-66478-next/",
+      "date": "2025-12-12",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable",
+      "url": "https://www.tenable.com/blog/react2shell-cve-2025-55182-react-server-components-rce",
+      "date": "2025-12-09",
+      "type": "Research"
+    },
+    {
+      "name": "Carnegie Mellon University ISO",
+      "url": "https://www.cmu.edu/iso/news/2025/react2shell-critical-vulnerability.html",
+      "date": "2025-12-06",
+      "type": "Government"
+    },
+    {
+      "name": "Microsoft Defender for Cloud",
+      "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/release-notes",
+      "date": "2025-12-15",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2025-12-08",
+      "type": "Government"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-11-29",
+      "event": "Lachlan Davidson discovers vulnerability and discloses to React Team"
+    },
+    {
+      "date": "2025-12-03",
+      "event": "React Team releases security advisory and patches (19.0.1, 19.1.2, 19.2.1)"
+    },
+    {
+      "date": "2025-12-05",
+      "event": "First exploitation attempts detected in the wild"
+    },
+    {
+      "date": "2025-12-08",
+      "event": "CISA adds CVE-2025-55182 to Known Exploited Vulnerabilities catalog"
+    },
+    {
+      "date": "2025-12-10",
+      "event": "China state-nexus groups (Earth Lamia, Jackpot Panda) begin active exploitation"
+    },
+    {
+      "date": "2025-12-15",
+      "event": "CISA deadline for federal agencies to patch"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical remote code execution vulnerability (CVSS 10.0) was discovered in React Server Components, dubbed React2Shell. The flaw allows attackers to execute arbitrary code on servers through a single malicious HTTP request without any authentication. Default configurations created with create-next-app are vulnerable with no code changes required.",
+    "who_is_affected": "Any organization running React 19.x or Next.js 15.x/16.x with App Router is vulnerable. This includes millions of web applications running on cloud platforms. The vulnerability particularly impacts internet-facing Next.js frontends and React Server Component workloads running in Kubernetes clusters and managed PaaS platforms.",
+    "what_attackers_do": "Step 1: Attacker identifies a vulnerable React Server Components application. Step 2: Crafts a malicious HTTP request exploiting unsafe deserialization in the Flight protocol. Step 3: Injects arbitrary objects that get deserialized in privileged server contexts. Step 4: Executes arbitrary code on the server. Step 5: Harvests cloud credentials (AWS, Azure, GCP tokens, Kubernetes service accounts). Step 6: Deploys cryptominers, backdoors, or moves laterally to other cloud resources.",
+    "what_you_should_do": [
+      "Immediately upgrade React to patched versions: 19.0.1, 19.1.2, or 19.2.1",
+      "Upgrade Next.js to latest patched version",
+      "Enable AWS WAF with AWSManagedRulesKnownBadInputsRuleSet (v1.24+) for automatic protection",
+      "Use Microsoft Defender for Cloud agentless scanning to detect vulnerable containers",
+      "Review logs for suspicious deserialization patterns",
+      "Rotate cloud credentials if running vulnerable versions"
+    ],
+    "why_this_is_serious": "React powers millions of web applications worldwide. State-sponsored threat groups from China are actively exploiting this vulnerability within hours of disclosure. The attack requires no authentication and works against default configurations. CISA has added it to the mandatory patch list. Compromised servers can lead to cloud account takeover, data theft, and cryptomining."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers target internet-exposed React/Next.js applications"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Arbitrary code execution through unsafe deserialization"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.005",
+        "technique_name": "Cloud Instance Metadata API",
+        "description": "Harvesting cloud credentials from IMDS endpoints (AWS, Azure, GCP)"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1550.001",
+        "technique_name": "Application Access Token",
+        "description": "Using stolen cloud tokens to access other resources"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1496",
+        "technique_name": "Resource Hijacking",
+        "description": "Deploying cryptocurrency miners on compromised infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Monitor for suspicious HTTP requests with unusual serialization patterns targeting React Server Components endpoints. Look for attempts to access cloud metadata services after exploitation.",
+    "log_sources": [
+      {
+        "source": "Web Application Logs",
+        "description": "Next.js/React server logs for unusual request patterns",
+        "priority": "Critical"
+      },
+      {
+        "source": "WAF/CDN Logs",
+        "description": "Cloudflare, AWS WAF, Azure WAF logs for blocked exploit attempts",
+        "priority": "Critical"
+      },
+      {
+        "source": "Container Runtime Logs",
+        "description": "Kubernetes/Docker logs for unexpected process spawning",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Logs",
+        "description": "CloudTrail, Azure Activity Logs for unusual API calls post-exploitation",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Malformed Flight protocol payloads",
+        "description": "HTTP requests with suspicious serialized objects in the body",
+        "log_field": "Request body containing unexpected object prototypes",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "IMDS access from application containers",
+        "description": "Requests to 169.254.169.254 from web application processes",
+        "log_field": "Network connections to cloud metadata endpoints",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes",
+        "description": "Node.js spawning shell processes (sh, bash, curl, wget)",
+        "log_field": "Process creation events from node processes",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Cryptominer indicators",
+        "description": "High CPU usage, connections to mining pools",
+        "log_field": "Network connections to known mining pool domains",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Check React/Next.js Version",
+      "description": "Identify all applications using vulnerable React 19.x or Next.js 15.x/16.x",
+      "command": "npm list react next"
+    },
+    {
+      "priority": 2,
+      "action": "Apply Patches Immediately",
+      "description": "Upgrade to React 19.0.1, 19.1.2, or 19.2.1 and latest Next.js",
+      "command": "npm update react react-dom next"
+    },
+    {
+      "priority": 3,
+      "action": "Enable WAF Protection",
+      "description": "Enable AWS WAF with managed rule set or equivalent on other platforms",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Scan Containers for Vulnerability",
+      "description": "Use container scanning tools to identify vulnerable deployments",
+      "command": "trivy image --severity CRITICAL your-image:tag"
+    },
+    {
+      "priority": 5,
+      "action": "Review Cloud Audit Logs",
+      "description": "Check for suspicious API calls that may indicate post-exploitation activity",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Rotate Cloud Credentials",
+      "description": "If running vulnerable versions, rotate all cloud credentials and API keys",
+      "command": null
+    }
+  ]
+}

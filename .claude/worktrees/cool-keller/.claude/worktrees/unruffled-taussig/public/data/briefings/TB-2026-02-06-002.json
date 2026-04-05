@@ -1,0 +1,326 @@
+{
+  "briefing_id": "TB-2026-02-06-002",
+  "title": "SolarWinds Web Help Desk Critical Java Deserialization RCE Chain Under Active Exploitation (CVE-2025-40551)",
+  "generated_date": "2026-02-06",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-02-06"
+  },
+  "cves": [
+    "CVE-2025-40551",
+    "CVE-2025-40552",
+    "CVE-2025-40553",
+    "CVE-2025-40554",
+    "CVE-2025-40536",
+    "CVE-2025-40537"
+  ],
+  "tags": [
+    "solarwinds",
+    "deserialization",
+    "rce",
+    "cisa-kev",
+    "active-exploitation",
+    "java",
+    "itsm",
+    "authentication-bypass",
+    "hardcoded-credentials"
+  ],
+  "affected_products": [
+    "SolarWinds Web Help Desk 12.8.8 Hotfix 1 and all prior versions",
+    "SolarWinds WHD AjaxProxy / jabsorb JSON-RPC component",
+    "SolarWinds WHD WebObject framework (LoginPref, LookAndFeelPref)"
+  ],
+  "sources_analyzed": 14,
+  "sources": [
+    {
+      "name": "NVD - CVE-2025-40551 Detail",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40551",
+      "date": "2026-01-28",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog - CVE-2025-40551",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-02-03",
+      "type": "Government"
+    },
+    {
+      "name": "CIS/MS-ISAC Advisory 2026-008 - Multiple Vulnerabilities in SolarWinds Web Help Desk",
+      "url": "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-solarwinds-web-help-desk-could-allow-for-arbitrary-code-execution_2026-008",
+      "date": "2026-01-28",
+      "type": "Government"
+    },
+    {
+      "name": "Horizon3.ai - CVE-2025-40551: Another SolarWinds Web Help Desk Deserialization Issue",
+      "url": "https://horizon3.ai/attack-research/cve-2025-40551-another-solarwinds-web-help-desk-deserialization-issue/",
+      "date": "2026-01-28",
+      "type": "Research"
+    },
+    {
+      "name": "Rapid7 - ETR: Multiple Critical SolarWinds Web Help Desk Vulnerabilities",
+      "url": "https://www.rapid7.com/blog/post/etr-multiple-critical-solarwinds-web-help-desk-vulnerabilities-cve-2025-40551-40552-40553-40554/",
+      "date": "2026-01-28",
+      "type": "Research"
+    },
+    {
+      "name": "Bitsight - CVE-2025-40551: SolarWinds Critical Vulnerability Analysis",
+      "url": "https://www.bitsight.com/blog/cve-2025-40551-solarwinds-critical-vulnerability",
+      "date": "2026-02-03",
+      "type": "Research"
+    },
+    {
+      "name": "SolarWinds - WHD 2026.1 Release Notes and Security Advisory",
+      "url": "https://www.solarwinds.com/trust-center/security-advisories/CVE-2025-40551",
+      "date": "2026-01-28",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "The Hacker News - CISA Adds Actively Exploited SolarWinds WHD Flaw to KEV",
+      "url": "https://thehackernews.com/2026/02/cisa-adds-actively-exploited-solarwinds.html",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer - SolarWinds Web Help Desk Flaw Is Now Exploited in Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/solarwinds-web-help-desk-flaw-is-now-exploited-in-attacks/",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "The Register - Critical SolarWinds Web Help Desk Vulnerability Under Active Exploitation",
+      "url": "https://www.theregister.com/2026/02/04/critical_solarwinds_web_help_desk/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "The Record (Recorded Future News) - CISA Orders Agencies to Patch SolarWinds Vulnerability",
+      "url": "https://therecord.media/cisa-orders-agencies-patch-solarwinds-vuln",
+      "date": "2026-02-03",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Fresh SolarWinds Vulnerability Exploited in Attacks",
+      "url": "https://www.securityweek.com/fresh-solarwinds-vulnerability-exploited-in-attacks/",
+      "date": "2026-02-04",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - SolarWinds Web Help Desk RCE Vulnerabilities",
+      "url": "https://www.helpnetsecurity.com/2026/01/29/solarwinds-web-help-desk-rce-vulnerabilities/",
+      "date": "2026-01-29",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity Dive - Critical Flaw in SolarWinds Web Help Desk Under Exploitation",
+      "url": "https://www.cybersecuritydive.com/news/critical-flaw-solarwinds-web-help-desk-exploitation/811487/",
+      "date": "2026-02-04",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-08-15",
+      "event": "CVE-2024-28986, a prior SolarWinds WHD deserialization flaw, is added to CISA KEV; this establishes WHD as a recurring high-value target"
+    },
+    {
+      "date": "2024-10-16",
+      "event": "CVE-2024-28987, a hardcoded credentials vulnerability (helpdeskIntegrationUser/dev-C4F8025E7) in WHD, is added to CISA KEV"
+    },
+    {
+      "date": "2025-12-05",
+      "event": "Horizon3.ai researcher Jimi Sebree discovers CVE-2025-40551 as a bypass of prior CVE-2024-28986 protections and reports it to SolarWinds"
+    },
+    {
+      "date": "2026-01-28",
+      "event": "SolarWinds releases Web Help Desk version 2026.1, patching all six CVEs; CIS/MS-ISAC publishes Advisory 2026-008; Rapid7 releases remote vulnerability checks"
+    },
+    {
+      "date": "2026-01-29",
+      "event": "Help Net Security, BleepingComputer, and multiple security outlets publish advisories about the critical WHD vulnerabilities"
+    },
+    {
+      "date": "2026-02-03",
+      "event": "CISA adds CVE-2025-40551 to the Known Exploited Vulnerabilities catalog, confirming active exploitation in the wild; sets remediation deadline of February 6, 2026 for federal agencies"
+    },
+    {
+      "date": "2026-02-04",
+      "event": "The Register, Cybersecurity Dive, and SecurityWeek confirm active exploitation details; Bitsight reports functional exploits used in real-world environments with 170+ exposed instances"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Six critical and high-severity vulnerabilities were discovered in SolarWinds Web Help Desk (WHD), an IT service management platform used by approximately 300,000 organizations worldwide including government agencies and healthcare providers. The most dangerous flaw, CVE-2025-40551, allows unauthenticated attackers to execute arbitrary commands on WHD servers remotely by chaining together a CSRF bypass, hardcoded credentials, and a Java deserialization exploit. CISA confirmed active exploitation in the wild on February 3, 2026, and ordered all federal agencies to patch by February 6, 2026. The vulnerability is a bypass of protections implemented for a prior WHD deserialization flaw (CVE-2024-28986) from 2024, indicating persistent architectural weaknesses in the product.",
+    "who_is_affected": "All organizations running SolarWinds Web Help Desk version 12.8.8 Hotfix 1 or earlier are vulnerable. SolarWinds WHD serves approximately 300,000 customers worldwide, with over 170 internet-facing instances confirmed as still exposed by the Shadowserver Foundation. Federal agencies under CISA BOD 22-01 have a mandatory patching deadline. Organizations in government, healthcare, education, and enterprise IT that rely on WHD for ticketing and asset management are at highest risk, particularly those with internet-facing deployments or weak network segmentation.",
+    "what_attackers_do": "Step 1: The attacker sends an HTTP request to the WHD web interface targeting the AjaxProxy endpoint, including a bogus URI parameter with value '/ajax/' that bypasses CSRF validation filters (CVE-2025-40536), allowing access to restricted WebObject components without authentication. Step 2: The attacker leverages hardcoded default credentials 'client:client' (CVE-2025-40537) to authenticate as a demo client account that may retain administrative privileges. Step 3: With access to the LoginPref or LookAndFeelPref WebObject components, the attacker targets the AjaxFlexibleFileUpload component that uses the jabsorb JSON-RPC library. Step 4: The attacker crafts malicious serialized Java objects and submits them via JSON-RPC, using payload techniques that prepend whitelisted terms like 'java.lang' to bypass the blacklist filter in the checkSuspeciousPayload() function. Step 5: The jabsorb library deserializes the malicious objects, achieving arbitrary OS command execution with the privileges of the WHD service account, potentially at SYSTEM level, enabling full system compromise, backdoor installation, credential harvesting, and lateral movement.",
+    "what_you_should_do": [
+      "Immediately upgrade SolarWinds Web Help Desk to version 2026.1 or later; no workarounds are available for vulnerable versions",
+      "If patching cannot be done immediately, remove WHD from internet-facing access and restrict network access via firewall rules to only authorized management networks",
+      "Monitor WAF and web server access logs for exploitation patterns: requests to /helpdesk/WebObjects/Helpdesk.woa/wo/ containing 'badparam=/ajax/' or 'wopage=LoginPref'",
+      "Check for signs of compromise: unexpected child processes from the WHD Java process (cmd.exe, powershell.exe, /bin/sh), new user accounts, web shells or backdoors in the installation directory",
+      "If compromise is suspected, treat the system as fully compromised; reset all LDAP/AD credentials that WHD had access to and check for lateral movement",
+      "Deploy vulnerability scanning using Rapid7 InsightVM/Nexpose or Tenable detection plugins to identify all vulnerable WHD installations in your environment"
+    ],
+    "why_this_is_serious": "This vulnerability carries the maximum exploitability indicators: network-accessible, low complexity, no authentication required, and no user interaction needed (CVSS 9.8). CISA's confirmation of active exploitation elevates this from a theoretical risk to an immediate threat. SolarWinds WHD is deeply integrated with enterprise infrastructure including Active Directory, LDAP, and databases, meaning a compromised WHD server provides attackers with credentials and access paths to pivot across the entire network. The fact that this is a bypass of prior security patches (CVE-2024-28986) reveals persistent architectural weaknesses, and the presence of hardcoded credentials ('client:client') in a critical enterprise platform is particularly concerning. With only 170+ exposed instances identified, exploitation is targeted but effective."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit internet-facing SolarWinds WHD instances by sending crafted HTTP requests to the AjaxProxy endpoint, chaining CSRF bypass, hardcoded credentials, and Java deserialization to achieve unauthenticated RCE"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059",
+        "technique_name": "Command and Scripting Interpreter",
+        "description": "Post-deserialization, attackers execute arbitrary OS commands through the WHD Java runtime, potentially spawning cmd.exe, powershell.exe, or shell interpreters on the underlying server"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1136",
+        "technique_name": "Create Account",
+        "description": "Attackers can create new privileged accounts on the WHD server and within integrated directory services to maintain persistent access"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552",
+        "technique_name": "Unsecured Credentials",
+        "description": "WHD contains hardcoded credentials (client:client) via CVE-2025-40537, and integrated LDAP/Active Directory credentials stored in the WHD configuration are accessible post-compromise"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1562",
+        "technique_name": "Impair Defenses",
+        "description": "The exploit chain bypasses multiple security controls: CSRF protection is evaded by injecting /ajax/ as a parameter value (CVE-2025-40536), and the deserialization blacklist is bypassed by prepending whitelisted Java class names to payloads"
+      },
+      {
+        "tactic": "Discovery",
+        "technique_id": "T1082",
+        "technique_name": "System Information Discovery",
+        "description": "Post-exploitation reconnaissance to enumerate the WHD server environment, integrated systems, and network topology for lateral movement planning"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1210",
+        "technique_name": "Exploitation of Remote Services",
+        "description": "Attackers leverage WHD's integrations with Active Directory, LDAP, databases, and network authentication systems to pivot from the compromised WHD server into the broader enterprise network"
+      },
+      {
+        "tactic": "Impact",
+        "technique_id": "T1486",
+        "technique_name": "Data Encrypted for Impact",
+        "description": "CISA lists ransomware exploitation status as 'Unknown' for CVE-2025-40551; the RCE capability provides a viable vector for ransomware deployment on IT service management infrastructure"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on HTTP request patterns targeting the WHD AjaxProxy functionality, particularly the CSRF bypass technique using '/ajax/' as a parameter value, and the specific WebObject component names (LoginPref, LookAndFeelPref). Monitor WHD Java processes for unexpected child process spawning and outbound connections. Check application logs for jabsorb deserialization errors and unusual AjaxProxy activity.",
+    "log_sources": [
+      {
+        "source": "Web Server / WAF Access Logs",
+        "description": "Monitor HTTP requests to /helpdesk/WebObjects/Helpdesk.woa/wo/ endpoints for exploitation patterns: badparam=/ajax/ parameter, wopage=LoginPref or wopage=LookAndFeelPref parameters, and POST requests with JSON payloads containing jabsorb serialization markers or Java serialized object headers (aced0005)",
+        "priority": "Critical"
+      },
+      {
+        "source": "WHD Application Logs ([Install directory]/logs/)",
+        "description": "Review JSONRPC and AjaxProxy error logs for deserialization exceptions, unusual component instantiation attempts, and authentication events using the hardcoded client:client credentials",
+        "priority": "Critical"
+      },
+      {
+        "source": "Windows Sysmon / EDR (Event IDs 1, 3)",
+        "description": "Alert on unexpected child processes spawned by the WHD Java process (java.exe) including cmd.exe, powershell.exe, certutil.exe on Windows or /bin/sh, /bin/bash, curl, wget on Linux; monitor for unusual outbound network connections from the WHD service account",
+        "priority": "Critical"
+      },
+      {
+        "source": "Operating System Event Logs",
+        "description": "Monitor for new local or domain account creation events on WHD servers, unexpected file creation in the WHD installation directory, new scheduled tasks or services, and authentication failures followed by successes",
+        "priority": "High"
+      },
+      {
+        "source": "Network Monitoring / IDS",
+        "description": "Detect Java serialization headers (aced0005 magic bytes) in HTTP traffic to WHD servers, unusual POST request sizes to WHD endpoints, and any outbound C2-like connections from WHD infrastructure",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "CSRF bypass exploitation pattern in HTTP requests",
+        "description": "HTTP requests to WHD containing the string 'badparam=/ajax/' or any parameter with value '/ajax/' targeting the CSRF whitelist bypass (CVE-2025-40536)",
+        "log_field": "WAF/Access log: URI contains '/helpdesk/WebObjects/Helpdesk.woa/wo/' AND query_string contains '/ajax/'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "WebObject component instantiation targeting LoginPref or LookAndFeelPref",
+        "description": "Requests with wopage=LoginPref or wopage=LookAndFeelPref parameters indicate an attacker attempting to reach the vulnerable AjaxProxy/jabsorb endpoint",
+        "log_field": "WAF/Access log: query_string matches 'wopage=(LoginPref|LookAndFeelPref)'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Java serialization headers in HTTP traffic",
+        "description": "The presence of aced0005 magic bytes (Java serialized object header) in HTTP request bodies to WHD endpoints indicates deserialization exploitation attempts",
+        "log_field": "IDS/DPI: HTTP POST body to WHD contains hex bytes 'ac ed 00 05'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes from WHD Java runtime",
+        "description": "The WHD Java process spawning cmd.exe, powershell.exe, certutil.exe (Windows) or /bin/sh, /bin/bash, curl, wget (Linux) indicates successful post-exploitation command execution",
+        "log_field": "Sysmon EventID=1 ParentImage contains 'java' AND (Image contains 'cmd.exe' OR 'powershell.exe' OR '/bin/sh' OR '/bin/bash')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Authentication attempts with hardcoded credentials",
+        "description": "Login attempts or API authentication using username 'client' with password 'client' indicate exploitation of the hardcoded credentials (CVE-2025-40537)",
+        "log_field": "WHD application log: authentication attempt with username='client'",
+        "severity": "High"
+      },
+      {
+        "indicator": "JSON payload with whitelisted class name prefix",
+        "description": "JSON-RPC payloads to AjaxProxy endpoints that prepend whitelisted terms like 'java.lang' to bypass the checkSuspeciousPayload() blacklist filter",
+        "log_field": "WAF: POST body to AjaxProxy contains 'java.lang' prefix with serialized object data",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade SolarWinds Web Help Desk to version 2026.1 immediately",
+      "description": "Download and install WHD 2026.1 from official SolarWinds distribution channels. This is the only remediation; no workarounds exist. SolarWinds advises upgrading on an urgent basis outside normal patching cycles. This patches all six CVEs including the actively exploited CVE-2025-40551.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Remove WHD from internet access if immediate patching is not possible",
+      "description": "If the upgrade cannot be applied immediately, remove WHD from internet-facing access by disabling external access at the firewall or load balancer. Restrict network access to WHD servers to only authorized internal management networks. Over 170 internet-facing WHD instances remain exposed per Shadowserver.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Deploy WAF rules to block known exploitation patterns",
+      "description": "Configure web application firewall rules to block HTTP requests containing the CSRF bypass pattern (badparam=/ajax/), requests with wopage=LoginPref or wopage=LookAndFeelPref parameters from untrusted sources, and POST requests containing Java serialization headers (aced0005) to WHD endpoints.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Scan for signs of compromise on all WHD servers",
+      "description": "Review WHD application logs for unusual AjaxProxy activity, check for unauthorized accounts, web shells, backdoors, or scheduled tasks on WHD servers. Inspect the WHD Java process for unexpected child processes. Check operating system logs for new account creation events and unusual file system modifications in the WHD installation directory.",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Reset all credentials integrated with WHD if compromise is suspected",
+      "description": "If any signs of compromise are found, treat the WHD server as fully compromised. Reset all LDAP/Active Directory service account credentials, database passwords, and API keys that WHD had access to. Audit directory services for unauthorized accounts or group membership changes. Review network logs for evidence of lateral movement from the WHD server.",
+      "command": null
+    },
+    {
+      "priority": 6,
+      "action": "Run vulnerability scans to identify all WHD instances in the environment",
+      "description": "Deploy Rapid7 InsightVM/Nexpose remote vulnerability checks (available since January 28) or Tenable detection plugins to identify all SolarWinds WHD installations across the environment, including shadow IT deployments. Document all instances and verify each has been upgraded to version 2026.1.",
+      "command": null
+    }
+  ]
+}

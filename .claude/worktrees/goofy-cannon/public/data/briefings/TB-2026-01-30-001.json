@@ -1,0 +1,288 @@
+{
+  "briefing_id": "TB-2026-01-30-001",
+  "title": "Google Cloud Application Integration Multi-Cloud Phishing Campaign - OAuth Consent Attacks Targeting 3,200+ Businesses",
+  "generated_date": "2026-01-30",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": null,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "phishing",
+    "Google Cloud",
+    "OAuth",
+    "Azure AD",
+    "Microsoft 365",
+    "cloud",
+    "credential-theft"
+  ],
+  "affected_products": [
+    "Microsoft 365 / Azure AD tenants (targeted victims)",
+    "Google Cloud Application Integration (abused service)",
+    "Google Cloud Storage (abused for redirection)",
+    "AWS S3 (abused for hosting fake login pages)",
+    "Organizations using OAuth-based authentication for Microsoft services"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "Check Point Blog",
+      "url": "https://blog.checkpoint.com/research/phishing-campaign-leverages-trusted-google-cloud-automation-capabilities-to-evade-detection/",
+      "date": "2026-01-21",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/01/cybercriminals-abuse-google-cloud-email.html",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Malwarebytes",
+      "url": "https://www.malwarebytes.com/blog/news/2026/01/phishing-campaign-abuses-google-cloud-services-to-steal-microsoft-365-logins",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "xorlab",
+      "url": "https://www.xorlab.com/en/blog/new-phishing-wave-exploits-googles-application-integration-service",
+      "date": "2026-01-20",
+      "type": "Research"
+    },
+    {
+      "name": "RavenMail",
+      "url": "https://ravenmail.io/blog/phishing-using-google-infra",
+      "date": "2025-12-15",
+      "type": "Research"
+    },
+    {
+      "name": "TechRadar",
+      "url": "https://www.techradar.com/pro/security/yet-another-phishing-campaign-impersonates-trusted-google-services-heres-what-we-know",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs",
+      "url": "https://securityaffairs.com/186425/cyber-crime/phishing-campaign-abuses-google-cloud-application-to-impersonate-legitimate-google-emails.html",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "SC Media",
+      "url": "https://www.scworld.com/news/phishing-campaign-abuses-google-cloud-application-integration",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Security Magazine",
+      "url": "https://www.securitymagazine.com/articles/102066-google-cloud-service-exploited-in-new-phishing-campaign",
+      "date": "2026-01-22",
+      "type": "News"
+    },
+    {
+      "name": "Rescana",
+      "url": "https://www.rescana.com/post/google-cloud-application-integration-exploited-in-sophisticated-multi-stage-phishing-campaign-target",
+      "date": "2026-01-23",
+      "type": "Research"
+    },
+    {
+      "name": "Proofpoint",
+      "url": "https://www.proofpoint.com/us/blog/threat-insight/microsoft-oauth-app-impersonation-campaign-leads-mfa-phishing",
+      "date": "2026-01-20",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-12-15",
+      "event": "RavenMail first documents Google infrastructure abuse for phishing"
+    },
+    {
+      "date": "2026-01-20",
+      "event": "xorlab and Proofpoint disclose related OAuth phishing campaigns"
+    },
+    {
+      "date": "2026-01-21",
+      "event": "Check Point publishes detailed analysis of Google Cloud App Integration abuse"
+    },
+    {
+      "date": "2026-01-22",
+      "event": "Multiple outlets report campaign targeting 3,200+ businesses"
+    },
+    {
+      "date": "2026-01-23",
+      "event": "Google blocks the phishing effort, issues statement confirming no infrastructure compromise"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Check Point Research discovered a large-scale phishing campaign abusing Google Cloud Application Integration's Send Email feature to deliver approximately 10,000 phishing emails to roughly 3,200 businesses over a two-week period. The emails originate from the legitimate Google address noreply-application-integration@google.com, allowing them to pass SPF, DKIM, and DMARC email authentication checks. Victims are redirected through multiple stages -- first to Google Cloud Storage, then to a googleusercontent.com domain, and finally to a fake Microsoft login page that initiates an OAuth consent phishing flow against Azure AD. xorlab and RavenMail independently documented related campaigns. Google confirmed the abuse was blocked and stated it did not involve an infrastructure compromise.",
+    "who_is_affected": "Organizations using Microsoft 365 and Azure AD, particularly in the United States (48.6% of targets). The most impacted industries are manufacturing (19.6%), technology and SaaS (18.9%), and finance (14.8%). Any business whose employees might interact with emails from legitimate Google addresses is at risk, as the phishing emails bypass standard email security gateways due to their trusted origin.",
+    "what_attackers_do": "Step 1: Abuse Google Cloud Application Integration's Send Email task to dispatch phishing emails from the legitimate address noreply-application-integration@google.com, bypassing email authentication (SPF/DKIM/DMARC). Step 2: Redirect victims through a multi-stage chain: Google Cloud Storage link to a googleusercontent.com intermediary, then to a fake Microsoft login page hosted on AWS S3 or similar infrastructure. Step 3: Present the victim with a fraudulent OAuth consent screen requesting the scope https://management.core.windows.net//.default, which grants broad access to Azure management APIs. Step 4: Capture valid OAuth tokens when the victim approves the consent prompt, completely bypassing multi-factor authentication. Step 5: Use the stolen OAuth tokens for persistent access to the victim's Microsoft 365 environment, including email, files, and Azure resources.",
+    "what_you_should_do": [
+      "Alert employees about phishing emails from noreply-application-integration@google.com that contain unexpected links or OAuth consent requests",
+      "Review Azure AD sign-in logs and audit logs for suspicious OAuth consent grants, especially those requesting management.core.windows.net scopes",
+      "Revoke any unauthorized OAuth application consents in Azure AD (Enterprise Applications > User Consent)",
+      "Configure Azure AD to require admin approval for OAuth consent requests (User Settings > Enterprise Applications > Users can consent to apps > No)",
+      "Block or flag emails containing links to googleusercontent.com and storage.googleapis.com domains in phishing contexts",
+      "Deploy phishing-resistant authentication methods such as FIDO2 security keys or certificate-based authentication",
+      "Enable Microsoft Defender for Cloud Apps to detect anomalous OAuth application activity",
+      "Review Conditional Access policies to restrict token issuance to compliant devices and trusted locations"
+    ],
+    "why_this_is_serious": "This campaign is particularly dangerous because the phishing emails originate from a legitimate Google infrastructure address, causing them to pass all standard email authentication checks (SPF, DKIM, DMARC) and evade most email security gateways. The multi-stage redirection through Google-owned domains further increases trust. Most critically, the OAuth consent phishing approach captures valid access tokens rather than passwords, which means multi-factor authentication provides no protection. Stolen OAuth tokens can grant persistent, long-term access to Microsoft 365 environments without triggering typical credential-theft detection mechanisms. The scale of approximately 10,000 emails to 3,200 businesses in just two weeks indicates an organized and well-resourced operation."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.002",
+        "technique_name": "Phishing: Spearphishing Link",
+        "description": "Sending phishing emails from legitimate Google Cloud infrastructure containing links that redirect victims through multiple stages to fake Microsoft login pages"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1528",
+        "technique_name": "Steal Application Access Token",
+        "description": "Using fraudulent OAuth consent prompts to trick victims into granting access tokens with broad Azure management API permissions"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1550.001",
+        "technique_name": "Use Alternate Authentication Material: Application Access Token",
+        "description": "Using stolen OAuth tokens to access Microsoft 365 resources without requiring passwords or triggering MFA challenges"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1078.004",
+        "technique_name": "Valid Accounts: Cloud Accounts",
+        "description": "Leveraging stolen OAuth tokens to authenticate as legitimate cloud users in Azure AD and Microsoft 365"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1114.002",
+        "technique_name": "Email Collection: Remote Email Collection",
+        "description": "Using OAuth tokens with appropriate scopes to access and exfiltrate email contents from compromised Microsoft 365 mailboxes"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Focus detection on anomalous OAuth consent grants in Azure AD, phishing emails from Google Cloud Application Integration addresses, and suspicious sign-in activity involving unexpected application permissions. Monitor for multi-stage redirections through Google-owned domains leading to Microsoft credential harvesting pages.",
+    "log_sources": [
+      {
+        "source": "Azure AD Sign-in Logs",
+        "description": "OAuth consent grants, token issuance events, and application permission changes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Azure AD Audit Logs",
+        "description": "Application consent operations and service principal modifications",
+        "priority": "Critical"
+      },
+      {
+        "source": "Microsoft 365 Unified Audit Log",
+        "description": "Mailbox access, file access, and administrative actions performed via OAuth tokens",
+        "priority": "High"
+      },
+      {
+        "source": "Email Gateway Logs",
+        "description": "Inbound emails from noreply-application-integration@google.com with embedded links",
+        "priority": "High"
+      },
+      {
+        "source": "Web Proxy / DNS Logs",
+        "description": "Outbound connections to googleusercontent.com, storage.googleapis.com, and suspicious AWS S3 endpoints",
+        "priority": "Medium"
+      },
+      {
+        "source": "Microsoft Defender for Cloud Apps",
+        "description": "Anomalous OAuth application activity and suspicious consent grants",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "OAuth consent grant for management.core.windows.net scope",
+        "description": "Consent grants requesting the scope https://management.core.windows.net//.default indicate potential OAuth phishing targeting Azure management APIs",
+        "log_field": "AuditLogs | where OperationName == 'Consent to application' and TargetResources contains 'management.core.windows.net'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Emails from noreply-application-integration@google.com",
+        "description": "Phishing emails sent via Google Cloud Application Integration; legitimate use of this sender is rare for most organizations",
+        "log_field": "EmailEvents | where SenderFromAddress == 'noreply-application-integration@google.com'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unexpected OAuth application registrations",
+        "description": "New enterprise applications or service principals appearing in Azure AD without IT approval",
+        "log_field": "AuditLogs | where OperationName == 'Add service principal' or OperationName == 'Add application'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Multi-stage redirection through Google domains",
+        "description": "User browsing sessions redirecting from storage.googleapis.com to googleusercontent.com to an external login page",
+        "log_field": "WebProxy logs showing sequential requests: storage.googleapis.com -> *.googleusercontent.com -> external domain with /login or /oauth path",
+        "severity": "High"
+      },
+      {
+        "indicator": "Token-based mailbox access from unusual applications",
+        "description": "Email access via OAuth tokens from applications not previously seen in the environment",
+        "log_field": "UnifiedAuditLog | where Operations contains 'MailItemsAccessed' and AppId NOT IN (known_app_ids)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Sign-ins from unfamiliar OAuth applications",
+        "description": "Azure AD sign-in events involving application IDs not recognized by the organization",
+        "log_field": "SignInLogs | where AppId NOT IN (approved_app_list) and ConditionalAccessStatus == 'success'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Restrict OAuth Consent to Admin-Approved Apps",
+      "description": "Configure Azure AD to require administrator approval for all OAuth consent requests to prevent users from granting tokens to malicious applications",
+      "command": "Set-AzureADMSAuthorizationPolicy -DefaultUserRolePermissions @{PermissionGrantPoliciesAssigned = @()}"
+    },
+    {
+      "priority": 2,
+      "action": "Audit Existing OAuth Consent Grants",
+      "description": "Review all user-consented OAuth applications in Azure AD for unauthorized or suspicious entries, focusing on management.core.windows.net scopes",
+      "command": "Get-AzureADServicePrincipal -All $true | Get-AzureADServicePrincipalOAuth2PermissionGrant | Where-Object {$_.Scope -like '*management*'}"
+    },
+    {
+      "priority": 3,
+      "action": "Revoke Suspicious OAuth Tokens",
+      "description": "Revoke refresh tokens for any user accounts that may have been compromised by the phishing campaign",
+      "command": "Revoke-AzureADUserAllRefreshToken -ObjectId <affected_user_object_id>"
+    },
+    {
+      "priority": 4,
+      "action": "Alert Users About Campaign",
+      "description": "Send an internal security advisory warning employees about phishing emails from noreply-application-integration@google.com and advising them not to approve unexpected OAuth consent prompts",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Create Email Transport Rule",
+      "description": "Create an Exchange Online transport rule to flag or quarantine emails from the abused Google Cloud Application Integration sender address",
+      "command": "New-TransportRule -Name 'Flag GCP AppIntegration Phishing' -FromAddressContainsWords 'noreply-application-integration@google.com' -SetSCL 9 -SetHeaderName 'X-Phishing-Alert' -SetHeaderValue 'GCP-AppIntegration-Abuse'"
+    },
+    {
+      "priority": 6,
+      "action": "Enable Conditional Access for OAuth",
+      "description": "Deploy Conditional Access policies requiring compliant devices and trusted locations for OAuth token issuance",
+      "command": null
+    },
+    {
+      "priority": 7,
+      "action": "Deploy Phishing-Resistant MFA",
+      "description": "Migrate to FIDO2 security keys or certificate-based authentication to eliminate susceptibility to token-based phishing attacks",
+      "command": null
+    }
+  ]
+}

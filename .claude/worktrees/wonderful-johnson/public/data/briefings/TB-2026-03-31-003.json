@@ -1,0 +1,242 @@
+{
+  "briefing_id": "TB-2026-03-31-003",
+  "title": "Langflow AI Platform Critical RCE (CVE-2026-33017) Exploited Within 20 Hours of Disclosure — CISA KEV Added, JFrog Reports Patch Bypass in Latest Version",
+  "generated_date": "2026-03-31",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-04-08"
+  },
+  "cves": [
+    "CVE-2026-33017"
+  ],
+  "tags": [
+    "langflow",
+    "ai-platform",
+    "remote-code-execution",
+    "cisa-kev",
+    "active-exploitation",
+    "unauthenticated",
+    "python",
+    "patch-bypass"
+  ],
+  "affected_products": [
+    "Langflow versions prior to and including 1.8.1",
+    "Langflow 1.9.0 (JFrog reports patch bypass still possible)",
+    "Any cloud or self-hosted Langflow instance with public flow build endpoints exposed"
+  ],
+  "sources_analyzed": 10,
+  "sources": [
+    {
+      "name": "Sysdig - CVE-2026-33017: How attackers compromised Langflow AI pipelines in 20 hours",
+      "url": "https://www.sysdig.com/blog/cve-2026-33017-how-attackers-compromised-langflow-ai-pipelines-in-20-hours",
+      "date": "2026-03-25",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News - Critical Langflow Flaw CVE-2026-33017 Triggers Attacks within 20 Hours of Disclosure",
+      "url": "https://thehackernews.com/2026/03/critical-langflow-flaw-cve-2026-33017.html",
+      "date": "2026-03-25",
+      "type": "News"
+    },
+    {
+      "name": "Qualys ThreatPROTECT - CISA Added Langflow Vulnerability to KEV Catalog",
+      "url": "https://threatprotect.qualys.com/2026/03/26/cisa-added-langflow-vulnerability-to-its-known-exploited-vulnerabilities-catalog-cve-2026-33017/",
+      "date": "2026-03-26",
+      "type": "Research"
+    },
+    {
+      "name": "JFrog Security Research - Langflow CVE-2026-33017: Latest fixed version is still exploitable",
+      "url": "https://research.jfrog.com/post/langflow-latest-version-was-not-fixed/",
+      "date": "2026-03-28",
+      "type": "Research"
+    },
+    {
+      "name": "Barrack AI - Langflow Got Hacked Twice Through the Same exec() Call",
+      "url": "https://blog.barrack.ai/langflow-exec-rce-cve-2026-33017/",
+      "date": "2026-03-27",
+      "type": "Research"
+    },
+    {
+      "name": "SecPod - CVE-2026-33017: Critical Langflow Vulnerability Exploited Within 20 Hours of Disclosure",
+      "url": "https://www.secpod.com/blog/cve-2026-33017-critical-langflow-vulnerability-exploited-within-20-hours-of-disclosure/",
+      "date": "2026-03-26",
+      "type": "Research"
+    },
+    {
+      "name": "Help Net Security - CISA sounds alarm on Langflow RCE after rapid exploitation",
+      "url": "https://www.helpnetsecurity.com/2026/03/27/cve-2026-33017-cve-2026-33634-exploited/",
+      "date": "2026-03-27",
+      "type": "News"
+    },
+    {
+      "name": "Rankiteo - Langflow: CISA Issues Urgent Warning on Langflow Code Injection Vulnerability",
+      "url": "https://blog.rankiteo.com/lan1774536040-langflow-vulnerability-march-2026/",
+      "date": "2026-03-26",
+      "type": "News"
+    },
+    {
+      "name": "1898 Advisories - Critical Remote Code Execution Vulnerability in Langflow AI Platform",
+      "url": "https://1898advisories.burnsmcd.com/critical-remote-code-execution-vulnerability-in-langflow-ai-platform",
+      "date": "2026-03-26",
+      "type": "Research"
+    },
+    {
+      "name": "Anavem - Langflow CVE-2026-33017 Exploited 20 Hours After Disclosure",
+      "url": "https://www.anavem.com/en/news/cybersecurity/langflow-cve-2026-33017-exploited-20-hours-after-disclosure",
+      "date": "2026-03-26",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-17",
+      "event": "CVE-2026-33017 disclosed publicly for Langflow AI platform; unauthenticated RCE via the public flow build endpoint affecting all versions up to 1.8.1"
+    },
+    {
+      "date": "2026-03-18",
+      "event": "Within 20 hours of disclosure, Sysdig Threat Research Team detects first exploitation attempts in the wild; no public proof-of-concept existed at this time"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "CISA adds CVE-2026-33017 to Known Exploited Vulnerabilities catalog with federal remediation deadline of April 8, 2026"
+    },
+    {
+      "date": "2026-03-28",
+      "event": "JFrog Security Research publishes analysis showing the patch in Langflow 1.9.0 can be bypassed; the vulnerability remains exploitable in the 'fixed' version"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical vulnerability was discovered in Langflow, the popular open-source platform used to build AI agents and RAG (Retrieval-Augmented Generation) pipelines. The flaw (CVE-2026-33017) allows anyone on the internet to run arbitrary code on a Langflow server without any login credentials by sending a single HTTP request. Attackers began targeting vulnerable instances within just 20 hours of the advisory being published, even before any public proof-of-concept code existed. CISA added it to the KEV catalog on March 25. Critically, JFrog researchers found on March 28 that even the patched version (1.9.0) remains vulnerable through a bypass of the original fix.",
+    "who_is_affected": "Organizations and developers running self-hosted Langflow instances (versions 1.8.1 and earlier) with the public flow build endpoint accessible from the internet. This includes AI/ML engineering teams building LLM-powered applications, data science teams using Langflow for RAG pipeline development, and any organization hosting Langflow as part of their AI infrastructure. Cloud-hosted instances with default configurations are particularly at risk. Given the JFrog patch bypass report, even organizations running Langflow 1.9.0 may still be vulnerable.",
+    "what_attackers_do": "Step 1: Attackers scan for exposed Langflow instances accessible from the internet. Step 2: They send a crafted HTTP POST request to the public flow build endpoint containing code within node definitions. Step 3: The server processes the request and runs the code without sandboxing or authentication checks, giving the attacker full control of the server. Step 4: Attackers harvest API keys, database credentials, and cloud tokens stored in the Langflow environment, which often include connections to LLM providers, vector databases, and other AI infrastructure.",
+    "what_you_should_do": [
+      "Immediately restrict network access to Langflow instances: place behind a VPN, firewall, or reverse proxy with authentication — do not expose the public flow build endpoint to the internet",
+      "Upgrade to Langflow 1.9.0 or later as a minimum, but note the JFrog patch bypass report — network-level access controls are essential even on patched versions",
+      "Audit all Langflow instances for signs of compromise: review server logs for unusual requests to /api/v1/build_public_tmp/ endpoints, check for unauthorized file modifications, and look for unexpected outbound connections",
+      "Rotate all API keys, database credentials, LLM provider tokens, and cloud access keys configured in Langflow environments, as these are the primary targets for credential theft",
+      "Monitor the Langflow project for an updated patch that addresses the JFrog-reported bypass; consider disabling the public flow build feature entirely until a complete fix is available"
+    ],
+    "why_this_is_serious": "This vulnerability is critical for several reasons. First, the speed of exploitation (20 hours, without any public proof-of-concept) indicates sophisticated threat actors are actively monitoring AI platform disclosures. Second, Langflow instances typically contain high-value credentials including API keys for OpenAI, Anthropic, cloud providers, and database connections, making them lucrative targets. Third, the JFrog report showing the official patch can be bypassed means there is currently no fully effective fix, making network-level isolation the only reliable defense. Fourth, the growing adoption of AI development platforms like Langflow across enterprises means the attack surface is expanding rapidly."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Unauthenticated remote code execution via the Langflow public flow build API endpoint, requiring only a single HTTP request"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.006",
+        "technique_name": "Command and Scripting Interpreter: Python",
+        "description": "Attacker-supplied Python code is executed server-side through the Langflow node definition processing without sandboxing"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials In Files",
+        "description": "Langflow configurations typically contain API keys, database credentials, and cloud tokens that are harvested after gaining code execution"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Attackers collect API keys, LLM provider tokens, vector database credentials, and environment variables from the compromised Langflow server"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1211",
+        "technique_name": "Exploitation for Defense Evasion",
+        "description": "JFrog-reported patch bypass in Langflow 1.9.0 allows continued exploitation even on systems believed to be patched"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on monitoring HTTP requests to the Langflow public flow build API endpoint, identifying unusual server-side code execution, and auditing credential access. Given the patch bypass, organizations should prioritize network-level isolation and monitoring even on updated instances.",
+    "log_sources": [
+      {
+        "source": "Web Server / Reverse Proxy Logs",
+        "description": "Monitor for POST requests to /api/v1/build_public_tmp/ endpoints, especially from unexpected source IPs or with unusual payload sizes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Langflow Application Logs",
+        "description": "Review application logs for unexpected flow builds, error messages from code execution, and authentication bypass indicators",
+        "priority": "Critical"
+      },
+      {
+        "source": "Host-Based Detection (EDR/Sysmon)",
+        "description": "Monitor the Langflow server process for spawning unexpected child processes, writing files to unusual locations, or making outbound network connections",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Provider Audit Logs",
+        "description": "Monitor for unusual API calls using credentials stored in Langflow, especially from unexpected source IPs or for operations outside normal patterns",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "POST requests to /api/v1/build_public_tmp/ from unexpected sources",
+        "description": "The vulnerable endpoint accepts unauthenticated requests; any POST to this path from external IPs should be investigated",
+        "log_field": "http_method='POST' AND uri contains '/api/v1/build_public_tmp/'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes spawned by Langflow",
+        "description": "Successful exploitation results in code execution under the Langflow process; monitor for shell commands, network tools, or file operations spawned as children",
+        "log_field": "process.parent.name='langflow' AND process.name NOT IN ('python','node')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Outbound connections from Langflow server to unknown destinations",
+        "description": "Post-compromise data exfiltration or C2 communication from the Langflow server to unexpected external IPs",
+        "log_field": "src_process='langflow' AND dst_ip NOT IN approved_destinations",
+        "severity": "High"
+      },
+      {
+        "indicator": "Langflow instances running versions 1.8.1 or earlier",
+        "description": "Any Langflow instance below version 1.9.0 is confirmed vulnerable; instances at 1.9.0 may still be vulnerable per JFrog bypass report",
+        "log_field": "app='langflow' AND version <= '1.8.1'",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Isolate Langflow instances from public internet immediately",
+      "description": "Place all Langflow instances behind VPN, firewall, or authenticated reverse proxy. Do not expose the public flow build endpoint to untrusted networks. This is the most critical mitigation given the patch bypass.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Upgrade to Langflow 1.9.0 or later",
+      "description": "While JFrog reports a bypass exists, upgrading still reduces the attack surface. Network isolation remains essential as the primary defense.",
+      "command": "pip install langflow==1.9.0 --upgrade"
+    },
+    {
+      "priority": 3,
+      "action": "Audit Langflow server logs for exploitation indicators",
+      "description": "Review web server and application logs for POST requests to /api/v1/build_public_tmp/ endpoints since March 17, 2026 when the vulnerability was disclosed",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Rotate all credentials stored in Langflow configurations",
+      "description": "Assume all API keys, LLM provider tokens (OpenAI, Anthropic, etc.), database credentials, and cloud access tokens configured in Langflow are compromised if the instance was internet-accessible",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Consider disabling public flow build feature",
+      "description": "If the public flow build functionality is not required, disable it entirely to eliminate the attack surface until a complete patch addressing the JFrog bypass is available",
+      "command": null
+    }
+  ]
+}

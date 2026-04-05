@@ -1,0 +1,278 @@
+{
+  "briefing_id": "TB-2026-03-28-002",
+  "title": "Ubuntu Snap Local Privilege Escalation CVE-2026-3888 (CVSS 7.8): TOCTOU Race Between snap-confine and systemd-tmpfiles Grants Unprivileged Users Full Root Access on Default Ubuntu 24.04+ Installations — Qualys Discovery, PoC Available",
+  "generated_date": "2026-03-28",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 7.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-3888"
+  ],
+  "tags": [
+    "ubuntu",
+    "snapd",
+    "privilege-escalation",
+    "linux",
+    "local-exploit",
+    "race-condition",
+    "toctou",
+    "qualys",
+    "snap-confine",
+    "systemd"
+  ],
+  "affected_products": [
+    "Ubuntu 24.04 LTS (Noble Numbat) with snapd",
+    "Ubuntu 25.10 with snapd",
+    "Ubuntu 22.04 LTS with snapd",
+    "Ubuntu 20.04 LTS with snapd",
+    "Ubuntu 18.04 LTS with snapd",
+    "Ubuntu 16.04 LTS with snapd",
+    "snapd versions prior to 2.73+ubuntu24.04.2 (Ubuntu 24.04)",
+    "snapd versions prior to 2.73+ubuntu25.10.1 (Ubuntu 25.10)"
+  ],
+  "sources_analyzed": 13,
+  "sources": [
+    {
+      "name": "Qualys Threat Research - CVE-2026-3888 Discovery",
+      "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/03/17/cve-2026-3888-important-snap-flaw-enables-local-privilege-escalation-to-root",
+      "date": "2026-03-17",
+      "type": "Research"
+    },
+    {
+      "name": "Ubuntu Security Advisory - CVE-2026-3888",
+      "url": "https://ubuntu.com/security/CVE-2026-3888",
+      "date": "2026-03-17",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD - CVE-2026-3888",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3888",
+      "date": "2026-03-17",
+      "type": "Government"
+    },
+    {
+      "name": "The Hacker News - Ubuntu Bug Lets Attackers Gain Root via Systemd Cleanup Timing Exploit",
+      "url": "https://thehackernews.com/2026/03/ubuntu-cve-2026-3888-bug-lets-attackers.html",
+      "date": "2026-03-17",
+      "type": "News"
+    },
+    {
+      "name": "Phoronix - Ubuntu Snapd High Severity Vulnerability",
+      "url": "https://www.phoronix.com/news/Ubuntu-Snapd-High-Vulnerability",
+      "date": "2026-03-17",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs - CVE-2026-3888 Ubuntu Desktop 24.04 Vulnerable to Root Exploit",
+      "url": "https://securityaffairs.com/189614/security/cve-2026-3888-ubuntu-desktop-24-04-vulnerable-to-root-exploit.html",
+      "date": "2026-03-17",
+      "type": "News"
+    },
+    {
+      "name": "OSTechNix - Ubuntu Snapd Privilege Escalation CVE-2026-3888 Fix",
+      "url": "https://ostechnix.com/ubuntu-snapd-privilege-escalation-cve-2026-3888-fix/",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "TechNadu - CVE-2026-3888 Vulnerability Exposes Ubuntu to Root Escalation",
+      "url": "https://www.technadu.com/critical-cve-2026-3888-vulnerability-exposes-ubuntu-to-root-escalation/623670/",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "Australian Cyber Security Magazine - Qualys Discloses Ubuntu Desktop Local Privilege Escalation Vulnerability",
+      "url": "https://australiancybersecuritymagazine.com.au/qualys-discloses-ubuntu-desktop-local-privilege-escalation-vulnerability-cve-2026-3888/",
+      "date": "2026-03-18",
+      "type": "News"
+    },
+    {
+      "name": "Ubuntu Community Hub - snapd Local Privilege Escalation CVE-2026-3888",
+      "url": "https://discourse.ubuntu.com/t/snapd-local-privilege-escalation-cve-2026-3888/78627",
+      "date": "2026-03-17",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Vulert Blog - Ubuntu CVE-2026-3888: snap-confine and systemd-tmpfiles Race Condition",
+      "url": "https://vulert.com/blog/ubuntu-cve-2026-3888-snap-confine-systemd-tmpfiles/",
+      "date": "2026-03-19",
+      "type": "Research"
+    },
+    {
+      "name": "PenLigent Labs - CVE-2026-3888 Systemd Cleanup Timing Exploit Leads to Root",
+      "url": "https://www.penligent.ai/hackinglabs/ubuntu-cve-2026-3888-bug-how-a-systemd-cleanup-timing-exploit-leads-to-root-on-snapd-systems/",
+      "date": "2026-03-20",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable CVE-2026-3888",
+      "url": "https://www.tenable.com/cve/CVE-2026-3888",
+      "date": "2026-03-17",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-01",
+      "event": "Qualys Threat Research Unit discovers the TOCTOU race condition between snap-confine and systemd-tmpfiles in Ubuntu systems with snap installed"
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Qualys coordinates responsible disclosure with Canonical (Ubuntu's parent company); Canonical begins developing patches for affected Ubuntu LTS versions"
+    },
+    {
+      "date": "2026-03-17",
+      "event": "Canonical releases patches for Ubuntu 24.04 LTS (snapd 2.73+ubuntu24.04.1), Ubuntu 25.10, Ubuntu 22.04, 20.04, 18.04, and 16.04 LTS simultaneously with coordinated public disclosure"
+    },
+    {
+      "date": "2026-03-17",
+      "event": "Qualys publishes detailed technical blog post and CVE is assigned; NVD indexes CVE-2026-3888 with CVSS 7.8 High rating"
+    },
+    {
+      "date": "2026-03-17",
+      "event": "Rapid follow-up patch (snapd 2.73+ubuntu24.04.2) released to fix configuration issues introduced by the initial patch"
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Hack The Box releases 'Snapped' training machine demonstrating CVE-2026-3888 exploitation chained with CVE-2026-27944 (Nginx auth bypass), making working exploit techniques widely available"
+    },
+    {
+      "date": "2026-03-28",
+      "event": "Ongoing risk: unpatched Ubuntu systems remain vulnerable; exploitation complexity is high but attacker tools continue to be refined"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Security researchers at Qualys discovered a serious flaw in how Ubuntu's snap package system interacts with a routine system cleaning process. Snap is Ubuntu's modern app packaging format used in millions of default Ubuntu 24.04 installations. The vulnerability allows any user with a regular account on an Ubuntu machine to eventually gain complete administrator (root) access — without needing any password or special permissions. The flaw exploits a timing window created when the system automatically cleans up old temporary directories, allowing an attacker to swap in malicious files that then get loaded with full root privileges. Canonical has released patches, but millions of unpatched Ubuntu systems remain at risk.",
+    "who_is_affected": "All Ubuntu Desktop 24.04 LTS users with snap installed (default installation), Ubuntu 25.10 users, and users of older Ubuntu LTS versions (22.04, 20.04, 18.04, 16.04) with snapd present. This includes Ubuntu-based server distributions. Systems without snap installed are not affected. The vulnerability requires local access, making it most relevant in multi-user environments, cloud VMs with shell access, corporate desktops, and university/shared computing systems. It is particularly dangerous when chained with a remote code execution vulnerability to enable a full attack chain.",
+    "what_attackers_do": "Step 1: Attacker gains any low-privilege local access to the Ubuntu system — this could be via a compromised user account, a web shell, or a remote code execution vulnerability in another application. Step 2: Attacker monitors the /tmp/.snap directory and waits for systemd-tmpfiles to automatically delete it during its scheduled cleanup (this happens after 10–30 days of directory age, depending on Ubuntu version). Step 3: The instant /tmp/.snap is deleted by systemd-tmpfiles, the attacker recreates the directory and fills it with malicious library files (.so files) under their control. Step 4: Attacker triggers the execution of any snap application or system service that causes snap-confine to run. Step 5: snap-confine, operating with root privileges to set up the snap sandbox, bind-mounts the attacker-controlled directory and loads the malicious files as root — giving the attacker's code full administrator execution. Step 6: Attacker has full root access and can read any file, modify system configuration, install persistent backdoors, or pivot to other systems.",
+    "what_you_should_do": [
+      "Run 'sudo apt update && sudo apt upgrade snapd' immediately to patch to snapd 2.73+ubuntu24.04.2 or later on Ubuntu 24.04 LTS",
+      "Verify the patched version is installed by running 'snap version' and confirming snapd shows 2.73 or higher",
+      "On Ubuntu 25.10 and other affected versions, apply the distribution-specific snapd update using apt upgrade",
+      "If immediate patching is not possible in multi-user environments, restrict local user access and monitor /tmp/.snap for unauthorized file modifications",
+      "Treat this as high-priority if your Ubuntu systems have untrusted local users, are cloud VMs with shell access, or are at risk of compromise via another vulnerability that could be chained with this LPE"
+    ],
+    "why_this_is_serious": "While this vulnerability requires local access (reducing the threat compared to remote exploits), it is still highly dangerous for three reasons. First, Ubuntu 24.04 LTS is the current standard enterprise Linux distribution, and snap is installed by default — meaning the vulnerable configuration exists on millions of systems. Second, working proof-of-concept exploit code is now publicly available through Hack The Box's 'Snapped' training machine, dramatically lowering the bar for attackers. Third, in modern attack chains, local privilege escalation is often the critical second step after an initial foothold — an attacker who has exploited any remote vulnerability (web application flaw, phishing, etc.) can now immediately escalate to full root on affected Ubuntu systems."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1548",
+        "technique_name": "Abuse Elevation Control Mechanism",
+        "description": "Exploits the SUID-root snap-confine binary's privileged file operations to execute attacker-controlled code as root via TOCTOU race condition with systemd-tmpfiles cleanup"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1574.006",
+        "technique_name": "Hijack Execution Flow: Dynamic Linker Hijacking",
+        "description": "Malicious shared library (.so) files placed in /tmp/.snap by the attacker are loaded by snap-confine during sandbox initialization via bind-mount, hijacking legitimate execution flow with attacker-controlled code"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1036",
+        "technique_name": "Masquerading",
+        "description": "Attacker-controlled files placed in /tmp/.snap are designed to appear as legitimate snap sandbox directory contents, evading detection during the brief window between systemd cleanup and snap-confine execution"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1543.002",
+        "technique_name": "Create or Modify System Process: Systemd Service",
+        "description": "Once root access is achieved, attackers can install persistent systemd services, modify system binaries, or create backdoor accounts that survive reboots"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on monitoring the /tmp/.snap directory for unauthorized modifications, tracking snap-confine process behavior, and identifying filesystem anomalies that indicate the race condition is being exploited. Since exploitation requires waiting for systemd-tmpfiles cleanup, behavioral monitoring around the cleanup window is key. File Integrity Monitoring (FIM) on /tmp/.snap is the most reliable detection mechanism.",
+    "log_sources": [
+      {
+        "source": "Linux Audit System (auditd)",
+        "description": "Monitor file creation and bind-mount operations in /tmp/.snap; specifically, creation of .so library files in that directory by non-root users is a strong indicator of exploit attempt",
+        "priority": "Critical"
+      },
+      {
+        "source": "systemd Journal (journalctl)",
+        "description": "Track systemd-tmpfiles cleanup events that delete /tmp/.snap; correlate with subsequent rapid recreation of the directory within milliseconds to seconds",
+        "priority": "Critical"
+      },
+      {
+        "source": "File Integrity Monitoring (FIM)",
+        "description": "Implement real-time monitoring on /tmp/.snap/ for unexpected file creation, ownership changes, or library files appearing outside of expected snap package updates",
+        "priority": "High"
+      },
+      {
+        "source": "snap-confine Process Logs",
+        "description": "Monitor snap-confine process execution and its child processes; unexpected processes spawned from snap-confine sandbox initialization indicate successful exploitation",
+        "priority": "High"
+      },
+      {
+        "source": "Linux /proc/mounts",
+        "description": "Monitor for unexpected bind-mount operations targeting /tmp/.snap or snap sandbox directories that could indicate exploitation",
+        "priority": "Medium"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Non-root .so library files created in /tmp/.snap/",
+        "description": "Attacker places malicious shared libraries in /tmp/.snap/ after systemd cleanup; these .so files being created by a regular user account is highly anomalous",
+        "log_field": "audit.syscall='creat' AND audit.path CONTAINS '/tmp/.snap/' AND audit.path CONTAINS '.so' AND audit.uid != 0",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "/tmp/.snap directory rapid recreation after systemd-tmpfiles cleanup",
+        "description": "The attack requires recreating /tmp/.snap immediately after systemd-tmpfiles deletes it; millisecond-level timing between directory deletion and non-root recreation is highly suspicious",
+        "log_field": "audit.syscall IN ('mkdir','mkdirat') AND audit.path='/tmp/.snap' AND audit.uid != 0",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "snap-confine spawning unexpected child processes",
+        "description": "Successful exploitation results in snap-confine loading attacker code, manifesting as unexpected processes spawned from or in the context of snap-confine with root UID",
+        "log_field": "process.parent.name='snap-confine' AND process.name NOT IN ('snap','snapd') AND process.uid=0",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unpatched snapd version present (below 2.73)",
+        "description": "Systems running snapd versions below 2.73+ubuntu24.04.2 on Ubuntu 24.04 LTS remain vulnerable; version check provides baseline exposure assessment",
+        "log_field": "package.name='snapd' AND package.version < '2.73'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Patch snapd Immediately",
+      "description": "Apply the Canonical security update for snapd on all Ubuntu systems. The patch modifies snap-confine to validate /tmp/.snap directory ownership and permissions before use, eliminating the TOCTOU race condition",
+      "command": "sudo apt update && sudo apt install --only-upgrade snapd && snap version"
+    },
+    {
+      "priority": 2,
+      "action": "Verify Patched Version",
+      "description": "Confirm the patched snapd version is active. On Ubuntu 24.04 LTS, the fixed version is snapd 2.73+ubuntu24.04.2 or later. On Ubuntu 25.10, look for 2.73+ubuntu25.10.1 or later",
+      "command": "snap version | grep snapd"
+    },
+    {
+      "priority": 3,
+      "action": "Inventory Vulnerable Ubuntu Systems",
+      "description": "Identify all Ubuntu systems in your environment running snap (default in Ubuntu 24.04+). Prioritize systems with untrusted local users, internet-facing services that could enable initial access, or multi-user shared access",
+      "command": "dpkg-query -W snapd | awk '{print $2}'"
+    },
+    {
+      "priority": 4,
+      "action": "Enable auditd Monitoring on Unpatched Systems",
+      "description": "On systems that cannot be patched immediately, enable file system auditing rules on /tmp/.snap to detect exploitation attempts in real time",
+      "command": "auditctl -w /tmp/.snap -p rwxa -k snap_exploit_watch"
+    },
+    {
+      "priority": 5,
+      "action": "Restrict Local User Access on Unpatched High-Risk Systems",
+      "description": "If patching is delayed on critical multi-user systems, consider temporarily restricting non-essential user logins, removing unused local accounts, and ensuring all local users are trusted personnel until the patch can be applied",
+      "command": null
+    }
+  ]
+}

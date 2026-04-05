@@ -1,0 +1,236 @@
+{
+  "briefing_id": "TB-2026-02-17-002",
+  "title": "Google Chrome First Zero-Day of 2026: CSS Use-After-Free Vulnerability Under Active Exploitation Enables In-Sandbox Code Execution (CVE-2026-2441)",
+  "generated_date": "2026-02-17",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.8,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-2441"
+  ],
+  "tags": [
+    "google-chrome",
+    "zero-day",
+    "use-after-free",
+    "css",
+    "browser",
+    "rce",
+    "active-exploitation",
+    "chromium"
+  ],
+  "affected_products": [
+    "Google Chrome for Windows before 145.0.7632.75",
+    "Google Chrome for macOS before 145.0.7632.76",
+    "Google Chrome for Linux before 144.0.7559.75",
+    "Microsoft Edge (Chromium-based)",
+    "Brave Browser",
+    "Opera Browser",
+    "Vivaldi Browser",
+    "All Chromium-based browsers"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "Google Chrome Releases Blog - Stable Channel Update for Desktop",
+      "url": "https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop_13.html",
+      "date": "2026-02-13",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "The Hacker News - New Chrome Zero-Day Under Active Attack",
+      "url": "https://thehackernews.com/2026/02/new-chrome-zero-day-cve-2026-2441-under.html",
+      "date": "2026-02-14",
+      "type": "News"
+    },
+    {
+      "name": "SecurityWeek - Google Patches First Actively Exploited Chrome Zero-Day of 2026",
+      "url": "https://www.securityweek.com/google-patches-first-actively-exploited-chrome-zero-day-of-2026/",
+      "date": "2026-02-14",
+      "type": "News"
+    },
+    {
+      "name": "Help Net Security - Google patches Chrome vulnerability with in-the-wild exploit",
+      "url": "https://www.helpnetsecurity.com/2026/02/16/google-patches-chrome-vulnerability-with-in-the-wild-exploit-cve-2026-2441/",
+      "date": "2026-02-16",
+      "type": "News"
+    },
+    {
+      "name": "SOCRadar - CVE-2026-2441: Chrome Zero-Day Enables In-Sandbox Code Execution",
+      "url": "https://socradar.io/blog/cve-2026-2441-chrome-0-day-sandbox-code-execution/",
+      "date": "2026-02-14",
+      "type": "Research"
+    },
+    {
+      "name": "Qualys ThreatPROTECT - Google Patches First Zero-day Vulnerability of the Year",
+      "url": "https://threatprotect.qualys.com/2026/02/16/google-patches-its-first-zero-day-vulnerability-of-the-year-cve-2026-2441/",
+      "date": "2026-02-16",
+      "type": "Research"
+    },
+    {
+      "name": "SOC Prime - CVE-2026-2441: Google Patches Chrome Zero-Day Exploited in the Wild",
+      "url": "https://socprime.com/blog/cve-2026-14174-vulnerability/",
+      "date": "2026-02-14",
+      "type": "Research"
+    },
+    {
+      "name": "The Cyber Express - Chrome RCE Flaw CVE-2026-2441 Exploited In Wild",
+      "url": "https://thecyberexpress.com/cve-2026-2441-google-chrome/",
+      "date": "2026-02-14",
+      "type": "News"
+    },
+    {
+      "name": "Malwarebytes - Update Chrome now: Zero-day bug allows code execution",
+      "url": "https://www.malwarebytes.com/blog/news/2026/02/update-chrome-now-zero-day-bug-allows-code-execution-via-malicious-webpages",
+      "date": "2026-02-14",
+      "type": "Research"
+    },
+    {
+      "name": "Bitdefender - Google Amends Chrome with First Important Security Fix in 2026",
+      "url": "https://www.bitdefender.com/en-us/blog/hotforsecurity/google-chrome-first-important-security-update-2026",
+      "date": "2026-02-14",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityAffairs - Google fixes first actively exploited Chrome zero-day of 2026",
+      "url": "https://securityaffairs.com/188029/security/google-fixes-first-actively-exploited-chrome-zero-day-of-2026.html",
+      "date": "2026-02-14",
+      "type": "News"
+    },
+    {
+      "name": "Purple Ops - CVE-2026-2441 Chrome Zero-Day Exploit in CSS Engine",
+      "url": "https://www.purple-ops.io/resources-hottest-cves/chrome-zero-day-cve-2026-2441/",
+      "date": "2026-02-15",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-02-11",
+      "event": "Security researcher Shaheen Fazim discovers the use-after-free vulnerability in Chrome CSS engine and reports to Google"
+    },
+    {
+      "date": "2026-02-13",
+      "event": "Google releases Chrome Stable Channel Update with fix: 145.0.7632.75/76 for Windows/macOS, 144.0.7559.75 for Linux"
+    },
+    {
+      "date": "2026-02-14",
+      "event": "Google confirms active in-the-wild exploitation; multiple security outlets publish advisories"
+    },
+    {
+      "date": "2026-02-16",
+      "event": "Hong Kong Computer Emergency Response Team (HKCERT) issues alert to users about the vulnerability"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A critical zero-day vulnerability was discovered in Google Chrome's CSS rendering engine. The flaw is a use-after-free bug, where Chrome accidentally uses memory that has already been freed, allowing attackers to hijack the browser's execution. Google confirmed that attackers were already exploiting this vulnerability in real-world attacks before the patch was available. This is the first Chrome zero-day exploited in the wild in 2026, and it affects all Chromium-based browsers including Microsoft Edge, Brave, Opera, and Vivaldi.",
+    "who_is_affected": "Anyone using Google Chrome or any Chromium-based browser (Microsoft Edge, Brave, Opera, Vivaldi) on Windows, macOS, or Linux is potentially vulnerable. With Chrome holding approximately 65% of the global browser market share, this affects billions of users worldwide. Organizations that rely on web-based applications and have not yet updated their browsers are at particular risk.",
+    "what_attackers_do": "Step 1: Attackers create a specially crafted malicious webpage containing CSS code designed to trigger the use-after-free condition in Chrome's rendering engine. Step 2: The victim visits the malicious page through a phishing link, malicious advertisement, or compromised legitimate website (drive-by attack). Step 3: The crafted CSS causes Chrome to free a memory object but then attempt to reference it again, creating a dangling pointer. Step 4: Attackers reallocate the freed memory with malicious data, redirecting Chrome's execution flow to attacker-controlled code. Step 5: Arbitrary code executes inside Chrome's sandbox, enabling credential theft, session hijacking, malware delivery, or chaining with a sandbox escape for full system compromise.",
+    "what_you_should_do": [
+      "Immediately update Google Chrome to version 145.0.7632.75 or later (Menu > Help > About Google Chrome)",
+      "Update all Chromium-based browsers (Edge, Brave, Opera, Vivaldi) to their latest versions",
+      "Restart browsers after updating to ensure the patch takes effect",
+      "Enforce browser version policies via group policy or MDM in enterprise environments",
+      "Educate users about phishing risks and suspicious links until all browsers are patched"
+    ],
+    "why_this_is_serious": "Chrome is the world's most widely used browser with billions of active users. A use-after-free vulnerability in the CSS engine is extremely dangerous because CSS is processed on virtually every webpage, meaning exploitation requires no special user action beyond visiting a malicious page. The confirmed in-the-wild exploitation means attackers have already weaponized this flaw. While the exploit runs inside Chrome's sandbox, it can still steal credentials, hijack sessions, and serve as the first stage of a more destructive attack chain when combined with a sandbox escape."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1189",
+        "technique_name": "Drive-by Compromise",
+        "description": "Attackers host or inject malicious CSS into webpages to exploit the use-after-free vulnerability when victims browse to the page"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "The use-after-free in CSS processing allows execution of arbitrary code within Chrome's renderer process sandbox"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1539",
+        "technique_name": "Steal Web Session Cookie",
+        "description": "In-sandbox code execution can access session cookies and authentication tokens from the browser process"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1185",
+        "technique_name": "Browser Session Hijacking",
+        "description": "Attackers leverage the in-sandbox execution to intercept and manipulate browser sessions for credential theft"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "The primary defense is ensuring all Chrome and Chromium-based browsers are updated. Monitor browser versions across your environment and watch for signs of exploitation including unusual renderer process behavior.",
+    "log_sources": [
+      {
+        "source": "Browser Version Monitoring",
+        "description": "Track Chrome versions across all endpoints to identify unpatched browsers; any version before 145.0.7632.75 is vulnerable",
+        "priority": "Critical"
+      },
+      {
+        "source": "Web Proxy / URL Filtering Logs",
+        "description": "Monitor for access to known malicious domains or suspicious redirects that may deliver the exploit",
+        "priority": "High"
+      },
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Monitor Chrome renderer process for unusual child process spawning or memory access patterns",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Chrome version below 145.0.7632.75 on any endpoint",
+        "description": "Unpatched browsers are vulnerable to this actively exploited zero-day",
+        "log_field": "browser_version < '145.0.7632.75'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child processes spawned by Chrome renderer",
+        "description": "Successful exploitation may result in the Chrome renderer process spawning unexpected child processes",
+        "log_field": "parent_process='chrome.exe' AND process_type='renderer' AND child_process NOT IN expected_list",
+        "severity": "High"
+      },
+      {
+        "indicator": "Anomalous memory allocation patterns in Chrome CSS processing",
+        "description": "Use-after-free exploitation creates abnormal memory allocation and deallocation patterns in the renderer",
+        "log_field": "process='chrome.exe' AND event='memory_violation'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update all Chrome browsers immediately",
+      "description": "Update Google Chrome to 145.0.7632.75/76 on Windows/macOS or 144.0.7559.75 on Linux. Restart browser after update.",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Update all Chromium-based browsers",
+      "description": "Ensure Microsoft Edge, Brave, Opera, Vivaldi and other Chromium-based browsers receive their corresponding security updates",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Deploy enterprise browser version policy",
+      "description": "Use group policy or MDM to enforce minimum browser version requirements and block outdated versions from accessing corporate resources",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Heighten phishing awareness",
+      "description": "Alert users about increased risk from malicious links and drive-by exploits while unpatched browsers remain in the environment",
+      "command": null
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "briefing_id": "TB-2026-03-31-001",
+  "title": "Citrix NetScaler ADC & Gateway Critical Memory Overread (CVE-2026-3055) Under Active Exploitation — SAML IDP Configurations Leaking Sensitive Data",
+  "generated_date": "2026-03-31",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-3055",
+    "CVE-2026-4368"
+  ],
+  "tags": [
+    "citrix",
+    "netscaler",
+    "memory-overread",
+    "saml",
+    "active-exploitation",
+    "network-infrastructure",
+    "data-leakage",
+    "gateway"
+  ],
+  "affected_products": [
+    "NetScaler ADC 14.1 before 14.1-66.59",
+    "NetScaler Gateway 14.1 before 14.1-66.59",
+    "NetScaler ADC 13.1 before 13.1-62.23",
+    "NetScaler Gateway 13.1 before 13.1-62.23"
+  ],
+  "sources_analyzed": 9,
+  "sources": [
+    {
+      "name": "Rapid7 - CVE-2026-3055: Citrix NetScaler ADC and NetScaler Gateway Out-of-Bounds Read",
+      "url": "https://www.rapid7.com/blog/post/etr-cve-2026-3055-citrix-netscaler-adc-and-netscaler-gateway-out-of-bounds-read/",
+      "date": "2026-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "Help Net Security - Critical NetScaler ADC, Gateway flaw may soon be exploited (CVE-2026-3055)",
+      "url": "https://www.helpnetsecurity.com/2026/03/24/netscaler-adc-gateway-cve-2026-3055/",
+      "date": "2026-03-24",
+      "type": "News"
+    },
+    {
+      "name": "Qualys ThreatPROTECT - Citrix NetScaler ADC and NetScaler Gateway Multiple Vulnerabilities",
+      "url": "https://threatprotect.qualys.com/2026/03/24/citrix-netscaler-adc-and-netscaler-gateway-multiple-vulnerabilities-cve-2026-3055-cve-2026-4368/",
+      "date": "2026-03-24",
+      "type": "Research"
+    },
+    {
+      "name": "Security Affairs - Urgent Alert: NetScaler bug CVE-2026-3055 probed by attackers",
+      "url": "https://securityaffairs.com/190131/hacking/urgent-alert-netscaler-bug-cve-2026-3055-probed-by-attackers-could-leak-sensitive-data.html",
+      "date": "2026-03-27",
+      "type": "News"
+    },
+    {
+      "name": "Infosecurity Magazine - Critical Citrix NetScaler Vulnerability Exploited in the Wild",
+      "url": "https://www.infosecurity-magazine.com/news/critical-citrix-netscaler/",
+      "date": "2026-03-28",
+      "type": "News"
+    },
+    {
+      "name": "Cybersecurity News - Hackers Probe Citrix NetScaler Instances Ahead of Likely Exploitation",
+      "url": "https://cybersecuritynews.com/citrix-netscaler-instances-exploited/",
+      "date": "2026-03-27",
+      "type": "News"
+    },
+    {
+      "name": "The Cyber Express - CVE-2026-3055 Threatens Citrix NetScaler SAML IDP",
+      "url": "https://thecyberexpress.com/cve-2026-3055-citrix-netscaler-saml-idp/",
+      "date": "2026-03-25",
+      "type": "News"
+    },
+    {
+      "name": "Born's Tech - Vulnerability CVE-2026-3055 in Citrix NetScaler ADC and Gateway is Being Exploited",
+      "url": "https://borncity.com/win/2026/03/29/vulnerability-cve-2026-3055-in-citrix-netscaler-adc-and-gateway-is-being-exploited/",
+      "date": "2026-03-29",
+      "type": "News"
+    },
+    {
+      "name": "Vulert - Citrix NetScaler Under Active Recon for CVE-2026-3055",
+      "url": "https://vulert.com/blog/citrix-netscaler-active-recon-cve-2026-3055-memory/",
+      "date": "2026-03-28",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-23",
+      "event": "Citrix publishes security advisory for CVE-2026-3055 and CVE-2026-4368 affecting NetScaler ADC and NetScaler Gateway products"
+    },
+    {
+      "date": "2026-03-24",
+      "event": "Rapid7 and Qualys publish detailed analysis; security community begins assessing exposure across internet-facing NetScaler appliances"
+    },
+    {
+      "date": "2026-03-27",
+      "event": "watchTowr confirms active reconnaissance against NetScaler instances via Attacker Eye honeypot network; known threat actor source IPs observed probing for CVE-2026-3055"
+    },
+    {
+      "date": "2026-03-29",
+      "event": "Multiple reports confirm in-the-wild exploitation has begun; organizations with SAML IDP configurations are primary targets for sensitive data exfiltration"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Citrix disclosed a critical vulnerability (CVE-2026-3055) in NetScaler ADC and NetScaler Gateway that allows unauthenticated remote attackers to read sensitive data directly from the appliance's memory. The flaw is caused by insufficient input validation leading to a memory overread condition. Systems configured as SAML Identity Providers are vulnerable. Within days of disclosure, security researchers confirmed active exploitation attempts from known threat actor IP addresses, with attackers scanning the internet for vulnerable NetScaler instances to steal authentication tokens, session data, and other secrets from device memory.",
+    "who_is_affected": "Organizations running on-premise NetScaler ADC or NetScaler Gateway appliances configured as SAML Identity Providers are vulnerable. Affected versions include NetScaler ADC and Gateway 14.1 before 14.1-66.59 and 13.1 before 13.1-62.23. Default configurations that do not use SAML IDP are not affected. Given NetScaler's widespread deployment in enterprise environments for load balancing, VPN, and authentication, thousands of internet-facing appliances across government, financial services, healthcare, and large enterprises are potentially exposed.",
+    "what_attackers_do": "Step 1: Attackers scan the internet for exposed NetScaler ADC and Gateway appliances using specialized tools and Shodan/Censys queries to identify systems with SAML IDP configurations enabled. Step 2: The attacker sends a specially crafted unauthenticated request to the SAML IDP endpoint that triggers an out-of-bounds memory read due to insufficient input validation. Step 3: The appliance returns more data than intended from its memory, potentially including SAML authentication tokens, session cookies, private keys, configuration secrets, and other sensitive data stored in adjacent memory regions. Step 4: Attackers use the leaked authentication material to gain unauthorized access to backend applications, impersonate legitimate users, or pivot further into the network infrastructure.",
+    "what_you_should_do": [
+      "Immediately upgrade NetScaler ADC and Gateway to fixed versions: 14.1-66.59 or later for the 14.1 branch, and 13.1-62.23 or later for the 13.1 branch",
+      "Check if your appliance is configured as a SAML IDP by searching your configuration for 'add authentication samlIdPProfile' — if not present, your default configuration is not vulnerable to CVE-2026-3055",
+      "Review NetScaler access logs for anomalous SAML endpoint requests, especially from unexpected source IPs or with malformed parameters, since March 23, 2026",
+      "If exploitation is suspected, rotate all SAML signing certificates, invalidate active sessions, and rotate any secrets or tokens that may have been stored in appliance memory",
+      "Restrict management and SAML endpoint access to trusted IP ranges using network ACLs or firewall rules as an interim mitigation if immediate patching is not possible"
+    ],
+    "why_this_is_serious": "This vulnerability is critical because NetScaler appliances sit at the perimeter of enterprise networks and handle sensitive authentication traffic. A memory overread vulnerability in the SAML IDP component can expose authentication tokens, session secrets, and private keys — giving attackers the ability to impersonate legitimate users and bypass authentication entirely. The fact that exploitation requires no authentication and is confirmed active in the wild makes this an emergency-level patch priority. Citrix NetScaler has been a high-value target for threat actors historically, and delayed patching of previous NetScaler vulnerabilities has led to significant breaches across critical infrastructure."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the CVE-2026-3055 vulnerability in internet-facing NetScaler ADC/Gateway SAML IDP endpoints to read sensitive data from appliance memory without authentication"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1212",
+        "technique_name": "Exploitation for Credential Access",
+        "description": "Memory overread condition exposes SAML tokens, session cookies, and potentially private keys from NetScaler appliance memory, enabling credential theft"
+      },
+      {
+        "tactic": "Reconnaissance",
+        "technique_id": "T1595.002",
+        "technique_name": "Active Scanning: Vulnerability Scanning",
+        "description": "Threat actors actively scanning internet-facing NetScaler instances to identify appliances with SAML IDP configurations vulnerable to CVE-2026-3055"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1550.001",
+        "technique_name": "Use Alternate Authentication Material: Application Access Token",
+        "description": "Stolen SAML tokens and session cookies from memory overread can be used to access backend applications and services authenticated through the compromised NetScaler"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on identifying anomalous requests to SAML IDP endpoints on NetScaler appliances, monitoring for reconnaissance scanning activity, and auditing authentication logs for signs of token reuse or session hijacking. Organizations should also verify their NetScaler firmware versions against the advisory.",
+    "log_sources": [
+      {
+        "source": "NetScaler System and Access Logs",
+        "description": "Monitor ns.log and nsvpn.log for unusual SAML endpoint requests, especially malformed or oversized requests to authentication endpoints from untrusted IP addresses",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network/Firewall Logs",
+        "description": "Monitor inbound connections to NetScaler SAML IDP endpoints for scanning patterns: rapid sequential requests from single IPs, requests from known threat actor infrastructure, or connections from Tor exit nodes",
+        "priority": "Critical"
+      },
+      {
+        "source": "SIEM/SAML Authentication Logs",
+        "description": "Audit SAML assertion logs for token reuse, impossible travel scenarios, or authentication from unexpected source IPs that could indicate stolen token usage",
+        "priority": "High"
+      },
+      {
+        "source": "Threat Intelligence Feeds",
+        "description": "Cross-reference source IPs of NetScaler management and SAML endpoint connections against known threat actor infrastructure and watchTowr honeypot intelligence",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Malformed or oversized HTTP requests to SAML IDP endpoints",
+        "description": "Requests to SAML authentication endpoints with unusual parameters or oversized payloads may indicate exploitation attempts targeting the memory overread",
+        "log_field": "uri contains 'samlIdP' AND (request_size > 8192 OR status_code=500)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Rapid sequential requests from single IPs to SAML endpoints",
+        "description": "Automated scanning tools sending multiple requests in rapid succession to identify vulnerable NetScaler instances with SAML IDP enabled",
+        "log_field": "uri contains 'saml' AND request_count_per_minute > 50",
+        "severity": "High"
+      },
+      {
+        "indicator": "SAML token reuse from unexpected IP addresses",
+        "description": "Authentication tokens obtained from memory leak being replayed from different IP addresses than the original session",
+        "log_field": "saml_assertion_id=DUPLICATE AND src_ip != original_session_ip",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unpatched NetScaler firmware versions",
+        "description": "Any NetScaler ADC or Gateway running versions prior to 14.1-66.59 or 13.1-62.23 with SAML IDP configuration is vulnerable",
+        "log_field": "netscaler_version < '14.1-66.59' AND config contains 'samlIdPProfile'",
+        "severity": "Critical"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade NetScaler to patched firmware",
+      "description": "Upgrade NetScaler ADC and Gateway to 14.1-66.59+ or 13.1-62.23+ immediately to remediate CVE-2026-3055 and CVE-2026-4368",
+      "command": null
+    },
+    {
+      "priority": 2,
+      "action": "Check for SAML IDP configuration",
+      "description": "Determine if your appliance is configured as a SAML IDP — if not, the default configuration is not vulnerable to CVE-2026-3055",
+      "command": "grep 'add authentication samlIdPProfile' /nsconfig/ns.conf"
+    },
+    {
+      "priority": 3,
+      "action": "Restrict SAML endpoint access",
+      "description": "As an interim mitigation, restrict access to SAML IDP endpoints to trusted IP ranges using ACLs or firewall rules",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit authentication logs for compromise indicators",
+      "description": "Review NetScaler access logs and downstream SAML authentication logs for anomalous activity since March 23, 2026",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Rotate SAML certificates and secrets if exploitation suspected",
+      "description": "If evidence of exploitation is found, rotate all SAML signing certificates, invalidate active sessions, and regenerate any secrets stored on the appliance",
+      "command": null
+    }
+  ]
+}

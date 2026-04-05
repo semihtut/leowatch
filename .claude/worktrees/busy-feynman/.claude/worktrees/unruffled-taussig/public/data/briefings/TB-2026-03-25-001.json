@@ -1,0 +1,250 @@
+{
+  "briefing_id": "TB-2026-03-25-001",
+  "title": "GlassWorm Supply-Chain Attack Expands to 72 Malicious Open VSX Extensions: Transitive Dependency Hijacking Targets Developer Environments via Solana-Based C2 Resolution",
+  "generated_date": "2026-03-25",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.1,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "glassworm",
+    "supply-chain",
+    "open-vsx",
+    "vscode-extensions",
+    "developer-targeting",
+    "credential-theft",
+    "cryptocurrency",
+    "solana-c2",
+    "transitive-dependency"
+  ],
+  "affected_products": [
+    "Open VSX extension registry and any IDE consuming Open VSX extensions (Eclipse Theia, VSCodium, Gitpod, OpenVSCode Server)",
+    "72 identified malicious Open VSX extensions mimicking popular developer utilities including linters, formatters, code runners, and AI coding assistants",
+    "At least 151 GitHub repositories compromised between March 3-9 2026",
+    "Developer workstations running affected extensions across macOS, Linux, and Windows"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "The Hacker News: GlassWorm Supply-Chain Attack Abuses 72 Open VSX Extensions to Target Developers",
+      "url": "https://thehackernews.com/2026/03/glassworm-supply-chain-attack-abuses-72.html",
+      "date": "2026-03-14",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer: GlassWorm malware hits 400+ code repos on GitHub, npm, VSCode, OpenVSX",
+      "url": "https://www.bleepingcomputer.com/news/security/glassworm-malware-hits-400-plus-code-repos-on-github-npm-vscode-openvsx/",
+      "date": "2026-03-13",
+      "type": "News"
+    },
+    {
+      "name": "CSO Online: Open VSX extensions hijacked: GlassWorm malware spreads via dependency abuse",
+      "url": "https://www.csoonline.com/article/4145579/open-vsx-extensions-hijacked-glassworm-malware-spreads-via-dependency-abuse.html",
+      "date": "2026-03-14",
+      "type": "News"
+    },
+    {
+      "name": "Cloud Security Alliance: GlassWorm Open VSX Transitive Dependency Supply-Chain Escalation",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-glassworm-open-vsx-transitive-dependency-a/",
+      "date": "2026-03-15",
+      "type": "Research"
+    },
+    {
+      "name": "Rescana: GlassWorm Supply-Chain Attack Exploits Open VSX Extensions to Target Developer Environments",
+      "url": "https://www.rescana.com/post/glassworm-supply-chain-attack-exploits-open-vsx-extensions-to-target-developer-environments",
+      "date": "2026-03-14",
+      "type": "Research"
+    },
+    {
+      "name": "CybersecurityNews: GlassWorm Campaign Uses 72 Malicious Open VSX Extensions to Broaden Reach",
+      "url": "https://cybersecuritynews.com/glassworm-campaign-uses-72-malicious-open-vsx-extensions/",
+      "date": "2026-03-14",
+      "type": "News"
+    },
+    {
+      "name": "Fluid Attacks: GlassWorm supply chain attack",
+      "url": "https://fluidattacks.com/blog/glassworm-vs-code-extensions-supply-chain-attack",
+      "date": "2026-03-15",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News: Open VSX Supply Chain Attack Used Compromised Dev Account to Spread GlassWorm",
+      "url": "https://thehackernews.com/2026/02/open-vsx-supply-chain-attack-used.html",
+      "date": "2026-02-28",
+      "type": "News"
+    },
+    {
+      "name": "Open Source For You: GlassWorm Malware Abuses Open Source Open VSX To Target macOS Developers",
+      "url": "https://www.opensourceforu.com/2026/01/glassworm-malware-abuses-open-source-open-vsx-to-target-macos-developers/",
+      "date": "2026-01-31",
+      "type": "News"
+    },
+    {
+      "name": "Hornetsecurity: Monthly Threat Report March 2026",
+      "url": "https://www.hornetsecurity.com/en/blog/monthly-threat-report/",
+      "date": "2026-03-20",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-01-31",
+      "event": "Socket Research Team identifies the first wave of malicious Open VSX extensions linked to the GlassWorm campaign, initially targeting macOS developers through compromised developer accounts"
+    },
+    {
+      "date": "2026-02-28",
+      "event": "Second wave discovered - attackers pivot to using compromised legitimate developer accounts to publish trojanized updates to previously trusted extensions"
+    },
+    {
+      "date": "2026-03-03",
+      "event": "Massive expansion begins - 151 GitHub repositories compromised between March 3-9 through automated pull requests injecting malicious dependencies"
+    },
+    {
+      "date": "2026-03-13",
+      "event": "Socket Research Team publicly discloses 72 additional malicious Open VSX extensions using novel transitive dependency hijacking via extensionPack and extensionDependencies manifest fields"
+    },
+    {
+      "date": "2026-03-14",
+      "event": "Multiple security outlets report the campaign has achieved over 9 million installs of malicious extensions across the Open VSX ecosystem"
+    },
+    {
+      "date": "2026-03-25",
+      "event": "Campaign remains active with continued discovery of new malicious extensions; Open VSX registry conducting ongoing takedown efforts"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A sophisticated supply-chain campaign called GlassWorm has compromised the Open VSX extension registry, which provides IDE extensions for editors like VSCodium, Eclipse Theia, and Gitpod. Attackers published at least 72 malicious extensions that mimic popular developer tools including linters, code formatters, and AI coding assistants. The extensions use a novel technique that abuses the extensionPack and extensionDependencies manifest fields to turn initially benign extensions into delivery vehicles for malicious loaders. The campaign has achieved over 9 million installs and compromised at least 151 GitHub repositories through automated malicious pull requests between March 3-9, 2026.",
+    "who_is_affected": "Software developers and development teams using Open VSX-compatible IDEs including VSCodium, Eclipse Theia, Gitpod, and OpenVSCode Server. Organizations whose developers install extensions from the Open VSX registry are at risk. The campaign specifically targets developers working with AI coding tools, linters, formatters, and code runners. Any organization with compromised developer workstations faces risk of credential theft, secrets exfiltration, and cryptocurrency wallet draining.",
+    "what_attackers_do": "Step 1: Attackers create or compromise legitimate developer accounts on the Open VSX registry and publish extensions that mimic popular developer utilities. Step 2: The malicious extensions abuse extensionPack and extensionDependencies manifest fields to install additional malicious extensions as transitive dependencies, turning a single install into a chain of compromises. Step 3: Once installed, the extension loader uses the Solana blockchain as a dead drop resolver, parsing transaction memos to dynamically retrieve the command-and-control server address, making traditional domain-based blocking ineffective. Step 4: The malware exfiltrates developer credentials, SSH keys, API tokens, cloud secrets, and environment variables from the compromised workstation. Step 5: Attackers drain cryptocurrency wallets found on developer machines and conscript infected endpoints as network proxies for further attacks.",
+    "what_you_should_do": [
+      "Audit all installed Open VSX extensions across developer workstations and CI/CD environments against the published list of 72 known malicious extension IDs",
+      "Remove any extensions with suspicious extensionPack or extensionDependencies that reference unknown or recently published extensions",
+      "Rotate all developer credentials, SSH keys, API tokens, and cloud secrets that may have been accessible from compromised workstations",
+      "Monitor for unexpected outbound connections to Solana RPC endpoints from developer machines as an indicator of GlassWorm C2 resolution",
+      "Implement extension allowlisting policies that restrict which Open VSX extensions can be installed in corporate development environments"
+    ],
+    "why_this_is_serious": "Developer workstations are treasure troves of sensitive credentials including cloud API keys, database passwords, SSH keys, CI/CD tokens, and code signing certificates. By targeting the extension ecosystem, GlassWorm compromises the very tools developers trust implicitly, achieving persistent access that survives across coding sessions. The use of Solana blockchain for C2 resolution makes the campaign exceptionally resilient to takedown efforts, as there is no traditional domain to block or sinkhole. With over 9 million installs, the blast radius of this supply-chain attack extends far beyond individual developers to the organizations and customers whose code and infrastructure they manage."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.001",
+        "technique_name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "description": "Attackers publish malicious extensions to the Open VSX registry that mimic legitimate developer tools, compromising the software supply chain at the extension/dependency level"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1204.002",
+        "technique_name": "User Execution: Malicious File",
+        "description": "Developers unknowingly install malicious extensions which execute code within the IDE's extension runtime environment with the developer's permissions"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1546",
+        "technique_name": "Event Triggered Execution",
+        "description": "Malicious extensions persist across IDE sessions and automatically execute when the development environment starts, maintaining access to the developer workstation"
+      },
+      {
+        "tactic": "Command and Control",
+        "technique_id": "T1102",
+        "technique_name": "Web Service",
+        "description": "GlassWorm uses the Solana blockchain as a dead drop resolver, parsing transaction memos to dynamically retrieve C2 server addresses, evading traditional network-based detection"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1555",
+        "technique_name": "Credentials from Password Stores",
+        "description": "The malware harvests stored credentials, SSH keys, API tokens, and secrets from developer workstations including browser password stores and credential managers"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1119",
+        "technique_name": "Automated Collection",
+        "description": "Automated exfiltration of environment variables, configuration files, cryptocurrency wallet files, and stored secrets from compromised developer machines"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on monitoring IDE extension installations for known malicious packages, network connections from development environments to Solana RPC endpoints, and unexpected credential access patterns from IDE processes. Extension manifest analysis can identify the transitive dependency abuse technique before malicious payloads execute.",
+    "log_sources": [
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Monitor IDE processes (code, codium, theia) for spawning unexpected child processes, making network connections to Solana RPC endpoints, or accessing credential stores and SSH key directories",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Traffic Monitoring (NDR/IDS)",
+        "description": "Alert on connections from developer workstations to Solana RPC endpoints (api.mainnet-beta.solana.com, solana-mainnet.g.alchemy.com) which may indicate GlassWorm C2 resolution",
+        "priority": "Critical"
+      },
+      {
+        "source": "Extension Management Logs",
+        "description": "Monitor for installation of extensions with extensionPack or extensionDependencies referencing recently published or unknown publisher extensions",
+        "priority": "High"
+      },
+      {
+        "source": "File Integrity Monitoring",
+        "description": "Monitor for unauthorized reads of SSH keys (~/.ssh/), cloud credential files (~/.aws/credentials, ~/.config/gcloud/), and environment files (.env) by IDE extension processes",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "IDE process connecting to Solana blockchain RPC endpoints",
+        "description": "GlassWorm uses Solana transaction memos as a dead drop resolver for C2 addresses; any connection from development tools to Solana infrastructure is highly suspicious",
+        "log_field": "process_name IN ('code', 'codium', 'theia') AND dst_host MATCHES 'solana|helius|alchemy' AND dst_port IN (443, 8899)",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Extension installation with transitive dependency chains from unknown publishers",
+        "description": "The attack abuses extensionPack and extensionDependencies fields to silently install additional malicious extensions; monitor for extensions that trigger installation of other extensions from different publishers",
+        "log_field": "event_type='extension_install' AND triggered_by='dependency' AND publisher_age < 90_days",
+        "severity": "High"
+      },
+      {
+        "indicator": "Unexpected file access to credential stores by IDE processes",
+        "description": "Malicious extensions read SSH keys, cloud credentials, and environment variables; monitor for IDE processes accessing these sensitive files outside normal development workflows",
+        "log_field": "process_name IN ('code', 'codium') AND file_path MATCHES '(\\.ssh|credentials|\\.env|wallet\\.json)' AND access_type='read'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Outbound HTTP PUT/POST requests with encoded payloads from IDE processes",
+        "description": "Exfiltration of stolen credentials and secrets occurs via HTTP requests to attacker-controlled infrastructure; monitor for unexpected outbound data transfers from development tools",
+        "log_field": "process_name IN ('code', 'codium', 'theia') AND http_method IN ('PUT', 'POST') AND dst_ip NOT IN trusted_registries",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit and remove known malicious Open VSX extensions from all developer workstations",
+      "description": "Cross-reference installed extensions against the published list of 72 known malicious extension IDs from Socket Research Team. Remove any matches immediately and quarantine affected workstations for further investigation.",
+      "command": "codium --list-extensions | grep -i -f known_malicious_extensions.txt"
+    },
+    {
+      "priority": 2,
+      "action": "Block Solana RPC endpoints at the network perimeter for developer environments",
+      "description": "Block outbound connections to known Solana RPC endpoints (api.mainnet-beta.solana.com, solana-mainnet.g.alchemy.com, mainnet.helius-rpc.com) from developer network segments to disrupt GlassWorm C2 resolution.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Rotate all developer credentials and secrets potentially exposed to compromised extensions",
+      "description": "Assume all credentials accessible from developer workstations with malicious extensions are compromised. Rotate SSH keys, API tokens, cloud credentials, CI/CD secrets, and code signing certificates.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Implement extension allowlisting for corporate development environments",
+      "description": "Configure IDE extension management policies to restrict installations to a curated list of approved extensions. Use product.json or settings.json to enforce extension restrictions.",
+      "command": null
+    }
+  ]
+}
