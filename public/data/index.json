@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-04-05T13:27:21.133Z",
-  "date": "2026-04-05",
+  "lastUpdated": "2026-04-06T03:18:35.871Z",
+  "date": "2026-04-06",
   "stats": {
-    "total": 126,
-    "critical": 94,
+    "total": 128,
+    "critical": 96,
     "high": 32,
     "medium": 0,
     "low": 0,
     "cisaKev": 59,
     "activeExploits": 15,
-    "totalSources": 1632
+    "totalSources": 1661
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,46 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-04-05-006",
+  "featuredBriefing": "TB-2026-04-06-002",
   "briefings": [
+    {
+      "id": "TB-2026-04-06-002",
+      "title": "Grafana Critical RCE via SQL Expressions CVE-2026-27876 (CVSS 9.1): Viewer-Level Users Exploit Arbitrary File Write to Overwrite Plugin Drivers and Establish SSH Backdoor on Host — Monitoring Infrastructure at Risk, Patches Released March 27",
+      "severity": "Critical",
+      "date": "2026-04-06",
+      "cves": [
+        "CVE-2026-27876"
+      ],
+      "tags": [
+        "grafana",
+        "rce",
+        "sql-expressions",
+        "arbitrary-file-write",
+        "monitoring",
+        "observability"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "A critical security vulnerability was discovered in Grafana — the world's most widely deployed open-source monitoring dashboard platform, used by millions of organizations to visualize their infrastru..."
+    },
+    {
+      "id": "TB-2026-04-06-001",
+      "title": "Cisco Smart Software Manager On-Prem Unauthenticated RCE CVE-2026-20160 (CVSS 9.8): Exposed Internal Service Grants Root Command Execution Without Authentication — No Workarounds Available, Immediate Upgrade to 9-202601 Required",
+      "severity": "Critical",
+      "date": "2026-04-06",
+      "cves": [
+        "CVE-2026-20160"
+      ],
+      "tags": [
+        "cisco",
+        "ssm",
+        "smart-software-manager",
+        "rce",
+        "unauthenticated",
+        "license-management"
+      ],
+      "sourcesCount": 14,
+      "excerpt": "Cisco discovered a critical flaw in its Smart Software Manager On-Prem (SSM On-Prem) — the software organizations use to manage Cisco product licenses in air-gapped or restricted network environments ..."
+    },
     {
       "id": "TB-2026-04-05-006",
       "title": "Aqua Security Trivy Supply Chain Compromise CVE-2026-33634 (CISA KEV, Deadline April 9): TeamPCP Backdoors 76 GitHub Action Version Tags — 1,000+ Cloud Environments Infected, 500K+ Credentials Exfiltrated via Poisoned Security Scanner",
