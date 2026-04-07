@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-04-06T03:18:35.871Z",
-  "date": "2026-04-06",
+  "lastUpdated": "2026-04-07T03:12:34.497Z",
+  "date": "2026-04-07",
   "stats": {
-    "total": 128,
-    "critical": 96,
+    "total": 131,
+    "critical": 99,
     "high": 32,
     "medium": 0,
     "low": 0,
     "cisaKev": 59,
     "activeExploits": 15,
-    "totalSources": 1661
+    "totalSources": 1699
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,67 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-04-06-002",
+  "featuredBriefing": "TB-2026-04-07-003",
   "briefings": [
+    {
+      "id": "TB-2026-04-07-003",
+      "title": "Mbed TLS / TF-PSA-Crypto Critical FFDH Key Exchange Vulnerability (CVE-2026-34872, CVSS 9.1): Attacker Forces Predictable Diffie-Hellman Shared Secret to Break Encryption — IoT and Embedded Devices at Mass Risk, Upgrade to 3.6.6 Required",
+      "severity": "Critical",
+      "date": "2026-04-07",
+      "cves": [
+        "CVE-2026-34872"
+      ],
+      "tags": [
+        "mbed-tls",
+        "cryptography",
+        "ffdh",
+        "key-exchange",
+        "iot",
+        "embedded"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical flaw was discovered in the Finite-Field Diffie-Hellman (FFDH) key exchange implementation in Mbed TLS — one of the most widely used cryptographic libraries for IoT and embedded systems. The..."
+    },
+    {
+      "id": "TB-2026-04-07-002",
+      "title": "Veeam Backup & Replication Critical RCE Chain (CVE-2026-21666, CVE-2026-21667, CVE-2026-21708, CVSS 9.9): Domain Users and Backup Viewers Achieve Full SYSTEM Shell on Backup Servers via CRLF Injection — Ransomware Groups Likely Reverse-Engineering Patches, Upgrade Required",
+      "severity": "Critical",
+      "date": "2026-04-07",
+      "cves": [
+        "CVE-2026-21666",
+        "CVE-2026-21667",
+        "CVE-2026-21708"
+      ],
+      "tags": [
+        "veeam",
+        "backup",
+        "rce",
+        "ransomware",
+        "data-protection",
+        "enterprise"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Veeam Software patched three critical remote code execution vulnerabilities in its Backup & Replication platform on March 12, 2026. These flaws allow attackers with only basic domain credentials — or ..."
+    },
+    {
+      "id": "TB-2026-04-07-001",
+      "title": "Juniper Networks Junos OS Evolved PTX Series Critical Pre-Auth RCE (CVE-2026-21902, CVSS 9.8): Unauthenticated Attacker Gains Root Access via Exposed Anomaly Detection REST API on Port 8160 — Network Infrastructure at Risk, Emergency Patches Released",
+      "severity": "Critical",
+      "date": "2026-04-07",
+      "cves": [
+        "CVE-2026-21902"
+      ],
+      "tags": [
+        "juniper",
+        "junos-evolved",
+        "rce",
+        "pre-auth",
+        "network-infrastructure",
+        "ptx-routers"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A critical vulnerability exists in Juniper Networks PTX Series routers running Junos OS Evolved. The On-Box Anomaly Detection framework — which should only be accessible internally — is incorrectly ex..."
+    },
     {
       "id": "TB-2026-04-06-002",
       "title": "Grafana Critical RCE via SQL Expressions CVE-2026-27876 (CVSS 9.1): Viewer-Level Users Exploit Arbitrary File Write to Overwrite Plugin Drivers and Establish SSH Backdoor on Host — Monitoring Infrastructure at Risk, Patches Released March 27",
