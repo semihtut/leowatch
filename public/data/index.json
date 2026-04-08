@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-04-07T03:12:34.497Z",
-  "date": "2026-04-07",
+  "lastUpdated": "2026-04-08T03:12:23.973Z",
+  "date": "2026-04-08",
   "stats": {
-    "total": 131,
-    "critical": 99,
-    "high": 32,
+    "total": 134,
+    "critical": 101,
+    "high": 33,
     "medium": 0,
     "low": 0,
-    "cisaKev": 59,
+    "cisaKev": 61,
     "activeExploits": 15,
-    "totalSources": 1699
+    "totalSources": 1738
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,65 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-04-07-003",
+  "featuredBriefing": "TB-2026-04-08-002",
   "briefings": [
+    {
+      "id": "TB-2026-04-08-003",
+      "title": "Google Chrome WebGPU Dawn Use-After-Free Zero-Day (CVE-2026-5281, CVSS 8.8): Fourth Actively Exploited Chrome Zero-Day of 2026 Enables Remote Code Execution via Crafted Web Pages — CISA KEV with April 15 Federal Deadline, Patch to Chrome 146.0.7680.177 Now",
+      "severity": "High",
+      "date": "2026-04-08",
+      "cves": [
+        "CVE-2026-5281"
+      ],
+      "tags": [
+        "chrome",
+        "browser",
+        "webgpu",
+        "zero-day",
+        "use-after-free",
+        "rce"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "Google patched a zero-day vulnerability in Chrome's WebGPU implementation (the Dawn library) that was actively being exploited in the wild before the patch was available. The flaw is a use-after-free ..."
+    },
+    {
+      "id": "TB-2026-04-08-002",
+      "title": "Flowise AI Agent Builder Maximum Severity RCE (CVE-2025-59528, CVSS 10.0): Unauthenticated Attackers Inject Arbitrary Node.js Code via CustomMCP Endpoint to Achieve Full System Compromise — 12,000+ Exposed Instances, Active Exploitation Confirmed, Upgrade to 3.0.6 Required",
+      "severity": "Critical",
+      "date": "2026-04-08",
+      "cves": [
+        "CVE-2025-59528"
+      ],
+      "tags": [
+        "flowise",
+        "ai",
+        "llm",
+        "rce",
+        "code-injection",
+        "nodejs"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A maximum-severity security vulnerability (CVSS 10.0 — the highest possible score) was discovered in Flowise, a popular open-source tool used by developers and enterprises to build AI agent workflows ..."
+    },
+    {
+      "id": "TB-2026-04-08-001",
+      "title": "Fortinet FortiClient EMS Critical Pre-Auth API Access Bypass (CVE-2026-35616, CVSS 9.1): Unauthenticated Attackers Forge Certificate Headers to Gain Full RCE on Endpoint Management Servers — CISA KEV with April 9 Federal Deadline, Emergency Hotfix Required",
+      "severity": "Critical",
+      "date": "2026-04-08",
+      "cves": [
+        "CVE-2026-35616"
+      ],
+      "tags": [
+        "fortinet",
+        "forticlient",
+        "ems",
+        "endpoint-management",
+        "authentication-bypass",
+        "rce"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "A critical security flaw was found in Fortinet FortiClient EMS — the central management server that enterprises use to control security policies on all employee endpoints. The vulnerability allows att..."
+    },
     {
       "id": "TB-2026-04-07-003",
       "title": "Mbed TLS / TF-PSA-Crypto Critical FFDH Key Exchange Vulnerability (CVE-2026-34872, CVSS 9.1): Attacker Forces Predictable Diffie-Hellman Shared Secret to Break Encryption — IoT and Embedded Devices at Mass Risk, Upgrade to 3.6.6 Required",

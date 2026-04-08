@@ -1,0 +1,262 @@
+{
+  "briefing_id": "TB-2026-04-08-002",
+  "title": "Flowise AI Agent Builder Maximum Severity RCE (CVE-2025-59528, CVSS 10.0): Unauthenticated Attackers Inject Arbitrary Node.js Code via CustomMCP Endpoint to Achieve Full System Compromise — 12,000+ Exposed Instances, Active Exploitation Confirmed, Upgrade to 3.0.6 Required",
+  "generated_date": "2026-04-08",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 10,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2025-59528"
+  ],
+  "tags": [
+    "flowise",
+    "ai",
+    "llm",
+    "rce",
+    "code-injection",
+    "nodejs",
+    "supply-chain",
+    "unauthenticated"
+  ],
+  "affected_products": [
+    "Flowise AI Agent Builder >= 2.2.7-patch.1 and < 3.0.6"
+  ],
+  "sources_analyzed": 12,
+  "sources": [
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/04/flowise-ai-agent-builder-under-active.html",
+      "date": "2026-04-06",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/max-severity-flowise-rce-vulnerability-now-exploited-in-attacks/",
+      "date": "2026-04-06",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs",
+      "url": "https://securityaffairs.com/190471/security/attackers-exploit-critical-flowise-flaw-cve-2025-59528-for-remote-code-execution.html",
+      "date": "2026-04-06",
+      "type": "News"
+    },
+    {
+      "name": "GitHub Advisory Database (GHSA-3gcm-f6qx-ff7p)",
+      "url": "https://github.com/advisories/GHSA-3gcm-f6qx-ff7p",
+      "date": "2025-09-15",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Exploit-DB",
+      "url": "https://www.exploit-db.com/exploits/52440",
+      "date": "2025-09-22",
+      "type": "Research"
+    },
+    {
+      "name": "Rapid7 Metasploit Framework",
+      "url": "https://github.com/rapid7/metasploit-framework/pull/20705",
+      "date": "2026-04-05",
+      "type": "Research"
+    },
+    {
+      "name": "Vulert",
+      "url": "https://vulert.com/blog/flowise-ai-cve-2025-59528-rce-exploitation-12000/",
+      "date": "2026-04-06",
+      "type": "Research"
+    },
+    {
+      "name": "CVEmon by Intruder",
+      "url": "https://cvemon.intruder.io/cves/CVE-2025-59528",
+      "date": "2026-04-06",
+      "type": "Research"
+    },
+    {
+      "name": "GitLab Advisories",
+      "url": "https://advisories.gitlab.com/pkg/npm/flowise/CVE-2025-59528/",
+      "date": "2025-09-15",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "OSV Database",
+      "url": "https://osv.dev/vulnerability/GHSA-3gcm-f6qx-ff7p",
+      "date": "2025-09-15",
+      "type": "Government"
+    },
+    {
+      "name": "CyberSecurityNews",
+      "url": "https://cybersecuritynews.com/flowise-ai-agent-builder-vulnerability-exploited/",
+      "date": "2026-04-06",
+      "type": "News"
+    },
+    {
+      "name": "GBHackers",
+      "url": "https://gbhackers.com/attackers-exploit-flowise-injection-vulnerability/",
+      "date": "2026-04-06",
+      "type": "News"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025-09-15",
+      "event": "CVE-2025-59528 disclosed; Flowise v3.0.6 patch released with fix replacing dangerous Function() constructor with JSON5.parse()"
+    },
+    {
+      "date": "2025-09-22",
+      "event": "Public proof-of-concept exploit published to Exploit-DB (EDB-52440), making the vulnerability trivially exploitable"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "VulnCheck Canary sensors detect first in-the-wild exploitation attempts originating from a single Starlink IP address"
+    },
+    {
+      "date": "2026-04-06",
+      "event": "Active exploitation widely confirmed; Metasploit module added to rapid7/metasploit-framework; major security outlets report on ongoing attacks against 12,000+ exposed instances"
+    },
+    {
+      "date": "2026-04-08",
+      "event": "Exploitation ongoing — organizations running unpatched Flowise instances exposed to the internet remain at critical risk"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A maximum-severity security vulnerability (CVSS 10.0 — the highest possible score) was discovered in Flowise, a popular open-source tool used by developers and enterprises to build AI agent workflows and LLM-powered applications. The flaw is in a feature called CustomMCP (Model Context Protocol), which allows users to configure how Flowise connects to external AI services. Flowise processes this user-supplied configuration using JavaScript's dangerous Function() constructor — essentially treating user input as executable code — without any validation. This means anyone who can send an HTTP request to the Flowise server can inject arbitrary JavaScript code that runs with full Node.js system privileges. The vulnerability was patched in September 2025, but attackers began exploiting the large number of organizations that had not yet upgraded, with over 12,000 publicly exposed Flowise instances identified online.",
+    "who_is_affected": "Any organization running Flowise AI Agent Builder versions 2.2.7-patch.1 through 3.0.5 that is accessible over the internet or an internal network. Flowise is widely used by developers building AI agents, chatbots, and LLM pipelines. Shodan and VulnCheck enumerated over 12,000 publicly internet-exposed instances. Many deployments run without authentication enabled (a common development practice), increasing the risk further.",
+    "what_attackers_do": "Step 1: Attackers use Shodan or similar internet scanning tools to find publicly exposed Flowise instances (over 12,000 are accessible). Step 2: They send a crafted POST request to the unauthenticated endpoint /api/v1/node-load-method/customMCP with a malicious mcpServerConfig payload containing JavaScript code such as require('child_process').exec('malicious-command'). Step 3: Flowise passes this input directly to JavaScript's Function() constructor, which executes it as code with full Node.js runtime privileges — the equivalent of running eval() with no restrictions. Step 4: Attackers use this code execution to read files, steal API keys, AI model credentials, database passwords, and other secrets stored on the server. Step 5: They establish persistent backdoors, perform lateral movement within the network, and potentially exfiltrate training data, proprietary AI workflows, and sensitive business data from the compromised AI infrastructure.",
+    "what_you_should_do": [
+      "Upgrade Flowise immediately to version 3.0.6 or the latest available release (3.1.1+) — this is the only definitive fix",
+      "If immediate upgrade is not possible, take Flowise offline or block all external access to the server — especially block the /api/v1/node-load-method/customMCP endpoint using a WAF or reverse proxy",
+      "Rotate all API keys, AI service credentials, database passwords, and any other secrets that were stored on or accessible from the Flowise server",
+      "Audit server logs for POST requests to /api/v1/node-load-method/customMCP from unexpected sources — look back to at least April 1, 2026",
+      "Scan the Flowise host for unauthorized files, scheduled tasks, new user accounts, or outbound connections that may indicate a persistent backdoor was installed"
+    ],
+    "why_this_is_serious": "A CVSS 10.0 score is the maximum possible severity — it means the vulnerability requires no authentication, no user interaction, and is exploitable remotely with complete impact on confidentiality, integrity, and availability. With over 12,000 exposed instances and a Metasploit module publicly available, exploitation is trivially easy and highly automated. AI platforms like Flowise often store particularly sensitive assets: API keys for OpenAI, Anthropic, and other AI services; proprietary workflow logic representing significant business IP; connections to databases containing customer data; and system-level access to the underlying infrastructure. Attackers targeting AI development infrastructure can disrupt operations, steal intellectual property, pivot deeper into corporate networks, and monetize stolen credentials — all from a single unauthenticated HTTP request."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1190",
+        "technique_name": "Exploit Public-Facing Application",
+        "description": "Attackers exploit the unauthenticated CustomMCP endpoint in publicly exposed Flowise instances to gain initial foothold without any credentials"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.007",
+        "technique_name": "Command and Scripting Interpreter: JavaScript",
+        "description": "Malicious JavaScript code is injected via the mcpServerConfig parameter and executed by the Node.js runtime using the dangerous Function() constructor, providing arbitrary OS command execution"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552",
+        "technique_name": "Unsecured Credentials",
+        "description": "Attackers use file system access (require('fs')) to read environment variables, .env files, and configuration files containing AI API keys, database credentials, and service passwords"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Full file system access allows attackers to collect proprietary AI workflows, training data, conversation logs, and other sensitive business data stored on the Flowise server"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1547",
+        "technique_name": "Boot or Logon Initialization Scripts",
+        "description": "Attackers establish persistent access by installing backdoors, cron jobs, or startup scripts on the compromised Flowise host to survive service restarts"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique_id": "T1210",
+        "technique_name": "Exploitation of Remote Services",
+        "description": "Using credentials and network access obtained from the compromised Flowise server, attackers move laterally to databases, AI service accounts, cloud platforms, and other internal systems"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on monitoring the vulnerable CustomMCP API endpoint for injection payloads and identifying post-exploitation indicators such as unexpected outbound connections, new files, or process spawning from the Flowise Node.js process. Given the CVSS 10.0 severity and easy exploitation, any exposure of the Flowise service to untrusted networks should be treated as a potential breach requiring investigation.",
+    "log_sources": [
+      {
+        "source": "Flowise Application / HTTP Access Logs",
+        "description": "Monitor all POST requests to /api/v1/node-load-method/customMCP for malicious JavaScript in the mcpServerConfig body parameter; flag any request containing keywords like require, child_process, exec, spawn, fs, eval, or Function",
+        "priority": "Critical"
+      },
+      {
+        "source": "Node.js Process Logs / stdout",
+        "description": "Monitor Flowise application stdout/stderr for unexpected error messages or output from injected code; watch for OS command execution output appearing in application logs",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Flow / Firewall Logs",
+        "description": "Monitor outbound network connections from the Flowise server process to unexpected external IPs, particularly on non-standard ports which may indicate command-and-control beaconing",
+        "priority": "High"
+      },
+      {
+        "source": "File System Integrity Monitoring",
+        "description": "Monitor Flowise installation directories and the hosting OS for new files, modified scripts, new cron jobs, or unauthorized user accounts created after the exploitation window began (April 1, 2026)",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Malicious keyword in CustomMCP POST body",
+        "description": "POST requests to the vulnerable endpoint containing JavaScript code injection patterns indicate exploitation attempts",
+        "log_field": "POST /api/v1/node-load-method/customMCP body contains require( OR child_process OR exec( OR spawn( OR eval( OR new Function(",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected outbound connection from Flowise process",
+        "description": "Outbound network connections initiated by the Flowise Node.js process to external IP addresses not part of configured AI service endpoints may indicate C2 activity",
+        "log_field": "process_name='node' AND dst_ip NOT IN (known_ai_service_ips) AND direction='outbound'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "OS command spawned from Node.js process",
+        "description": "Shell commands or scripts spawned as child processes of the Flowise Node.js process are a strong indicator of successful code injection exploitation",
+        "log_field": "ParentProcess='node' AND ChildProcess IN ('sh','bash','cmd.exe','powershell.exe','/bin/sh','/bin/bash')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Environment variable file access",
+        "description": "Access to .env files, config.json, or other credential storage files from the Flowise process at unexpected times may indicate credential theft",
+        "log_field": "process='node' AND file_path MATCHES '.env|config.json|credentials|secrets'",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Upgrade Flowise to v3.0.6 or later immediately",
+      "description": "The only definitive fix is upgrading to Flowise 3.0.6 or higher, which replaces the dangerous Function() constructor with JSON5.parse(). Upgrade via npm: npm install -g flowise@latest, or update your Docker image to flowise:latest.",
+      "command": "npm install -g flowise@latest && flowise start"
+    },
+    {
+      "priority": 2,
+      "action": "Block the vulnerable CustomMCP endpoint with WAF/proxy rules",
+      "description": "If immediate upgrade is not possible, block all external access to POST /api/v1/node-load-method/customMCP using a web application firewall, reverse proxy (nginx/Apache), or network firewall rule. Also consider restricting access to the entire Flowise API to trusted IP ranges only.",
+      "command": "# nginx example: deny POST to vulnerable endpoint\nlocation /api/v1/node-load-method/customMCP {\n  deny all;\n}"
+    },
+    {
+      "priority": 3,
+      "action": "Rotate all credentials stored on or accessible from Flowise",
+      "description": "Immediately rotate all AI service API keys (OpenAI, Anthropic, Cohere, etc.), database passwords, cloud service credentials, and any other secrets that were accessible to the Flowise process. Assume all credentials have been compromised if the instance was internet-exposed and unpatched.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Audit logs for exploitation since April 1, 2026",
+      "description": "Search HTTP access logs for POST requests to /api/v1/node-load-method/customMCP from unexpected sources since April 1. Flag any request body containing JavaScript keywords: require, child_process, exec, spawn, eval, Function.",
+      "command": "grep -i 'node-load-method/customMCP' /var/log/nginx/access.log | grep 'POST'"
+    },
+    {
+      "priority": 5,
+      "action": "Scan host for indicators of compromise",
+      "description": "Check the Flowise server for new user accounts, cron jobs, startup scripts, unknown processes, and unexpected outbound network connections that may indicate a backdoor was installed during exploitation.",
+      "command": "ps aux | grep -v flowise; crontab -l; last -n 50; netstat -tulpn"
+    }
+  ]
+}

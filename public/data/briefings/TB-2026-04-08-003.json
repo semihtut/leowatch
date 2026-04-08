@@ -1,0 +1,285 @@
+{
+  "briefing_id": "TB-2026-04-08-003",
+  "title": "Google Chrome WebGPU Dawn Use-After-Free Zero-Day (CVE-2026-5281, CVSS 8.8): Fourth Actively Exploited Chrome Zero-Day of 2026 Enables Remote Code Execution via Crafted Web Pages — CISA KEV with April 15 Federal Deadline, Patch to Chrome 146.0.7680.177 Now",
+  "generated_date": "2026-04-08",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "High",
+    "cvss": 8.8,
+    "cisa_kev": true,
+    "cisa_deadline": "2026-04-15"
+  },
+  "cves": [
+    "CVE-2026-5281"
+  ],
+  "tags": [
+    "chrome",
+    "browser",
+    "webgpu",
+    "zero-day",
+    "use-after-free",
+    "rce",
+    "cisa-kev",
+    "chromium"
+  ],
+  "affected_products": [
+    "Google Chrome < 146.0.7680.177 (Windows/macOS)",
+    "Google Chrome < 146.0.7680.177 (Linux)",
+    "Microsoft Edge (Chromium-based, unpatched versions)",
+    "Brave Browser (unpatched versions)",
+    "Opera Browser (unpatched versions)",
+    "Vivaldi Browser (unpatched versions)"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "The Hacker News",
+      "url": "https://thehackernews.com/2026/04/new-chrome-zero-day-cve-2026-5281-under.html",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/google-fixes-fourth-chrome-zero-day-exploited-in-attacks-in-2026/",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "SOCRadar",
+      "url": "https://socradar.io/blog/cve-2026-5281-chrome-webgpu-zero-day/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/04/01/google-chrome-zero-day-cve-2026-5281/",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "Security Affairs",
+      "url": "https://securityaffairs.com/190265/hacking/google-fixes-fourth-actively-exploited-chrome-zero-day-of-2026.html",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "TechRepublic",
+      "url": "https://www.techrepublic.com/article/news-chrome-zero-day-cve-2026-5281-active-exploit/",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "eSecurity Planet",
+      "url": "https://www.esecurityplanet.com/threats/chrome-vulnerability-cve-2026-5281-exploited-in-the-wild/",
+      "date": "2026-04-02",
+      "type": "News"
+    },
+    {
+      "name": "Qualys ThreatPROTECT",
+      "url": "https://threatprotect.qualys.com/2026/04/01/google-addresses-zero-day-vulnerability-exploited-in-the-wild-cve-2026-5281/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Rapid7 Vulnerability Database",
+      "url": "https://www.rapid7.com/db/vulnerabilities/google-chrome-cve-2026-5281/",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable",
+      "url": "https://www.tenable.com/cve/CVE-2026-5281",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "NIST NVD",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5281",
+      "date": "2026-04-01",
+      "type": "Government"
+    },
+    {
+      "name": "CVE.ORG",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-5281",
+      "date": "2026-04-01",
+      "type": "Government"
+    },
+    {
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-04-01",
+      "type": "Government"
+    },
+    {
+      "name": "Opera Security Advisory",
+      "url": "https://blogs.opera.com/security/2026/04/update-your-browser-security-fix-for-chrome-zero-day-cve-2026-5281/",
+      "date": "2026-04-01",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Dark Web Informer",
+      "url": "https://darkwebinformer.com/chrome-zero-day-cve-2026-5281-a-use-after-free-in-dawns-webgpu-layer/",
+      "date": "2026-04-01",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-25",
+      "event": "Zero-day exploitation in the wild begins; anonymous security researcher (handle: 86ac1f1587b71893ed2ad792cd7dde32) identifies and reports the vulnerability to Google"
+    },
+    {
+      "date": "2026-03-31",
+      "event": "Google releases emergency Chrome update to version 146.0.7680.177/178 (Windows/macOS) and 146.0.7680.177 (Linux), patching CVE-2026-5281 among 21 total vulnerabilities"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "Google publicly discloses CVE-2026-5281, confirming active in-the-wild exploitation; CISA immediately adds to KEV catalog the same day"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "Major Chromium-based browsers (Edge, Brave, Opera, Vivaldi) begin rolling out patched versions incorporating the upstream Chromium fix"
+    },
+    {
+      "date": "2026-04-15",
+      "event": "CISA BOD 22-01 federal remediation deadline — all Federal Civilian Executive Branch agencies must have updated Chrome and Chromium-based browsers by this date"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "Google patched a zero-day vulnerability in Chrome's WebGPU implementation (the Dawn library) that was actively being exploited in the wild before the patch was available. The flaw is a use-after-free (UAF) memory corruption bug: Chrome's GPU command buffer queue system fails to properly synchronize when CommandBuffer objects are destroyed while still being referenced by in-flight GPU tasks. Attackers can trigger this race condition to corrupt memory at a controlled location, then use that corrupted memory to execute arbitrary code inside the Chrome browser process. This is the fourth zero-day Chrome vulnerability actively exploited in 2026 alone, indicating sustained and sophisticated targeting of Chrome's graphics subsystem. CISA added it to the Known Exploited Vulnerabilities catalog the same day Google disclosed it.",
+    "who_is_affected": "Anyone running Google Chrome below version 146.0.7680.177 on Windows, macOS, or Linux. Since the vulnerability is in the Chromium engine, all Chromium-based browsers are also affected until they ship their own patched builds — including Microsoft Edge, Brave, Opera, and Vivaldi. The vulnerability can be triggered by simply visiting a malicious web page with no other user interaction, making it a drive-by attack that can target any user browsing the web.",
+    "what_attackers_do": "Step 1: Attackers set up a malicious or compromised web page containing specially crafted WebGPU JavaScript code that triggers the use-after-free memory corruption in Chrome's Dawn library. Step 2: When a victim visits the page with an unpatched Chrome browser, the WebGPU code causes a race condition by rapidly submitting and destroying GPU CommandBuffer objects, freeing memory that is still referenced by an active GPU task. Step 3: Attackers exploit the dangling pointer to write controlled data into freed memory, corrupting Chrome's internal heap structures. Step 4: Using the heap corruption, attackers achieve arbitrary code execution within the Chrome renderer process, enabling them to run malicious code at the renderer's privilege level. Step 5: The renderer-level access is then potentially chained with a sandbox escape vulnerability to break out of Chrome's sandbox and execute code on the underlying operating system, achieving full device compromise.",
+    "what_you_should_do": [
+      "Update Google Chrome to version 146.0.7680.177 or later immediately — open Chrome, go to Help > About Google Chrome, and apply any available update, then restart the browser",
+      "Update all other Chromium-based browsers (Microsoft Edge, Brave, Opera, Vivaldi) to their latest versions, as they are all affected until they ship the upstream Chromium patch",
+      "For enterprise environments, deploy the Chrome update via Group Policy or your endpoint management platform to all workstations immediately; use the ADMX template to enforce minimum version requirements",
+      "Until patching is complete, consider disabling WebGPU via enterprise policy as a temporary mitigation (set WebGPU to disabled in Chrome policies), though this will break WebGPU-dependent applications",
+      "Use Qualys QID 386954 or equivalent vulnerability scanning to identify endpoints still running vulnerable Chrome versions and prioritize their remediation before the April 15 CISA deadline"
+    ],
+    "why_this_is_serious": "This is the fourth Chrome zero-day exploited in the wild in 2026 — a rate of roughly one per month — indicating that sophisticated attackers are actively and systematically targeting Chrome's graphics stack. Drive-by browser exploits require no user action beyond visiting a web page, making them among the highest-impact delivery mechanisms available to attackers. Chrome is used by billions of people worldwide, and a successful exploit can result in full compromise of the victim's device including access to all locally stored credentials, cookies, session tokens, files, and corporate network access. The CISA federal deadline and same-day KEV listing reflect the urgency with which the security community is treating this vulnerability."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1189",
+        "technique_name": "Drive-by Compromise",
+        "description": "Attackers serve malicious WebGPU content via compromised or attacker-controlled web pages; victims are exploited simply by browsing to the page with an unpatched Chrome browser, requiring no additional user interaction"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1203",
+        "technique_name": "Exploitation for Client Execution",
+        "description": "The use-after-free vulnerability in Chrome's Dawn WebGPU library is exploited to achieve arbitrary code execution within the Chrome renderer process through memory corruption"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1055",
+        "technique_name": "Process Injection",
+        "description": "Code execution within the Chrome renderer process allows attackers to inject malicious code into the browser process space, potentially evading host-based security controls that monitor standalone process creation"
+      },
+      {
+        "tactic": "Privilege Escalation",
+        "technique_id": "T1068",
+        "technique_name": "Exploitation for Privilege Escalation",
+        "description": "The renderer-level RCE can be chained with sandbox escape vulnerabilities to escalate from the Chrome sandbox to full OS-level code execution"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1539",
+        "technique_name": "Steal Web Session Cookie",
+        "description": "Post-exploitation access to the Chrome process allows attackers to extract stored cookies, saved passwords, and session tokens for all web applications the victim is logged into"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "With sandbox escape, attackers can access files, credentials, and corporate data on the victim's local system and any connected network shares"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection of CVE-2026-5281 exploitation is challenging because it occurs entirely within the browser rendering process. Focus on identifying unpatched Chrome versions on endpoints, monitoring for anomalous browser process behavior (unexpected child processes or network connections), and correlating browser crash reports with WebGPU-related signatures. The most effective defense is rapid patch deployment.",
+    "log_sources": [
+      {
+        "source": "Endpoint Vulnerability Scanner (Qualys / Tenable / Rapid7)",
+        "description": "Scan all endpoints for Chrome and Chromium-based browser versions below the patched threshold; Qualys QID 386954 specifically targets this vulnerability; prioritize internet-facing workstations",
+        "priority": "Critical"
+      },
+      {
+        "source": "Chrome Browser Version Telemetry / MDM",
+        "description": "Use Chrome Enterprise reporting, Intune, or JAMF to query current browser versions across the fleet; alert on any endpoint running Chrome < 146.0.7680.177 until patching is complete",
+        "priority": "Critical"
+      },
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Monitor for anomalous child processes spawned by chrome.exe or msedge.exe, unexpected outbound network connections initiated by browser processes, and memory injection indicators (process hollowing, unusual DLL loads)",
+        "priority": "High"
+      },
+      {
+        "source": "Network Proxy / Web Filtering Logs",
+        "description": "Monitor for browser requests to newly registered or low-reputation domains that serve WebGPU-heavy JavaScript content; flag WebGL/WebGPU API usage patterns that are anomalous for your environment",
+        "priority": "Medium"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Chrome version below patched threshold",
+        "description": "Any endpoint running Chrome < 146.0.7680.177 is vulnerable; this should be treated as an urgent remediation item especially if the endpoint is internet-browsing",
+        "log_field": "software_name='Google Chrome' AND version < '146.0.7680.177'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Unexpected child process from Chrome renderer",
+        "description": "Chrome renderer processes (chrome.exe --type=renderer) should not directly spawn system shells or scripting engines; this pattern indicates sandbox escape post-exploitation",
+        "log_field": "ParentImage='*chrome.exe' AND ParentCommandLine='*renderer*' AND Image IN ('*\\cmd.exe','*\\powershell.exe','*\\wscript.exe','*/bin/sh','*/bin/bash')",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Chrome crash logs referencing Dawn / WebGPU",
+        "description": "Crash reports from Chrome mentioning Dawn, WebGPU, or GPU CommandBuffer may indicate failed exploitation attempts; multiple crashes on the same system from the same web origin warrant investigation",
+        "log_field": "chrome_crash_signature CONTAINS 'dawn' OR 'WebGPU' OR 'CommandBuffer' OR 'GPU process'",
+        "severity": "High"
+      },
+      {
+        "indicator": "Outbound connection from Chrome to unexpected destination post-page-visit",
+        "description": "New outbound network connections established by the Chrome process immediately after visiting an unusual web page, particularly to IP addresses not associated with legitimate CDN or web services",
+        "log_field": "process='chrome.exe' AND network.direction='outbound' AND NOT dst_ip IN (known_cdn_ranges)",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Update Chrome to 146.0.7680.177 or later on all endpoints",
+      "description": "Open Google Chrome and navigate to the About page to trigger an update check, or deploy the update silently via enterprise management tools. Restart Chrome after the update. For Chromium-based browsers (Edge, Brave, Opera, Vivaldi) check for updates in their respective About pages.",
+      "command": "# Windows (Group Policy / Registry check for current version):\nreg query \"HKLM\\SOFTWARE\\Google\\Chrome\\BLBeacon\" /v version\n# Deploy update via winget:\nwinget upgrade Google.Chrome"
+    },
+    {
+      "priority": 2,
+      "action": "Enforce minimum Chrome version via enterprise policy",
+      "description": "Deploy Group Policy (Windows) or configuration profile (macOS) to set the minimum Chrome version to 146.0.7680.177. This prevents rollback and ensures future updates are enforced. Also configure Chrome to auto-update on the enterprise patch channel.",
+      "command": "# Set minimum Chrome version via Group Policy registry key:\nreg add \"HKLM\\SOFTWARE\\Policies\\Google\\Chrome\" /v MinimumBrowserVersion /t REG_SZ /d \"146.0.7680.177\" /f"
+    },
+    {
+      "priority": 3,
+      "action": "Temporarily disable WebGPU enterprise-wide if patching is delayed",
+      "description": "If immediate browser updates cannot be deployed across all endpoints, use Chrome enterprise policy to disable WebGPU as a temporary compensating control. This will break WebGPU-dependent web applications but prevents exploitation. Re-enable after patching is complete.",
+      "command": "# Disable WebGPU via Group Policy registry:\nreg add \"HKLM\\SOFTWARE\\Policies\\Google\\Chrome\" /v WebGPUEnabled /t REG_DWORD /d 0 /f"
+    },
+    {
+      "priority": 4,
+      "action": "Identify all unpatched Chrome instances using vulnerability scanning",
+      "description": "Run an authenticated vulnerability scan across all workstations using Qualys QID 386954 or equivalent Tenable/Rapid7 checks to identify endpoints still running vulnerable Chrome versions. Generate a remediation priority list sorted by risk exposure (internet-facing endpoints first).",
+      "command": null
+    },
+    {
+      "priority": 5,
+      "action": "Review EDR telemetry for anomalous Chrome renderer behavior since March 25",
+      "description": "Query EDR platform for anomalous process creation, DLL injection, or unexpected network connections from Chrome processes since March 25, 2026. Focus on endpoints that accessed low-reputation or newly registered domains.",
+      "command": null
+    }
+  ]
+}
