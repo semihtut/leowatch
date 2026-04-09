@@ -1,0 +1,248 @@
+{
+  "briefing_id": "TB-2026-04-09-002",
+  "title": "Adobe Acrobat Reader Zero-Day CVE-2026-27220 (Use-After-Free, CVSS 9.3): EXPMON-Discovered Exploit Bypasses JavaScript Sandbox to Steal Local Files and Fingerprint Systems via Malicious PDFs — Emergency Patch APSB26-26 Released April 8, Patch Immediately",
+  "generated_date": "2026-04-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [
+    "CVE-2026-27220"
+  ],
+  "tags": [
+    "adobe",
+    "acrobat",
+    "pdf",
+    "zero-day",
+    "use-after-free",
+    "sandbox-escape",
+    "data-exfiltration",
+    "rce"
+  ],
+  "affected_products": [
+    "Adobe Acrobat Reader DC prior to version 25.001.21288",
+    "Adobe Acrobat DC prior to version 25.001.21288",
+    "Adobe Acrobat Reader 2024 Classic Track prior to version 24.001.30308",
+    "Adobe Acrobat 2024 Classic Track prior to version 24.001.30308"
+  ],
+  "sources_analyzed": 11,
+  "sources": [
+    {
+      "name": "BleepingComputer — Adobe Fixes Acrobat Reader Zero-Day with Public PoC Exploit",
+      "url": "https://www.bleepingcomputer.com/news/security/adobe-fixes-acrobat-reader-zero-day-with-public-poc-exploit/",
+      "date": "2026-04-08",
+      "type": "News"
+    },
+    {
+      "name": "GBHackers — Hackers Target Adobe Reader Users With Sophisticated Zero-Day Exploit",
+      "url": "https://gbhackers.com/hackers-target-adobe-reader/",
+      "date": "2026-04-08",
+      "type": "News"
+    },
+    {
+      "name": "CybersecurityNews — Hackers Actively Attacking Adobe Reader Users Using Sophisticated 0-Day Exploit",
+      "url": "https://cybersecuritynews.com/adobe-reader-0-day-exploit/",
+      "date": "2026-04-08",
+      "type": "News"
+    },
+    {
+      "name": "SecurityOnline — Zero-Day Alert: Sophisticated PDF Exploit Targets Adobe Reader for Data Theft",
+      "url": "https://securityonline.info/adobe-reader-zero-day-pdf-exploit-yummy-uwu/",
+      "date": "2026-04-08",
+      "type": "News"
+    },
+    {
+      "name": "The Cyber Express — Researchers Spot Zero-Day Fingerprinting Attack Targeting Adobe Reader",
+      "url": "https://thecyberexpress.com/zero-day-fingerprinting-attack-on-adobe-reader/",
+      "date": "2026-04-08",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityWeek — Adobe Windows Users Hit by PDF Reader Zero-Day",
+      "url": "https://www.securityweek.com/adobe-windows-users-hit-pdf-reader-zero-day/",
+      "date": "2026-04-08",
+      "type": "News"
+    },
+    {
+      "name": "CyberPress — Adobe Acrobat Reader Vulnerability Allows Attackers to Execute Arbitrary Code",
+      "url": "https://cyberpress.org/adobe-acrobat-reader-vulnerability-allows-attackers-to-execute-arbitrary-code-and-bypass-security-protections/",
+      "date": "2026-04-08",
+      "type": "News"
+    },
+    {
+      "name": "OffSeq Threat Radar — CVE-2026-27220 Use-After-Free in Adobe Acrobat Reader Tracking",
+      "url": "https://radar.offseq.com/threat/cve-2026-27220-use-after-free-cwe-416-in-adobe-acr-1606279c",
+      "date": "2026-04-09",
+      "type": "Research"
+    },
+    {
+      "name": "Adobe Security Bulletin APSB26-26 — Security Update for Adobe Acrobat and Reader",
+      "url": "https://helpx.adobe.com/security/products/acrobat/apsb26-26.html",
+      "date": "2026-04-08",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "NVD — CVE-2026-27220 National Vulnerability Database Entry",
+      "url": "https://nvd.nist.gov/vuln/detail/cve-2026-27220",
+      "date": "2026-04-08",
+      "type": "Government"
+    },
+    {
+      "name": "ASEC AhnLab Security Intelligence Center — Adobe Acrobat Reader CVE-2026-27220 Zero-Day Analysis",
+      "url": "https://asec.ahnlab.com/en/92897/",
+      "date": "2026-04-09",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-26",
+      "event": "EXPMON threat hunting system detects a suspicious PDF file named 'yummy_adobe_exploit_uwu.pdf' with only 5/64 VirusTotal detections, indicating heavy obfuscation designed to bypass antivirus tools; responsible disclosure initiated with Adobe PSIRT"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "EXPMON researchers confirm the PDF contains a genuine zero-day exploit targeting the JavaScript engine in Adobe Acrobat Reader via a use-after-free memory corruption vulnerability (CVE-2026-27220)"
+    },
+    {
+      "date": "2026-04-07",
+      "event": "Active exploitation confirmed in the wild — attackers observed deploying the exploit to fingerprint high-value targets and exfiltrate local file contents; C2 communications detected to IP address 169.40.2.68:45191"
+    },
+    {
+      "date": "2026-04-08",
+      "event": "Adobe releases out-of-band emergency security bulletin APSB26-26 patching CVE-2026-27220; multiple security vendors publish analysis and detection guidance; BleepingComputer reports public PoC availability"
+    },
+    {
+      "date": "2026-04-09",
+      "event": "NVD assigns CVSS 9.3 score; Tenable Nessus releases detection plugin 301709; ASEC AhnLab publishes technical analysis; organizations urged to patch immediately"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "A serious zero-day vulnerability was discovered in Adobe Acrobat Reader — the widely-used PDF viewer installed on hundreds of millions of computers. The flaw, found by the EXPMON threat hunting system after detecting a suspicious PDF named 'yummy_adobe_exploit_uwu.pdf', allows attackers to escape the security sandbox built into Adobe Reader and access files on the victim's system simply by getting them to open a malicious PDF. Attackers were actively using this exploit to profile high-value targets and steal local data before Adobe released an emergency patch (APSB26-26) on April 8, 2026.",
+    "who_is_affected": "Anyone running Adobe Acrobat Reader DC or Adobe Acrobat DC on Windows, macOS, or Linux with versions prior to 25.001.21288 is vulnerable. This affects millions of home users, enterprise employees, and government workers. The observed attacks appeared targeted at high-value individuals, but the publicly available PoC means wide-scale phishing campaigns exploiting this flaw are now possible.",
+    "what_attackers_do": "Step 1: The attacker crafts a malicious PDF containing heavily obfuscated JavaScript exploit code and delivers it to the target via email, messaging platforms, or document sharing services. Step 2: The victim opens the PDF in Adobe Acrobat Reader, automatically triggering the malicious JavaScript embedded in the document. Step 3: The JavaScript exploit leverages CVE-2026-27220 (a use-after-free memory corruption flaw) to escape Adobe Reader's security sandbox — the isolation layer that is supposed to contain PDF code. Step 4: With sandbox restrictions bypassed, the exploit invokes privileged Adobe Reader APIs — specifically util.readFileIntoStream() — to read arbitrary local files on the victim's computer without any further user interaction. Step 5: Stolen file contents (system configuration, credential files, sensitive documents) along with system fingerprinting data are transmitted to an attacker-controlled server at IP 169.40.2.68:45191 via the RSS.addFeed() Adobe API. Step 6: For identified high-value targets, the attacker may deliver a follow-on payload to achieve full remote code execution and system compromise.",
+    "what_you_should_do": [
+      "Update Adobe Acrobat Reader DC and Adobe Acrobat DC to version 25.001.21288 or later immediately — this is the only complete fix for CVE-2026-27220; use Help > Check for Updates or your enterprise patch management system",
+      "Block all outbound network connections to IP address 169.40.2.68 (port 45191 and all ports) at your firewall and web proxy — this is the confirmed C2 exfiltration endpoint used in active attacks",
+      "Search endpoint telemetry for any past connections from AcroRd32.exe or Acrobat.exe to 169.40.2.68 going back to March 26, 2026; any match indicates active exploitation occurred on that machine",
+      "Temporarily disable PDF inline preview in email clients (Outlook, Gmail) across the organization until patching is complete to eliminate the lowest-friction attack vector"
+    ],
+    "why_this_is_serious": "Adobe Acrobat Reader is one of the most widely deployed applications in the world, used by virtually every enterprise and government organization. A zero-day that requires only opening a PDF — with no other user interaction — to exfiltrate sensitive files and enable remote code execution represents an extremely low-friction attack vector deployable at massive scale via phishing. The exploit was actively used for targeted reconnaissance before the patch, and with a public PoC now available, wide-scale exploitation campaigns are imminent. The sandbox bypass is particularly alarming as it defeats Adobe Reader's primary defense mechanism for containing PDF-borne threats."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.001",
+        "technique_name": "Phishing: Spearphishing Attachment",
+        "description": "Malicious PDF files delivered as email attachments, exploiting the ubiquity of PDFs in business communication to trick recipients into opening them"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1059.007",
+        "technique_name": "Command and Scripting Interpreter: JavaScript",
+        "description": "Heavily obfuscated JavaScript embedded in the malicious PDF executes automatically when opened in Adobe Acrobat Reader, triggering the full exploit chain without additional user interaction"
+      },
+      {
+        "tactic": "Defense Evasion",
+        "technique_id": "T1211",
+        "technique_name": "Exploitation for Defense Evasion",
+        "description": "CVE-2026-27220 (use-after-free memory corruption) is exploited to escape Adobe Reader's security sandbox, bypassing the primary isolation mechanism designed to contain PDF-borne exploits"
+      },
+      {
+        "tactic": "Collection",
+        "technique_id": "T1005",
+        "technique_name": "Data from Local System",
+        "description": "Exploit invokes Adobe's privileged util.readFileIntoStream() API post-sandbox-escape to read arbitrary local files including system configuration, credential files, and sensitive documents"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Stolen file contents and system fingerprinting data (Reader version, language settings, local paths) transmitted to attacker server at 169.40.2.68:45191 via RSS.addFeed() Adobe API"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection should focus on monitoring network connections from Adobe Reader processes to unexpected external hosts, identifying suspicious PDF JavaScript execution patterns, and detecting access to sensitive files by the Reader process. Endpoint detection platforms should alert on file read operations by AcroRd32.exe targeting locations outside standard user document directories.",
+    "log_sources": [
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Monitor Adobe Acrobat Reader processes (AcroRd32.exe, Acrobat.exe) for file read system calls to locations outside the user's Documents/Downloads directories, process injection, and spawning of unexpected child processes",
+        "priority": "Critical"
+      },
+      {
+        "source": "Network Firewall / Proxy Logs",
+        "description": "Monitor for outbound connections from Adobe Reader to external IP addresses — PDF viewer processes should rarely initiate external network connections; flag all outbound traffic from AcroRd32.exe",
+        "priority": "Critical"
+      },
+      {
+        "source": "Email Gateway / Sandbox",
+        "description": "Detonate PDF attachments in sandboxed environments before delivery; scan for obfuscated JavaScript, multi-layer encoded streams, and invocations of util.readFileIntoStream() or RSS.addFeed() APIs",
+        "priority": "High"
+      },
+      {
+        "source": "Application Crash Telemetry",
+        "description": "Monitor for Adobe Reader crash events or access violation reports which may indicate exploit attempts — failed exploitation often generates crash telemetry before a successful attempt",
+        "priority": "Medium"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Outbound connection from Adobe Reader to known C2",
+        "description": "Any network connection from AcroRd32.exe or Acrobat.exe to IP address 169.40.2.68 (any port) confirms active exploitation and data exfiltration is occurring",
+        "log_field": "process IN ['AcroRd32.exe','Acrobat.exe'] AND dest_ip='169.40.2.68'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "HTTP User-Agent 'Adobe Synchronizer' from Reader process",
+        "description": "Outbound HTTP/HTTPS requests with User-Agent string containing 'Adobe Synchronizer' initiated by the Reader process indicate the exploit's C2 communication pattern",
+        "log_field": "http_user_agent CONTAINS 'Adobe Synchronizer' AND src_process IN ['AcroRd32.exe','Acrobat.exe']",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Adobe Reader reading files outside expected user directories",
+        "description": "AcroRd32.exe accessing system files, credential stores, or configuration files (e.g., .ssh, AppData\\Roaming, registry hives) indicates the sandbox has been escaped and file harvesting is active",
+        "log_field": "process='AcroRd32.exe' AND file_path NOT CONTAINS ['Documents','Downloads','Temp','AppData\\Local\\Adobe']",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "PDF with multiple stream encoding layers (high obfuscation)",
+        "description": "PDF files containing JavaScript with 3 or more layers of encoding (base64 within hex within zlib) are characteristic of exploit obfuscation similar to the yummy_adobe_exploit_uwu.pdf sample",
+        "log_field": "pdf_js_encoding_depth >= 3",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": [
+      "169.40.2.68"
+    ]
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Apply Adobe patch APSB26-26 immediately to all endpoints",
+      "description": "Update Adobe Acrobat Reader DC and Adobe Acrobat DC to version 25.001.21288 or later. Deploy via your patch management system (WSUS, SCCM, Intune, Jamf) at highest priority. For Classic Track users, upgrade to Acrobat 2024 version 24.001.30308 or later. This is the only complete fix for CVE-2026-27220.",
+      "command": "# Check installed Adobe Reader version on Windows via PowerShell:\nGet-ItemProperty HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Where-Object {$_.DisplayName -like '*Adobe*Reader*'} | Select DisplayName,DisplayVersion"
+    },
+    {
+      "priority": 2,
+      "action": "Block C2 IP 169.40.2.68 at network perimeter immediately",
+      "description": "Add a firewall block rule for all outbound traffic to IP address 169.40.2.68 on all ports. This is the confirmed exfiltration endpoint used in active in-the-wild exploitation. Blocking this prevents data exfiltration even if the exploit fires on an unpatched endpoint.",
+      "command": null
+    },
+    {
+      "priority": 3,
+      "action": "Hunt for past compromise in endpoint telemetry",
+      "description": "Search EDR telemetry for any connections from AcroRd32.exe or Acrobat.exe to 169.40.2.68 going back to March 26, 2026 (first detection date). Any match indicates the exploit ran successfully on that endpoint and a full incident response process should be initiated.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Temporarily disable PDF preview in email clients organization-wide",
+      "description": "Until patching is complete, disable PDF inline preview in Outlook (File > Options > Trust Center > Attachment Handling) and other email clients to eliminate the lowest-friction attack path requiring only email opening, not explicit PDF double-click.",
+      "command": null
+    }
+  ]
+}

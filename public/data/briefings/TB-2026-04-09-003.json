@@ -1,0 +1,285 @@
+{
+  "briefing_id": "TB-2026-04-09-003",
+  "title": "North Korean UNC1069 (Sapphire Sleet) Contagious Interview Expansion: 1,700 Malicious Packages Distributed Across npm, PyPI, Go, Rust, and PHP Ecosystems via Developer Social Engineering — WAVESHAPER.V2 RAT Harvests Cloud Credentials and CI/CD Pipeline Secrets at Scale",
+  "generated_date": "2026-04-09",
+  "status": "ACTIVE",
+  "severity": {
+    "level": "Critical",
+    "cvss": 9.3,
+    "cisa_kev": false,
+    "cisa_deadline": null
+  },
+  "cves": [],
+  "tags": [
+    "supply-chain",
+    "north-korea",
+    "npm",
+    "pypi",
+    "malware",
+    "unc1069",
+    "contagious-interview",
+    "cloud-credentials",
+    "waveshaper"
+  ],
+  "affected_products": [
+    "npm (JavaScript) ecosystem — malicious packages including dev-log-core, logger-base, logkitx, pino-debugger",
+    "PyPI (Python) ecosystem — malicious packages including logutilkit, apachelicense, fluxhttp, license-utils-kit",
+    "Go Modules ecosystem — malicious packages impersonating Go standard libraries",
+    "Rust crates.io ecosystem — malicious package logtrace",
+    "PHP Packagist ecosystem — malicious utility packages",
+    "Development environments and CI/CD pipelines using affected packages"
+  ],
+  "sources_analyzed": 15,
+  "sources": [
+    {
+      "name": "The Hacker News — N. Korean Hackers Spread 1,700 Malicious Packages Across npm, PyPI, Go, Rust",
+      "url": "https://thehackernews.com/2026/04/n-korean-hackers-spread-1700-malicious.html",
+      "date": "2026-04-07",
+      "type": "News"
+    },
+    {
+      "name": "Socket.dev — Contagious Interview Campaign Spreads Across 5 Package Ecosystems",
+      "url": "https://socket.dev/blog/contagious-interview-campaign-spreads-across-5-ecosystems",
+      "date": "2026-04-07",
+      "type": "Research"
+    },
+    {
+      "name": "The Hacker News — Google Attributes Axios npm Supply Chain Attack to North Korean Group UNC1069",
+      "url": "https://thehackernews.com/2026/04/google-attributes-axios-npm-supply.html",
+      "date": "2026-04-06",
+      "type": "News"
+    },
+    {
+      "name": "Google Cloud Threat Intelligence — North Korea-Nexus Threat Actor Compromises Axios NPM Package",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package",
+      "date": "2026-04-06",
+      "type": "Research"
+    },
+    {
+      "name": "Microsoft Security Blog — Mitigating the Axios npm Supply Chain Compromise",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+      "date": "2026-04-01",
+      "type": "Vendor Advisory"
+    },
+    {
+      "name": "Tenable — Supply Chain Attack on Axios npm Package: Scope, Impact, and Remediations",
+      "url": "https://www.tenable.com/blog/supply-chain-attack-on-axios-npm-package-scope-impact-and-remediations",
+      "date": "2026-04-02",
+      "type": "Research"
+    },
+    {
+      "name": "Tenable — FAQ About the Axios npm Supply Chain Attack by North Korean UNC1069",
+      "url": "https://www.tenable.com/blog/faq-about-the-axios-npm-supply-chain-attack-by-north-korea-nexus-threat-actor-unc1069",
+      "date": "2026-04-03",
+      "type": "Research"
+    },
+    {
+      "name": "Unit 42 (Palo Alto Networks) — Threat Brief: Widespread Impact of the Axios Supply Chain Attack",
+      "url": "https://unit42.paloaltonetworks.com/axios-supply-chain-attack/",
+      "date": "2026-04-05",
+      "type": "Research"
+    },
+    {
+      "name": "Elastic Security Labs — Inside the Axios Supply Chain Compromise: One RAT to Rule Them All",
+      "url": "https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all",
+      "date": "2026-04-04",
+      "type": "Research"
+    },
+    {
+      "name": "Elastic Security Labs — How We Caught the Axios Supply Chain Attack",
+      "url": "https://www.elastic.co/security-labs/how-we-caught-the-axios-supply-chain-attack",
+      "date": "2026-04-04",
+      "type": "Research"
+    },
+    {
+      "name": "Huntress — Supply Chain Compromise of Axios npm Package",
+      "url": "https://www.huntress.com/blog/supply-chain-compromise-axios-npm-package",
+      "date": "2026-04-01",
+      "type": "Research"
+    },
+    {
+      "name": "SecurityWeek — Axios NPM Package Breached in North Korean Supply Chain Attack",
+      "url": "https://www.securityweek.com/axios-npm-package-breached-in-north-korean-supply-chain-attack/",
+      "date": "2026-04-01",
+      "type": "News"
+    },
+    {
+      "name": "Malwarebytes — Axios Supply Chain Attack Chops Away at npm Trust",
+      "url": "https://www.malwarebytes.com/blog/news/2026/03/axios-supply-chain-attack-chops-away-at-npm-trust",
+      "date": "2026-03-31",
+      "type": "News"
+    },
+    {
+      "name": "SecurityOnline — 183 Million Targets: Inside the North Korean Supply Chain Strike on Axios and the WAVESHAPER Backdoor",
+      "url": "https://securityonline.info/axios-supply-chain-attack-waveshaper-v2-unc1069/",
+      "date": "2026-04-02",
+      "type": "News"
+    },
+    {
+      "name": "SOCRadar — Axios npm Supply Chain Attack 2026: CISO Guide to Scope, Impact, and Remediation",
+      "url": "https://socradar.io/blog/axios-npm-supply-chain-attack-2026-ciso-guide/",
+      "date": "2026-04-07",
+      "type": "Research"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-31",
+      "event": "North Korean UNC1069 compromises npm maintainer account for Axios (100M+ weekly downloads) via social engineering; malicious versions 1.14.1 and 0.30.4 published containing WAVESHAPER.V2 RAT; approximately 600,000 installations occur within 3 hours before npm security team detects and removes them"
+    },
+    {
+      "date": "2026-04-01",
+      "event": "npm security team removes malicious Axios versions; Microsoft Security Blog and Huntress publish initial mitigation guidance; confirmed 135+ organizations infected globally"
+    },
+    {
+      "date": "2026-04-02",
+      "event": "Tenable and SecurityOnline publish scope and impact analysis; Elastic Security Labs begins forensic analysis of WAVESHAPER.V2 malware architecture and C2 infrastructure"
+    },
+    {
+      "date": "2026-04-04",
+      "event": "Elastic Security Labs publishes detailed technical analysis of WAVESHAPER.V2 C++ backdoor including C2 communication patterns and credential harvesting capabilities"
+    },
+    {
+      "date": "2026-04-05",
+      "event": "Unit 42 (Palo Alto Networks) publishes attribution of the Axios attack to North Korean UNC1069 with high confidence; Security Alliance blocks 164 UNC1069-linked domains impersonating Microsoft Teams and Zoom"
+    },
+    {
+      "date": "2026-04-06",
+      "event": "Google Cloud Threat Intelligence formally attributes the Axios campaign to UNC1069 (Sapphire Sleet) with supporting technical evidence"
+    },
+    {
+      "date": "2026-04-07",
+      "event": "Socket.dev discloses coordinated expansion of the campaign: UNC1069 has now distributed approximately 1,700 malicious packages across npm, PyPI, Go Modules, Rust crates.io, and PHP Packagist, all serving as staged loaders for WAVESHAPER.V2; The Hacker News and SOCRadar report on the multi-ecosystem scale"
+    }
+  ],
+  "simple_summary": {
+    "what_happened": "North Korea's state-sponsored hacking group UNC1069 (also tracked as Sapphire Sleet, operating under the 'Contagious Interview' campaign) dramatically escalated their software supply chain attacks. Beginning with the compromise of the Axios npm package on March 31 — one of the most downloaded JavaScript libraries with over 100 million weekly users — the group subsequently distributed approximately 1,700 malicious packages across five major software package registries: npm (JavaScript), PyPI (Python), Go Modules, Rust (crates.io), and PHP (Packagist). Each malicious package silently installs a backdoor called WAVESHAPER.V2 on developer machines, giving North Korean operators the ability to steal cloud credentials, cryptocurrency, API keys, and sensitive source code.",
+    "who_is_affected": "Software developers, DevOps engineers, and organizations whose development environments, CI/CD pipelines, or production applications depend on affected packages across all five ecosystems. Organizations that installed Axios npm versions 1.14.1 or 0.30.4 during the March 31 window are confirmed potentially compromised. The campaign specifically targets technology companies, cryptocurrency firms, and organizations with significant cloud infrastructure.",
+    "what_attackers_do": "Step 1: UNC1069 operators conduct targeted social engineering campaigns against open-source software maintainers, impersonating recruiters from cryptocurrency companies and AI firms to steal account credentials. Step 2: With compromised maintainer credentials, attackers publish malicious new versions of legitimate packages — or publish new packages designed to impersonate popular utilities (dev-log-core, logutilkit, logtrace, etc.). Step 3: Developers and automated CI/CD systems download the malicious packages believing them to be legitimate dependencies, integrating them into builds and pipelines. Step 4: The installed package executes a staged loader that downloads and installs the WAVESHAPER.V2 backdoor — a C++ RAT compiled to run as a persistent background daemon across Windows, macOS, and Linux. Step 5: WAVESHAPER.V2 harvests cloud credentials (AWS access keys, GitHub tokens, Kubernetes configs), SSH keys, cryptocurrency wallet files, and environment variables from the developer's machine. Step 6: Stolen secrets are transmitted to North Korean C2 servers via HTTP/HTTPS for use in cryptocurrency theft and espionage; some variants self-propagate by attempting to compromise additional package registry accounts found on the infected machine.",
+    "what_you_should_do": [
+      "Immediately audit all npm, PyPI, Go, Rust, and PHP package dependency trees for known malicious packages: dev-log-core, logger-base, logkitx, pino-debugger, debug-fmt (npm); logutilkit, apachelicense, fluxhttp, license-utils-kit (PyPI); logtrace (crates.io) — remove and replace any found",
+      "If your environment installed Axios npm versions 1.14.1 or 0.30.4 at any point after March 31, 2026, treat all cloud credentials, API keys, SSH keys, GitHub/npm tokens, and Kubernetes configs on those machines as compromised — rotate them all immediately",
+      "Scan developer workstations and CI/CD pipeline nodes for WAVESHAPER.V2 behavioral indicators: persistent daemon processes spawned by package managers, periodic HTTP POST connections to external IPs from npm/pip runner processes, and unexpected access to ~/.aws/credentials or ~/.ssh/",
+      "Enable npm package signature verification (npm audit signatures) and integrate a Software Composition Analysis (SCA) tool such as Socket.dev, Snyk, or GitHub Dependabot to continuously monitor for newly identified malicious packages in your dependency trees"
+    ],
+    "why_this_is_serious": "Software supply chain attacks on package registries represent one of the highest-leverage attack vectors available to nation-state actors. By compromising the Axios library — with 100M+ weekly downloads — a single malicious release reached hundreds of thousands of developer environments in hours. The 1,700-package expansion across 5 ecosystems demonstrates that UNC1069 has industrialized supply chain compromise into a systematic pipeline: targeting maintainers via fake job offers, publishing malicious packages, and harvesting credentials at scale. North Korea uses proceeds from cryptocurrency theft to directly fund its weapons programs, making these attacks a national security concern beyond the immediate cybersecurity impact. Compromised CI/CD pipelines mean attackers can pivot from developer laptops directly to production cloud infrastructure."
+  },
+  "mitre_attack": {
+    "tactics": [
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1195.001",
+        "technique_name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+        "description": "UNC1069 compromises legitimate package maintainer accounts via social engineering, then publishes malicious package versions to trusted registries (npm, PyPI, crates.io, Go Modules, Packagist)"
+      },
+      {
+        "tactic": "Initial Access",
+        "technique_id": "T1566.002",
+        "technique_name": "Phishing: Spearphishing Link",
+        "description": "Highly targeted social engineering campaigns impersonating cryptocurrency and AI company recruiters to steal package maintainer credentials via fake interview processes"
+      },
+      {
+        "tactic": "Execution",
+        "technique_id": "T1105",
+        "technique_name": "Ingress Tool Transfer",
+        "description": "Malicious packages act as staged loaders that fetch and install the WAVESHAPER.V2 C++ backdoor payload from attacker-controlled infrastructure upon execution during package installation"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique_id": "T1552.001",
+        "technique_name": "Unsecured Credentials: Credentials in Files",
+        "description": "WAVESHAPER.V2 harvests AWS credential files (~/.aws/credentials), GitHub tokens, SSH private keys, and cloud API keys stored in common developer filesystem locations"
+      },
+      {
+        "tactic": "Persistence",
+        "technique_id": "T1543",
+        "technique_name": "Create or Modify System Process",
+        "description": "WAVESHAPER.V2 establishes persistence as a daemon process via fork(), maintaining access to infected developer environments across reboots and sessions"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique_id": "T1041",
+        "technique_name": "Exfiltration Over C2 Channel",
+        "description": "Stolen credentials, source code, and environment data are exfiltrated via HTTP/HTTPS to North Korean C2 servers using the libcurl library; communication mimics legitimate developer tooling traffic"
+      }
+    ]
+  },
+  "detection_guidance": {
+    "summary": "Detection focuses on identifying presence of known malicious package names in dependency trees, anomalous network connections from package manager processes, WAVESHAPER.V2 behavioral indicators such as persistent daemon creation and credential file access patterns, and unusual cloud API activity from developer credentials.",
+    "log_sources": [
+      {
+        "source": "Software Composition Analysis (SCA) / Dependency Audit Tools",
+        "description": "Continuously monitor package dependency trees for known malicious package names and versions; platforms like Socket.dev, Snyk, and GitHub Dependabot can flag compromised packages in real time",
+        "priority": "Critical"
+      },
+      {
+        "source": "CI/CD Pipeline Logs",
+        "description": "Monitor npm install, pip install, go get, cargo add, and composer install commands in CI/CD workflows for installation of suspicious packages, particularly recently published packages from unknown maintainers",
+        "priority": "Critical"
+      },
+      {
+        "source": "Endpoint Detection and Response (EDR)",
+        "description": "Monitor for npm, pip, go, and cargo processes spawning unexpected persistent child processes, making outbound HTTP connections to external servers, or accessing credential files in the user home directory",
+        "priority": "High"
+      },
+      {
+        "source": "Cloud Platform Audit Logs (AWS CloudTrail, Azure Monitor, GCP Audit Logs)",
+        "description": "Monitor for API key usage from unexpected IP addresses, geographic locations, or at unusual times that may indicate use of stolen developer credentials harvested by WAVESHAPER.V2",
+        "priority": "High"
+      }
+    ],
+    "what_to_look_for": [
+      {
+        "indicator": "Known malicious npm packages present in node_modules",
+        "description": "Presence of dev-log-core, logger-base, logkitx, pino-debugger, debug-fmt, or debug-glitz in node_modules or package-lock.json indicates potential WAVESHAPER.V2 infection vector",
+        "log_field": "package_name IN ['dev-log-core','logger-base','logkitx','pino-debugger','debug-fmt','debug-glitz']",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Known malicious PyPI packages installed",
+        "description": "Presence of logutilkit, apachelicense, fluxhttp, or license-utils-kit in pip environments; combined with logtrace in Rust environments",
+        "log_field": "pip_package IN ['logutilkit','apachelicense','fluxhttp','license-utils-kit'] OR cargo_package='logtrace'",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Axios npm version 1.14.1 or 0.30.4 installed",
+        "description": "These specific Axios versions are the known-malicious releases published by UNC1069 on March 31, 2026; any installation of these versions should be treated as a confirmed compromise indicator",
+        "log_field": "package_name='axios' AND package_version IN ['1.14.1','0.30.4']",
+        "severity": "Critical"
+      },
+      {
+        "indicator": "Package manager process accessing ~/.aws/credentials or SSH keys",
+        "description": "npm, pip, go, or cargo processes accessing ~/.aws/credentials, ~/.ssh/id_rsa, or ~/.gitconfig is anomalous and indicates active credential harvesting by a malicious package",
+        "log_field": "file_path CONTAINS '/.aws/credentials' OR '/.ssh/id_rsa' AND process_name IN ['node','npm','python3','pip','go','cargo']",
+        "severity": "High"
+      }
+    ],
+    "known_malicious_ips": []
+  },
+  "immediate_actions": [
+    {
+      "priority": 1,
+      "action": "Audit all package dependencies for known malicious packages",
+      "description": "Immediately scan all active projects, CI/CD pipelines, and developer machines for the known malicious packages. For npm: dev-log-core, logger-base, logkitx, pino-debugger, and axios versions 1.14.1 or 0.30.4. For PyPI: logutilkit, apachelicense, fluxhttp, license-utils-kit. For Rust: logtrace.",
+      "command": "# Check npm for malicious packages:\nnpm ls dev-log-core logger-base logkitx pino-debugger 2>/dev/null\n# Check specific malicious Axios versions:\nnpm ls axios 2>/dev/null | grep -E '1\\.14\\.1|0\\.30\\.4'\n# Check PyPI:\npip show logutilkit apachelicense fluxhttp license-utils-kit 2>/dev/null"
+    },
+    {
+      "priority": 2,
+      "action": "Rotate all credentials on machines that installed affected packages",
+      "description": "For any machine that installed axios 1.14.1/0.30.4 or the known malicious packages, immediately rotate: AWS IAM access keys, GitHub/GitLab personal access tokens, npm/PyPI publish tokens, SSH keys, Kubernetes kubeconfig credentials, and any other secrets stored in the developer's home directory or CI/CD environment variables.",
+      "command": "# List and rotate AWS access keys for affected IAM users:\naws iam list-access-keys --user-name [username]\naws iam delete-access-key --access-key-id [old-key-id] --user-name [username]\naws iam create-access-key --user-name [username]"
+    },
+    {
+      "priority": 3,
+      "action": "Hunt for WAVESHAPER.V2 on developer endpoints and CI/CD nodes",
+      "description": "Use EDR tools to search for persistent background processes spawned by package manager processes, unusual periodic HTTP POST traffic from development tools to external IPs, and access to credential files (~/.aws/, ~/.ssh/) by unexpected processes. Review all process trees from npm/pip/go/cargo install commands since March 31, 2026.",
+      "command": null
+    },
+    {
+      "priority": 4,
+      "action": "Enable package signing verification and SCA tooling organization-wide",
+      "description": "Enable npm package provenance and signature verification and integrate a Software Composition Analysis tool (Socket.dev, Snyk, GitHub Dependabot Alerts) that detects newly identified malicious packages. Configure CI/CD pipelines to fail on packages flagged by SCA tools.",
+      "command": "# Enable npm audit with signature verification:\nnpm audit signatures\n# Run npm audit in CI/CD at moderate level:\nnpm audit --audit-level=moderate"
+    }
+  ]
+}

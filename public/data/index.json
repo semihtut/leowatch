@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-04-08T03:12:23.973Z",
-  "date": "2026-04-08",
+  "lastUpdated": "2026-04-09T03:20:14.795Z",
+  "date": "2026-04-09",
   "stats": {
-    "total": 134,
-    "critical": 101,
+    "total": 137,
+    "critical": 104,
     "high": 33,
     "medium": 0,
     "low": 0,
     "cisaKev": 61,
     "activeExploits": 15,
-    "totalSources": 1738
+    "totalSources": 1776
   },
   "topTags": [
     "cloud",
@@ -27,8 +27,63 @@
     "VMware",
     "Cisco"
   ],
-  "featuredBriefing": "TB-2026-04-08-002",
+  "featuredBriefing": "TB-2026-04-09-003",
   "briefings": [
+    {
+      "id": "TB-2026-04-09-003",
+      "title": "North Korean UNC1069 (Sapphire Sleet) Contagious Interview Expansion: 1,700 Malicious Packages Distributed Across npm, PyPI, Go, Rust, and PHP Ecosystems via Developer Social Engineering — WAVESHAPER.V2 RAT Harvests Cloud Credentials and CI/CD Pipeline Secrets at Scale",
+      "severity": "Critical",
+      "date": "2026-04-09",
+      "cves": [],
+      "tags": [
+        "supply-chain",
+        "north-korea",
+        "npm",
+        "pypi",
+        "malware",
+        "unc1069"
+      ],
+      "sourcesCount": 15,
+      "excerpt": "North Korea's state-sponsored hacking group UNC1069 (also tracked as Sapphire Sleet, operating under the 'Contagious Interview' campaign) dramatically escalated their software supply chain attacks. Be..."
+    },
+    {
+      "id": "TB-2026-04-09-002",
+      "title": "Adobe Acrobat Reader Zero-Day CVE-2026-27220 (Use-After-Free, CVSS 9.3): EXPMON-Discovered Exploit Bypasses JavaScript Sandbox to Steal Local Files and Fingerprint Systems via Malicious PDFs — Emergency Patch APSB26-26 Released April 8, Patch Immediately",
+      "severity": "Critical",
+      "date": "2026-04-09",
+      "cves": [
+        "CVE-2026-27220"
+      ],
+      "tags": [
+        "adobe",
+        "acrobat",
+        "pdf",
+        "zero-day",
+        "use-after-free",
+        "sandbox-escape"
+      ],
+      "sourcesCount": 11,
+      "excerpt": "A serious zero-day vulnerability was discovered in Adobe Acrobat Reader — the widely-used PDF viewer installed on hundreds of millions of computers. The flaw, found by the EXPMON threat hunting system..."
+    },
+    {
+      "id": "TB-2026-04-09-001",
+      "title": "Forest Blizzard (APT28/GRU) SOHO Router DNS Hijacking and AiTM Campaign: Russian Military Intelligence Exploits TP-Link and MikroTik Vulnerabilities to Compromise 5,000+ Devices and Steal Credentials from 200+ Organizations Across 120 Countries — FBI Operation Masquerade Disrupts Infrastructure",
+      "severity": "Critical",
+      "date": "2026-04-09",
+      "cves": [
+        "CVE-2023-50224"
+      ],
+      "tags": [
+        "apt28",
+        "forest-blizzard",
+        "russia",
+        "soho-router",
+        "dns-hijacking",
+        "aitm"
+      ],
+      "sourcesCount": 12,
+      "excerpt": "Russia's military intelligence agency (the GRU), operating as a hacker group called Forest Blizzard (also known as APT28 or Fancy Bear), ran a sophisticated espionage campaign that compromised thousan..."
+    },
     {
       "id": "TB-2026-04-08-003",
       "title": "Google Chrome WebGPU Dawn Use-After-Free Zero-Day (CVE-2026-5281, CVSS 8.8): Fourth Actively Exploited Chrome Zero-Day of 2026 Enables Remote Code Execution via Crafted Web Pages — CISA KEV with April 15 Federal Deadline, Patch to Chrome 146.0.7680.177 Now",
